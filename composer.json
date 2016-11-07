@@ -1,0 +1,12 @@
+{
+    "name": "burdamagazinorg/thunder_admin",
+    "type": "drupal-theme",
+    "authors": [
+        {
+            "name": "Andreas Sahle",
+            "email": "andreas.sahle@wunder.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
