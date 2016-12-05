@@ -1,0 +1,47 @@
+{
+  "name": "thunder_admin",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "node-sass --output-style compressed -o css sass",
+    "poststyles": "postcss -u autoprefixer -r css/*",
+    "js": "eslint js",
+    "images": "imagemin images-originals/* -o images",
+    "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",
+    "serve": "browser-sync start --proxy \"thunder.dev\" --files \"css/**/*.css, js/*.js\"",
+    "build": "npm run styles && npm run js && npm run images",
+    "watch:styles": "onchange \"sass\" -- npm run styles",
+    "watch:js": "onchange \"js\" -- npm run js",
+    "watch:images": "onchange \"images-originals\" -- npm run images",
+    "watch:all": "npm-run-all -p serve watch:styles watch:js watch:images",
+    "dev": "npm run build && npm run watch:all",
+    "postinstall": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurdaMagazinOrg/theme-thunder-admin.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^3.13.0",
+    "npm-run-all": "^3.1.2",
+    "onchange": "^3.2.0",
+    "postcss-cli": "^2.6.0",
+    "svg-sprite-generator": "^0.0.7",
+    "svgo": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
+  },
+  "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme"
+}
