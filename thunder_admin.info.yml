@@ -3,11 +3,18 @@ type: theme
 core: 8.x
 base theme: seven
 
+stylesheets-remove:
+ - '@stable/css/node/node.module.css'
+
 libraries-override:
   seven/install-page:
     css:
       theme:
         css/theme/install-page.css: css/install-page.css
+  node/drupal.node:
+    css:
+      layout:
+        /core/themes/stable/css/node/node.module.css: css/content-form-layout.css
 
 libraries-extend:
   tour/tour-styling:

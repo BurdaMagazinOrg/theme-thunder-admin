@@ -9,3 +9,10 @@ global-styling:
   css:
     theme:
       css/backend.css: {}
+
+form-advanced-sidebar-tray:
+  js:
+    js/advanced-sidebar-tray.js: {}
+  css:
+    layout:
+      css/content-form-layout.css: {}

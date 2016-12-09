@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ */
+#}
+{{ attach_library('thunder_admin/form-advanced-sidebar-tray') }}
+<div class="node-form__layout">
+  <div class="node-form__layout-region node-form__main">
+      {{ form|without('advanced', 'actions') }}
+  </div>
+
+  <div class="node-form__layout-region node-form__advanced">
+    {{ form.advanced }}
+  </div>
+</div>
+<div class="node-form__actions">
+  {{ form.actions }}
+  <button class="form__advanced-toggle"><</button>
+</div>
