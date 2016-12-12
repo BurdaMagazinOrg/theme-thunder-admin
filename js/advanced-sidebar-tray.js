@@ -14,13 +14,13 @@
    */
   Drupal.behaviors.advancedSidebarTray = {
     attach: function (context) {
-      var $body = $(context).find('body.advanced-sidebar-tray'),
-        $toggleBtn = $body.find('.form__advanced-toggle');
+      var $body = $(context).find('body.advanced-sidebar-tray');
+      var $toggleBtn = $body.find('.form__advanced-toggle');
       if ($body.length && $toggleBtn.length) {
-        $toggleBtn.unbind('click').on('click', function(e) {
+        $toggleBtn.unbind('click').on('click', function (e) {
           e.preventDefault();
           $body.toggleClass('advanced-sidebar-tray-open');
-        })
+        });
       }
     }
   };
