@@ -1,7 +1,11 @@
 {
-    "name": "burdamagazinorg/thunder_admin",
+    "name": "drupal/thunder_admin",
     "type": "drupal-theme",
     "authors": [
+        {
+            "name": "Christian Fritsch",
+            "email": "christian.fritsch@burda.com"
+        },
         {
             "name": "Andreas Sahle",
             "email": "andreas.sahle@wunder.io"
