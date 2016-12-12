@@ -1,6 +1,8 @@
 {
     "name": "drupal/thunder_admin",
     "type": "drupal-theme",
+    "description": "Drupal admin theme for Thunder distribution",
+    "license": "GPL-2.0+",
     "authors": [
         {
             "name": "Christian Fritsch",
