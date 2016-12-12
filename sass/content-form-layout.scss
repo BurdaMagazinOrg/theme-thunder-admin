@@ -5,40 +5,51 @@
 
 @import 'variables';
 
+$advanced-sidebar-fixed-width-small: 300px;
+$advanced-sidebar-fixed-width: 400px;
+$advanced-sidebar-fluid-width: 40%;
+
 /**
  * Node add/edit form layout
  */
-.form__advanced-toggle {
+
+.node-form__layout {
+  box-sizing: border-box;
+}
+
+/* Default for the case that no JS is available */
+[data-toggle-advanced-sidebar-tray] {
   display: none;
 }
 
+/**
+ * Advanced sidebar tray basics for small screens and JS:
+ *
+ */
 .js body.advanced-sidebar-tray {
 
-  @media (min-width: 1600px) {
-    margin-right: 40%;
+  /* Override the toolbar css and always position it fixed to the top */
+  .toolbar-bar {
+    position: fixed;
   }
 
   .node-form__advanced {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 300px;
+    width: $advanced-sidebar-fixed-width-small;
     left: 100%;
-    overflow-y: scroll;
-    overflow-x: visible;
+    overflow: auto;
     transform: translate3d(0, 0, 0);
+    z-index: 1000;
+  }
 
-    @media (min-width: $breakpoint-s) {
-      width: 400px;
-    }
-    @media (min-width: 1600px) {
-      width: 40%;
-      transform: translate3d(-100%, 0, 0);
-    }
+  /* Show the toggle buttons for the advanced sidebar tray. */
+  [data-toggle-advanced-sidebar-tray] {
+    display: block;
   }
 
   .form__advanced-toggle {
-    display: block;
     position: absolute;
     top: 0;
     right: 0;
@@ -46,71 +57,21 @@
     width: 36px;
     height: 100%;
 
-    @media (min-width: 1600px) {
-      display: none;
-    }
   }
 
-  /* Layout for situations where there's no toolbar */
-  &:not(.toolbar-vertical):not(.toolbar-horizontal) {
-    @media (min-width: 1200px) {
-      margin-right: 400px;
-    }
-    @media (min-width: 1600px) {
-      margin-right: 40%;
-    }
-    .node-form__advanced {
-      @media (min-width: 1200px) {
-        transform: translate3d(-100%, 0, 0);
-      }
-    }
-    .form__advanced-toggle {
-      @media (min-width: 1200px) {
-        display: none;
-      }
-    }
-  }
 
-  /* React to a vertical toolbar layout */
+  /* A vertical toolbar layout */
   &.toolbar-vertical {
 
     .node-form__advanced {
       top: 39px;
     }
 
-    /* Make room for the advanced-sidebar-tray in open state */
-    &:not(.toolbar-tray-open) {
-      @media (min-width: 1200px) and (max-width: 1599px) {
-        margin-right: 400px;
-
-        .form__advanced-toggle {
-          display: none;
-        }
-
-        .node-form__advanced {
-          transform: translate3d(-100%, 0, 0);
-        }
-      }
-    }
-
-    &.toolbar-tray-open {
-      @media (min-width: 1440px) and (max-width: 1599px) {
-        margin-right: 400px;
-
-        .node-form__advanced {
-          transform: translate3d(-100%, 0, 0);
-        }
-
-        .form__advanced-toggle {
-          display: none;
-        }
-      }
-
-      &.toolbar-fixed {
-        @media (max-width: 1025px) {
-          margin-left: 0;
-        }
-      }
+    /* Override the toolbar css and overlay the body with the toolbar tab by
+     * default.
+     */
+    &.toolbar-tray-open.toolbar-fixed {
+      margin-left: 0;
     }
   }
 
@@ -127,28 +88,10 @@
       }
     }
 
-    /* Make room for the advanced-sidebar-tray in open state */
-    @media (min-width: 1200px) and (max-width: 1599px) {
-      margin-right: 400px;
-
-      .node-form__advanced {
-        transform: translate3d(-100%, 0, 0);
-      }
-
-      .form__advanced-toggle {
-        display: none;
-      }
-    }
-
-
   }
 
   /* Advanced sidebar tray is explicitly set to open */
   &.advanced-sidebar-tray-open {
-    &.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
-      margin-left: 0;
-    }
-
     .node-form__advanced {
       transform: translate3d(-100%, 0, 0);
     }
@@ -156,10 +99,136 @@
 
 }
 
-.node-form__layout {
-  box-sizing: border-box;
+/**
+ * On tablets in portrait mode
+ */
+@include for-tablet-portrait-and-up {
+
 }
 
+/**
+ * On a tablet in landscape and bigger screens:
+ * - the advanced sidebar has a bigger size
+ */
+@include for-tablet-landscape-and-up {
+  .js body.advanced-sidebar-tray {
+    .node-form__advanced {
+      width: $advanced-sidebar-fixed-width;
+    }
+  }
+}
+
+/**
+ * On a bigger tablet in landscape and bigger screens:
+ * - the body will make room for the advanced sidebar if it is open
+ */
+@include for-big-tablet-landscape-and-up {
+  .js body.advanced-sidebar-tray-open {
+    margin-right: $advanced-sidebar-fixed-width;
+  }
+}
+
+/**
+ * On a  desktop screen:
+ * - the body will make room for the advanced sidebar with a fluid width
+ * - the advanced sidebar will always be shown with a fluid width
+ * - the toggle buttons will be hidden
+ */
+@include for-desktop-and-up {
+  .js body.advanced-sidebar-tray {
+    margin-right: $advanced-sidebar-fluid-width;
+
+    .node-form__advanced {
+      width: $advanced-sidebar-fluid-width;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    [data-toggle-advanced-sidebar-tray] {
+      display: none;
+    }
+  }
+}
+
+/**
+ * On a bigger desktop screen:
+ * - the body will have room on the left side for the toolbar in vertical
+ *   orientation
+ */
+@include for-big-desktop-and-up {
+  .js body.advanced-sidebar-tray {
+    &.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
+      margin-left: 240px;
+    }
+  }
+}
+
+
+/* Action bar styling */
+.node-form__actions {
+  position: relative;
+  background: white;
+  padding-right: 36px;
+}
+
+/**
+ * On a tablet portrait screen:
+ * - the action bar is fixed to the bottom of the screen
+ * - the action bar will make room for the advanced sidebar
+ */
+@include for-tablet-portrait-and-up {
+  /* Fixed action bar */
+  .node-form__actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding-left: 36px;
+    box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+
+    .advanced-sidebar-tray-open & {
+      margin-right: $advanced-sidebar-fixed-width-small;
+    }
+  }
+}
+
+/**
+ * On a tablet in landscape and bigger screens:
+ * - the action bar will make room for the advanced sidebar with a bigger size
+ */
+@include for-tablet-landscape-and-up {
+  .node-form__actions {
+    .advanced-sidebar-tray-open & {
+      margin-right: $advanced-sidebar-fixed-width;
+    }
+  }
+}
+
+/**
+ * On a desktop screen:
+ * - the action bar will make room for the advanced sidebar with a fluid size
+ */
+@include for-desktop-and-up {
+  /* Make room for an vertically oriented open toolbar tab */
+  .node-form__actions {
+    margin-right: $advanced-sidebar-fluid-width;
+  }
+}
+/**
+ * On a bigger desktop screen:
+ * - the action bar will make room on the left side for the toolbar in vertical
+ *   layout
+ */
+@include for-big-desktop-and-up {
+  /* Make room for an vertically oriented open toolbar tab */
+  .toolbar-vertical.toolbar-tray-open {
+    .node-form__actions {
+      margin-left: 240px;
+    }
+  }
+}
+
+/* Form styles for the advanced sidebar */
 .node-form__advanced {
   background: #f7f7f7;
   box-shadow: -1px 0 1px rgba(0,0,0,0.3);
@@ -178,26 +247,4 @@
     width: 100%;
     max-width: 100%;
   }
-}
-
-.node-form__actions {
-  position: relative;
-  background: white;
-  padding-right: 36px;
-  padding-left: 36px;
-  box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
-
-  @media (min-width: $breakpoint-s) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .toolbar-vertical.toolbar-tray-open & {
-    @media (min-width: 1025px) {
-      margin-left: 240px;
-    }
-  }
-
 }
