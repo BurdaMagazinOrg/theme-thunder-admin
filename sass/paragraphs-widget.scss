@@ -1,0 +1,79 @@
+.paragraph-form-item {
+
+}
+.paragraph-form-item--has-preview {
+  max-height: 80px;
+  height: 80px;
+
+  .paragraph-form-item__actions {
+    float: right;
+    margin-left: 1em;
+    border-left: 1px solid #CCC;
+    height: 100%;
+
+    .paragraph-type-title {
+      float: left;
+      width: 65%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paragraphs-remove-button-container,
+    .paragraphs-dropbutton-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 35%;
+      float: right;
+      text-align: right;
+      padding: 0;
+      height: 50%;
+    }
+  }
+}
+
+.paragraph-form-item--has-subform {
+  display: flex;
+  flex-direction: column;
+
+  .paragraph-form-item__actions {
+    margin-top: 1em;
+    display: flex;
+    order: 10;
+    flex-wrap: nowrap;
+
+    .paragraphs-remove-button-container,
+    .paragraphs-dropbutton-wrapper {
+      flex-basis: auto;
+    }
+    .paragraph-type-title {
+      flex: 1 1 auto;
+      text-align: left;
+    }
+  }
+}
+
+.paragraph-form-item__actions {
+  min-width: 160px;
+}
+
+.paragraph-form-item__preview {
+  flex: 1 1 auto;
+  max-height: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.paragraph-form-item__preview {
+  .text-formatted {
+    & * {
+      margin: 0;
+      font-size: 10px;
+    }
+  }
+}

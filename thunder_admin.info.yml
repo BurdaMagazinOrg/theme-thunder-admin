@@ -19,6 +19,8 @@ libraries-override:
 libraries-extend:
   tour/tour-styling:
     - thunder_admin/tour-styling
+  paragraphs/drupal.paragraphs.admin:
+    - thunder_admin/paragraphs.admin
 
 libraries:
   - thunder_admin/global-styling

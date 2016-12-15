@@ -16,3 +16,8 @@ form-advanced-sidebar-tray:
   css:
     layout:
       css/content-form-layout.css: {}
+
+paragraphs.admin:
+  css:
+    theme:
+      css/paragraphs-widget.css: {}
