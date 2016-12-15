@@ -1,15 +1,17 @@
+
+$paragraph-preview-height: 80px;
+
 .paragraph-form-item {
 
 }
 .paragraph-form-item--has-preview {
-  max-height: 80px;
-  height: 80px;
 
   .paragraph-form-item__actions {
     float: right;
     margin-left: 1em;
     border-left: 1px solid #CCC;
-    height: 100%;
+    max-height: $paragraph-preview-height;
+    height: $paragraph-preview-height;
 
     .paragraph-type-title {
       float: left;
@@ -64,7 +66,7 @@
 
 .paragraph-form-item__preview {
   flex: 1 1 auto;
-  max-height: 80px;
+  max-height: $paragraph-preview-height;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -76,4 +78,14 @@
       font-size: 10px;
     }
   }
+  .field {
+    height: 100%;
+  }
+  .field--name-field-media {
+    img {
+      height: $paragraph-preview-height;
+      width: auto;
+    }
+  }
+
 }
