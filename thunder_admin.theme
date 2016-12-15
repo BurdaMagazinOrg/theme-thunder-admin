@@ -11,20 +11,37 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_preprocess_HOOK() for HTML document templates.
  */
 function thunder_admin_preprocess_html(&$variables) {
-  // If on a node add or edit page, add a class for enabling advanced tray functionality.
-  $path_args = explode('/', \Drupal::request()->getPathInfo());
-  if ($suggestions = theme_get_suggestions($path_args, 'page', '-')) {
-    foreach ($suggestions as $suggestion) {
-      if ($suggestion === 'page--node-edit' ||
-          strpos($suggestion, 'page--node-add') !== FALSE ||
-          $suggestion === 'page--taxonomy-term-edit') {
-        $variables['attributes']['class'][] = 'advanced-sidebar-tray';
-      }
-    }
+  // If on a node or term add or edit page, add a class for enabling advanced
+  // tray functionality.
+  $route = Drupal::service('current_route_match')->getRouteName();
+  switch ($route) {
+    case 'entity.taxonomy_term.add_form':
+    case 'entity.taxonomy_term.edit_form':
+    case 'node.add':
+    case 'entity.node.edit_form':
+      $variables['attributes']['class'][] = 'advanced-sidebar-tray';
+      break;
   }
-
 }
 
+// @todo: remove this hook: meant for debugging all forms quickly
+function thunder_admin_form_alter(&$form, FormStateInterface $form_state) {
+  $form = $form;
+}
+
+/**
+ * Implements hook_form_taxonomy_term_channel_form_alter().
+ */
+function thunder_admin_form_taxonomy_term_channel_form_alter(&$form, FormStateInterface $form_state) {
+  _thunder_admin_content_form_alter_helper($form, $form_state);
+}
+
+/**
+ * Implements hook_form_taxonomy_term_tags_form_alter().
+ */
+function thunder_admin_form_taxonomy_term_tags_form_alter(&$form, FormStateInterface $form_state) {
+  _thunder_admin_content_form_alter_helper($form, $form_state);
+}
 
 /**
  * Implements hook_form_node_article_edit_form_alter().
@@ -51,7 +68,7 @@ function thunder_admin_form_node_article_form_alter(&$form, FormStateInterface $
 function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $form_state) {
 
   // Set classes to the paragraphs items to be able to style them.
-  if (isset($form['field_paragraphs']['widget']['#max_delta']) && $form['field_paragraphs']['widget']['#max_delta'] > 0) {
+  if (isset($form['field_paragraphs']['widget']['#max_delta']) && $form['field_paragraphs']['widget']['#max_delta'] >= 0) {
     for ($i = 0; $i <= $form['field_paragraphs']['widget']['#max_delta']; $i++) {
 
       // Add a base class to the paragraph reference field item.
