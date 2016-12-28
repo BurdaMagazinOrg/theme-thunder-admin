@@ -16,16 +16,17 @@
  */
 #}
 {{ attach_library('thunder_admin/form-advanced-sidebar-tray') }}
-<div class="node-form__layout">
-  <div class="node-form__layout-region node-form__main">
-      {{ form|without('advanced', 'actions') }}
+{{ attach_library('thunder_admin/content-form') }}
+<div class="content-form__layout">
+  <div class="content-form__layout-region content-form__main">
+    {{ form|without('advanced', 'actions') }}
   </div>
 
-  <div class="node-form__layout-region node-form__advanced">
+  <div class="content-form__layout-region content-form__advanced">
     {{ form.advanced }}
   </div>
 </div>
-<div class="node-form__actions">
+<div class="content-form__actions">
   {{ form.actions }}
-  <button class="form__advanced-toggle" data-toggle-advanced-sidebar-tray><</button>
+  <button class="content-form__advanced-toggle" data-toggle-advanced-sidebar-tray><</button>
 </div>

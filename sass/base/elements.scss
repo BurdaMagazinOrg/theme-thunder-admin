@@ -1,12 +1,27 @@
 @import 'variables';
 
+* {
+  box-sizing: inherit;
+
+  &:after,
+  &:before {
+    box-sizing: inherit;
+  }
+}
+html {
+  box-sizing: border-box;
+  font-size: $font-size-root;
+}
 /**
  * Generic elements.
  */
 body {
   color: $text-color;
   background: #fff;
-  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
+  font-size: $font-size-base;
+  font-weight: normal;
+  font-family: $font-family;
+  line-height: $line-height-base;
 }
 a,
 .link {

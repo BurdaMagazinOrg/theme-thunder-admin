@@ -1,6 +1,6 @@
 /**
  * @file
- * Styles for administration pages.
+ * Layout styles for content forms.
  */
 
 @import 'variables';
@@ -13,7 +13,7 @@ $advanced-sidebar-fluid-width: 40%;
  * Node add/edit form layout
  */
 
-.node-form__layout {
+.content-form__layout {
   box-sizing: border-box;
 }
 
@@ -33,7 +33,7 @@ $advanced-sidebar-fluid-width: 40%;
     position: fixed;
   }
 
-  .node-form__advanced {
+  .content-form__advanced {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -49,7 +49,7 @@ $advanced-sidebar-fluid-width: 40%;
     display: block;
   }
 
-  .form__advanced-toggle {
+  .content-form__advanced-toggle {
     position: absolute;
     top: 0;
     right: 0;
@@ -63,7 +63,7 @@ $advanced-sidebar-fluid-width: 40%;
   /* A vertical toolbar layout */
   &.toolbar-vertical {
 
-    .node-form__advanced {
+    .content-form__advanced {
       top: 39px;
     }
 
@@ -78,12 +78,12 @@ $advanced-sidebar-fluid-width: 40%;
   /* React to a horizontal toolbar layout */
   &.toolbar-horizontal {
 
-    .node-form__advanced {
+    .content-form__advanced {
       top: 39px;
     }
 
     &.toolbar-tray-open {
-      .node-form__advanced {
+      .content-form__advanced {
         top: 79px;
       }
     }
@@ -92,7 +92,7 @@ $advanced-sidebar-fluid-width: 40%;
 
   /* Advanced sidebar tray is explicitly set to open */
   &.advanced-sidebar-tray-open {
-    .node-form__advanced {
+    .content-form__advanced {
       transform: translate3d(-100%, 0, 0);
     }
   }
@@ -112,7 +112,7 @@ $advanced-sidebar-fluid-width: 40%;
  */
 @include for-tablet-landscape-and-up {
   .js body.advanced-sidebar-tray {
-    .node-form__advanced {
+    .content-form__advanced {
       width: $advanced-sidebar-fixed-width;
     }
   }
@@ -138,7 +138,7 @@ $advanced-sidebar-fluid-width: 40%;
   .js body.advanced-sidebar-tray {
     margin-right: $advanced-sidebar-fluid-width;
 
-    .node-form__advanced {
+    .content-form__advanced {
       width: $advanced-sidebar-fluid-width;
       transform: translate3d(-100%, 0, 0);
     }
@@ -164,7 +164,7 @@ $advanced-sidebar-fluid-width: 40%;
 
 
 /* Action bar styling */
-.node-form__actions {
+.content-form__actions {
   position: relative;
   background: white;
   padding-right: 36px;
@@ -177,14 +177,12 @@ $advanced-sidebar-fluid-width: 40%;
  */
 @include for-tablet-portrait-and-up {
   /* Fixed action bar */
-  .node-form__actions {
+  .content-form__actions {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-
     padding-left: 36px;
-    box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
 
     .advanced-sidebar-tray-open & {
       margin-right: $advanced-sidebar-fixed-width-small;
@@ -197,7 +195,7 @@ $advanced-sidebar-fluid-width: 40%;
  * - the action bar will make room for the advanced sidebar with a bigger size
  */
 @include for-tablet-landscape-and-up {
-  .node-form__actions {
+  .content-form__actions {
     .advanced-sidebar-tray-open & {
       margin-right: $advanced-sidebar-fixed-width;
     }
@@ -210,7 +208,7 @@ $advanced-sidebar-fluid-width: 40%;
  */
 @include for-desktop-and-up {
   /* Make room for an vertically oriented open toolbar tab */
-  .node-form__actions {
+  .content-form__actions {
     margin-right: $advanced-sidebar-fluid-width;
   }
 }
@@ -222,16 +220,14 @@ $advanced-sidebar-fluid-width: 40%;
 @include for-big-desktop-and-up {
   /* Make room for an vertically oriented open toolbar tab */
   .toolbar-vertical.toolbar-tray-open {
-    .node-form__actions {
+    .content-form__actions {
       margin-left: 240px;
     }
   }
 }
 
 /* Form styles for the advanced sidebar */
-.node-form__advanced {
-  background: #f7f7f7;
-  box-shadow: -1px 0 1px rgba(0,0,0,0.3);
+.content-form__advanced {
 
   /* @todo File an issue to add a standard class to all text-like inputs */
   .form-autocomplete,

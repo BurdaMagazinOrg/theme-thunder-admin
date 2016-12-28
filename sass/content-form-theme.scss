@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Styles for content forms.
+ */
+
+@import 'variables';
+
+.content-form__advanced {
+  background: $primary-color-darker;
+}
+
+@include for-tablet-portrait-and-up {
+  /* Fixed action bar */
+  .content-form__actions {
+    background: $primary-color-darker;
+  }
+}

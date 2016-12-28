@@ -12,7 +12,7 @@
     "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",
     "serve": "browser-sync start --proxy \"thunder.dev\" --files \"css/**/*.css, js/*.js\"",
     "build": "npm run styles && npm run js && npm run images",
-    "watch:styles": "onchange \"sass\" -- npm run styles",
+    "watch:styles": "onchange \"sass\" \"sass-includes\" -- npm run styles",
     "watch:js": "onchange \"js\" -- npm run js",
     "watch:images": "onchange \"images-originals\" -- npm run images",
     "watch:all": "npm-run-all -p serve watch:styles watch:js watch:images",

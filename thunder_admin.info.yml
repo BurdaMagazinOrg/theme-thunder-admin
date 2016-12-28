@@ -10,6 +10,7 @@ libraries-override:
         css/base/elements.css: false
       component:
         css/components/buttons.css: false
+        css/components/form.css: false
   seven/install-page:
     css:
       theme:
