@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "node-sass --output-style compressed --include-path sass-includes -o css sass",
-    "poststyles": "postcss -u autoprefixer -r css/*",
+    "poststyles": "postcss -u autoprefixer -r css/*.css && postcss -u autoprefixer -r css/**/*.css",
     "js": "eslint js",
     "images": "imagemin images-originals/* -o images",
     "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",

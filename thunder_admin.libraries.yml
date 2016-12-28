@@ -7,6 +7,10 @@ tour-styling:
 global-styling:
   version: 1.x
   css:
+    base:
+      css/base/elements.css: {}
+    component:
+      css/components/buttons.css: {}
     theme:
       css/backend.css: {}
 

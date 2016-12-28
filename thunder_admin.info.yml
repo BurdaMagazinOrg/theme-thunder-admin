@@ -3,10 +3,13 @@ type: theme
 core: 8.x
 base theme: seven
 
-stylesheets-remove:
- - '@stable/css/node/node.module.css'
-
 libraries-override:
+  seven/global-styling:
+    css:
+      base:
+        css/base/elements.css: false
+      component:
+        css/components/buttons.css: false
   seven/install-page:
     css:
       theme:
@@ -14,7 +17,15 @@ libraries-override:
   node/drupal.node:
     css:
       layout:
-        /core/themes/stable/css/node/node.module.css: css/content-form-layout.css
+        /core/themes/stable/css/node/node.module.css: false
+  node/form:
+    css:
+      layout:
+        /core/themes/stable/css/node/node.module.css: false
+  thunder_article/article_form_styling:
+    css:
+      theme:
+        css/article-form.css: false
 
 libraries-extend:
   tour/tour-styling:
