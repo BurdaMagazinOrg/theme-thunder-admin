@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -21,6 +22,42 @@ function thunder_admin_preprocess_html(&$variables) {
     case 'entity.node.edit_form':
       $variables['attributes']['class'][] = 'advanced-sidebar-tray';
       break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provide additional suggestions for form inputs and buttons.
+ */
+function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) {
+  if (isset($variables['element']['#type']) && $variables['element']['#type'] == 'submit') {
+    if (isset($variables['element']['#paragraphs_mode'])) {
+      $suggestions[] = 'input__submit__paragraphs_' . $variables['element']['#paragraphs_mode'];
+    }
+    /*if (isset($variables['element']['#ief_form'])
+      && (
+        $variables['element']['#ief_form'] == 'add'
+        || $variables['element']['#ief_form'] == 'ief_add_existing'
+      )
+    ) {
+      $suggestions[] = 'input__submit__add';
+    }
+    elseif (isset($variables['element']['#ief_row_form']) && $variables['element']['#ief_row_form'] == 'edit') {
+      $suggestions[] = 'input__submit__edit';
+    }
+    elseif (isset($variables['element']['#ief_row_form']) && $variables['element']['#ief_row_form'] == 'remove') {
+      $suggestions[] = 'input__submit__delete';
+    }
+    elseif (
+      isset($variables['element']['#parents']) && (
+        in_array('ief_add_save', $variables['element']['#parents'], TRUE)
+        || in_array('ief_edit_save', $variables['element']['#parents'], TRUE)
+        || in_array('ief_reference_save', $variables['element']['#parents'], TRUE)
+      )
+    ) {
+      $suggestions[] = 'input__submit__save';
+    }*/
   }
 }
 
