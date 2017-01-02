@@ -11,6 +11,7 @@ global-styling:
       css/base/elements.css: {}
     component:
       css/components/buttons.css: {}
+      css/components/dropbutton.css: {}
       css/components/form.css: {}
       css/components/tabledrag.css: {}
     theme:
