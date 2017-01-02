@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme implementation to present a video media entity in a paragraph preview.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes.addClass('paragraph-preview') }}>
+  <div class="paragraph-preview__thumbnail">
+    {{ content.thumbnail }}
+  </div>
+  <div class="paragraph-preview__data">
+    {{ content|without('thumbnail') }}
+  </div>
+</article>
