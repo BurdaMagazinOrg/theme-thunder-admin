@@ -1,9 +1,14 @@
 /**
  * Form elements.
  */
+@import 'variables';
+
 form {
   margin: 0;
   padding: 0;
+}
+fieldset {
+  border: 1px solid $gray-lighter;
 }
 fieldset:not(.fieldgroup) {
   background-color: #fcfcfa;
@@ -176,22 +181,19 @@ input.form-date,
 input.form-time,
 textarea.form-textarea {
   padding: .3em .4em .3em .5em; /* LTR */
+  min-height: 35px;
   max-width: 100%;
-  border: 1px solid #b8b8b8;
-  border-top-color: #999;
+  border: 1px solid $gray-lighter;
   background: #fff;
-  color: #333;
-  border-radius: 2px;
-  background: #fcfcfa;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .125);
+  color: $text-color;
+  border-radius: $base-border-radius;
   font-size: 1em;
-  color: #595959;
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 [dir="rtl"] textarea.form-textarea {
   padding: .3em .5em .3em .4em;
 }
+
 .form-text:focus,
 .form-tel:focus,
 .form-email:focus,
@@ -235,30 +237,25 @@ select {
   select {
     cursor: pointer;
     -webkit-appearance: none;
+    min-height: 35px;
     padding: 1px 1.571em 1px 0.5em; /* LTR */
-    border: 1px solid #a6a6a6;
-    border-radius: 0.143em;
+    border: 1px solid $gray-lighter;
+    border-radius: $base-border-radius;
     background:
-      url(../../images/icons/caret-down.svg) no-repeat 99% 63%,
-      -webkit-linear-gradient(top, #f6f6f3, #e7e7df); /* LTR */
-    text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+      url(../../images/icons/caret-down.svg) no-repeat 99% 50% #FFFFFF; /* LTR */
+    color: $text-color;
     font-size: 0.875rem;
-    -webkit-transition: all 0.1s;
     transition: all 0.1s;
     -webkit-font-smoothing: antialiased;
   }
   [dir="rtl"] select {
     padding: 1px 0.714em 1px 1.571em;
-    background-position: 1% 63%, 0 0;
+    background-position: 1% 50%, 0 0;
   }
   select:focus,
   select:hover {
-    background-image: url(../../images/icons/caret-down.svg),
-    -webkit-linear-gradient(top, #fcfcfa, #e9e9dd);
-    color: #1a1a1a;
-  }
-  select:hover {
-    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.125);
+    background-image: url(../../images/icons/caret-down.svg);
+
   }
 }
 

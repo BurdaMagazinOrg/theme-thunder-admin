@@ -16,6 +16,21 @@
   }
 }
 
+.content-form__main > fieldset,
+fieldset.content-form__form-section {
+  background: $primary-color-lightest;
+  border-radius: $base-border-radius;
+  padding-top: 2.5rem;
+
+  & > legend {
+    padding-left: 0.4em;
+    text-transform: none;
+    font-size: 1rem;
+    border-left: 5px solid $primary-color-intense;
+    top: 1rem;
+  }
+}
+
 .entity-meta--advanced {
   background: transparent;
   border: 0;
