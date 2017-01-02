@@ -39,7 +39,7 @@ $button-border-radius: $base-border-radius;
   border-radius: $button-border-radius;
   background-color: #FAFAFA;
   background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
-  color: #333;
+  color: $primary-color;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.875rem;  /* 5 */

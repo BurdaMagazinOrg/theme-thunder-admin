@@ -59,9 +59,12 @@ fieldset:not(.fieldgroup) > legend {
 }
 label {
   display: table;
-  margin: 0 0 0.1em;
+  margin-left: 0.3em;
   padding: 0;
   font-weight: bold;
+  color: $gray-medium;
+  text-transform: uppercase;
+  font-size: $font-size-tiny;
 }
 label.error {
   color: #a51b00;
