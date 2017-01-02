@@ -15,3 +15,43 @@
     background: $primary-color-darker;
   }
 }
+
+.entity-meta--advanced {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-size: 0.75rem;
+  margin: $base-space $base-space-2x;
+
+  .entity-meta__header,
+  details {
+    background: transparent;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+
+  .entity-meta__title {
+    text-shadow: none;
+  }
+
+  details {
+    border-top: 2px solid $primary-color-dark;
+    border-bottom: 2px solid $primary-color-dark;
+
+    & + details {
+      border-top: 0;
+    }
+
+    &[open] {
+      background-image: none;
+      border-top-width: 2px;
+    }
+
+    & > summary {
+      text-shadow: none;
+      font-size: 0.875rem;
+    }
+  }
+
+}

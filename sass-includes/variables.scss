@@ -25,6 +25,11 @@ $font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida San
 
 $line-height-base: 1.538461538em; /* 20px/13px */
 
+/* Spacing */
+
+$base-space: 0.625rem; /* 10px/16px */
+$base-space-2x: 1.25rem; /* 20px/16px */
+
 /* Device breakpoints */
 
 @mixin for-phone-only {

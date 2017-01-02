@@ -129,8 +129,8 @@ label[for] {
 
 
 /* Filter */
-ul.tips,
-div.description,
+.tips,
+.description,
 .form-item .description {
   margin: 0.2em 0 0 0;
   color: #595959;
@@ -141,7 +141,7 @@ div.description,
   color: #a51b00;
 }
 
-ul.tips li {
+.tips li {
   margin: 0.25em 0 0.25em 1.5em; /* LTR */
 }
 [dir="rtl"] ul.tips li {
@@ -239,7 +239,7 @@ select {
     border: 1px solid #a6a6a6;
     border-radius: 0.143em;
     background:
-      url(../../../../misc/icons/333333/caret-down.svg) no-repeat 99% 63%,
+      url(../../images/icons/caret-down.svg) no-repeat 99% 63%,
       -webkit-linear-gradient(top, #f6f6f3, #e7e7df); /* LTR */
     text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
     font-size: 0.875rem;
@@ -253,7 +253,7 @@ select {
   }
   select:focus,
   select:hover {
-    background-image: url(../../../../misc/icons/333333/caret-down.svg),
+    background-image: url(../../images/icons/caret-down.svg),
     -webkit-linear-gradient(top, #fcfcfa, #e9e9dd);
     color: #1a1a1a;
   }
@@ -334,6 +334,15 @@ select {
 
 /* Exceptions */
 #diff-inline-form select,
-div.filter-options select {
+.filter-options select {
   padding: 0;
+}
+
+/* Inverted color scheme */
+.color-scheme-inverted {
+  .tips,
+  .description,
+  .form-item .description {
+    color: white;
+  }
 }

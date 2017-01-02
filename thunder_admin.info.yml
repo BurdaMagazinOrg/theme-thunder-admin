@@ -27,6 +27,14 @@ libraries-override:
     css:
       theme:
         css/article-form.css: false
+  toolbar/toolbar:
+    css:
+      theme:
+        /core/themes/stable/css/toolbar/toolbar.theme.css: css/toolbar.theme.css
+  admin_toolbar/toolbar.tree:
+    css:
+      theme:
+        css/admin.toolbar.css: css/admin.toolbar.css
 
 libraries-extend:
   tour/tour-styling:

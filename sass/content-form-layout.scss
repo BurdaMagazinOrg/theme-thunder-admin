@@ -9,6 +9,9 @@ $advanced-sidebar-fixed-width-small: 300px;
 $advanced-sidebar-fixed-width: 400px;
 $advanced-sidebar-fluid-width: 40%;
 
+/* @todo: a fixed height is only working if we refactor the dropbutton */
+$action-bar-height: 50px;
+
 /**
  * Node add/edit form layout
  */
@@ -42,6 +45,7 @@ $advanced-sidebar-fluid-width: 40%;
     overflow: auto;
     transform: translate3d(0, 0, 0);
     z-index: 1000;
+    padding-bottom: $action-bar-height;
   }
 
   /* Show the toggle buttons for the advanced sidebar tray. */
@@ -62,7 +66,6 @@ $advanced-sidebar-fluid-width: 40%;
 
   /* A vertical toolbar layout */
   &.toolbar-vertical {
-
     .content-form__advanced {
       top: 39px;
     }
@@ -77,17 +80,9 @@ $advanced-sidebar-fluid-width: 40%;
 
   /* React to a horizontal toolbar layout */
   &.toolbar-horizontal {
-
     .content-form__advanced {
       top: 39px;
     }
-
-    &.toolbar-tray-open {
-      .content-form__advanced {
-        top: 79px;
-      }
-    }
-
   }
 
   /* Advanced sidebar tray is explicitly set to open */
@@ -95,6 +90,7 @@ $advanced-sidebar-fluid-width: 40%;
     .content-form__advanced {
       transform: translate3d(-100%, 0, 0);
     }
+
   }
 
 }
@@ -121,10 +117,15 @@ $advanced-sidebar-fluid-width: 40%;
 /**
  * On a bigger tablet in landscape and bigger screens:
  * - the body will make room for the advanced sidebar if it is open
+ * - the horizontal toolbar tray will make room for the sidebar
  */
 @include for-big-tablet-landscape-and-up {
   .js body.advanced-sidebar-tray-open {
     margin-right: $advanced-sidebar-fixed-width;
+
+    .toolbar-tray-horizontal {
+      margin-right: $advanced-sidebar-fixed-width;
+    }
   }
 }
 
@@ -133,6 +134,7 @@ $advanced-sidebar-fluid-width: 40%;
  * - the body will make room for the advanced sidebar with a fluid width
  * - the advanced sidebar will always be shown with a fluid width
  * - the toggle buttons will be hidden
+ * - the horizontal toolbar tray will make room for the sidebar
  */
 @include for-desktop-and-up {
   .js body.advanced-sidebar-tray {
@@ -145,6 +147,10 @@ $advanced-sidebar-fluid-width: 40%;
 
     [data-toggle-advanced-sidebar-tray] {
       display: none;
+    }
+
+    .toolbar-tray-horizontal {
+      margin-right: $advanced-sidebar-fluid-width;
     }
   }
 }

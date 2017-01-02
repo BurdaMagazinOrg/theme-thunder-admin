@@ -80,6 +80,7 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
 
   $form['advanced']['#type'] = 'container';
   $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
+  $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
   $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
   $author_info = (!empty($node->getOwner()->getDisplayName())) ? $node->getOwner()->getDisplayName() : t('Anonymous');
   $form['meta'] = array(

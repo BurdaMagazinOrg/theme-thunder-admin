@@ -6,6 +6,7 @@
  * should appear as a button.
  */
 
+@import 'variables';
 $button-border-radius: 4px;
 
 /**
@@ -33,13 +34,12 @@ $button-border-radius: 4px;
   -webkit-appearance: none;  /* 3 */
   -moz-appearance: none;  /* 3 */
   padding: 4px 1.5em;  /* 4 */
-  border: 1px solid #a6a6a6;
+  border: 1px solid $primary-color-intense;
   border-radius: $button-border-radius;
-  background-color: #f2f1eb;
-  background-image:   linear-gradient(to bottom, #f6f6f3, #e7e7df);
+  background-color: #FAFAFA;
+  background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
   color: #333;
   text-decoration: none;
-  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
   font-weight: 600;
   font-size: 0.875rem;  /* 5 */
   transition: all 0.1s;
@@ -202,4 +202,28 @@ $button-border-radius: 4px;
   border: 0;
   box-shadow: none;
   background: none;
+}
+
+.button__icon,
+.button__text {
+  display: inline-block;
+}
+
+.button--icon-only {
+  background: transparent;
+  border: 0;
+
+  &:focus,
+  &:hover {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .button__text {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+  }
 }
