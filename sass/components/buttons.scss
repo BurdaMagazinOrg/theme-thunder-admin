@@ -42,9 +42,11 @@ $button-border-radius: $base-border-radius;
   color: $primary-color;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.875rem;  /* 5 */
+  font-size: 0.75rem;  /* 5 */
   transition: all 0.1s;
   -webkit-font-smoothing: antialiased;  /* 6 */
+  text-transform: uppercase;
+  min-height: 30px;
 }
 .button:hover,
 .button:focus {
