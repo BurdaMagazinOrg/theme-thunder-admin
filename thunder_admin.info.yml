@@ -4,6 +4,11 @@ core: 8.x
 base theme: seven
 
 libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/form.css: false
+        css/components/tabledrag.css: false
   seven/global-styling:
     css:
       base:

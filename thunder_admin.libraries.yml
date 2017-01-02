@@ -12,6 +12,7 @@ global-styling:
     component:
       css/components/buttons.css: {}
       css/components/form.css: {}
+      css/components/tabledrag.css: {}
     theme:
       css/backend.css: {}
       css/color-scheme-inverted.css: {}
