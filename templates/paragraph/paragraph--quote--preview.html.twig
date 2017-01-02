@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Default theme implementation to display a quote paragraph in preview view mode.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -45,5 +45,10 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 view_mode == 'preview' ? 'paragraph-form-item__preview',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  {{ content }}
+  {# Unify markup with media paragraph preview #}
+  <article class="paragraph-preview">
+    <div class="paragraph-preview__data">
+      {{ content }}
+    </div>
+  </article>
 </div>

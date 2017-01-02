@@ -1,10 +1,14 @@
 
+@import 'variables';
+
 $paragraph-preview-height: 110px;
 $paragraph-preview-thumbnail-height: 90px;
+$paragraph-preview-thumbnail-width: 150px;
 
 .paragraph-form-item {
 
 }
+
 .paragraph-form-item--has-preview {
 
   .paragraph-form-item__actions {
@@ -72,34 +76,56 @@ $paragraph-preview-thumbnail-height: 90px;
   overflow: hidden;
 }
 
-.paragraph-form-item__preview {
-  .text-formatted {
-    & * {
-      margin: 0;
-      font-size: 10px;
-    }
-  }
-  .field {
-    height: 100%;
-  }
-  .field--name-field-media {
-    img {
-      height: $paragraph-preview-thumbnail-height;
-      width: auto;
-    }
-  }
-}
 
 .paragraph-preview {
   display: flex;
 }
 .paragraph-preview__thumbnail {
   margin-right: 1em;
+  width: $paragraph-preview-thumbnail-width;
+  height: $paragraph-preview-thumbnail-height;
+  border: 1px solid white;
+
   img {
     height: $paragraph-preview-thumbnail-height;
     width: auto;
   }
+
+  .thumbnail-quadruple {
+    display: flex;
+    flex-wrap: wrap;
+    background: $gray-lightest;
+    justify-content: space-between;
+    max-height: 100%;
+
+    .thumbnail-quadruple__item {
+      flex: 0 0 74px;
+      max-width: 74px;
+      height: 44px;
+      max-height: 44px;
+      border: 1px solid white;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+  }
+
 }
 .paragraph-preview__data {
   flex: 1 1 auto;
+  font-size: 10px;
+  line-height: 1.3em;
+
+  .text-formatted {
+    & * {
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.3em;
+    }
+  }
 }

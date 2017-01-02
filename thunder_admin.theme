@@ -30,6 +30,18 @@ function thunder_admin_preprocess_html(&$variables) {
  *
  * Provide additional suggestions for form inputs and buttons.
  */
+function thunder_admin_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $suggestions = $suggestions;
+  $view_mode = $variables['element']['#view_mode'];
+  $field_name = $variables['element']['#field_name'];
+  $suggestions[] = 'field__' . $field_name . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provide additional suggestions for form inputs and buttons.
+ */
 function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) {
   if (isset($variables['element']['#type']) && $variables['element']['#type'] == 'submit') {
     if (isset($variables['element']['#paragraphs_mode'])) {

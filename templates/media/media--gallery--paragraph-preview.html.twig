@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme implementation to present a image media entity in a paragraph preview.
+ * Theme implementation to present a gallery media entity in a paragraph preview.
  *
  * Available variables:
  * - name: Name of the media.
@@ -14,9 +14,9 @@
 #}
 <article{{ attributes.addClass('paragraph-preview') }}>
   <div class="paragraph-preview__thumbnail">
-    {{ content.field_image }}
+    {{ content.field_media_images }}
   </div>
   <div class="paragraph-preview__data">
-    {{ content|without('field_image') }}
+    {{ content|without('field_media_images') }}
   </div>
 </article>
