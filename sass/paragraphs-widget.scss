@@ -1,10 +1,17 @@
 
 @import 'variables';
 
-$paragraph-preview-height: 110px;
+$paragraph-preview-height: 90px;
 $paragraph-preview-thumbnail-height: 90px;
 $paragraph-preview-thumbnail-width: 150px;
 
+.field--name-field-paragraphs.form-wrapper {
+  .field-multiple-table {
+    tbody > tr {
+      background: $primary-color-lighter;
+    }
+  }
+}
 .paragraph-form-item {
 
 }
@@ -14,7 +21,7 @@ $paragraph-preview-thumbnail-width: 150px;
   .paragraph-form-item__actions {
     float: right;
     margin-left: 1em;
-    border-left: 1px solid #CCC;
+
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
 
@@ -27,6 +34,7 @@ $paragraph-preview-thumbnail-width: 150px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      border-right: 1px solid #CCC;
     }
 
     .paragraphs-remove-button-container,
@@ -71,6 +79,7 @@ $paragraph-preview-thumbnail-width: 150px;
 
 .paragraph-form-item__preview {
   flex: 1 1 auto;
+  height: $paragraph-preview-height;
   max-height: $paragraph-preview-height;
   text-overflow: ellipsis;
   overflow: hidden;
