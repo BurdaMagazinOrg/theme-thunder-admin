@@ -94,6 +94,7 @@ $paragraph-preview-thumbnail-width: 150px;
   width: $paragraph-preview-thumbnail-width;
   height: $paragraph-preview-thumbnail-height;
   border: 1px solid white;
+  overflow: hidden;
 
   img {
     height: $paragraph-preview-thumbnail-height;
@@ -127,13 +128,13 @@ $paragraph-preview-thumbnail-width: 150px;
 }
 .paragraph-preview__data {
   flex: 1 1 auto;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.3em;
 
   .text-formatted {
     & * {
       margin: 0;
-      font-size: 10px;
+      font-size: 12px;
       line-height: 1.3em;
     }
   }
