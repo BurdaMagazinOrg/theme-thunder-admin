@@ -139,10 +139,9 @@
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-action button:focus,
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus {
   background-color: #f9f8f6;
-  background-image: -webkit-linear-gradient(top, #fcfcfa, #e9e9dd);
-  background-image: linear-gradient(to bottom, #fcfcfa, #e9e9dd);
-  color: #1a1a1a;
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.125);
+  background-color: #f9f8f6;
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
+  color: $primary-color;
   z-index: 3;
 }
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-action a:active,
@@ -171,9 +170,9 @@
   padding: 4px 1.5em;
   border: 1px solid #a6a6a6;
   border-radius: $base-border-radius!important;
-  background-color: #f2f1eb;
-  background-image: linear-gradient(to bottom, #f6f6f3, #e7e7df);
-  color: #333333;
+  background-color: $gray-lightest;
+  background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
+  color: $primary-color;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.1s;
@@ -182,20 +181,15 @@
 }
 .dropbutton-single .dropbutton-action a:hover,
 .dropbutton-single .dropbutton-action a:focus {
-  background-color: #f9f8f6;
-  background-image: linear-gradient(to bottom, #fcfcfa, #e9e9dd);
-  color: #1a1a1a;
+  background-color: $gray-lighter;
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
+  color: $primary-color;
   text-decoration: none;
   outline: none;
 }
-.dropbutton-single .dropbutton-action a:hover,
-.dropbutton-single .dropbutton-action a:focus {
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.125);
-}
 .dropbutton-single .dropbutton-action a:active {
-  background-color: #dfdfd9;
-  background-image: linear-gradient(to bottom, #f6f6f3, #e7e7df);
-  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  background-color: $gray-lighter;
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
   transition: none;
 }
 
@@ -224,22 +218,18 @@
 }
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
-  background-color: #f9f8f6;
-  background-image: -webkit-linear-gradient(top, #fcfcfa, #e9e9dd);
-  background-image: linear-gradient(to bottom, #fcfcfa, #e9e9dd);
-  color: #1a1a1a;
+  background-color: $gray-lighter;
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
+  color: $primary-color;
   text-decoration: none;
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.125);
   z-index: 3;
 }
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:active {
-  background-color: #dfdfd9;
-  background-image: -webkit-linear-gradient(top, #f6f6f3, #e7e7df);
-  background-image: linear-gradient(to bottom, #f6f6f3, #e7e7df);
-  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  background-color: $gray-lighter;
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
 }
 .dropbutton-arrow {
-  border-top-color: #333;
+  border-top-color: $primary-color;
   right: 35%; /* LTR */
   top: 54%;
 }
@@ -248,7 +238,7 @@
   right: auto;
 }
 .dropbutton-multiple.open .dropbutton-arrow {
-  border-bottom: 0.3333em solid #333;
+  border-bottom: 0.3333em solid $primary-color;
   border-top-color: transparent;
   top: 0.6667em;
 }
@@ -262,49 +252,40 @@
   font-weight: 700;
 }
 .js .form-actions .dropbutton-widget {
-  border-color: #1e5c90;
-  background-color: #0071b8;
-  background-image: -webkit-linear-gradient(top, #007bc6, #0071b8);
-  background-image: linear-gradient(to bottom, #007bc6, #0071b8);
+  border-color: $primary-color-intense;
+  background-color: $primary-color;
+  background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
   position: relative;
 }
 .form-actions .dropbutton-multiple.open .dropbutton-widget {
-  background-image: -webkit-linear-gradient(top, #007bc6, #0071b8);
-  background-image: linear-gradient(to bottom, #007bc6, #0071b8);
+  background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:hover,
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:focus {
-  background-color: #2369a6;
-  background-image: -webkit-linear-gradient(top, #0c97ed, #1f86c7);
-  background-image: linear-gradient(to bottom, #0c97ed, #1f86c7);
-  box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
+  background-color: $primary-color-intense;
+  background-image: linear-gradient(0deg, $primary-color-intense 0%, $primary-color 100%);
   color: #fff;
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-action .button:active {
-  background-image: -webkit-linear-gradient(top, #08639b, #0071b8);
-  background-image: linear-gradient(to bottom, #08639b, #0071b8);
+  background-image: linear-gradient(0deg, $primary-color-intense 0%, $primary-color 100%);
   border-color: #144b78;
-  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button,
 .form-actions .dropbutton .secondary-action {
-  border-color: #1e5c90;
+  border-color: $primary-color-intense;
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
-  background-image: -webkit-linear-gradient(top, #007bc6, #0071b8);
-  background-image: linear-gradient(to bottom, #007bc6, #0071b8);
+  background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
-  background-color: #2369a6;
-  background-image: -webkit-linear-gradient(top, #0c97ed, #1f86c7);
-  background-image: linear-gradient(to bottom, #0c97ed, #1f86c7);
+  background-color: $primary-color-intense;
+  background-image: linear-gradient(0deg, $primary-color-intense 0%, $primary-color 100%);
 }
 .js .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:active {
-  background-image: -webkit-linear-gradient(top, #08639b, #0071b8);
-  background-image: linear-gradient(to bottom, #08639b, #0071b8);
-  border-color: #144b78;
-  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  background-color: $primary-color-intense;
+  background-image: linear-gradient(0deg, $primary-color-intense 0%, $primary-color 100%);
+  border-color: $primary-color;
 }
 .form-actions .dropbutton-arrow {
   border-top-color: #fff;
