@@ -31,10 +31,27 @@ function thunder_admin_preprocess_html(&$variables) {
  * Provide additional suggestions for form inputs and buttons.
  */
 function thunder_admin_theme_suggestions_field_alter(&$suggestions, $variables) {
-  $suggestions = $suggestions;
   $view_mode = $variables['element']['#view_mode'];
   $field_name = $variables['element']['#field_name'];
   $suggestions[] = 'field__' . $field_name . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provide additional suggestions for multiple value field widget in form.
+ */
+function thunder_admin_theme_suggestions_field_multiple_value_form_alter(&$suggestions, $variables) {
+  $suggestions[] = 'field_multiple_value_form__' . $variables['element']['#field_name'];
+}
+
+/**
+ * Implements theme_preprocess_field_multiple_value_form().
+ *
+ * Add themable classes to multiple value field table for paragraphs field.
+ */
+function thunder_admin_preprocess_field_multiple_value_form__field_paragraphs(&$variables) {
+  $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
 }
 
 /**
@@ -177,6 +194,7 @@ function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $fo
       }
       elseif (isset($form['field_paragraphs']['widget'][$i]['subform'])) {
         $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'paragraph-form-item--has-subform';
+        $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'color-scheme-inverted';
       }
 
       // Add a class to the container holding the actions.

@@ -5,13 +5,26 @@ $paragraph-preview-height: 90px;
 $paragraph-preview-thumbnail-height: 90px;
 $paragraph-preview-thumbnail-width: 150px;
 
-.field--name-field-paragraphs.form-wrapper {
-  .field-multiple-table {
-    tbody > tr {
-      background: $primary-color-lighter;
+/**
+ * Paragraph multi reference field item's draggable row:
+ * 1. separate paragraph "items" visually and make room for [add] buttons
+ */
+.field-multiple-table--paragraphs {
+  & > thead {
+    th {
+      border: 0;
+      background: transparent;
+    }
+    .field-label {
+      padding-left: 0;
     }
   }
+  & > tbody > tr {
+    background: $primary-color-lighter;
+    border-bottom: 30px solid $primary-color-lightest; /* 1 */
+  }
 }
+
 .paragraph-form-item {
 
 }
@@ -52,9 +65,17 @@ $paragraph-preview-thumbnail-width: 150px;
   }
 }
 
+/**
+ * Editing mode for a paragraph item:
+ * 1. bleed the background into the padding on the table row.
+ */
 .paragraph-form-item--has-subform {
   display: flex;
   flex-direction: column;
+  background: $primary-color-darkest;
+  margin-top: -10px;  /* 1 */
+  margin-bottom: -10px;  /* 1 */
+  padding: 20px;
 
   .paragraph-form-item__actions {
     margin-top: 1em;
