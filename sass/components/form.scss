@@ -449,4 +449,9 @@ select {
   .form-item .description {
     color: white;
   }
+  details,
+  fieldset {
+    background-color: transparent;
+    border-color: $primary-color-dark;
+  }
 }
