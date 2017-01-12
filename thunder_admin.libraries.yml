@@ -1,23 +1,66 @@
-tour-styling:
-  version: VERSION
-  css:
-    layout:
-      css/tour.css: {}
-
 global-styling:
   version: 1.x
   css:
     base:
       css/base/elements.css: {}
+      css/base/print.css: {}
     component:
+      css/components/admin-list.css: {}
+      css/components/content-header.css: {}
+      css/components/breadcrumb.css: {}
       css/components/buttons.css: {}
+      css/components/colors.css: {}
+      css/components/messages.css: {}
       css/components/dropbutton.css: {}
+      css/components/entity-meta.css: {}
+      css/components/field-ui.css: {}
       css/components/form.css: {}
+      css/components/help.css: {}
+      css/components/menus-and-lists.css: {}
+      css/components/modules-page.css: {}
+      css/components/node.css: {}
+      css/components/page-title.css: {}
+      css/components/pager.css: {}
+      css/components/panel.css: {}
+      css/components/search-admin-settings.css: {}
+      css/components/skip-link.css: {}
+      css/components/system-status-report.css: {}
       css/components/tabledrag.css: {}
+      css/components/tables.css: {}
+      css/components/tablesort-indicator.css: {}
+      css/components/tabs.css: {}
+      css/components/views-ui.css: {}
     theme:
       css/backend.css: {}
       css/color-scheme-inverted.css: {}
 
+ckeditor-dialog:
+  css:
+    theme:
+      css/ckeditor-dialog.css: {}
+
+# theming for node and taxonomy forms attached via the template
+content-form:
+  css:
+    theme:
+      css/content-form-theme.css: {}
+
+drupal.dialog:
+  css:
+    theme:
+      css/components/dialog.css: {}
+
+drupal.nav-tabs:
+  js:
+    js/nav-tabs.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.debounce
+
+# layout and functionality for content forms with advanced sidebar (replaces what is done in node.module.css)
 form-advanced-sidebar-tray:
   js:
     js/advanced-sidebar-tray.js: {}
@@ -25,12 +68,41 @@ form-advanced-sidebar-tray:
     layout:
       css/content-form-layout.css: {}
 
-content-form:
+install-page:
+  js:
+    js/mobile.install.js: {}
   css:
     theme:
-      css/content-form-theme.css: {}
+      css/install-page.css: {}
+  dependencies:
+    - thunder_admin/maintenance-page
+
+jquery.ui:
+  css:
+    component:
+      css/components/jquery.ui.css: { weight: -1 }
+
+maintenance-page:
+  js:
+    js/mobile.install.js: {}
+  css:
+    theme:
+      css/maintenance-page.css: {}
+  dependencies:
+    - system/maintenance
+    - thunder_admin/global-styling
 
 paragraphs.admin:
   css:
     theme:
       css/paragraphs-widget.css: {}
+
+tour-styling:
+  css:
+    theme:
+      css/components/tour.theme.css: {}
+
+vertical-tabs:
+  css:
+    component:
+      css/components/vertical-tabs.css: {}

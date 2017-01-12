@@ -1,26 +1,27 @@
 name: Thunder Admin
 type: theme
 core: 8.x
-base theme: seven
+base theme: classy
+description: 'Administration theme for the Thunder Distribution that extends and modifies Sevens styles for authoring UX and integrated look and feel of the contributed modules used in the distribution.'
+
+libraries:
+  - thunder_admin/global-styling
 
 libraries-override:
-  classy/base:
+# core and vendor overrides
+  core/drupal.vertical-tabs:
     css:
       component:
-        css/components/form.css: false
-        css/components/tabledrag.css: false
-  seven/global-styling:
-    css:
-      base:
-        css/base/elements.css: false
-      component:
-        css/components/buttons.css: false
-        css/components/dropbutton.component.css: false
-        css/components/form.css: false
-  seven/install-page:
+        misc/vertical-tabs.css: false
+  core/jquery.ui:
     css:
       theme:
-        css/theme/install-page.css: css/install-page.css
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+# core module (stable) overrides
   node/drupal.node:
     css:
       layout:
@@ -29,27 +30,43 @@ libraries-override:
     css:
       layout:
         /core/themes/stable/css/node/node.module.css: false
-  thunder_article/article_form_styling:
-    css:
-      theme:
-        css/article-form.css: false
   toolbar/toolbar:
     css:
       theme:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/toolbar.theme.css
+# core base theme (classy) overrides
+  classy/dialog:
+    thunder_admin/drupal.dialog
+  classy/base:
+    css:
+      component:
+        css/components/form.css: false
+        css/components/tabledrag.css: false
+# contrib module overrides
   admin_toolbar/toolbar.tree:
     css:
       theme:
         css/admin.toolbar.css: css/admin.toolbar.css
+# distribution module overrides (needed for backwards compatibility)
+  thunder_article/article_form_styling:
+    css:
+      theme:
+        css/article-form.css: false
 
 libraries-extend:
+  core/ckeditor:
+    - thunder_admin/ckeditor-dialog
+  core/drupal.vertical-tabs:
+    - thunder_admin/vertical-tabs
+  core/jquery.ui:
+    - thunder_admin/jquery.ui
   tour/tour-styling:
     - thunder_admin/tour-styling
   paragraphs/drupal.paragraphs.admin:
     - thunder_admin/paragraphs.admin
 
-libraries:
-  - thunder_admin/global-styling
+quickedit_stylesheets:
+  - css/components/quickedit.css
 
 regions:
   header: 'Header'
