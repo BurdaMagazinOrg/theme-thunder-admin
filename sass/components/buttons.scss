@@ -184,12 +184,28 @@ $button-border-radius: $base-border-radius;
   display: inline-block;
 }
 
+.button__icon {
+  svg {
+    path {
+      fill: $primary-color;
+    }
+  }
+  .button:hover & {
+    svg {
+      path {
+        fill: $primary-color-intense;
+      }
+    }
+  }
+}
+
 .button--icon-only {
   background: transparent;
   border: 0;
 
   &:focus,
-  &:hover {
+  &:hover,
+  &:active {
     border: 0;
     background: transparent;
     box-shadow: none;
