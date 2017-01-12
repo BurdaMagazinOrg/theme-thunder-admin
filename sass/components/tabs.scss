@@ -109,10 +109,10 @@ li.tabs__tab a {
 /* Only add the arrow if there's space */
 @media screen and (min-width:18.75em) { /* 300px */
   .tabs.primary a {
-    background: url(../../../../misc/icons/0074bd/chevron-right.svg) 99% center no-repeat;
+    background: url(../../images/icons/chevron-right.svg) 99% center no-repeat;
   }
   [dir="rtl"] .tabs.primary a {
-    background: url(../../../../misc/icons/0074bd/chevron-left.svg) 1% center no-repeat;
+    background: url(../../images/icons/chevron-left.svg) 1% center no-repeat;
   }
   .tabs.primary .tabs__tab.is-active a {
     background-image: none;
