@@ -1,0 +1,58 @@
+/**
+ * Form element.
+ */
+@import 'variables';
+
+.form-item {
+
+}
+
+.form-item__field-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* form item description toggle functionality */
+.form-item__toggle-description {
+  padding: 0.5em;
+  flex: 0 0 auto;
+
+  .no-touchevents & {
+    margin: 0;
+    padding: 0 0.15em;
+    width: 22px;
+    height: 22px;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .button__icon {
+    display: block;
+    height: 100%;
+    width: 100%;
+    svg {
+      path {
+        fill: $primary-color-light;
+      }
+    }
+  }
+}
+
+.js {
+  .js-form-item__description {
+    max-height: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+
+  }
+  .is-description-visible .js-form-item__description {
+    height: auto;
+    max-height: 5000px;
+    opacity: 1;
+  }
+}
+
