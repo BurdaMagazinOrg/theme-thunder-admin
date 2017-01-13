@@ -10,6 +10,10 @@
 .form-item__field-wrapper {
   display: flex;
   align-items: flex-end;
+
+  .form-textarea-wrapper {
+    flex: 1 0 auto;
+  }
 }
 
 /* form item description toggle functionality */
