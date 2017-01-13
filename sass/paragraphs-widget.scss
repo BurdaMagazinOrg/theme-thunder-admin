@@ -26,7 +26,7 @@ $paragraph-preview-thumbnail-width: 150px;
 }
 
 .paragraph-form-item {
-
+  position: relative;
 }
 
 .paragraph-form-item--has-preview {
@@ -98,6 +98,8 @@ $paragraph-preview-thumbnail-width: 150px;
   min-width: 160px;
 }
 
+/* ----------------------- Paragraph preview -------------------------------- */
+
 .paragraph-form-item__preview {
   flex: 1 1 auto;
   height: $paragraph-preview-height;
@@ -158,5 +160,23 @@ $paragraph-preview-thumbnail-width: 150px;
       font-size: 12px;
       line-height: 1.3em;
     }
+  }
+}
+
+/* -------------------------- Interaction ----------------------------------- */
+
+.paragraph-form-item {
+  .ajax-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    background: rgba(255,255,255,0.65);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
