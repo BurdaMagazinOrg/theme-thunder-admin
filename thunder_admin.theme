@@ -181,9 +181,15 @@ function thunder_admin_preprocess_field_multiple_value_form__field_paragraphs(&$
  * Provide additional suggestions for form inputs and buttons.
  */
 function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) {
+  // Add suggestions for buttons.
   if (isset($variables['element']['#type']) && $variables['element']['#type'] == 'submit') {
+    // Paragraph widget buttons:
     if (isset($variables['element']['#paragraphs_mode'])) {
       $suggestions[] = 'input__submit__paragraphs_' . $variables['element']['#paragraphs_mode'];
+    }
+    // Our own defined key "button action type" determined in form alter hooks.
+    if (isset($variables['element']['#button_action_type'])) {
+      $suggestions[] = 'input__submit__' . $variables['element']['#button_action_type'];
     }
     /*if (isset($variables['element']['#ief_form'])
       && (
@@ -320,6 +326,8 @@ function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $fo
       if (isset($form['field_paragraphs']['widget'][$i]['top'])) {
         $form['field_paragraphs']['widget'][$i]['top']['#attributes']['class'] = ['paragraph-form-item__actions'];
       }
+
     }
   }
 }
+

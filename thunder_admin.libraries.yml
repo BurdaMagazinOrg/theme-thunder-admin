@@ -17,6 +17,7 @@ global-styling:
       css/components/form.css: {}
       css/components/form-element.css: {}
       css/components/help.css: {}
+      css/components/media-form.css: {}
       css/components/menus-and-lists.css: {}
       css/components/modules-page.css: {}
       css/components/node.css: {}

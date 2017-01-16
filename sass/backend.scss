@@ -5,15 +5,6 @@
   display: table;
 }
 
-div.field--widget-entity-browser-entity-reference div.entities-list > div {
-  width: 175px;
-  float: left;
-}
-
-div.field--widget-entity-browser-entity-reference  details.form-wrapper {
-  overflow: auto;
-}
-
 fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-text {
   padding: 0 10px
 }
@@ -35,11 +26,7 @@ fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-text {
 
   fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-media details.form-wrapper {
     border: 0;
-    border-right: 1px solid #ccc;
-  }
 
-  fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-media details.form-wrapper summary{
-    text-transform: none;
   }
 
   fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-text {

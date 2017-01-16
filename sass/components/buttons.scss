@@ -212,6 +212,12 @@ $button-border-radius: $base-border-radius;
     box-shadow: none;
   }
 
+  .button__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .button__text {
     width: 0;
     height: 0;
