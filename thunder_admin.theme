@@ -217,6 +217,15 @@ function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) 
   }
 }
 
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provide additional suggestions for form element.
+ */
+function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $variables) {
+  $suggestions[] = 'form_element__' . $variables['element']['#type'];
+}
+
 // @todo: remove this hook: meant for debugging all forms quickly
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state) {
   $form = $form;
