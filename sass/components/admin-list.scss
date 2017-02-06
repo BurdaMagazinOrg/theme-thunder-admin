@@ -17,13 +17,13 @@ ul.admin-list {
   border: none;
 }
 .admin-list li a {
-  background: url(../../images/icons/chevron-disc-right.svg) no-repeat 1px 16px; /* LTR */
+  background: url(../../images/icons/chevron-disc-right--gray-light.svg) no-repeat 1px 16px; /* LTR */
   display: block;
   padding: 14px 15px 14px 25px; /* LTR */
   min-height: 0;
 }
 [dir="rtl"] .admin-list li a {
-  background: url(../../images/icons/chevron-disc-left.svg) no-repeat right 16px;
+  background: url(../../images/icons/chevron-disc-left--gray-light.svg) no-repeat right 16px;
   padding-right: 25px;
   padding-left: 15px;
 }

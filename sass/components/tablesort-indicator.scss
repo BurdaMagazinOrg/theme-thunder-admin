@@ -13,14 +13,14 @@
   float: left;
 }
 .tablesort--asc {
-  background-image: url(../../images/icons/twistie-down-dark.svg);
+  background-image: url(../../images/icons/twistie-down--primary-blue-darker.svg);
 }
 a:hover .tablesort--asc {
-  background-image: url(../../images/icons/twistie-down-light.svg);
+  background-image: url(../../images/icons/twistie-down--primary-blue-intense.svg);
 }
 .tablesort--desc {
-  background-image: url(../../images/icons/twistie-up-dark.svg);
+  background-image: url(../../images/icons/twistie-up--primary-blue-darker.svg);
 }
 a:hover .tablesort--desc {
-  background-image: url(../../images/icons/twistie-up-light.svg);
+  background-image: url(../../images/icons/twistie-up--primary-blue-intense.svg);
 }

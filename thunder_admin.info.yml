@@ -33,7 +33,12 @@ libraries-override:
   toolbar/toolbar:
     css:
       theme:
-        /core/themes/stable/css/toolbar/toolbar.theme.css: css/toolbar.theme.css
+        /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
+        /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
+  toolbar/toolbar.menu:
+    css:
+      state:
+        /core/themes/stable/css/toolbar/toolbar.menu.css: css/components/toolbar.menu.css
 # core base theme (classy) overrides
   classy/dialog:
     thunder_admin/drupal.dialog
@@ -46,7 +51,7 @@ libraries-override:
   admin_toolbar/toolbar.tree:
     css:
       theme:
-        css/admin.toolbar.css: css/admin.toolbar.css
+        css/admin.toolbar.css: css/components/admin.toolbar.css
 # distribution module overrides (needed for backwards compatibility)
   thunder_article/article_form_styling:
     css:
