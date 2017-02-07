@@ -178,6 +178,12 @@ label.error {
 label[for] {
   cursor: pointer;
 }
+.form-type-radio,
+.form-type-checkbox {
+  label {
+    font-size: $font-size-small;
+  }
+}
 .form-item label.option {
   text-transform: none;
 }
@@ -312,9 +318,8 @@ textarea.form-textarea {
 .form-textarea:focus,
 .form-date:focus,
 .form-time:focus {
-  border-color: #40b6ff;
+  border-color: $primary-color-intense;
   outline: 0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px #40b6ff;
   background-color: #fff;
 }
 
@@ -453,5 +458,22 @@ select {
   fieldset {
     background-color: transparent;
     border-color: $primary-color-darker;
+  }
+  label {
+    color: $gray-light;
+  }
+  input.form-autocomplete,
+  input.form-text,
+  input.form-tel,
+  input.form-email,
+  input.form-url,
+  input.form-search,
+  input.form-number,
+  input.form-color,
+  input.form-file,
+  input.form-date,
+  input.form-time,
+  textarea.form-textarea {
+    background: $gray-lightest;
   }
 }
