@@ -5,9 +5,10 @@
 
 @import 'variables';
 
-$advanced-sidebar-fixed-width-small: 300px;
+$advanced-sidebar-fixed-width-small: 320px;
 $advanced-sidebar-fixed-width: 400px;
-$advanced-sidebar-fluid-width: 40%;
+$advanced-sidebar-fluid-width: 35%;
+$advanced-sidebar-toggle-width: 40px;
 
 /* @todo: a fixed height is only working if we refactor the dropbutton */
 $action-bar-height: 50px;
@@ -31,10 +32,15 @@ $action-bar-height: 50px;
  */
 .js body.advanced-sidebar-tray {
 
+  /* Make room for the advanced sidebar tray toggle button */
+  margin-right: $advanced-sidebar-toggle-width;
+
   /* Override the toolbar css and always position it fixed to the top */
   .toolbar-bar {
     position: fixed;
+    z-index: 1300;
   }
+
 
   .content-form__advanced {
     position: fixed;
@@ -46,26 +52,28 @@ $action-bar-height: 50px;
     transform: translate3d(0, 0, 0);
     z-index: 1000;
     padding-bottom: $action-bar-height;
+    padding-right: $advanced-sidebar-toggle-width;
   }
 
-  /* Show the toggle buttons for the advanced sidebar tray. */
+  /* Show the toggle button for the advanced sidebar tray. */
   [data-toggle-advanced-sidebar-tray] {
-    display: block;
+    display: flex;
+    z-index: 1100;
+    cursor: pointer;
   }
 
   .content-form__advanced-toggle {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 36px;
-    height: 100%;
-
+    width: $advanced-sidebar-toggle-width;
   }
 
 
   /* A vertical toolbar layout */
   &.toolbar-vertical {
+    .content-form__advanced-toggle,
     .content-form__advanced {
       top: 39px;
     }
@@ -80,9 +88,15 @@ $action-bar-height: 50px;
 
   /* React to a horizontal toolbar layout */
   &.toolbar-horizontal {
+    .content-form__advanced-toggle,
     .content-form__advanced {
       top: 39px;
     }
+  }
+  /* make room for the toggle button next to horizontal toolbar tray and action bar */
+  .toolbar-tray-horizontal,
+  .content-form__actions {
+    margin-right: $advanced-sidebar-toggle-width;
   }
 
   /* Advanced sidebar tray is explicitly set to open */
@@ -143,6 +157,7 @@ $action-bar-height: 50px;
     .content-form__advanced {
       width: $advanced-sidebar-fluid-width;
       transform: translate3d(-100%, 0, 0);
+      padding-right: 0;
     }
 
     [data-toggle-advanced-sidebar-tray] {
@@ -163,7 +178,7 @@ $action-bar-height: 50px;
 @include for-big-desktop-and-up {
   .js body.advanced-sidebar-tray {
     &.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
-      margin-left: 240px;
+      margin-left: $toolbar-vertical-width;
     }
   }
 }
@@ -183,27 +198,34 @@ $action-bar-height: 50px;
  */
 @include for-tablet-portrait-and-up {
   /* Fixed action bar */
-  .content-form__actions {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-left: 36px;
+  .js body.advanced-sidebar-tray {
+    .content-form__actions {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-left: 36px;
 
-    .advanced-sidebar-tray-open & {
-      margin-right: $advanced-sidebar-fixed-width-small;
+    }
+    &.advanced-sidebar-tray-open {
+      .content-form__actions {
+        margin-right: $advanced-sidebar-fixed-width-small;
+      }
     }
   }
 }
 
 /**
  * On a tablet in landscape and bigger screens:
- * - the action bar will make room for the advanced sidebar with a bigger size
+ * - the action bar will make room for the advanced sidebar with a bigger size,
+ *   if it is toggled open
  */
 @include for-tablet-landscape-and-up {
-  .content-form__actions {
-    .advanced-sidebar-tray-open & {
-      margin-right: $advanced-sidebar-fixed-width;
+  .js body.advanced-sidebar-tray {
+    &.advanced-sidebar-tray-open {
+      .content-form__actions {
+        margin-right: $advanced-sidebar-fixed-width;
+      }
     }
   }
 }
@@ -214,8 +236,10 @@ $action-bar-height: 50px;
  */
 @include for-desktop-and-up {
   /* Make room for an vertically oriented open toolbar tab */
-  .content-form__actions {
-    margin-right: $advanced-sidebar-fluid-width;
+  .js body.advanced-sidebar-tray {
+    .content-form__actions {
+      margin-right: $advanced-sidebar-fluid-width;
+    }
   }
 }
 /**
@@ -227,7 +251,7 @@ $action-bar-height: 50px;
   /* Make room for an vertically oriented open toolbar tab */
   .toolbar-vertical.toolbar-tray-open {
     .content-form__actions {
-      margin-left: 240px;
+      margin-left: $toolbar-vertical-width;
     }
   }
 }

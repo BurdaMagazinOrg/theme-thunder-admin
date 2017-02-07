@@ -5,8 +5,34 @@
 
 @import 'variables';
 
+.content-form__advanced-toggle,
 .content-form__advanced {
   background: $primary-color-darker;
+}
+
+.content-form__advanced-toggle {
+  border: 0;
+  color: white;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1em;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:hover {
+    background: $primary-color-darkest;
+
+    svg {
+      path {
+        fill: $primary-color-intense;
+      }
+    }
+  }
 }
 
 @include for-tablet-portrait-and-up {

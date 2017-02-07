@@ -45,18 +45,26 @@
   display: none;
 }
 .toolbar .toolbar-tray-vertical .toolbar-menu ul a {
-  padding-left: 2.75em; /* LTR */
+  padding-left: 4.25em; /* LTR */
 }
 [dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu ul a {
   padding-left: 0;
-  padding-right: 2.75em;
+  padding-right: 4.25em;
 }
 .toolbar .toolbar-tray-vertical .toolbar-menu ul ul a {
-  padding-left: 3.75em; /* LTR */
+  padding-left: 5.75em; /* LTR */
 }
 [dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu ul ul a {
   padding-left: 0;
-  padding-right: 3.75em;
+  padding-right: 5.75em;
+}
+
+.toolbar .toolbar-tray-vertical .toolbar-menu ul ul ul a {
+  padding-left: 7.25em; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu ul ul ul a {
+  padding-left: 0;
+  padding-right: 7.25em;
 }
 
 .toolbar .toolbar-tray-vertical .toolbar-menu a {

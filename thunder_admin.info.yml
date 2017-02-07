@@ -32,6 +32,8 @@ libraries-override:
         /core/themes/stable/css/node/node.module.css: false
   toolbar/toolbar:
     css:
+      component:
+        /core/themes/stable/css/toolbar/toolbar.module.css: css/components/toolbar.module.css
       theme:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
         /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
