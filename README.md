@@ -27,3 +27,4 @@ build scripts and watch scripts are run with npm, for development run ``npm run 
 * image minification (folder: images-originals to images)
 * svg sprite creation (folder: images/icons to images/icon-sprite.svg)
 * JS linting (folder: js)
+
