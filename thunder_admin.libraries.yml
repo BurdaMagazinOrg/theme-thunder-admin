@@ -105,6 +105,12 @@ paragraphs.admin:
   css:
     theme:
       css/paragraphs-widget.css: {}
+  js:
+    js/paragraphs-sorting.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.tabledrag
 
 tour-styling:
   css:
