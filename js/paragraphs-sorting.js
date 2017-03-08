@@ -4,6 +4,7 @@
   'use strict'
 
   Drupal.tableDrag.prototype.initCkbx = function() {
+    // add sorting toggle button on top
     this.$table.before($('<button type="button" class="tabledrag-toggle-checkbox"></button>')
       .on('click', $.proxy(function(e) {
         e.preventDefault();
@@ -14,11 +15,13 @@
       .parent()
     );
 
+    // add sorting checkbox to items
     this.$table.find('.tabledrag-handle').after(
       $('<input type="checkbox" class="tabledrag-checkbox" />')
         .hide()
     )
 
+    // add sorting target
     var $target = $('<a href="#" class="tabledrag-sort-target">Sort here</a>')
       .on('click', $.proxy(function(e) {
         e.preventDefault()
