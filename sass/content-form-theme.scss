@@ -36,6 +36,8 @@
 }
 
 .content-form__actions {
+  z-index: 101;
+
   .button--danger {
     margin: 0;
     text-transform: none;
