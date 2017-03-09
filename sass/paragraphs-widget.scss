@@ -156,19 +156,11 @@ $paragraph-preview-thumbnail-width: 150px;
   .paragraph-form-item__actions {
     margin-top: 1em;
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
     order: 10;
-    flex-wrap: nowrap;
 
-    .paragraphs-remove-button-container,
-    .paragraph-form-item__links {
-      flex-basis: auto;
-    }
     .paragraph-type-title {
-      flex: 1 1 auto;
-      font-size: 15px;
-      text-transform: uppercase;
-      text-align: left;
+      display: none;
     }
 
     .paragraph-form-item__links {
