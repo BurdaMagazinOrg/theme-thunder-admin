@@ -317,8 +317,9 @@ function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $fo
 
   // Set classes to the paragraphs items to be able to style them.
   if (isset($form['field_paragraphs']['widget']['#max_delta']) && $form['field_paragraphs']['widget']['#max_delta'] >= 0) {
-    for ($i = 0; $i <= $form['field_paragraphs']['widget']['#max_delta']; $i++) {
+    $form['field_paragraphs']['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
+    for ($i = 0; $i <= $form['field_paragraphs']['widget']['#max_delta']; $i++) {
       // Add a base class to the paragraph reference field item.
       $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'paragraph-form-item';
 
@@ -336,6 +337,15 @@ function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $fo
         $form['field_paragraphs']['widget'][$i]['top']['#attributes']['class'] = ['paragraph-form-item__actions'];
       }
 
+      // Remove dropbutton appearance for paragraph op links.
+      if (isset($form['field_paragraphs']['widget'][$i]['top']['links'])) {
+        unset($form['field_paragraphs']['widget'][$i]['top']['links']['#theme_wrappers']);
+        unset($form['field_paragraphs']['widget'][$i]['top']['links']['prefix']);
+        unset($form['field_paragraphs']['widget'][$i]['top']['links']['suffix']);
+
+        $form['field_paragraphs']['widget'][$i]['top']['links']['#prefix'] = '<ul class="paragraph-form-item__links">';
+        $form['field_paragraphs']['widget'][$i]['top']['links']['#suffix'] = '</ul>';
+      }
     }
   }
 }

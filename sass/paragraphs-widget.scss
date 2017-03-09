@@ -11,6 +11,9 @@ $paragraph-preview-thumbnail-width: 150px;
  */
 .field-multiple-table--paragraphs {
   & > thead {
+    tr {
+      border-bottom: 0;
+    }
     th {
       border: 0;
       background: transparent;
@@ -22,6 +25,72 @@ $paragraph-preview-thumbnail-width: 150px;
   & > tbody > tr {
     background: $primary-color-lighter;
     border-bottom: 30px solid $primary-color-lightest; /* 1 */
+
+    &.draggable {
+      &:hover {
+        background: $primary-color-lighter;
+      }
+
+      .field-multiple-drag {
+        position: relative;
+        width: 58px;
+        vertical-align: middle;
+        text-align: center;
+        box-sizing: border-box;
+
+        .js & {
+          .tabledrag-changed {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            font-size: 0;
+            background: #e09600;
+          }
+
+          .tabledrag-handle {
+            display: inline-block;
+            height: 1em;
+            float: none;
+
+            .handle {
+              background: url(../images/icons/move.svg) no-repeat center center;
+            }
+          }
+        }
+      }
+
+      &.drag {
+        background: $primary-color-lighter-2;
+
+        .field-multiple-drag {
+          .tabledrag-handle {
+            .handle {
+              background-image: url(../images/icons/move--primary-blue.svg);
+            }
+          }
+        }
+      }
+
+      .remove {
+        .button__icon {
+          path {
+            fill: $primary-color;
+          }
+        }
+      }
+
+      &:hover {
+        .remove {
+          .button__icon {
+            path {
+              fill: $primary-color-lighter-2;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -30,8 +99,16 @@ $paragraph-preview-thumbnail-width: 150px;
 }
 
 .paragraph-form-item--has-preview {
+  .messages {
+    @include for-tablet-portrait-and-up {
+      margin-right: 15em;
+    }
+  }
 
   .paragraph-form-item__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     float: right;
     margin-left: 1em;
 
@@ -39,28 +116,35 @@ $paragraph-preview-thumbnail-width: 150px;
     height: $paragraph-preview-height;
 
     .paragraph-type-title {
-      float: left;
-      width: 65%;
-      height: 100%;
-      text-align: center;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      height: 100%;
       justify-content: center;
-      border-right: 1px solid #CCC;
+      align-items: center;
+      border-right: 1px solid #ccc;
+      text-align: center;
     }
 
-    .paragraphs-remove-button-container,
-    .paragraphs-dropbutton-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 35%;
-      float: right;
-      text-align: right;
+    .paragraph-form-item__links {
+      margin: 0;
       padding: 0;
-      height: 50%;
+      list-style-type: none;
+
+      li {
+        button {
+          max-height: 40px;
+        }
+
+        + li {
+          margin-top: 5px;
+
+          &:before {
+            display: block;
+            content: '';
+            margin: 0 1.3rem 0.3rem;
+            border-top: 1px solid #ccc;
+          }
+        }
+      }
     }
   }
 }
@@ -80,16 +164,79 @@ $paragraph-preview-thumbnail-width: 150px;
   .paragraph-form-item__actions {
     margin-top: 1em;
     display: flex;
+    align-items: flex-end;
     order: 10;
     flex-wrap: nowrap;
 
     .paragraphs-remove-button-container,
-    .paragraphs-dropbutton-wrapper {
+    .paragraph-form-item__links {
       flex-basis: auto;
     }
     .paragraph-type-title {
       flex: 1 1 auto;
+      font-size: 15px;
+      text-transform: uppercase;
       text-align: left;
+    }
+
+    .paragraph-form-item__links {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      // @TODO: Remove rule when remove icon has been removed from form.
+      .remove {
+        display: none;
+      }
+    }
+  }
+
+  .filter-wrapper {
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .field--widget-inline-entity-form-simple {
+    fieldset {
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  .field--name-field-media {
+    legend {
+      display: none;
+    }
+  }
+
+  .field-multiple-table {
+    thead {
+      tr {
+        border: 0;
+
+        &:hover {
+          background: transparent;
+        }
+
+        th {
+          background: transparent;
+          color: $primary-color-lightest;
+          border: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom-color: $primary-color-dark;
+
+        &.draggable,
+        &.drag-previous {
+          background: transparent;
+        }
+      }
     }
   }
 }
@@ -106,6 +253,10 @@ $paragraph-preview-thumbnail-width: 150px;
   max-height: $paragraph-preview-height;
   text-overflow: ellipsis;
   overflow: hidden;
+
+  &.clickable {
+    cursor: pointer;
+  }
 }
 
 
@@ -159,6 +310,14 @@ $paragraph-preview-thumbnail-width: 150px;
       margin: 0;
       font-size: 12px;
       line-height: 1.3em;
+    }
+  }
+
+  .field__label {
+    display: none;
+
+    @include for-tablet-portrait-and-up {
+      display: block;
     }
   }
 }

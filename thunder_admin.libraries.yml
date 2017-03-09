@@ -101,6 +101,10 @@ maintenance-page:
     - system/maintenance
     - thunder_admin/global-styling
 
+paragraphs.adjustments:
+  js:
+    js/paragraphs.js: {}
+
 paragraphs.admin:
   css:
     theme:
