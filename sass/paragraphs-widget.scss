@@ -73,19 +73,11 @@ $paragraph-preview-thumbnail-width: 150px;
         }
       }
 
-      .remove {
-        .button__icon {
-          path {
-            fill: $primary-color;
-          }
-        }
-      }
-
       &:hover {
-        .remove {
+        .edit {
           .button__icon {
             path {
-              fill: $primary-color-lighter-2;
+              fill: $primary-color-dark;
             }
           }
         }
