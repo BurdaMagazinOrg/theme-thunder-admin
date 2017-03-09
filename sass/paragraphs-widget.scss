@@ -5,6 +5,10 @@ $paragraph-preview-height: 90px;
 $paragraph-preview-thumbnail-height: 90px;
 $paragraph-preview-thumbnail-width: 150px;
 
+$paragraph-preview-mobile-height: 150px;
+$paragraph-preview-thumbnail-mobile-height: 75px;
+$paragraph-preview-thumbnail-mobile-width: 125px;
+
 /**
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
@@ -34,9 +38,13 @@ $paragraph-preview-thumbnail-width: 150px;
       .field-multiple-drag {
         position: relative;
         width: 58px;
-        vertical-align: middle;
+        vertical-align: top;
         text-align: center;
         box-sizing: border-box;
+
+        @include for-tablet-landscape-and-up {
+          vertical-align: middle;
+        }
 
         .js & {
           .tabledrag-changed {
@@ -51,11 +59,16 @@ $paragraph-preview-thumbnail-width: 150px;
 
           .tabledrag-handle {
             display: inline-block;
-            height: 1em;
+            height: 1.5em;
             float: none;
 
             .handle {
+              margin-left: 5px;
               background: url(../images/icons/move.svg) no-repeat center center;
+
+              @include for-tablet-portrait-and-up {
+                margin-left: 2px;
+              }
             }
           }
         }
@@ -108,18 +121,22 @@ $paragraph-preview-thumbnail-width: 150px;
     height: $paragraph-preview-height;
 
     .paragraph-type-title {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      border-right: 1px solid #ccc;
-      text-align: center;
+      display: none;
+
+      @include for-tablet-portrait-and-up {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
     }
 
     .paragraph-form-item__links {
       margin: 0;
       padding: 0;
       list-style-type: none;
+      border-left: 1px solid #ccc;
 
       li {
         button {
@@ -237,17 +254,23 @@ $paragraph-preview-thumbnail-width: 150px;
 }
 
 .paragraph-form-item__actions {
-  min-width: 160px;
+  @include for-tablet-portrait-and-up {
+    min-width: 160px;
+  }
 }
 
 /* ----------------------- Paragraph preview -------------------------------- */
 
 .paragraph-form-item__preview {
   flex: 1 1 auto;
-  height: $paragraph-preview-height;
-  max-height: $paragraph-preview-height;
+  max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
+
+  @include for-tablet-portrait-and-up {
+    height: $paragraph-preview-height;
+    max-height: $paragraph-preview-height;
+  }
 
   &.clickable {
     cursor: pointer;
@@ -256,18 +279,29 @@ $paragraph-preview-thumbnail-width: 150px;
 
 
 .paragraph-preview {
-  display: flex;
+  @include for-tablet-portrait-and-up {
+    display: flex;
+  }
 }
 .paragraph-preview__thumbnail {
   margin-right: 1em;
-  width: $paragraph-preview-thumbnail-width;
-  height: $paragraph-preview-thumbnail-height;
+  width: $paragraph-preview-thumbnail-mobile-width;
+  height: $paragraph-preview-thumbnail-mobile-height;
   border: 1px solid white;
   overflow: hidden;
 
-  img {
+  @include for-tablet-portrait-and-up {
+    width: $paragraph-preview-thumbnail-width;
     height: $paragraph-preview-thumbnail-height;
+  }
+
+  img {
+    height: $paragraph-preview-thumbnail-mobile-height;
     width: auto;
+
+    @include for-tablet-portrait-and-up {
+      height: $paragraph-preview-thumbnail-height;
+    }
   }
 
   .thumbnail-quadruple {
@@ -305,6 +339,10 @@ $paragraph-preview-thumbnail-width: 150px;
       margin: 0;
       font-size: 12px;
       line-height: 1.3em;
+    }
+
+    ul {
+      padding-left: 1.4em;
     }
   }
 
