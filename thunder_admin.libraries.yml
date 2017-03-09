@@ -31,6 +31,7 @@ global-styling:
       css/components/tables.css: {}
       css/components/tablesort-indicator.css: {}
       css/components/tabs.css: {}
+      css/components/user.css: {}
       css/components/views-ui.css: {}
     theme:
       css/backend.css: {}
