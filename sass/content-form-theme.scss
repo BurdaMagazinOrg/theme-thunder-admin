@@ -35,6 +35,16 @@
   }
 }
 
+.content-form__actions {
+  .button--danger {
+    margin: 0;
+    text-transform: none;
+    color: $gray-light;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
 @include for-tablet-portrait-and-up {
   /* Fixed action bar */
   .content-form__actions {
