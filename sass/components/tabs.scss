@@ -1,15 +1,17 @@
+@import 'variables';
+
 /**
  * Tabs.
  */
-.is-collapse-enabled  .tabs,
+.is-collapse-enabled  .primary,
 .is-horizontal .tabs {
   position: relative;
 }
-.is-collapse-enabled .tabs:before,
-.is-horizontal .tabs:before {
+.is-collapse-enabled .primary:before,
+.is-horizontal .primary:before {
   content: '';
   display: block;
-  background-color: #A6A6A6;
+  background-color: $primary-color-intense;
   height: 1px;
   position: absolute;
   bottom: 0;
@@ -40,8 +42,8 @@
   margin: -1px 0 0;
   padding: 9px 2em 7px 1em; /* LTR */
   width: 100%;  /* 1 */
-  border: 1px solid #bfbfbf;
-  background-color: rgba(242, 242, 240, 0.7);
+  border: 1px solid $primary-color-intense;
+  background-color: $primary-color-lighter;
   color: #0074bd;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -52,8 +54,8 @@
 }
 .tabs__tab:hover,
 .tabs__tab:focus {
-  color: #008ee6;
-  background-color: #fafaf7;
+  color: $primary-color-intense;
+  background-color: $gray-lightest;
 }
 li.tabs__tab {
   display: block;
@@ -84,9 +86,7 @@ li.tabs__tab a {
 }
 .tabs.primary .tabs__tab.is-active {
   z-index: 15;
-  border-color: #a6a6a6;
-  border-radius: 4px 0 0 0; /* LTR */
-  background-color: #ffffff;
+  background-color: $gray-lightest;
   color: #004f80;
 }
 [dir="rtl"] .tabs.primary .tabs__tab.is-active {
@@ -95,6 +95,7 @@ li.tabs__tab a {
 }
 .tabs.primary a {
   background: none;
+  text-transform: uppercase;
 }
 .tabs.primary a:focus {
   color: #008ee6;
@@ -173,7 +174,6 @@ li.tabs__tab a {
   content: none;
 }
 .is-open .tabs__tab.is-active {
-  border-color: #a6a6a6;
   background-color: #ffffff;
   color: #004f80;
   border-bottom: 1px solid #a6a6a6;
@@ -189,49 +189,25 @@ li.tabs__tab a {
   float: left; /* LTR */
   height: auto;
   width: auto;
-  margin: 0 0 -1px;
+  margin: 0 1px -1px;
   text-align: center;
-  border-bottom-color: #a6a6a6;
-}
-[dir="rtl"] .is-horizontal .tabs__tab {
-  float: right;
-  /* This is required to win over specifity of [dir="rtl"] .tabs > li */
-  margin-left: 0;
-}
-.is-horizontal .tabs__tab + .tabs__tab {
-  margin-left: -1px; /* LTR */
-}
-[dir="rtl"] .is-horizontal .tabs__tab + .tabs__tab {
-  margin-left: 0;
-  margin-right: -1px;
-}
-.is-horizontal .tabs.primary .tabs__tab:first-child {
-  border-radius: 4px 0 0 0; /* LTR */
-}
-[dir="rtl"] .is-horizontal .tabs.primary .tabs__tab:first-child {
-  border-radius: 0 4px 0 0;
-}
-.is-horizontal .tabs.primary .tabs__tab:last-child {
-  border-radius: 0 4px 0 0; /* LTR */
-}
-[dir="rtl"] .is-horizontal .tabs.primary .tabs__tab:last-child {
-  border-radius: 4px 0 0 0;
+  border-bottom-color: $primary-color-intense;
+  border-radius: 4px 4px 0 0;
 }
 
 /* Override the states above */
 .is-horizontal .tabs__tab.is-active,
 .is-horizontal .tabs.primary .tabs__tab.is-active,
 [dir="rtl"] .is-horizontal .tabs.primary .tabs__tab.is-active {
-  border-radius: 4px 4px 0 0;
   position: relative;
   width: auto;
   top: 0;
   border-bottom: 0;
-  margin: 0 -4px;
 }
 .is-horizontal .tabs.primary a {
   background-image: none;
-  padding: 7px 2em 7px 2em;
+  padding: 5px 1em 5px 1em;
+  font-size: 12px;
 }
 .is-horizontal .tabs__trigger {
   display: none;
@@ -251,6 +227,7 @@ li.tabs__tab a {
   -webkit-transition: border-color 0.2s, background-color 0.2s;
   transition: border-color 0.2s, background-color 0.2s;
 }
+
 [dir="rtl"] .tabs.secondary .tabs__tab {
   padding-left: 15px;
   padding-right: 16px;
@@ -267,8 +244,8 @@ li.tabs__tab a {
   border-top: 1px solid #d9d8d4;
 }
 .tabs.secondary .tabs__tab.is-active {
-  color: #004f80;
-  border-left: 2px solid #004f80; /* LTR */
+  color: $primary-color-intense;
+  border-left: 2px solid $primary-color-intense; /* LTR */
   padding-left: 15px; /* LTR */
 }
 [dir="rtl"] .tabs.secondary .tabs__tab.is-active {
@@ -300,9 +277,13 @@ li.tabs__tab a {
 }
 .tabs.secondary a {
   background-color: transparent;
-  padding: 7px 13px 5px;
+  padding: 2px 0px;
+  font-size: 12px;
+  color: $primary-color-darker;
   text-decoration: none;
+  text-transform: uppercase;
 }
+
 /* This is required to win over specificity of [dir="rtl"] li.tabs__tab a */
 [dir="rtl"] .tabs.secondary a {
   padding-left: 13px;
@@ -314,7 +295,7 @@ li.tabs__tab a {
   padding-right: 7px;
 }
 .tabs.secondary .is-active a {
-  color: #004f80;
+  color: $primary-color-intense;
 }
 .tabs.secondary a:focus {
   text-decoration: underline;
@@ -346,10 +327,16 @@ li.tabs__tab a {
   border-left-color: transparent;
   padding-right: 0; /* 1 */
 }
-.is-horizontal .tabs.secondary .tabs__tab.is-active {
-  border-bottom-color: #004f80;
-}
+.is-horizontal .tabs.secondary .tabs__tab.is-active,
 .is-horizontal .tabs.secondary .tabs__tab:hover,
 .is-horizontal .tabs.secondary .tabs__tab:focus {
-  border-bottom-color: #008ee6;
+  border-bottom-color: $primary-color-intense;
+}
+
+.tabs.primary,
+.tabs.secondary {
+  @include for-big-tablet-landscape-and-up {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
