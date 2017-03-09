@@ -183,14 +183,13 @@ $paragraph-preview-thumbnail-width: 150px;
     padding-right: 0;
   }
 
-  .field--name-field-text {
-    .form-type-textarea {
-      label {
-        margin-bottom: 0.8em;
-        color: $gray-lightest;
-        font-size: 14px;
-        line-height: 17px;
-      }
+  .field--name-field-text .form-type-textarea,
+  .field--name-field-media .field--name-field-url .form-type-url {
+    label {
+      margin-bottom: 0.8em;
+      color: $gray-lightest;
+      font-size: 14px;
+      line-height: 17px;
     }
   }
 
