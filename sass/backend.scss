@@ -7,6 +7,10 @@
   display: table;
 }
 
+.responsive-preview {
+  z-index: 1000;
+}
+
 fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-text {
   padding: 0 10px;
 }
