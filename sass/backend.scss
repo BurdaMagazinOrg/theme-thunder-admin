@@ -22,6 +22,12 @@ fieldset.article-teaser {
     }
   }
 
+  .field--name-field-teaser-text {
+    textarea {
+      height: 114px;
+    }
+  }
+
   @include for-tablet-landscape-and-up {
     div.field--widget-entity-browser-entity-reference div.entities-list > div {
       margin: 10px 0;
