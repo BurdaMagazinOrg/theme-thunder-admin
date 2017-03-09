@@ -32,9 +32,6 @@
   border-top: 1px solid #fff;
   margin: 0;
 }
-.entity-meta details:first-child {
-  border-top-color: #bfbfbf;
-}
 .entity-meta details[open] {
   background-color: transparent;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.125), transparent 4px);

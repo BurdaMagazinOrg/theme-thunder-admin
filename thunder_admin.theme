@@ -243,9 +243,7 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
 
   $form['#theme'] = array('node_edit_form');
 
-  $form['advanced']['#type'] = 'container';
-  $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
-  $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
+  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
 
   // @todo: This might be better moved to a module.
   $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
@@ -281,6 +279,7 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
  * Implements hook_form_taxonomy_term_channel_form_alter().
  */
 function thunder_admin_form_taxonomy_term_channel_form_alter(&$form, FormStateInterface $form_state) {
+  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
@@ -288,6 +287,7 @@ function thunder_admin_form_taxonomy_term_channel_form_alter(&$form, FormStateIn
  * Implements hook_form_taxonomy_term_tags_form_alter().
  */
 function thunder_admin_form_taxonomy_term_tags_form_alter(&$form, FormStateInterface $form_state) {
+  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
@@ -314,7 +314,6 @@ function thunder_admin_form_node_article_form_alter(&$form, FormStateInterface $
  *   The formstate object.
  */
 function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $form_state) {
-
   // Set classes to the paragraphs items to be able to style them.
   if (isset($form['field_paragraphs']['widget']['#max_delta']) && $form['field_paragraphs']['widget']['#max_delta'] >= 0) {
     $form['field_paragraphs']['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
@@ -350,3 +349,16 @@ function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $fo
   }
 }
 
+/**
+ * Helper function for attaching entity meta appearance.
+ *
+ * @param array $form
+ *   The article form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ */
+function _thunder_admin_attach_advanced_vertical_tabs(&$form, FormStateInterface $form_state) {
+  $form['advanced']['#type'] = 'container';
+  $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
+  $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
+}
