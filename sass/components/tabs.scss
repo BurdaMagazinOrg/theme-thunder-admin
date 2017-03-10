@@ -7,18 +7,6 @@
 .is-horizontal .tabs {
   position: relative;
 }
-.is-collapse-enabled .primary:before,
-.is-horizontal .primary:before {
-  content: '';
-  display: block;
-  background-color: $primary-color-intense;
-  height: 1px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  right: 0;
-}
 
 /* Span the full width of the viewport */
 .content-header .is-horizontal .tabs:before,
@@ -81,7 +69,6 @@ li.tabs__tab a {
 /* Primary tabs */
 .tabs.primary {
   clear: both;
-  margin: 16px 0 0;
   margin: 1rem 0 0;
 }
 .tabs.primary .tabs__tab.is-active {
@@ -338,5 +325,31 @@ li.tabs__tab a {
   @include for-big-tablet-landscape-and-up {
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+.block-local-tasks-block {
+  @include for-big-tablet-landscape-and-up {
+    margin-top: -35px;
+
+    .region-pre-content & {
+      margin-top: 0;
+    }
+
+    .tabs {
+      &.primary {
+        margin-top: 0;
+        float: right;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &.secondary {
+        margin-top: 0.8em;
+        margin-bottom: 1.5em;
+      }
+    }
   }
 }
