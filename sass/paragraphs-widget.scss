@@ -194,10 +194,39 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
+  .form-wrapper + .form-wrapper {
+    margin-top: 0.5em;
+  }
+
   .filter-wrapper {
     border: 0;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .form-text,
+  .form-url {
+    width: 100%;
+  }
+
+  .column-container {
+    @include for-big-tablet-landscape-and-up {
+      display: flex;
+      justify-content: space-between;
+
+      > .left,
+      > .right {
+        width: 48%;
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 2em;
+  }
+
+  .form-managed-file .file {
+    margin-top: 1.5em;
   }
 
   .field--name-field-text .form-type-textarea,
@@ -207,6 +236,34 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       color: $gray-lightest;
       font-size: 14px;
       line-height: 17px;
+    }
+  }
+
+  .field--name-field-image,
+  .field--name-field-video {
+    details {
+      margin: 0;
+      border: 0;
+
+      summary {
+        display: none;
+      }
+
+      .details-wrapper {
+        padding: 0;
+      }
+    }
+
+    .entities-list {
+      .item-container {
+        display: block;
+        margin: 0;
+
+        &:hover {
+          cursor: default;
+          opacity: 1;
+        }
+      }
     }
   }
 
