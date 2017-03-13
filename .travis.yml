@@ -12,6 +12,7 @@ cache:
 
 befor_install:
   - composer global require drush/drush:^8.1 drupal/coder
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
 
 install: TRUE
