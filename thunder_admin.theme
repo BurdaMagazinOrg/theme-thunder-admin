@@ -6,7 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -278,7 +278,7 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
 /**
  * Implements hook_form_taxonomy_term_channel_form_alter().
  */
-function thunder_admin_form_taxonomy_term_channel_form_alter(&$form, FormStateInterface $form_state) {
+function thunder_admin_form_taxonomy_term_channel_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
@@ -286,7 +286,7 @@ function thunder_admin_form_taxonomy_term_channel_form_alter(&$form, FormStateIn
 /**
  * Implements hook_form_taxonomy_term_tags_form_alter().
  */
-function thunder_admin_form_taxonomy_term_tags_form_alter(&$form, FormStateInterface $form_state) {
+function thunder_admin_form_taxonomy_term_tags_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
@@ -294,14 +294,14 @@ function thunder_admin_form_taxonomy_term_tags_form_alter(&$form, FormStateInter
 /**
  * Implements hook_form_node_article_edit_form_alter().
  */
-function thunder_admin_form_node_article_edit_form_alter(&$form, FormStateInterface $form_state) {
+function thunder_admin_form_node_article_edit_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
 /**
  * Implements hook_form_node_article_form_alter().
  */
-function thunder_admin_form_node_article_form_alter(&$form, FormStateInterface $form_state) {
+function thunder_admin_form_node_article_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
@@ -313,39 +313,54 @@ function thunder_admin_form_node_article_form_alter(&$form, FormStateInterface $
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   The formstate object.
  */
-function _thunder_admin_content_form_alter_helper(&$form, FormStateInterface $form_state) {
+function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterface $form_state) {
+  // This could be made configurable.
+  $field_name = 'field_paragraphs';
+
   // Set classes to the paragraphs items to be able to style them.
-  if (isset($form['field_paragraphs']['widget']['#max_delta']) && $form['field_paragraphs']['widget']['#max_delta'] >= 0) {
-    $form['field_paragraphs']['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
+  $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
-    for ($i = 0; $i <= $form['field_paragraphs']['widget']['#max_delta']; $i++) {
-      // Add a base class to the paragraph reference field item.
-      $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'paragraph-form-item';
-
-      // Add modifier classes based upon the display mode.
-      if (isset($form['field_paragraphs']['widget'][$i]['preview'])) {
-        $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'paragraph-form-item--has-preview';
-      }
-      elseif (isset($form['field_paragraphs']['widget'][$i]['subform'])) {
-        $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'paragraph-form-item--has-subform';
-        $form['field_paragraphs']['widget'][$i]['#attributes']['class'][] = 'color-scheme-inverted';
-      }
-
-      // Add a class to the container holding the actions.
-      if (isset($form['field_paragraphs']['widget'][$i]['top'])) {
-        $form['field_paragraphs']['widget'][$i]['top']['#attributes']['class'] = ['paragraph-form-item__actions'];
-      }
-
-      // Remove dropbutton appearance for paragraph op links.
-      if (isset($form['field_paragraphs']['widget'][$i]['top']['links'])) {
-        unset($form['field_paragraphs']['widget'][$i]['top']['links']['#theme_wrappers']);
-        unset($form['field_paragraphs']['widget'][$i]['top']['links']['prefix']);
-        unset($form['field_paragraphs']['widget'][$i]['top']['links']['suffix']);
-
-        $form['field_paragraphs']['widget'][$i]['top']['links']['#prefix'] = '<ul class="paragraph-form-item__links">';
-        $form['field_paragraphs']['widget'][$i]['top']['links']['#suffix'] = '</ul>';
-      }
+  foreach (Element::children($form[$field_name]['widget']) as $i) {
+    if (!is_numeric($i)) {
+      continue;
     }
+    _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
+  }
+
+}
+
+/**
+ * Add classes to paragraph element.
+ *
+ * @param array $paragraph
+ *   Single paragraph form element.
+ */
+function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
+  // Add a base class to the paragraph reference field item.
+  $paragraph['#attributes']['class'][] = 'paragraph-form-item';
+
+  // Add modifier classes based upon the display mode.
+  if (isset($paragraph['preview'])) {
+    $paragraph['#attributes']['class'][] = 'paragraph-form-item--has-preview';
+  }
+  elseif (isset($paragraph['subform'])) {
+    $paragraph['#attributes']['class'][] = 'paragraph-form-item--has-subform';
+    $paragraph['#attributes']['class'][] = 'color-scheme-inverted';
+  }
+
+  // Add a class to the container holding the actions.
+  if (isset($paragraph['top'])) {
+    $paragraph['top']['#attributes']['class'] = ['paragraph-form-item__actions'];
+  }
+
+  // Remove dropbutton appearance for paragraph op links.
+  if (isset($paragraph['top']['links'])) {
+    unset($paragraph['top']['links']['#theme_wrappers']);
+    unset($paragraph['top']['links']['prefix']);
+    unset($paragraph['top']['links']['suffix']);
+
+    $paragraph['top']['links']['#prefix'] = '<ul class="paragraph-form-item__links">';
+    $paragraph['top']['links']['#suffix'] = '</ul>';
   }
 }
 
