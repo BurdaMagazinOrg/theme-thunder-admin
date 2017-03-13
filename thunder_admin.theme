@@ -24,6 +24,7 @@ function thunder_admin_preprocess_html(&$variables) {
       break;
   }
 }
+
 /**
  * Implements hook_pre_render_HOOK() for menu-local-tasks templates.
  *
@@ -191,29 +192,6 @@ function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) 
     if (isset($variables['element']['#button_action_type'])) {
       $suggestions[] = 'input__submit__' . $variables['element']['#button_action_type'];
     }
-    /*if (isset($variables['element']['#ief_form'])
-      && (
-        $variables['element']['#ief_form'] == 'add'
-        || $variables['element']['#ief_form'] == 'ief_add_existing'
-      )
-    ) {
-      $suggestions[] = 'input__submit__add';
-    }
-    elseif (isset($variables['element']['#ief_row_form']) && $variables['element']['#ief_row_form'] == 'edit') {
-      $suggestions[] = 'input__submit__edit';
-    }
-    elseif (isset($variables['element']['#ief_row_form']) && $variables['element']['#ief_row_form'] == 'remove') {
-      $suggestions[] = 'input__submit__delete';
-    }
-    elseif (
-      isset($variables['element']['#parents']) && (
-        in_array('ief_add_save', $variables['element']['#parents'], TRUE)
-        || in_array('ief_edit_save', $variables['element']['#parents'], TRUE)
-        || in_array('ief_reference_save', $variables['element']['#parents'], TRUE)
-      )
-    ) {
-      $suggestions[] = 'input__submit__save';
-    }*/
   }
 }
 
@@ -225,12 +203,6 @@ function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) 
 function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $variables) {
   $suggestions[] = 'form_element__' . $variables['element']['#type'];
 }
-
-// @todo: remove this hook: meant for debugging all forms quickly
-function thunder_admin_form_alter(&$form, FormStateInterface $form_state) {
-  $form = $form;
-}
-
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for \Drupal\node\NodeForm.
@@ -372,7 +344,7 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   The form state object.
  */
-function _thunder_admin_attach_advanced_vertical_tabs(&$form, FormStateInterface $form_state) {
+function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInterface $form_state) {
   $form['advanced']['#type'] = 'container';
   $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
   $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
