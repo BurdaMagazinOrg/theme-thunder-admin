@@ -105,6 +105,7 @@ paragraphs.admin:
   css:
     theme:
       css/paragraphs-widget.css: {}
+      css/paragraphs-sorting.css: {}
   js:
     js/paragraphs-sorting.js: {}
   dependencies:

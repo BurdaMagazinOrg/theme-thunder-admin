@@ -64,7 +64,7 @@
         this.addSortTargets();
 
       }, this))
-      .wrap('<tr class="tabledrag-sort-target-wrapper"><td colspan="3"></td></tr>')
+      .wrap('<tr class="tabledrag-sort-target-wrapper"><td class="tabledrag-sort-target-column" colspan="3"></td></tr>')
       .parent().parent();
 
     this.$table.find('.draggable').before($target);
