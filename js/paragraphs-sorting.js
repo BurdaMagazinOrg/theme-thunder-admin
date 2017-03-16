@@ -49,7 +49,7 @@
       .on('click', $.proxy(function (e) {
         e.preventDefault();
 
-        var $targetWrapper = $(e.target).closest('tr')
+        var $targetWrapper = $(e.target).closest('tr');
         var row = $targetWrapper.next();
         var swapAfter = false;
 
