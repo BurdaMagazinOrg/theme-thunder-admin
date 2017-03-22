@@ -36,17 +36,21 @@
 
 .eb-tabs ul li {
   display: inline-block;
+  padding: .75em;
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
 .eb-tabs ul li.active {
-  border-bottom: 3px solid $primary-color-intense;
   a {
     color: $primary-color-intense;
+    border-bottom: 3px solid $primary-color-intense;
   }
 }
 
 .eb-tabs ul li a {
-  padding: .75em 1.5em;
   display: block;
+  padding-bottom: 2px;
   color: $primary-color-lightest;
 }
