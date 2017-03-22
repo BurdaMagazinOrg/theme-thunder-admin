@@ -54,6 +54,10 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
+  entity_browser/entity_browser:
+    css:
+      theme:
+        css/entity_browser.entity_browser.css: css/components/entity_browser.entity_browser.css
   entity_browser/tabs:
       css:
         component:
@@ -63,6 +67,10 @@ libraries-override:
     css:
       theme:
         css/article-form.css: false
+  thunder_media/entity_browser_view:
+    css:
+      theme:
+        css/media_entity_browser.view.css: css/components/media_entity_browser.view.css
 
 libraries-extend:
   core/ckeditor:
