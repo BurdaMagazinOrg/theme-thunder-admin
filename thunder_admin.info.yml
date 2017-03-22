@@ -54,6 +54,10 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
+  entity_browser/tabs:
+      css:
+        component:
+          css/entity_browser.tabs.css: css/components/entity_browser.tabs.css
 # distribution module overrides (needed for backwards compatibility)
   thunder_article/article_form_styling:
     css:
