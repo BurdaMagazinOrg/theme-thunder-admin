@@ -140,12 +140,14 @@
   box-sizing: border-box;
   position: absolute;
   z-index: 1;
-  width: 100%;
-  bottom: 0;
+  width: calc(100% - 4px);
+  bottom: 5px;
   background-color: rgba(0,0,0,.8);
   padding: 5px 10px;
   color: white;
   text-align: left;
+  margin-bottom: 2px;
+  margin-left: 2px;
 
   span {
     text-indent: 100%;
@@ -161,13 +163,13 @@
 }
 
 .media-info--Video {
-  background: transparent url("../images/video.svg") no-repeat;
+  background: transparent url("../../images/video.svg") no-repeat;
 }
 
 .media-info--Image {
-  background: transparent url("../images/image.svg") no-repeat;
+  background: transparent url("../../images/image.svg") no-repeat;
 }
 
 .media-info--Twitter {
-  background: transparent url("../images/twitter.svg") no-repeat;
+  background: transparent url("../../images/twitter.svg") no-repeat;
 }
