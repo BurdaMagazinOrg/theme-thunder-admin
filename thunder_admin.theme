@@ -21,11 +21,8 @@ function thunder_admin_preprocess_html(&$variables) {
     case 'node.add':
     case 'entity.node.edit_form':
       $variables['attributes']['class'][] = 'advanced-sidebar-tray';
+      $variables['attributes']['class'][] = 'entity-add-or-edit-form';
       break;
-  }
-
-  if (preg_match('%(node\.add)|(entity\..*?\.(add_form|edit_form))%', $route) == 1) {
-    $variables['attributes']['class'][] = 'entity-add-or-edit-form';
   }
 }
 
