@@ -335,6 +335,11 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
     $paragraph['top']['links']['#prefix'] = '<ul class="paragraph-form-item__links">';
     $paragraph['top']['links']['#suffix'] = '</ul>';
   }
+
+  // On click on restore, restore to collapsed instead of edit mode.
+  if (isset($paragraph['top']['links']['restore_button'])) {
+    $paragraph['top']['links']['restore_button']['#paragraphs_mode'] = 'collapsed';
+  }
 }
 
 /**
