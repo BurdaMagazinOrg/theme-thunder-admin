@@ -23,6 +23,10 @@ function thunder_admin_preprocess_html(&$variables) {
       $variables['attributes']['class'][] = 'advanced-sidebar-tray';
       break;
   }
+
+  if (preg_match('%(node\.add)|(entity\..*?\.(add_form|edit_form))%', $route) == 1) {
+    $variables['attributes']['class'][] = 'entity-add-or-edit-form';
+  }
 }
 
 /**
