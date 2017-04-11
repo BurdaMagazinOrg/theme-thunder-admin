@@ -14,9 +14,9 @@
 #}
 <article{{ attributes.addClass('paragraph-preview') }}>
   <div class="paragraph-preview__thumbnail">
-    {{ content.field_url }}
+    {{ content.thumbnail }}
   </div>
   <div class="paragraph-preview__data">
-    {{ content|without('field_url') }}
+    {{ content|without('thumbnail') }}
   </div>
 </article>

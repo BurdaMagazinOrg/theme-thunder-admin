@@ -1,3 +1,5 @@
+@import 'variables';
+
 /**
  * @file
  * Breadcrumbs.
@@ -5,5 +7,15 @@
 
 .breadcrumb {
   line-height: 1em;
-  padding: 20px 0 10px;
+  padding: 0.6em 0 1em;
+
+  li {
+    color: $gray-light;
+  }
+
+  a {
+    color: inherit;
+    font-size: 10px;
+    line-height: 12px;
+  }
 }

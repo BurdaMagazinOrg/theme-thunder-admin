@@ -25,6 +25,9 @@
   align-self: flex-end;
 
   .no-touchevents & {
+    position: relative;
+    top: -2px;
+    left: 2px;
     margin: 0;
     padding: 0 0.15em;
     width: 22px;
@@ -68,6 +71,12 @@
     max-height: 5000px;
     opacity: 1;
     transition: all 0.3s;
+  }
+}
+
+.form-type-vertical-tabs {
+  > .form-item__field-wrapper {
+    display: block;
   }
 }
 

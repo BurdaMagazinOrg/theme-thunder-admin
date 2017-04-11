@@ -16,8 +16,9 @@
   line-height: 1em;
   text-decoration: none;
 }
-.toolbar .toolbar-item:hover, .toolbar .toolbar-item:focus {
-  text-decoration: underline;
+.toolbar .toolbar-item:hover,
+.toolbar .toolbar-item:focus {
+  text-decoration: none;
 }
 
 /**
@@ -85,10 +86,7 @@
       }
     }
   }
-  .toolbar-tray a:hover {
-    font-weight: bold;
-    text-decoration: none;
-  }
+  .toolbar-tray a:hover,
   .toolbar-tray a:active,
   .toolbar-tray a:focus,
   .toolbar-tray a.is-active {
