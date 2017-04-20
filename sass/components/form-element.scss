@@ -57,7 +57,15 @@
     display: block;
   }
 }
-.js {
+
+body:not(.entity-add-or-edit-form) {
+  .details__toggle-description,
+  .form-item__toggle-description {
+    display: none;
+  }
+}
+
+.js body.entity-add-or-edit-form {
   .js-details-description,
   .js-form-item__description {
     max-height: 0;
