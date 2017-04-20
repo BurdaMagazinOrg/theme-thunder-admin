@@ -171,6 +171,15 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-left: -60px;
   padding: 20px;
 
+  // Different colors, for better contrast
+  a, .link {
+    color: $primary-color;
+  }
+
+  .button__icon svg path {
+    fill: white;
+  }
+
   .paragraph-form-item__actions {
     margin-top: 1em;
     display: flex;
