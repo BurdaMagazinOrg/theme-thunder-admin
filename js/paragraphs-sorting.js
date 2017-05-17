@@ -9,14 +9,15 @@
    */
   Drupal.tableDrag.prototype.initCkbx = function () {
     // add sorting toggle button on top
-    this.$table.before($('<button type="button" class="tabledrag-toggle-checkbox"></button>')
+    this.$table.find('thead').append($('<button type="button" class="tabledrag-toggle-checkbox button"></button>')
       .on('click', $.proxy(function (e) {
         e.preventDefault();
+        this.$table.toggleClass('tabledrag-checkbox-active');
         this.toggleCheckboxes();
         this.toggleSortTargets();
       }, this))
       .text(Drupal.t('Sort'))
-      .wrap('<div class="tabledrag-toggle-checkbox-wrapper"></div>')
+      .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"></tr>')
       .parent()
     );
 
