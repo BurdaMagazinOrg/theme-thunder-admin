@@ -169,14 +169,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-bottom: -10px;  /* 1 */
   margin-left: -60px;
   padding: 20px;
+  color: $gray-medium;
 
   // Different colors, for better contrast
   a, .link {
     color: $primary-color;
-  }
-
-  .button__icon svg path {
-    fill: white;
   }
 
   .paragraph-form-item__actions {
@@ -241,7 +238,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .field--name-field-media .field--name-field-url .form-type-url {
     label {
       margin-bottom: 0.8em;
-      color: $gray-lightest;
       font-size: 14px;
       line-height: 17px;
     }
@@ -315,6 +311,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
         }
       }
     }
+  }
+  fieldset:not(.fieldgroup) {
+    padding: 30px 0 0;
+    border: 0;
   }
 }
 
