@@ -1,0 +1,56 @@
+.field--widget-entity-reference-paragraphs {
+  // Add more buttons.
+  .paragraph-type-add-modal.first-button {
+    margin-top: -46px;
+    margin-bottom: 15px;
+    margin-left: -29px;
+  }
+  .paragraph-form-item--has-subform {
+    .paragraph-type-add-modal.first-button {
+      margin-top: -56px;
+      margin-left: 0;
+    }
+  }
+
+  // First button.
+  tr:first-child {
+    .paragraph-type-add-modal.first-button {
+      margin-top: -60px;
+    }
+    .paragraph-form-item--has-subform .paragraph-type-add-modal.first-button {
+      margin-top: -56px;
+    }
+  }
+
+  // Last button.
+  .clearfix > .paragraph-type-add-modal.first-button {
+    margin-top: -65px;
+    margin-left: 0;
+
+    // Different on taxonomy pages.
+    .path-taxonomy & {
+      margin-top: -46px;
+    }
+
+    @media screen and (max-width: 451px) {
+      margin-top: -85px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .paragraph-type-add-modal.first-button {
+      margin-top: -48px;
+    }
+    tr:first-child .paragraph-type-add-modal.first-button  {
+      margin-top: -63px;
+    }
+    .paragraph-type-add-modal .paragraph-type-add-modal-button {
+      width: auto;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+  thead {
+    border-bottom: 30px solid transparent;
+  }
+}
