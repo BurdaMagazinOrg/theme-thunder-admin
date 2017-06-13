@@ -318,7 +318,6 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
   }
   elseif (isset($paragraph['subform'])) {
     $paragraph['#attributes']['class'][] = 'paragraph-form-item--has-subform';
-    /*$paragraph['#attributes']['class'][] = 'color-scheme-inverted';*/
   }
 
   // Add a class to the container holding the actions.
