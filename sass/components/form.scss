@@ -168,7 +168,6 @@ label {
   font-weight: bold;
   color: $gray-medium;
   text-transform: uppercase;
-  font-size: $font-size-tiny;
 }
 label.error {
   color: #a51b00;
@@ -443,35 +442,4 @@ select {
 #diff-inline-form select,
 .filter-options select {
   padding: 0;
-}
-
-/* Inverted color scheme */
-.color-scheme-inverted {
-  .tips,
-  .description,
-  .form-item .description {
-    color: white;
-  }
-  details,
-  fieldset {
-    background-color: transparent;
-    border-color: $primary-color-darker;
-  }
-  label {
-    color: $gray-light;
-  }
-  input.form-autocomplete,
-  input.form-text,
-  input.form-tel,
-  input.form-email,
-  input.form-url,
-  input.form-search,
-  input.form-number,
-  input.form-color,
-  input.form-file,
-  input.form-date,
-  input.form-time,
-  textarea.form-textarea {
-    background: $gray-lightest;
-  }
 }
