@@ -322,10 +322,8 @@ li.tabs__tab a {
 
 .tabs.primary,
 .tabs.secondary {
-  @include for-big-tablet-landscape-and-up {
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
 }
 
 .block-local-tasks-block {
