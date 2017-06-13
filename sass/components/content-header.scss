@@ -8,10 +8,12 @@
   background-color: $gray-lightest;
   margin-bottom: 20px;
   padding: 24px 0 0;
-  border-bottom: 1px solid $primary-color-intense;
 
   .page-title {
     font-size: 16px;
     line-height: 18px;
+  }
+  > .layout-container {
+    border-bottom: 1px solid $primary-color-intense;
   }
 }
