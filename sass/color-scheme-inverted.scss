@@ -5,6 +5,53 @@
 
 @import 'variables';
 
+.paragraph-form-item--has-subform.color-scheme-inverted {
+    padding: 20px;
+    color: $gray-lighter;
+}
 .color-scheme-inverted {
   color: $gray-lighter;
+  background-color: $primary-color-darkest;
+
+  .tips,
+  .description,
+  .form-item .description {
+    color: white;
+  }
+
+  details,
+  fieldset:not(.fieldgroup) {
+    background-color: transparent;
+    border-color: $primary-color-darker;
+  }
+
+  label {
+    color: $gray-lighter;
+  }
+
+  input.form-autocomplete,
+  input.form-text,
+  input.form-tel,
+  input.form-email,
+  input.form-url,
+  input.form-search,
+  input.form-number,
+  input.form-color,
+  input.form-file,
+  input.form-date,
+  input.form-time,
+  textarea.form-textarea {
+    background: $gray-lightest;
+  }
+
+  .field--name-field-text .form-type-textarea,
+  .field--name-field-media .field--name-field-url .form-type-url {
+    label {
+      color: $gray-lightest;
+    }
+  }
+
+  .button__icon svg path {
+    fill: white;
+  }
 }

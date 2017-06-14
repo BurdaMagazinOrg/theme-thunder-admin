@@ -165,19 +165,15 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .paragraph-form-item--has-subform {
   display: flex;
   flex-direction: column;
-  background: $primary-color-darkest;
   margin-top: -10px;  /* 1 */
   margin-bottom: -10px;  /* 1 */
-  margin-left: -60px;
-  padding: 20px;
+  margin-left: 0;
+  padding: 20px 20px 20px 0;
+  color: $gray-medium;
 
   // Different colors, for better contrast
   a, .link {
     color: $primary-color;
-  }
-
-  .button__icon svg path {
-    fill: white;
   }
 
   .paragraph-form-item__actions {
@@ -242,7 +238,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .field--name-field-media .field--name-field-url .form-type-url {
     label {
       margin-bottom: 0.8em;
-      color: $gray-lightest;
+      color: $gray-medium;
       font-size: 14px;
       line-height: 17px;
     }
@@ -315,6 +311,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
           background: transparent;
         }
       }
+    }
+  }
+  fieldset:not(.fieldgroup) {
+    padding: 30px 0 0;
+    border: 0;
+    legend {
+      margin: 0.3em;
     }
   }
 }
