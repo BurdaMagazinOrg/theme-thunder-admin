@@ -200,7 +200,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 
   .form-wrapper + .form-wrapper {
-    margin-top: 0.5em;
+    margin-top: $base-space-80pct;
   }
 
   .filter-wrapper {
@@ -223,6 +223,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       > .right {
         width: 48%;
       }
+    }
+  }
+
+  .entities-list {
+    .item-container {
+      margin: $base-space-80pct $base-space-80pct $base-space-80pct * 1.5;
     }
   }
 
