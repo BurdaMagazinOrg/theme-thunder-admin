@@ -172,6 +172,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     display: flex;
     justify-content: flex-end;
     order: 10;
+    margin-right: 24px;
 
     .paragraph-type-title {
       display: none;
@@ -187,7 +188,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       .remove {
         display: none;
       }
+
+      .confirm-remove {
+        margin-right: $base-space;
+      }
     }
+  }
+
+  .form-item__toggle-description-placeholder {
+    display: inherit;
+    width: 24px;
+    height: 24px;
   }
 
   .form-wrapper + .form-wrapper {
@@ -198,6 +209,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     border: 0;
     padding-left: 0;
     padding-right: 0;
+    margin-right: 24px;
   }
 
   .form-text,
@@ -426,13 +438,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .paragraph-form-item {
   .ajax-progress {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 100;
     display: flex;
-    background: rgba(255,255,255,0.65);
+    background: transparent;
     flex-direction: column;
     align-items: center;
     justify-content: center;
