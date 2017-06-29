@@ -187,7 +187,22 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       .remove {
         display: none;
       }
+
+      .restore,
+      .collapse {
+        margin-right: 24px;
+      }
+
+      .confirm-remove {
+        margin-right: $base-space;
+      }
     }
+  }
+
+  .form-item__toggle-description-placeholder {
+    display: inherit;
+    width: 24px;
+    height: 24px;
   }
 
   .form-wrapper + .form-wrapper {
@@ -198,6 +213,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     border: 0;
     padding-left: 0;
     padding-right: 0;
+    margin-right: 24px;
   }
 
   .form-text,
