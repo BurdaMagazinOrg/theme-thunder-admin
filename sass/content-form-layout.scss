@@ -125,6 +125,14 @@ $action-bar-height: 50px;
     .content-form__advanced {
       width: $advanced-sidebar-fixed-width;
     }
+
+    &-open {
+      margin-right: $advanced-sidebar-fixed-width;
+
+      .toolbar-tray-horizontal {
+        margin-right: $advanced-sidebar-fixed-width;
+      }
+    }
   }
 }
 
