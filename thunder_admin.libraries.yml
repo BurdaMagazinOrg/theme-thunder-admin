@@ -122,3 +122,8 @@ vertical-tabs:
   css:
     component:
       css/components/vertical-tabs.css: {}
+
+dropzonejs.widget:
+  css:
+    component:
+      css/components/dropzonejs.widget.css: {}
