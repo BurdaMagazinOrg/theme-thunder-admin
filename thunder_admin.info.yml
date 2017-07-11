@@ -54,11 +54,23 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
+  entity_browser/entity_browser:
+    css:
+      theme:
+        css/entity_browser.entity_browser.css: css/components/entity_browser.entity_browser.css
+  entity_browser/tabs:
+      css:
+        component:
+          css/entity_browser.tabs.css: css/components/entity_browser.tabs.css
 # distribution module overrides (needed for backwards compatibility)
   thunder_article/article_form_styling:
     css:
       theme:
         css/article-form.css: false
+  thunder_media/entity_browser_view:
+    css:
+      theme:
+        css/media_entity_browser.view.css: css/components/media_entity_browser.view.css
 
 libraries-extend:
   core/ckeditor:
@@ -71,6 +83,8 @@ libraries-extend:
     - thunder_admin/tour-styling
   paragraphs/drupal.paragraphs.admin:
     - thunder_admin/paragraphs.admin
+  dropzonejs/widget:
+    - thunder_admin/dropzonejs.widget
 
 quickedit_stylesheets:
   - css/components/quickedit.css
