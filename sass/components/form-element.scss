@@ -58,6 +58,10 @@
   }
 }
 
+.form-item__toggle-description-placeholder {
+  display: none;
+}
+
 body:not(.entity-add-or-edit-form) {
   .details__toggle-description,
   .form-item__toggle-description {

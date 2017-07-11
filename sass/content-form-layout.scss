@@ -125,20 +125,13 @@ $action-bar-height: 50px;
     .content-form__advanced {
       width: $advanced-sidebar-fixed-width;
     }
-  }
-}
 
-/**
- * On a bigger tablet in landscape and bigger screens:
- * - the body will make room for the advanced sidebar if it is open
- * - the horizontal toolbar tray will make room for the sidebar
- */
-@include for-big-tablet-landscape-and-up {
-  .js body.advanced-sidebar-tray-open {
-    margin-right: $advanced-sidebar-fixed-width;
-
-    .toolbar-tray-horizontal {
+    &-open {
       margin-right: $advanced-sidebar-fixed-width;
+
+      .toolbar-tray-horizontal {
+        margin-right: $advanced-sidebar-fixed-width;
+      }
     }
   }
 }

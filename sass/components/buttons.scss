@@ -190,10 +190,12 @@ $button-border-radius: $base-border-radius;
       fill: $primary-color;
     }
   }
+
+  .button--highlight &,
   .button:hover & {
     svg {
       path {
-        fill: $primary-color-intense;
+        fill: $primary-color-dark;
       }
     }
   }
