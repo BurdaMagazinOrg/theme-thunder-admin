@@ -244,7 +244,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 
   .field--name-field-text .form-type-textarea,
-  .field--name-field-media .field--name-field-url .form-type-url {
+  .field--name-field-url .form-type-url {
     label {
       margin-bottom: 0.8em;
       color: $gray-medium;
@@ -253,8 +253,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  .field--name-field-image,
-  .field--name-field-video {
+  .paragraphs-subform >.field--widget-entity-browser-entity-reference {
     details {
       margin: 0;
       border: 0;
