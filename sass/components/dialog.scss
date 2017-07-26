@@ -30,7 +30,7 @@
     background: $primary-color-darker;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding: 15px 49px 0 15px; /* LTR */
+    padding: 15px 49px 15px 15px; /* LTR */
     @include browser-border;
 
     [dir="rtl"] & {
@@ -61,7 +61,7 @@
     border: 0;
     background: none;
     right: 20px; /* LTR */
-    top: 20px;
+    top: 24px;
     margin: 0;
     height: 16px;
     width: 16px;
@@ -78,7 +78,7 @@
     margin-top: -12px;
   }
   .ui-widget-content.ui-dialog-content {
-    background: $primary-color-darker;
+    background: $gray-lightest;
     overflow: auto;
     padding: 0.4em 1.2em 1.2em;
     border-bottom-left-radius: 5px;
