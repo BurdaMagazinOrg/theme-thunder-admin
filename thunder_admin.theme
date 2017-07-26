@@ -199,7 +199,9 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
   $suggestions[] = 'form_element__' . $variables['element']['#type'];
 }
 
-
+/**
+ * Implements hook_form_alter().
+ */
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state) {
   if (!empty($form['advanced']) && (in_array('node_edit_form', $form['#theme']) || in_array('node_form', $form['#theme']))) {
     _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
@@ -274,8 +276,6 @@ function thunder_admin_form_node_article_edit_form_alter(array &$form, FormState
 function thunder_admin_form_node_article_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
-
-
 
 /**
  * Helper function for content form alter hooks.
