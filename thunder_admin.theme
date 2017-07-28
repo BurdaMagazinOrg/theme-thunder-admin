@@ -7,6 +7,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -160,21 +162,14 @@ function thunder_admin_theme_suggestions_field_alter(&$suggestions, $variables) 
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter().
- *
- * Provide additional suggestions for multiple value field widget in form.
- */
-function thunder_admin_theme_suggestions_field_multiple_value_form_alter(&$suggestions, $variables) {
-  $suggestions[] = 'field_multiple_value_form__' . $variables['element']['#field_name'];
-}
-
-/**
  * Implements theme_preprocess_field_multiple_value_form().
  *
  * Add themable classes to multiple value field table for paragraphs field.
  */
-function thunder_admin_preprocess_field_multiple_value_form__field_paragraphs(&$variables) {
-  $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
+function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
+  if (strpos($variables['element']['#field_name'], 'paragraph') !== FALSE) {
+    $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
+  }
 }
 
 /**
@@ -287,19 +282,27 @@ function thunder_admin_form_node_article_form_alter(array &$form, FormStateInter
  *   The formstate object.
  */
 function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterface $form_state) {
-  // This could be made configurable.
-  $field_name = 'field_paragraphs';
+  // @todo Make thunder adjustments configurable for each paragraph widget.
+  if ($form_state->getFormObject() instanceof EntityFormInterface) {
+    if ($entity = $form_state->getFormObject()->getEntity()) {
+      if ($entity instanceof FieldableEntityInterface) {
+        foreach ($entity->getFieldDefinitions() as $definition) {
+          $field_name = $definition->getName();
+          if ((strpos($field_name, 'paragraph') !== FALSE) && ($definition->getFieldStorageDefinition()->getCardinality() > 1)) {
+            // Set classes to the paragraphs items to be able to style them.
+            $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
-  // Set classes to the paragraphs items to be able to style them.
-  $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
-
-  foreach (Element::children($form[$field_name]['widget']) as $i) {
-    if (!is_numeric($i)) {
-      continue;
+            foreach (Element::children($form[$field_name]['widget']) as $i) {
+              if (!is_numeric($i)) {
+                continue;
+              }
+              _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
+            }
+          }
+        }
+      }
     }
-    _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
   }
-
 }
 
 /**
