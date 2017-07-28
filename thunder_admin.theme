@@ -288,7 +288,7 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
       if ($entity instanceof FieldableEntityInterface) {
         foreach ($entity->getFieldDefinitions() as $definition) {
           $field_name = $definition->getName();
-          if ((strpos($field_name, 'paragraph') !== FALSE) && ($definition->getFieldStorageDefinition()->getCardinality() > 1)) {
+          if ((strpos($field_name, 'paragraph') !== FALSE) && ($definition->getFieldStorageDefinition()->getCardinality() != 1)) {
             // Set classes to the paragraphs items to be able to style them.
             $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
