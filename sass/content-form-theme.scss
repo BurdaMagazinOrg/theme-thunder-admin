@@ -55,12 +55,13 @@
 }
 
 .content-form__main > fieldset,
-fieldset.content-form__form-section {
+.content-form__form-section {
   background: $primary-color-lightest;
   border-radius: $base-border-radius;
   padding-top: 2.5rem;
 
-  & > legend {
+  & > legend,
+  & > summary {
     padding-left: 0.4em;
     text-transform: none;
     font-size: 1rem;
