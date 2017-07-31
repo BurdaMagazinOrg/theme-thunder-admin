@@ -268,14 +268,15 @@ function thunder_admin_form_node_article_form_alter(array &$form, FormStateInter
  * @param array $form
  *   The article form.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   The formstate object.
+ *   The form state object.
  */
 function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterface $form_state) {
   if ($form_state->getFormObject() instanceof EntityFormInterface) {
     if ($entity = $form_state->getFormObject()->getEntity()) {
       if ($entity instanceof FieldableEntityInterface) {
         foreach ($entity->getFieldDefinitions() as $definition) {
-          if ($definition->getType() == 'entity_reference_revisions' && $definition->getSetting('handler') == 'default:paragraph') {
+          $settings = $definition->getDisplayOptions('form');
+          if (!empty($settings['type']) && ($settings['type'] == 'entity_reference_paragraphs')) {
             // Set classes to the paragraphs items to be able to style them.
             $field_name = $definition->getName();
             $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
