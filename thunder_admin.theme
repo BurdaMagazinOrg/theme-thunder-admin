@@ -271,7 +271,6 @@ function thunder_admin_form_node_article_form_alter(array &$form, FormStateInter
  *   The formstate object.
  */
 function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterface $form_state) {
-  // @todo Make thunder adjustments configurable for each paragraph widget.
   if ($form_state->getFormObject() instanceof EntityFormInterface) {
     if ($entity = $form_state->getFormObject()->getEntity()) {
       if ($entity instanceof FieldableEntityInterface) {
