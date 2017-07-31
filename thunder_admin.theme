@@ -276,9 +276,9 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
       if ($entity instanceof FieldableEntityInterface) {
         foreach ($entity->getFieldDefinitions() as $definition) {
           $settings = $definition->getDisplayOptions('form');
-          if (!empty($settings['type']) && ($settings['type'] == 'entity_reference_paragraphs')) {
+          $field_name = $definition->getName();
+          if (!empty($form[$field_name]) && !empty($settings['type']) && ($settings['type'] == 'entity_reference_paragraphs')) {
             // Set classes to the paragraphs items to be able to style them.
-            $field_name = $definition->getName();
             $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
             foreach (Element::children($form[$field_name]['widget']) as $i) {
