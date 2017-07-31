@@ -203,8 +203,9 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
  * Implements hook_form_alter() for thunder_admin theme.
  */
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (!empty($form['advanced']) && (in_array('node_edit_form', $form['#theme']) || in_array('node_form', $form['#theme']))) {
+  if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
     _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
+    $form['#theme'] = ['node_edit_form'];
   }
 }
 
