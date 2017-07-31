@@ -274,8 +274,8 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
   if ($form_state->getFormObject() instanceof EntityFormInterface) {
     if ($entity = $form_state->getFormObject()->getEntity()) {
       if ($entity instanceof FieldableEntityInterface) {
+        $display = entity_get_form_display($entity->getEntityTypeId(), $entity->bundle(), 'default');
         foreach ($entity->getFieldDefinitions() as $definition) {
-          $display = entity_get_form_display($entity->getEntityTypeId(), $entity->bundle(), 'default');
           $field_name = $definition->getName();
           $component = $display->getComponent($field_name);
           if (!empty($component) && !empty($component['type']) && ($component['type'] == 'entity_reference_paragraphs')) {
