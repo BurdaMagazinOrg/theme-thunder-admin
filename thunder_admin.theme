@@ -14,15 +14,9 @@ use Drupal\Core\Render\Element;
 function thunder_admin_preprocess_html(&$variables) {
   // If on a node or term add or edit page, add a class for enabling advanced
   // tray functionality.
-  $route = Drupal::service('current_route_match')->getRouteName();
-  switch ($route) {
-    case 'entity.taxonomy_term.add_form':
-    case 'entity.taxonomy_term.edit_form':
-    case 'node.add':
-    case 'entity.node.edit_form':
-      $variables['attributes']['class'][] = 'advanced-sidebar-tray';
-      $variables['attributes']['class'][] = 'entity-add-or-edit-form';
-      break;
+  if (_thunder_admin_apply_advanced_vertical_tabs()) {
+    $variables['attributes']['class'][] = 'advanced-sidebar-tray';
+    $variables['attributes']['class'][] = 'entity-add-or-edit-form';
   }
 }
 
@@ -206,6 +200,16 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
 }
 
 /**
+ * Implements hook_form_alter() for thunder_admin theme.
+ */
+function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
+    _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
+    $form['#theme'] = ['node_edit_form'];
+  }
+}
+
+/**
  * Implements hook_form_BASE_FORM_ID_alter() for \Drupal\node\NodeForm.
  *
  * Changes vertical tabs to container and adds meta information.
@@ -213,10 +217,6 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
 function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $form_state->getFormObject()->getEntity();
-
-  $form['#theme'] = ['node_edit_form'];
-
-  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
 
   // @todo: This might be better moved to a module.
   $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
@@ -252,7 +252,6 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
  * Implements hook_form_taxonomy_term_channel_form_alter().
  */
 function thunder_admin_form_taxonomy_term_channel_form_alter(array &$form, FormStateInterface $form_state) {
-  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
@@ -260,7 +259,6 @@ function thunder_admin_form_taxonomy_term_channel_form_alter(array &$form, FormS
  * Implements hook_form_taxonomy_term_tags_form_alter().
  */
 function thunder_admin_form_taxonomy_term_tags_form_alter(array &$form, FormStateInterface $form_state) {
-  _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
@@ -353,4 +351,26 @@ function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInt
   $form['advanced']['#type'] = 'container';
   $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
   $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
+}
+
+/**
+ * Checks if advanced vertical tabs should apply on this route.
+ *
+ * @return bool
+ *   Should apply or not.
+ */
+function _thunder_admin_apply_advanced_vertical_tabs() {
+
+  $route = Drupal::service('current_route_match');
+  switch ($route->getRouteName()) {
+    case 'entity.taxonomy_term.add_form':
+    case 'node.add':
+      return TRUE;
+  }
+
+  if ($route->getRouteObject()->getDefault("_entity_form")) {
+    return TRUE;
+  }
+
+  return FALSE;
 }
