@@ -202,6 +202,8 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
   /** @var \Drupal\node\NodeInterface $node */
   $node = $form_state->getFormObject()->getEntity();
 
+  _thunder_admin_content_form_alter_helper($form, $form_state);
+
   // @todo: This might be better moved to a module.
   $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
   $author_info = (!empty($node->getOwner()->getDisplayName())) ? $node->getOwner()->getDisplayName() : t('Anonymous');
@@ -233,30 +235,9 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
 }
 
 /**
- * Implements hook_form_taxonomy_term_channel_form_alter().
+ * Implements hook_form_taxonomy_term_form_alter().
  */
-function thunder_admin_form_taxonomy_term_channel_form_alter(array &$form, FormStateInterface $form_state) {
-  _thunder_admin_content_form_alter_helper($form, $form_state);
-}
-
-/**
- * Implements hook_form_taxonomy_term_tags_form_alter().
- */
-function thunder_admin_form_taxonomy_term_tags_form_alter(array &$form, FormStateInterface $form_state) {
-  _thunder_admin_content_form_alter_helper($form, $form_state);
-}
-
-/**
- * Implements hook_form_node_article_edit_form_alter().
- */
-function thunder_admin_form_node_article_edit_form_alter(array &$form, FormStateInterface $form_state) {
-  _thunder_admin_content_form_alter_helper($form, $form_state);
-}
-
-/**
- * Implements hook_form_node_article_form_alter().
- */
-function thunder_admin_form_node_article_form_alter(array &$form, FormStateInterface $form_state) {
+function thunder_admin_form_taxonomy_term_form_alter(array &$form, FormStateInterface $form_state) {
   _thunder_admin_content_form_alter_helper($form, $form_state);
 }
 
