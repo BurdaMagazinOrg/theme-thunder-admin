@@ -280,10 +280,9 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
           $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
           foreach (Element::children($form[$field_name]['widget']) as $i) {
-            if (!is_numeric($i)) {
-              continue;
+            if (is_numeric($i)) {
+              _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
             }
-            _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
           }
         }
       }
