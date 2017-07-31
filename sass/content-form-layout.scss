@@ -58,7 +58,7 @@ $action-bar-height: 50px;
   /* Show the toggle button for the advanced sidebar tray. */
   [data-toggle-advanced-sidebar-tray] {
     display: flex;
-    z-index: 1100;
+    z-index: 1000;
     cursor: pointer;
   }
 
