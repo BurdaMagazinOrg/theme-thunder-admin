@@ -270,21 +270,20 @@ function thunder_admin_form_node_article_form_alter(array &$form, FormStateInter
  */
 function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterface $form_state) {
   if ($form_state->getFormObject() instanceof EntityFormInterface) {
-    if ($entity = $form_state->getFormObject()->getEntity()) {
-      if ($entity instanceof FieldableEntityInterface) {
-        foreach ($entity->getFieldDefinitions() as $definition) {
-          $field_name = $definition->getName();
-          $component = $form_state->getStorage()['form_display']->getComponent($field_name);
-          if (!empty($component['type']) && ($component['type'] === 'entity_reference_paragraphs')) {
-            // Set classes to the paragraphs items to be able to style them.
-            $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
+    $entity = $form_state->getFormObject()->getEntity();
+    if ($entity instanceof FieldableEntityInterface) {
+      foreach ($entity->getFieldDefinitions() as $definition) {
+        $field_name = $definition->getName();
+        $component = $form_state->getStorage()['form_display']->getComponent($field_name);
+        if (!empty($component['type']) && ($component['type'] === 'entity_reference_paragraphs')) {
+          // Set classes to the paragraphs items to be able to style them.
+          $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
-            foreach (Element::children($form[$field_name]['widget']) as $i) {
-              if (!is_numeric($i)) {
-                continue;
-              }
-              _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
+          foreach (Element::children($form[$field_name]['widget']) as $i) {
+            if (!is_numeric($i)) {
+              continue;
             }
+            _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
           }
         }
       }
