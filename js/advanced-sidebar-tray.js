@@ -21,7 +21,7 @@
       if ($body.length && $toggleBtn.length) {
         $toggleBtn.unbind('click').on('click', function (e) {
           e.preventDefault();
-          $body.toggleClass('advanced-sidebar-tray-open');
+          $body.toggleClass('advanced-sidebar-tray-toggled');
           // Close the vertical toolbar tab if the toolbar layout is vertical.
           var $activeToolbarItem = $('.toolbar-item.is-active');
           if ($body.hasClass('toolbar-vertical') && $activeToolbarItem.length) {

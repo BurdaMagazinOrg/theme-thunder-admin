@@ -100,19 +100,12 @@ $action-bar-height: 50px;
   }
 
   /* Advanced sidebar tray is explicitly set to open */
-  &.advanced-sidebar-tray-open {
+  &.advanced-sidebar-tray-toggled {
     .content-form__advanced {
       transform: translate3d(-100%, 0, 0);
     }
 
   }
-
-}
-
-/**
- * On tablets in portrait mode
- */
-@include for-tablet-portrait-and-up {
 
 }
 
@@ -126,7 +119,7 @@ $action-bar-height: 50px;
       width: $advanced-sidebar-fixed-width;
     }
 
-    &-open {
+    &-toggled {
       margin-right: $advanced-sidebar-fixed-width;
 
       .toolbar-tray-horizontal {
@@ -145,20 +138,28 @@ $action-bar-height: 50px;
  */
 @include for-desktop-and-up {
   .js body.advanced-sidebar-tray {
-    margin-right: $advanced-sidebar-fluid-width;
+    margin-right: $advanced-sidebar-fixed-width;
 
     .content-form__advanced {
-      width: $advanced-sidebar-fluid-width;
+      width: $advanced-sidebar-fixed-width;
       transform: translate3d(-100%, 0, 0);
       padding-right: 0;
     }
 
-    [data-toggle-advanced-sidebar-tray] {
-      display: none;
+    .toolbar-tray-horizontal {
+      margin-right: $advanced-sidebar-fixed-width;
     }
 
-    .toolbar-tray-horizontal {
-      margin-right: $advanced-sidebar-fluid-width;
+    &-toggled {
+      margin-right: $advanced-sidebar-toggle-width;
+
+      .toolbar-tray-horizontal {
+        margin-right: $advanced-sidebar-toggle-width;
+      }
+
+      .content-form__advanced {
+        width: $advanced-sidebar-toggle-width;
+      }
     }
   }
 }
@@ -175,7 +176,6 @@ $action-bar-height: 50px;
     }
   }
 }
-
 
 /* Action bar styling */
 .content-form__actions {
@@ -200,7 +200,7 @@ $action-bar-height: 50px;
       padding-left: 36px;
 
     }
-    &.advanced-sidebar-tray-open {
+    &.advanced-sidebar-tray-toggled {
       .content-form__actions {
         margin-right: $advanced-sidebar-fixed-width-small;
       }
@@ -215,7 +215,7 @@ $action-bar-height: 50px;
  */
 @include for-tablet-landscape-and-up {
   .js body.advanced-sidebar-tray {
-    &.advanced-sidebar-tray-open {
+    &.advanced-sidebar-tray-toggled {
       .content-form__actions {
         margin-right: $advanced-sidebar-fixed-width;
       }
@@ -225,26 +225,21 @@ $action-bar-height: 50px;
 
 /**
  * On a desktop screen:
- * - the action bar will make room for the advanced sidebar with a fluid size
- */
-@include for-desktop-and-up {
-  /* Make room for an vertically oriented open toolbar tab */
-  .js body.advanced-sidebar-tray {
-    .content-form__actions {
-      margin-right: $advanced-sidebar-fluid-width;
-    }
-  }
-}
-/**
- * On a bigger desktop screen:
  * - the action bar will make room on the left side for the toolbar in vertical
  *   layout
  */
-@include for-big-desktop-and-up {
+@include for-desktop-and-up {
   /* Make room for an vertically oriented open toolbar tab */
   .toolbar-vertical.toolbar-tray-open {
     .content-form__actions {
       margin-left: $toolbar-vertical-width;
+    }
+  }
+  .js body.advanced-sidebar-tray {
+    &.advanced-sidebar-tray-toggled {
+      .content-form__actions {
+        margin-right: $advanced-sidebar-toggle-width;
+      }
     }
   }
 }
