@@ -145,6 +145,17 @@ function thunder_admin_preprocess_maintenance_page(&$variables) {
 }
 
 /**
+ * Implements theme_preprocess_field_multiple_value_form().
+ *
+ * Add themable classes to multiple value field table for paragraphs field.
+ */
+function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
+  if (!empty($variables['element']['#attached']['library']) && in_array('paragraphs/drupal.paragraphs.admin', $variables['element']['#attached']['library'])) {
+    $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Provide additional suggestions for form inputs and buttons.
