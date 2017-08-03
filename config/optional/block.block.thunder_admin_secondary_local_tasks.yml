@@ -3,7 +3,7 @@ status: true
 dependencies:
   theme:
     - thunder_admin
-id: thunder_admin_secondary_tabs
+id: thunder_admin_secondary_local_tasks
 theme: thunder_admin
 region: pre_content
 weight: 0
