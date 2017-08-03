@@ -27,66 +27,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
   & > tbody > tr {
-    background: $primary-color-lighter;
-    border-bottom: 30px solid $primary-color-lightest; /* 1 */
-
-    &.draggable {
-      &:hover {
-        background: $primary-color-lighter;
-      }
-
-      .field-multiple-drag {
-        position: relative;
-        width: 58px;
-        vertical-align: top;
-        text-align: center;
-        box-sizing: border-box;
-
-        @include for-tablet-landscape-and-up {
-          vertical-align: middle;
-        }
-
-        .js & {
-          .tabledrag-changed {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            font-size: 0;
-            background: #e09600;
-          }
-
-          .tabledrag-handle {
-            display: inline-block;
-            height: 1.5em;
-            float: none;
-
-            .handle {
-              margin-left: 5px;
-              background: url(../images/icons/move.svg) no-repeat center center;
-
-              @include for-tablet-portrait-and-up {
-                margin-left: 2px;
-              }
-            }
-          }
-        }
-      }
-
-      &.drag {
-        background: $primary-color-lighter-2;
-
-        .field-multiple-drag {
-          .tabledrag-handle {
-            .handle {
-              background-image: url(../images/icons/move--primary-blue.svg);
-            }
-          }
-        }
-      }
-
-    }
+//    border-bottom: 30px solid $primary-color-light; /* 1 */
   }
 }
 
@@ -293,34 +234,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  .field-multiple-table {
-    thead {
-      tr {
-        border: 0;
-
-        &:hover {
-          background: transparent;
-        }
-
-        th {
-          background: transparent;
-          color: $primary-color-lightest;
-          border: 0;
-        }
-      }
-    }
-
-    tbody {
-      tr {
-        border-bottom-color: $primary-color-dark;
-
-        &.draggable,
-        &.drag-previous {
-          background: transparent;
-        }
-      }
-    }
-  }
   fieldset:not(.fieldgroup) {
     padding: 30px 0 0;
     border: 0;
