@@ -15,6 +15,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  */
 .field-multiple-table--paragraphs {
   & > thead {
+    border-bottom: 30px solid transparent;
+
     tr {
       border-bottom: 0;
     }
@@ -27,7 +29,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
   & > tbody > tr {
-//    border-bottom: 30px solid $primary-color-light; /* 1 */
+    border-bottom: 30px solid $primary-color-light; /* 1 */
   }
 }
 
