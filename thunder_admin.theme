@@ -148,7 +148,7 @@ function thunder_admin_preprocess_maintenance_page(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Provide additional suggestions for multiple value field widget in form.
-*/
+ */
 function thunder_admin_theme_suggestions_field_multiple_value_form_alter(&$suggestions, $variables) {
   if (!empty($variables['element']['#attached']['library']) && in_array('paragraphs/drupal.paragraphs.admin', $variables['element']['#attached']['library'])) {
     $suggestions[] = 'field_multiple_value_form__paragraphs';
