@@ -11,7 +11,8 @@
   display: flex;
   align-items: center;
 
-  .form-textarea-wrapper {
+  .form-textarea-wrapper,
+  .image-style-preview {
     flex: 1 1 auto;
   }
 }
