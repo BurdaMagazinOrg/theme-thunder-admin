@@ -335,9 +335,12 @@ li.tabs__tab a {
     }
 
     .tabs {
+      .position-container {
+        border-bottom: 1px solid $primary-color-intense;
+      }
+
       &.primary {
         margin-top: 0;
-        float: right;
 
         &:before {
           display: none;
