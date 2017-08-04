@@ -26,9 +26,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       padding-left: 0;
     }
   }
+
   & > tbody > tr {
     background: $primary-color-lighter;
-    border-bottom: 30px solid $primary-color-lightest; /* 1 */
+    border-bottom-width: 0;
 
     &.draggable {
       &:hover {
@@ -87,6 +88,30 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
 
     }
+  }
+
+  /**
+   * Adjust style for add-in-between button for paragraphs.
+   */
+  .add-in-between-row {
+    background: transparent;
+
+    td {
+      padding: 0;
+    }
+
+    .paragraph-type-add-modal {
+      margin-bottom: 0;
+      padding: 5px 0;
+    }
+  }
+
+  /**
+   * Remove negative margins and spaces from initial "Add" button.
+   */
+  ~ .clearfix > .paragraph-type-add-modal.first-button {
+    margin: 0;
+    padding: 0;
   }
 }
 

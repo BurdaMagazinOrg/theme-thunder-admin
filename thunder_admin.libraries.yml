@@ -108,8 +108,6 @@ paragraphs.adjustments:
 
 paragraphs.admin:
   css:
-    component:
-      css/components/paragraphs-modal.css: {}
     theme:
       css/paragraphs-widget.css: {}
 
