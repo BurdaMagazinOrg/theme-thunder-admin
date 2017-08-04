@@ -166,7 +166,7 @@ label {
   margin-left: 0.3em;
   padding: 0;
   font-weight: bold;
-  color: $gray-medium;
+  color: $gray-dark;
   text-transform: uppercase;
 }
 label.error {
@@ -250,7 +250,7 @@ label[for] {
 .description,
 .form-item .description {
   margin: 0.2em 0 0 0;
-  color: #595959;
+  color: $gray-dark;
   font-size: 0.95em;
 }
 .form-item .description.error {
