@@ -320,10 +320,16 @@ li.tabs__tab a {
   border-bottom-color: $primary-color-intense;
 }
 
-.tabs.primary,
-.tabs.secondary {
-  display: flex;
-  justify-content: flex-end;
+.tabs {
+  .position-container {
+    border-bottom: 1px solid $primary-color-intense;
+  }
+
+  &.primary,
+  &.secondary {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .block-local-tasks-block {
@@ -335,9 +341,6 @@ li.tabs__tab a {
     }
 
     .tabs {
-      .position-container {
-        border-bottom: 1px solid $primary-color-intense;
-      }
 
       &.primary {
         margin-top: 0;
