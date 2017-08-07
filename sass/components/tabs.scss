@@ -72,7 +72,6 @@ li.tabs__tab a {
   margin: 1rem 0 0;
 }
 .tabs.primary .tabs__tab.is-active {
-  z-index: 15;
   background-color: $gray-lightest;
   color: #004f80;
 }
