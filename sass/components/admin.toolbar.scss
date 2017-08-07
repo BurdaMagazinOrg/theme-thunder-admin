@@ -56,8 +56,11 @@
 }
 
 .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded {
-  background-position: center right;
-  background-image: url('../../images/icons/chevron-right--white.svg');
+  //background-position: center right;
+  background-position: right 5px center;
+
+  //  background-image: url('../../images/icons/chevron-right--white.svg');
+  background-image: url('../../images/icons/chevron-disc-right--white.svg');
   background-repeat: no-repeat;
 }
 
