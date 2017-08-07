@@ -13,7 +13,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
  */
-.field--widget-entity-reference-paragraphs > div > div > table {
+.field-multiple-table--paragraphs {
   & > thead {
     tr {
       border-bottom: 0;
@@ -304,7 +304,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
         th {
           background: transparent;
-          color: $primary-color-lightest;
+          color: $gray-medium;
           border: 0;
         }
       }
