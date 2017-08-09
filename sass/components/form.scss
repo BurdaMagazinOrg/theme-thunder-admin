@@ -347,7 +347,7 @@ select {
 /**
  * Select elements - Webkit only
  */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (-moz-images-in-menus: 0) {
   select {
     cursor: pointer;
     -webkit-appearance: none;
@@ -373,6 +373,12 @@ select {
   }
 }
 
+@media screen and (-moz-images-in-menus: 0) {
+  select {
+    -moz-appearance: none;
+    padding-top: 6px;
+  }
+}
 /**
  * Improve spacing of cancel link.
  */
