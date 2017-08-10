@@ -347,6 +347,7 @@ function _thunder_admin_apply_advanced_vertical_tabs() {
   switch ($route->getRouteName()) {
     case 'entity.taxonomy_term.add_form':
     case 'node.add':
+    case 'entity.node.content_translation_add':
       return TRUE;
   }
 
