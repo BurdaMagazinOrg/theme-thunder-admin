@@ -50,7 +50,6 @@ $action-bar-height: 50px;
     left: 100%;
     overflow: auto;
     transform: translate3d(0, 0, 0);
-    z-index: 1000;
     padding-bottom: $action-bar-height;
     padding-right: $advanced-sidebar-toggle-width;
   }
@@ -58,7 +57,6 @@ $action-bar-height: 50px;
   /* Show the toggle button for the advanced sidebar tray. */
   [data-toggle-advanced-sidebar-tray] {
     display: flex;
-    z-index: 1000;
     cursor: pointer;
   }
 

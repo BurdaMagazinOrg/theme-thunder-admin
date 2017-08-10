@@ -36,6 +36,7 @@
 }
 .toolbar .toolbar-menu ul .toolbar-icon {
   padding-left: 1.3333em; /* LTR */
+  padding-right: 2em;
 }
 [dir="rtl"] .toolbar .toolbar-menu ul .toolbar-icon {
   padding-left: 0;
@@ -247,18 +248,10 @@
   right: 1.6667em;
 }
 .toolbar .toolbar-icon.toolbar-handle:before {
-  background-image: url(../../images/icons/chevron-disc-down--primary-blue-darker.svg);
+  background-image: url(../../images/icons/chevron-disc-down--white.svg);
 }
 .toolbar .toolbar-icon.toolbar-handle.open:before {
   background-image: url(../../images/icons/chevron-disc-up--primary-blue-intense.svg);
-}
-.toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:before {
-  background-image: url(../../images/icons/twistie-down--primary-blue-darker.svg);
-  background-size: 75%;
-}
-.toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle.open:before {
-  background-image: url(../../images/icons/twistie-up--primary-blue-intense.svg);
-  background-size: 75%;
 }
 .toolbar .toolbar-icon-escape-admin:before {
   background-image: url(../../images/icons/chevron-disc-left--gray-light.svg);
