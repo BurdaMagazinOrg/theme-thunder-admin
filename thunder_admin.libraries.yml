@@ -55,6 +55,7 @@ drupal.dialog:
 
 drupal.nav-tabs:
   js:
+    js/navigation.js: {}
     js/nav-tabs.js: {}
   dependencies:
     - core/matchmedia
