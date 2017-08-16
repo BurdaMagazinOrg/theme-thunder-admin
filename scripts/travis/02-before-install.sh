@@ -40,9 +40,6 @@ composer global require drush/drush:^8.1 drupal/coder
 phpenv rehash
 drush dl drupalorg_drush-7.x
 
-# verify, that makefile is accepted by drupal.org, otherwise we do not need to go any further
-drush verify-makefile
-
 # install image magick
 yes '' | pecl install imagick
 
