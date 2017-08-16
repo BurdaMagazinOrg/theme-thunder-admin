@@ -40,9 +40,6 @@ composer global require drush/drush:^8.1 drupal/coder
 phpenv rehash
 drush dl drupalorg_drush-7.x
 
-# install image magick
-yes '' | pecl install imagick
-
 # Install the PECL YAML extension for strict parsing. yes is used to
 # acknowledge all prompts.
 if [[ $TRAVIS_PHP_VERSION = '5.6' ]] ; then
