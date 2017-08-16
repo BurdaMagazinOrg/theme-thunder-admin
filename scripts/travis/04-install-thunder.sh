@@ -26,12 +26,11 @@ update_thunder() {
 
 composer_create_thunder() {
     cd ${THEME_DIR}
-    composer create-project burdamagazinorg/thunder-project:2.x ${TEST_DIR} --stability dev --no-interaction --no-install
+    composer create-project burdamagazinorg/thunder-project:2.x ${TEST_DIR} --stability dev --no-interaction --no-progress
 
     cd ${TEST_DIR}
-#    composer config repositories.thunder path ${THEME_DIR}
-    composer config repositories.thunder_admin path ${THEME_DIR}
-    composer require "drupal/thunder_admin:*" --no-progress
+    rm -rf docroot/themes/contrib/thunder_admin/
+    ln -s ${THEME_DIR} docroot/themes/contrib/thunder_admin
 }
 
 apply_patches() {
