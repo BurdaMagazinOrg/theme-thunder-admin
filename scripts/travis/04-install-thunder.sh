@@ -32,7 +32,7 @@ composer_create_thunder() {
     cd ${TEST_DIR}
 #    composer config repositories.thunder path ${THEME_DIR}
     composer config repositories.thunder_admin path ${THEME_DIR}
-    composer require "burdamagazinorg/thunder:*" --no-progress
+    composer require "drupal/thunder_admin:*" --no-progress
 }
 
 apply_patches() {
