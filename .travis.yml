@@ -12,6 +12,12 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
 
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+      - graphicsmagick
+
 before_install:
 #  - composer global require drush/drush:^8.1 drupal/coder
 #  - export PATH="$HOME/.composer/vendor/bin:$PATH"
