@@ -11,6 +11,5 @@ set -x
 source ~/.nvm/nvm.sh
 set +x
 nvm install 6
-npm install -g yarn
-yarn --frozen-lockfile --ignore-scripts
+npm install -g eslint
 npm run js
