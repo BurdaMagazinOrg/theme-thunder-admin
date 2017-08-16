@@ -1,7 +1,7 @@
 // Options for sharpeye
 exports.options = {
   // The base URL of the website.
-  baseUrl: 'http://thunder.dd:8083',
+  baseUrl: 'http://127.0.0.1:8080',
   // Username of admin user.
   user: 'admin',
   // Password of admin user.
