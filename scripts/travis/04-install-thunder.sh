@@ -26,9 +26,10 @@ update_thunder() {
 
 composer_create_thunder() {
     cd ${THEME_DIR}
-    composer create-project burdamagazinorg/thunder-project:2.x ${TEST_DIR} --stability dev --no-interaction --no-progress
+    composer create-project burdamagazinorg/thunder-project:2.x ${TEST_DIR} --stability dev --no-interaction --no-install
 
     cd ${TEST_DIR}
+    composer install --no-progress
     rm -rf docroot/themes/contrib/thunder_admin/
     ln -s ${THEME_DIR} docroot/themes/contrib/thunder_admin
 }
