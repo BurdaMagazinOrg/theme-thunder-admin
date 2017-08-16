@@ -45,8 +45,9 @@ apply_patches() {
 
 install_theme_dependencies() {
   cd ${THEME_DIR}
+  nvm use 6
   npm install -g yarn
-  yarn --ignore-scripts --verbose
+  yarn --ignore-scripts
 
 }
 # Build current revision of thunder
