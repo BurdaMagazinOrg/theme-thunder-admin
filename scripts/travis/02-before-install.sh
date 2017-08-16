@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-# Download thunder from drupal.org with drush
-drush_download_thunder() {
-    DOWNLOAD_PATH=$1
-
-    mkdir -p $DOWNLOAD_PATH
-    cd $DOWNLOAD_PATH
-    drush dl thunder --drupal-project-rename="docroot" -y
-    composer install --working-dir=${DOWNLOAD_PATH}/docroot
-}
-
 # update composer
 composer self-update
 
