@@ -45,9 +45,7 @@ apply_patches() {
 
 install_theme_dependencies() {
   cd ${THEME_DIR}
-  set -x
   source ~/.nvm/nvm.sh
-  set +x
   nvm use 6
   npm install -g yarn
   yarn --ignore-scripts
