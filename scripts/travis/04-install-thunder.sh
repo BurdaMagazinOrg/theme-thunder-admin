@@ -44,17 +44,10 @@ apply_patches() {
     #patch -p1 < test-session-expire-2771547-64.patch
 }
 
-create_testing_dump() {
-    cd ${TEST_DIR}/docroot
-
-    php ./core/scripts/db-tools.php dump-database-d8-mysql | gzip > thunder.php.gz
-}
 # Build current revision of thunder
 composer_create_thunder
 
 # Install Thunder
 install_thunder ${TEST_DIR}/docroot
-
-create_testing_dump
 
 apply_patches
