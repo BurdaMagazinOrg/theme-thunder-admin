@@ -46,7 +46,7 @@ apply_patches() {
 install_theme_dependencies() {
   cd ${THEME_DIR}
   npm install -g yarn
-  yarn --frozen-lockfile --ignore-scripts
+  yarn --ignore-scripts --verbose
 
 }
 # Build current revision of thunder
