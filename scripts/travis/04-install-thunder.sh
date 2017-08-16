@@ -43,8 +43,17 @@ apply_patches() {
     #patch -p1 < test-session-expire-2771547-64.patch
 }
 
+install_theme_dependencies() {
+  cd ${THEME_DIR}
+  npm install -g yarn
+  yarn --frozen-lockfile --ignore-scripts
+
+}
 # Build current revision of thunder
 composer_create_thunder
+
+# Install theme dependencies
+install_theme_dependencies
 
 # Install Thunder
 install_thunder ${TEST_DIR}/docroot
