@@ -9,6 +9,26 @@ $paragraph-preview-mobile-height: 150px;
 $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
 
+.field--widget-entity-reference-paragraphs {
+  .paragraph-type-add-modal {
+    padding: 5px 0;
+    height: 30px;
+
+    @media screen and (max-width: 600px) {
+      height: 39px;
+    }
+
+    .paragraph-type-add-modal-button {
+      top: 0;
+
+      @media screen and (max-width: 600px) {
+        width: auto;
+        padding-top: 6px;
+      }
+    }
+  }
+}
+
 /**
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
@@ -16,7 +36,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .field-multiple-table--paragraphs {
   & > thead {
     tr {
-      border-bottom: 0;
+      border-bottom: 1px solid $primary-color;
     }
     th {
       border: 0;
@@ -29,7 +49,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
   & > tbody > tr {
     background: $primary-color-lighter;
-    border-bottom-width: 0;
+    border-bottom: 1px solid $primary-color;
 
     &.draggable {
       &:hover {
@@ -96,13 +116,15 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .add-in-between-row {
     background: transparent;
   }
+}
 
-  .paragraph-type-add-modal {
-    padding: 5px 0;
-    height: 30px;
-
-    .paragraph-type-add-modal-button {
-      top: 0;
+.paragraphs--add-in-between {
+  .field-multiple-table--paragraphs {
+    & > thead,
+    & > tbody {
+      & > tr {
+        border-bottom-width: 0;
+      }
     }
   }
 }

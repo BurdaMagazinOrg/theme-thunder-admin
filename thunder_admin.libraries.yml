@@ -110,6 +110,7 @@ paragraphs.admin:
   css:
     theme:
       css/paragraphs-widget.css: {}
+      css/paragraphs-widget--deprecated.css: {}
 
 tour-styling:
   css:
