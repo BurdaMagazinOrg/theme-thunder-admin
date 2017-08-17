@@ -13,6 +13,10 @@ cache:
     - "$HOME/.drush/cache"
 
 addons:
+  artifacts:
+    region: eu-west-1
+    paths:
+      - /tmp/sharpeye
   apt:
     packages:
       - google-chrome-stable
