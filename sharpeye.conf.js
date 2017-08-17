@@ -6,8 +6,14 @@ exports.options = {
   user: 'admin',
   // Password of admin user.
   pass: '1234',
-  // Specify directory, in which screenshots should be saved.
-  screenshotDirectory: 'screenshots'
+}
+
+var jobID = process.env.TRAVIS_JOB_ID;
+if (jobID !== undefined) {
+  // Specify directories, in which screenshots should be saved.
+  // They will get a postfix of '/screen', '/reference' and '/diff', respectively.
+  exports.options.referenceBaseDirectory = '/tmp/sharpeye/' + jobID;
+  exports.options.diffBaseDirectory = '/tmp/sharpeye/' + jobID;
 }
 
 // Webdriver.io config overwrites.
