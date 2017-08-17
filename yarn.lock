@@ -3670,7 +3670,7 @@ setprototypeof@1.0.2:
 
 sharpeye@burdamagazinorg/sharpeye:
   version "1.0.0"
-  resolved "https://codeload.github.com/burdamagazinorg/sharpeye/tar.gz/8f42648251f7e0feccd9532ea6e4de01ca0ab4b6"
+  resolved "https://codeload.github.com/burdamagazinorg/sharpeye/tar.gz/84bac33c78363232ac70446b266639023ef0b278"
   dependencies:
     wdio-dot-reporter "0.0.8"
     wdio-mocha-framework "^0.5.10"
