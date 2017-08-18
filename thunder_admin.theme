@@ -152,6 +152,17 @@ function thunder_admin_preprocess_maintenance_page(&$variables) {
 function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
   if (!empty($variables['element']['#attached']['library']) && in_array('paragraphs/drupal.paragraphs.admin', $variables['element']['#attached']['library'])) {
     $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
+
+    $hasDeprecatedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_dialog_template']);
+    $hasRowBasedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_in_between_button_template']);
+
+    // Add custom style for deprecated paragraph type (relevant only for table).
+    if ($hasDeprecatedAddInBetween && !$hasRowBasedAddInBetween) {
+      $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs--deprecated';
+    }
+    elseif ($hasRowBasedAddInBetween) {
+      $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs--row-based-add-in-between';
+    }
   }
 }
 

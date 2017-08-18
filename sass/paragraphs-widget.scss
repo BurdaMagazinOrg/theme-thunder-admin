@@ -59,13 +59,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       .field-multiple-drag {
         position: relative;
         width: 58px;
-        vertical-align: top;
+        vertical-align: middle;
         text-align: center;
         box-sizing: border-box;
-
-        @include for-tablet-landscape-and-up {
-          vertical-align: middle;
-        }
 
         .js & {
           .tabledrag-changed {
@@ -116,10 +112,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .add-in-between-row {
     background: transparent;
   }
-}
 
-.paragraphs--add-in-between {
-  .field-multiple-table--paragraphs {
+  &.field-multiple-table--paragraphs--row-based-add-in-between {
     & > thead,
     & > tbody {
       & > tr {
