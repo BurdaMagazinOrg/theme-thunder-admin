@@ -6,6 +6,7 @@ composer self-update
 # Get selenium docker images
 docker pull selenium/hub:3.4.0-einsteinium
 docker pull selenium/node-chrome:3.4.0-einsteinium
+ifconfig
 
 # remove xdebug to make php execute faster
 phpenv config-rm xdebug.ini
