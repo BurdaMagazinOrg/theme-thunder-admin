@@ -1,11 +1,11 @@
 // Options for sharpeye
 exports.options = {
   // The base URL of the website.
-  baseUrl: 'http://127.0.0.1:8080',
+  baseUrl: 'http://docker:8080',
   // Username of admin user.
   user: 'admin',
   // Password of admin user.
-  pass: '1234',
+  pass: '1234'
 }
 
 var jobID = process.env.TRAVIS_JOB_ID;

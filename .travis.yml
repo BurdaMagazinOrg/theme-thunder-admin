@@ -12,6 +12,11 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
 
+sudo: required
+
+services:
+  - docker
+
 addons:
   artifacts:
     region: eu-west-1
@@ -19,7 +24,6 @@ addons:
       - /tmp/sharpeye
   apt:
     packages:
-      - google-chrome-stable
       - graphicsmagick
 
 before_install:
