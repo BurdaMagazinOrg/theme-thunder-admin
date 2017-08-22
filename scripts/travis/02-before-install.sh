@@ -6,7 +6,11 @@ composer self-update
 # Get selenium docker images
 docker pull selenium/hub:3.4.0-einsteinium
 docker pull selenium/node-chrome:3.4.0-einsteinium
-ifconfig
+
+# get git lfs and get files
+mkdir -p /tmp/git-lfs
+curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-linux-amd64-2.2.0.tar.gz | tar -xz -C /tmp/git-lfs --strip-components 1
+/tmp/git-lfs/git-lfs pull
 
 # remove xdebug to make php execute faster
 phpenv config-rm xdebug.ini
