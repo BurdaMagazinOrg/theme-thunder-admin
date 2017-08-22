@@ -7,7 +7,7 @@ cd ${TEST_DIR}/docroot
 drush cr
 
 # Run the webserver
-drush runserver --default-server=builtin 8080 &>/dev/null &
+drush runserver --default-server=builtin 0.0.0.0:8080 &>/dev/null &
 
 # Run Selenium2 Server
 docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-einsteinium
