@@ -55,6 +55,7 @@ drupal.dialog:
 
 drupal.nav-tabs:
   js:
+    js/navigation.js: {}
     js/nav-tabs.js: {}
   dependencies:
     - core/matchmedia
@@ -126,3 +127,7 @@ dropzonejs.widget:
   css:
     component:
       css/components/dropzonejs.widget.css: {}
+
+ui.sortable.with.fractionl.pixels:
+  js:
+    js/ui-sortable-with-fractional-pixels.js: {}

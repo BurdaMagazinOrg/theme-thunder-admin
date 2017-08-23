@@ -85,6 +85,10 @@ libraries-extend:
     - thunder_admin/paragraphs.admin
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
+  entity_browser/multi_step_display:
+    - thunder_admin/ui.sortable.with.fractionl.pixels
+  entity_browser/entity_reference:
+    - thunder_admin/ui.sortable.with.fractionl.pixels
 
 quickedit_stylesheets:
   - css/components/quickedit.css
