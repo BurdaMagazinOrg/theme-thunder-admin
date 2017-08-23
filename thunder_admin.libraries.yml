@@ -128,3 +128,7 @@ dropzonejs.widget:
   css:
     component:
       css/components/dropzonejs.widget.css: {}
+
+ui.sortable.with.fractionl.pixels:
+  js:
+    js/ui-sortable-with-fractional-pixels.js: {}
