@@ -12,7 +12,7 @@ var jobID = process.env.TRAVIS_JOB_ID;
 if (jobID !== undefined) {
   // Specify directories, in which screenshots should be saved.
   // They will get a postfix of '/screen', '/reference' and '/diff', respectively.
-  exports.options.referenceBaseDirectory = '/tmp/sharpeye/' + jobID;
+  exports.options.screenBaseDirectory = '/tmp/sharpeye/' + jobID;
   exports.options.diffBaseDirectory = '/tmp/sharpeye/' + jobID;
 }
 
