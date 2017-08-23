@@ -1,0 +1,80 @@
+@import 'variables';
+.field--widget-entity-reference-paragraphs {
+
+  // Add more buttons.
+  .paragraph-type-add-modal.first-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -29px;
+  }
+
+  .field-multiple-table--paragraphs--deprecated {
+    thead {
+      border-bottom: 30px solid transparent;
+    }
+
+    & > tbody > tr {
+      border-bottom: 30px solid $primary-color-lightest;
+
+      @media screen and (max-width: 600px) {
+        border-bottom: 38px solid $primary-color-lightest;
+      }
+    }
+
+    & > tbody > tr:last-child {
+      border-bottom-width: 0;
+    }
+
+    // Overwrite bottom margin defined by paragraphs.
+    &.field-multiple-table {
+      margin-bottom: 0;
+    }
+
+    // Add more buttons.
+    .paragraph-type-add-modal.first-button {
+      margin-top: -41px;
+      margin-bottom: 15px;
+
+      @media screen and (max-width: 600px) {
+        margin-top: -48px;
+      }
+    }
+
+    .paragraph-form-item--has-subform {
+      .paragraph-type-add-modal.first-button {
+        margin-top: -51px;
+        margin-left: -19px;
+
+        @media screen and (max-width: 600px) {
+          margin-top: -58px;
+        }
+      }
+    }
+
+    // First button.
+    tr:first-child {
+      .paragraph-type-add-modal.first-button {
+        margin-top: -56px;
+
+        @media screen and (max-width: 600px) {
+          margin-top: -63px;
+        }
+      }
+
+      .paragraph-form-item--has-subform {
+        .paragraph-type-add-modal.first-button {
+          margin-top: -64px;
+
+          @media screen and (max-width: 600px) {
+            margin-top: -72px;
+          }
+        }
+      }
+    }
+  }
+
+  // Last button.
+  .clearfix > .paragraph-type-add-modal.first-button {
+    margin-left: 0;
+  }
+}

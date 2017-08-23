@@ -109,10 +109,9 @@ paragraphs.adjustments:
 
 paragraphs.admin:
   css:
-    component:
-      css/components/paragraphs-modal.css: {}
     theme:
       css/paragraphs-widget.css: {}
+      css/paragraphs-widget--deprecated.css: {}
 
 tour-styling:
   css:
