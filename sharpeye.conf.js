@@ -7,7 +7,7 @@ exports.options = {
   // Password of admin user.
   pass: '1234',
   // Specify the mismatch tolerance of the comparison.
-  misMatchTolerance: 0.02
+  misMatchTolerance: 0.04
 }
 
 var jobID = process.env.TRAVIS_JOB_ID;
