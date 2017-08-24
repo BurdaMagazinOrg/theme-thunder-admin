@@ -21,19 +21,19 @@ module.exports = [
     { selector: '#edit-field-paragraphs-add-more-first-button-area-add-more', wait: '.paragraphs-add-dialog' },
     { selector: '[data-type="text"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="quote"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
+    { selector: '[data-type="quote"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="link"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
+    { selector: '[data-type="link"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="instagram"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
+    { selector: '[data-type="instagram"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="twitter"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
+    { selector: '[data-type="twitter"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="gallery"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
+    { selector: '[data-type="gallery"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="image"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
+    { selector: '[data-type="image"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'},
     { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="video"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'}
+    { selector: '[data-type="video"]', wait: '[data-drupal-selector="edit-field-paragraphs-7-subform"]'}
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', clickpath: [
