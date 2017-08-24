@@ -1,8 +1,14 @@
 module.exports = [
-  '/admin/content',
+  { name: 'Content', path: '/admin/content', hide: ['td.views-field.views-field-changed'], clickpath: [
+    { selector: '#view-title-table-column a' }
+  ]},
   '/admin/content/scheduled',
-  '/admin/content/files',
-  '/admin/content/media',
+  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed'], clickpath: [
+    { selector: '#view-filename-table-column a', offset: -150 }
+  ]},
+  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], clickpath: [
+    { selector: '#view-name-table-column a', offset: -150 }
+  ]},
   '/node/add',
   '/node/add/article',
   // Meta tags token browser
@@ -50,6 +56,5 @@ module.exports = [
   '/admin/structure/types/manage/article/display',
   '/admin/appearance',
   '/admin/modules',
-  '/admin/people',
-  '/admin/config/system/site-information'
+  { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] }
 ]
