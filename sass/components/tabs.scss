@@ -40,8 +40,7 @@
   padding-left: 2em;
   padding-right: 1em;
 }
-.tabs__tab:hover,
-.tabs__tab:focus {
+.tabs__tab:hover {
   color: $primary-color-intense;
   background-color: $gray-lightest;
 }
@@ -121,7 +120,6 @@ li.tabs__tab a {
   width: 25%;
   padding-right: 4px;
   padding-left: 4px;
-  border-left: 0; /* LTR */
   border-radius: 0 4px 0 0; /* LTR */
   font-family: Arial, sans-serif;
   font-size: 1.25em;
@@ -130,7 +128,6 @@ li.tabs__tab a {
   outline: 0;
 }
 [dir="rtl"] .is-collapse-enabled .tabs__trigger {
-  border-right: 0;
   border-left: 1px solid #bfbfbf;
   border-radius: 4px 0 0 0;
   right: auto;
@@ -162,7 +159,6 @@ li.tabs__tab a {
 .is-open .tabs__tab.is-active {
   background-color: #ffffff;
   color: #004f80;
-  border-bottom: 1px solid #a6a6a6;
 }
 
 /* Styles for the horizontal state always take priority */
@@ -319,39 +315,34 @@ li.tabs__tab a {
   border-bottom-color: $primary-color-intense;
 }
 
-.tabs {
-  .position-container {
+.is-horizontal {
+  &.position-container {
     border-bottom: 1px solid $primary-color-intense;
   }
 
-  &.primary,
-  &.secondary {
-    display: flex;
-    justify-content: flex-end;
+  .tabs {
+    &.primary,
+    &.secondary {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 
 .block-local-tasks-block {
-  @include for-big-tablet-landscape-and-up {
+  .tabs {
+    &.secondary {
+      margin-top: 0.8em;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  &.is-combined-with-breadcrumb {
     margin-top: -35px;
 
-    .region-pre-content & {
-      margin-top: 0;
-    }
-
     .tabs {
-
       &.primary {
         margin-top: 0;
-
-        &:before {
-          display: none;
-        }
-      }
-
-      &.secondary {
-        margin-top: 0.8em;
-        margin-bottom: 1.5em;
       }
     }
   }

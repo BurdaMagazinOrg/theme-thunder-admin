@@ -27,6 +27,8 @@
           if ($body.hasClass('toolbar-vertical') && $activeToolbarItem.length) {
             $activeToolbarItem.click();
           }
+          // Trigger resize event.
+          $(window).trigger('resize.tabs');
         });
       }
     }
