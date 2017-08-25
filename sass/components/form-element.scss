@@ -77,6 +77,7 @@ body:not(.entity-add-or-edit-form) {
 .js body.entity-add-or-edit-form {
   .js-details-description,
   .js-form-item__description {
+    visibility: hidden;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -85,6 +86,7 @@ body:not(.entity-add-or-edit-form) {
   }
   .is-description-visible .js-details-description,
   .is-description-visible .js-form-item__description {
+    visibility: visible;
     max-height: 5000px;
     opacity: 1;
     transition: all 0.3s;
