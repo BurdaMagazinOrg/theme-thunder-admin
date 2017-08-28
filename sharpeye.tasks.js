@@ -3,7 +3,7 @@ module.exports = [
     { selector: '#view-title-table-column a' }
   ]},
   '/admin/content/scheduled',
-  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed'], clickpath: [
+  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field views-field-created'], clickpath: [
     { selector: '#view-filename-table-column a', offset: -150 }
   ]},
   { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], clickpath: [
@@ -53,7 +53,10 @@ module.exports = [
   '/admin/structure/types/manage/article',
   '/admin/structure/types/manage/article/fields',
   '/admin/structure/types/manage/article/form-display',
-  '/admin/structure/types/manage/article/display',
+  { name: 'Article display', path: '/admin/structure/types/manage/article/display', hide: [
+    '.form-item-fields-field-channel-type',
+    '.form-item-fields-field-teaser-media-type'
+  ]},
   '/admin/appearance',
   '/admin/modules',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] }
