@@ -3,7 +3,7 @@ module.exports = [
     { selector: '#view-title-table-column a' }
   ]},
   '/admin/content/scheduled',
-  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field views-field-created'], clickpath: [
+  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], clickpath: [
     { selector: '#view-filename-table-column a', offset: -150 }
   ]},
   { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], clickpath: [
