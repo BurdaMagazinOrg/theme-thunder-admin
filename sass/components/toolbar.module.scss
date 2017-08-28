@@ -30,3 +30,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 [dir="rtl"] body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
   margin-right: $toolbar-vertical-width;
 }
+
+.toolbar-horizontal .toolbar-tray {
+  width: auto;
+}
