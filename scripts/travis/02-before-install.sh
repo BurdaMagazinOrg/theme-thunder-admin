@@ -6,6 +6,7 @@ composer self-update
 # Get selenium docker images
 docker pull selenium/hub:3.4.0-einsteinium
 docker pull selenium/node-chrome:3.4.0-einsteinium
+docker pull selenium/node-firefox:3.4.0-einsteinium
 
 # get git lfs and get files
 mkdir -p /tmp/git-lfs
