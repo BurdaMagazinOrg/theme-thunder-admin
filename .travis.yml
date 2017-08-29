@@ -8,14 +8,40 @@ branches:
 
 cache:
   apt: true
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+
+sudo: required
+
+services:
+  - docker
+
+addons:
+  artifacts:
+    region: eu-west-1
+    paths:
+      - /tmp/sharpeye
+  apt:
+    packages:
+      - graphicsmagick
 
 before_install:
-  - composer global require drush/drush:^8.1 drupal/coder
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+#  - composer global require drush/drush:^8.1 drupal/coder
+#  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+#  - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+  - bash -e ./scripts/travis/00-keep-travis-running.sh &
+  - source ./scripts/travis/01-setup-environment.sh
+  - bash -x -e ./scripts/travis/02-before-install.sh
+  - bash -x -e ./scripts/travis/03-test-source-code.sh
 
-install: TRUE
+install:
+  - bash -x -e ./scripts/travis/04-install-thunder.sh
+
+before_script:
+  - bash -x -e ./scripts/travis/05-setup-tests.sh
 
 script:
-  - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme --ignore=css/* -p .
-  - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme -p .
+  - bash -x -e ./scripts/travis/06-run-tests.sh
+#  - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme --ignore=css/* -p .
+#  - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme -p .
