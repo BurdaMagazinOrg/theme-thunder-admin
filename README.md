@@ -47,3 +47,39 @@ build scripts and watch scripts are run with npm, for development run
 * image minification (folder: images-originals to images)
 * svg sprite creation (folder: images/icons to images/icon-sprite.svg)
 * JS linting (folder: js)
+
+#### Visual Regression Tests
+Travis will check the theme for changes with a visual regression test.  
+If you changed some styling, please provide new reference images.
+To do so, first install a fresh thunder:
+
+- `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
+- `cd ../fresh-thunder && composer install`
+- replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link 
+- configure database settings
+- `drush si thunder --account-pass=1234 -y`
+- if no images are visible: `drush cr -l <yourdomain:port>`
+
+Then you can run selenium in docker:
+
+- if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
+- `docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-francium`
+- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome:3.4.0-einsteinium`
+- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox:3.4.0-einsteinium`
+
+To debug a browser you can use following commands:
+
+ - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome-debug:3.4.0-einsteinium`
+ - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox-debug:3.4.0-einsteinium`
+
+and connect with you vnc client (on mac you can use finder: go to -> connect to server [⌘K]). The password is: `secret`
+
+Before starting, set the correct URL in `sharpeye.conf.js`.  
+To start the process, enter following command from within the theme directory:
+`/node_modules/.bin/sharpeye`
+
+It will make screenshots of the pages, described in `sharpeye.tasks.js` and compare them to the reference images. 
+If it detects a change, it will output a diff screenshot in `screenshots/diff`.
+If you accept this change, move the corresponsing screenshot out of `screenshots/screen` into `screenshots/reference`.
+
+Now commit the new reference image. If you make a pull request on GitHub, you can upload the diff pictures there.

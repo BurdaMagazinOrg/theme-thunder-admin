@@ -32,6 +32,7 @@
     "npm-run-all": "^3.1.2",
     "onchange": "^3.2.0",
     "postcss-cli": "^2.6.0",
+    "sharpeye": "burdamagazinorg/sharpeye",
     "svg-sprite-generator": "^0.0.7",
     "svgo": "^0.7.1"
   },
