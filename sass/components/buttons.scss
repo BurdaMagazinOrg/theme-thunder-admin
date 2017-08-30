@@ -192,6 +192,7 @@ $button-border-radius: $base-border-radius;
   }
 
   .button--highlight &,
+  .button:focus &,
   .button:hover & {
     svg {
       path {
