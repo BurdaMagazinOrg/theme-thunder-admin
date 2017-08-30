@@ -75,6 +75,8 @@ libraries-override:
 libraries-extend:
   core/ckeditor:
     - thunder_admin/ckeditor-dialog
+  core/drupal.tabledrag:
+    - thunder_admin/tabledrag.tabindex
   core/drupal.vertical-tabs:
     - thunder_admin/vertical-tabs
   core/jquery.ui:
