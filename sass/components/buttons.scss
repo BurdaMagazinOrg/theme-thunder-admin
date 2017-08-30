@@ -50,8 +50,8 @@ $button-border-radius: $base-border-radius;
 
   &:hover,
   &:focus {
-    background-color: $gray-lighter;
-    background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
+    color: #ffffff;
+    background: #057ec7 none;
     text-decoration: none;
     outline: none;
   }
