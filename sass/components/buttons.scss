@@ -48,11 +48,13 @@ $button-border-radius: $base-border-radius;
   text-transform: uppercase;
   min-height: 30px;
 
-  &:hover,
-  &:focus {
-    color: #ffffff;
-    background: #057ec7 none;
+  &:focus,
+  &:hover {
+    background-color: $gray-lighter;
+    background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
     text-decoration: none;
+  }
+  &:hover {
     outline: none;
   }
 }
