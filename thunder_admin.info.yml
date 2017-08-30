@@ -32,15 +32,9 @@ libraries-override:
         /core/themes/stable/css/node/node.module.css: false
   toolbar/toolbar:
     css:
-      component:
-        /core/themes/stable/css/toolbar/toolbar.module.css: css/components/toolbar.module.css
       theme:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
         /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
-  toolbar/toolbar.menu:
-    css:
-      state:
-        /core/themes/stable/css/toolbar/toolbar.menu.css: css/components/toolbar.menu.css
 # core base theme (classy) overrides
   classy/dialog:
     thunder_admin/drupal.dialog
@@ -91,6 +85,10 @@ libraries-extend:
     - thunder_admin/ui.sortable.with.fractionl.pixels
   entity_browser/entity_reference:
     - thunder_admin/ui.sortable.with.fractionl.pixels
+  toolbar/toolbar:
+    - thunder_admin/toolbar
+  toolbar/toolbar.menu:
+    - thunder_admin/toolbar.menu
 
 quickedit_stylesheets:
   - css/components/quickedit.css

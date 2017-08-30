@@ -135,3 +135,13 @@ dropzonejs.widget:
 ui.sortable.with.fractionl.pixels:
   js:
     js/ui-sortable-with-fractional-pixels.js: {}
+
+toolbar:
+  css:
+    component:
+      css/components/toolbar.module.css: {}
+
+toolbar.menu:
+  css:
+    state:
+      css/components/toolbar.menu.css: {}
