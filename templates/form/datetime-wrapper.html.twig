@@ -27,7 +27,7 @@
   <div class="form-item__field-wrapper">
     {{ content }}
     {% if description %}
-      {% include '@thunder_admin/button-description-toggle.html.twig' %}
+      {% include '@thunder_admin/button-description-toggle.html.twig' with {'class': 'form-item__toggle-description'} %}
     {% endif %}
   </div>
   {% if errors %}

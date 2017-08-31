@@ -87,7 +87,7 @@
       <span class="field-suffix">{{ suffix }}</span>
     {% endif %}
     {% if description.content %}
-      {% include '@thunder_admin/button-description-toggle.html.twig' %}
+      {% include '@thunder_admin/button-description-toggle.html.twig' with {'class': 'form-item__toggle-description'} %}
     {% else %}
         <div class="form-item__toggle-description-placeholder">&nbsp;</div>
     {% endif %}

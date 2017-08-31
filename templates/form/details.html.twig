@@ -25,7 +25,7 @@
     <summary{{ summary_attributes.addClass(summary_classes) }}>
       {{ title }}
       {%- if description -%}
-        {% include '@thunder_admin/button-description-toggle.html.twig' %}
+        {% include '@thunder_admin/button-description-toggle.html.twig' with {'class': 'details__toggle-description'} %}
       {%- endif -%}
     </summary>
   {%- endif -%}
