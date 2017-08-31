@@ -124,12 +124,15 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 }
 
 .paragraph-form-item {
-  display: flex;
   position: relative;
 }
 
 .paragraph-form-item--has-preview {
+  display: flex;
+  flex-wrap: wrap;
+
   .messages {
+    flex: 1 1 60%;
     @include for-tablet-portrait-and-up {
       margin-right: 15em;
     }
@@ -141,6 +144,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     justify-content: flex-end;
     float: right;
     margin-left: 1em;
+    flex-grow: 1;
 
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
@@ -373,7 +377,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 /* ----------------------- Paragraph preview -------------------------------- */
 
 .paragraph-form-item__preview {
-  flex: 1 1 auto;
+  flex: 1 1 60%;
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
