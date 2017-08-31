@@ -235,7 +235,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     height: 24px;
   }
 
-  .form-wrapper + .form-wrapper {
+  > .form-wrapper:first-child {
     margin-top: $base-space-80pct;
   }
 
