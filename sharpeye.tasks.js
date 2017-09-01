@@ -38,6 +38,7 @@ module.exports = [
   { name: 'Paragraphs modified content message', path: '/node/7/edit', clickpath: [
     { selector: '#edit-field-paragraphs-1-top-links-edit-button', wait: '.paragraph-form-item--has-subform' },
     { selector: '[data-drupal-selector="edit-field-paragraphs-1-top-links-collapse-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]' },
+    { selector: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]'}
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', clickpath: [
