@@ -132,10 +132,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   flex-wrap: wrap;
 
   .messages {
-    flex: 1 1 60%;
-    @include for-tablet-portrait-and-up {
-      margin-right: 15em;
-    }
+    flex: 1 1 100%;
   }
 
   .paragraph-form-item__actions {
