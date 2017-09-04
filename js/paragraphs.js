@@ -27,6 +27,14 @@
           $(this).siblings('.paragraph-form-item__actions').find('.edit > button').removeClass('button--highlight');
         });
       });
+
+      // Fix keyboard events on buttons.
+      $paragraphWidget.find('.paragraph-form-item__links .js-form-submit').on('keypress', function (event) {
+        var key = event.charCode || event.keyCode;
+        if ((key === 32) || (key === 13)) {
+          $(this).trigger('mousedown');
+        }
+      });
     }
   };
 

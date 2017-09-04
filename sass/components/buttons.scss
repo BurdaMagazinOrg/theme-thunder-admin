@@ -48,11 +48,13 @@ $button-border-radius: $base-border-radius;
   text-transform: uppercase;
   min-height: 30px;
 
-  &:hover,
-  &:focus {
+  &:focus,
+  &:hover {
     background-color: $gray-lighter;
     background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
     text-decoration: none;
+  }
+  &:hover {
     outline: none;
   }
 }
@@ -192,6 +194,7 @@ $button-border-radius: $base-border-radius;
   }
 
   .button--highlight &,
+  .button:focus &,
   .button:hover & {
     svg {
       path {
