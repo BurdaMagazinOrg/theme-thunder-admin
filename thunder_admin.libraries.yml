@@ -55,6 +55,7 @@ drupal.dialog:
 
 drupal.nav-tabs:
   js:
+    js/navigation.js: {}
     js/nav-tabs.js: {}
   dependencies:
     - core/matchmedia
@@ -108,10 +109,9 @@ paragraphs.adjustments:
 
 paragraphs.admin:
   css:
-    component:
-      css/components/paragraphs-modal.css: {}
     theme:
       css/paragraphs-widget.css: {}
+      css/paragraphs-widget--deprecated.css: {}
       css/paragraphs-sorting.css: {}
   js:
     js/paragraphs-sorting.js: {}
@@ -119,6 +119,10 @@ paragraphs.admin:
     - core/jquery
     - core/jquery.once
     - core/drupal.tabledrag
+
+tabledrag.tabindex:
+  js:
+    js/tabledrag.tabindex.js: {}
 
 tour-styling:
   css:
@@ -129,3 +133,22 @@ vertical-tabs:
   css:
     component:
       css/components/vertical-tabs.css: {}
+
+dropzonejs.widget:
+  css:
+    component:
+      css/components/dropzonejs.widget.css: {}
+
+ui.sortable.with.fractionl.pixels:
+  js:
+    js/ui-sortable-with-fractional-pixels.js: {}
+
+toolbar:
+  css:
+    component:
+      css/components/toolbar.module.css: {}
+
+toolbar.menu:
+  css:
+    state:
+      css/components/toolbar.menu.css: {}

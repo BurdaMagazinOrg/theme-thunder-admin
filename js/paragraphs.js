@@ -19,6 +19,21 @@
           $this.parent().find('.edit button').trigger('mousedown');
           e.preventDefault();
         });
+
+        // Highlight edit button when mouse is over clickable element.
+        $this.hover(function () {
+          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').addClass('button--highlight');
+        }, function () {
+          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').removeClass('button--highlight');
+        });
+      });
+
+      // Fix keyboard events on buttons.
+      $paragraphWidget.find('.paragraph-form-item__links .js-form-submit').on('keypress', function (event) {
+        var key = event.charCode || event.keyCode;
+        if ((key === 32) || (key === 13)) {
+          $(this).trigger('mousedown');
+        }
       });
     }
   };

@@ -11,7 +11,12 @@
   display: flex;
   align-items: center;
 
-  .form-textarea-wrapper {
+  .field-suffix {
+    padding-left: 5px;
+  }
+
+  .form-textarea-wrapper,
+  .image-style-preview {
     flex: 1 1 auto;
   }
 }
@@ -58,6 +63,10 @@
   }
 }
 
+.form-item__toggle-description-placeholder {
+  display: none;
+}
+
 body:not(.entity-add-or-edit-form) {
   .details__toggle-description,
   .form-item__toggle-description {
@@ -68,6 +77,7 @@ body:not(.entity-add-or-edit-form) {
 .js body.entity-add-or-edit-form {
   .js-details-description,
   .js-form-item__description {
+    visibility: hidden;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -76,6 +86,7 @@ body:not(.entity-add-or-edit-form) {
   }
   .is-description-visible .js-details-description,
   .is-description-visible .js-form-item__description {
+    visibility: visible;
     max-height: 5000px;
     opacity: 1;
     transition: all 0.3s;
