@@ -48,12 +48,25 @@
     var $targetWrapper = this.$table.find('.tabledrag-sort-target-wrapper');
 
     if ($targetWrapper.length === 0) {
+      detachInBetweenButtons(this.$table);
       this.addSortTargets();
     }
     else {
       this.removeSortTargets();
+      attachInBetweenButtons(this.$table);
     }
   };
+
+  function detachInBetweenButtons($table) {
+    $table.find('.add-in-between-row').remove();
+  }
+
+  function attachInBetweenButtons($table) {
+    // We have to remove the once flag right before reattaching the behaviours,
+    // because otherwise they would be automatically attached in the swapping process.
+    $table.data('jquery-once-init-in-between-buttons', false);
+    Drupal.behaviors.initInBetweenButtons.attach();
+  }
 
   /**
    * Adds sorting targets to the table, which handle the sorting on click.
