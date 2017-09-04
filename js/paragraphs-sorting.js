@@ -116,7 +116,7 @@
    * Switches the visibility between the tabledrag checkbox and handle.
    */
   Drupal.tableDrag.prototype.toggleCheckboxes = function () {
-    this.$table.find('.tabledrag-handle').toggle();
+    // The tabledrag handle is toggled via CSS
     this.$table.find('.tabledrag-checkbox').toggle();
   };
 

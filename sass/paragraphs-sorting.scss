@@ -1,6 +1,11 @@
 @import 'variables';
 
 .field-multiple-table--paragraphs {
+  &.tabledrag-checkbox-active {
+    & > tbody > tr.draggable .field-multiple-drag .tabledrag-handle {
+      display: none;
+    }
+  }
   & > thead > tr.tabledrag-toggle-checkbox-wrapper {
     padding-left: 0;
     th {
