@@ -8,24 +8,37 @@
    * On click on the sorting button, show/hide the checkboxes and add/remove sorting targets.
    */
   Drupal.tableDrag.prototype.initCkbx = function () {
-    // add sorting toggle button on top
-    this.$table.find('thead').append($('<button type="button" class="tabledrag-toggle-checkbox button"></button>')
+    // build toggle button
+    this.toggleCheckboxButtonWrapper = $('<button type="button" class="tabledrag-toggle-checkbox button"></button>')
       .on('click', $.proxy(function (e) {
         e.preventDefault();
         this.$table.toggleClass('tabledrag-checkbox-active');
         this.toggleCheckboxes();
         this.toggleSortTargets();
+        this.toggleStyleOfCheckboxButton();
       }, this))
       .text(Drupal.t('Sort'))
-      .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"></tr>')
-      .parent()
-    );
+      .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"><th colspan="3"></th></tr>')
+      .parent().parent();
+
+    // add sorting toggle button on top
+    this.$table.find('thead').append(this.toggleCheckboxButtonWrapper);
 
     // add sorting checkbox to items
     this.$table.find('.tabledrag-handle').after(
       $('<input type="checkbox" class="tabledrag-checkbox" />')
         .hide()
     );
+  };
+
+  Drupal.tableDrag.prototype.toggleStyleOfCheckboxButton = function () {
+    var button = this.toggleCheckboxButtonWrapper.find('button');
+    button.toggleClass('button--primary');
+    var text = button.text();
+    button.text(
+      text === Drupal.t('Sort') ? Drupal.t('Finish sort') : Drupal.t('Sort')
+    );
+
   };
 
   /**
@@ -46,7 +59,13 @@
    * Adds sorting targets to the table, which handle the sorting on click.
    */
   Drupal.tableDrag.prototype.addSortTargets = function () {
-    var $target = $('<a href="#" class="tabledrag-sort-target">Sort here</a>')
+    var $target = $(
+      '<a href="#" class="tabledrag-sort-target">' +
+        '<span class="tabledrag-sort-target-left"></span>' +
+        '<span class="tabledrag-sort-target-middle"></span>' +
+        '<span class="tabledrag-sort-target-right"></span>' +
+      '</a>'
+    )
       .on('click', $.proxy(function (e) {
         e.preventDefault();
 
