@@ -11,11 +11,16 @@
   z-index: 1000;
 }
 
-fieldset.article-teaser .fieldset-wrapper .field--name-field-teaser-text {
-  padding: 0 10px;
+.article-teaser {
+  > .details-wrapper,
+  > .fieldset-wrapper {
+    .field--name-field-teaser-text {
+      padding: 0 10px;
+    }
+  }
 }
 
-fieldset.article-teaser {
+.article-teaser {
   .field--name-field-teaser-media {
     summary {
       display: none;
@@ -36,8 +41,8 @@ fieldset.article-teaser {
     div.field--widget-entity-browser-entity-reference div.entities-list > div {
       margin: 10px 0;
     }
-
-    .fieldset-wrapper {
+    > .details-wrapper,
+    > .fieldset-wrapper {
       display: flex;
 
       .field--name-field-teaser-media {
