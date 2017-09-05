@@ -116,7 +116,7 @@ fieldset {
   border: 1px solid $gray-lighter;
 }
 
-.content-form__main details,
+.content-form__main > details,
 fieldset:not(.fieldgroup) {
   border-radius: 2px;
   margin: 1em 0;
@@ -132,13 +132,13 @@ fieldset:not(.fieldgroup) {
  * See https://bugzilla.mozilla.org/show_bug.cgi?id=504622
  */
 @-moz-document url-prefix() {
-  .content-form__main details,
+  .content-form__main > details,
   fieldset:not(.fieldgroup) {
     display: table-cell;
   }
 }
 
-.content-form__main details > summary,
+.content-form__main > details > summary,
 fieldset:not(.fieldgroup) > legend {
   font-size: 1em;
   font-weight: bold;
