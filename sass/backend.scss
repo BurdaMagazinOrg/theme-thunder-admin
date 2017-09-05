@@ -12,11 +12,8 @@
 }
 
 .article-teaser {
-  > .details-wrapper,
-  > .fieldset-wrapper {
-    .field--name-field-teaser-text {
-      padding: 0 10px;
-    }
+  .field--name-field-teaser-text {
+    padding: 0 10px;
   }
 }
 
