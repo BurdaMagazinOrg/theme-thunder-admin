@@ -12,10 +12,16 @@
     this.toggleCheckboxButtonWrapper = $('<button type="button" class="tabledrag-toggle-checkbox button"></button>')
       .on('click', $.proxy(function (e) {
         e.preventDefault();
+        if (!this.$table.hasClass('tabledrag-checkbox-active')) {
+          this.triggerStartEvent();
+        }
         this.$table.toggleClass('tabledrag-checkbox-active');
         this.toggleCheckboxes();
         this.toggleSortTargets();
         this.toggleStyleOfCheckboxButton();
+        if (!this.$table.hasClass('tabledrag-checkbox-active')) {
+          this.triggerEndEvent();
+        }
       }, this))
       .text(Drupal.t('Sort'))
       .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"><th colspan="3"></th></tr>')
@@ -29,6 +35,8 @@
       $('<input type="checkbox" class="tabledrag-checkbox" />')
         .hide()
     );
+
+    handleInBetweenButtons(this.$table);
   };
 
   Drupal.tableDrag.prototype.toggleStyleOfCheckboxButton = function () {
@@ -47,24 +55,38 @@
    */
   Drupal.tableDrag.prototype.toggleSortTargets = function () {
     if (this.$table.hasClass('tabledrag-checkbox-active')) {
-      detachInBetweenButtons(this.$table);
       this.addSortTargets();
     }
     else {
       this.removeSortTargets();
-      attachInBetweenButtons(this.$table);
     }
   };
 
-  function detachInBetweenButtons($table) {
-    $table.find('.add-in-between-row').remove();
-  }
+  /**
+   * Triggers a start event.
+   */
+  Drupal.tableDrag.prototype.triggerStartEvent = function () {
+    this.$table.trigger('tabledrag-checkbox-start');
+  };
 
-  function attachInBetweenButtons($table) {
-    // We have to remove the once flag right before reattaching the behaviours,
-    // because otherwise they would be automatically attached in the swapping process.
-    $table.data('jquery-once-init-in-between-buttons', false);
-    Drupal.behaviors.initInBetweenButtons.attach();
+  /**
+   * Triggers an end event.
+   */
+  Drupal.tableDrag.prototype.triggerEndEvent = function () {
+    this.$table.trigger('tabledrag-checkbox-end');
+  };
+
+  function handleInBetweenButtons($table) {
+    $table.on('tabledrag-checkbox-start', function (e) {
+      $table.find('.add-in-between-row').remove();
+    });
+
+    $table.on('tabledrag-checkbox-end', function (e) {
+      // We have to remove the once flag right before reattaching the behaviours,
+      // because otherwise they would be automatically attached in the swapping process.
+      $table.data('jquery-once-init-in-between-buttons', false);
+      Drupal.behaviors.initInBetweenButtons.attach();
+    });
   }
 
   /**
