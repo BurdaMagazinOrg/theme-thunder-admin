@@ -115,6 +115,7 @@ paragraphs.admin:
       css/paragraphs-sorting.css: {}
   js:
     js/tabledrag.checkbox.js: {}
+    js/paragraphs-sorting.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

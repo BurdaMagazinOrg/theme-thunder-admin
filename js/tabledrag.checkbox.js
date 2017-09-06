@@ -35,8 +35,6 @@
       $('<input type="checkbox" class="tabledrag-checkbox" />')
         .hide()
     );
-
-    handleInBetweenButtons(this.$table);
   };
 
   Drupal.tableDrag.prototype.toggleStyleOfCheckboxButton = function () {
@@ -75,19 +73,6 @@
   Drupal.tableDrag.prototype.triggerEndEvent = function () {
     this.$table.trigger('tabledrag-checkbox-end');
   };
-
-  function handleInBetweenButtons($table) {
-    $table.on('tabledrag-checkbox-start', function (e) {
-      $table.find('.add-in-between-row').remove();
-    });
-
-    $table.on('tabledrag-checkbox-end', function (e) {
-      // We have to remove the once flag right before reattaching the behaviours,
-      // because otherwise they would be automatically attached in the swapping process.
-      $table.data('jquery-once-init-in-between-buttons', false);
-      Drupal.behaviors.initInBetweenButtons.attach();
-    });
-  }
 
   /**
    * Adds sorting targets to the table, which handle the sorting on click.
@@ -180,7 +165,7 @@
   };
 
 
-  Drupal.behaviors.paragraphs = {
+  Drupal.behaviors.tableDragCheckbox = {
     attach: function (context, settings) {
       for (var base in settings.tableDrag) {
         if (settings.tableDrag.hasOwnProperty(base)) {
