@@ -151,6 +151,8 @@
       }
       else {
         currentRow.swap('before', row);
+        row = $(rowsToBeMoved[index]);
+        swapAfter = true;
       }
 
       currentRow.markChanged();
