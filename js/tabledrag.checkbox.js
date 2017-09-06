@@ -89,13 +89,13 @@
         e.preventDefault();
 
         var $targetWrapper = $(e.target).closest('tr');
-        var row = $targetWrapper.next();
-        var swapAfter = false;
+        var row = $targetWrapper.prev();
+        var swapAfter = true;
 
-        // on click on the last target, the rows should be inserted after the last row.
-        if ($targetWrapper.hasClass('tabledrag-sort-after')) {
-          row = $targetWrapper.prev();
-          swapAfter = true;
+        // on click on the first target, the rows should be inserted before the first row.
+        if ($targetWrapper.hasClass('tabledrag-sort-before')) {
+          row = $targetWrapper.next();
+          swapAfter = false;
         }
 
         this.removeSortTargets();
@@ -106,8 +106,8 @@
       .wrap('<tr class="tabledrag-sort-target-wrapper"><td class="tabledrag-sort-target-column" colspan="3"></td></tr>')
       .parent().parent();
 
-    this.$table.find('.draggable').before($target);
-    this.$table.find('.draggable:last').after($target.clone(true).addClass('tabledrag-sort-after'));
+    this.$table.find('.draggable').after($target);
+    this.$table.find('.draggable:first').before($target.clone(true).addClass('tabledrag-sort-before'));
 
   };
 
@@ -145,6 +145,9 @@
 
       if (swapAfter) {
         currentRow.swap('after', row);
+        // Since we want to keep the order and inserting after a row,
+        // we have to move the next row to after this one.
+        row = $(rowsToBeMoved[index]);
       }
       else {
         currentRow.swap('before', row);
