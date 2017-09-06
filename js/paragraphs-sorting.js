@@ -34,20 +34,19 @@
   Drupal.tableDrag.prototype.toggleStyleOfCheckboxButton = function () {
     var button = this.toggleCheckboxButtonWrapper.find('button');
     button.toggleClass('button--primary');
-    var text = button.text();
-    button.text(
-      text === Drupal.t('Sort') ? Drupal.t('Finish sort') : Drupal.t('Sort')
-    );
 
+    var text = Drupal.t('Sort');
+    if (this.$table.hasClass('tabledrag-checkbox-active')) {
+      text = Drupal.t('Finish sort');
+    }
+    button.text(text);
   };
 
   /**
    * Adds/Removes sort targets.
    */
   Drupal.tableDrag.prototype.toggleSortTargets = function () {
-    var $targetWrapper = this.$table.find('.tabledrag-sort-target-wrapper');
-
-    if ($targetWrapper.length === 0) {
+    if (this.$table.hasClass('tabledrag-checkbox-active')) {
       detachInBetweenButtons(this.$table);
       this.addSortTargets();
     }
