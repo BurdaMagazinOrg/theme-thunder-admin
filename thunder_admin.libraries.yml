@@ -114,7 +114,7 @@ paragraphs.admin:
       css/paragraphs-widget--deprecated.css: {}
       css/paragraphs-sorting.css: {}
   js:
-    js/paragraphs-sorting.js: {}
+    js/tabledrag.checkbox.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
