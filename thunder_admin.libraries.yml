@@ -112,6 +112,14 @@ paragraphs.admin:
     theme:
       css/paragraphs-widget.css: {}
       css/paragraphs-widget--deprecated.css: {}
+      css/paragraphs-sorting.css: {}
+  js:
+    js/tabledrag.checkbox.js: {}
+    js/paragraphs-sorting.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.tabledrag
 
 tabledrag.tabindex:
   js:
