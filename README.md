@@ -57,7 +57,7 @@ To do so, first install a fresh thunder:
 - `cd ../fresh-thunder && composer install`
 - replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link 
 - configure database settings
-- `drush si thunder --account-pass=1234 -y`
+- `drush si thunder --account-pass=1234 install_configure_form.enable_update_status_module=NULL -y`
 - if no images are visible: `drush cr -l <yourdomain:port>`
 
 Then you can run selenium in docker:
