@@ -63,7 +63,7 @@ To do so, first install a fresh thunder:
 Then you can run selenium in docker:
 
 - if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
-- `docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-francium`
+- `docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-einsteinium`
 - `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome:3.4.0-einsteinium`
 - `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox:3.4.0-einsteinium`
 
