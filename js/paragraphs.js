@@ -10,21 +10,23 @@
 
   Drupal.behaviors.thunderParagraphs = {
     attach: function (context) {
-      var $paragraphWidget = $(context).find('.field--widget-entity-reference-paragraphs');
+      var $paragraphWidget = $(context).find('.field--widget-entity-reference-paragraphs,.field--widget-paragraphs');
 
       $paragraphWidget.find('.field-multiple-table .paragraph-form-item__preview').once('thunder-paragraph').each(function () {
         var $this = $(this);
+        var $editButton = $this.siblings('.paragraph-form-item__actions').find('button.paragraph-form-item__action--edit');
 
         $this.addClass('clickable').on('click', function (e) {
-          $this.parent().find('.edit button').trigger('mousedown');
+          $editButton.trigger('mousedown');
+
           e.preventDefault();
         });
 
         // Highlight edit button when mouse is over clickable element.
         $this.hover(function () {
-          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').addClass('button--highlight');
+          $editButton.addClass('button--highlight');
         }, function () {
-          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').removeClass('button--highlight');
+          $editButton.removeClass('button--highlight');
         });
       });
 

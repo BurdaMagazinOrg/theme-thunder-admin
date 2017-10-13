@@ -150,18 +150,20 @@ function thunder_admin_preprocess_maintenance_page(&$variables) {
  * Add themable classes to multiple value field table for paragraphs field.
  */
 function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
-  if (!empty($variables['element']['#attached']['library']) && in_array('paragraphs/drupal.paragraphs.admin', $variables['element']['#attached']['library'])) {
+  $supportedParagraphsWidgetLibs = ['paragraphs/drupal.paragraphs.widget', 'paragraphs/drupal.paragraphs.admin'];
+
+  if (!empty($variables['element']['#attached']['library']) && !empty(array_intersect($supportedParagraphsWidgetLibs, $variables['element']['#attached']['library']))) {
     $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
 
-    $hasDeprecatedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_dialog_template']);
-    $hasRowBasedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_in_between_button_template']);
+    $hasDeprecatedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_in_between_button_template']);
+    $hasExperimentalAddInBetween = TRUE;
 
     // Add custom style for deprecated paragraph type (relevant only for table).
-    if ($hasDeprecatedAddInBetween && !$hasRowBasedAddInBetween) {
+    if ($hasDeprecatedAddInBetween && !$hasExperimentalAddInBetween) {
       $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs--deprecated';
     }
-    elseif ($hasRowBasedAddInBetween) {
-      $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs--row-based-add-in-between';
+    elseif ($hasExperimentalAddInBetween) {
+      $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs-experimental--add-in-between';
     }
   }
 }
@@ -278,7 +280,7 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
       foreach ($entity->getFieldDefinitions() as $definition) {
         $field_name = $definition->getName();
         $component = $form_state->getStorage()['form_display']->getComponent($field_name);
-        if (!empty($component['type']) && ($component['type'] === 'entity_reference_paragraphs')) {
+        if (!empty($component['type']) && in_array($component['type'], ['paragraphs', 'entity_reference_paragraphs'])) {
           // Set classes to the paragraphs items to be able to style them.
           $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 

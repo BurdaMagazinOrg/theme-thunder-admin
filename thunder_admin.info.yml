@@ -78,7 +78,9 @@ libraries-extend:
   tour/tour-styling:
     - thunder_admin/tour-styling
   paragraphs/drupal.paragraphs.admin:
-    - thunder_admin/paragraphs.admin
+    - thunder_admin/paragraphs.widget
+  paragraphs/drupal.paragraphs.widget:
+    - thunder_admin/paragraphs.widget
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/multi_step_display:

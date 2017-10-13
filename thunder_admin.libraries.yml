@@ -107,7 +107,7 @@ paragraphs.adjustments:
   js:
     js/paragraphs.js: {}
 
-paragraphs.admin:
+paragraphs.widget:
   css:
     theme:
       css/paragraphs-widget.css: {}
