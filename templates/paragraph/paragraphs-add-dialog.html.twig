@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation of modal add paragraph dialog template with hidding bottom button.
+ *
+ * Following classes have custom use:
+ *   - paragraphs-add-dialog - is used to wrap the dialog.
+ *   - paragraphs-add-dialog-row - is used to wrap the paragraph type rows.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if add.add_more_delta %}
+    <div class="paragraphs-add-button-wrapper js-hide">
+        {{ add }}
+    </div>
+{% else %}
+    {{ add }}
+{% endif %}
+<div class="paragraphs-add-dialog js-hide">
+    <ul class="paragraphs-add-dialog-list">
+    {% for button in buttons %}
+      <li class="paragraphs-add-dialog-row">
+        {{ button }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
