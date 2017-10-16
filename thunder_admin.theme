@@ -156,7 +156,7 @@ function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
     $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
 
     $hasDeprecatedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_in_between_button_template']);
-    $hasExperimentalAddInBetween = TRUE;
+    $hasExperimentalAddInBetween = in_array('paragraphs/drupal.paragraphs.widget', $variables['element']['#attached']['library']) && !empty($variables['element']['add_more']['add_modal_form_area']['add_more_delta']);
 
     // Add custom style for deprecated paragraph type (relevant only for table).
     if ($hasDeprecatedAddInBetween && !$hasExperimentalAddInBetween) {

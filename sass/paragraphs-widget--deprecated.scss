@@ -1,14 +1,16 @@
 @import 'variables';
 
-.field-multiple-table--paragraphs {
-
-  .field-multiple-table--paragraphs--deprecated {
-    & > thead,
-    & > tbody {
-      & > tr {
-        border-bottom-width: 0;
-      }
+.field-multiple-table--paragraphs--deprecated {
+  & > thead,
+  & > tbody {
+    & > tr {
+      border-bottom-width: 0;
     }
+  }
+
+  // Last button.
+  .clearfix > .paragraph-type-add-modal.first-button {
+    margin-left: 0;
   }
 
 }

@@ -14,18 +14,18 @@
   /**
    * Add single in between button row.
    *
-   * @param {Element} descriptionElement
+   * @param {Element} reference_element
    *   Description element.
    */
-  Drupal.thunderAdmin.addParagraphsBottomAddButton = function (descriptionElement) {
+  Drupal.thunderAdmin.addParagraphsBottomAddButton = function (reference_element) {
     // Create row with add in between button.
     var str = '' +
       '<div class="paragraphs-bottom-add-button paragraph-type-add-modal">' +
       '  <input class="paragraph-type-add-modal-button button--small js-show button js-form-submit form-submit" type="submit" value="+ Add">' +
       '</div>';
-    var $buttonRow = $.parseHTML(str);
+    var $button_row = $.parseHTML(str);
 
-    $($buttonRow).insertBefore(descriptionElement);
+    $($button_row).insertBefore(reference_element);
   };
 
   /**
@@ -71,18 +71,19 @@
           var $wrapper = $(this);
 
           // Get description for paragraphs with table.
-          var $description = $wrapper.parent().siblings('.description');
+          var $reference_element = $wrapper.parent().siblings('.description');
 
-          if ($description.length === 0) {
+          if ($reference_element.length === 0) {
             // Get description for paragraphs without table (no paragraphs).
-            $description = $wrapper.siblings('.description');
+            $reference_element = $wrapper.siblings('.description');
           }
 
-          if ($description.length === 0) {
-            return;
+          // If there is no field description, then take wrapper as reference.
+          if ($reference_element.length === 0) {
+            $reference_element = $wrapper;
           }
 
-          Drupal.thunderAdmin.addParagraphsBottomAddButton($description);
+          Drupal.thunderAdmin.addParagraphsBottomAddButton($reference_element);
 
           // Trigger attaching of behaviours for added buttons.
           Drupal.behaviors.paragraphsBottomAddButtonClick.attach(context);
