@@ -10,19 +10,20 @@
  * @ingroup themeable
  */
 #}
+
 {% if add.add_more_delta %}
     <div class="paragraphs-add-button-wrapper js-hide">
         {{ add }}
     </div>
-{% else %}
-    {{ add }}
+    <div class="paragraphs-add-dialog js-hide">
+        <ul class="paragraphs-add-dialog-list">
+            {% for button in buttons %}
+                <li class="paragraphs-add-dialog-row">
+                    {{ button }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% elseif '@paragraphs/paragraphs-add-dialog.html.twig'  %}
+    {% include '@paragraphs/paragraphs-add-dialog.html.twig' %}
 {% endif %}
-<div class="paragraphs-add-dialog js-hide">
-    <ul class="paragraphs-add-dialog-list">
-    {% for button in buttons %}
-      <li class="paragraphs-add-dialog-row">
-        {{ button }}
-      </li>
-    {% endfor %}
-  </ul>
-</div>

@@ -253,6 +253,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       top: 38px;
     }
   }
+
+  /*
+   * 1. align information icon to left from paragraph type icon + text.
+   */
+  .paragraph-type-info {
+    order: -1; /* 1 */
+  }
 }
 
 /**
@@ -445,7 +452,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 /* ----------------------- Paragraph preview -------------------------------- */
 
 .paragraph-form-item__preview {
-  flex: 1 1 55%;
+  flex: 1 1 52%;
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
