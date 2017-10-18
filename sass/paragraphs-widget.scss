@@ -16,7 +16,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .field--widget-entity-reference-paragraphs,
   .field--widget-paragraphs {
     .first-button.paragraph-type-add-modal,
-    .add-in-between-row .paragraph-type-add-modal {
+    .add-in-between-row .paragraph-type-add-modal,
+    .paragraphs-bottom-add-button {
       padding: 5px 0;
       height: 30px;
       margin: 0;
@@ -31,6 +32,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
         @media screen and (max-width: 600px) {
           width: auto;
           padding-top: 6px;
+          padding-bottom: 6px;
         }
       }
     }
@@ -121,14 +123,24 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     background: transparent;
   }
 
-  &.field-multiple-table--paragraphs-experimental--add-in-between {
+  .js &.field-multiple-table--paragraphs-experimental--add-in-between {
     & > thead,
     & > tbody {
       & > tr {
         border-bottom-width: 0;
       }
     }
+
+    margin-bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    .button.paragraphs-icon-button {
+      width: 31px !important;
+      height: 31px;
+    }
+  }
+
 }
 
 .paragraph-form-item {
@@ -440,6 +452,20 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     legend {
       margin: 0.3em;
     }
+  }
+
+  /*
+   * 1. align information text to left from collapse and drop-down buttons.
+   */
+  .paragraph-type-info {
+    margin-right: auto; /* 1 */
+  }
+
+  /*
+   * 1. make some space between information text and collapse and drop-down buttons.
+   */
+  .paragraphs-actions {
+    margin-left: $base-space; /* 1 */
   }
 }
 
