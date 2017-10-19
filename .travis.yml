@@ -5,7 +5,6 @@ php: 7
 branches:
   only:
     - /8\.x-[0-9]+\.x/
-    - feature/d8_4
 
 cache:
   apt: true
