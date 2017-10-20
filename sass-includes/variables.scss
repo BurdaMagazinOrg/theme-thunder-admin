@@ -1,3 +1,6 @@
+
+@import 'functions';
+
 /* Colors */
 
 $primary-color: rgb(18, 147, 201); /* #1293C9 */
@@ -64,6 +67,20 @@ $base-border-radius: 4px;
 }
 @mixin for-big-desktop-and-up {
   @media (min-width: 1600px) { @content; }
+}
+
+@mixin inline-svg-button($svg, $replace_colors, $replace_hover_colors, $replace_disabled_colors) {
+  background-image: svg-url(str-replace-multiple($svg, $replace_colors));
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-image: svg-url(str-replace-multiple($svg, $replace_hover_colors));
+  }
+
+  &:disabled {
+    background-image: svg-url(str-replace-multiple($svg, $replace_disabled_colors));
+  }
 }
 
 /* toolbar */

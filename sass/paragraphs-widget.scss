@@ -39,6 +39,25 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 }
 
+.paragraphs-icon-button {
+  &:hover {
+    background-color: $gray-lightest;
+  }
+}
+
+/**
+ * Overwrite Icon styles provided by paragraphs module.
+ */
+@media (max-width: 768px) {
+  .button.paragraphs-icon-button-collapse {
+    @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+  }
+
+  .button.paragraphs-icon-button-edit {
+    @include inline-svg-button('<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M2 17.2V21h3.8l11-11.1L13 6.1 2 17.2zM19.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.4-.4-1-.4-1.4 0l-1.8 1.8L18 8.9 19.7 7zM11 19l-2 2h13v-2H11z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+  }
+}
+
 /**
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
@@ -152,12 +171,21 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  */
 .paragraphs-actions {
   .paragraphs-dropdown-toggle {
-    display: block;
+    /**
+     * Overwrite Icon styles provided by paragraphs module.
+     */
+    @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+
+    background-color: $gray-lightest;
     border: 1px solid $primary-color-intense;
     padding-left: 4px;
     padding-top: 4px;
     height: 31px;
     width: 31px;
+
+    &:hover {
+      background-color: $gray-lightest;
+    }
   }
 
   .paragraphs-dropdown-actions {
@@ -235,6 +263,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       height: 100%;
       justify-content: space-evenly;
 
+      > .button + .paragraphs-dropdown {
+        margin-left: 0;
+      }
+
       /**
        * Separator between buttons in paragraphs actions.
        */
@@ -254,11 +286,23 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
           width: 56px !important;
         }
       }
+
+      .paragraphs-icon-button {
+        &:hover {
+          background-color: transparent;
+        }
+      }
     }
 
     .paragraphs-dropdown-toggle {
       padding: 0;
       border-width: 0;
+      background-color: transparent;
+
+      &:hover {
+        box-shadow: none;
+        background-color: transparent;
+      }
     }
 
     .paragraphs-dropdown-actions {
@@ -478,14 +522,19 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 /* ----------------------- Paragraph preview -------------------------------- */
 
 .paragraph-form-item__preview {
-  flex: 1 1 52%;
+  flex: 1 1 40%;
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
 
-  @include for-tablet-portrait-and-up {
+  @include for-big-tablet-landscape-and-up {
+    flex: 1 1 55%;
     height: $paragraph-preview-height;
     max-height: $paragraph-preview-height;
+  }
+
+  @include for-desktop-and-up {
+    flex: 1 1 65%;
   }
 
   &.clickable {
@@ -593,4 +642,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   text-align: center;
   margin-top: -5px;
   padding-top: 0;
+}
+
+.js .paragraph-type-icon {
+  padding-right: 0;
+  margin-right: 5px;
 }
