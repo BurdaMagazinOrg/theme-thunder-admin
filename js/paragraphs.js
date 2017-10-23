@@ -10,6 +10,7 @@
 
   Drupal.behaviors.thunderParagraphs = {
     attach: function (context) {
+      // Support for experimental paragraphs widget and also classic paragraphs widget.
       var $paragraphWidget = $(context).find('.field--widget-entity-reference-paragraphs,.field--widget-paragraphs');
 
       $paragraphWidget.find('.field-multiple-table .paragraph-form-item__preview').once('thunder-paragraph').each(function () {

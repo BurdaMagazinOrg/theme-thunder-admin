@@ -255,7 +255,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
 
     /**
-     * Paragraphs actions component.
+     * Paragraphs actions buttons (edit and toggle drop-down).
      */
     .paragraphs-actions {
       border-left: 1px solid #ccc;
@@ -263,37 +263,49 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       height: 100%;
       justify-content: space-evenly;
 
-      > .button + .paragraphs-dropdown {
-        margin-left: 0;
-      }
-
       /**
        * Separator between buttons in paragraphs actions.
        */
-      > .button + .paragraphs-dropdown:before {
-        content: '';
-        display: block;
-        width: 25px;
-        margin-bottom: 15px;
-        border-top: 1px solid #ccc;
-      }
+      > .button + .paragraphs-dropdown {
+        margin-left: 0;
 
-      @media (max-width: 768px) {
-        .button.paragraphs-icon-button.button--icon-only {
-          text-indent: 0;
-          background-image: none;
-          padding: 7px 18px;
-          width: 56px !important;
+        &:before {
+          content: '';
+          display: block;
+          width: 25px;
+          margin-bottom: 15px;
+          border-top: 1px solid #ccc;
         }
       }
 
+      /**
+       * Overwrite :hover background color defined by paragraphs module for action icons (fe. edit).
+       */
       .paragraphs-icon-button {
         &:hover {
           background-color: transparent;
         }
       }
+
+      /*
+       * Responsive step defined by paragraphs module.
+       * 1. paragraphs have !important flag for icon size.
+       * 2. remove background image provided by paragraphs, since inline SVG is used.
+       * 3. text indent is adjusted by paragraphs module in order to hide EDIT text.
+       */
+      @media (max-width: 768px) {
+        .button.paragraphs-icon-button.button--icon-only {
+          text-indent: 0; /* 3 */
+          background-image: none; /* 2 */
+          width: 56px !important; /* 1 */
+          padding: 7px 18px;
+        }
+      }
     }
 
+    /*
+     * Tweak for drop-down toggle button provided by paragraphs.
+     */
     .paragraphs-dropdown-toggle {
       padding: 0;
       border-width: 0;
@@ -305,13 +317,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
+    /*
+     * Tweak for position of drop-down menu for drop-down toggle button provided by paragraphs.
+     */
     .paragraphs-dropdown-actions {
       top: 38px;
     }
   }
 
   /*
-   * 1. align information icon to left from paragraph type icon + text.
+   * 1. align information icon (fe. warning icon after editing) to left from paragraph type icon + text.
+   *    The element with icon is a 2nd element in flex and to position it as the first negative order is used.
    */
   .paragraph-type-info {
     order: -1; /* 1 */
@@ -521,20 +537,23 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
 /* ----------------------- Paragraph preview -------------------------------- */
 
+/*
+ * 1. Flex of right part of paragraph preview with summary is adjusted for different screen sizes.
+ */
 .paragraph-form-item__preview {
-  flex: 1 1 40%;
+  flex: 1 1 40%; /* 1 */
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
 
   @include for-big-tablet-landscape-and-up {
-    flex: 1 1 55%;
+    flex: 1 1 55%; /* 1 */
     height: $paragraph-preview-height;
     max-height: $paragraph-preview-height;
   }
 
   @include for-desktop-and-up {
-    flex: 1 1 65%;
+    flex: 1 1 65%; /* 1 */
   }
 
   &.clickable {
@@ -591,8 +610,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
   }
-
 }
+
 .paragraph-preview__data {
   flex: 1 1 auto;
   font-size: 12px;
@@ -619,6 +638,25 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 }
 
+/**
+ * Positioning for bottom custom add paragraph button.
+ */
+.js .paragraphs-bottom-add-button {
+  display: block;
+  text-align: center;
+  margin-top: -5px;
+  padding-top: 0;
+}
+
+/**
+ * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
+ * In that case icon has not proportional width and height.
+ */
+.js .paragraph-type-icon {
+  padding-right: 0;
+  margin-right: 5px;
+}
+
 /* -------------------------- Interaction ----------------------------------- */
 
 .paragraph-form-item {
@@ -635,16 +673,4 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     align-items: center;
     justify-content: center;
   }
-}
-
-.js .paragraphs-bottom-add-button {
-  display: block;
-  text-align: center;
-  margin-top: -5px;
-  padding-top: 0;
-}
-
-.js .paragraph-type-icon {
-  padding-right: 0;
-  margin-right: 5px;
 }

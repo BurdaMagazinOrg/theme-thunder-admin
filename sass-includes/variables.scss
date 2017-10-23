@@ -69,6 +69,12 @@ $base-border-radius: 4px;
   @media (min-width: 1600px) { @content; }
 }
 
+/*
+ * Mixin for inline SVG button icon.
+ *
+ * $svg is SVG string, replacement variables are maps with key=>value, where keys will be replaced with value
+ * for 3 possible states (default color, hover + active + focus color and disabled color).
+ */
 @mixin inline-svg-button($svg, $replace_colors, $replace_hover_colors, $replace_disabled_colors) {
   background-image: svg-url(str-replace-multiple($svg, $replace_colors));
 

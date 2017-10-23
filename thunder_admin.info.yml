@@ -77,12 +77,19 @@ libraries-extend:
     - thunder_admin/jquery.ui
   tour/tour-styling:
     - thunder_admin/tour-styling
+
+  # DEPRECATED: support for classic paragraphs widget with add in between buttons.
   paragraphs/drupal.paragraphs.admin:
     - thunder_admin/paragraphs.widget
+
+  # Experimental paragraphs widget styles.
   paragraphs/drupal.paragraphs.widget:
     - thunder_admin/paragraphs.widget
+
+  # Custom add paragraphs button at bottom of paragraphs list with the same look as add in between buttons.
   paragraphs/drupal.paragraphs.modal:
     - thunder_admin/paragraphs.bottom.add
+
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/multi_step_display:

@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation of modal add paragraph dialog template with hidding bottom button.
+ * Thunder admin theme implementation of modal add paragraph dialog template with custom bottom add button.
  *
  * Following classes have custom use:
  *   - paragraphs-add-dialog - is used to wrap the dialog.
@@ -11,6 +11,15 @@
  */
 #}
 
+{#
+/**
+ * Since bottom button for adding of paragraphs is customized in Thunder Admin theme, we have to hide default add
+ * button provided by Paragraphs module.
+ *
+ * In the case when an old patch is used or there is no paragraphs patch for add in between buttons, then default template
+ * provided by paragraphs module is used.
+ */
+#}
 {% if add.add_more_delta %}
     <div class="paragraphs-add-button-wrapper js-hide">
         {{ add }}

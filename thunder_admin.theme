@@ -148,6 +148,8 @@ function thunder_admin_preprocess_maintenance_page(&$variables) {
  * Implements theme_preprocess_field_multiple_value_form().
  *
  * Add themable classes to multiple value field table for paragraphs field.
+ *
+ * This me
  */
 function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
   $supportedParagraphsWidgetLibs = ['paragraphs/drupal.paragraphs.widget', 'paragraphs/drupal.paragraphs.admin'];
@@ -155,6 +157,8 @@ function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
   if (!empty($variables['element']['#attached']['library']) && !empty(array_intersect($supportedParagraphsWidgetLibs, $variables['element']['#attached']['library']))) {
     $variables['table']['#attributes']['class'][] = 'field-multiple-table--paragraphs';
 
+    // DEPRECATED: When old patch with classing paragraph widget is used, then
+    // custom style is applied + library: paragraphs/drupal.paragraphs.admin.
     $hasDeprecatedAddInBetween = !empty($variables['element']['add_more']['paragraphs_add_in_between_button_template']);
     $hasExperimentalAddInBetween = in_array('paragraphs/drupal.paragraphs.widget', $variables['element']['#attached']['library']) && !empty($variables['element']['add_more']['add_modal_form_area']['add_more_delta']);
 
@@ -280,6 +284,10 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
       foreach ($entity->getFieldDefinitions() as $definition) {
         $field_name = $definition->getName();
         $component = $form_state->getStorage()['form_display']->getComponent($field_name);
+
+        // In order to support old patch and paragraphs widget, adjustments have
+        // to applied also for "entity_reference_paragraphs" type. It's also
+        // part of DEPRECATED functionality.
         if (!empty($component['type']) && in_array($component['type'], ['paragraphs', 'entity_reference_paragraphs'])) {
           // Set classes to the paragraphs items to be able to style them.
           $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';

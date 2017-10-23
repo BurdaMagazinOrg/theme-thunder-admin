@@ -1,5 +1,9 @@
 @import 'variables';
 
+/*
+ * Support for DEPRECATED classic paragraphs add in between buttons patch.
+ */
+
 .field-multiple-table--paragraphs--deprecated {
   & > thead,
   & > tbody {

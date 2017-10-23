@@ -1,8 +1,7 @@
 {#
 /**
  * @file
- * Theme override for an 'input' #type form element that is used in a paragraph
- * widget.
+ * Theme override for an 'input' #type form element that is used in a paragraph widget.
  *
  * Available variables:
  * - attributes: A list of HTML attributes for the input element.
@@ -18,7 +17,14 @@
 ]
 %}
 
-{# check that name ends with "_edit_all" is used to keep "Edit All" button as simple button with text #}
+{#
+/**
+ * Here is overwrite for edit button in paragraphs preview.
+ *
+ * Since the same template is used for buttons in a drop-down list and "edit all" button,
+ * we have to take care that these buttons are rendered as normal input buttons and not inline SVG tags.
+ */
+#}
 {% if attributes.hasClass('paragraphs-dropdown-action') or (element['#name'] ends with '_edit_all') %}
   <input{{ attributes }} />{{ children }}
 {% else %}
