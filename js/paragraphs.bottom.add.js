@@ -37,7 +37,7 @@
     attach: function (context) {
       $('.paragraphs-bottom-add-button.paragraph-type-add-modal .paragraph-type-add-modal-button', context)
         .once('add-click-handler')
-        .on('click', function () {
+        .on('click', function (event) {
           var $button = $(this);
           var $bottom_button_wrapper = $button.closest('.paragraphs-bottom-add-button').siblings('.paragraphs-add-button-wrapper');
 

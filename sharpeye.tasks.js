@@ -18,32 +18,32 @@ module.exports = [
   ]},
   // Paragraphs
   { name: 'Paragraphs', path: '/node/add/article', clickpath: [
-    { selector: '#edit-field-paragraphs-add-more-first-button-area-add-more', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="text"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="quote"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="link"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="instagram"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="twitter"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="gallery"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="image"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'},
-    { selector: '[name="first_button_add_modal"]', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="video"]', wait: '[data-drupal-selector="edit-field-paragraphs-7-subform"]'}
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_quote_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_link_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_instagram_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_twitter_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_gallery_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-7-subform"]'}
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', clickpath: [
-    { selector: '#edit-field-paragraphs-1-top-links-edit-button', wait: '.paragraph-form-item--has-subform', offset: -150 },
-    { selector: '[data-drupal-selector="edit-field-paragraphs-1-top-links-collapse-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]' },
-    { selector: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]'}
+    { selector: '#field-paragraphs-1-edit--2', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { selector: '[name="field_paragraphs_1_collapse"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-top-info"] > span' },
+    { selector: '[data-drupal-selector="edit-field-paragraphs-1-top-info"] > span' }
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', clickpath: [
-    { selector: '#edit-field-paragraphs-add-more-first-button-area-add-more', wait: '.paragraphs-add-dialog' },
-    { selector: '[data-type="image"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
+    { selector: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { selector: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
     { selector: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]', wait: '#entity_browser_iframe_image_browser'},
     { switchToFrame: 'entity_browser_iframe_image_browser', wait: '#entity-browser-image-browser-form' },
     { switchToFrame: null }
