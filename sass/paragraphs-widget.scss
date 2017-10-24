@@ -9,8 +9,15 @@ $paragraph-preview-mobile-height: 150px;
 $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
 
+/*
+ * Media screen size defined by paragraphs module to adjust style for tablets and phones.
+ */
+@mixin for-paragraphs-tablet-and-phone {
+  @media (max-width: 768px) { @content; }
+}
+
 /**
- * Support for Classic and Experimental Paragraphs widget.
+ * Support for classic and experimental paragraphs widget.
  */
 .js {
   .field--widget-entity-reference-paragraphs,
@@ -22,14 +29,14 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       height: 30px;
       margin: 0;
 
-      @media screen and (max-width: 600px) {
+      @include for-drupal-tablet-and-phone {
         height: 39px;
       }
 
       .paragraph-type-add-modal-button {
         top: 0;
 
-        @media screen and (max-width: 600px) {
+        @include for-drupal-tablet-and-phone {
           width: auto;
           padding-top: 6px;
           padding-bottom: 6px;
@@ -37,18 +44,40 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
   }
-}
 
-.paragraphs-icon-button {
-  &:hover {
-    background-color: $gray-lightest;
+  /**
+   * Positioning for bottom custom add paragraph button.
+   */
+  .paragraphs-bottom-add-button {
+    display: block;
+    text-align: center;
+    margin-top: -5px;
+    padding-top: 0;
+  }
+
+  /**
+   * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
+   * In that case icon has not proportional width and height.
+   */
+  .paragraph-type-icon {
+    padding-right: 0;
+    margin-right: 5px;
   }
 }
 
 /**
- * Overwrite Icon styles provided by paragraphs module.
+ * 1. Override default gray color for mouse over buttons provided by thunder admin buttons component.
  */
-@media (max-width: 768px) {
+.paragraphs-icon-button {
+  &:hover {
+    background-color: $gray-lightest; /* 1 */
+  }
+}
+
+/**
+ * Override icon styles provided by paragraphs module (with defined colors for default, hover and disabled).
+ */
+@include for-paragraphs-tablet-and-phone {
   .button.paragraphs-icon-button-collapse {
     @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
   }
@@ -142,6 +171,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     background: transparent;
   }
 
+  /**
+   * ".js" is prepended, because selector with bigger specificity is required, mainly to override
+   * add in between button style provided by paragraphs.
+   */
   .js &.field-multiple-table--paragraphs-experimental--add-in-between {
     & > thead,
     & > tbody {
@@ -153,13 +186,16 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     margin-bottom: 0;
   }
 
-  @media (max-width: 768px) {
+  /**
+   * Override of styles provided by paragraphs module.
+   * 1. !important is defined in paragraphs styling, that's why we have to used it here too.
+   */
+  @include for-paragraphs-tablet-and-phone {
     .button.paragraphs-icon-button {
-      width: 31px !important;
+      width: 31px !important; /* 1 */
       height: 31px;
     }
   }
-
 }
 
 .paragraph-form-item {
@@ -172,9 +208,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .paragraphs-actions {
   .paragraphs-dropdown-toggle {
     /**
-     * Overwrite Icon styles provided by paragraphs module.
+     * Override icon styles provided by paragraphs module.
      */
-    @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+    @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium));
 
     background-color: $gray-lightest;
     border: 1px solid $primary-color-intense;
@@ -201,6 +237,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     flex: 1 1 100%;
   }
 
+  /*
+   * Max height is defined for wrapping paragraphs element in preview,
+   * because it breaks layout on smaller screen sizes.
+   */
   .paragraph--view-mode--preview {
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
@@ -217,6 +257,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
 
+    /*
+     * 1. Max width blocks div element with paragraphs type + icon and also information icon (fe. warning icon),
+     *    to take too much space, because then not enough space for summary will break paragraphs in two lines.
+     */
     .paragraph-type-title {
       display: none;
 
@@ -279,7 +323,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
 
       /**
-       * Overwrite :hover background color defined by paragraphs module for action icons (fe. edit).
+       * Override :hover background color defined by paragraphs module for action icons (fe. edit).
        */
       .paragraphs-icon-button {
         &:hover {
@@ -293,7 +337,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
        * 2. remove background image provided by paragraphs, since inline SVG is used.
        * 3. text indent is adjusted by paragraphs module in order to hide EDIT text.
        */
-      @media (max-width: 768px) {
+      @include for-paragraphs-tablet-and-phone {
         .button.paragraphs-icon-button.button--icon-only {
           text-indent: 0; /* 3 */
           background-image: none; /* 2 */
@@ -566,6 +610,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     display: flex;
   }
 }
+
 .paragraph-preview__thumbnail {
   margin-right: 1em;
   width: $paragraph-preview-thumbnail-mobile-width;
@@ -636,25 +681,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       display: block;
     }
   }
-}
-
-/**
- * Positioning for bottom custom add paragraph button.
- */
-.js .paragraphs-bottom-add-button {
-  display: block;
-  text-align: center;
-  margin-top: -5px;
-  padding-top: 0;
-}
-
-/**
- * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
- * In that case icon has not proportional width and height.
- */
-.js .paragraph-type-icon {
-  padding-right: 0;
-  margin-right: 5px;
 }
 
 /* -------------------------- Interaction ----------------------------------- */

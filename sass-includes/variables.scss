@@ -70,6 +70,13 @@ $base-border-radius: 4px;
 }
 
 /*
+ * Media screen size defined by base drupal themes to adjust style for tablets and phones.
+ */
+@mixin for-drupal-tablet-and-phone {
+  @media screen and (max-width: 600px) { @content; }
+}
+
+/*
  * Mixin for inline SVG button icon.
  *
  * $svg is SVG string, replacement variables are maps with key=>value, where keys will be replaced with value
