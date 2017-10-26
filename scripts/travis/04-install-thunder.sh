@@ -30,7 +30,8 @@ composer_create_thunder() {
 
     cd ${TEST_DIR}
 
-        ### TODO: TESTING ONLY - SHOULD BE REMOVED!!! ###
+    ### TODO: TESTING ONLY - SHOULD BE REMOVED!!! ###
+    composer config repositories.thunder_admin git "https://github.com/BurdaMagazinOrg/theme-thunder-admin.git"
     composer require "burdamagazinorg/thunder:dev-feature/2908887-paragraphs-experimental"
 
     # composer install --no-progress
