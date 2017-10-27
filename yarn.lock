@@ -640,6 +640,10 @@ commander@2.9.0, commander@^2.2.0, commander@^2.8.1, commander@^2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
+commander@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
+
 commander@~2.8.1:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
@@ -3270,17 +3274,17 @@ qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
-"qs@>= 0.4.0", qs@~6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+"qs@>= 0.4.0", qs@~6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 qs@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-5.2.1.tgz#801fee030e0b9450d6385adc48a4cc55b44aedfc"
 
-qs@~6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
+qs@~6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
 querystring@0.2.0:
   version "0.2.0"
@@ -3436,18 +3440,18 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@2, request@^2.65.0, request@^2.79.0, request@~2.81.0:
-  version "2.81.0"
-  resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
+request@2, request@^2.61.0, request@^2.79.0:
+  version "2.79.0"
+  resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
     aws-sign2 "~0.6.0"
     aws4 "^1.2.1"
-    caseless "~0.12.0"
+    caseless "~0.11.0"
     combined-stream "~1.0.5"
     extend "~3.0.0"
     forever-agent "~0.6.1"
     form-data "~2.1.1"
-    har-validator "~4.2.1"
+    har-validator "~2.0.6"
     hawk "~3.1.3"
     http-signature "~1.1.0"
     is-typedarray "~1.0.0"
@@ -3455,12 +3459,10 @@ request@2, request@^2.65.0, request@^2.79.0, request@~2.81.0:
     json-stringify-safe "~5.0.1"
     mime-types "~2.1.7"
     oauth-sign "~0.8.1"
-    performance-now "^0.2.0"
-    qs "~6.4.0"
-    safe-buffer "^5.0.1"
+    qs "~6.3.0"
     stringstream "~0.0.4"
     tough-cookie "~2.3.0"
-    tunnel-agent "^0.6.0"
+    tunnel-agent "~0.4.1"
     uuid "^3.0.0"
 
 request@2.65.0:
@@ -3487,18 +3489,18 @@ request@2.65.0:
     tough-cookie "~2.2.0"
     tunnel-agent "~0.4.1"
 
-request@^2.61.0:
-  version "2.79.0"
-  resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
+request@^2.65.0, request@~2.81.0:
+  version "2.81.0"
+  resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
     aws-sign2 "~0.6.0"
     aws4 "^1.2.1"
-    caseless "~0.11.0"
+    caseless "~0.12.0"
     combined-stream "~1.0.5"
     extend "~3.0.0"
     forever-agent "~0.6.1"
     form-data "~2.1.1"
-    har-validator "~2.0.6"
+    har-validator "~4.2.1"
     hawk "~3.1.3"
     http-signature "~1.1.0"
     is-typedarray "~1.0.0"
@@ -3506,10 +3508,12 @@ request@^2.61.0:
     json-stringify-safe "~5.0.1"
     mime-types "~2.1.7"
     oauth-sign "~0.8.1"
-    qs "~6.3.0"
+    performance-now "^0.2.0"
+    qs "~6.4.0"
+    safe-buffer "^5.0.1"
     stringstream "~0.0.4"
     tough-cookie "~2.3.0"
-    tunnel-agent "~0.4.1"
+    tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
 require-directory@^2.1.1:
@@ -3668,10 +3672,11 @@ setprototypeof@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.2.tgz#81a552141ec104b88e89ce383103ad5c66564d08"
 
-sharpeye@burdamagazinorg/sharpeye:
-  version "1.0.0"
-  resolved "https://codeload.github.com/burdamagazinorg/sharpeye/tar.gz/9960ce5275ea3fcc825879c32c38098be275f6af"
+sharpeye@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-2.0.1.tgz#46cfd73e0619e85262d7890b48c7c031ae55d76c"
   dependencies:
+    commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
     wdio-mocha-framework "^0.5.10"
     wdio-screenshot "^0.6.0"
