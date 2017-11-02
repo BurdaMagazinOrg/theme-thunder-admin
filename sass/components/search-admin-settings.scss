@@ -1,14 +1,1 @@
-/**
- * @file
- * Styles for administration pages.
- */
-
-/**
- * Add search page select/submit.
- */
-.search-admin-settings .container-inline {
-  margin-bottom: 1em;
-}
-.search-admin-settings label[for="edit-search-type"] {
-  display: block;
-}
+@import "../../../../../core/themes/seven/css/components/search-admin-settings";

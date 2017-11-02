@@ -1,23 +1,10 @@
+@import "../../../../../core/themes/seven/css/components/messages";
+
 /**
  * Messages.
  */
-.messages {
-  margin: 9px 0 10px 8px; /* LTR */
-}
-[dir="rtl"] .messages {
-  margin: 9px 8px 10px 0;
-}
-.messages pre {
-  margin: 0;
-}
-.messages h1, .messages .heading-a,
-.messages h2, .messages .heading-b,
-.messages h3, .messages .heading-c,
-.messages h4, .messages .heading-d,
-.messages h5, .messages .heading-e,
-.messages h6, .messages .heading-f {
-  margin-top: 0;
-}
+
+// [TJW - refactor] NEW from here to bottom
 
 .messages {
   background: no-repeat 10px 10px;  /* LTR */

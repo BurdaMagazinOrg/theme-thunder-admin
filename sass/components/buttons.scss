@@ -10,6 +10,8 @@
 
 $button-border-radius: $base-border-radius;
 
+@import "../../../../../core/themes/seven/css/components/buttons";
+
 /**
  * Buttons.
  *
@@ -25,6 +27,17 @@ $button-border-radius: $base-border-radius;
  * See https://www.drupal.org/node/2124251
  *
  */
+// padding changed
+// border color changed
+// border-radius changed
+// background-color changed
+// background-image changed
+// color changed
+// text-shadow removed (todo)
+// font-size fallback removed
+// font-size changed
+// text-transform added
+// min-height added
 .button {
   box-sizing: border-box;
   display: inline-block;
@@ -40,34 +53,42 @@ $button-border-radius: $base-border-radius;
   background-color: $gray-lightest;
   background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
   color: $primary-color;
-  text-decoration: none;
-  font-weight: 600;
   font-size: 0.75rem;  /* 5 */
-  transition: all 0.1s;
-  -webkit-font-smoothing: antialiased;  /* 6 */
   text-transform: uppercase;
   min-height: 30px;
 
+  // background-color changed
+  // background-image changed
+  // color removed (todo)
+  // outline removed (todo)
   &:focus,
   &:hover {
     background-color: $gray-lighter;
     background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
     text-decoration: none;
   }
+  // box-shadow removed
+  // outline added
   &:hover {
     outline: none;
   }
+
+// .button:focus removed (todo)
+// .button:active removed (todo)
 }
 
-
+// border-color changed
+// background-color changed
+// background-image changed
+//text-shadow removed (todo)
 .button--primary {
   border-color: $primary-color-intense;
   background-color: $primary-color;
   background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
-  color: #fff;
-  font-weight: 700;
-  -webkit-font-smoothing: antialiased;
 }
+// border-color changed
+// background-color changed
+// background-image changed
 .button--primary:hover,
 .button--primary:focus {
   border-color: $primary-color;
@@ -76,6 +97,12 @@ $button-border-radius: $base-border-radius;
   color: #fff;
 }
 
+// .button--primary:focus removed (todo)
+// .button--primary:hover removed (todo)
+// .button--primary:active removed (todo)
+
+// duplicate font-size removed (todo)
+// maybe was a fallback for when browser doesn't support rem?
 /**
  * Overrides styling from system.theme.
  */
@@ -86,106 +113,25 @@ $button-border-radius: $base-border-radius;
   line-height: 16px;
   -webkit-font-smoothing: auto;
 }
-[dir="rtl"] .button-action:before {
-  margin-right: -0.2em;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0.2em;
-}
 
+// font-size changed (todo: no variable)
+// font-size fallack removed
+// min-height added
 /**
  * 1. Use px units to ensure button text is centered vertically.
  */
 .no-touchevents .button--small {
   font-size: 0.75rem;
   min-height: 0px;
-  padding: 2px 1em;  /* 1 */
 }
 
-.button:disabled,
-.button:disabled:active,
-.button.is-disabled,
-.button.is-disabled:active {
-  border-color: #d4d4d4;
-  background: #ededed;
-  box-shadow: none;
-  color: #5c5c5c;
-  font-weight: normal;
-  cursor: default;
-  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
-}
-
-/* Link actions. */
-
-/**
- * Style a clickable/tappable element as a link. Duplicates the base style for
- * the <a> tag, plus a reset for padding, borders and background.
- */
-.link {
-  display: inline;
-  cursor: pointer;
-  padding: 0;
-  border: 0;
-  background: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: #0074bd;
-  text-decoration: none;
-}
-.link:hover,
-.link:focus {
-  color: #008ee6;
-  text-decoration: underline;
-}
-
-/**
- * We've temporarily added the danger button here, bit of a harsh reset but we
- * need it.
- * @todo replace with link--danger.
- * See https://www.drupal.org/node/2123731
- */
-.button--danger {
-  display: inline;
-  cursor: pointer;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: #c72100;
-  font-weight: 400;
-  text-decoration: underline;
-}
-.button--danger:hover,
-.button--danger:focus,
-.button--danger:active {
-  color: #ff2a00;
-  text-decoration: underline;
-  text-shadow: none;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  background: none;
-}
-.button--danger:disabled,
-.button--danger.is-disabled {
-  color: #737373;
-  cursor: default;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  background: none;
-}
-
+// NEW
 .button__icon,
 .button__text {
   display: inline-block;
 }
 
+// NEW
 .button__icon {
   svg {
     path {
@@ -204,6 +150,7 @@ $button-border-radius: $base-border-radius;
   }
 }
 
+// NEW
 .button--icon-only {
   background: transparent;
   border: 0;

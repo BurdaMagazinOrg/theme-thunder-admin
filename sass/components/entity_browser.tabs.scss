@@ -1,54 +1,32 @@
-/**
- * @file
- * Styles for Entity Browser.
- *
- * These styles are compatible with Bartik, Seven, and Classy themes.
- */
+// [TJW - refactor] Overrides modules/entity_browser
 
 @import "variables";
 
-/**
- * Form elements.
- */
-.entity-browser-form input.edit-submit {
-  margin-top: 20px;
-}
-
-/**
- * Tab navigation.
- */
-.entity-browser-form {
-  nav.tabs {
-    margin-bottom: 20px;
-  }
-
-  input.tab {
-    display: none;
-  }
-
-  .entity-tabs a {
-    cursor: pointer;
-  }
-}
+@import "../../../../../modules/contrib/entity_browser/css/entity_browser.tabs";
 
 .eb-tabs {
+  // border-bottom removed (todo)
   ul {
-    margin: 0;
-    padding: 0;
 
+    // padding added
     li {
-      display: inline-block;
       padding: .75em;
 
+      // NEW
       &:first-child {
         padding-left: 0;
       }
 
+      // .eb-tabs ul li.active selector removed
+
+      // NEW
       &.active a {
           color: $primary-color-intense;
           border-bottom: 3px solid $primary-color-intense;
       }
-
+      // padding removed (todo)
+      // padding-bottom added
+      // color added
       a {
         display: block;
         padding-bottom: 2px;

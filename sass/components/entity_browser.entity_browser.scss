@@ -1,10 +1,6 @@
+// [TJW - refactor] Overrides modules/entity_browser
+
 @import "../../sass-includes/variables";
 
-/**
- * @file
- * Styles for the overall entity browser.
- */
+@import "../../../../../modules/contrib/entity_browser/css/entity_browser.entity_browser";
 
-.layout-container {
-  margin: 0;
-}

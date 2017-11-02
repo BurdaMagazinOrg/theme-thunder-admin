@@ -41,7 +41,8 @@ libraries-override:
   classy/base:
     css:
       component:
-        css/components/form.css: false
+#        [TJW - refactor] commented out, since we now use CSS overrides. TODO: remove
+#        css/components/form.css: false
         css/components/tabledrag.css: false
 # contrib module overrides
   admin_toolbar/toolbar.tree:
