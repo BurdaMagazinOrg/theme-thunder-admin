@@ -172,20 +172,16 @@ function thunder_admin_preprocess_field_multiple_value_form(&$variables) {
 function thunder_admin_preprocess_media(&$variables) {
   // Normalize paragraph_preview output.
   if ($variables['elements']['#view_mode'] === 'paragraph_preview') {
-    $bundle = $variables['elements']['#media']->bundle();
-    // Instagram, pinterest, twitter and video media entitites already provide
-    // a thumbnail field.
-    if ($bundle === "gallery") {
-      $thumbnail_field = 'field_media_images';
-    }
-    elseif ($bundle === "image") {
-      $thumbnail_field = 'field_image';
-    }
-    // Use field as thumbnail.
+    // For media entitites of type gallery and image use source field as
+    // thumbnail. Instagram, pinterest, twitter and video already provide a
+    // thumbnail field.
     // @see media--paragraph-preview.html.twig
-    if (isset($thumbnail_field) && isset($variables['content'][$thumbnail_field])) {
-      $variables['content']['thumbnail'] = $variables['content'][$thumbnail_field];
-      unset($variables['content'][$thumbnail_field]);
+    if (isset($variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'])) {
+      $thumbnail_field = $variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'];
+      if (isset($variables['content'][$thumbnail_field]) && !isset($variables['content']['thumbnail'])) {
+        $variables['content']['thumbnail'] = $variables['content'][$thumbnail_field];
+        unset($variables['content'][$thumbnail_field]);
+      }
     }
   }
 }
