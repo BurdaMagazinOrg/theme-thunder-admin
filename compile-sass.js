@@ -6,7 +6,6 @@ const sass = require('node-sass');
 const glob = require('glob');
 const csstree = require('css-tree');
 
-
 function fileRenderer(file) {
   'use strict';
 
@@ -37,7 +36,6 @@ function resolveSevenDirectory() {
 
 function sevenImporter() {
   return function(url, prev, done) {
-    console.log(url);
     if (url.startsWith('@seven')) {
       const [ selectors, fileUrl] = parseImportUrl(url);
       file = fileUrl.replace('@seven', resolveSevenDirectory());
@@ -61,10 +59,13 @@ function parseImportUrl(url) {
   return [ null, file];
 }
 
+
+/**
+ * Usage: @import "@seven/css/base/elements.css remove { body, .thunder-details, .apple: [color] }";
+ *
+ */
 function parseFile(file, selectors){
-//  console.log(fs.realpath(file));
   let contents = fs.readFileSync(file, 'utf-8');
-//  console.log(contents);
 
   // https://astexplorer.net
   let ast = csstree.parse(contents, {
@@ -76,33 +77,51 @@ function parseFile(file, selectors){
   });
 
   csstree.walkUp(ast, function(node, item, list) {
+    if (node.type === 'Rule') {
 
-    if (this.selector !== null && this.selector.type === 'SelectorList') {
+      node.prelude.children.each(function(selector, item, list) {
 
-      if (node.type === 'ClassSelector') {
-        if (selectors.includes('.' + node.name)) {
+        let remove = false;
+        csstree.walk(selector, function(node) {
+          // ignore nodes in nested selectors
+          if (this.selector === null || this.selector === selectorList) {
+            let name = '';
+            switch (node.type) {
+              case 'PseudoClassSelector':
+                name = csstree.translate(node);
+                if (item.data.children) {
+                  name = csstree.translate(item.data.children.head.data)+name;
+                }
+                if (selectors.includes(name)) {
+                  list.remove(item);
+                  if(item.prev) list.remove(item.prev);
+                }
+                break;
+              case 'ClassSelector':
+              case 'IdSelector':
+              case 'TypeSelector':
+                name = csstree.translate(node);
+                if (selectors.includes(name)) {
+                  remove = true;
+                }
+                break;
+            }
+          }
+        });
+
+        if (remove) {
           list.remove(item);
-        }
-      }
-      else if (node.type === 'TypeSelector') {
-        if (selectors.includes(node.name)) {
-          list.remove(item);
-        }
-      }
 
-      // Remove empty lines in prelude.
-      if (node.children && node.children.isEmpty()) {
+        }
+      });
+
+      if (node.prelude.children.isEmpty() ||
+        node.block.children.isEmpty()) {
         list.remove(item);
       }
-    }
 
-    // Empty prelude remove rule.
-    if (node.type === 'Rule' && node.prelude.children && node.prelude.children.isEmpty()) {
-      list.remove(item);
     }
   });
-
-  console.log(csstree.translate(ast));
   return csstree.translate(ast);
 }
 
