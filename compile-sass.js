@@ -48,11 +48,21 @@ function sevenImporter() {
 };
 
 function parseImportUrl(url) {
-  let [file, selectorString] = url.split(' remove ').map(val => val.trim());
-  let selectorMatches = selectorString.match(/{([\s\S]*)}/);
+  let [file, definitionString] = url.split(' remove ').map(val => val.trim());
+  let selectorMatches = definitionString.match(/{([\s\S]+)}/);
   if (selectorMatches) {
-    let selectors = selectorMatches[1].split(',').map(val => val.trim());
-    return [ selectors, file ];
+
+    let definition = selectorMatches[1].split(/,(?![^{]*})/).map(function (string) {
+      let [selectorString, declarationString] = string.split(/[{}]/);
+      let selector = selectorString.trim();
+      let declarations = {};
+      if (declarationString) {
+        declarations = declarationString.split(',').map(val => val.trim());
+      }
+      return { selector: selector, declarations: declarations };
+    });
+
+    return [ definition, file ];
   }
   return [ null, file];
 }
@@ -62,8 +72,9 @@ function parseImportUrl(url) {
  * Usage: @import "@seven/css/base/elements.css remove { body, .thunder-details, .apple: [color] }";
  *
  */
-function parseFile(file, selectors){
+function parseFile(file, definition){
   let contents = fs.readFileSync(file, 'utf-8');
+  let selectors = definition.map(val => val.selector);
 
   // https://astexplorer.net
   let ast = csstree.parse(contents, {
