@@ -28,7 +28,7 @@
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^3.13.0",
+    "node-sass": "^3.13.1",
     "npm-run-all": "^3.1.2",
     "onchange": "^3.2.0",
     "postcss-cli": "^2.6.0",
@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
-  "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme"
+  "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
+  "dependencies": {
+    "css-tree": "^1.0.0-alpha25"
+  }
 }
