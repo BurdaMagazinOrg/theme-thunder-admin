@@ -14,7 +14,7 @@ html {
   font-size: $font-size-root;
 }
 
-@import "@seven/css/base/elements.css remove { body, details, .apple .red, .green, .apple:nth-child(2) }";
+@import "@seven/css/base/elements.css remove { body, details, .apple .red, .apple > .green { color, font-size }, .apple:nth-child(2) }";
 /*
 @import "@seven/css/base/elements.css remove { body, .thunder-details, .green { background }, .apple:nth-child(2) }";
 
@@ -30,6 +30,7 @@ html {
   ".apple:nth-child(2)"
 ]';
 */
+
 // color changed
 // background changed
 // font changed to font-size, -weight & -family
