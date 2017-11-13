@@ -29,9 +29,7 @@ function fileRenderer(file) {
 }
 
 function resolveSevenDirectory() {
-  return '/Users/d439426/Code/dev2/seven'
-  //return '/Users/d439426/Code/dev2/thunder/docroot/core/themes/seven';
-  // return '../../../core/themes/seven';
+  return '../../../core/themes/seven';
 }
 
 function sevenImporter() {
@@ -50,10 +48,10 @@ function sevenImporter() {
 };
 
 function parseImportUrl(url) {
-  const [file, selectorString] = url.split(' remove ').map(val => val.trim());
-  const selectorMatches = selectorString.match(/{([\s\S]*?)}/);
+  let [file, selectorString] = url.split(' remove ').map(val => val.trim());
+  let selectorMatches = selectorString.match(/{([\s\S]*)}/);
   if (selectorMatches) {
-    const selectors = selectorMatches[1].split(',').map(val => val.trim());
+    let selectors = selectorMatches[1].split(',').map(val => val.trim());
     return [ selectors, file ];
   }
   return [ null, file];
@@ -75,7 +73,6 @@ function parseFile(file, selectors){
       console.log(error.message);
     }
   });
-
   csstree.walkUp(ast, function(node, item, list) {
     if (node.type === 'Rule') {
 
@@ -87,6 +84,7 @@ function parseFile(file, selectors){
           if (this.selector === null || this.selector === selectorList) {
             let name = '';
             switch (node.type) {
+              case 'AttributeSelector':
               case 'PseudoClassSelector':
                 name = csstree.translate(node);
                 if (item.data.children) {
