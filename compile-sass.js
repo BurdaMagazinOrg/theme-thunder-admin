@@ -35,9 +35,9 @@ function resolveSevenDirectory() {
 function sevenImporter() {
   return function(url, prev, done) {
     if (url.startsWith('@seven')) {
-      const [ selectors, fileUrl] = parseImportUrl(url);
+      const [ definitions, fileUrl] = parseImportString(url);
       file = fileUrl.replace('@seven', resolveSevenDirectory());
-      let contents = parseFile(file, selectors);
+      let contents = parseFile(file, definitions);
       console.log(contents);
       return { contents: contents};
     }
@@ -47,17 +47,20 @@ function sevenImporter() {
 
 };
 
-function parseImportUrl(url) {
-  let [file, definitionString] = url.split(' remove ').map(val => val.trim());
+function parseImportString(string) {
+  let [file, definitionString] = string.split(' remove ').map(val => val.trim());
   let selectorMatches = definitionString.match(/{([\s\S]+)}/);
   if (selectorMatches) {
 
     let definition = selectorMatches[1].split(/,(?![^{]*})/).map(function (string) {
-      let [selectorString, declarationString] = string.split(/[{}]/);
-      let selector = selectorString.trim();
-      let declarations = {};
-      if (declarationString) {
-        declarations = declarationString.split(',').map(val => val.trim());
+
+      let [selector, declarations] = string.split(/[{}]/);
+      selector = selector.trim();
+      if (declarations) {
+        declarations = declarations.split(',').map(val => val.trim());
+      }
+      else {
+        declarations = {}
       }
       return { selector: selector, declarations: declarations };
     });
@@ -84,6 +87,7 @@ function parseFile(file, definition){
       console.log(error.message);
     }
   });
+
   csstree.walkUp(ast, function(node, item, list) {
     if (node.type === 'Rule') {
 
