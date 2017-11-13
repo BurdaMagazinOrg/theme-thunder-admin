@@ -14,8 +14,22 @@ html {
   font-size: $font-size-root;
 }
 
-@import "../../../../../core/themes/seven/css/base/elements";
+@import "@seven/css/base/elements.css remove { body, details, .apple .red, .green, .apple:nth-child(2) }";
+/*
+@import "@seven/css/base/elements.css remove { body, .thunder-details, .green { background }, .apple:nth-child(2) }";
 
+@import '@seven/css/base/elements.css remove [
+ "body",
+  ".thunder-details",
+  {
+    ".green":
+    [
+      "background"
+    ]
+  },
+  ".apple:nth-child(2)"
+]';
+*/
 // color changed
 // background changed
 // font changed to font-size, -weight & -family

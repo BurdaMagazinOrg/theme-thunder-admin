@@ -82,34 +82,15 @@ function parseFile(file, selectors){
         csstree.walk(selector, function(node) {
           // ignore nodes in nested selectors
           if (this.selector === null || this.selector === selectorList) {
-            let name = '';
-            switch (node.type) {
-              case 'AttributeSelector':
-              case 'PseudoClassSelector':
-                name = csstree.translate(node);
-                if (item.data.children) {
-                  name = csstree.translate(item.data.children.head.data)+name;
-                }
-                if (selectors.includes(name)) {
-                  list.remove(item);
-                  if(item.prev) list.remove(item.prev);
-                }
-                break;
-              case 'ClassSelector':
-              case 'IdSelector':
-              case 'TypeSelector':
-                name = csstree.translate(node);
-                if (selectors.includes(name)) {
-                  remove = true;
-                }
-                break;
+            let name = csstree.translate(item.data);
+            if (selectors.includes(name)) {
+              remove = true;
             }
           }
         });
 
         if (remove) {
           list.remove(item);
-
         }
       });
 
