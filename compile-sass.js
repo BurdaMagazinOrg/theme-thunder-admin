@@ -77,7 +77,6 @@ function parseImportString(string) {
  */
 function parseFile(file, definitions){
   let contents = fs.readFileSync(file, 'utf-8');
-  let selectors = definitions.map(val => val.selector);
 
   // https://astexplorer.net
   let ast = csstree.parse(contents, {
