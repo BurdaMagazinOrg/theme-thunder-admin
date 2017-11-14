@@ -90,13 +90,13 @@ function parseFile(file, definition){
 
   csstree.walkUp(ast, function(node, item, list) {
     if (node.type === 'Rule') {
-
-      node.prelude.children.each(function(selector, item, list) {
+      let prelude = node.prelude;
+      prelude.children.each(function(selector, item, list) {
 
         let remove = false;
         csstree.walk(selector, function(node) {
           // ignore nodes in nested selectors
-          if (this.selector === null || this.selector === node.prelude) {
+          if (this.selector === null || this.selector === prelude) {
             let name = csstree.translate(item.data);
             if (selectors.includes(name)) {
 
