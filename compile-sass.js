@@ -36,7 +36,7 @@ function sevenImporter() {
   return function(url, prev, done) {
     if (url.startsWith('@seven')) {
       const [ definitions, fileUrl] = parseImportString(url);
-      file = fileUrl.replace('@seven', resolveSevenDirectory());
+      const file = fileUrl.replace('@seven', resolveSevenDirectory());
       let contents = parseFile(file, definitions);
       console.log(contents);
       return { contents: contents};
