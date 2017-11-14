@@ -27,7 +27,7 @@
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
-    "css-tree": "^1.0.0-alpha.26",
+    "css-sniper": "^1.0.0",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^3.13.1",
     "npm-run-all": "^3.1.2",
