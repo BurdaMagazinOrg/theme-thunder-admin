@@ -96,7 +96,7 @@ function parseFile(file, definition){
         let remove = false;
         csstree.walk(selector, function(node) {
           // ignore nodes in nested selectors
-          if (this.selector === null || this.selector === selectorList) {
+          if (this.selector === null || this.selector === node.prelude) {
             let name = csstree.translate(item.data);
             if (selectors.includes(name)) {
 
