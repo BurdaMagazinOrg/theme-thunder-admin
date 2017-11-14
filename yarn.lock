@@ -634,13 +634,13 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.9.0, commander@^2.2.0, commander@^2.8.1, commander@^2.9.0:
+commander@2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.11.0:
+commander@^2.11.0, commander@^2.2.0, commander@^2.8.1, commander@^2.9.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
@@ -779,6 +779,13 @@ css-select@~1.0.0:
     css-what "1.0"
     domutils "1.4"
     nth-check "~1.0.0"
+
+css-tree@^1.0.0-alpha.26:
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha.26.tgz#690bee3458fb5b6b7000553983c8c30876da0b3e"
+  dependencies:
+    mdn-data "^1.0.0"
+    source-map "^0.5.3"
 
 css-value@~0.0.1:
   version "0.0.1"
@@ -2607,6 +2614,10 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
+mdn-data@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.0.0.tgz#a69d9da76847b4d5834c1465ea25c0653a1fbf66"
+
 meow@^3.1.0, meow@^3.3.0, meow@^3.5.0, meow@^3.6.0, meow@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
@@ -3274,17 +3285,17 @@ qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
-"qs@>= 0.4.0", qs@~6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
+"qs@>= 0.4.0", qs@~6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
 qs@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-5.2.1.tgz#801fee030e0b9450d6385adc48a4cc55b44aedfc"
 
-qs@~6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+qs@~6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 querystring@0.2.0:
   version "0.2.0"
@@ -3440,7 +3451,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@2, request@^2.61.0, request@^2.79.0:
+request@2, request@^2.61.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -3489,7 +3500,7 @@ request@2.65.0:
     tough-cookie "~2.2.0"
     tunnel-agent "~0.4.1"
 
-request@^2.65.0, request@~2.81.0:
+request@^2.65.0, request@^2.79.0, request@~2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
