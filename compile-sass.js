@@ -60,7 +60,7 @@ function parseImportString(string) {
         declarations = declarations.split(',').map(val => val.trim());
       }
       else {
-        declarations = {}
+        declarations = [];
       }
       return { selector: selector, declarations: declarations };
     });
@@ -99,6 +99,7 @@ function parseFile(file, definition){
           if (this.selector === null || this.selector === selectorList) {
             let name = csstree.translate(item.data);
             if (selectors.includes(name)) {
+
               remove = true;
             }
           }
