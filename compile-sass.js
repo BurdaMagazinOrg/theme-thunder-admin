@@ -75,9 +75,9 @@ function parseImportString(string) {
  * Usage: @import "@seven/css/base/elements.css remove { body, .thunder-details, .apple: [color] }";
  *
  */
-function parseFile(file, definition){
+function parseFile(file, definitions){
   let contents = fs.readFileSync(file, 'utf-8');
-  let selectors = definition.map(val => val.selector);
+  let selectors = definitions.map(val => val.selector);
 
   // https://astexplorer.net
   let ast = csstree.parse(contents, {
@@ -98,9 +98,13 @@ function parseFile(file, definition){
           // ignore nodes in nested selectors
           if (this.selector === null || this.selector === prelude) {
             let name = csstree.translate(item.data);
-            if (selectors.includes(name)) {
-
-              remove = true;
+            let definition = definitions.find(function(def) { return def.selector === name; });
+            if (definition) {
+              if (definition.declarations.length) {
+                // do something;
+              } else {
+                remove = true;
+              }
             }
           }
         });
