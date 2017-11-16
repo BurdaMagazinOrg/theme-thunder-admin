@@ -175,6 +175,9 @@ function thunder_admin_preprocess_media(&$variables) {
     // For media entitites of type gallery and image use source field as
     // thumbnail. Instagram, pinterest, twitter and video already provide a
     // thumbnail field.
+    // Could remove after #2923971 has landed and compatibility with older
+    // thunder versions can be dropped.
+    // @see https://www.drupal.org/node/2923971
     // @see media--paragraph-preview.html.twig
     if (isset($variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'])) {
       $thumbnail_field = $variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'];
