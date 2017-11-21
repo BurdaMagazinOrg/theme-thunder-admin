@@ -31,6 +31,13 @@ that will/might need refactoring in future development.
   Thunder Admin's design in more areas than the current focus which is content
   authoring
 
+### Initializing Git Large File Storage (LFS)
+Git LFS is used for storing of images for regression testing. In order to provide new images in a pull request, LFS has
+to be installed on the system and initialized.
+
+Installation instructions for Git LFS are provided at [git-lfs.github.com](https://git-lfs.github.com/).
+After that initialization of LFS has to be done once: ``git lfs install``
+
 ## Development workflow
 
 run ``yarn install`` or ``npm install`` if you do not have yarn installed, but
