@@ -14,7 +14,8 @@ html {
   font-size: $font-size-root;
 }
 
-@import "@origin/css/base/elements.css remove { body, details, .apple .red, .apple > .green { color, font-size }, .apple:nth-child(2) }";
+@import "@origin/css/base/elements.css";
+//@import "@origin/css/base/elements.css remove { body, details, .apple .red, .apple > .green { color, font-size }, .apple:nth-child(2) }";
 
 // color changed
 // background changed
