@@ -780,9 +780,9 @@ css-select@~1.0.0:
     domutils "1.4"
     nth-check "~1.0.0"
 
-css-sniper@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-1.0.4.tgz#d5f841058f0fc911fcb0896a62ef029c640bd534"
+css-sniper@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-0.1.4.tgz#f3debc687c905039327bc7f61f57120535634d9e"
   dependencies:
     commander "^2.11.0"
     css-tree "^1.0.0-alpha.26"
@@ -3486,7 +3486,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@2, request@^2.61.0, request@^2.79.0:
+request@2, request@^2.61.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -3535,7 +3535,7 @@ request@2.65.0:
     tough-cookie "~2.2.0"
     tunnel-agent "~0.4.1"
 
-request@^2.65.0, request@~2.81.0:
+request@^2.65.0, request@^2.79.0, request@~2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
