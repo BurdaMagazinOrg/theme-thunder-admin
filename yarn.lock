@@ -780,9 +780,9 @@ css-select@~1.0.0:
     domutils "1.4"
     nth-check "~1.0.0"
 
-css-sniper@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-1.0.1.tgz#f01030cfd68f4e18cb30d20a85c3339ab6e4b86e"
+css-sniper@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-1.0.4.tgz#d5f841058f0fc911fcb0896a62ef029c640bd534"
   dependencies:
     commander "^2.11.0"
     css-tree "^1.0.0-alpha.26"
