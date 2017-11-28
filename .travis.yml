@@ -31,9 +31,10 @@ addons:
       - graphicsmagick
 
 before_install:
-#  - composer global require drush/drush:^8.1 drupal/coder
-#  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-#  - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+  - source ~/.nvm/nvm.sh
+  - nvm install 6
+
+  # start execution of Scripts
   - bash -e ./scripts/travis/00-keep-travis-running.sh &
   - source ./scripts/travis/01-setup-environment.sh
   - bash -x -e ./scripts/travis/02-before-install.sh
@@ -47,5 +48,3 @@ before_script:
 
 script:
   - bash -x -e ./scripts/travis/06-run-tests.sh
-#  - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme --ignore=css/* -p .
-#  - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme -p .
