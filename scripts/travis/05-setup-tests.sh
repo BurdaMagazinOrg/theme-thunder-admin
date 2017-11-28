@@ -27,9 +27,6 @@ fi
 
 docker ps -a
 
-# Wait for selenium standalone to be available.
-nc -zvv localhost 4444; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 4444..."; nc -zvv localhost 4444; out=$?; sleep 1; done
-
 # Set configuration for SharpEye to use browser defined by Travis CI Job
 cd ${THEME_DIR}
 
