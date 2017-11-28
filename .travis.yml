@@ -2,6 +2,10 @@ language: php
 sudo: false
 php: 7
 
+env:
+  - SHARPEYE_BROWSER=chrome
+  - SHARPEYE_BROWSER=firefox
+
 branches:
   only:
     - /8\.x-[0-9]+\.x/
