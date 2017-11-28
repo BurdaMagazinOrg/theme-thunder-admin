@@ -24,4 +24,4 @@ docker ps -a
 # Set configuration for SharpEye to use browser defined by Travis CI Job
 cd ${THEME_DIR}
 
-echo "\nexports.config={\"capabilities\":[{\"browserName\":\"${SHARPEYE_BROWSER}\"}]};\n" >> sharpeye.conf.js
+echo "exports.config={\"capabilities\":[{\"browserName\":\"${SHARPEYE_BROWSER}\"}]};" >> sharpeye.conf.js
