@@ -1,11 +1,11 @@
 // Options for sharpeye
 exports.options = {
   // The base URL of the website.
-  baseUrl: 'http://docker:8080',
+  baseUrl: 'http://localhost:8080',
   // Username of admin user.
   user: 'admin',
   // Password of admin user.
-  pass: '1234',
+  pass: 'admin',
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0.04
 };

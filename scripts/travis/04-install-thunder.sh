@@ -6,7 +6,7 @@
 install_thunder() {
     cd $1
 
-    /usr/bin/env PHP_OPTIONS="-d sendmail_path=`which true`" drush si thunder --account-pass=1234 --db-url=mysql://thunder:thunder@127.0.0.1/drupal install_configure_form.enable_update_status_module=NULL -y
+    /usr/bin/env PHP_OPTIONS="-d sendmail_path=`which true`" drush si thunder --account-pass=admin --db-url=mysql://thunder:thunder@127.0.0.1/drupal install_configure_form.enable_update_status_module=NULL -y
 }
 
 # Update thunder to current test version
