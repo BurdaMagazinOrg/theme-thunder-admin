@@ -65,5 +65,5 @@ module.exports = [
   '/admin/appearance',
   '/admin/modules',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
-  '/core/install.php'
+  { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] }
 ];
