@@ -40,6 +40,12 @@ module.exports = [
     { selector: '[data-drupal-selector="edit-field-paragraphs-1-top-links-collapse-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]' },
     { selector: '[data-drupal-selector="edit-field-paragraphs-1-info-must-be-saved-info"]'}
   ]},
+  { name: 'CKEditor dialog', path: '/node/7/edit', element: 'table.cke_dialog', clickpath: [
+    { selector: '#edit-field-paragraphs-1-top-links-edit-button', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { selector: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']'},
+    { selector: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: '//div[contains(@id, "cke_edit-field-paragraphs-1-subform-field-text-0-value")]'},
+    { selector: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 },
+  ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', clickpath: [
     { selector: '#edit-field-paragraphs-add-more-first-button-area-add-more', wait: '.paragraphs-add-dialog' },
