@@ -102,6 +102,8 @@ function seed_image_derivatives_drush_action() {
   $includes = explode(",", drush_get_option('include'));
   $imageStyles = ImageStyle::loadMultiple();
 
+  $display = [];
+
   /* @var string $name Name of Style */
   /* @var ImageStyle $style ImageStyle Object */
   foreach ($imageStyles as $name => $style) {
@@ -123,7 +125,7 @@ function seed_image_derivatives_drush_action() {
         if (!file_exists($destination)) {
           $style->createDerivative($file->uri, $destination);
         }
-        __show_progress($count, count($files), $name);
+        __show_progress($display, $count, count($files), $name);
         $count++;
 
       }
@@ -135,6 +137,8 @@ function seed_image_derivatives_drush_action() {
 /**
  * Helper method to show progress.
  *
+ * @param array $display
+ *   Display containing array.
  * @param int $count
  *   Count.
  * @param int $total
@@ -142,10 +146,7 @@ function seed_image_derivatives_drush_action() {
  * @param string $name
  *   String name.
  */
-function __show_progress($count, $total, $name) {
-  if (!isset($display)) {
-    static $display = [];
-  }
+function __show_progress(array &$display, $count, $total, $name) {
   if (!array_key_exists($name, $display)) {
     // Integer steps to display <= 100.
     $display[$name] = range(25, 100, 25);

@@ -8,7 +8,7 @@ drush cr
 
 # Pre-create all image styles for entity browser. ${FILE_NAME:20} will remove "sites/default/files/" from path.
 # Execution of this code is based when bash is in "docroot" folder.
-drush --include=themes/contrib/thunder_admin/scripts/drush seed-image-derivatives --include=all
+drush -i themes/contrib/thunder_admin/scripts/drush seed-image-derivatives --include=all
 
 # Run the webserver
 drush runserver --default-server=builtin 0.0.0.0:8080 &>/dev/null &
