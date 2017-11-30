@@ -26,8 +26,3 @@ elif [[ ${SHARPEYE_BROWSER} == "firefox" ]]; then
 fi
 
 docker ps -a
-
-# Set configuration for SharpEye to use browser defined by Travis CI Job
-cd ${THEME_DIR}
-
-echo "exports.config={\"capabilities\":[{\"browserName\":\"${SHARPEYE_BROWSER}\"}]};" >> sharpeye.conf.js
