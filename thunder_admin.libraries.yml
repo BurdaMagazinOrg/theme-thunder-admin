@@ -36,6 +36,8 @@ global-styling:
     theme:
       css/backend.css: {}
       css/color-scheme-inverted.css: {}
+    layout:
+      css/layout/layout.css: {}
 
 ckeditor-dialog:
   css:
