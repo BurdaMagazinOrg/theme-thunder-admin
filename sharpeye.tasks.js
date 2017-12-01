@@ -68,8 +68,11 @@ module.exports = [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ]},
+  '/admin/structure',
   '/admin/appearance',
   '/admin/modules',
+  '/admin/config',
+  '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] }
 ];
