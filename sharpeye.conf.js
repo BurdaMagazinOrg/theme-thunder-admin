@@ -28,6 +28,8 @@ exports.config = {
   // sessions. Within your capabilities you can overwrite the spec and exclude options in
   // order to group specific specs to a specific capability.
   //
+  // https://sites.google.com/a/chromium.org/chromedriver/capabilities
+  // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
   capabilities: [
     {
