@@ -1,22 +1,24 @@
 {#
 /**
  * @file
- * Theme implementation to present a gallery media entity in a paragraph preview.
+ * Theme implementation to present an media entity in a paragraph preview.
  *
  * Available variables:
  * - name: Name of the media.
  * - content: Media content.
  *
  * @see template_preprocess_media()
+ * @see thunder_admin_preprocess_media
+ * @see media.html.twig
  *
  * @ingroup themeable
  */
 #}
 <article{{ attributes.addClass('paragraph-preview') }}>
   <div class="paragraph-preview__thumbnail">
-    {{ content.field_media_images }}
+    {{ content.thumbnail }}
   </div>
   <div class="paragraph-preview__data">
-    {{ content|without('field_media_images') }}
+    {{ content|without('thumbnail') }}
   </div>
 </article>
