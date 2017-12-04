@@ -10,7 +10,19 @@
 
 $button-border-radius: $base-border-radius;
 
-@import "@theme-seven/css/components/buttons.css";
+@import "@theme-seven/css/components/buttons.css remove {
+  .button { text-shadow, font-size }
+  .button:hover, .button:focus { color, outline }
+  .button:hover { box-shadow }
+  .button:focus {}
+  .button:active {}
+  .button--primary { text-shadow }
+  .button--primary:focus {}
+  .button--primary:hover {}
+  .button--primary:active {}
+  .button-action:before { font-size }
+  .no-touchevents .button--small { font-size }
+}";
 
 /**
  * Buttons.
@@ -33,7 +45,7 @@ $button-border-radius: $base-border-radius;
 // background-color changed
 // background-image changed
 // color changed
-// text-shadow removed (todo)
+// text-shadow removed
 // font-size fallback removed
 // font-size changed
 // text-transform added
@@ -59,8 +71,8 @@ $button-border-radius: $base-border-radius;
 
   // background-color changed
   // background-image changed
-  // color removed (todo)
-  // outline removed (todo)
+  // color removed
+  // outline removed
   &:focus,
   &:hover {
     background-color: $gray-lighter;
@@ -73,14 +85,14 @@ $button-border-radius: $base-border-radius;
     outline: none;
   }
 
-// .button:focus removed (todo)
-// .button:active removed (todo)
+// .button:focus removed
+// .button:active removed \
 }
 
 // border-color changed
 // background-color changed
 // background-image changed
-//text-shadow removed (todo)
+//text-shadow removed
 .button--primary {
   border-color: $primary-color-intense;
   background-color: $primary-color;
@@ -97,11 +109,11 @@ $button-border-radius: $base-border-radius;
   color: #fff;
 }
 
-// .button--primary:focus removed (todo)
-// .button--primary:hover removed (todo)
-// .button--primary:active removed (todo)
+// .button--primary:focus removed
+// .button--primary:hover removed
+// .button--primary:active removed
 
-// duplicate font-size removed (todo)
+// duplicate font-size removed
 // maybe was a fallback for when browser doesn't support rem?
 /**
  * Overrides styling from system.theme.
