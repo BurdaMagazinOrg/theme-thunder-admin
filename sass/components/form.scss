@@ -5,16 +5,11 @@
  */
 @import 'variables';
 
-/* ----------------------- copied from Classy form.css ---------------------- */
+// Fixed relative urls in classy by copying images here.
 .form-required:after {
-  // This is the same image as the original
-  // Maybe changed, to use the icons included in this theme?
   background-image: url(../../images/icons/required.svg);
 }
-
-/* Inline error messages. */
 .form-item--error-message:before {
-  // TODO: check why
   background: url(../../images/icons/error.svg) no-repeat;
 }
 
