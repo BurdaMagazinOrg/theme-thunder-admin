@@ -61,6 +61,9 @@ module.exports = [
     { selector: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
   ]},
   '/admin/structure/block/manage/thunder_base_branding',
+  { name: 'Taxonomy term ordering', path: '/admin/structure/taxonomy/manage/channel/overview', actions: [
+    { dragAndDrop: ['//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]'], offsetx: 150, offsety: null }
+  ]},
   '/admin/structure/types/manage/article',
   '/admin/structure/types/manage/article/fields',
   '/admin/structure/types/manage/article/form-display',
