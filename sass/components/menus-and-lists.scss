@@ -1,15 +1,10 @@
 @import "@theme-seven/css/components/menus-and-lists.css";
 
-/**
- * Menus and lists.
- */
-
-// list-style-image url changed
+// Relative urls in seven fixed by copying images here.
 .item-list ul li.collapsed,
 .menu-item--collapsed {
   list-style-image: url(../../images/menu-collapsed.png);
 }
-// list-style-image url changed
 .item-list ul li.expanded,
 .menu-item--expanded {
   list-style-image: url(../../images/menu-expanded.png);
