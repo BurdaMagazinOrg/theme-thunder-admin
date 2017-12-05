@@ -1,18 +1,15 @@
 @import "@theme-seven/css/components/tablesort-indicator.css";
 
-// background-image url changed
+// Custom coloured icons for tablesort.
 .tablesort--asc {
   background-image: url(../../images/icons/twistie-down--primary-blue-darker.svg);
 }
-// background-image url changed
 a:hover .tablesort--asc {
   background-image: url(../../images/icons/twistie-down--primary-blue-intense.svg);
 }
-// background-image url changed
 .tablesort--desc {
   background-image: url(../../images/icons/twistie-up--primary-blue-darker.svg);
 }
-// background-image url changed
 a:hover .tablesort--desc {
   background-image: url(../../images/icons/twistie-up--primary-blue-intense.svg);
 }
