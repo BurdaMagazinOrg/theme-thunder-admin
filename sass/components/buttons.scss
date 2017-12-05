@@ -89,14 +89,12 @@ $button-border-radius: $base-border-radius;
 // .button:active removed \
 }
 
-// border-color changed
-// background-color changed
-// background-image changed
 //text-shadow removed
 .button--primary {
   border-color: $primary-color-intense;
   background-color: $primary-color;
   background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
+  color: #fff; // re-added color otherwise overridden by .button
 }
 // border-color changed
 // background-color changed

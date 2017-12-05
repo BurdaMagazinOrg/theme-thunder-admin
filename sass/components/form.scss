@@ -15,7 +15,7 @@
 
 /* ------------------------ copied from Seven form.css ---------------------- */
 
-@import "@theme-seven/css/components/form.css";
+@import "@theme-seven/css/components/form.css remove";
 
 // This was added
 fieldset {
@@ -55,7 +55,7 @@ fieldset:not(.fieldgroup) > legend {
 }
 // Different margin & text-transform added
 label {
-  margin-left: 0.3em;
+  margin: 0 0 0 0.3em;
   text-transform: uppercase;
 }
 // New
@@ -89,13 +89,6 @@ label {
   line-height: normal;
 }
 
-// box-sizing removed (todo) / doesn't seem to be necessary
-// min-height added
-// border color changed
-// different border-top color removed (todo) / this border overrides both
-// color changed
-// border-radius changed
-// removed duplicate color definition
 input.form-autocomplete,
 input.form-text,
 input.form-tel,
@@ -108,12 +101,14 @@ input.form-file,
 input.form-date,
 input.form-time,
 textarea.form-textarea {
-  min-height: 35px;
-  border: 1px solid $gray-lighter;
+  min-height: 35px; // added
+  background: #fff;
+  border-color: $gray-lighter;
   color: $text-color;
   border-radius: $base-border-radius;
+  box-shadow: none; // reset box-shadow (seven)
 }
-// Border color changed and box-shadow removed (todo) / solved with [Refactor]
+
 .form-text:focus,
 .form-tel:focus,
 .form-email:focus,
@@ -126,7 +121,7 @@ textarea.form-textarea {
 .form-date:focus,
 .form-time:focus {
   border-color: $primary-color-intense;
-  box-shadow: none; // [Refactor]
+  box-shadow: none; // reset box-shadow (seven)
 }
 
 // @media declaration changed TODO: check further down from here
