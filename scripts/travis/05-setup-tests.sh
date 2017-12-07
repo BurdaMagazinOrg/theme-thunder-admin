@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
+# Add image-derive-all drush command
+cd ${TEST_DIR}
+composer require burdamagazinorg/image-derive-all:master@dev
+
 # Rebuild caches and start servers
 cd ${TEST_DIR}/docroot
 
 # Final cache rebuild, to make sure every code change is respected
 drush cr
 
-# Pre-create all image styles for entity browser. ${FILE_NAME:20} will remove "sites/default/files/" from path.
-# Execution of this code is based when bash is in "docroot" folder.
-drush -i themes/contrib/thunder_admin/scripts/drush seed-image-derivatives --include=all
+# Pre-create all image styles for entity browser.´
+drush image-derive-all
 
 # Run the webserver
 drush runserver --default-server=builtin 0.0.0.0:8080 &>/dev/null &
