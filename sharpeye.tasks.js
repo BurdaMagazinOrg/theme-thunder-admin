@@ -77,5 +77,28 @@ module.exports = [
   '/admin/config',
   '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
-  { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] }
+  { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
+  { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', clickpath: [
+    { selector: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
+    { selector: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
+    { selector: '//input[@data-drupal-selector="edit-label"]', fill: 'Basis Details' },
+    { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
+    { selector: '//input[@data-drupal-selector="edit-format-settings-classes"]', fill: 'content-form__form-section' },
+    { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -1250  },
+    { selector: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offset: -1250 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -80 },
+    { selector: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
+    { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
+  ]},
+  { name: 'Check details element in frontend', path: '/node/7/edit', clickpath: [
+    { selector: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 1000 }
+  ]},
+  { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', clickpath: [
+    { selector: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]', offset: -150 },
+    { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 80 },
+    { selector: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
+    { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
+  ]}
 ];
