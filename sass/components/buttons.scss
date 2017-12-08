@@ -50,6 +50,7 @@ $button-border-radius: $base-border-radius;
 // font-size changed
 // text-transform added
 // min-height added
+// @todo [Refactor] Move this before import?
 .button {
   box-sizing: border-box;
   display: inline-block;
@@ -133,6 +134,45 @@ $button-border-radius: $base-border-radius;
 .no-touchevents .button--small {
   font-size: 0.75rem;
   min-height: 0px;
+}
+
+// Re-added button-danger to make tests happy, seven styles get overriden by above .button styling.
+// @todo [Refactor] Remove since this is a exact copy from seven
+.button--danger {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #c72100;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.button--danger:hover,
+.button--danger:focus,
+.button--danger:active {
+  color: #ff2a00;
+  text-decoration: underline;
+  text-shadow: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.button--danger:disabled,
+.button--danger.is-disabled {
+  color: #737373;
+  cursor: default;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
 }
 
 // NEW
