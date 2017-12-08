@@ -1,11 +1,11 @@
 // Options for sharpeye
 exports.options = {
   // The base URL of the website.
-  baseUrl: 'http://dev2.dd:8083',
+  baseUrl: 'http://docker:8080',
   // Username of admin user.
   user: 'admin',
   // Password of admin user.
-  pass: 'admin',
+  pass: '1234',
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0.04
 }
@@ -28,24 +28,13 @@ exports.config = {
   // sessions. Within your capabilities you can overwrite the spec and exclude options in
   // order to group specific specs to a specific capability.
   //
-  // https://sites.google.com/a/chromium.org/chromedriver/capabilities
-  // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
   capabilities: [
-    /*
     {
-      browserName: 'chrome',
-      "chromeOptions": {
-        "args": [
-          "window-size=1280,800",
-          "hide-scrollbars"
-        ]
-      }
-    }
-    */
+      browserName: 'firefox'
+    },
     {
       browserName: 'chrome'
     }
-  ],
-  port: 5544
+  ]
 };
