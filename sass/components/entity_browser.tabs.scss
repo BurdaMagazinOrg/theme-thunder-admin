@@ -1,36 +1,29 @@
-// [TJW - refactor] Overrides modules/entity_browser
-
 @import "variables";
 
-// @import "../../../../../modules/contrib/entity_browser/css/entity_browser.tabs";
-
 .eb-tabs {
-  // border-bottom removed (todo)
+
   ul {
+    border-bottom: none;
 
-    // padding added
     li {
-      padding: .75em;
+      padding: .75em; // added
 
-      // NEW
-      &:first-child {
+      &:first-child { // added
         padding-left: 0;
       }
 
-      // .eb-tabs ul li.active selector removed
+      &.active {
+        border-bottom: none;
+      }
 
-      // NEW
-      &.active a {
+      &.active a { // added
           color: $primary-color-intense;
           border-bottom: 3px solid $primary-color-intense;
       }
-      // padding removed (todo)
-      // padding-bottom added
-      // color added
+
       a {
-        display: block;
-        padding-bottom: 2px;
-        color: $primary-color-intense;
+        padding: 0 0 2px 0;
+        color: $primary-color-intense; //added
       }
     }
   }
