@@ -5,6 +5,15 @@
  */
 @import 'variables';
 
+/**
+ * Removed form.css from base theme (classy) library and import using css-sniper.
+ *
+ * Removed font-size inherit from label (classy) [Refactor]
+ */
+@import "@theme-classy/css/components/form.css remove {
+  .form-composite>legend, .label { font-size }
+}";
+
 // Fixed relative urls in classy by copying images here.
 .form-required:after {
   background-image: url(../../images/icons/required.svg);
@@ -15,18 +24,26 @@
 
 /* ------------------------ copied from Seven form.css ---------------------- */
 
-@import "@theme-seven/css/components/form.css remove";
+@import "@theme-seven/css/components/form.css remove {
+  fieldset:not(.fieldgroup) {}
+  fieldset:not(.fieldgroup)>legend {}
+}";
 
 // This was added
 fieldset {
   border: 1px solid $gray-lighter;
 }
 
-//.content-form__main > details was added to this
+// Removed fieldset in @import since .content-form__main > details was added to this for #2899606
+// @todo Should be more generic [Refactor]
+// background-color removed
 .content-form__main > details,
 fieldset:not(.fieldgroup) {
-  // Background color was removed
-  background-color: transparent;
+  border-radius: 2px;
+  margin: 1em 0;
+  padding: 30px 18px 18px;
+  min-width: 0;
+  position: relative;
 }
 
 /**
@@ -35,15 +52,16 @@ fieldset:not(.fieldgroup) {
  * @todo remove once this Mozilla bug is fixed.
  * See https://bugzilla.mozilla.org/show_bug.cgi?id=504622
  */
+// Originally added for fieldset:not(.fieldgroup) in seven, css-sniper does not handle AtRule selectors.
+// Selector .content-form__main > details was added to this for #2899606
 @-moz-document url-prefix() {
-  // .content-form__main > details was added
   .content-form__main > details,
   fieldset:not(.fieldgroup) {
     display: table-cell;
   }
 }
 
-// .content-form__main > details > summary was added
+// Removed fieldset > legend in @import since .content-form__main > details was added to this for #2899606
 .content-form__main > details > summary,
 fieldset:not(.fieldgroup) > legend {
   font-size: 1em;
@@ -124,10 +142,8 @@ textarea.form-textarea {
   box-shadow: none; // reset box-shadow (seven)
 }
 
-// @media declaration changed TODO: check further down from here
-/**
- * Select elements - Webkit only
- */
+// @todo [Refactor] Remove from @import, find more robust solution to target firefox browsers.
+// #2899359 Select styles for ff: -moz-images-in-menus: 0 is broken, use -moz-device-pixel-ratio
 @media screen and (-webkit-min-device-pixel-ratio: 0), screen and (-moz-images-in-menus: 0) {
   // min-height added
   // border color changed
