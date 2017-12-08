@@ -27,6 +27,7 @@
 @import "@theme-seven/css/components/form.css remove {
   fieldset:not(.fieldgroup) {}
   fieldset:not(.fieldgroup)>legend {}
+  input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, input.form-date, input.form-time, textarea.form-textarea { box-sizing }
 }";
 
 // This was added
@@ -84,11 +85,11 @@ label {
   }
 }
 
-// selector was
-// ul.tips,
-// div.description,
-// .form-item .description
-/* Filter */
+
+
+/* @todo [Refactor] Remove the whole block and fix /admin/modules */
+/* START styles for descriptions */
+// Copied from seven: selector was ul.tips, div.description, .form-item .description
 .tips,
 .description,
 .form-item .description {
@@ -101,12 +102,32 @@ label {
 .tips li {
   margin: 0.25em 0 0.25em 1.5em; /* LTR */
 }
+
+// Copied from seven: selector was [dir="rtl"] ul.tips li
+[dir="rtl"] .tips li {
+  margin: 0.25em 1.5em 0.25em 0;
+}
+// Copied from seven, above would override.
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 1.5em; /* LTR */
+}
+
+// Copied from seven, above would override.
+[dir="rtl"] .form-type-radio .description,
+[dir="rtl"] .form-type-checkbox .description {
+  margin-left: 0;
+  margin-right: 1.5em;
+}
+/* END styles for descriptions */
+
 // Border radius & font-size removed (todo) / overriden with next style (only when combined with input)
 .form-text,
 .form-textarea {
   line-height: normal;
 }
 
+// Removed box-sizing, see import
 input.form-autocomplete,
 input.form-text,
 input.form-tel,
