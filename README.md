@@ -58,7 +58,11 @@ build scripts and watch scripts are run with npm, for development run
 #### Visual Regression Tests
 Travis will check the theme for changes with a visual regression test.  
 If you changed some styling, please provide new reference images.
-To do so, first install a fresh thunder:
+
+For creating screenshots you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
+(on mac simply use `brew install graphicsmagick`) otherwise travis tests may fail.
+
+Install a fresh thunder:
 
 - `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
 - `cd ../fresh-thunder && composer install`
