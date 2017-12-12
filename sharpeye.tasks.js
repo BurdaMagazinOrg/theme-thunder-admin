@@ -1,6 +1,6 @@
 module.exports = [
   { name: 'Content', path: '/admin/content', hide: ['td.views-field.views-field-changed'], clickpath: [
-    { selector: '#view-title-table-column a' }
+    { selector: '#view-title-table-column a', waitBefore: 1000 }
   ]},
   '/admin/content/scheduled',
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], clickpath: [
@@ -44,7 +44,7 @@ module.exports = [
     { selector: '#edit-field-paragraphs-1-top-links-edit-button', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { selector: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']'},
     { selector: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: '//div[contains(@id, "cke_edit-field-paragraphs-1-subform-field-text-0-value")]'},
-    { selector: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 },
+    { selector: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', clickpath: [
@@ -62,7 +62,8 @@ module.exports = [
   ]},
   '/admin/structure/block/manage/thunder_base_branding',
   { name: 'Taxonomy term ordering', path: '/admin/structure/taxonomy/manage/channel/overview', actions: [
-    { dragAndDrop: ['//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]'], offsetx: 150, offsety: null }
+    { dragAndDrop: ['//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]'], offsetx: 150, offsety: null },
+    { selector: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
   '/admin/structure/types/manage/article',
   '/admin/structure/types/manage/article/fields',
