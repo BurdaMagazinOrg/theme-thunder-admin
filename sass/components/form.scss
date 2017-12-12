@@ -165,7 +165,7 @@ textarea.form-textarea {
 
 // @todo [Refactor] Remove from @import, find more robust solution to target firefox browsers.
 // #2899359 Select styles for ff: -moz-images-in-menus: 0 is broken, use -moz-device-pixel-ratio
-@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (-moz-images-in-menus: 0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (-moz-device-pixel-ratio) {
   // min-height added
   // border color changed
   // border-radius changed
@@ -175,11 +175,13 @@ textarea.form-textarea {
   // color added
   select {
     min-height: 35px;
+    padding: 1px 1.571em 1px 0.5em;
     border: 1px solid $gray-lighter;
     border-radius: $base-border-radius;
     background:
             url(../../images/icons/caret-down.svg) no-repeat 99% 50% #FFFFFF; /* LTR */
     color: $text-color;
+    font-size: 0.875rem;
   }
   // background-position changed
   [dir="rtl"] select {
@@ -196,7 +198,7 @@ textarea.form-textarea {
 }
 
 // Added mozilla hack
-@media screen and (-moz-images-in-menus: 0) {
+@media screen and (-moz-device-pixel-ratio) {
   select {
     -moz-appearance: none;
     padding-top: 6px;

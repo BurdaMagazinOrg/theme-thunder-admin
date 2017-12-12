@@ -33,7 +33,7 @@
     "npm-run-all": "^3.1.2",
     "onchange": "^3.2.0",
     "postcss-cli": "^2.6.0",
-    "sharpeye": "^2.0.1",
+    "sharpeye": "^2.2.0",
     "svg-sprite-generator": "^0.0.7",
     "svgo": "^0.7.1"
   },
@@ -46,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
-  "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme"
+  "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
+  "dependencies": {
+    "css-tree": "^1.0.0-alpha.26"
+  }
 }

@@ -58,32 +58,35 @@ build scripts and watch scripts are run with npm, for development run
 #### Visual Regression Tests
 Travis will check the theme for changes with a visual regression test.  
 If you changed some styling, please provide new reference images.
-To do so, first install a fresh thunder:
+
+For creating screenshots you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
+(on mac simply use `brew install graphicsmagick`) otherwise travis tests may fail.
+
+Install a fresh thunder:
 
 - `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
 - `cd ../fresh-thunder && composer install`
 - replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link 
 - configure database settings
-- `drush si thunder --account-pass=1234 install_configure_form.enable_update_status_module=NULL -y`
+- `drush si thunder --account-pass=admin install_configure_form.enable_update_status_module=NULL -y`
 - if no images are visible: `drush cr -l <yourdomain:port>`
 
 Then you can run selenium in docker:
 
 - if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
-- `docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-einsteinium`
-- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome:3.4.0-einsteinium`
-- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome:3.4.0-einsteinium`
+- for Firefox testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox:3.4.0-einsteinium`
 
 To debug a browser you can use following commands:
 
- - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome-debug:3.4.0-einsteinium`
- - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox-debug:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome-debug:3.4.0-einsteinium`
+- for Firefox testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox-debug:3.4.0-einsteinium`
 
 and connect with you vnc client (on mac you can use finder: go to -> connect to server [⌘K]). The password is: `secret`
 
 Before starting, set the correct URL in `sharpeye.conf.js`.  
 To start the process, enter following command from within the theme directory:
-`/node_modules/.bin/sharpeye`
+`/node_modules/.bin/sharpeye --single-browser chrome` for Chrome testing or `/node_modules/.bin/sharpeye --single-browser firefox` for Firefox.
 
 It will make screenshots of the pages, described in `sharpeye.tasks.js` and compare them to the reference images. 
 If it detects a change, it will output a diff screenshot in `screenshots/diff`.
