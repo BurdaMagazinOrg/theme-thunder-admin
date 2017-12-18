@@ -47,7 +47,5 @@
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
   "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
-  "dependencies": {
-    "css-tree": "^1.0.0-alpha.26"
-  }
+  "dependencies": {}
 }
