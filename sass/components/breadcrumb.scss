@@ -1,18 +1,22 @@
 @import 'variables';
 
+// [TJW - refactor] No need to import seven, since only style is overriden here
+
 /**
  * @file
  * Breadcrumbs.
  */
-
+// padding changed
 .breadcrumb {
   line-height: 1em;
   padding: 0.6em 0 1em;
 
+  // NEW
   li {
     color: $gray-light;
   }
 
+  // NEW
   a {
     color: inherit;
     font-size: 10px;
