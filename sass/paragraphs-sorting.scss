@@ -1,5 +1,7 @@
 @import 'variables';
 
+// [TJW - refactor] TODO
+
 .field-multiple-table--paragraphs {
   &.tabledrag-checkbox-active {
     & > tbody > tr.draggable .field-multiple-drag .tabledrag-handle {

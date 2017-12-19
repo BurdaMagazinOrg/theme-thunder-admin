@@ -36,6 +36,8 @@ global-styling:
     theme:
       css/backend.css: {}
       css/color-scheme-inverted.css: {}
+    layout:
+      css/layout/layout.css: {}
 
 ckeditor-dialog:
   css:
@@ -63,6 +65,12 @@ drupal.nav-tabs:
     - core/drupal
     - core/jquery.once
     - core/drupal.debounce
+
+# Additional entity_browser themeing.
+entity_browser.tabs:
+  css:
+    component:
+      css/components/entity_browser.tabs.css: {}
 
 # layout and functionality for content forms with advanced sidebar (replaces what is done in node.module.css)
 form-advanced-sidebar-tray:
