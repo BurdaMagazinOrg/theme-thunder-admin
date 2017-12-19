@@ -1,4 +1,13 @@
 module.exports = [
+  { name: 'button hover', path: '/admin/structure/menu', clickpath: [
+    { moveToObject: '//div[@id="block-thunder-admin-local-actions"]/ul[@class="action-links"]/li[1]/a[1]' }
+  ]},
+  { name: 'table row hover', path: '/admin/structure/menu', clickpath: [
+    { moveToObject: '//div[@id="block-thunder-admin-content"]/table[1]/tbody[1]/tr[1]/td[1]' }
+  ]},
+  { name: 'dropbutton-action hover', path: '/admin/structure/menu', clickpath: [
+    { moveToObject: '//div[@id="block-thunder-admin-content"]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/ul[1]/li[contains(@class="edit dropbutton-action")]/a[1]' }
+  ]},
   { name: 'Content', path: '/admin/content', hide: ['td.views-field.views-field-changed'], clickpath: [
     { selector: '#view-title-table-column a', waitBefore: 1000 }
   ]},
@@ -102,4 +111,5 @@ module.exports = [
     { selector: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { selector: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]}
+  // */
 ];
