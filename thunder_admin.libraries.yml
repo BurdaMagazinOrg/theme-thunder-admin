@@ -39,6 +39,7 @@ global-styling:
     layout:
       css/layout/layout.css: {}
 
+# Copied from seven.
 ckeditor-dialog:
   css:
     theme:
@@ -51,6 +52,7 @@ content-form:
     theme:
       css/content-form-theme.css: {}
 
+# Copied from seven.drupal.dialog
 drupal.dialog:
   css:
     theme:
@@ -99,6 +101,7 @@ install-page:
   dependencies:
     - thunder_admin/maintenance-page
 
+# Copied from seven.jquery.ui
 jquery.ui:
   css:
     component:
@@ -146,12 +149,13 @@ tabledrag.tabindex:
   js:
     js/tabledrag.tabindex.js: {}
 
-# Copied from seven
+# Copied from seven.
 tour-styling:
   css:
     theme:
       css/components/tour.theme.css: {}
 
+# Copied from seven.
 vertical-tabs:
   css:
     component:
