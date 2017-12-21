@@ -146,6 +146,7 @@ tabledrag.tabindex:
   js:
     js/tabledrag.tabindex.js: {}
 
+# Copied from seven
 tour-styling:
   css:
     theme:
