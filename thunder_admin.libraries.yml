@@ -31,6 +31,10 @@ global-styling:
       css/components/tables.css: {}
       css/components/tablesort-indicator.css: {}
       css/components/tabs.css: {}
+      css/components/system-status-report-general-info.css: {}
+      css/components/system-status-report.css: {}
+      css/components/system-status-report-counters.css: {}
+      css/components/system-status-counter.css: {}
       css/components/user.css: {}
       css/components/views-ui.css: {}
     theme:
@@ -69,6 +73,18 @@ drupal.nav-tabs:
     - core/drupal
     - core/jquery.once
     - core/drupal.debounce
+
+# Copied from seven.
+drupal.responsive-detail:
+  version: VERSION
+  js:
+    js/responsive-details.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/matchmedia.addListener
+    - core/jquery
+    - core/jquery.once
+    - core/collapse
 
 # Additional entity_browser themeing.
 entity_browser.tabs:
