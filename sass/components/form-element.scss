@@ -101,3 +101,17 @@ body:not(.entity-add-or-edit-form) {
   }
 }
 
+#edit-title-wrapper,
+#edit-field-seo-title-wrapper,
+#edit-field-tags-wrapper,
+#edit-field-teaser-text-wrapper {
+  max-width: 700px;
+
+  input {
+    width: 100%;
+  }
+
+  .form-item__toggle-description {
+    margin-right: -22px;
+  }
+}
