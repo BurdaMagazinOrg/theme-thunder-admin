@@ -28,6 +28,7 @@
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
     "css-sniper": "^0.3.0",
+    "eslint": "^4.14.0",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^3.13.1",
     "npm-run-all": "^3.1.2",
@@ -47,7 +48,5 @@
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
   "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
-  "dependencies": {
-    "eslint": "^4.14.0"
-  }
+  "dependencies": {}
 }
