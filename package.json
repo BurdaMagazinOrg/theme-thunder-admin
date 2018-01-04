@@ -47,5 +47,7 @@
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
   "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^4.14.0"
+  }
 }
