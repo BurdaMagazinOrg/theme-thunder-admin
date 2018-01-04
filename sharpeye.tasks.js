@@ -65,9 +65,9 @@ module.exports = [
   '/media/add',
   { name: 'Status page', path: '/admin/reports/status', actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[2]/div/text()[2]', replace: 'Last run 00 hours 00 minutes ago' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[17]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[17]/div/div/em[4]', replace: ' 01 January 2018, 00:00:00 +00:00 UTC UTC' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[20]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or '}
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/div/em[4]', replace: ' 01 January 2018, 00:00:00 +00:00 UTC UTC' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or '}
   ]},
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
