@@ -63,7 +63,6 @@ module.exports = [
   ]},
   '/node/add/page',
   '/media/add',
-  '/admin/reports/status',
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
