@@ -8,15 +8,24 @@ libraries:
   - thunder_admin/global-styling
 
 libraries-override:
-# core and vendor overrides
+  # seven also overrides this.
+  system/base:
+    css:
+      component:
+        /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
+        /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
+        /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
+  # seven also overrides this.
   core/drupal.vertical-tabs:
     css:
       component:
         misc/vertical-tabs.css: false
+  # seven also overrides this.
   core/jquery.ui:
     css:
       theme:
         assets/vendor/jquery.ui/themes/base/theme.css: false
+  # seven also overrides this.
   core/jquery.ui.dialog:
     css:
       component:
@@ -35,7 +44,8 @@ libraries-override:
       theme:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
         /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
-# core base theme (classy) overrides
+  # core base theme (classy) overrides
+  # seven also overrides classy/dialog
   classy/dialog:
     thunder_admin/drupal.dialog
   classy/base:
@@ -59,14 +69,18 @@ libraries-override:
         css/media_entity_browser.view.css: css/components/media_entity_browser.view.css
 
 libraries-extend:
+  # seven also overrides this.
   core/ckeditor:
     - thunder_admin/ckeditor-dialog
   core/drupal.tabledrag:
     - thunder_admin/tabledrag.tabindex
+  # seven also overrides this.
   core/drupal.vertical-tabs:
     - thunder_admin/vertical-tabs
+  # seven also overrides this.
   core/jquery.ui:
     - thunder_admin/jquery.ui
+  # seven also overrides this.
   tour/tour-styling:
     - thunder_admin/tour-styling
   paragraphs/drupal.paragraphs.admin:
@@ -84,6 +98,7 @@ libraries-extend:
   toolbar/toolbar.menu:
     - thunder_admin/toolbar.menu
 
+# seven also overrides this.
 quickedit_stylesheets:
   - css/components/quickedit.css
 

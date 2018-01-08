@@ -31,6 +31,10 @@ global-styling:
       css/components/tables.css: {}
       css/components/tablesort-indicator.css: {}
       css/components/tabs.css: {}
+      css/components/system-status-report-general-info.css: {}
+      css/components/system-status-report.css: {}
+      css/components/system-status-report-counters.css: {}
+      css/components/system-status-counter.css: {}
       css/components/user.css: {}
       css/components/views-ui.css: {}
     theme:
@@ -39,22 +43,26 @@ global-styling:
     layout:
       css/layout/layout.css: {}
 
+# Copied from seven.
 ckeditor-dialog:
   css:
     theme:
       css/ckeditor-dialog.css: {}
 
+# Seven has a node-form lib.
 # theming for node and taxonomy forms attached via the template
 content-form:
   css:
     theme:
       css/content-form-theme.css: {}
 
+# Copied from seven.drupal.dialog
 drupal.dialog:
   css:
     theme:
       css/components/dialog.css: {}
 
+# Copied from seven.
 drupal.nav-tabs:
   js:
     js/navigation.js: {}
@@ -65,6 +73,18 @@ drupal.nav-tabs:
     - core/drupal
     - core/jquery.once
     - core/drupal.debounce
+
+# Copied from seven.
+drupal.responsive-detail:
+  version: VERSION
+  js:
+    js/responsive-details.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/matchmedia.addListener
+    - core/jquery
+    - core/jquery.once
+    - core/collapse
 
 # Additional entity_browser themeing.
 entity_browser.tabs:
@@ -87,6 +107,7 @@ form-toggle-description:
     - core/jquery
     - core/jquery.once
 
+# Copied from seven.
 install-page:
   js:
     js/mobile.install.js: {}
@@ -96,11 +117,13 @@ install-page:
   dependencies:
     - thunder_admin/maintenance-page
 
+# Copied from seven.jquery.ui
 jquery.ui:
   css:
     component:
       css/components/jquery.ui.css: { weight: -1 }
 
+# Copied from seven.
 maintenance-page:
   js:
     js/mobile.install.js: {}
@@ -110,6 +133,15 @@ maintenance-page:
   dependencies:
     - system/maintenance
     - thunder_admin/global-styling
+
+# Copied from seven
+media-form:
+  version: VERSION
+  css:
+    layout:
+      css/components/media.css: {}
+  dependencies:
+    - media/form
 
 paragraphs.adjustments:
   js:
@@ -133,11 +165,13 @@ tabledrag.tabindex:
   js:
     js/tabledrag.tabindex.js: {}
 
+# Copied from seven.
 tour-styling:
   css:
     theme:
       css/components/tour.theme.css: {}
 
+# Copied from seven.
 vertical-tabs:
   css:
     component:
