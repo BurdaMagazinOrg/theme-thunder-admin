@@ -40,6 +40,10 @@ After that initialization of LFS has to be done once: ``git lfs install``
 
 ## Development workflow
 
+Theme should be installed in correct Drupal environment (expected to be in: `[docroot]/themes/contrib/thunder_admin`).
+Build script will try to resolve paths to `core` themes with globally available `drush` command. If that is not possible then it will try default fallback path.
+If that does not work, then correct fallback path to `core` themes should be changed in `css-sniper.conf.js` property `fallbackThemesPath`, so that build script can find required `core` files.
+
 run ``yarn install`` or ``npm install`` if you do not have yarn installed, but
 it's highly recommended so check it out:
 [yarn documentation](https://yarnpkg.com/)
