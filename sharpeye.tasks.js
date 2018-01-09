@@ -6,7 +6,7 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', fill: options.pass },
       { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-/*  { name: 'Content', path: '/admin/content', actions: [
+  { name: 'Content', path: '/admin/content', actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 },
     { $: 'td.views-field.views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
@@ -63,18 +63,19 @@ module.exports = [
     { switchToFrame: null }
   ]},
   '/node/add/page',
-  '/media/add', */
+  '/media/add',
   { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', replace: 'X Checked' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()', replace: '8.x.x' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[2]/div/text()[2]', replace: 'Last run 00 hours 00 minutes ago' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[3]/div/text()[2]', replace: 'Apache/x.x.xx (Unix) OpenSSL/x.x.x mod_fcgid/x.x.X\n' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[3]/div/text()[2]', replace: 'Apache/x.x.xx (Unix) OpenSSL/x.x.x mod_fcgid/x.x.x\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[3]', replace: '7.x.xx (' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[5]', replace: 'xxxM' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[3]', replace: 'x.x.x-xx.X-log\n\n' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[3]', replace: 'x.x.x-xx.x-log\n\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', replace: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[5]/div', replace: 'x.x.x-xx.X-log' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[5]/div', replace: 'x.x.x-xx.x-log' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[10]/div', replace: 'bundled (x.x.x compatible)\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[14]/div/text()[1]', replace: '\n7.x.xx (' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[16]/div', replace: 'xxxM' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
@@ -82,7 +83,7 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or ' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[24]/div/div', replace: 'Your server is not capable of displaying file upload progress.' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[25]/div/text()', replace: 'PHP 7.x.xx Development Server' }
-  ]}, /*
+  ]},
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
@@ -128,5 +129,5 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 80 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
-  ]} */
+  ]}
 ];
