@@ -6,8 +6,9 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', fill: options.pass },
       { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Content', path: '/admin/content', hide: ['td.views-field.views-field-changed'], actions: [
-    { $: '#view-title-table-column a', waitBefore: 1000 }
+  { name: 'Content', path: '/admin/content', actions: [
+    { $: '#view-title-table-column a', waitBefore: 1000 },
+    { $: 'td.views-field.views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
   '/admin/content/scheduled',
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
