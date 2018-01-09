@@ -18,7 +18,7 @@
     "watch:images": "onchange \"images-originals\" -- npm run images",
     "watch:all": "npm-run-all -p serve watch:styles watch:js watch:images",
     "dev": "npm run build && npm run watch:all",
-    "postinstall": "npm run dev"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
     "css-sniper": "^0.3.0",
+    "eslint": "^4.14.0",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^3.13.1",
     "npm-run-all": "^3.1.2",
