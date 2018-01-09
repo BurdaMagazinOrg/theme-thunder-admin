@@ -6,7 +6,7 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', fill: options.pass },
       { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Content', path: '/admin/content', actions: [
+/*  { name: 'Content', path: '/admin/content', actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 },
     { $: 'td.views-field.views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
@@ -63,7 +63,7 @@ module.exports = [
     { switchToFrame: null }
   ]},
   '/node/add/page',
-  '/media/add',
+  '/media/add', */
   { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', replace: 'X Checked' },
@@ -79,9 +79,10 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[16]/div', replace: 'xxxM' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/div/em[4]', replace: ' 01 January 2018, 00:00:00 +00:00 UTC UTC' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or '},
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or ' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[24]/div/div', replace: 'Your server is not capable of displaying file upload progress.' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[25]/div/text()', replace: 'PHP 7.x.xx Development Server' }
-  ]},
+  ]}, /*
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
@@ -127,5 +128,5 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 80 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
-  ]}
+  ]} */
 ];
