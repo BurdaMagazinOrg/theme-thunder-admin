@@ -64,7 +64,7 @@ module.exports = [
   ]},
   '/node/add/page',
   '/media/add',
-  { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-child(2)'], actions: [
+  { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', replace: 'X Checked' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()', replace: '8.x.x' },
@@ -75,7 +75,8 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[3]', replace: 'x.x.x-xx.X-log\n\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', replace: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[5]/div', replace: 'x.x.x-xx.X-log' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[14]/div/text()[1]', replace: '\n7.0.14 (' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[14]/div/text()[1]', replace: '\n7.x.xx (' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[16]/div', replace: 'xxxM' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/div/em[4]', replace: ' 01 January 2018, 00:00:00 +00:00 UTC UTC' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or '},
