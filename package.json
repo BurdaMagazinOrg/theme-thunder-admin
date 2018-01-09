@@ -18,7 +18,7 @@
     "watch:images": "onchange \"images-originals\" -- npm run images",
     "watch:all": "npm-run-all -p serve watch:styles watch:js watch:images",
     "dev": "npm run build && npm run watch:all",
-    "postinstall": "npm run dev"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
