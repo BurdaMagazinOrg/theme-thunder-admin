@@ -9,3 +9,6 @@ phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile
 # JS ESLint checking
 npm install -g eslint
 npm run js
+
+# Compile all the stuff
+npm run build
