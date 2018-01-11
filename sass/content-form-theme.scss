@@ -76,7 +76,7 @@
   border: 0;
   box-shadow: none;
   font-size: 0.75rem;
-  margin: $base-space $base-space-2x;
+  margin: $base-space 0 $base-space $base-space-2x;
 
   .entity-meta__header,
   details {
@@ -109,4 +109,7 @@
     }
   }
 
+  .details-wrapper {
+    overflow: scroll;
+  }
 }
