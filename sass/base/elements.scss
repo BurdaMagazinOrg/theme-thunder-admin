@@ -29,9 +29,24 @@ body {
   -webkit-font-smoothing: antialiased; // added
 }
 
-details summary {
-  padding: 0;
+/* Remove after #2873390 has landed */
+@-moz-document url-prefix() {
+
+  details summary::before {
+    content: '\25B6';
+    display: inline-block;
+    font-size: 0.8em;
+    padding-right: 0.5em;
+    position: relative;
+    text-decoration: none;
+    top: -2px;
+  }
+
+  details[open] > summary::before {
+    content: '\25BC';
+  }
 }
+/* /#2873390 */
 
 // video selector added
 img,
