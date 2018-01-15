@@ -53,7 +53,13 @@ $action-bar-height: 50px;
     overflow: auto;
     transform: translate3d(0, 0, 0);
     padding-bottom: $action-bar-height;
-    padding-right: $advanced-sidebar-toggle-width;
+
+    // #2910785 content is too big.
+    details > .details-wrapper {
+      padding-right: $advanced-sidebar-toggle-width; // add space for content-form__advanced-toggle
+      display: inline-block;
+    }
+
   }
 
   /* Show the toggle button for the advanced sidebar tray. */
