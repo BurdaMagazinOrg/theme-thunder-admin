@@ -3,10 +3,9 @@
 ## Setup environment
 # add composer's global bin directory to the path
 # see: https://github.com/drush-ops/drush#install---composer
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 export THEME_DIR=`echo $(pwd)`
 export TEST_DIR=`echo ${THEME_DIR}"/../test-dir"`
-
+export PATH="$TEST_DIR/bin:$HOME/.composer/vendor/bin:$PATH"
 
 # base path for update tests
 export UPDATE_BASE_PATH=${TEST_DIR}-update-base

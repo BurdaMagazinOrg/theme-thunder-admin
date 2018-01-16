@@ -11,10 +11,10 @@ curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-linux
 # remove xdebug to make php execute faster
 phpenv config-rm xdebug.ini
 
-# Install Drush and drupalorg_drush module
-composer global require drush/drush:^8.1 drupal/coder
+# Install drupal coder
+composer global require drupal/coder
 phpenv rehash
-drush dl drupalorg_drush-7.x
+
 
 # Install the PECL YAML extension for strict parsing. yes is used to
 # acknowledge all prompts.
