@@ -29,6 +29,8 @@ composer_create_thunder() {
     composer create-project burdamagazinorg/thunder-project:2.x ${TEST_DIR} --stability dev --no-interaction --no-install
 
     cd ${TEST_DIR}
+
+    # Drush 8 is needed as long as there is no drush 9 command version for image-derive-all
     composer require drush/drush:~8.1
 
     rm -rf docroot/themes/contrib/thunder_admin/
