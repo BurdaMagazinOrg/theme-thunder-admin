@@ -12,7 +12,7 @@ curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-linux
 phpenv config-rm xdebug.ini
 
 # Install Drush and drupalorg_drush module
-composer global require drush/drush:^8.1 drupal/coder
+composer global require drush/drush:~8.1 drupal/coder
 phpenv rehash
 drush dl drupalorg_drush-7.x
 
