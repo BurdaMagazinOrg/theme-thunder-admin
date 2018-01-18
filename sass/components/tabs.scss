@@ -111,7 +111,7 @@ li.tabs__tab a {
 }
 
 /* JS dependent styling */
- .is-collapse-enabled .tabs__trigger {
+.is-collapse-enabled .tabs__trigger {
   box-sizing: content-box;
   display: block;
   position: absolute;
@@ -318,6 +318,7 @@ li.tabs__tab a {
 }
 
 .is-horizontal {
+  text-align: right;
   &.position-container {
     border-bottom: 1px solid $primary-color-intense;
   }
@@ -325,8 +326,8 @@ li.tabs__tab a {
   .tabs {
     &.primary,
     &.secondary {
-      display: flex;
-      justify-content: flex-end;
+      display: inline-block;
+      margin: 0 0px -5px;
     }
   }
 }
@@ -334,8 +335,8 @@ li.tabs__tab a {
 .block-local-tasks-block {
   .tabs {
     &.secondary {
-      margin-top: 0.8em;
-      margin-bottom: 1.5em;
+      margin-top: 0.4em;
+      margin-bottom: 1.1em;
     }
   }
 
