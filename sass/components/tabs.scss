@@ -30,7 +30,7 @@
 .tabs__tab {
   border: 1px solid $primary-color-intense;
   background-color: $primary-color-lighter;
-  
+
   // Removed :focus since this hover is same as active.
   &:focus {
     background-color: $primary-color-lighter;
@@ -56,9 +56,11 @@
 }
 
 @media screen and (min-width: 18.75em) { // 300px
+
   .tabs.primary a {
     background: url(../../images/icons/chevron-right.svg) 99% center no-repeat;
   }
+
   [dir="rtl"] .tabs.primary a {
     background: url(../../images/icons/chevron-left.svg) 1% center no-repeat;
   }
