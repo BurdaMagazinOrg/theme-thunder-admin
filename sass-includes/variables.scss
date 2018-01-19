@@ -28,7 +28,8 @@ $font-size-tiny: 0.5625rem; /* 9px */
 
 $font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
 
-$line-height-base: 1.538461538em; /* 20px/13px */
+/* Rounded up, since chrome treats 19.9998 as 19. */
+$line-height-base: 1.5385; /* 20px/13px */
 
 /* Spacing */
 
