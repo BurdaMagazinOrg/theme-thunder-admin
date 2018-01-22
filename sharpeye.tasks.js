@@ -141,14 +141,12 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]'},
-    { moveToObject: '.page-titlce'}
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]'}
   ]},
-  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
+  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
-    { $: 'button.tabs__trigger'},
-    { moveToObject: '.page-titlce'}
+    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 },
   ]}
 ];
