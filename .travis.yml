@@ -1,6 +1,6 @@
 language: php
 sudo: false
-php: 7
+php: 7.1
 
 env:
   - SHARPEYE_BROWSER=chrome
