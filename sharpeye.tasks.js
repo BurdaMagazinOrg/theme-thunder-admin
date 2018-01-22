@@ -129,5 +129,24 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 80 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
+  ]},
+  { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
+    '.form-item-fields-field-channel-type',
+    '.form-item-fields-field-teaser-media-type'
+  ], actions: [
+    { $: '//details[@data-drupal-selector="edit-modes"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
+    { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]'}
+  ]},
+  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 800}], hide: [
+    '.form-item-fields-field-channel-type',
+    '.form-item-fields-field-teaser-media-type'
+  ], actions: [
+    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 },
   ]}
 ];
