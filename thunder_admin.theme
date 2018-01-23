@@ -179,12 +179,18 @@ function thunder_admin_preprocess_media(&$variables) {
     // thunder versions can be dropped.
     // @see https://www.drupal.org/node/2923971
     // @see media--paragraph-preview.html.twig
-    if (isset($variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'])) {
-      $thumbnail_field = $variables['elements']['#media']->bundle->entity->getTypeConfiguration()['source_field'];
-      if (isset($variables['content'][$thumbnail_field]) && !isset($variables['content']['thumbnail'])) {
-        $variables['content']['thumbnail'] = $variables['content'][$thumbnail_field];
-        unset($variables['content'][$thumbnail_field]);
-      }
+    $thumbnail_field = '';
+    /** @var \Drupal\media\MediaTypeInterface $media_type */
+    $media_type = $variables['elements']['#media']->bundle->entity;
+    if ($media_type->getEntityType()->getProvider() == 'media_entity' && isset($media_type->getTypeConfiguration()['source_field'])) {
+      $thumbnail_field = $media_type->getTypeConfiguration()['source_field'];
+    }
+    elseif ($media_type->getEntityType()->getProvider() == 'media' && isset($media_type->get('source_configuration')['source_field'])) {
+      $thumbnail_field = $media_type->get('source_configuration')['source_field'];
+    }
+    if (isset($variables['content'][$thumbnail_field]) && !isset($variables['content']['thumbnail'])) {
+      $variables['content']['thumbnail'] = $variables['content'][$thumbnail_field];
+      unset($variables['content'][$thumbnail_field]);
     }
   }
 }
