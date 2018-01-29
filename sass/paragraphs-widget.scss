@@ -34,7 +34,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
  */
-.field-multiple-table--paragraphs {
+.field-multiple-table {
   & > thead {
     tr {
       border-bottom: 1px solid $primary-color;
@@ -57,7 +57,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
         background: $primary-color-lighter;
       }
 
-      .field-multiple-drag {
+      > .field-multiple-drag {
         position: relative;
         width: 58px;
         vertical-align: middle;
