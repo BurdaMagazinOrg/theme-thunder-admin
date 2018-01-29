@@ -60,11 +60,11 @@
   /* Tables */
   thead th {
     color: $gray-lighter;
-    background-color: $primary-color-darkest;
+    background-color: transparent;
   }
 
   tbody tr:hover,
   tbody tr:focus {
-    background: $primary-color-darkest;
+    background-color: transparent;
   }
 }
