@@ -42,6 +42,8 @@ global-styling:
       css/color-scheme-inverted.css: {}
     layout:
       css/layout/layout.css: {}
+  dependencies:
+    - system/admin
 
 # Copied from seven.
 ckeditor-dialog:
