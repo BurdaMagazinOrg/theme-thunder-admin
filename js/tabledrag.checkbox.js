@@ -57,11 +57,11 @@
     this.$table.find('table.field-multiple-table').each(toggleButton());
 
     function toggleButton() {
-      return function() {
-        $(this).find('> thead button.tabledrag-toggle-checkbox').attr("disabled", function (index, value) {
+      return function () {
+        $(this).find('> thead button.tabledrag-toggle-checkbox').attr('disabled', function (index, value) {
           return !value;
         });
-      }
+      };
     }
   };
 
