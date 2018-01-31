@@ -38,6 +38,17 @@ to be installed on the system and initialized.
 Installation instructions for Git LFS are provided at [git-lfs.github.com](https://git-lfs.github.com/).
 After that initialization of LFS has to be done once: ``git lfs install``
 
+
+### Set LFS filter for local development repository
+
+After repository is cloned, it's preferred to setup LFS filter for screenshots folder. It can be done once with following line: 
+```echo "screenshots/reference/** filter=lfs diff=lfs merge=lfs -text" > .gitattributes```
+
+After that following line should be executed to get all existing screenshots from repository:
+```git lfs pull```
+
+Every following `git` pull/push should work properly with LFS integration, as long `.gitattributes` is in local repository.
+
 ## Development workflow
 
 Theme should be installed in correct Drupal environment (expected to be in: `[docroot]/themes/contrib/thunder_admin`).
