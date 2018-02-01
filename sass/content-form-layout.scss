@@ -52,7 +52,10 @@ $action-bar-height: 50px;
     left: 100%;
     overflow: auto;
     transform: translate3d(0, 0, 0);
-    padding-bottom: $action-bar-height;
+
+    .entity-meta--advanced {
+      padding-bottom: $action-bar-height;
+    }
 
     // #2910785 content is too big.
     details > .details-wrapper {
