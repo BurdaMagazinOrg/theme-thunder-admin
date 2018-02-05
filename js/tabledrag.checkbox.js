@@ -53,7 +53,13 @@
    * Disable/enable related (parents, children) tabledrag sort buttons.
    */
   Drupal.tableDrag.prototype.toggleRelatedButtons = function () {
-    this.$table.parents('table.field-multiple-table').last().find('table.field-multiple-table').addBack().not(this.$table).each(toggleButton());
+    var rootTable = this.$table.parents('table.field-multiple-table').last();
+
+    if (!rootTable.length) {
+      rootTable = this.$table;
+    }
+
+    rootTable.find('table.field-multiple-table').addBack().not(this.$table).each(toggleButton());
 
     function toggleButton() {
       return function () {
