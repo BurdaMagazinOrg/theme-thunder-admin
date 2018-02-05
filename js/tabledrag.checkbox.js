@@ -81,14 +81,14 @@
    * Triggers a start event.
    */
   Drupal.tableDrag.prototype.triggerStartEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-start');
+    this.$table.triggerHandler('tabledrag-checkbox-start');
   };
 
   /**
    * Triggers an end event.
    */
   Drupal.tableDrag.prototype.triggerEndEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-end');
+    this.$table.triggerHandler('tabledrag-checkbox-end');
   };
 
   /**
