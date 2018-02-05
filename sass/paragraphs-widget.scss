@@ -103,6 +103,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
         }
       }
 
+      &:last-of-type {
+        border-bottom: none;
+      }
+
     }
   }
 
