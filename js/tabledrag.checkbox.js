@@ -21,7 +21,7 @@
         this.toggleSortTargets();
         this.toggleStyleOfCheckboxButton();
         if (!this.$table.hasClass('tabledrag-checkbox-active')) {
-          this.disableCheckboxes()
+          this.disableCheckboxes();
           this.triggerEndEvent();
         }
       }, this))
@@ -140,8 +140,7 @@
    * Uncheck checked checkboxes.
    */
   Drupal.tableDrag.prototype.disableCheckboxes = function () {
-    this.$table.find('> tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked, > tbody > tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked')
-      .prop('checked',false);
+    this.$table.find('> tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked, > tbody > tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked').prop('checked', false);
   };
 
 
