@@ -54,8 +54,13 @@
    * Disable/enable related (parents, children) tabledrag sort buttons.
    */
   Drupal.tableDrag.prototype.toggleRelatedButtons = function () {
-    this.$table.parents('table.field-multiple-table').each(toggleButton());
-    this.$table.find('table.field-multiple-table').each(toggleButton());
+    var rootTable = this.$table.parents('table.field-multiple-table').last();
+
+    if (!rootTable.length) {
+      rootTable = this.$table;
+    }
+
+    rootTable.find('table.field-multiple-table').addBack().not(this.$table).each(toggleButton());
 
     function toggleButton() {
       return function () {
@@ -82,14 +87,14 @@
    * Triggers a start event.
    */
   Drupal.tableDrag.prototype.triggerStartEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-start');
+    this.$table.triggerHandler('tabledrag-checkbox-start');
   };
 
   /**
    * Triggers an end event.
    */
   Drupal.tableDrag.prototype.triggerEndEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-end');
+    this.$table.triggerHandler('tabledrag-checkbox-end');
   };
 
   /**
