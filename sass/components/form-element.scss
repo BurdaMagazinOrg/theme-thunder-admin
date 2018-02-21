@@ -115,3 +115,25 @@ body:not(.entity-add-or-edit-form) {
     margin-right: -22px;
   }
 }
+
+.form-actions, .field--name-status {
+  display: inline-block;
+}
+
+.field--name-status {
+  display: inline-block;
+  vertical-align: middle;
+  color: $gray-lighter;
+
+  .form-item__description {
+    color: $gray-light;
+  }
+
+  @media screen and (max-width: 600px) {
+    color: $primary-color-darker;
+
+    .form-item__description {
+      color: $gray-medium;
+    }
+  }
+}

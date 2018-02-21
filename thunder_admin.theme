@@ -383,6 +383,8 @@ function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInt
   $form['advanced']['#type'] = 'container';
   $form['advanced']['#attributes']['class'][] = 'entity-meta--advanced';
   $form['advanced']['#attributes']['class'][] = 'color-scheme-inverted';
+  // Put published state to sticky footer.
+  unset($form['status']['#group']);
 }
 
 /**
