@@ -2,9 +2,9 @@
 
 // [TJW - refactor] TODO
 
-.field-multiple-table--paragraphs {
+.field-multiple-table {
   &.tabledrag-checkbox-active {
-    & > tbody > tr.draggable .field-multiple-drag .tabledrag-handle {
+    & > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle {
       display: none;
     }
   }
