@@ -55,3 +55,8 @@
     }
   }
 }
+
+.ckeditor-buttons {
+  // Reset box-sizing for ckeditor.admin.css styles.
+  box-sizing: content-box;
+}
