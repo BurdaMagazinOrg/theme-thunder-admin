@@ -116,6 +116,7 @@ module.exports = [
   '/admin/config',
   '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
+  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html' },
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
