@@ -116,7 +116,7 @@ body:not(.entity-add-or-edit-form) {
   }
 }
 
-.form-actions, .field--name-status {
+.content-form__actions .form-actions, .field--name-status {
   display: inline-block;
 }
 
@@ -124,6 +124,7 @@ body:not(.entity-add-or-edit-form) {
   display: inline-block;
   vertical-align: middle;
   color: $gray-lighter;
+  margin-left: $base-space;
 
   .form-item__description {
     color: $gray-light;
