@@ -116,25 +116,27 @@ body:not(.entity-add-or-edit-form) {
   }
 }
 
-.content-form__actions .form-actions, .field--name-status {
-  display: inline-block;
-}
-
-.field--name-status {
-  display: inline-block;
-  vertical-align: middle;
-  color: $gray-lighter;
-  margin-left: $base-space;
-
-  .form-item__description {
-    color: $gray-light;
+.content-form__actions {
+  .form-actions, .field--name-status {
+    display: inline-block;
   }
 
-  @media screen and (max-width: 600px) {
-    color: $primary-color-darker;
+  .field--name-status {
+    display: inline-block;
+    vertical-align: middle;
+    color: $gray-lighter;
+    margin-left: $base-space;
 
     .form-item__description {
-      color: $gray-medium;
+      color: $gray-light;
+    }
+
+    @media screen and (max-width: 600px) {
+      color: $primary-color-darker;
+
+      .form-item__description {
+        color: $gray-medium;
+      }
     }
   }
 }
