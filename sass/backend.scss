@@ -59,4 +59,7 @@
 .ckeditor-buttons {
   // Reset box-sizing for ckeditor.admin.css styles.
   box-sizing: content-box;
+  li a {
+    line-height: 1.384; // 18px/13px
+  }
 }
