@@ -210,7 +210,7 @@ function thunder_admin_preprocess_paragraph(&$variables) {
 function thunder_admin_preprocess_ckeditor_settings_toolbar(&$variables) {
   // Sort disabled buttons for visual regression testing on
   // admin/config/content/formats/manage/basic_html.
-  usort($variables['disabled_buttons'] , function($a, $b) {
+  usort($variables['disabled_buttons'], function ($a, $b) {
     return strcmp($a['attributes']->offsetGet('data-drupal-ckeditor-button-name')->value(),
       $b['attributes']->offsetGet('data-drupal-ckeditor-button-name')->value());
   });
