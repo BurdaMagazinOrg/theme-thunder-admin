@@ -4,9 +4,7 @@ php: 7.1
 
 env:
   global:
-    - THUNDER=`echo ${TRAVIS_BUILD_DIR}"/../thunder"`
-    - THEME=`echo ${THUNDER}"/docroot/themes/contrib/thunder_admin/"`
-    - PATH="$THUNDER/bin:$PATH"
+    - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
   matrix:
     - SHARPEYE_BROWSER=chrome
     - SHARPEYE_BROWSER=firefox
@@ -35,15 +33,15 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone https://github.com/thunder/thunder-admin-tests.git -b feature/genericize-travis-scripts ./tests
-  - bash -x -e ./tests/scripts/before-install.sh
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b feature/genericize-travis-scripts  ${HOME}/build/thunder/thunder-admin-tests
+  - before-install.sh
 
 install:
-  - bash -x -e ./tests/scripts/install.sh
+  - install.sh
 
 before_script:
-  - bash -x -e ./tests/scripts/before-script.sh
+  - before-script.sh
 
 script:
-  - bash -x -e ./tests/scripts/build.sh
-  - bash -x -e ./tests/scripts/visual.sh
+  - build.sh
+  - visual.sh
