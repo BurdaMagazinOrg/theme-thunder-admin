@@ -15,11 +15,13 @@
         if (!this.$table.hasClass('tabledrag-checkbox-active')) {
           this.triggerStartEvent();
         }
+        this.toggleRelatedButtons();
         this.$table.toggleClass('tabledrag-checkbox-active');
         this.toggleCheckboxes();
         this.toggleSortTargets();
         this.toggleStyleOfCheckboxButton();
         if (!this.$table.hasClass('tabledrag-checkbox-active')) {
+          this.disableCheckboxes();
           this.triggerEndEvent();
         }
       }, this))
@@ -28,10 +30,9 @@
       .parent().parent();
 
     // add sorting toggle button on top
-    this.$table.find('thead').append(this.toggleCheckboxButtonWrapper);
-
+    this.$table.find('> thead').append(this.toggleCheckboxButtonWrapper);
     // add sorting checkbox to items
-    this.$table.find('.tabledrag-handle').after(
+    this.$table.find('> tr.draggable > .field-multiple-drag .tabledrag-handle, > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle').after(
       $('<input type="checkbox" class="tabledrag-checkbox" />')
         .hide()
     );
@@ -46,6 +47,28 @@
       text = Drupal.t('Finish sort');
     }
     button.text(text);
+  };
+
+
+  /**
+   * Disable/enable related (parents, children) tabledrag sort buttons.
+   */
+  Drupal.tableDrag.prototype.toggleRelatedButtons = function () {
+    var rootTable = this.$table.parents('table.field-multiple-table').last();
+
+    if (!rootTable.length) {
+      rootTable = this.$table;
+    }
+
+    rootTable.find('table.field-multiple-table').addBack().not(this.$table).each(toggleButton());
+
+    function toggleButton() {
+      return function () {
+        $(this).find('> thead button.tabledrag-toggle-checkbox').attr('disabled', function (index, value) {
+          return !value;
+        });
+      };
+    }
   };
 
   /**
@@ -64,14 +87,14 @@
    * Triggers a start event.
    */
   Drupal.tableDrag.prototype.triggerStartEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-start');
+    this.$table.triggerHandler('tabledrag-checkbox-start');
   };
 
   /**
    * Triggers an end event.
    */
   Drupal.tableDrag.prototype.triggerEndEvent = function () {
-    this.$table.trigger('tabledrag-checkbox-end');
+    this.$table.triggerHandler('tabledrag-checkbox-end');
   };
 
   /**
@@ -106,8 +129,8 @@
       .wrap('<tr class="tabledrag-sort-target-wrapper"><td class="tabledrag-sort-target-column" colspan="3"></td></tr>')
       .parent().parent();
 
-    this.$table.find('.draggable').after($target);
-    this.$table.find('.draggable:first').before($target.clone(true).addClass('tabledrag-sort-before'));
+    this.$table.find('> tr.draggable, > tbody > tr.draggable').after($target);
+    this.$table.find('> tr.draggable:first, > tbody > tr.draggable:first').before($target.clone(true).addClass('tabledrag-sort-before'));
 
   };
 
@@ -115,15 +138,23 @@
    * Removes all sorting targets from the table.
    */
   Drupal.tableDrag.prototype.removeSortTargets = function () {
-    this.$table.find('.tabledrag-sort-target-wrapper').remove();
+    this.$table.find('tr.tabledrag-sort-target-wrapper').remove();
   };
+
+  /**
+   * Uncheck checked checkboxes.
+   */
+  Drupal.tableDrag.prototype.disableCheckboxes = function () {
+    this.$table.find('> tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked, > tbody > tr.draggable > .field-multiple-drag > .tabledrag-checkbox:checked').prop('checked', false);
+  };
+
 
   /**
    * Switches the visibility between the tabledrag checkbox and handle.
    */
   Drupal.tableDrag.prototype.toggleCheckboxes = function () {
     // The tabledrag handle is toggled via CSS
-    this.$table.find('.tabledrag-checkbox').toggle();
+    this.$table.find('> tr.draggable > .field-multiple-drag > .tabledrag-checkbox, > tbody > tr.draggable > .field-multiple-drag > .tabledrag-checkbox').toggle();
   };
 
   /**
@@ -135,7 +166,7 @@
   Drupal.tableDrag.prototype.sort = function (row, swapAfter) {
     swapAfter = swapAfter || false;
 
-    var checkboxes = this.$table.find('input.tabledrag-checkbox:checked');
+    var checkboxes = this.$table.find('> tr.draggable > .field-multiple-drag > input.tabledrag-checkbox:checked, > tbody > tr.draggable > .field-multiple-drag > input.tabledrag-checkbox:checked');
     var rowsToBeMoved = checkboxes.closest('tr.draggable');
 
     // Iterate over selected rows and swap each separately.
@@ -155,16 +186,19 @@
         swapAfter = true;
       }
 
-      currentRow.markChanged();
+      // currentRow.markChanged() also marks first td in child rows
+      // (see taxonomy term list) so we mark it manually.
+      var marker = Drupal.theme('tableDragChangedMarker');
+      var cell = $(currentRow.element).find('td').eq(0);
+      if (cell.find('abbr.tabledrag-changed').length === 0) {
+        cell.append(marker);
+      }
 
       // also updates the weights.
       this.updateFields(currentRow.element);
     }, this));
 
     this.restripeTable();
-
-    checkboxes.attr('checked', false);
-
     this.onDrop();
 
   };
