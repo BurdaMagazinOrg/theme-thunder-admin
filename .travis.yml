@@ -34,7 +34,7 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone https://github.com/thunder/thunder-admin-tests.git ./tests
+  - git clone https://github.com/thunder/thunder-admin-tests.git -b feature/genericize-travis-scripts ./tests
   - bash -x -e ./tests/scripts/before-install.sh
 
 install:
