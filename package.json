@@ -44,7 +44,6 @@
     "sharpeye": "^3.3.0",
     "stylelint": "^9.1.1",
     "stylelint-config-recommended-scss": "^3.1.0",
-    "stylelint-no-browser-hacks": "^1.1.0",
     "stylelint-scss": "^2.4.0",
     "svg-sprite-generator": "^0.0.7",
     "svgo": "^1.0.5"
