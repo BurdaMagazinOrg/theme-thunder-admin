@@ -732,6 +732,10 @@ commander@^2.11.0:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
 
+commander@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
+
 commander@^2.2.0, commander@^2.8.1, commander@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
@@ -896,19 +900,19 @@ css-select@~1.0.0:
     domutils "1.4"
     nth-check "~1.0.0"
 
-css-sniper@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-0.3.0.tgz#4bd305561af45ac7a97a98f433b441e62391c09a"
+css-sniper@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/css-sniper/-/css-sniper-0.4.0.tgz#3855b76a95b273fbbc742b2db61130f254855190"
   dependencies:
-    commander "^2.11.0"
-    css-tree "^1.0.0-alpha.26"
-    node-sass "^4.6.1"
+    commander "^2.14.1"
+    css-tree "^1.0.0-alpha.28"
+    node-sass "^4.7.2"
 
-css-tree@^1.0.0-alpha.26:
-  version "1.0.0-alpha.26"
-  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha.26.tgz#690bee3458fb5b6b7000553983c8c30876da0b3e"
+css-tree@^1.0.0-alpha.28:
+  version "1.0.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha.28.tgz#8e8968190d886c9477bc8d61e96f61af3f7ffa7f"
   dependencies:
-    mdn-data "^1.0.0"
+    mdn-data "~1.1.0"
     source-map "^0.5.3"
 
 css-value@~0.0.1:
@@ -2986,9 +2990,9 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
-mdn-data@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.0.0.tgz#a69d9da76847b4d5834c1465ea25c0653a1fbf66"
+mdn-data@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.1.0.tgz#a7056319da95a2d0881267d7263075042eb061e2"
 
 meow@^3.1.0, meow@^3.3.0, meow@^3.5.0, meow@^3.6.0, meow@^3.7.0:
   version "3.7.0"
@@ -3214,7 +3218,7 @@ node-sass:
     request "^2.61.0"
     sass-graph "^2.1.1"
 
-node-sass@^4.6.1:
+node-sass@^4.7.2:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.7.2.tgz#9366778ba1469eb01438a9e8592f4262bcb6794e"
   dependencies:
