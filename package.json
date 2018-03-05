@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "styles-lint": "stylelint sass/*.scss sass/**/*.scss",
+    "styles-lint": "stylelint sass-includes/*.scss sass/*.scss sass/**/*.scss",
     "styles": "css-sniper --output-style compressed --include-path sass-includes -o css sass",
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
     "poststyles": "postcss --no-map -u autoprefixer -r css/*.css && postcss --no-map -u autoprefixer -r css/**/*.css",
@@ -44,6 +44,7 @@
     "sharpeye": "^3.3.0",
     "stylelint": "^9.1.1",
     "stylelint-config-recommended-scss": "^3.1.0",
+    "stylelint-no-browser-hacks": "^1.1.0",
     "stylelint-scss": "^2.4.0",
     "svg-sprite-generator": "^0.0.7",
     "svgo": "^1.0.5"

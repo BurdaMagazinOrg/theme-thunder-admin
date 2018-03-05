@@ -8,6 +8,11 @@
     li {
       padding: .75em; // added
 
+      a {
+        padding: 0 0 2px 0;
+        color: $primary-color-intense; //added
+      }
+
       &:first-child { // added
         padding-left: 0;
       }
@@ -19,11 +24,6 @@
       &.active a { // added
           color: $primary-color-intense;
           border-bottom: 3px solid $primary-color-intense;
-      }
-
-      a {
-        padding: 0 0 2px 0;
-        color: $primary-color-intense; //added
       }
     }
   }

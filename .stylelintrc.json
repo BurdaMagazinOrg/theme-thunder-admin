@@ -1,5 +1,8 @@
 {
   "extends": "stylelint-config-recommended-scss",
+  "plugins": [
+    "stylelint-no-browser-hacks/lib"
+  ],
   "rules": {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,
@@ -20,6 +23,16 @@
     "no-unknown-animations": true,
     "number-leading-zero": null,
     "number-no-trailing-zeros": null,
+    "plugin/no-browser-hacks": [true, {
+      "browsers": [
+        "ie >= 9",
+        "edge >= 13",
+        "firefox >= 5",
+        "opera >= 12",
+        "safari >= 5",
+        "chrome >= 56"
+      ]
+    }],
     "property-no-unknown": null,
     "rule-empty-line-before": null,
     "selector-pseudo-element-colon-notation": null,

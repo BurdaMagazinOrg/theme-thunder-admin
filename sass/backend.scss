@@ -6,12 +6,7 @@
 }
 
 .article-teaser {
-  .field--name-field-teaser-text {
-    padding: 0 10px;
-  }
-}
 
-.article-teaser {
   .field--name-field-teaser-media {
     summary {
       display: none;
@@ -23,6 +18,8 @@
   }
 
   .field--name-field-teaser-text {
+    padding: 0 10px;
+
     textarea {
       height: 122px;
     }
