@@ -3,6 +3,12 @@
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR",
+    "last 2 versions",
+    "not dead"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "css-sniper --output-style compressed --include-path sass-includes -o css sass",
