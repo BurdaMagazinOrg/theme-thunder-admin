@@ -33,7 +33,7 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b feature/genericize-travis-scripts  ${HOME}/build/thunder/thunder-admin-tests
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master  ${HOME}/build/thunder/thunder-admin-tests
   - before-install.sh
 
 install:
