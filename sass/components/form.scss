@@ -26,6 +26,7 @@
 
 @import "@theme-seven/css/components/form.css remove {
   fieldset:not(.fieldgroup) {}
+  @-moz-document url-prefix() { fieldset:not(.fieldgroup) {} }
   fieldset:not(.fieldgroup)>legend {}
   input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, input.form-date, input.form-time, textarea.form-textarea { box-sizing }
 }";

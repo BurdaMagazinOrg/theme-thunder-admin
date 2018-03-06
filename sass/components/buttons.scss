@@ -11,8 +11,8 @@
 $button-border-radius: $base-border-radius;
 
 @import "@theme-seven/css/components/buttons.css remove {
-  .button { text-shadow, font-size }
-  .button:hover, .button:focus { color, outline }
+  .button { text-shadow; font-size }
+  .button:hover, .button:focus { color; outline }
   .button:hover { box-shadow }
   .button:focus {}
   .button:active {}

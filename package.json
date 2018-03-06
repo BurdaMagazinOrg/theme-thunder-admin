@@ -3,11 +3,17 @@
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR",
+    "last 2 versions",
+    "not dead"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "css-sniper --output-style compressed --include-path sass-includes -o css sass",
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
-    "poststyles": "postcss -u autoprefixer -r css/*.css && postcss -u autoprefixer -r css/**/*.css",
+    "poststyles": "postcss --no-map -u autoprefixer -r css/*.css && postcss --no-map -u autoprefixer -r css/**/*.css",
     "js": "eslint js",
     "images": "imagemin images-originals/* -o images && imagemin images-originals/icons/* -o images/icons",
     "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",
@@ -25,18 +31,18 @@
     "url": "git+https://github.com/BurdaMagazinOrg/theme-thunder-admin.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
-    "browser-sync": "^2.18.2",
-    "css-sniper": "^0.3.0",
+    "autoprefixer": "^8.1.0",
+    "browser-sync": "^2.23.6",
+    "css-sniper": "0.4.0",
     "eslint": "^4.14.0",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^3.13.1",
-    "npm-run-all": "^3.1.2",
-    "onchange": "^3.2.0",
-    "postcss-cli": "^2.6.0",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0",
     "sharpeye": "^3.3.0",
     "svg-sprite-generator": "^0.0.7",
-    "svgo": "^0.7.1"
+    "svgo": "^1.0.5"
   },
   "engines": {
     "node": ">=6.0.0"
