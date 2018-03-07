@@ -2,6 +2,7 @@
 
 @import 'variables';
 
+/* stylelint-disable plugin/no-browser-hacks */
 $paragraph-preview-height: 90px;
 $paragraph-preview-thumbnail-height: 90px;
 $paragraph-preview-thumbnail-width: 150px;
@@ -9,6 +10,7 @@ $paragraph-preview-thumbnail-width: 150px;
 $paragraph-preview-mobile-height: 150px;
 $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
+/* stylelint-enable plugin/no-browser-hacks */
 
 .field--widget-entity-reference-paragraphs {
   .paragraph-type-add-modal {
@@ -129,6 +131,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
 .paragraph-form-item {
   position: relative;
+}
+
+.paragraph-form-item__actions {
+  @include for-tablet-portrait-and-up {
+    min-width: 160px;
+  }
 }
 
 .paragraph-form-item--has-preview {
@@ -333,6 +341,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 
   .field-multiple-table {
+    tbody {
+      tr {
+        border-bottom-color: $primary-color-dark;
+
+        &.draggable,
+        &.drag-previous {
+          background: transparent;
+        }
+      }
+    }
+
     thead {
       tr {
         border: 0;
@@ -349,16 +368,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    tbody {
-      tr {
-        border-bottom-color: $primary-color-dark;
-
-        &.draggable,
-        &.drag-previous {
-          background: transparent;
-        }
-      }
-    }
   }
   fieldset:not(.fieldgroup) {
     padding: 30px 0 0;
@@ -366,12 +375,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     legend {
       margin: 0.3em;
     }
-  }
-}
-
-.paragraph-form-item__actions {
-  @include for-tablet-portrait-and-up {
-    min-width: 160px;
   }
 }
 
@@ -473,18 +476,16 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
 /* -------------------------- Interaction ----------------------------------- */
 
-.paragraph-form-item {
-  .ajax-progress {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    display: flex;
-    background: transparent;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.paragraph-form-item .ajax-progress {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

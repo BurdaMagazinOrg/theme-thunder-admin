@@ -1,6 +1,7 @@
 @import 'variables';
 
 // [TJW - refactor] TODO
+/* stylelint-disable no-descending-specificity */
 
 .field-multiple-table {
   &.tabledrag-checkbox-active {
