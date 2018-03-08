@@ -13,8 +13,13 @@
     border-top: none;
   }
 }
-
-@import "@theme-seven/css/components/dialog.css";
+/* stylelint-disable string-no-newline */
+@import "@theme-seven/css/components/dialog.css remove {
+  .ui-dialog .ui-dialog-titlebar-close {}
+  .ui-dialog .ui-dialog-titlebar-close:hover {}
+  .ui-dialog .ui-dialog-titlebar-close:focus {}
+}";
+/* stylelint-enable string-no-newline */
 
 .ui-dialog {
   // background changed
@@ -39,7 +44,14 @@
 
   // top changed
   .ui-dialog-titlebar-close {
+    border: 0;
+    background: none;
+    right: 20px; /* LTR */
     top: 24px;
+    margin: 0;
+    height: 16px;
+    width: 16px;
+    position: absolute;
   }
 
   // background: image url changed
