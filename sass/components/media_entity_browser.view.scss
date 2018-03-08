@@ -118,6 +118,14 @@
 
 .entity-browser-form .entities-list .item-container {
   width: 151px;
+
+  @media screen and (min-width:37.5em) { /* 600px */
+    width: 32%;
+  }
+
+  @media screen and (min-width:50em) { /* 800px */
+    width: 15.6%;
+  }
 }
 
 /* stylelint-disable no-descending-specificity */
