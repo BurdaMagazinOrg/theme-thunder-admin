@@ -1,1 +1,3 @@
-.container-inline div,.container-inline label{display:inline-block}
+.container-inline div,
+.container-inline label{
+  display:inline-block; }

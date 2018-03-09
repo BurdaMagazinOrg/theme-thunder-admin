@@ -1,1 +1,5 @@
-.search-admin-settings .container-inline{margin-bottom:1em}.search-admin-settings label[for="edit-search-type"]{display:block}
+.search-admin-settings .container-inline{
+  margin-bottom:1em; }
+
+.search-admin-settings label[for="edit-search-type"]{
+  display:block; }
