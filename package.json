@@ -12,7 +12,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles-lint": "stylelint sass-includes/*.scss sass/*.scss sass/**/*.scss",
-    "styles": "css-sniper --output-style nested --include-path sass-includes -o css sass",
+    "styles": "css-sniper --output-style expanded --include-path sass-includes -o css sass",
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
     "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css/*.css && postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css/**/*.css",
     "js": "eslint js",

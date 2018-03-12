@@ -2,31 +2,41 @@
   float:right;
   margin-top:5px;
   width:10px;
-  height:10px; }
+  height:10px;
+}
 
 [dir="rtl"] .tablesort{
-  float:left; }
+  float:left;
+}
 
 .tablesort--asc{
-  background-image:url(../../../../misc/icons/004875/twistie-down.svg); }
+  background-image:url(../../../../misc/icons/004875/twistie-down.svg);
+}
 
 a:hover .tablesort--asc{
-  background-image:url(../../../../misc/icons/008ee6/twistie-down.svg); }
+  background-image:url(../../../../misc/icons/008ee6/twistie-down.svg);
+}
 
 .tablesort--desc{
-  background-image:url(../../../../misc/icons/004875/twistie-up.svg); }
+  background-image:url(../../../../misc/icons/004875/twistie-up.svg);
+}
 
 a:hover .tablesort--desc{
-  background-image:url(../../../../misc/icons/008ee6/twistie-up.svg); }
+  background-image:url(../../../../misc/icons/008ee6/twistie-up.svg);
+}
 
 .tablesort--asc{
-  background-image:url(../../images/icons/twistie-down--primary-blue-darker.svg); }
+  background-image:url(../../images/icons/twistie-down--primary-blue-darker.svg);
+}
 
 a:hover .tablesort--asc{
-  background-image:url(../../images/icons/twistie-down--primary-blue-intense.svg); }
+  background-image:url(../../images/icons/twistie-down--primary-blue-intense.svg);
+}
 
 .tablesort--desc{
-  background-image:url(../../images/icons/twistie-up--primary-blue-darker.svg); }
+  background-image:url(../../images/icons/twistie-up--primary-blue-darker.svg);
+}
 
 a:hover .tablesort--desc{
-  background-image:url(../../images/icons/twistie-up--primary-blue-intense.svg); }
+  background-image:url(../../images/icons/twistie-up--primary-blue-intense.svg);
+}

@@ -1,12 +1,16 @@
 tr.drag{
-  background-color:#fffff0; }
+  background-color:#fffff0;
+}
 
 tr.drag-previous{
-  background-color:#ffd; }
+  background-color:#ffd;
+}
 
 body div.tabledrag-changed-warning{
-  margin-bottom:0.5em; }
+  margin-bottom:0.5em;
+}
 
 a.tabledrag-handle .handle{
   width:22px;
-  height:22px; }
+  height:22px;
+}
