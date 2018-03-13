@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\content_moderation\Entity\ContentModerationState;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -291,16 +292,28 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
         'class' => 'entity-meta__title',
       ],
     ],
-    'changed' => [
+  ];
+  if (\Drupal::moduleHandler()->moduleExists('content_moderation')) {
+    /** @var \Drupal\content_moderation\ModerationInformationInterface $moderationInfo */
+    $moderationInfo = \Drupal::service('content_moderation.moderation_information');
+    $state = ContentModerationState::loadFromModeratedEntity($node);
+    $workflow = $moderationInfo->getWorkflowForEntity($node);
+    $default = $state ? $workflow->getTypePlugin()->getState($state->get('moderation_state')->value) : $workflow->getTypePlugin()->getInitialState($node);
+    $form['meta']['moderation_state'] = [
       '#type' => 'item',
-      '#wrapper_attributes' => ['class' => ['entity-meta__last-saved', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $last_saved_info,
-    ],
-    'author' => [
-      '#type' => 'item',
-      '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $author_info,
-    ],
+      '#wrapper_attributes' => ['class' => ['entity-meta__moderation_state', 'container-inline']],
+      '#markup' => '<h4 class="label inline">' . t('Moderation state') . '</h4> ' . $default->label(),
+    ];
+  }
+  $form['meta']['changed'] = [
+    '#type' => 'item',
+    '#wrapper_attributes' => ['class' => ['entity-meta__last-saved', 'container-inline']],
+    '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $last_saved_info,
+  ];
+  $form['meta']['author'] = [
+    '#type' => 'item',
+    '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
+    '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $author_info,
   ];
 }
 
