@@ -1,6 +1,8 @@
+// [TJW - refactor] TODO
 
 @import 'variables';
 
+/* stylelint-disable plugin/no-browser-hacks */
 $paragraph-preview-height: 90px;
 $paragraph-preview-thumbnail-height: 90px;
 $paragraph-preview-thumbnail-width: 150px;
@@ -8,6 +10,7 @@ $paragraph-preview-thumbnail-width: 150px;
 $paragraph-preview-mobile-height: 150px;
 $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
+/* stylelint-enable plugin/no-browser-hacks */
 
 /*
  * Media screen size defined by paragraphs module to adjust style for tablets and phones.
@@ -91,7 +94,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  * Paragraph multi reference field item's draggable row:
  * 1. separate paragraph "items" visually and make room for [add] buttons
  */
-.field-multiple-table--paragraphs {
+.field-multiple-table {
   & > thead {
     tr {
       border-bottom: 1px solid $primary-color;
@@ -114,7 +117,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
         background: $primary-color-lighter;
       }
 
-      .field-multiple-drag {
+      > .field-multiple-drag {
         position: relative;
         width: 58px;
         vertical-align: middle;
@@ -134,7 +137,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
           .tabledrag-handle {
             display: inline-block;
-            height: 1.5em;
             float: none;
 
             .handle {
@@ -159,6 +161,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
             }
           }
         }
+      }
+
+      &:last-of-type {
+        border-bottom: none;
       }
 
     }
@@ -226,6 +232,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
   .paragraphs-dropdown-actions {
     top: 31px;
+  }
+}
+
+.paragraph-form-item__actions {
+  @include for-tablet-portrait-and-up {
+    min-width: 160px;
   }
 }
 
@@ -523,6 +535,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 
   .field-multiple-table {
+    tbody {
+      tr {
+        border-bottom-color: $primary-color-dark;
+
+        &.draggable,
+        &.drag-previous {
+          background: transparent;
+        }
+      }
+    }
+
     thead {
       tr {
         border: 0;
@@ -539,16 +562,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    tbody {
-      tr {
-        border-bottom-color: $primary-color-dark;
-
-        &.draggable,
-        &.drag-previous {
-          background: transparent;
-        }
-      }
-    }
   }
   fieldset:not(.fieldgroup) {
     padding: 30px 0 0;
@@ -573,12 +586,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 }
 
-.paragraph-form-item__actions {
-  @include for-tablet-portrait-and-up {
-    min-width: 160px;
-  }
-}
-
 /* ----------------------- Paragraph preview -------------------------------- */
 
 /*
@@ -589,6 +596,28 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 12px;
+  line-height: 1.3em;
+
+  .text-formatted {
+    & * {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.3em;
+    }
+
+    ul {
+      padding-left: 1.4em;
+    }
+  }
+
+  .field__label {
+    display: none;
+
+    @include for-tablet-portrait-and-up {
+      display: block;
+    }
+  }
 
   @include for-big-tablet-landscape-and-up {
     flex: 1 1 55%; /* 1 */
@@ -659,44 +688,20 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
 .paragraph-preview__data {
   flex: 1 1 auto;
-  font-size: 12px;
-  line-height: 1.3em;
-
-  .text-formatted {
-    & * {
-      margin: 0;
-      font-size: 12px;
-      line-height: 1.3em;
-    }
-
-    ul {
-      padding-left: 1.4em;
-    }
-  }
-
-  .field__label {
-    display: none;
-
-    @include for-tablet-portrait-and-up {
-      display: block;
-    }
-  }
 }
 
 /* -------------------------- Interaction ----------------------------------- */
 
-.paragraph-form-item {
-  .ajax-progress {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    display: flex;
-    background: transparent;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.paragraph-form-item .ajax-progress {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -3,6 +3,7 @@
 
 /* Colors */
 
+/* stylelint-disable plugin/no-browser-hacks */
 $primary-color: rgb(18, 147, 201); /* #1293C9 */
 $primary-color-intense: rgb(0, 159, 227); /* #009FE3 */
 $primary-color-dark: rgb(12, 92, 127); /* #0C5C7F */
@@ -31,7 +32,8 @@ $font-size-tiny: 0.5625rem; /* 9px */
 
 $font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
 
-$line-height-base: 1.538461538em; /* 20px/13px */
+/* Rounded up, since chrome treats 19.9998 as 19. Only three digits for firefox */
+$line-height-base: 1.539; /* 20px/13px */
 
 /* Spacing */
 

@@ -1,3 +1,7 @@
+// [TJW - refactor] NEW (todo: taken from toolbar core module?)
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable no-descending-specificity */
+
 /**
  * @file toolbar.theme.css
  */
@@ -67,6 +71,7 @@
 .toolbar .toolbar-menu {
 
 }
+
 .toolbar {
   .toolbar-tray-horizontal {
     .menu-item {

@@ -3,6 +3,8 @@
  * Inverted color scheme.
  */
 
+// [TJW - refactor] TODO
+
 @import 'variables';
 
 .paragraph-form-item--has-subform.color-scheme-inverted {
@@ -53,5 +55,16 @@
 
   .button__icon svg path {
     fill: white;
+  }
+
+  /* Tables */
+  thead th {
+    color: $gray-lighter;
+    background-color: transparent;
+  }
+
+  tbody tr:hover,
+  tbody tr:focus {
+    background-color: transparent;
   }
 }

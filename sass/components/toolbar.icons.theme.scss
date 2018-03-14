@@ -1,3 +1,6 @@
+// [TJW - refactor] NEW (todo: taken from toolbar core module?)
+/* stylelint-disable no-descending-specificity */
+
 /**
  * @file
  * Styling for toolbar module icons.
@@ -242,13 +245,11 @@
 }
 .toolbar .toolbar-icon.toolbar-handle:before {
   left: 1.6667em; /* LTR */
+  background-image: url(../../images/icons/chevron-disc-down--white.svg);
 }
 [dir="rtl"] .toolbar .toolbar-icon.toolbar-handle:before {
   left: auto;
   right: 1.6667em;
-}
-.toolbar .toolbar-icon.toolbar-handle:before {
-  background-image: url(../../images/icons/chevron-disc-down--white.svg);
 }
 .toolbar .toolbar-icon.toolbar-handle.open:before {
   background-image: url(../../images/icons/chevron-disc-up--primary-blue-intense.svg);

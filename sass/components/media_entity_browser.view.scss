@@ -1,3 +1,5 @@
+// [TJW - refactor] todo: taken from thunder_media module?
+
 /**
  * @media-entity media_entity_browser.view.css
  */
@@ -25,14 +27,15 @@
   }
 
   .views-row {
+    .views-field-name {
+      display: none;
+    }
+
     /* Show filename */
     &:hover .views-field-name {
       display: block;
     }
 
-    .views-field-name {
-      display: none;
-    }
     /* Checker */
     &:after {
       content: " ";
@@ -103,29 +106,7 @@
   text-align: center;
   margin: 0.5%;
   float: left;
-}
 
-.entity-browser-form .entities-list .item-container {
-  width: 151px;
-}
-
-.view-media-entity-browser .views-row img,
-.entity-browser-form .entities-list article.view-mode-thumbnail img {
-  border: 2px solid $primary-color-light;
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.entity-browser-form .entities-list {
-  margin-bottom: 10px;
-  clear: left;
-  padding-top: 10px;
-  border-top: 2px solid #b8b8b8;
-}
-
-.entity-browser-form .entities-list .item-container,
-.view-media-entity-browser .views-row {
   @media screen and (min-width:37.5em) { /* 600px */
     width: 32%;
   }
@@ -133,6 +114,35 @@
   @media screen and (min-width:50em) { /* 800px */
     width: 15.6%;
   }
+}
+
+.entity-browser-form .entities-list .item-container {
+  width: 151px;
+
+  @media screen and (min-width:37.5em) { /* 600px */
+    width: 32%;
+  }
+
+  @media screen and (min-width:50em) { /* 800px */
+    width: 15.6%;
+  }
+}
+
+/* stylelint-disable no-descending-specificity */
+.view-media-entity-browser .views-row img,
+.entity-browser-form .entities-list article.view-mode-thumbnail img {
+  border: 2px solid $primary-color-light;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+/* stylelint-enable no-descending-specificity */
+
+.entity-browser-form .entities-list {
+  margin-bottom: 10px;
+  clear: left;
+  padding-top: 10px;
+  border-top: 2px solid #b8b8b8;
 }
 
 /* Media info */

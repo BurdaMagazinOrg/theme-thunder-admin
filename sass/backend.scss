@@ -1,23 +1,12 @@
 @import 'variables';
 
-.page-content {
-  margin-bottom: 80px;
-}
-.media-twitter {
-  display: table;
-}
 
 .responsive-preview {
   z-index: 1000;
 }
 
 .article-teaser {
-  .field--name-field-teaser-text {
-    padding: 0 10px;
-  }
-}
 
-.article-teaser {
   .field--name-field-teaser-media {
     summary {
       display: none;
@@ -29,6 +18,8 @@
   }
 
   .field--name-field-teaser-text {
+    padding: 0 10px;
+
     textarea {
       height: 122px;
     }
@@ -59,5 +50,13 @@
         margin-top: 4px;
       }
     }
+  }
+}
+
+.ckeditor-buttons {
+  // Reset box-sizing for ckeditor.admin.css styles.
+  box-sizing: content-box;
+  li a {
+    line-height: 1.384; // 18px/13px
   }
 }

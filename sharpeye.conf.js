@@ -1,14 +1,14 @@
 // Options for sharpeye
 exports.options = {
   // The base URL of the website.
-  baseUrl: 'http://docker:8080',
+  baseUrl: 'http://localhost:8080',
   // Username of admin user.
   user: 'admin',
   // Password of admin user.
-  pass: '1234',
+  pass: 'admin',
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0.04
-}
+};
 
 var jobID = process.env.TRAVIS_JOB_ID;
 if (jobID !== undefined) {
@@ -28,11 +28,10 @@ exports.config = {
   // sessions. Within your capabilities you can overwrite the spec and exclude options in
   // order to group specific specs to a specific capability.
   //
+  // https://sites.google.com/a/chromium.org/chromedriver/capabilities
+  // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
   capabilities: [
-    {
-      browserName: 'firefox'
-    },
     {
       browserName: 'chrome'
     }

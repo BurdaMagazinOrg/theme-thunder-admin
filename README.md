@@ -31,7 +31,29 @@ that will/might need refactoring in future development.
   Thunder Admin's design in more areas than the current focus which is content
   authoring
 
+### Initializing Git Large File Storage (LFS)
+Git LFS is used for storing of images for regression testing. In order to provide new images in a pull request, LFS has
+to be installed on the system and initialized.
+
+Installation instructions for Git LFS are provided at [git-lfs.github.com](https://git-lfs.github.com/).
+After that initialization of LFS has to be done once: ``git lfs install``
+
+
+### Set LFS filter for local development repository
+
+After repository is cloned, it's preferred to setup LFS filter for screenshots folder. It can be done once with following line: 
+```echo "screenshots/reference/** filter=lfs diff=lfs merge=lfs -text" > .gitattributes```
+
+After that following line should be executed to get all existing screenshots from repository:
+```git lfs pull```
+
+Every following `git` pull/push should work properly with LFS integration, as long `.gitattributes` is in local repository.
+
 ## Development workflow
+
+Theme should be installed in correct Drupal environment (expected to be in: `[docroot]/themes/contrib/thunder_admin`).
+Build script will try to resolve paths to `core` themes with globally available `drush` command. If that is not possible then it will try default fallback path.
+If that does not work, then correct fallback path to `core` themes should be changed in `css-sniper.conf.js` property `fallbackThemesPath`, so that build script can find required `core` files.
 
 run ``yarn install`` or ``npm install`` if you do not have yarn installed, but
 it's highly recommended so check it out:
@@ -51,32 +73,35 @@ build scripts and watch scripts are run with npm, for development run
 #### Visual Regression Tests
 Travis will check the theme for changes with a visual regression test.  
 If you changed some styling, please provide new reference images.
-To do so, first install a fresh thunder:
+
+For creating screenshots you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
+(on mac simply use `brew install graphicsmagick`) otherwise travis tests may fail.
+
+Install a fresh thunder:
 
 - `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
 - `cd ../fresh-thunder && composer install`
 - replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link 
 - configure database settings
-- `drush si thunder --account-pass=1234 install_configure_form.enable_update_status_module=NULL -y`
+- `drush si thunder --account-pass=admin install_configure_form.enable_update_status_module=NULL -y`
 - if no images are visible: `drush cr -l <yourdomain:port>`
 
 Then you can run selenium in docker:
 
 - if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
-- `docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0-einsteinium`
-- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome:3.4.0-einsteinium`
-- `docker run -d --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome:3.4.0-einsteinium`
+- for Firefox testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox:3.4.0-einsteinium`
 
 To debug a browser you can use following commands:
 
- - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-chrome-debug:3.4.0-einsteinium`
- - `docker run -d -P -p 5900:5900 --add-host="fresh-thunder.dd:172.16.123.1" --link selenium-hub:hub selenium/node-firefox-debug:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome-debug:3.4.0-einsteinium`
+- for Firefox testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox-debug:3.4.0-einsteinium`
 
 and connect with you vnc client (on mac you can use finder: go to -> connect to server [⌘K]). The password is: `secret`
 
 Before starting, set the correct URL in `sharpeye.conf.js`.  
 To start the process, enter following command from within the theme directory:
-`/node_modules/.bin/sharpeye`
+`/node_modules/.bin/sharpeye --single-browser chrome` for Chrome testing or `/node_modules/.bin/sharpeye --single-browser firefox` for Firefox.
 
 It will make screenshots of the pages, described in `sharpeye.tasks.js` and compare them to the reference images. 
 If it detects a change, it will output a diff screenshot in `screenshots/diff`.

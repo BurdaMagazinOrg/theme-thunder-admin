@@ -8,7 +8,25 @@
 
 @import 'variables';
 
+/* stylelint-disable plugin/no-browser-hacks */
 $button-border-radius: $base-border-radius;
+/* stylelint-enable plugin/no-browser-hacks */
+
+/* stylelint-disable string-no-newline */
+@import "@theme-seven/css/components/buttons.css remove {
+  .button { text-shadow; font-size }
+  .button:hover, .button:focus { color; outline }
+  .button:hover { box-shadow }
+  .button:focus {}
+  .button:active {}
+  .button--primary { text-shadow }
+  .button--primary:focus {}
+  .button--primary:hover {}
+  .button--primary:active {}
+  .button-action:before { font-size }
+  .no-touchevents .button--small { font-size }
+}";
+/* stylelint-enable string-no-newline */
 
 /**
  * Buttons.
@@ -25,6 +43,18 @@ $button-border-radius: $base-border-radius;
  * See https://www.drupal.org/node/2124251
  *
  */
+// padding changed
+// border color changed
+// border-radius changed
+// background-color changed
+// background-image changed
+// color changed
+// text-shadow removed
+// font-size fallback removed
+// font-size changed
+// text-transform added
+// min-height added
+// @todo [Refactor] Move this before import?
 .button {
   box-sizing: border-box;
   display: inline-block;
@@ -40,34 +70,40 @@ $button-border-radius: $base-border-radius;
   background-color: $gray-lightest;
   background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
   color: $primary-color;
-  text-decoration: none;
-  font-weight: 600;
   font-size: 0.75rem;  /* 5 */
-  transition: all 0.1s;
-  -webkit-font-smoothing: antialiased;  /* 6 */
   text-transform: uppercase;
   min-height: 30px;
 
+  // background-color changed
+  // background-image changed
+  // color removed
+  // outline removed
   &:focus,
   &:hover {
     background-color: $gray-lighter;
     background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%);
     text-decoration: none;
   }
+  // box-shadow removed
+  // outline added
   &:hover {
     outline: none;
   }
+
+// .button:focus removed
+// .button:active removed \
 }
 
-
+//text-shadow removed
 .button--primary {
   border-color: $primary-color-intense;
   background-color: $primary-color;
   background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
-  color: #fff;
-  font-weight: 700;
-  -webkit-font-smoothing: antialiased;
+  color: #fff; // re-added color otherwise overridden by .button
 }
+// border-color changed
+// background-color changed
+// background-image changed
 .button--primary:hover,
 .button--primary:focus {
   border-color: $primary-color;
@@ -76,6 +112,12 @@ $button-border-radius: $base-border-radius;
   color: #fff;
 }
 
+// .button--primary:focus removed
+// .button--primary:hover removed
+// .button--primary:active removed
+
+// duplicate font-size removed
+// maybe was a fallback for when browser doesn't support rem?
 /**
  * Overrides styling from system.theme.
  */
@@ -86,64 +128,20 @@ $button-border-radius: $base-border-radius;
   line-height: 16px;
   -webkit-font-smoothing: auto;
 }
-[dir="rtl"] .button-action:before {
-  margin-right: -0.2em;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0.2em;
-}
 
+// font-size changed (todo: no variable)
+// font-size fallack removed
+// min-height added
 /**
  * 1. Use px units to ensure button text is centered vertically.
  */
 .no-touchevents .button--small {
   font-size: 0.75rem;
   min-height: 0px;
-  padding: 2px 1em;  /* 1 */
 }
 
-.button:disabled,
-.button:disabled:active,
-.button.is-disabled,
-.button.is-disabled:active {
-  border-color: #d4d4d4;
-  background: #ededed;
-  box-shadow: none;
-  color: #5c5c5c;
-  font-weight: normal;
-  cursor: default;
-  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
-}
-
-/* Link actions. */
-
-/**
- * Style a clickable/tappable element as a link. Duplicates the base style for
- * the <a> tag, plus a reset for padding, borders and background.
- */
-.link {
-  display: inline;
-  cursor: pointer;
-  padding: 0;
-  border: 0;
-  background: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: #0074bd;
-  text-decoration: none;
-}
-.link:hover,
-.link:focus {
-  color: #008ee6;
-  text-decoration: underline;
-}
-
-/**
- * We've temporarily added the danger button here, bit of a harsh reset but we
- * need it.
- * @todo replace with link--danger.
- * See https://www.drupal.org/node/2123731
- */
+// Re-added button-danger to make tests happy, seven styles get overriden by above .button styling.
+// @todo [Refactor] Remove since this is a exact copy from seven
 .button--danger {
   display: inline;
   cursor: pointer;
@@ -181,11 +179,13 @@ $button-border-radius: $base-border-radius;
   background: none;
 }
 
+// NEW
 .button__icon,
 .button__text {
   display: inline-block;
 }
 
+// NEW
 .button__icon {
   svg {
     path {
@@ -204,6 +204,7 @@ $button-border-radius: $base-border-radius;
   }
 }
 
+// NEW
 .button--icon-only {
   background: transparent;
   border: 0;
@@ -217,11 +218,13 @@ $button-border-radius: $base-border-radius;
     box-shadow: none;
   }
 
+  /* stylelint-disable no-descending-specificity */
   .button__icon {
     display: block;
     width: 100%;
     height: 100%;
   }
+  /* stylelint-enable no-descending-specificity */
 
   .button__text {
     width: 0;

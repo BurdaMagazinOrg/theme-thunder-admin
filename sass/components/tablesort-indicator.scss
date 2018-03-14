@@ -1,17 +1,6 @@
-/**
- * @file
- * Tablesort indicator styles.
- */
+@import "@theme-seven/css/components/tablesort-indicator.css";
 
-.tablesort {
-  float: right; /* LTR */
-  margin-top: 5px;
-  width: 10px;
-  height: 10px;
-}
-[dir="rtl"] .tablesort {
-  float: left;
-}
+// Custom coloured icons for tablesort.
 .tablesort--asc {
   background-image: url(../../images/icons/twistie-down--primary-blue-darker.svg);
 }

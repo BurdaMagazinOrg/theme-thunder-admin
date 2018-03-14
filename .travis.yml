@@ -1,6 +1,13 @@
 language: php
 sudo: false
-php: 7
+php: 7.1
+
+env:
+  global:
+    - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
+  matrix:
+    - SHARPEYE_BROWSER=chrome
+    - SHARPEYE_BROWSER=firefox
 
 branches:
   only:
@@ -11,8 +18,7 @@ cache:
   directories:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
-
-sudo: required
+    - "$HOME/.cache/yarn"
 
 services:
   - docker
@@ -27,21 +33,15 @@ addons:
       - graphicsmagick
 
 before_install:
-#  - composer global require drush/drush:^8.1 drupal/coder
-#  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-#  - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
-  - bash -e ./scripts/travis/00-keep-travis-running.sh &
-  - source ./scripts/travis/01-setup-environment.sh
-  - bash -x -e ./scripts/travis/02-before-install.sh
-  - bash -x -e ./scripts/travis/03-test-source-code.sh
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master  ${HOME}/build/thunder/thunder-admin-tests
+  - before-install.sh
 
 install:
-  - bash -x -e ./scripts/travis/04-install-thunder.sh
+  - install.sh
 
 before_script:
-  - bash -x -e ./scripts/travis/05-setup-tests.sh
+  - before-script.sh
 
 script:
-  - bash -x -e ./scripts/travis/06-run-tests.sh
-#  - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme --ignore=css/* -p .
-#  - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme -p .
+  - build.sh
+  - visual.sh

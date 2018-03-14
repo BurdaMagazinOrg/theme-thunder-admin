@@ -2,7 +2,14 @@
  * @file admin.toolbar.css
  */
 
+/* [TJW - refactor]
+ * Overrides modules/admin.toolbar.css
+ * (todo) wierd changes / maybe module update?
+ */
+/* stylelint-disable no-descending-specificity */
+
 @import 'variables';
+// @import "@admin_toolbar/css/admin.toolbar";
 
 .toolbar-tray-horizontal .menu-item--expanded .menu {
   width: auto;
