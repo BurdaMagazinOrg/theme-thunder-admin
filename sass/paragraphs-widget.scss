@@ -20,55 +20,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 }
 
 /**
- * Support for classic and experimental paragraphs widget.
- */
-.js {
-  .field--widget-entity-reference-paragraphs,
-  .field--widget-paragraphs {
-    .first-button.paragraph-type-add-modal,
-    .add-in-between-row .paragraph-type-add-modal,
-    .paragraphs-bottom-add-button {
-      padding: 5px 0;
-      height: 30px;
-      margin: 0;
-
-      @include for-drupal-tablet-and-phone {
-        height: 39px;
-      }
-
-      .paragraph-type-add-modal-button {
-        top: 0;
-
-        @include for-drupal-tablet-and-phone {
-          width: auto;
-          padding-top: 6px;
-          padding-bottom: 6px;
-        }
-      }
-    }
-  }
-
-  /**
-   * Positioning for bottom custom add paragraph button.
-   */
-  .paragraphs-bottom-add-button {
-    display: block;
-    text-align: center;
-    margin-top: -5px;
-    padding-top: 0;
-  }
-
-  /**
-   * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
-   * In that case icon has not proportional width and height.
-   */
-  .paragraph-type-icon {
-    padding-right: 0;
-    margin-right: 5px;
-  }
-}
-
-/**
  * 1. Override default gray color for mouse over buttons provided by thunder admin buttons component.
  */
 .paragraphs-icon-button {
@@ -181,7 +132,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
    * ".js" is prepended, because selector with bigger specificity is required, mainly to override
    * add in between button style provided by paragraphs.
    */
-  .js &.field-multiple-table--paragraphs-experimental--add-in-between {
+/*  .js &.field-multiple-table--paragraphs-experimental--add-in-between {
     & > thead,
     & > tbody {
       & > tr {
@@ -190,7 +141,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
 
     margin-bottom: 0;
-  }
+  } */
 
   /**
    * Override of styles provided by paragraphs module.
@@ -212,6 +163,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  * Paragraphs dropdown toggle button style.
  */
 .paragraphs-actions {
+
+  /*
+   * 1. make some space between information text and collapse and drop-down buttons.
+   */
+  margin-left: $base-space; /* 1 */
+
   .paragraphs-dropdown-toggle {
     /**
      * Override icon styles provided by paragraphs module.
@@ -578,12 +535,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     margin-right: auto; /* 1 */
   }
 
-  /*
-   * 1. make some space between information text and collapse and drop-down buttons.
-   */
-  .paragraphs-actions {
-    margin-left: $base-space; /* 1 */
-  }
 }
 
 /* ----------------------- Paragraph preview -------------------------------- */
@@ -704,4 +655,57 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+
+/**
+ * Support for classic and experimental paragraphs widget.
+ */
+.js {
+
+  /**
+   * Positioning for bottom custom add paragraph button.
+   */
+  .paragraphs-bottom-add-button {
+    display: block;
+    text-align: center;
+    margin-top: -5px;
+    padding-top: 0;
+  }
+
+  .field--widget-entity-reference-paragraphs,
+  .field--widget-paragraphs {
+    .paragraphs-bottom-add-button,
+    .first-button.paragraph-type-add-modal,
+    .add-in-between-row .paragraph-type-add-modal {
+      padding: 5px 0;
+      height: 30px;
+      margin: 0;
+
+      @include for-drupal-tablet-and-phone {
+        height: 39px;
+      }
+
+      .paragraph-type-add-modal-button {
+        top: 0;
+
+        @include for-drupal-tablet-and-phone {
+          width: auto;
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+      }
+    }
+  }
+
+
+
+  /**
+   * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
+   * In that case icon has not proportional width and height.
+   */
+  .paragraph-type-icon {
+    padding-right: 0;
+    margin-right: 5px;
+  }
 }
