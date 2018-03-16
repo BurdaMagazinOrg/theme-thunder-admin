@@ -29,6 +29,8 @@
       .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"><th colspan="3"></th></tr>')
       .parent().parent();
 
+    // Add spacer rows.
+    this.addSpacer();
     // add sorting toggle button on top
     this.$table.find('> thead').append(this.toggleCheckboxButtonWrapper);
     // add sorting checkbox to items
@@ -76,10 +78,12 @@
    */
   Drupal.tableDrag.prototype.toggleSortTargets = function () {
     if (this.$table.hasClass('tabledrag-checkbox-active')) {
+      this.removeSpacer();
       this.addSortTargets();
     }
     else {
       this.removeSortTargets();
+      this.addSpacer();
     }
   };
 
@@ -95,6 +99,22 @@
    */
   Drupal.tableDrag.prototype.triggerEndEvent = function () {
     this.$table.triggerHandler('tabledrag-checkbox-end');
+  };
+
+  /**
+   * Add spacer rows
+   */
+  Drupal.tableDrag.prototype.addSpacer = function () {
+    var spacer = '<tr class="tabledrag-sort-spacer"></tr>';
+    this.$table.find('> tr.draggable:first, > tbody > tr.draggable:first').before(spacer);
+    this.$table.find('> tr.draggable, > tbody > tr.draggable').after(spacer);
+  };
+
+  /**
+   * Remove spacer rows.
+   */
+  Drupal.tableDrag.prototype.removeSpacer = function () {
+    this.$table.find('> tr.draggable, > tbody > tr.tabledrag-sort-spacer').remove();
   };
 
   /**

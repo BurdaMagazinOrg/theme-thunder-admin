@@ -48,7 +48,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .field-multiple-table {
   & > thead {
     tr {
-      border-bottom: 1px solid $primary-color;
+      border-bottom: 0;
     }
     th {
       border: 0;
