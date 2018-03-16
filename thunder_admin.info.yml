@@ -92,10 +92,6 @@ libraries-extend:
   paragraphs/drupal.paragraphs.widget:
     - thunder_admin/paragraphs.widget
 
-  # Custom add paragraphs button at bottom of paragraphs list with the same look as add in between buttons.
-  paragraphs/drupal.paragraphs.modal:
-    - thunder_admin/paragraphs.bottom.add
-
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/tabs:
