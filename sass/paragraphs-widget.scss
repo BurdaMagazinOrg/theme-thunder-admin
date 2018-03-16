@@ -711,7 +711,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
    * In that case icon has not proportional width and height.
    */
   .paragraph-type-icon {
-    padding-right: 0;
     margin-right: 5px;
+    padding-right: 0;
+    vertical-align: middle;
   }
+
+  .paragraph-type-label {
+    color: $primary-color-darker;
+    vertical-align: middle;
+  }
+}
+
+.paragraphs-icon-changed {
+  margin-left: 5px;
 }
