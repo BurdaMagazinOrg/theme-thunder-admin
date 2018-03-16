@@ -124,8 +124,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   /**
    * Adjust style for add-in-between button for paragraphs.
    */
-  .add-in-between-row {
+  .add-in-between-row,
+  .paragraphs-features__add-in-between__row {
     background: transparent;
+
+    td {
+      padding: 0;
+    }
   }
 
   /**
@@ -677,7 +682,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .field--widget-paragraphs {
     .paragraphs-bottom-add-button,
     .first-button.paragraph-type-add-modal,
-    .add-in-between-row .paragraph-type-add-modal {
+    .add-in-between-row .paragraph-type-add-modal,
+    .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper {
       padding: 5px 0;
       height: 30px;
       margin: 0;

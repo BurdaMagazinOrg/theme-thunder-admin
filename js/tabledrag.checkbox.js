@@ -29,6 +29,11 @@
       .wrap('<tr class="tabledrag-toggle-checkbox-wrapper"><th colspan="3"></th></tr>')
       .parent().parent();
 
+    this.addInBeetween = !(
+      typeof Drupal.behaviors.paragraphsFeaturesAddInBetweenInit === 'undefined' &&
+      typeof Drupal.behaviors.initInBetweenButtons === 'undefined'
+    );
+
     // Add spacer rows.
     this.addSpacer();
     // add sorting toggle button on top
@@ -105,16 +110,20 @@
    * Add spacer rows
    */
   Drupal.tableDrag.prototype.addSpacer = function () {
-    var spacer = '<tr class="tabledrag-sort-spacer"></tr>';
-    this.$table.find('> tbody > tr.draggable:first').before(spacer);
-    this.$table.find('> tbody > tr.draggable').after(spacer);
+    if (!this.addInBeetween) {
+      var spacer = '<tr class="tabledrag-sort-spacer"></tr>';
+      this.$table.find('> tbody > tr.draggable:first').before(spacer);
+      this.$table.find('> tbody > tr.draggable').after(spacer);
+    }
   };
 
   /**
    * Remove spacer rows.
    */
   Drupal.tableDrag.prototype.removeSpacer = function () {
-    this.$table.find('> tbody > tr.tabledrag-sort-spacer').remove();
+    if (!this.addInBeetween) {
+      this.$table.find('> tbody > tr.tabledrag-sort-spacer').remove();
+    }
   };
 
   /**
