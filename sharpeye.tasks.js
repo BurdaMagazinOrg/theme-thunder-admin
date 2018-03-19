@@ -24,6 +24,9 @@ module.exports = [
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
+  { name: 'Add paragraphs modal', path: '/node/add/article', actions: [
+    { $: '//*[@id="field-paragraphs-values"]/tbody/tr/td/div/input', wait: '//*[@id="ui-id-3"]/ul/li[1]/input' },
+  ]},
   // Paragraphs
   { name: 'Paragraphs', path: '/node/add/article', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
