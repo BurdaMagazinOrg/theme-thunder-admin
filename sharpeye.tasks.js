@@ -45,17 +45,17 @@ module.exports = [
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', actions: [
     { $: '#field-paragraphs-1-edit--2', wait: '.paragraph-form-item--has-subform', offset: -150 },
-    { $: '[name="field_paragraphs_1_collapse"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-top-info"] > span' },
-    { $: '[data-drupal-selector="edit-field-paragraphs-1-top-info"] > span' }
+    { $: '[name="field_paragraphs_1_collapse"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' },
+    { $: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' }
   ]},
   { name: 'CKEditor dialog', path: '/node/7/edit', element: 'table.cke_dialog', actions: [
-    { $: '#edit-field-paragraphs-1-top-links-edit-button', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']'},
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: '//div[contains(@id, "cke_edit-field-paragraphs-1-subform-field-text-0-value")]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [ // viewports: , viewportChangePause: 3000, actions: [
-    { $: '[data-drupal-selector="edit-field-paragraphs-0-top-links-edit-button"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: '#entity_browser_iframe_multiple_image_browser', offset: -150 },
     { switchToFrame: 'entity_browser_iframe_multiple_image_browser', wait: '#edit-name--description' },
     { $: '#edit-name--description' },
@@ -63,7 +63,7 @@ module.exports = [
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
-    { $: '//*[@id="ui-id-3"]/ul/li[3]/button'},
+    { $: '//*[@id="field-paragraphs-link-add-more"]'},
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', fill: 'http://example.com/1', waitBefore: 2000 },
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-add-more"]'},
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-1-uri"]', fill: 'http://example.com/2', waitBefore: 1000 },
