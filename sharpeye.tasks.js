@@ -26,21 +26,21 @@ module.exports = [
   ]},
   // Paragraphs
   { name: 'Paragraphs', path: '/node/add/article', actions: [
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_quote_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_link_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_instagram_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_twitter_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_gallery_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'},
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-7-subform"]'}
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', actions: [
@@ -73,7 +73,7 @@ module.exports = [
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', actions: [
-    { $: '.paragraphs-bottom-add-button .paragraph-type-add-modal-button', wait: '.paragraphs-add-dialog' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]', wait: '#entity_browser_iframe_image_browser'},
     { switchToFrame: 'entity_browser_iframe_image_browser', wait: '#entity-browser-image-browser-form' },
@@ -168,6 +168,6 @@ module.exports = [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 },
+    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]}
 ];
