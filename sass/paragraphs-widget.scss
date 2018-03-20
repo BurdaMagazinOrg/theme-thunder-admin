@@ -198,8 +198,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 }
 
 .paragraph-form-item__actions {
-  @include for-tablet-portrait-and-up {
-    min-width: 160px;
+  @include for-drupal-tablet-and-phone {
+    .paragraph-type-label {
+      display: none;
+    }
   }
 }
 
@@ -230,6 +232,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
+
+    @include for-tablet-portrait-and-up {
+      width: 160px;
+    }
 
     /*
      * 1. Max width blocks div element with paragraphs type + icon and also information icon (fe. warning icon),
@@ -347,7 +353,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
    * 1. align information icon (fe. warning icon after editing) to left from paragraph type icon + text.
    *    The element with icon is a 2nd element in flex and to position it as the first negative order is used.
    */
-  .paragraph-type-info {
+  .paragraph-type {
     order: -1; /* 1 */
   }
 }
@@ -374,8 +380,17 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     margin-top: 1em;
     display: flex;
     justify-content: flex-end;
+    align-self: flex-end;
     order: 10;
     margin-right: 24px;
+
+    /*
+     * 1. When paragraph type has long label, then UI get broken and
+     *    it's not possible to access action buttons. Also Layout is broken.
+     */
+    .paragraph-type {
+      max-width: 150px; /* 1 */
+    }
 
     .paragraph-type-title {
       display: none;
