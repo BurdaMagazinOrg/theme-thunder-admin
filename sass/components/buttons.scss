@@ -78,6 +78,16 @@ $button-border-radius: $base-border-radius;
   &:hover {
     outline: none; // added
   }
+
+  &:disabled,
+  &:disabled:active,
+  &:disabled:hover,
+  &.is-disabled,
+  &.is-disabled:active,
+  &.is-disabled:hover {
+    background-color: transparent;
+    background-image: none;
+    cursor: not-allowed;
   }
 
 // .button:focus removed
@@ -191,6 +201,15 @@ $button-border-radius: $base-border-radius;
       }
     }
   }
+
+  .button:disabled &,
+  .button:disabled:active & {
+    svg {
+      path {
+        fill: #ccc;
+      }
+    }
+  }
 }
 
 // NEW
@@ -201,7 +220,9 @@ $button-border-radius: $base-border-radius;
 
   &:focus,
   &:hover,
-  &:active {
+  &:active,
+  &:disabled,
+  &:disabled:active {
     border: 0;
     background: transparent;
     box-shadow: none;
