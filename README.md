@@ -1,6 +1,6 @@
 # Thunder Admin Theme
 
-Administration theme for the Thunder Distribution that extends and modifies 
+An administration theme for the Thunder Distribution that extends and modifies 
 Sevens styles for authoring UX and an integrated look and feel of the 
 contributed modules used in the distribution.
 
