@@ -10,7 +10,7 @@ distribution and was based on Seven as a base theme merely containing fixes
 and improvements of the visual presentation regarding the modules in the
 distribution.
 
-End of 2016 the Thunder core team started a sub project regarding research and
+In late 2016 the Thunder core team started a sub project regarding research and
 a concept for improving the authoring UX and a 
 [roadmap](https://www.drupal.org/node/2828095) was created that did naturally 
 emcompass a lot of theming modifications that go far beyond mere "tweaks" of
