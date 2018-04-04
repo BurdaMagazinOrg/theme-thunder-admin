@@ -14,12 +14,12 @@ In late 2016 the Thunder core team started a sub project regarding research and
 a concept for improving the authoring UX and a 
 [roadmap](https://www.drupal.org/node/2828095) was created that did naturally 
 emcompass a lot of theming modifications that go far beyond mere "tweaks" of
-Seven. As of now   Thunder Admin is based upon Classy as a base theme and a
+Seven. As of now Thunder Admin is based upon Classy as a base theme and a
 fair amount of CSS and theme hooks are copied over from Seven to reduce the
 number of overrides in the theme inheritance.
 
-Currently the above history leads to the fact that there are a lot of assets
-that will/might need refactoring in future development.
+Currently the above mentioned history leads to the fact that there are a lot of
+assets that will/might need refactoring in future development.
 
 ### Things that need refactoring:
 * Asset folder structure needs to be improved to follow a clear concept
