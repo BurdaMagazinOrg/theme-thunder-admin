@@ -203,18 +203,6 @@ function thunder_admin_preprocess_paragraph(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for CKEditor settings toolbar templates.
- */
-function thunder_admin_preprocess_ckeditor_settings_toolbar(&$variables) {
-  // Sort disabled buttons for visual regression testing on
-  // admin/config/content/formats/manage/basic_html.
-  usort($variables['disabled_buttons'], function ($a, $b) {
-    return strcmp($a['attributes']->offsetGet('data-drupal-ckeditor-button-name')->value(),
-      $b['attributes']->offsetGet('data-drupal-ckeditor-button-name')->value());
-  });
-}
-
-/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Provide additional suggestions for form inputs and buttons.
