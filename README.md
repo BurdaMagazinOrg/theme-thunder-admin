@@ -1,8 +1,8 @@
 # Thunder Admin Theme
 
-Administration theme for the Thunder Distribution that extends and modifies 
-Sevens styles for authoring UX and an integrated look and feel of the 
-contributed modules used in the distribution.
+An administration theme for the Thunder drupal distribution that extends and 
+modifies the styles of the core theme seven for authoring UX and an integrated
+look and feel of the contributed modules used in the distribution.
 
 ## Development work in progress
 This theme started as an admin theme shipped with the first RCs of the thunder
@@ -10,16 +10,16 @@ distribution and was based on Seven as a base theme merely containing fixes
 and improvements of the visual presentation regarding the modules in the
 distribution.
 
-End of 2016 the Thunder core team started a sub project regarding research and
+In late 2016 the Thunder core team started a sub project regarding research and
 a concept for improving the authoring UX and a 
 [roadmap](https://www.drupal.org/node/2828095) was created that did naturally 
 emcompass a lot of theming modifications that go far beyond mere "tweaks" of
-Seven. As of now   Thunder Admin is based upon Classy as a base theme and a
+Seven. As of now Thunder Admin is based upon Classy as a base theme and a
 fair amount of CSS and theme hooks are copied over from Seven to reduce the
 number of overrides in the theme inheritance.
 
-Currently the above history leads to the fact that there are a lot of assets
-that will/might need refactoring in future development.
+Currently the above mentioned history leads to the fact that there are a lot of
+assets that will/might need refactoring in future development.
 
 ### Things that need refactoring:
 * Asset folder structure needs to be improved to follow a clear concept
