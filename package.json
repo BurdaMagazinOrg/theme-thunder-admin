@@ -34,7 +34,7 @@
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "browser-sync": "^2.23.6",
-    "css-sniper": "0.4.0",
+    "css-sniper": "^0.5.0",
     "eslint": "^4.14.0",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.7.2",
