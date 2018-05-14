@@ -386,8 +386,11 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
   }
 
   // Render unordered list for new widget when dropdown_actions are disabled.
-  if (!isset($paragraph['top']['actions']['dropdown_actions']) && count($paragraph['top']['actions']['actions']) > 1) {
-    foreach($paragraph['top']['actions']['actions'] as $key => $action) {
+  if (isset($paragraph['top']['actions'])
+    && !isset($paragraph['top']['actions']['dropdown_actions'])
+    && count($paragraph['top']['actions']['actions']) > 1) {
+
+    foreach ($paragraph['top']['actions']['actions'] as $key => $action) {
       $paragraph['top']['actions']['actions'][$key]['#prefix'] = '<li class="paragraph-form-item__link">';
       $paragraph['top']['actions']['actions'][$key]['#suffix'] = '</li>';
     }
