@@ -402,6 +402,36 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
   if (isset($paragraph['top']['links']['restore_button'])) {
     $paragraph['top']['links']['restore_button']['#paragraphs_mode'] = 'collapsed';
   }
+
+  // Add classes to paragraphs buttons.
+  $buttons = ['edit' => 'edit_button', 'remove' => 'remove_button'];
+  foreach ($buttons as $name => $form_key) {
+    // Handle EXPERIMENTAL widget.
+    if (isset($paragraph['top']['actions']['actions'][$form_key])) {
+      _thunder_admin_attach_paragraphs_button_classes($paragraph['top']['actions']['actions'][$form_key], $name);
+    }
+    // Handle CLASSIC widget.
+    if (isset($paragraph['top']['links'][$form_key])) {
+      _thunder_admin_attach_paragraphs_button_classes($paragraph['top']['links'][$form_key], $name);
+    }
+  }
+}
+
+/**
+ * Helper function for attaching entity meta appearance.
+ *
+ * @param array $element
+ *   Form element.
+ * @param array $name
+ *   Element name.
+ */
+function _thunder_admin_attach_paragraphs_button_classes(array &$element, $name) {
+  $element['#attributes']['class'][] = 'paragraphs-icon-button';
+  $element['#attributes']['class'][] = 'button--icon-only';
+
+  if (isset($name)) {
+    $element['#attributes']['class'][] = "paragraphs-icon-button-${name}";
+  }
 }
 
 /**

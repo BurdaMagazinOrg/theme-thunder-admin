@@ -12,33 +12,17 @@ $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
 /* stylelint-enable plugin/no-browser-hacks */
 
+/* stylelint-disable string-no-newline */
+@import "@module-paragraphs/css/paragraphs.widget.css remove {
+  @media (max-width: 768px) { .button.paragraphs-icon-button {} }
+}";
+/* stylelint-enable string-no-newline */
+
 /*
  * Media screen size defined by paragraphs module to adjust style for tablets and phones.
  */
 @mixin for-paragraphs-tablet-and-phone {
   @media (max-width: 768px) { @content; }
-}
-
-/**
- * 1. Override default gray color for mouse over buttons provided by thunder admin buttons component.
- */
-.paragraphs-icon-button {
-  &:hover {
-    background-color: $gray-lightest; /* 1 */
-  }
-}
-
-/**
- * Override icon styles provided by paragraphs module (with defined colors for default, hover and disabled).
- */
-@include for-paragraphs-tablet-and-phone {
-  .button.paragraphs-icon-button-collapse {
-    @include inline-svg-button('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
-  }
-
-  .button.paragraphs-icon-button-edit {
-    @include inline-svg-button('<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M2 17.2V21h3.8l11-11.1L13 6.1 2 17.2zM19.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.4-.4-1-.4-1.4 0l-1.8 1.8L18 8.9 19.7 7zM11 19l-2 2h13v-2H11z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
-  }
 }
 
 /**
@@ -147,17 +131,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
     margin-bottom: 0;
   } */
-
-  /**
-   * Override of styles provided by paragraphs module.
-   * 1. !important is defined in paragraphs styling, that's why we have to used it here too.
-   */
-  @include for-paragraphs-tablet-and-phone {
-    .button.paragraphs-icon-button {
-      width: 31px !important; /* 1 */
-      height: 31px;
-    }
-  }
 }
 
 .paragraph-form-item {
@@ -165,15 +138,44 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 }
 
 /**
- * Paragraphs dropdown toggle button style.
+ * Paragraphs actions style.
  */
 .paragraphs-actions {
+  /**
+   * Icon only buttons.
+   */
+  .button--icon-only {
+    width: 56px;
+    height: 40px;
+    text-indent: -9999px;
+
+    &,
+    &:active,
+    &:hover,
+    &:focus {
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /**
+     * Override and add icon styles provided by paragraphs module (with defined colors for default, hover and disabled).
+     */
+    &.paragraphs-icon-button-edit {
+      @include inline-svg-button('<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M2 17.2V21h3.8l11-11.1L13 6.1 2 17.2zM19.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.4-.4-1-.4-1.4 0l-1.8 1.8L18 8.9 19.7 7zM11 19l-2 2h13v-2H11z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+    }
+
+    &.paragraphs-icon-button-remove {
+      @include inline-svg-button('<svg width="15" height="18" viewBox="0 0 15 18" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M1 16c0 1.1.975 2 2.167 2h8.666C13.025 18 14 17.1 14 16V4H1v12zM15 1v2H0V1h3.75l1.07-1h5.36l1.07 1H15zm-5 5.51c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51zm-3 0c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51zm-3 0c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51z" fill-rule="evenodd"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium));
+    }
+  }
 
   /*
    * 1. make some space between information text and collapse and drop-down buttons.
    */
   margin-left: $base-space; /* 1 */
 
+  /**
+   * Paragraphs dropdown toggle button style.
+   */
   .paragraphs-dropdown-toggle {
     /**
      * Override icon styles provided by paragraphs module.
@@ -286,7 +288,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       flex-direction: column;
       height: 100%;
       justify-content: space-evenly;
-
       /**
        * Separator between buttons in paragraphs actions.
        */
@@ -308,21 +309,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       .paragraphs-icon-button {
         &:hover {
           background-color: transparent;
-        }
-      }
-
-      /*
-       * Responsive step defined by paragraphs module.
-       * 1. paragraphs have !important flag for icon size.
-       * 2. remove background image provided by paragraphs, since inline SVG is used.
-       * 3. text indent is adjusted by paragraphs module in order to hide EDIT text.
-       */
-      @include for-paragraphs-tablet-and-phone {
-        .button.paragraphs-icon-button.button--icon-only {
-          text-indent: 0; /* 3 */
-          background-image: none; /* 2 */
-          width: 56px !important; /* 1 */
-          padding: 7px 18px;
         }
       }
     }
@@ -402,13 +388,15 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       padding: 0;
       list-style-type: none;
 
-      // @TODO: Remove rule when remove icon has been removed from form.
-      .remove {
-        display: none;
+      /* fix height for trashcan on edit form */
+      .button--icon-only {
+        height: 30px;
       }
 
-      .confirm-remove {
-        margin-right: $base-space;
+      // @TODO: Remove rule when remove icon has been removed from form.
+      /* Hide remove button in CLASSIC widget */
+      .remove {
+        display: none;
       }
     }
   }
@@ -718,8 +706,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
   }
-
-
 
   /**
    * Fix for paragraphs type icon. Right margin is used for spacing, since padding reduces width of icon.
