@@ -8,11 +8,14 @@
 
 @import 'variables';
 
+/* stylelint-disable plugin/no-browser-hacks */
 $button-border-radius: $base-border-radius;
+/* stylelint-enable plugin/no-browser-hacks */
 
+/* stylelint-disable string-no-newline */
 @import "@theme-seven/css/components/buttons.css remove {
-  .button { text-shadow, font-size }
-  .button:hover, .button:focus { color, outline }
+  .button { text-shadow; font-size }
+  .button:hover, .button:focus { color; outline }
   .button:hover { box-shadow }
   .button:focus {}
   .button:active {}
@@ -23,6 +26,7 @@ $button-border-radius: $base-border-radius;
   .button-action:before { font-size }
   .no-touchevents .button--small { font-size }
 }";
+/* stylelint-enable string-no-newline */
 
 /**
  * Buttons.
@@ -214,11 +218,13 @@ $button-border-radius: $base-border-radius;
     box-shadow: none;
   }
 
+  /* stylelint-disable no-descending-specificity */
   .button__icon {
     display: block;
     width: 100%;
     height: 100%;
   }
+  /* stylelint-enable no-descending-specificity */
 
   .button__text {
     width: 0;

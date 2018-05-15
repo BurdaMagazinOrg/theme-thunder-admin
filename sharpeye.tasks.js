@@ -54,6 +54,13 @@ module.exports = [
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: '//div[contains(@id, "cke_edit-field-paragraphs-1-subform-field-text-0-value")]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
+  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [ // viewports: , viewportChangePause: 3000, actions: [
+    { $: '[data-drupal-selector="edit-field-paragraphs-0-top-links-edit-button"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: '#entity_browser_iframe_multiple_image_browser', offset: -150 },
+    { switchToFrame: 'entity_browser_iframe_multiple_image_browser', wait: '#edit-name--description' },
+    { $: '#edit-name--description' },
+    { switchToFrame: null }
+  ]},
   { name: 'Nested table sort', path: '/node/7/edit', actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//*[@id="ui-id-3"]/ul/li[3]/button'},
@@ -116,6 +123,10 @@ module.exports = [
   '/admin/config',
   '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
+  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', actions: [
+    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[1]/a/span[1]', replace: 'Uploads enabled, max size: XXX MB' },
+    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[4]/a', offset: -150 },
+  ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },

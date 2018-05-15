@@ -7,6 +7,7 @@
 
 @import 'variables';
 
+/* stylelint-disable plugin/no-browser-hacks */
 $advanced-sidebar-fixed-width-small: 320px;
 $advanced-sidebar-fixed-width: 400px;
 $advanced-sidebar-fluid-width: 35%;
@@ -14,6 +15,7 @@ $advanced-sidebar-toggle-width: 40px;
 
 /* @todo: a fixed height is only working if we refactor the dropbutton */
 $action-bar-height: 50px;
+/* stylelint-enable plugin/no-browser-hacks */
 
 /**
  * Node add/edit form layout
@@ -26,6 +28,33 @@ $action-bar-height: 50px;
 /* Default for the case that no JS is available */
 [data-toggle-advanced-sidebar-tray] {
   display: none;
+}
+
+
+/* Action bar styling */
+.content-form__actions {
+  position: relative;
+  background: white;
+  padding-right: 36px;
+}
+
+/* Form styles for the advanced sidebar */
+.content-form__advanced {
+
+  /* @todo File an issue to add a standard class to all text-like inputs */
+  .form-autocomplete,
+  .form-text,
+  .form-tel,
+  .form-email,
+  .form-url,
+  .form-search,
+  .form-number,
+  .form-color,
+  textarea {
+    box-sizing:         border-box;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /**
@@ -185,13 +214,6 @@ $action-bar-height: 50px;
   }
 }
 
-/* Action bar styling */
-.content-form__actions {
-  position: relative;
-  background: white;
-  padding-right: 36px;
-}
-
 /**
  * On a tablet portrait screen:
  * - the action bar is fixed to the bottom of the screen
@@ -249,24 +271,5 @@ $action-bar-height: 50px;
         margin-right: $advanced-sidebar-toggle-width;
       }
     }
-  }
-}
-
-/* Form styles for the advanced sidebar */
-.content-form__advanced {
-
-  /* @todo File an issue to add a standard class to all text-like inputs */
-  .form-autocomplete,
-  .form-text,
-  .form-tel,
-  .form-email,
-  .form-url,
-  .form-search,
-  .form-number,
-  .form-color,
-  textarea {
-    box-sizing:         border-box;
-    width: 100%;
-    max-width: 100%;
   }
 }
