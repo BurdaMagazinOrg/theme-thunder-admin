@@ -5372,9 +5372,9 @@ setprototypeof@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
-sharpeye@^3.4.0:
+sharpeye@BurdaMagazinOrg/sharpeye#fix/lower-case-browser-name:
   version "3.4.0"
-  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.4.0.tgz#87d25c65c8a5945c2a8880ad0436b94d47273c7e"
+  resolved "https://codeload.github.com/BurdaMagazinOrg/sharpeye/tar.gz/3c0d610bce9b292bad99ae722121847ccabfd7aa"
   dependencies:
     commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
