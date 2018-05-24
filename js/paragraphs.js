@@ -17,18 +17,26 @@
         var $this = $(this);
         var $editButton = $this.siblings('.paragraph-form-item__actions').find('button.paragraph-form-item__action--edit');
 
+        // We do not want to register any event related to edit button, when
+        // button is disabled.
+        if ($editButton.prop('disabled')) {
+          return;
+        }
+
         $this.addClass('clickable').on('click', function (e) {
           $editButton.trigger('mousedown');
-
           e.preventDefault();
         });
 
         // Highlight edit button when mouse is over clickable element.
-        $this.hover(function () {
-          $editButton.addClass('button--highlight');
-        }, function () {
-          $editButton.removeClass('button--highlight');
-        });
+        $this.hover(
+          function () {
+            $editButton.addClass('button--highlight');
+          },
+          function () {
+            $editButton.removeClass('button--highlight');
+          }
+        );
       });
 
       // Fix keyboard events on buttons.
