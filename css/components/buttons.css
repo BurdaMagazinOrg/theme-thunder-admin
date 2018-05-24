@@ -152,6 +152,12 @@
   outline:none;
 }
 
+.button:disabled, .button:disabled:active, .button:disabled:hover, .button.is-disabled, .button.is-disabled:active, .button.is-disabled:hover{
+  background-color:transparent;
+  background-image:none;
+  cursor:not-allowed;
+}
+
 .button--primary{
   border-color:#009fe3;
   background-color:#1293c9;
@@ -232,13 +238,18 @@
   fill:#0c5c7f;
 }
 
+.button:disabled .button__icon svg path,
+.button:disabled:active .button__icon svg path{
+  fill:#ccc;
+}
+
 .button--icon-only{
   background:transparent;
   border:0;
   line-height:1;
 }
 
-.button--icon-only:focus, .button--icon-only:hover, .button--icon-only:active{
+.button--icon-only:focus, .button--icon-only:hover, .button--icon-only:active, .button--icon-only:disabled, .button--icon-only:disabled:active{
   border:0;
   background:transparent;
   box-shadow:none;

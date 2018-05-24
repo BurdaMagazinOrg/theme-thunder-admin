@@ -14,18 +14,28 @@
 
       $paragraphWidget.find('.field-multiple-table .paragraph-form-item__preview').once('thunder-paragraph').each(function () {
         var $this = $(this);
+        var $editButton = $this.parent().find('.edit button');
+
+        // We do not want to register any event related to edit button, when
+        // button is disabled.
+        if ($editButton.prop('disabled')) {
+          return;
+        }
 
         $this.addClass('clickable').on('click', function (e) {
-          $this.parent().find('.edit button').trigger('mousedown');
+          $editButton.trigger('mousedown');
           e.preventDefault();
         });
 
         // Highlight edit button when mouse is over clickable element.
-        $this.hover(function () {
-          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').addClass('button--highlight');
-        }, function () {
-          $(this).siblings('.paragraph-form-item__actions').find('.edit > button').removeClass('button--highlight');
-        });
+        $this.hover(
+          function () {
+            $editButton.addClass('button--highlight');
+          },
+          function () {
+            $editButton.removeClass('button--highlight');
+          }
+        );
       });
 
       // Fix keyboard events on buttons.
