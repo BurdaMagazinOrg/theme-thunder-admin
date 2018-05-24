@@ -59,10 +59,6 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
-  thunder_article/article_form_styling:
-    css:
-      theme:
-        css/article-form.css: false
   thunder_media/entity_browser_view:
     css:
       theme:
