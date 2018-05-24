@@ -5372,9 +5372,9 @@ setprototypeof@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
-sharpeye@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.3.0.tgz#21acf1f2eb077d7ac8eb2337fee84e7fa36aae30"
+sharpeye@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.5.0.tgz#5569c4de593cb0962eb342d50b88d0466b75f876"
   dependencies:
     commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
