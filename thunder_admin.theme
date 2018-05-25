@@ -427,10 +427,11 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
  */
 function _thunder_admin_attach_paragraphs_button_classes(array &$element, $name) {
   $element['#attributes']['class'][] = 'paragraphs-icon-button';
+  $element['#attributes']['class'][] = 'button__icon';
   $element['#attributes']['class'][] = 'button--icon-only';
 
   if (isset($name)) {
-    $element['#attributes']['class'][] = "paragraphs-icon-button-${name}";
+    $element['#attributes']['class'][] = "paragraph-form-item__action--${name}";
   }
 }
 

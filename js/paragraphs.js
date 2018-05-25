@@ -15,7 +15,7 @@
 
       $paragraphWidget.find('.field-multiple-table .paragraph-form-item__preview').once('thunder-paragraph').each(function () {
         var $this = $(this);
-        var $editButton = $this.siblings('.paragraph-form-item__actions').find('button.paragraph-form-item__action--edit');
+        var $editButton = $this.siblings('.paragraph-form-item__actions').find('.paragraph-form-item__action--edit');
 
         // We do not want to register any event related to edit button, when
         // button is disabled.

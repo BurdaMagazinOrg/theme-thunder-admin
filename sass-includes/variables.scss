@@ -87,6 +87,7 @@ $base-border-radius: 4px;
 @mixin inline-svg-button($svg, $replace_colors, $replace_hover_colors, $replace_disabled_colors) {
   background-image: svg-url(str-replace-multiple($svg, $replace_colors));
 
+  &.button--highlight, // Used for paragraphs.js edit button hover.
   &:hover,
   &:active,
   &:focus {
