@@ -356,17 +356,14 @@ tr:hover .paragraphs-collapsed-description::after{
 .js .field-multiple-table > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle{
   display:inline-block;
   float:none;
+  padding-right:0;
 }
 
 .js .field-multiple-table > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle .handle{
-  margin-left:5px;
   background:url(../images/icons/move.svg) no-repeat center center;
-}
-
-@media (min-width: 600px){
-  .js .field-multiple-table > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle .handle{
-    margin-left:2px;
-  }
+  margin:0;
+  height:auto;
+  width:22px;
 }
 
 .field-multiple-table > tbody > tr.draggable.drag{
@@ -480,6 +477,7 @@ tr:hover .paragraphs-collapsed-description::after{
 .paragraph-form-item--has-preview .paragraph--view-mode--preview{
   max-height:90px;
   height:90px;
+  flex:1;
 }
 
 .paragraph-form-item--has-preview .paragraph-form-item__actions{
@@ -488,7 +486,6 @@ tr:hover .paragraphs-collapsed-description::after{
   justify-content:flex-end;
   float:right;
   margin-left:1em;
-  flex-grow:1;
   max-height:90px;
   height:90px;
 }
@@ -743,7 +740,6 @@ tr:hover .paragraphs-collapsed-description::after{
   margin-right:auto;
 }
 .paragraph-form-item__preview{
-  flex:1 1 40%;
   max-height:150px;
   text-overflow:ellipsis;
   overflow:hidden;
@@ -773,15 +769,8 @@ tr:hover .paragraphs-collapsed-description::after{
 
 @media (min-width: 1024px){
   .paragraph-form-item__preview{
-    flex:1 1 55%;
     height:90px;
     max-height:90px;
-  }
-}
-
-@media (min-width: 1200px){
-  .paragraph-form-item__preview{
-    flex:1 1 65%;
   }
 }
 
@@ -932,7 +921,7 @@ tr:hover .paragraphs-collapsed-description::after{
   color:#07364a;
   vertical-align:middle;
 }
-
 .paragraphs-icon-changed{
   margin-left:5px;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23000000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='bg' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath class='icon' d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='%23e29700'/%3E%3C/svg%3E");
 }
