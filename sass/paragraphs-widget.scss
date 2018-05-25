@@ -223,6 +223,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .paragraph--view-mode--preview {
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
+    flex: 1;
   }
 
   .paragraph-form-item__actions {
@@ -231,7 +232,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     justify-content: flex-end;
     float: right;
     margin-left: 1em;
-    flex-grow: 1;
 
     max-height: $paragraph-preview-height;
     height: $paragraph-preview-height;
@@ -548,11 +548,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
 /* ----------------------- Paragraph preview -------------------------------- */
 
-/*
- * 1. Flex of right part of paragraph preview with summary is adjusted for different screen sizes.
- */
 .paragraph-form-item__preview {
-  flex: 1 1 40%; /* 1 */
   max-height: $paragraph-preview-mobile-height;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -580,13 +576,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   }
 
   @include for-big-tablet-landscape-and-up {
-    flex: 1 1 55%; /* 1 */
     height: $paragraph-preview-height;
     max-height: $paragraph-preview-height;
-  }
-
-  @include for-desktop-and-up {
-    flex: 1 1 65%; /* 1 */
   }
 
   &.clickable {
