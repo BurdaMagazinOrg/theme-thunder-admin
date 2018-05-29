@@ -733,3 +733,14 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   align-items: flex-end;
   padding: 0 1rem;
 }
+
+/**
+ * Experimental paragraphs widget wrapper has "is-horizontal" class in markup. Since that class is used for navigation
+ * tabs and we are ordering them to right, text get also ordered to right what makes message text alignment wrong. We
+ * have to reset text alignment to left for messages inside paragraphs wrapper.
+ */
+.paragraphs-tabs-wrapper {
+  .messages {
+    text-align: left;
+  }
+}
