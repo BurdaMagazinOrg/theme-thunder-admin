@@ -722,3 +722,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-left: 5px;
   background-image: svg-url('<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="bg" d="M0 0h24v24H0z" fill="none"/><path class="icon" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#e29700"/></svg>');
 }
+
+/* Placement of confirmation dialog */
+.paragraphs-features__delete-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 1rem;
+}

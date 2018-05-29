@@ -925,3 +925,9 @@ tr:hover .paragraphs-collapsed-description::after{
   margin-left:5px;
   background-image:url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23000000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='bg' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath class='icon' d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='%23e29700'/%3E%3C/svg%3E");
 }
+.paragraphs-features__delete-confirmation{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  padding:0 1rem;
+}
