@@ -15,6 +15,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 /* stylelint-disable string-no-newline */
 @import "@module-paragraphs/css/paragraphs.widget.css remove {
   @media (max-width: 768px) { .button.paragraphs-icon-button {} }
+  .js .field--widget-paragraphs td { padding }
 }";
 /* stylelint-enable string-no-newline */
 
