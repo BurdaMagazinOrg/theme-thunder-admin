@@ -594,6 +594,7 @@ tr:hover .paragraphs-collapsed-description::after{
 }
 
 .paragraph-form-item--has-subform .paragraph-form-item__actions .paragraph-type{
+  display:none;
   max-width:150px;
 }
 

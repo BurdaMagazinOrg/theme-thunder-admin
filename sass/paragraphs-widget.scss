@@ -375,8 +375,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     /*
      * 1. When paragraph type has long label, then UI get broken and
      *    it's not possible to access action buttons. Also Layout is broken.
+     * @todo Needs to be discussed, hide for now.
      */
     .paragraph-type {
+      display: none;
       max-width: 150px; /* 1 */
     }
 
