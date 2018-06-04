@@ -928,6 +928,6 @@ tr:hover .paragraphs-collapsed-description::after{
   align-items:flex-end;
   padding:0 1rem;
 }
-.paragraphs-tabs-wrapper .messages{
+.paragraphs-tabs-wrapper.is-horizontal{
   text-align:left;
 }
