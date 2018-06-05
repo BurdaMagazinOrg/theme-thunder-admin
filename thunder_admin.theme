@@ -371,7 +371,7 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
 
   // Add a class to the container holding the actions.
   if (isset($paragraph['top'])) {
-    $paragraph['top']['#attributes']['class'] = ['paragraph-form-item__actions'];
+    $paragraph['top']['#attributes']['class'][] = 'paragraph-form-item__actions';
     $paragraph['top']['#weight'] = 10;
   }
 
