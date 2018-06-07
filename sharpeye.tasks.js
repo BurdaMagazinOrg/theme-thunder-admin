@@ -127,7 +127,8 @@ module.exports = [
   '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
   { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', actions: [
-    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[1]/a/span[1]', waitBefore: 3000, replace: 'Uploads enabled, max size: XXX MB' },
+    { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' },
+    { $: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary', replace: 'Uploads enabled, max size: XXX MB' },
     { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[4]/a', offset: -150 },
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
