@@ -25,7 +25,7 @@ module.exports = [
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
   { name: 'Add paragraphs modal', path: '/node/add/article', actions: [
-    { $: '//*[@id="field-paragraphs-values"]/tbody/tr/td/div/input', wait: '//*[@id="ui-id-3"]/ul/li[1]/input' },
+    { $: '#field-paragraphs-values > tbody > tr > td > div > input', wait: '#field-paragraphs-text-add-more' },
   ]},
   // Paragraphs
   { name: 'Paragraphs', path: '/node/add/article', actions: [
@@ -54,7 +54,7 @@ module.exports = [
   { name: 'CKEditor dialog', path: '/node/7/edit', element: 'table.cke_dialog', actions: [
     { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']'},
-    { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: '//div[contains(@id, "cke_edit-field-paragraphs-1-subform-field-text-0-value")]'},
+    { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [ // viewports: , viewportChangePause: 3000, actions: [
