@@ -44,7 +44,7 @@ before_script:
   - before-script.sh
 
 script:
-  - build.sh
+#  - build.sh
   - visual.sh
   - update-screenshots.sh
 
