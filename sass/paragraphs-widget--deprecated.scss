@@ -2,82 +2,43 @@
 /* stylelint-disable no-descending-specificity */
 
 @import 'variables';
-.field--widget-entity-reference-paragraphs {
 
-  // Add more buttons.
-  .paragraph-type-add-modal.first-button {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: -29px;
-  }
+/*
+ * Support for DEPRECATED classic paragraphs add in between buttons patch.
+ */
 
-  .field-multiple-table--paragraphs--deprecated {
-    thead {
-      border-bottom: 30px solid transparent;
-    }
-
-    & > tbody > tr {
-      border-bottom: 30px solid $primary-color-lightest;
-
-      @media screen and (max-width: 600px) {
-        border-bottom: 38px solid $primary-color-lightest;
-      }
-    }
-
-    & > tbody > tr:last-child {
+.field-multiple-table--paragraphs--deprecated {
+  & > thead,
+  & > tbody {
+    & > tr {
       border-bottom-width: 0;
     }
-
-    // Overwrite bottom margin defined by paragraphs.
-    &.field-multiple-table {
-      margin-bottom: 0;
-    }
-
-    // Add more buttons.
-    .paragraph-type-add-modal.first-button {
-      margin-top: -41px;
-      margin-bottom: 15px;
-
-      @media screen and (max-width: 600px) {
-        margin-top: -48px;
-      }
-    }
-
-    .paragraph-form-item--has-subform {
-      .paragraph-type-add-modal.first-button {
-        margin-top: -51px;
-        margin-left: -19px;
-
-        @media screen and (max-width: 600px) {
-          margin-top: -58px;
-        }
-      }
-    }
-
-    // First button.
-    tr:first-child {
-      .paragraph-type-add-modal.first-button {
-        margin-top: -56px;
-
-        @media screen and (max-width: 600px) {
-          margin-top: -63px;
-        }
-      }
-
-      .paragraph-form-item--has-subform {
-        .paragraph-type-add-modal.first-button {
-          margin-top: -64px;
-
-          @media screen and (max-width: 600px) {
-            margin-top: -72px;
-          }
-        }
-      }
-    }
   }
 
-  // Last button.
-  .clearfix > .paragraph-type-add-modal.first-button {
-    margin-left: 0;
+  .paragraph-type-add-modal {
+    display: block;
   }
+
+  & + .description {
+    top: 35px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 18px;
+  }
+
+  & + .description + .clearfix > .paragraph-type-add-modal.first-button {
+    top: -20px;
+  }
+
+  .paragraph-form-item__links li.restore {
+    margin-left: 4px;
+  }
+
+}
+
+.paragraph-type-add-modal.first-button {
+  display: block;
+  position: relative;
 }

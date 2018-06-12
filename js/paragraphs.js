@@ -10,11 +10,12 @@
 
   Drupal.behaviors.thunderParagraphs = {
     attach: function (context) {
-      var $paragraphWidget = $(context).find('.field--widget-entity-reference-paragraphs');
+      // Support for experimental paragraphs widget and also classic paragraphs widget.
+      var $paragraphWidget = $(context).find('.field--widget-entity-reference-paragraphs,.field--widget-paragraphs');
 
       $paragraphWidget.find('.field-multiple-table .paragraph-form-item__preview').once('thunder-paragraph').each(function () {
         var $this = $(this);
-        var $editButton = $this.parent().find('.edit button');
+        var $editButton = $this.siblings('.paragraph-form-item__actions').find('.paragraph-form-item__action--edit');
 
         // We do not want to register any event related to edit button, when
         // button is disabled.
