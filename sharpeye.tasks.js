@@ -24,6 +24,9 @@ module.exports = [
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
+  { name: 'Add paragraphs modal', path: '/node/add/article', actions: [
+    { $: '//*[@id="field-paragraphs-values"]/tbody/tr/td/div/input', wait: '//*[@id="ui-id-3"]/ul/li[1]/input' },
+  ]},
   // Paragraphs
   { name: 'Paragraphs', path: '/node/add/article', actions: [
     { $: '#edit-field-paragraphs-add-more-first-button-area-add-more', wait: '.paragraphs-add-dialog' },
@@ -124,7 +127,8 @@ module.exports = [
   '/admin/config/development/performance',
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
   { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', actions: [
-    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[1]/a/span[1]', replace: 'Uploads enabled, max size: XXX MB' },
+    { wait: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[1]/a/span[1]'},
+    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[1]/a/span[1]',  replace: 'Uploads enabled, max size: XXX MB' },
     { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[4]/a', offset: -150 },
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
@@ -168,6 +172,6 @@ module.exports = [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 },
+    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]}
 ];
