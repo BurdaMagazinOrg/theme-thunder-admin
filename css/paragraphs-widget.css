@@ -931,3 +931,6 @@ tr:hover .paragraphs-collapsed-description::after{
 .paragraphs-tabs-wrapper.is-horizontal{
   text-align:left;
 }
+ul.paragraphs-add-dialog-list input.field-add-more-submit{
+  background-image:none;
+}
