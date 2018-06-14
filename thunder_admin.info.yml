@@ -59,6 +59,10 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
+  paragraphs/drupal.paragraphs.widget:
+    css:
+      theme:
+        css/paragraphs.widget.css: false
   thunder_article/article_form_styling:
     css:
       theme:
@@ -83,8 +87,15 @@ libraries-extend:
   # seven also overrides this.
   tour/tour-styling:
     - thunder_admin/tour-styling
+
+  # DEPRECATED: support for classic paragraphs widget with add in between buttons.
   paragraphs/drupal.paragraphs.admin:
-    - thunder_admin/paragraphs.admin
+    - thunder_admin/paragraphs.widget
+
+  # Experimental paragraphs widget styles.
+  paragraphs/drupal.paragraphs.widget:
+    - thunder_admin/paragraphs.widget
+
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/tabs:

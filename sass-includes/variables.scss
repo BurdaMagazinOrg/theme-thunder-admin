@@ -1,3 +1,6 @@
+
+@import 'functions';
+
 /* Colors */
 
 /* stylelint-disable plugin/no-browser-hacks */
@@ -66,6 +69,34 @@ $base-border-radius: 4px;
 }
 @mixin for-big-desktop-and-up {
   @media (min-width: 1600px) { @content; }
+}
+
+/*
+ * Media screen size defined by base drupal themes to adjust style for tablets and phones.
+ */
+@mixin for-drupal-tablet-and-phone {
+  @media screen and (max-width: 600px) { @content; }
+}
+
+/*
+ * Mixin for inline SVG button icon.
+ *
+ * $svg is SVG string, replacement variables are maps with key=>value, where keys will be replaced with value
+ * for 3 possible states (default color, hover + active + focus color and disabled color).
+ */
+@mixin inline-svg-button($svg, $replace_colors, $replace_hover_colors, $replace_disabled_colors) {
+  background-image: svg-url(str-replace-multiple($svg, $replace_colors));
+
+  &.button--highlight, // Used for paragraphs.js edit button hover.
+  &:hover,
+  &:active,
+  &:focus {
+    background-image: svg-url(str-replace-multiple($svg, $replace_hover_colors));
+  }
+
+  &:disabled {
+    background-image: svg-url(str-replace-multiple($svg, $replace_disabled_colors));
+  }
 }
 
 /* toolbar */

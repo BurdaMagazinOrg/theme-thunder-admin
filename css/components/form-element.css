@@ -1,1 +1,130 @@
-.form-item__field-wrapper{display:flex;align-items:center}.form-item__field-wrapper .field-suffix{padding-left:5px}.form-item__field-wrapper .form-textarea-wrapper,.form-item__field-wrapper .image-style-preview{flex:1 1 auto}.details__toggle-description,.form-item__toggle-description{padding:0.5em;flex:0 0 auto;align-self:flex-end}.no-touchevents .details__toggle-description,.no-touchevents .form-item__toggle-description{position:relative;top:-2px;left:2px;margin:0;padding:0 0.15em;width:22px;height:22px}.no-touchevents .details__toggle-description svg,.no-touchevents .form-item__toggle-description svg{max-width:100%;max-height:100%}.details__toggle-description .button__icon,.form-item__toggle-description .button__icon{display:block;height:100%;width:100%}.details__toggle-description .button__icon svg path,.form-item__toggle-description .button__icon svg path{fill:#75caee}.details__toggle-description{float:right;display:none}[open]>summary>.details__toggle-description{display:block}.form-item__toggle-description-placeholder{display:none}body:not(.entity-add-or-edit-form) .details__toggle-description,body:not(.entity-add-or-edit-form) .form-item__toggle-description{display:none}.js body.entity-add-or-edit-form .js-details-description,.js body.entity-add-or-edit-form .js-form-item__description{visibility:hidden;max-height:0;overflow:hidden;opacity:0;transition:all 0.3s}.js body.entity-add-or-edit-form .is-description-visible .js-details-description,.js body.entity-add-or-edit-form .is-description-visible .js-form-item__description{visibility:visible;max-height:5000px;opacity:1;transition:all 0.3s}.form-type-vertical-tabs>.form-item__field-wrapper{display:block}#edit-title-wrapper,#edit-field-seo-title-wrapper,#edit-field-tags-wrapper,#edit-field-teaser-text-wrapper{max-width:700px}#edit-title-wrapper input,#edit-field-seo-title-wrapper input,#edit-field-tags-wrapper input,#edit-field-teaser-text-wrapper input{width:100%}#edit-title-wrapper .form-item__toggle-description,#edit-field-seo-title-wrapper .form-item__toggle-description,#edit-field-tags-wrapper .form-item__toggle-description,#edit-field-teaser-text-wrapper .form-item__toggle-description{margin-right:-22px}.content-form__actions .form-actions,.content-form__actions .field--name-status{display:inline-block}.content-form__actions .field--name-status{display:inline-block;vertical-align:middle;color:#dae0e3;margin-left:.625rem}.content-form__actions .field--name-status .form-item__description{color:#bfbfbf}@media screen and (max-width: 600px){.content-form__actions .field--name-status{color:#07364a}.content-form__actions .field--name-status .form-item__description{color:#979797}}
+.form-item__field-wrapper{
+  display:flex;
+  align-items:center;
+}
+
+.form-item__field-wrapper .field-suffix{
+  padding-left:5px;
+}
+
+.form-item__field-wrapper .form-textarea-wrapper,
+.form-item__field-wrapper .image-style-preview{
+  flex:1 1 auto;
+}
+.details__toggle-description,
+.form-item__toggle-description{
+  padding:0.5em;
+  flex:0 0 auto;
+  align-self:flex-end;
+}
+
+.no-touchevents .details__toggle-description, .no-touchevents
+.form-item__toggle-description{
+  position:relative;
+  top:-2px;
+  left:2px;
+  margin:0;
+  padding:0 0.15em;
+  width:22px;
+  height:22px;
+}
+
+.no-touchevents .details__toggle-description svg, .no-touchevents
+.form-item__toggle-description svg{
+  max-width:100%;
+  max-height:100%;
+}
+
+.details__toggle-description .button__icon,
+.form-item__toggle-description .button__icon{
+  display:block;
+  height:100%;
+  width:100%;
+}
+
+.details__toggle-description .button__icon svg path,
+.form-item__toggle-description .button__icon svg path{
+  fill:#75caee;
+}
+.details__toggle-description{
+  float:right;
+  display:none;
+}
+
+[open] > summary > .details__toggle-description{
+  display:block;
+}
+.form-item__toggle-description-placeholder{
+  display:none;
+}
+
+body:not(.entity-add-or-edit-form) .details__toggle-description,
+body:not(.entity-add-or-edit-form) .form-item__toggle-description{
+  display:none;
+}
+
+.js body.entity-add-or-edit-form .js-details-description,
+.js body.entity-add-or-edit-form .js-form-item__description{
+  visibility:hidden;
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:all 0.3s;
+}
+
+.js body.entity-add-or-edit-form .is-description-visible .js-details-description,
+.js body.entity-add-or-edit-form .is-description-visible .js-form-item__description{
+  visibility:visible;
+  max-height:5000px;
+  opacity:1;
+  transition:all 0.3s;
+}
+
+.form-type-vertical-tabs > .form-item__field-wrapper{
+  display:block;
+}
+
+#edit-title-wrapper,
+#edit-field-seo-title-wrapper,
+#edit-field-tags-wrapper,
+#edit-field-teaser-text-wrapper{
+  max-width:700px;
+}
+
+#edit-title-wrapper input,
+#edit-field-seo-title-wrapper input,
+#edit-field-tags-wrapper input,
+#edit-field-teaser-text-wrapper input{
+  width:100%;
+}
+
+#edit-title-wrapper .form-item__toggle-description,
+#edit-field-seo-title-wrapper .form-item__toggle-description,
+#edit-field-tags-wrapper .form-item__toggle-description,
+#edit-field-teaser-text-wrapper .form-item__toggle-description{
+  margin-right:-22px;
+}
+
+.content-form__actions .form-actions, .content-form__actions .field--name-status{
+  display:inline-block;
+}
+
+.content-form__actions .field--name-status{
+  display:inline-block;
+  vertical-align:middle;
+  color:#dae0e3;
+  margin-left:0.625rem;
+}
+
+.content-form__actions .field--name-status .form-item__description{
+  color:#bfbfbf;
+}
+
+@media screen and (max-width: 600px){
+  .content-form__actions .field--name-status{
+    color:#07364a;
+  }
+  .content-form__actions .field--name-status .form-item__description{
+    color:#979797;
+  }
+}
