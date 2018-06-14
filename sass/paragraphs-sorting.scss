@@ -1,9 +1,13 @@
 @import 'variables';
 
 // [TJW - refactor] TODO
-/* stylelint-disable no-descending-specificity */
 
 .field-multiple-table {
+
+  > tbody > tr {
+    border-bottom: 0;
+  }
+
   &.tabledrag-checkbox-active {
     & > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle {
       display: none;
@@ -14,6 +18,12 @@
     th {
       padding-left: 0;
     }
+  }
+
+  & > tbody > tr.tabledrag-sort-spacer {
+    background: transparent;
+    border-bottom: 0;
+    height: 30px;
   }
 
   & > tbody > tr.tabledrag-sort-target-wrapper {
@@ -28,18 +38,6 @@
       a.tabledrag-sort-target {
         display: flex;
         align-items: center;
-
-        &:hover {
-          .tabledrag-sort-target-left {
-            background-image: url('../images/icons/line-dashed-right-color.svg');
-          }
-          .tabledrag-sort-target-right {
-            background-image: url('../images/icons/line-dashed-left-color.svg');
-          }
-          .tabledrag-sort-target-middle {
-            background-image: url('../images/icons/paste-color.svg');
-          }
-        }
 
         span {
           height: 30px;
@@ -67,11 +65,19 @@
           background: transparent url('../images/icons/paste.svg') center no-repeat;
         }
 
+        &:hover {
+          .tabledrag-sort-target-left {
+            background-image: url('../images/icons/line-dashed-right-color.svg');
+          }
+          .tabledrag-sort-target-right {
+            background-image: url('../images/icons/line-dashed-left-color.svg');
+          }
+          .tabledrag-sort-target-middle {
+            background-image: url('../images/icons/paste-color.svg');
+          }
+        }
+
       }
     }
-  }
-
-  &.tabledrag-checkbox-active > tbody > tr {
-    border-bottom-width: 0;
   }
 }
