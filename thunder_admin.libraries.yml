@@ -151,7 +151,11 @@ paragraphs.adjustments:
   js:
     js/paragraphs.js: {}
 
-paragraphs.admin:
+paragraphs.bottom.add:
+  js:
+    js/paragraphs.bottom.add.js: {}
+
+paragraphs.widget:
   css:
     theme:
       css/paragraphs-widget.css: {}
