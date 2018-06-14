@@ -41,6 +41,14 @@ $action-bar-height: 50px;
 /* Form styles for the advanced sidebar */
 .content-form__advanced {
 
+  .content-form__advanced-bar {
+    background-color: red;
+    height: 100%;
+    float: left;
+    width: 6px;
+    cursor: col-resize;
+  }
+
   /* @todo File an issue to add a standard class to all text-like inputs */
   .form-autocomplete,
   .form-text,

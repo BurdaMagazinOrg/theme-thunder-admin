@@ -22,6 +22,8 @@
         $toggleBtn.unbind('click').on('click', function (e) {
           e.preventDefault();
           $body.toggleClass('advanced-sidebar-tray-toggled');
+          // Remove element width added by resize.
+          $body.find('.content-form__advanced').css('width', '');
           // Close the vertical toolbar tab if the toolbar layout is vertical.
           var $activeToolbarItem = $('.toolbar-item.is-active');
           if ($body.hasClass('toolbar-vertical') && $activeToolbarItem.length) {
@@ -31,6 +33,29 @@
           $(window).trigger('resize.tabs');
         });
       }
+;
+
+      /**
+       * Resizeable sidebar.
+       */
+      $('.content-form__advanced-bar').mousedown(function (e) {
+        e.preventDefault();
+        $(document).mousemove(function (e) {
+          e.preventDefault();
+          var newWidth = $(window).width() - e.pageX;
+          if (newWidth > 300 && newWidth < $(window).width() && e.pageX > 500) {
+            var $tray = $('.js body.advanced-sidebar-tray');
+            $tray.css('margin-right', newWidth);
+            $tray.find('.toolbar-tray-horizontal').css('margin-right', newWidth);
+            $tray.find('.content-form__advanced').css('width', newWidth);
+          }
+        });
+      });
+      $(document).mouseup(function (e) {
+        $(document).unbind('mousemove');
+        $(window).trigger('resize.tabs');
+      });
+
     }
   };
 

@@ -12,6 +12,14 @@
 .content-form__advanced{
 }
 
+.content-form__advanced .content-form__advanced-bar{
+  background-color:red;
+  height:100%;
+  float:left;
+  width:6px;
+  cursor:col-resize;
+}
+
 .content-form__advanced .form-autocomplete,
 .content-form__advanced .form-text,
 .content-form__advanced .form-tel,
