@@ -1,3 +1,7 @@
+.field-multiple-table > tbody > tr{
+  border-bottom:0;
+}
+
 .field-multiple-table.tabledrag-checkbox-active > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle{
   display:none;
 }
@@ -8,6 +12,12 @@
 
 .field-multiple-table > thead > tr.tabledrag-toggle-checkbox-wrapper th{
   padding-left:0;
+}
+
+.field-multiple-table > tbody > tr.tabledrag-sort-spacer{
+  background:transparent;
+  border-bottom:0;
+  height:30px;
 }
 
 .field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper{
@@ -25,18 +35,6 @@
 .field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target{
   display:flex;
   align-items:center;
-}
-
-.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-left{
-  background-image:url("../images/icons/line-dashed-right-color.svg");
-}
-
-.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-right{
-  background-image:url("../images/icons/line-dashed-left-color.svg");
-}
-
-.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-middle{
-  background-image:url("../images/icons/paste-color.svg");
 }
 
 .field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target span{
@@ -68,6 +66,14 @@
   background:transparent url("../images/icons/paste.svg") center no-repeat;
 }
 
-.field-multiple-table.tabledrag-checkbox-active > tbody > tr{
-  border-bottom-width:0;
+.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-left{
+  background-image:url("../images/icons/line-dashed-right-color.svg");
+}
+
+.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-right{
+  background-image:url("../images/icons/line-dashed-left-color.svg");
+}
+
+.field-multiple-table > tbody > tr.tabledrag-sort-target-wrapper > td.tabledrag-sort-target-column a.tabledrag-sort-target:hover .tabledrag-sort-target-middle{
+  background-image:url("../images/icons/paste-color.svg");
 }
