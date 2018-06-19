@@ -5,6 +5,7 @@
 
 // [TJW - refactor] TODO
 
+@import 'mixins';
 @import 'variables';
 
 .paragraph-form-item--has-subform.color-scheme-inverted {
@@ -14,6 +15,8 @@
 .color-scheme-inverted {
   color: $gray-lighter;
   background-color: $primary-color-darkest;
+
+  @include disabled-buttons-on-dark-bg;
 
   .tips,
   .description,
