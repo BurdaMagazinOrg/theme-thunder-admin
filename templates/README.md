@@ -4,12 +4,12 @@ Please add your changes accordingly.
 
 Template file | Usage | Solution
 ------------- | ------------- | ------------- 
-./admin-block-content.html.twig | Identical to seven. | -
-./block--local-actions-block.html.twig | Identical to seven. | -
-./block-content-add-list.html.twig | Identical to seven. | -
+./admin-block-content.html.twig | Identical to seven. | Removed.
+./block--local-actions-block.html.twig | Identical to seven. | Removed.
+./block-content-add-list.html.twig | Identical to seven. | Removed.
 ./button-description-toggle.html.twig | Custom: toggle descriptions. | -
 ./content-edit/node-edit-form.html.twig | Custom: form actions, sidebar tray toggle. | -
-./entity-add-list.html.twig | Identical to seven. | -
+./entity-add-list.html.twig | Identical to seven. | Removed.
 ./field/field--field-media-images--paragraph-preview.html.twig | Custom: quadruple image display. | -
 ./form/datetime-wrapper.html.twig | Custom: added collabsible description, moved things around. | -
 ./form/details.html.twig | Custom: added collabsible description. | -
@@ -25,7 +25,7 @@ Template file | Usage | Solution
 ./form/input--submit--paragraphs-remove.html.twig |  Custom: icon button | -
 ./form/input.html.twig | Identical to classy. | Removed.
 ./install-page.html.twig | Custom: based on seven, added logo, changed headline. | -
-./maintenance-page.html.twig | Identical to seven. | -
+./maintenance-page.html.twig | Identical to seven. | Removed.
 ./media/media--gallery--paragraph-preview.html.twig | Custom: added divs for positioning. | Removed, added preprocess.
 ./media/media--image--paragraph-preview.html.twig | Custom: added divs for positioning. | Removed, added preprocess.
 ./media/media--instagram--paragraph-preview.html.twig | Custom: added divs for positioning. | Removed, added preprocess.
@@ -33,9 +33,9 @@ Template file | Usage | Solution
 ./media/media--video--paragraph-preview.html.twig | Custom: added divs for positioning. | Removed, added preprocess.
 ./media/media.html.twig | Identical to media_entity module default template. | Removed.
 ./media-entity-twitter-tweet.html.twig | Not used anymore. | Removed.
-./menu-local-tasks.html.twig | Identical to seven. | -
-./node-add-list.html.twig | Identical to seven. | -
-./page.html.twig | Identical to seven. | -
+./menu-local-tasks.html.twig | Identical to seven. | Removed.
+./node-add-list.html.twig | Identical to seven. | Removed.
+./page.html.twig | Identical to seven. | Removed.
 ./paragraph/paragraph--link--preview.html.twig | Custom: adds markup for preview. | Removed, aligned css.
 ./paragraph/paragraph--quote--preview.html.twig | Custom: adds markup for preview. | Removed, aligned css.
 ./paragraph/paragraph--text--preview.html.twig | Custom: adds markup for preview. | Removed, aligned css.
