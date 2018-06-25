@@ -5,6 +5,7 @@
 
 // [TJW - refactor] TODO
 
+@import 'mixins';
 @import 'variables';
 
 .content-form__advanced-toggle,
@@ -53,6 +54,7 @@
   /* Fixed action bar */
   .content-form__actions {
     background: $primary-color-darker;
+    @include disabled-buttons-on-dark-bg
   }
 }
 
