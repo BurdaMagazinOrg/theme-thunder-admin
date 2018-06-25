@@ -15,7 +15,6 @@
 .color-scheme-inverted {
   color: $gray-lighter;
   background-color: $primary-color-darkest;
-
   @include disabled-buttons-on-dark-bg;
 
   .tips,

@@ -53,7 +53,7 @@
 @include for-tablet-portrait-and-up {
   /* Fixed action bar */
   .content-form__actions {
-      background: $primary-color-darker;
+    background: $primary-color-darker;
     @include disabled-buttons-on-dark-bg
   }
 }
