@@ -127,7 +127,6 @@ libraries-extend:
   # Experimental paragraphs widget styles.
   paragraphs/drupal.paragraphs.widget:
     - thunder_admin/paragraphs.widget
-
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/tabs:
@@ -136,6 +135,8 @@ libraries-extend:
     - thunder_admin/ui.sortable.with.fractionl.pixels
   entity_browser/entity_reference:
     - thunder_admin/ui.sortable.with.fractionl.pixels
+  seven/drupal.nav-tabs:
+    - thunder_admin/drupal.nav-tabs
   toolbar/toolbar:
     - thunder_admin/toolbar
   toolbar/toolbar.menu:

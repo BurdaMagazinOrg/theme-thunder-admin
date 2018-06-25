@@ -60,6 +60,11 @@ entity_browser.tabs:
     component:
       css/components/entity_browser.tabs.css: {}
 
+# Additional javascript handling for nav tabs, extends seven/drupal.nav-tabs.
+drupal.nav-tabs:
+  js:
+    js/navigation.js: {}
+
 # layout and functionality for content forms with advanced sidebar (replaces what is done in node.module.css)
 form-advanced-sidebar-tray:
   js:
