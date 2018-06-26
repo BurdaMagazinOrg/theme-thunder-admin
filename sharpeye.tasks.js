@@ -173,5 +173,6 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
-  ]}
+  ]},
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' }
 ];
