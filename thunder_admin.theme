@@ -23,120 +23,12 @@ function thunder_admin_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for menu-local-tasks templates.
- *
- * Use preprocess hook to set #attached to child elements
- * because they will be processed by Twig and drupal_render will
- * be invoked.
- */
-function thunder_admin_preprocess_menu_local_tasks(&$variables) {
-  if (!empty($variables['primary'])) {
-    $variables['primary']['#attached'] = [
-      'library' => [
-        'seven/drupal.nav-tabs',
-      ],
-    ];
-  }
-  elseif (!empty($variables['secondary'])) {
-    $variables['secondary']['#attached'] = [
-      'library' => [
-        'seven/drupal.nav-tabs',
-      ],
-    ];
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for menu-local-task templates.
- */
-function thunder_admin_preprocess_menu_local_task(&$variables) {
-  $variables['attributes']['class'][] = 'tabs__tab';
-}
-
-/**
- * Implements hook_preprocess_HOOK() for list of available node type templates.
- */
-function thunder_admin_preprocess_node_add_list(&$variables) {
-  if (!empty($variables['content'])) {
-    /** @var \Drupal\node\NodeTypeInterface $type */
-    foreach ($variables['content'] as $type) {
-      $variables['types'][$type->id()]['label'] = $type->label();
-      $variables['types'][$type->id()]['url'] = \Drupal::url('node.add', ['node_type' => $type->id()]);
-    }
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for block content add list templates.
- *
- * Displays the list of available custom block types for creation, adding
- * separate variables for the label and url.
- */
-function thunder_admin_preprocess_block_content_add_list(&$variables) {
-  if (!empty($variables['content'])) {
-    foreach ($variables['content'] as $type) {
-      $variables['types'][$type->id()]['label'] = $type->label();
-      $options = ['query' => \Drupal::request()->query->all()];
-      $variables['types'][$type->id()]['url'] = \Drupal::url('block_content.add_form', ['block_content_type' => $type->id()], $options);
-    }
-  }
-}
-
-/**
  * Implements hook_preprocess_block() for block content.
  *
  * Disables contextual links for all blocks.
  */
 function thunder_admin_preprocess_block(&$variables) {
   _thunder_admin_remove_contextual_links($variables);
-}
-
-/**
- * Implements hook_preprocess_HOOK() for block admin page templates.
- */
-function thunder_admin_preprocess_admin_block_content(&$variables) {
-  if (!empty($variables['content'])) {
-    foreach ($variables['content'] as $key => $item) {
-      $variables['content'][$key]['url'] = $item['url']->toString();
-    }
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for menu-local-action templates.
- */
-function thunder_admin_preprocess_menu_local_action(array &$variables) {
-  $variables['link']['#options']['attributes']['class'][] = 'button--primary';
-  $variables['link']['#options']['attributes']['class'][] = 'button--small';
-
-  // We require Modernizr's touch test for button styling.
-  $variables['#attached']['library'][] = 'core/modernizr';
-}
-
-/**
- * Implements hook_element_info_alter().
- */
-function thunder_admin_element_info_alter(&$type) {
-  // We require Modernizr for button styling.
-  if (isset($type['button'])) {
-    $type['button']['#attached']['library'][] = 'core/modernizr';
-  }
-}
-
-/**
- * Implements hook_preprocess_install_page().
- */
-function thunder_admin_preprocess_install_page(&$variables) {
-  // thunder_admin has custom styling for the install page.
-  $variables['#attached']['library'][] = 'seven/install-page';
-}
-
-/**
- * Implements hook_preprocess_maintenance_page().
- */
-function thunder_admin_preprocess_maintenance_page(&$variables) {
-  // thunder_admin has custom styling for the maintenance page.
-  $variables['#attached']['library'][] = 'seven/maintenance-page';
 }
 
 /**
@@ -282,7 +174,8 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
 
   // @todo: This might be better moved to a module.
   $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
-  $author_info = (!empty($node->getOwner()->getDisplayName())) ? $node->getOwner()->getDisplayName() : t('Anonymous');
+  $author_info = (!empty($node->getOwner()
+    ->getDisplayName())) ? $node->getOwner()->getDisplayName() : t('Anonymous');
   $form['meta'] = [
     '#attributes' => ['class' => ['entity-meta__header']],
     '#type' => 'container',
@@ -299,7 +192,12 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
     ],
     'changed' => [
       '#type' => 'item',
-      '#wrapper_attributes' => ['class' => ['entity-meta__last-saved', 'container-inline']],
+      '#wrapper_attributes' => [
+        'class' => [
+          'entity-meta__last-saved',
+          'container-inline',
+        ],
+      ],
       '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $last_saved_info,
     ],
     'author' => [
@@ -308,6 +206,11 @@ function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_sta
       '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $author_info,
     ],
   ];
+
+  // Revert change in seven: Display rev info below meta and remove details.
+  // @todo REMOVE.
+  $form['revision_information']['#type'] = 'details';
+  $form['revision_information']['#group'] = 'advanced';
 }
 
 /**
@@ -422,7 +325,7 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
  *
  * @param array $element
  *   Form element.
- * @param array $name
+ * @param string $name
  *   Element name.
  */
 function _thunder_admin_attach_paragraphs_button_classes(array &$element, $name) {
@@ -483,5 +386,16 @@ function _thunder_admin_remove_contextual_links(array &$variables) {
     unset($variables['title_suffix']['contextual_links']);
     unset($variables['elements']['#contextual_links']);
     $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function thunder_admin_library_info_alter(&$libraries, $extension) {
+
+  if ($extension == 'core') {
+    // Re-add stable vertical-tabs for happy screenshotting @todo REMOVE.
+    $libraries['drupal.vertical-tabs']['css']['component']['/core/themes/stable/css/core/vertical-tabs.css'] = [];
   }
 }

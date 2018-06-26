@@ -6,6 +6,7 @@ description: 'Administration theme for the Thunder Distribution that extends and
 
 libraries-override:
 ### START Override and/or snipe seven. ###
+## Switch to specific overrides when https://drupal.org/i/2642122 has landed.
   seven/global-styling: thunder_admin/global-styling
 #  seven/global-styling:
 #    css:
