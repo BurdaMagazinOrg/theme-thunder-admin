@@ -2,13 +2,8 @@
  * @file admin.toolbar.css
  */
 
-/* [TJW - refactor]
- * Overrides modules/admin.toolbar.css
- * (todo) wierd changes / maybe module update?
- */
-/* stylelint-disable no-descending-specificity */
-
 @import 'variables';
+
 /* stylelint-disable string-no-newline */
 @import "@module-admin_toolbar/css/admin.toolbar.css remove {
   .toolbar-tray-horizontal .menu-item:hover{ background }
@@ -23,7 +18,6 @@
   [dir=\"rtl\"] .toolbar .toolbar-tray-horizontal .menu-item:last-child { border-left; border-right }
 }";
 /* stylelint-enable string-no-newline */
-
 
 .toolbar-tray-horizontal ul ul li.menu-item,
 [dir="rtl"] .toolbar-tray-horizontal ul li li.menu-item {
