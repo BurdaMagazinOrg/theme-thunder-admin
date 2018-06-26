@@ -6,24 +6,8 @@ description: 'Administration theme for the Thunder Distribution that extends and
 
 libraries-override:
 ### START Override and/or snipe seven. ###
-## Switch to specific overrides when https://drupal.org/i/2642122 has landed.
+# Switch to specific overrides when https://drupal.org/i/2642122 has landed, see sass/README.md
   seven/global-styling: thunder_admin/global-styling
-#  seven/global-styling:
-#    css:
-#      base:
-#        css/base/elements.css: css/base/elements.css
-#      component:
-#        css/components/admin-list.css: css/components/admin-list.css
-#        css/components/content-header.css: css/components/content-header.css
-#        css/components/breadcrumb.css: css/components/breadcrumb.css
-#        css/components/buttons.css: css/components/buttons.css
-#        css/components/messages.css: css/components/messages.css
-#        css/components/dropbutton.component.css: css/components/dropbutton.component.css
-#        css/components/entity-meta.css: css/components/entity-meta.css
-#        css/components/form.css: css/components/form.css
-#        css/components/menus-and-lists.css: css/components/menus-and-lists.css
-#        css/components/tablesort-indicator.css: css/components/tablesort-indicator.css
-#        css/components/tabs.css: css/components/tabs.css
   seven/install-page:
     css:
       theme:
