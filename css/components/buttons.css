@@ -156,6 +156,7 @@
   background-color:transparent;
   background-image:none;
   cursor:not-allowed;
+  text-shadow:none;
 }
 
 .button--primary{
