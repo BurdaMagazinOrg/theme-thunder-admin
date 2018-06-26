@@ -41,7 +41,6 @@ install:
   - install.sh
 
 before_script:
-  - cd ${HOME}/build/test-dir/docroot && drush -y en seven
   - before-script.sh
 
 script:
