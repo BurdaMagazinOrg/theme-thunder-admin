@@ -1,0 +1,20 @@
+/***********************
+ * Various sass mixins *
+ ***********************/
+
+/* Fix disabled buttons on dark bg,
+ * f.e. used with color-scheme-inverted, form actions.
+ */
+@mixin disabled-buttons-on-dark-bg {
+  .button {
+    &:disabled,
+    &:disabled:active,
+    &:disabled:hover,
+    &.is-disabled,
+    &.is-disabled:active,
+    &.is-disabled:hover {
+      border-color: #d4d4d4;
+      color: #d4d4d4;
+    }
+  }
+}
