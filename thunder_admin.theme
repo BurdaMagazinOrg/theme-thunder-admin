@@ -393,7 +393,6 @@ function _thunder_admin_remove_contextual_links(array &$variables) {
  * Implements hook_library_info_alter().
  */
 function thunder_admin_library_info_alter(&$libraries, $extension) {
-
   if ($extension == 'core') {
     // Re-add stable vertical-tabs for happy screenshotting @todo REMOVE.
     $libraries['drupal.vertical-tabs']['css']['component']['/core/themes/stable/css/core/vertical-tabs.css'] = [];

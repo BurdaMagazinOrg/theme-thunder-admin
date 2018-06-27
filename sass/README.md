@@ -19,6 +19,6 @@ After https://drupal.org/i/2642122 has landed we can specifically override the f
         css/components/form.css: css/components/form.css
         css/components/menus-and-lists.css: css/components/menus-and-lists.css
         css/components/tablesort-indicator.css: css/components/tablesort-indicator.css
-		css/components/system-status-report.css: css/components/system-status-report.css
-		css/components/tabs.css: css/components/tabs.css
+        css/components/system-status-report.css: css/components/system-status-report.css
+        css/components/tabs.css: css/components/tabs.css
 </pre>
