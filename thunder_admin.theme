@@ -167,46 +167,7 @@ function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_
  * Changes vertical tabs to container and adds meta information.
  */
 function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_state) {
-  /** @var \Drupal\node\NodeInterface $node */
-  $node = $form_state->getFormObject()->getEntity();
-
   _thunder_admin_content_form_alter_helper($form, $form_state);
-
-  // @todo: This might be better moved to a module.
-  $last_saved_info = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
-  $author_info = (!empty($node->getOwner()
-    ->getDisplayName())) ? $node->getOwner()->getDisplayName() : t('Anonymous');
-  $form['meta'] = [
-    '#attributes' => ['class' => ['entity-meta__header']],
-    '#type' => 'container',
-    '#group' => 'advanced',
-    '#weight' => -100,
-    'published' => [
-      '#type' => 'html_tag',
-      '#tag' => 'h3',
-      '#value' => $node->isPublished() ? t('Published') : t('Not published'),
-      '#access' => !$node->isNew(),
-      '#attributes' => [
-        'class' => 'entity-meta__title',
-      ],
-    ],
-    'changed' => [
-      '#type' => 'item',
-      '#wrapper_attributes' => [
-        'class' => [
-          'entity-meta__last-saved',
-          'container-inline',
-        ],
-      ],
-      '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $last_saved_info,
-    ],
-    'author' => [
-      '#type' => 'item',
-      '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $author_info,
-    ],
-  ];
-
   // Revert change in seven: Display rev info below meta and remove details.
   // @todo REMOVE.
   $form['revision_information']['#type'] = 'details';
