@@ -1,1 +1,6 @@
 @import '@theme-seven/css/components/vertical-tabs.css';
+
+.vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item-summary {
+  line-height: normal;
+}
