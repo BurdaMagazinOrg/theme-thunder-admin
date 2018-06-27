@@ -13,7 +13,7 @@ $button-border-radius: $base-border-radius;
 /* stylelint-enable plugin/no-browser-hacks */
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/buttons.css remove {
+@import '@theme-seven/css/components/buttons.css remove {
   .button { text-shadow; font-size }
   .button:hover, .button:focus { color; outline }
   .button:hover { box-shadow }
@@ -25,7 +25,7 @@ $button-border-radius: $base-border-radius;
   .button--primary:active {}
   .button-action:before { font-size }
   .no-touchevents .button--small { font-size }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 /**
