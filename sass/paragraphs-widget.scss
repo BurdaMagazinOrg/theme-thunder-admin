@@ -463,7 +463,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  .paragraphs-subform >.field--widget-entity-browser-entity-reference {
+  .field--name-field-video,
+  .field--name-field-image {
+
     details {
       margin: 0;
       border: 0;
