@@ -168,10 +168,6 @@ function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_
  */
 function thunder_admin_form_node_form_alter(&$form, FormStateInterface $form_state) {
   _thunder_admin_content_form_alter_helper($form, $form_state);
-  // Revert change in seven: Display rev info below meta and remove details.
-  // @todo REMOVE.
-  $form['revision_information']['#type'] = 'details';
-  $form['revision_information']['#group'] = 'advanced';
 }
 
 /**
@@ -347,15 +343,5 @@ function _thunder_admin_remove_contextual_links(array &$variables) {
     unset($variables['title_suffix']['contextual_links']);
     unset($variables['elements']['#contextual_links']);
     $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);
-  }
-}
-
-/**
- * Implements hook_library_info_alter().
- */
-function thunder_admin_library_info_alter(&$libraries, $extension) {
-  if ($extension == 'core') {
-    // Re-add stable vertical-tabs for happy screenshotting @todo REMOVE.
-    $libraries['drupal.vertical-tabs']['css']['component']['/core/themes/stable/css/core/vertical-tabs.css'] = [];
   }
 }
