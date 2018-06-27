@@ -670,25 +670,30 @@ tr:hover .paragraphs-collapsed-description::after{
   line-height:17px;
 }
 
-.paragraph-form-item--has-subform .paragraphs-subform > .field--widget-entity-browser-entity-reference details{
+.paragraph-form-item--has-subform .field--name-field-video details,
+.paragraph-form-item--has-subform .field--name-field-image details{
   margin:0;
   border:0;
 }
 
-.paragraph-form-item--has-subform .paragraphs-subform > .field--widget-entity-browser-entity-reference details summary{
+.paragraph-form-item--has-subform .field--name-field-video details summary,
+.paragraph-form-item--has-subform .field--name-field-image details summary{
   display:none;
 }
 
-.paragraph-form-item--has-subform .paragraphs-subform > .field--widget-entity-browser-entity-reference details .details-wrapper{
+.paragraph-form-item--has-subform .field--name-field-video details .details-wrapper,
+.paragraph-form-item--has-subform .field--name-field-image details .details-wrapper{
   padding:0;
 }
 
-.paragraph-form-item--has-subform .paragraphs-subform > .field--widget-entity-browser-entity-reference .entities-list .item-container{
+.paragraph-form-item--has-subform .field--name-field-video .entities-list .item-container,
+.paragraph-form-item--has-subform .field--name-field-image .entities-list .item-container{
   display:block;
   margin:0;
 }
 
-.paragraph-form-item--has-subform .paragraphs-subform > .field--widget-entity-browser-entity-reference .entities-list .item-container:hover{
+.paragraph-form-item--has-subform .field--name-field-video .entities-list .item-container:hover,
+.paragraph-form-item--has-subform .field--name-field-image .entities-list .item-container:hover{
   cursor:default;
   opacity:1;
 }
