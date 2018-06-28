@@ -1,11 +1,7 @@
 @import 'variables';
 
-// [TJW - refactor] no need for import, since only style is overridden here
+// No need for import, since only style is overridden here.
 
-/**
- * @file
- * Breadcrumbs.
- */
 .breadcrumb {
   line-height: 1em; // copied from seven
   padding: 0.6em 0 1em;

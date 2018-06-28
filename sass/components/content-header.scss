@@ -1,21 +1,15 @@
 @import 'variables';
 
-// [TJW - refactor] no need for import, since only style is overridden here
+// No need for import, since only style is overridden here.
 
-/**
- * Content header.
- */
-// background-color changed
-// margin-bottom added
 .content-header {
-  overflow: hidden; // can be removed with import
+  overflow: hidden; // Can be removed with import.
   background-color: $gray-lightest;
-  margin-bottom: 20px;
-  padding: 24px 0 0; // can be removed with import
+  margin-bottom: 20px; // Added.
+  padding: 24px 0 0; // Can be removed with import.
 
-  // NEW
   .page-title {
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 16px; // Added.
+    line-height: 18px; // Added.
   }
 }
