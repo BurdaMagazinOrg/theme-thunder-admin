@@ -4,9 +4,9 @@
 @import 'variables';
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/tabs.css remove {
+@import '@theme-seven/css/components/tabs.css remove {
   .is-collapse-enabled .tabs:before, .is-horizontal .tabs:before {}
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 // Added

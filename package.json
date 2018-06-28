@@ -14,7 +14,7 @@
     "styles-lint": "stylelint sass-includes/*.scss sass/*.scss sass/**/*.scss",
     "styles": "css-sniper --output-style expanded --include-path sass-includes -o css sass",
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
-    "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css/*.css && postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css/**/*.css",
+    "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css",
     "js": "eslint js",
     "images": "imagemin images-originals/* -o images && imagemin images-originals/icons/* -o images/icons",
     "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",

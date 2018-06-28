@@ -1,36 +1,57 @@
 name: Thunder Admin
 type: theme
 core: 8.x
-base theme: classy
+base theme: seven
 description: 'Administration theme for the Thunder Distribution that extends and modifies Sevens styles for authoring UX and integrated look and feel of the contributed modules used in the distribution.'
 
-libraries:
-  - thunder_admin/global-styling
-
 libraries-override:
-  # seven also overrides this.
+### START Override and/or snipe seven. ###
+  # Switch to specific overrides when https://drupal.org/i/2642122 has landed, see sass/README.md
+  seven/global-styling: thunder_admin/global-styling
+  seven/install-page:
+    css:
+      theme:
+        css/theme/install-page.css: css/theme/install-page.css
+  seven/maintenance-page:
+    css:
+      theme:
+        css/theme/maintenance-page.css: css/theme/maintenance-page.css
+  seven/media-form:
+    css:
+      layout:
+        css/components/media.css: css/components/media.css
+  seven/seven.drupal.dialog:
+    css:
+      theme:
+        css/components/dialog.css: css/components/dialog.css
+### END ###
+### START Override seven library extends ###
+  seven/ckeditor-dialog:
+    css:
+      theme:
+        css/theme/ckeditor-dialog.css: css/theme/ckeditor-dialog.css
+  seven/seven.jquery.ui:
+    css:
+      component:
+        css/components/jquery.ui/theme.css: css/components/jquery.ui/theme.css
+  seven/tour-styling:
+    css:
+      theme:
+        css/components/tour.theme.css: css/components/tour.theme.css
+  seven/vertical-tabs:
+    css:
+      component:
+        css/components/vertical-tabs.css: css/components/vertical-tabs.css
+### END ###
+### START Absolute path overrides for libraries already overridden in stable. ###
+### Revisit after https://drupal.org/i/2642122 has landed. ####
+  # Seven override does not take since stable changed key to absolute path.
   system/base:
     css:
       component:
         /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
         /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
         /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
-  # seven also overrides this.
-  core/drupal.vertical-tabs:
-    css:
-      component:
-        misc/vertical-tabs.css: false
-  # seven also overrides this.
-  core/jquery.ui:
-    css:
-      theme:
-        assets/vendor/jquery.ui/themes/base/theme.css: false
-  # seven also overrides this.
-  core/jquery.ui.dialog:
-    css:
-      component:
-        assets/vendor/jquery.ui/themes/base/dialog.css: false
-# core module (stable) overrides
   node/drupal.node:
     css:
       layout:
@@ -44,17 +65,15 @@ libraries-override:
       theme:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
         /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
+### END ###
   # core base theme (classy) overrides
-  # seven also overrides classy/dialog
-  classy/dialog:
-    thunder_admin/drupal.dialog
   classy/base:
     css:
       component:
-# [Refactor] TODO: Use css overrides instead of complete removal.
+  # [Refactor] TODO: Use css overrides instead of complete removal.
         css/components/form.css: false
         css/components/tabledrag.css: false
-# contrib module overrides
+  # contrib module overrides
   admin_toolbar/toolbar.tree:
     css:
       theme:
@@ -69,29 +88,14 @@ libraries-override:
         css/media_entity_browser.view.css: css/components/media_entity_browser.view.css
 
 libraries-extend:
-  # seven also overrides this.
-  core/ckeditor:
-    - thunder_admin/ckeditor-dialog
   core/drupal.tabledrag:
     - thunder_admin/tabledrag.tabindex
-  # seven also overrides this.
-  core/drupal.vertical-tabs:
-    - thunder_admin/vertical-tabs
-  # seven also overrides this.
-  core/jquery.ui:
-    - thunder_admin/jquery.ui
-  # seven also overrides this.
-  tour/tour-styling:
-    - thunder_admin/tour-styling
-
   # DEPRECATED: support for classic paragraphs widget with add in between buttons.
   paragraphs/drupal.paragraphs.admin:
     - thunder_admin/paragraphs.widget
-
   # Experimental paragraphs widget styles.
   paragraphs/drupal.paragraphs.widget:
     - thunder_admin/paragraphs.widget
-
   dropzonejs/widget:
     - thunder_admin/dropzonejs.widget
   entity_browser/tabs:
@@ -100,6 +104,8 @@ libraries-extend:
     - thunder_admin/ui.sortable.with.fractionl.pixels
   entity_browser/entity_reference:
     - thunder_admin/ui.sortable.with.fractionl.pixels
+  seven/drupal.nav-tabs:
+    - thunder_admin/drupal.nav-tabs
   toolbar/toolbar:
     - thunder_admin/toolbar
   toolbar/toolbar.menu:

@@ -2,7 +2,7 @@
  * Presentational styles for Drupal dialogs.
  */
 
-@import "variables";
+@import 'variables';
 
 @mixin browser-border($is-top: true) {
   border: 4px solid $primary-color-lightest;
@@ -14,11 +14,11 @@
   }
 }
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/dialog.css remove {
+@import '@theme-seven/css/components/dialog.css remove {
   .ui-dialog .ui-dialog-titlebar-close {}
   .ui-dialog .ui-dialog-titlebar-close:hover {}
   .ui-dialog .ui-dialog-titlebar-close:focus {}
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 .ui-dialog {

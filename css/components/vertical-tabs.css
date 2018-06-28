@@ -136,3 +136,8 @@
 .vertical-tabs__pane > summary{
   display:none;
 }
+
+.vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item-summary{
+  line-height:normal;
+}

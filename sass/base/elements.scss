@@ -15,10 +15,10 @@ html {
 }
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/base/elements.css remove {
+@import '@theme-seven/css/base/elements.css remove {
   body {}
   details { line-height }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 /* Generic elements. */
