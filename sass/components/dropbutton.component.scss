@@ -1,10 +1,17 @@
 
 /* stylelint-disable no-descending-specificity */
-@import '~rtl-sass';
 @import 'variables';
 
 @import '@theme-seven/css/components/dropbutton.component.css';
 
+@mixin rtl-sass-border-radius($top, $left, $bottom, $right) {
+  border-radius: $top $left $bottom $right;
+
+  [dir="ltr"] & {
+    border-radius: $left $top $right $bottom;
+  }
+
+}
 /**
  * @todo: Try to normalize hover, focus, active background styles and use mixin.
  */
@@ -18,7 +25,7 @@
 }
 
 .js .dropbutton-action.last {
-  @include rtl-sass-border-radius(0 0 0 $base-border-radius);
+  @include rtl-sass-border-radius(0, 0, 0, $base-border-radius);
 }
 
 /**
@@ -39,17 +46,17 @@
 .js .dropbutton-widget .dropbutton-action a,
 .js .dropbutton-widget .dropbutton-action input,
 .js .dropbutton-widget .dropbutton-action button {
-  @include rtl-sass-border-radius($base-border-radius 0 0 $base-border-radius);
+  @include rtl-sass-border-radius($base-border-radius, 0, 0, $base-border-radius);
 }
 
 .js .dropbutton-multiple.open .dropbutton-action:first-child a,
 .js .dropbutton-multiple.open .dropbutton-action:first-child .button {
-  @include rtl-sass-border-radius($base-border-radius 0 0 0); /* LTR */
+  @include rtl-sass-border-radius($base-border-radius, 0, 0, 0); /* LTR */
 }
 
 .js .dropbutton-multiple.open .dropbutton-action:last-child a,
 .js .dropbutton-multiple.open .dropbutton-action:last-child .button {
-  @include rtl-sass-border-radius(0 0 0 $base-border-radius);
+  @include rtl-sass-border-radius(0, 0, 0, $base-border-radius);
 }
 
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-action {
@@ -97,7 +104,7 @@
  */
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button,
 .dropbutton-multiple.open .dropbutton-widget .dropbutton-toggle button {
-  @include rtl-sass-border-radius(0 $base-border-radius $base-border-radius 0);
+  @include rtl-sass-border-radius(0, $base-border-radius, $base-border-radius, 0);
 }
 
 .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
