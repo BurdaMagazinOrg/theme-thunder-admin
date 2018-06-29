@@ -5209,6 +5209,10 @@ rimraf@2, rimraf@^2.2.6, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
+rtl-sass@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/rtl-sass/-/rtl-sass-1.5.0.tgz#2a4867a419a3ce2aa82276be7b2f42ca24b8a473"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
