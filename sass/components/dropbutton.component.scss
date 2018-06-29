@@ -6,6 +6,9 @@
 @import '@theme-seven/css/components/dropbutton.component.css';
 
 /**
+ * @todo: Try to normalize hover, focus, active background styles and use mixin.
+ */
+/**
  * Reset styling for all elements.
  */
 .js .dropbutton .dropbutton-action > input,
