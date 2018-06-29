@@ -152,7 +152,3 @@
 .ui-dialog .ajax-progress-throbber{
   background-image:url(../../images/loading-small.gif);
 }
-
-.views-ui-dialog .ui-widget-content.ui-dialog-content{
-  padding:0;
-}
