@@ -373,8 +373,8 @@
   border-radius:4px 0 0 0;
 }
 
-[dir="ltr"] .js .dropbutton-multiple.open .dropbutton-action:first-child a,
-[dir="ltr"] .js .dropbutton-multiple.open .dropbutton-action:first-child .button{
+[dir="ltr"] .js .dropbutton-multiple.open .dropbutton-action:first-child a, [dir="ltr"]
+.js .dropbutton-multiple.open .dropbutton-action:first-child .button{
   border-radius:0 4px 0 0;
 }
 

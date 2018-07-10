@@ -16,6 +16,8 @@
 }
 
 .entity-meta__title{
+  font-size:1.231em;
+  font-weight:bold;
   text-shadow:0 1px 0 #fff;
   margin:0.25em 0;
 }
