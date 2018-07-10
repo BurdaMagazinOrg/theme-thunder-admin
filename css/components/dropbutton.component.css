@@ -341,7 +341,7 @@
   border-radius:0 0 0 4px;
 }
 
-[dir="ltr"] .js .dropbutton-action.last{
+[dir="rtl"] .js .dropbutton-action.last{
   border-radius:0 0 4px 0;
 }
 .js .dropbutton-multiple .dropbutton-widget{
@@ -362,8 +362,8 @@
   border-radius:4px 0 0 4px;
 }
 
-[dir="ltr"] .js .dropbutton-widget .dropbutton-action a, [dir="ltr"]
-.js .dropbutton-widget .dropbutton-action input, [dir="ltr"]
+[dir="rtl"] .js .dropbutton-widget .dropbutton-action a, [dir="rtl"]
+.js .dropbutton-widget .dropbutton-action input, [dir="rtl"]
 .js .dropbutton-widget .dropbutton-action button{
   border-radius:0 4px 4px 0;
 }
@@ -373,7 +373,7 @@
   border-radius:4px 0 0 0;
 }
 
-[dir="ltr"] .js .dropbutton-multiple.open .dropbutton-action:first-child a, [dir="ltr"]
+[dir="rtl"] .js .dropbutton-multiple.open .dropbutton-action:first-child a, [dir="rtl"]
 .js .dropbutton-multiple.open .dropbutton-action:first-child .button{
   border-radius:0 4px 0 0;
 }
@@ -383,7 +383,7 @@
   border-radius:0 0 0 4px;
 }
 
-[dir="ltr"] .js .dropbutton-multiple.open .dropbutton-action:last-child a, [dir="ltr"]
+[dir="rtl"] .js .dropbutton-multiple.open .dropbutton-action:last-child a, [dir="rtl"]
 .js .dropbutton-multiple.open .dropbutton-action:last-child .button{
   border-radius:0 0 4px 0;
 }
@@ -430,7 +430,7 @@
   border-radius:0 4px 4px 0;
 }
 
-[dir="ltr"] .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button, [dir="ltr"]
+[dir="rtl"] .js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button, [dir="rtl"]
 .dropbutton-multiple.open .dropbutton-widget .dropbutton-toggle button{
   border-radius:4px 0 0 4px;
 }

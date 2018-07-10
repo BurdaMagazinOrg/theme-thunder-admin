@@ -7,7 +7,7 @@
 @mixin rtl-sass-border-radius($top, $left, $bottom, $right) {
   border-radius: $top $left $bottom $right;
 
-  [dir="ltr"] & {
+  [dir="rtl"] & {
     border-radius: $left $top $right $bottom;
   }
 
