@@ -1,5 +1,9 @@
-
-/* stylelint-disable no-descending-specificity */
+/**
+ * @file
+ * Presentational styles for the dropbutton component.
+ *
+ * Import and override dropbutton.component.css provided by seven/global-styling.
+ */
 @import 'variables';
 
 @import '@theme-seven/css/components/dropbutton.component.css';
@@ -12,6 +16,8 @@
   }
 
 }
+/* stylelint-disable no-descending-specificity */
+
 /**
  * @todo: Try to normalize hover, focus, active background styles and use mixin.
  */

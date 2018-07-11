@@ -1,7 +1,9 @@
 /**
+ * @file
  * Presentational styles for Drupal dialogs.
+ *
+ * Import and override content-header.css provided by seven/global-styling.
  */
-
 @import 'variables';
 
 @mixin browser-border($is-top: true) {
@@ -22,7 +24,6 @@
 /* stylelint-enable string-no-newline */
 
 .ui-dialog {
-  // browser-border added
   .ui-dialog-titlebar {
     background: $primary-color-darker;
     @include browser-border; // Added.

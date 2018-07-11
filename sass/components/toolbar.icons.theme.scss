@@ -1,11 +1,12 @@
-// [TJW - refactor] NEW (todo: taken from toolbar core module?)
-/* stylelint-disable no-descending-specificity */
-
 /**
  * @file
- * Styling for toolbar module icons.
+ * Replaces toolbar.icons.theme.css originally provided by the
+ * toolbar/toolbar library using libraries-override
+ *
+ * @todo Copied from toolbar core module
+ * @todo Fix descending specificity.
  */
-
+/* stylelint-disable no-descending-specificity */
 .toolbar .toolbar-icon {
   padding-left: 2.75em; /* LTR */
   position: relative;

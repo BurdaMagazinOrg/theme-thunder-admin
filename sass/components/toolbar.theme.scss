@@ -1,11 +1,11 @@
-// [TJW - refactor] NEW (todo: taken from toolbar core module?)
+/**
+ * @file
+ * Replaces toolbar.theme.scss using libraries-override.
+ *
+ * @todo: [Refactor] Copied from toolbar core module.
+*/
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable no-descending-specificity */
-
-/**
- * @file toolbar.theme.css
- */
-
 @import 'variables';
 
 .toolbar {
