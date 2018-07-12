@@ -345,3 +345,12 @@ function _thunder_admin_remove_contextual_links(array &$variables) {
     $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);
   }
 }
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function thunder_admin_library_info_alter(&$libraries, $extension) {
+  if ($extension == 'seven' && isset($libraries['media-form'])) {
+    unset($libraries['media-form']['dependencies']);
+  }
+}
