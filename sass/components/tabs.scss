@@ -1,4 +1,9 @@
-// todo Refactor specificity.
+/**
+ * @file
+ * Import and override tabs.css provided by seven/global-styling.
+ *
+ * @todo Fix descending specificity.
+ */
 /* stylelint-disable no-descending-specificity */
 
 @import 'variables';

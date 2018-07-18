@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Import and override system-status-report.css provided by seven/global-styling.
+ */
 @import '@theme-seven/css/components/system-status-report.css';
 
 .system-status-report__status-icon--error .details-title:before,

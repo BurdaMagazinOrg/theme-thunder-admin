@@ -1,3 +1,9 @@
+/**
+ * @file
+ * Import and override vertical-tabs.css from seven originally provided by core/drupal.vertical-tabs.
+ *
+ * @todo [IMPORT_ONLY]
+ */
 @import '@theme-seven/css/components/vertical-tabs.css';
 
 .vertical-tabs__menu-item-title,

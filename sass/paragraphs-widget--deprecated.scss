@@ -1,12 +1,14 @@
-// [TJW - refactor] TODO
-/* stylelint-disable no-descending-specificity */
-
+/**
+ * @file
+ * Additional styles for  paragraphs/drupal.paragraphs.widget, added using libraries-extend.
+ *
+ * Support for DEPRECATED classic paragraphs add in between buttons patch.
+ *
+ * @todo fix descending specificity
+ */
 @import 'variables';
 
-/*
- * Support for DEPRECATED classic paragraphs add in between buttons patch.
- */
-
+/* stylelint-disable no-descending-specificity */
 .field-multiple-table--paragraphs--deprecated {
   & > thead,
   & > tbody {

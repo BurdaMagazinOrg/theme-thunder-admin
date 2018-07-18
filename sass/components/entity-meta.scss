@@ -1,33 +1,32 @@
+/**
+ * @file
+ * Import and override entity-meta.css provided by seven/global-styling.
+ */
 @import 'variables';
 
-@import '@theme-seven/css/components/entity-meta.css';
+/* stylelint-disable string-no-newline */
+@import '@theme-seven/css/components/entity-meta.css remove {
+  .entity-meta details:first-child {}
+}';
+/* stylelint-enable string-no-newline */
 
-
-// font-size removed (todo)
-// font-weight removed (todo)
 .entity-meta__title {
   text-shadow: 0 1px 0 #fff;
   margin: 0.25em 0;
 }
 
-// .entity-meta details:first-child selector removed
-
-// color changed
 .entity-meta details > summary {
   color: $gray-lighter;
 
-  // NEW
   &:hover {
-    text-decoration: none;
+    text-decoration: none; // Added.
   }
 
-  // NEW
   .details-title {
-    color: $gray-lighter;
+    color: $gray-lighter; // Added.
 
-    // NEW
     &:hover {
-      text-decoration: none;
+      text-decoration: none; // Added.
     }
   }
 }
