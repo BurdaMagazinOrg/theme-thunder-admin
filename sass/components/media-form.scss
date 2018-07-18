@@ -1,10 +1,7 @@
-// [TJW - refactor] todo: taken from thunder_media module?
-
 /**
  * @file
- * Styles for media forms.
+ * Additional styles for media forms.
  */
-
 @import 'variables';
 
 .media-form__items-widget {
@@ -80,7 +77,7 @@
   @include inline-svg-button('<svg width="15" height="18" viewBox="0 0 15 18" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M1 16c0 1.1.975 2 2.167 2h8.666C13.025 18 14 17.1 14 16V4H1v12zM15 1v2H0V1h3.75l1.07-1h5.36l1.07 1H15zm-5 5.51c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51zm-3 0c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51zm-3 0c0-.282.232-.51.5-.51.276 0 .5.228.5.51v8.98c0 .282-.232.51-.5.51-.276 0-.5-.228-.5-.51V6.51z" fill-rule="evenodd"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium));
 }
 
-/*
+/**
  * entity_browser.entity_list.css is very specific.
  */
 .entities-list .item-container > input.media-form__item-widget__action {

@@ -70,7 +70,7 @@ libraries-override:
   classy/base:
     css:
       component:
-  # [Refactor] TODO: Use css overrides instead of complete removal.
+  # @todo Use css overrides instead of complete removal.
         css/components/form.css: false
         css/components/tabledrag.css: false
   # contrib module overrides
