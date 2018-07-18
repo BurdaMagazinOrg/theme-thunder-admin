@@ -1,5 +1,7 @@
-// [TJW - refactor] TODO
-
+/**
+ * @file
+ * Additional styles for  paragraphs/drupal.paragraphs.widget, added using libraries-extend.
+ */
 @import 'variables';
 
 /* stylelint-disable plugin/no-browser-hacks */
@@ -19,7 +21,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 }';
 /* stylelint-enable string-no-newline */
 
-/*
+/**
  * Media screen size defined by paragraphs module to adjust style for tablets and phones.
  */
 @mixin for-paragraphs-tablet-and-phone {
@@ -143,7 +145,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  */
 .paragraphs-actions {
 
-  /*
+  /**
    * 1. make some space between information text and collapse and drop-down buttons.
    */
   margin-left: $base-space; /* 1 */
@@ -217,7 +219,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     flex: 1 1 100%;
   }
 
-  /*
+  /**
    * Max height is defined for wrapping paragraphs element in preview,
    * because it breaks layout on smaller screen sizes.
    */
@@ -241,7 +243,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       width: 160px;
     }
 
-    /*
+    /**
      * 1. Max width blocks div element with paragraphs type + icon and also information icon (fe. warning icon),
      *    to take too much space, because then not enough space for summary will break paragraphs in two lines.
      */
@@ -315,7 +317,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    /*
+    /**
      * Tweak for drop-down toggle button provided by paragraphs.
      */
     .paragraphs-dropdown-toggle {
@@ -329,7 +331,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    /*
+    /**
      * Tweak for position of drop-down menu for drop-down toggle button provided by paragraphs.
      */
     .paragraphs-dropdown-actions {
@@ -337,7 +339,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  /*
+  /**
    * 1. align information icon (fe. warning icon after editing) to left from paragraph type icon + text.
    *    The element with icon is a 2nd element in flex and to position it as the first negative order is used.
    */
@@ -372,7 +374,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     order: 10;
     margin-right: 24px;
 
-    /*
+    /**
      * 1. When paragraph type has long label, then UI get broken and
      *    it's not possible to access action buttons. Also Layout is broken.
      * @todo Needs to be discussed, hide for now.
@@ -542,7 +544,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  /*
+  /**
    * 1. align information text to left from collapse and drop-down buttons.
    */
   .paragraph-type-info {
@@ -753,4 +755,4 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  ul.paragraphs-add-dialog-list input.field-add-more-submit {
     background-image: none;
  }
- 
+

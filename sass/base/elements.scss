@@ -1,6 +1,12 @@
+/**
+ * @file
+ * Generic html elements.
+ *
+ * Import and override elements.css provided by seven/global-styling.
+ */
 @import 'variables';
 
-// [TJW - refactor] New up until the seven import
+// Added up until the seven import.
 * {
   box-sizing: inherit;
 
