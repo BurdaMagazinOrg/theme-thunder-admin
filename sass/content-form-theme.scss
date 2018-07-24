@@ -51,7 +51,7 @@
   /* Fixed action bar */
   .content-form__actions {
     background: $primary-color-darker;
-    @include disabled-buttons-on-dark-bg
+    @include disabled-buttons-on-dark-bg;
   }
 }
 

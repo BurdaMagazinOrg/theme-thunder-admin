@@ -24,6 +24,7 @@
 /* stylelint-enable string-no-newline */
 
 .ui-dialog {
+
   .ui-dialog-titlebar {
     background: $primary-color-darker;
     @include browser-border; // Added.
@@ -56,7 +57,7 @@
 
   .ui-icon.ui-icon-closethick {
     background: url(../../images/icons/ex.svg) 0 0 no-repeat;
-    margin-top: -12px
+    margin-top: -12px;
   }
 
   .ui-widget-content.ui-dialog-content {
