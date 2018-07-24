@@ -4,32 +4,23 @@ An administration theme for the Thunder drupal distribution that extends and
 modifies the styles of the core theme seven for authoring UX and an integrated
 look and feel of the contributed modules used in the distribution.
 
-## Development work in progress
-This theme started as an admin theme shipped with the first RCs of the thunder
-distribution and was based on Seven as a base theme merely containing fixes 
-and improvements of the visual presentation regarding the modules in the
-distribution.
+## Basic structure
 
-In late 2016 the Thunder core team started a sub project regarding research and
-a concept for improving the authoring UX and a 
-[roadmap](https://www.drupal.org/node/2828095) was created that did naturally 
-emcompass a lot of theming modifications that go far beyond mere "tweaks" of
-Seven. As of now Thunder Admin is based upon Classy as a base theme and a
-fair amount of CSS and theme hooks are copied over from Seven to reduce the
-number of overrides in the theme inheritance.
+The Thunder Admin theme relies on Seven as a base theme, while overriding and extending it using libraries and
+templates. For an overview on what has been done, refer to thunder_admin.info.yml and thunder_admin.libraries.yml where
+overrides are listed and libraries are defined.
 
-Currently the above mentioned history leads to the fact that there are a lot of
-assets that will/might need refactoring in future development.
+The theme facilitates SASS and introduces css-sniper, a node-sass importer plugin, which adds the ability to import css
+directly from the original assets in core into component css via a build process. The build process is described below,
+also see package.json for a list of tasks.
 
 ### Things that need refactoring:
-* Asset folder structure needs to be improved to follow a clear concept
-* image and icon assets need to be consolidated and reworked according to a 
-  unified visual language and color scheme
-* CSS that was initially only copied into SCSS needs refactoring for clarity
-  and consistent use of variables
-* Visual styles copied over from Seven need to be refactored to be aligned with
-  Thunder Admin's design in more areas than the current focus which is content
-  authoring
+* Asset folder structure needs to be improved to follow a clear concept.
+* image and icon assets need to be consolidated and reworked according to a unified visual language and color scheme.
+* Due to some quirks in the libraries-override, it is not possible to override single assets in libraries preserving
+  the order of inclusion. All assets have to be overridden / imported, see #2642122 ([IMPORT_ONLY]).
+* Some visual styles need to be refactored to be aligned with Thunder Admin's design in more areas than the current
+  focus which is content authoring.
 
 ### Initializing Git Large File Storage (LFS)
 Git LFS is used for storing of images for regression testing. In order to provide new images in a pull request, LFS has
@@ -71,7 +62,7 @@ build scripts and watch scripts are run with npm, for development run
 * JS linting (folder: js)
 
 #### Visual Regression Tests
-Travis will check the theme for changes with a visual regression test.  
+Travis will check the theme for changes with a visual regression test.
 If you changed some styling, please provide new reference images.
 
 For creating screenshots you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
