@@ -73,6 +73,7 @@ form-advanced-sidebar-tray:
     layout:
       css/content-form-layout.css: {}
 
+# Adds visibility toggling of form descriptions.
 form-toggle-description:
   js:
     js/form-toggle-description.js: {}
@@ -80,6 +81,7 @@ form-toggle-description:
     - core/jquery
     - core/jquery.once
 
+# Adds ux functionality to paragraphs widgets.
 paragraphs.adjustments:
   js:
     js/paragraphs.js: {}
@@ -88,6 +90,7 @@ paragraphs.bottom.add:
   js:
     js/paragraphs.bottom.add.js: {}
 
+# Additional styles for to paragraphs widget.
 paragraphs.widget:
   css:
     theme:
@@ -102,24 +105,29 @@ paragraphs.widget:
     - core/jquery.once
     - core/drupal.tabledrag
 
+# Additional "click to edit" functionality for the Paragraph widget.
 tabledrag.tabindex:
   js:
     js/tabledrag.tabindex.js: {}
 
+# Adds flexbox.
 dropzonejs.widget:
   css:
     component:
       css/components/dropzonejs.widget.css: {}
 
+# Adds improved handling of sorting ui for entity browser.
 ui.sortable.with.fractionl.pixels:
   js:
     js/ui-sortable-with-fractional-pixels.js: {}
 
+# Additional styles for the toolbar/toolbar library.
 toolbar:
   css:
     component:
       css/components/toolbar.module.css: {}
 
+# Additional styles for the toolbar/toolbar library.
 toolbar.menu:
   css:
     state:
