@@ -53,6 +53,7 @@
     $chunk: str-slice($svg, $index, $index + $slice - 1);
     $chunk: str-replace($chunk, '"', '\'');
     $chunk: str-replace($chunk, '%', '%25');
+    $chunk: str-replace($chunk, " ", "%20");
     $chunk: str-replace($chunk, '#', '%23');
     $chunk: str-replace($chunk, '{', '%7B');
     $chunk: str-replace($chunk, '}', '%7D');
