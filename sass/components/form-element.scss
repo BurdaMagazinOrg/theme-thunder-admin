@@ -1,13 +1,8 @@
-// [TJW - refactor] NEW
-
 /**
- * Form element.
+ * @file
+ * Additional style updates for form element.
  */
 @import 'variables';
-
-.form-item {
-
-}
 
 .form-item__field-wrapper {
   display: flex;
@@ -24,7 +19,6 @@
 }
 
 /* form item description toggle functionality */
-
 .details__toggle-description,
 .form-item__toggle-description {
   padding: 0.5em;
@@ -56,6 +50,7 @@
     }
   }
 }
+
 /* stylelint-disable no-descending-specificity */
 .details__toggle-description {
   float: right;

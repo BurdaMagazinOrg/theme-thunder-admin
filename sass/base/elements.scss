@@ -1,6 +1,12 @@
+/**
+ * @file
+ * Generic html elements.
+ *
+ * Import and override elements.css provided by seven/global-styling.
+ */
 @import 'variables';
 
-// [TJW - refactor] New up until the seven import
+// Added up until the seven import.
 * {
   box-sizing: inherit;
 
@@ -15,10 +21,10 @@ html {
 }
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/base/elements.css remove {
+@import '@theme-seven/css/base/elements.css remove {
   body {}
   details { line-height }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 /* Generic elements. */

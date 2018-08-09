@@ -1,12 +1,17 @@
-// todo Refactor specificity.
+/**
+ * @file
+ * Import and override tabs.css provided by seven/global-styling.
+ *
+ * @todo Fix descending specificity.
+ */
 /* stylelint-disable no-descending-specificity */
 
 @import 'variables';
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/tabs.css remove {
+@import '@theme-seven/css/components/tabs.css remove {
   .is-collapse-enabled .tabs:before, .is-horizontal .tabs:before {}
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 // Added

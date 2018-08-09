@@ -1,1 +1,8 @@
-@import "@theme-seven/css/components/quickedit.css";
+/**
+ * @file
+ * Import quickedit.css provided by seven overriding quickedit_stylesheets.
+ *
+ * @see quickedit_library_info_alter()
+ * @todo [IMPORT_ONLY]
+ */
+@import '@theme-seven/css/components/quickedit.css';

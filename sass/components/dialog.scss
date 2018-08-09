@@ -1,8 +1,10 @@
 /**
+ * @file
  * Presentational styles for Drupal dialogs.
+ *
+ * Import and override content-header.css provided by seven/global-styling.
  */
-
-@import "variables";
+@import 'variables';
 
 @mixin browser-border($is-top: true) {
   border: 4px solid $primary-color-lightest;
@@ -14,19 +16,18 @@
   }
 }
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/dialog.css remove {
+@import '@theme-seven/css/components/dialog.css remove {
   .ui-dialog .ui-dialog-titlebar-close {}
   .ui-dialog .ui-dialog-titlebar-close:hover {}
   .ui-dialog .ui-dialog-titlebar-close:focus {}
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 .ui-dialog {
-  // background changed
-  // browser-border added
+
   .ui-dialog-titlebar {
     background: $primary-color-darker;
-    @include browser-border;
+    @include browser-border; // Added.
   }
 
   // :before pseudo selector added
@@ -42,7 +43,7 @@
     }
   }
 
-  // top changed
+  // Selector removed in import.
   .ui-dialog-titlebar-close {
     border: 0;
     background: none;
@@ -54,30 +55,20 @@
     position: absolute;
   }
 
-  // background: image url changed
   .ui-icon.ui-icon-closethick {
     background: url(../../images/icons/ex.svg) 0 0 no-repeat;
-    margin-top: -12px
+    margin-top: -12px;
   }
-  // background changed
-  // padding changed
-  // border-radius added
-  // browser-border added
+
   .ui-widget-content.ui-dialog-content {
     background: $gray-lightest;
     padding: 0.4em 1.2em 1.2em;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    @include browser-border(false)
+    border-bottom-left-radius: 5px; // Added.
+    border-bottom-right-radius: 5px; // Added.
+    @include browser-border(false); // Added.
   }
 
-  // background-image changed
   .ajax-progress-throbber {
     background-image: url(../../images/loading-small.gif);
   }
-}
-
-// NEW
-.views-ui-dialog .ui-widget-content.ui-dialog-content {
-  padding: 0;
 }
