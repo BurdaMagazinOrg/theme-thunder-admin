@@ -74,18 +74,18 @@
   margin:0.25em 0;
 }
 
-.entity-meta details > summary{
+.entity-meta .seven-details > summary{
   color:#dae0e3;
 }
 
-.entity-meta details > summary:hover{
+.entity-meta .seven-details > summary:hover{
   text-decoration:none;
 }
 
-.entity-meta details > summary .details-title{
+.entity-meta .seven-details > summary .details-title{
   color:#dae0e3;
 }
 
-.entity-meta details > summary .details-title:hover{
+.entity-meta .seven-details > summary .details-title:hover{
   text-decoration:none;
 }

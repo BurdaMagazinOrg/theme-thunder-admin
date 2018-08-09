@@ -137,7 +137,37 @@
   display:none;
 }
 
+.vertical-tabs{
+  background-color:#eaf6fe;
+}
+.vertical-tabs__menu li{
+  border-right:1px solid #a6a5a1;
+}
+
+.vertical-tabs__menu li.selected{
+  border-color:transparent;
+}
+
 .vertical-tabs__menu-item-title,
 .vertical-tabs__menu-item-summary{
   line-height:normal;
+}
+
+.vertical-tabs__menu-item.is-selected{
+  border-right:1px solid #eaf6fe;
+}
+
+[dir="rtl"] .vertical-tabs__menu-item.is-selected{
+  border-left:1px solid #eaf6fe;
+}
+
+.vertical-tabs__menu-item.is-selected a,
+.vertical-tabs__menu-item a:hover,
+.vertical-tabs__menu-item a:focus{
+  background:#eaf6fe;
+}
+
+[data-vertical-tabs-panes]{
+  background-color:#eaf6fe;
+  border-left:1px solid transparent;
 }

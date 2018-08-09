@@ -372,6 +372,7 @@ fieldset{
 
 .content-form__main > details,
 fieldset:not(.fieldgroup){
+  background-color:#eaf6fe;
   border-radius:2px;
   margin:1em 0;
   padding:30px 18px 18px;

@@ -1,12 +1,43 @@
 /**
  * @file
  * Import and override vertical-tabs.css from seven originally provided by core/drupal.vertical-tabs.
- *
- * @todo [IMPORT_ONLY]
  */
+@import 'variables';
+
 @import '@theme-seven/css/components/vertical-tabs.css';
+
+.vertical-tabs {
+  background-color: $primary-color-lightest;
+}
+
+/* 1. thunder_admin switched to border-box, this fixes border on selected tab. */
+.vertical-tabs__menu li {
+  border-right: 1px solid #a6a5a1; // - 1. -
+  &.selected {
+    border-color: transparent; // - 1. -
+  }
+}
 
 .vertical-tabs__menu-item-title,
 .vertical-tabs__menu-item-summary {
   line-height: normal;
+}
+
+.vertical-tabs__menu-item.is-selected {
+  border-right: 1px solid $primary-color-lightest; // Replace #fcfcfa.
+}
+
+[dir="rtl"] .vertical-tabs__menu-item.is-selected {
+  border-left: 1px solid $primary-color-lightest; // Replace #fcfcfa.
+}
+
+.vertical-tabs__menu-item.is-selected a,
+.vertical-tabs__menu-item a:hover,
+.vertical-tabs__menu-item a:focus{
+  background: $primary-color-lightest; // Replace #fcfcfa.
+}
+
+[data-vertical-tabs-panes]{
+  background-color: $primary-color-lightest; // Replace #fcfcfa.
+  border-left: 1px solid transparent; // - 1. -
 }
