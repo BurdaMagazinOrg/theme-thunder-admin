@@ -188,20 +188,7 @@ body{
   line-height:1.539;
   -webkit-font-smoothing:antialiased;
 }
-@-moz-document url-prefix(){
-  details summary::before{
-    content:'\25B6';
-    display:inline-block;
-    font-size:0.8em;
-    padding-right:0.5em;
-    position:relative;
-    text-decoration:none;
-    top:-2px;
-  }
-  details[open] > summary::before{
-    content:'\25BC';
-  }
-}
+
 img,
 video{
   display:inline-block;
