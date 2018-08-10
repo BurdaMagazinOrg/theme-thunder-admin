@@ -101,9 +101,9 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[16]/div', replace: 'xxxM' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/text()[1]', replace: 'Server time: 01 January 2018, 00:00:00 +00:00' },
     { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[19]/div/div/em[4]', replace: ' 01 January 2018, 00:00:00 +00:00 UTC UTC' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[22]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or ' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[24]/div/div', replace: 'Your server is not capable of displaying file upload progress.' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[25]/div/text()', replace: 'PHP 7.x.xx Development Server' }
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[23]/div/div/text()[2]', replace: ' was generated 00 hours 00 min ago. Run cron, or ' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[25]/div/div', replace: 'Your server is not capable of displaying file upload progress.' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[3]/div[3]/details[26]/div/text()', replace: 'PHP 7.x.xx Development Server' }
   ]},
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
