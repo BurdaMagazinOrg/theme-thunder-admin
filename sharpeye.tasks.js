@@ -175,5 +175,5 @@ module.exports = [
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' } */
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' }
 ];
