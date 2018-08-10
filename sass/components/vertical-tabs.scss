@@ -6,21 +6,17 @@
 
 @import '@theme-seven/css/components/vertical-tabs.css';
 
+/**
+ * 1. thunder_admin globally uses border-box,
+ * this does not work well with overlapping borders.
+ */
 .vertical-tabs {
-  background-color: $primary-color-lightest;
-}
-
-/* 1. thunder_admin switched to border-box, this fixes border on selected tab. */
-.vertical-tabs__menu li {
-  border-right: 1px solid #a6a5a1; // - 1. -
-  &.selected {
-    border-color: transparent; // - 1. -
-  }
+  box-sizing: content-box; // - 1. -
 }
 
 .vertical-tabs__menu-item-title,
 .vertical-tabs__menu-item-summary {
-  line-height: normal;
+  line-height: normal; // Fix spacing for multiple line item.
 }
 
 .vertical-tabs__menu-item.is-selected {
@@ -33,11 +29,10 @@
 
 .vertical-tabs__menu-item.is-selected a,
 .vertical-tabs__menu-item a:hover,
-.vertical-tabs__menu-item a:focus{
+.vertical-tabs__menu-item a:focus {
   background: $primary-color-lightest; // Replace #fcfcfa.
 }
 
-[data-vertical-tabs-panes]{
+[data-vertical-tabs-panes] {
   background-color: $primary-color-lightest; // Replace #fcfcfa.
-  border-left: 1px solid transparent; // - 1. -
 }

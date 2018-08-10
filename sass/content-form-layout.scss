@@ -83,12 +83,18 @@ $action-bar-height: 50px;
       padding-bottom: $action-bar-height;
     }
 
-    // #2910785 content is too big.
-    details > .details-wrapper {
-      padding-right: $advanced-sidebar-toggle-width; // add space for content-form__advanced-toggle
-      display: inline-block;
+    /**
+     * 1. Add space for content-form__advanced-toggle.
+     */
+    .entity-meta__header {
+      padding-right: $advanced-sidebar-toggle-width; // - 1. -
     }
 
+    // #2910785 content is too big.
+    details > .details-wrapper {
+      padding-right: $advanced-sidebar-toggle-width; // - 1. -
+      display: inline-block;
+    }
   }
 
   /* Show the toggle button for the advanced sidebar tray. */
@@ -104,7 +110,6 @@ $action-bar-height: 50px;
     bottom: 0;
     width: $advanced-sidebar-toggle-width;
   }
-
 
   /* A vertical toolbar layout */
   &.toolbar-vertical {

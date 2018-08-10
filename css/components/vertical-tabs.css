@@ -136,16 +136,8 @@
 .vertical-tabs__pane > summary{
   display:none;
 }
-
 .vertical-tabs{
-  background-color:#eaf6fe;
-}
-.vertical-tabs__menu li{
-  border-right:1px solid #a6a5a1;
-}
-
-.vertical-tabs__menu li.selected{
-  border-color:transparent;
+  box-sizing:content-box;
 }
 
 .vertical-tabs__menu-item-title,
@@ -169,5 +161,4 @@
 
 [data-vertical-tabs-panes]{
   background-color:#eaf6fe;
-  border-left:1px solid transparent;
 }
