@@ -147,7 +147,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
   { name: 'Check details element in frontend', path: '/node/7/edit', actions: [
-    { $: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 1000 }
+    { $: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 50000 }
   ]},
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]', offset: -150 },
