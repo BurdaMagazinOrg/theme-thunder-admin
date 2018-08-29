@@ -1,12 +1,12 @@
 details.fieldset-no-legend{
   padding-top:0;
 }
-#views-ui-add-form details details .details-wrapper{
+#views-ui-add-form details details .seven-details__wrapper{
   padding-left:0;
   padding-right:0;
 }
 
-.views-display-tab details.box-padding .details-wrapper{
+.views-display-tab details.box-padding .seven-details__wrapper{
   padding:0;
 }
 

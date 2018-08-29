@@ -361,6 +361,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   padding: 20px 20px 20px 0;
   color: $gray-medium;
 
+  // Remove additional spacing inside paragraph subforms.
+  tr.odd & .form-item,
+  tr.even & .form-item {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   // Different colors, for better contrast
   a, .link {
     color: $primary-color;
@@ -536,12 +543,19 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
 
   }
+
   fieldset:not(.fieldgroup) {
+    background-color: transparent;
     padding: 30px 0 0;
     border: 0;
     legend {
       margin: 0.3em;
     }
+  }
+  .seven-details__summary:hover,
+  .seven-details__summary:focus,
+  .seven-details[open] > .seven-details__summary {
+    color: inherit; // $gray-medium
   }
 
   /**

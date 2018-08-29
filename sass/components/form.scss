@@ -48,6 +48,7 @@ fieldset {
 // background-color removed
 .content-form__main > details,
 fieldset:not(.fieldgroup) {
+  background-color: $primary-color-lightest;
   border-radius: 2px;
   margin: 1em 0;
   padding: 30px 18px 18px;

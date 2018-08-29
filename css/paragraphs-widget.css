@@ -580,6 +580,12 @@ tr:hover .paragraphs-collapsed-description::after{
   color:#979797;
 }
 
+tr.odd .paragraph-form-item--has-subform .form-item,
+tr.even .paragraph-form-item--has-subform .form-item{
+  margin-top:0;
+  margin-bottom:0;
+}
+
 .paragraph-form-item--has-subform a, .paragraph-form-item--has-subform .link{
   color:#1293c9;
 }
@@ -730,12 +736,19 @@ tr:hover .paragraphs-collapsed-description::after{
 }
 
 .paragraph-form-item--has-subform fieldset:not(.fieldgroup){
+  background-color:transparent;
   padding:30px 0 0;
   border:0;
 }
 
 .paragraph-form-item--has-subform fieldset:not(.fieldgroup) legend{
   margin:0.3em;
+}
+
+.paragraph-form-item--has-subform .seven-details__summary:hover,
+.paragraph-form-item--has-subform .seven-details__summary:focus,
+.paragraph-form-item--has-subform .seven-details[open] > .seven-details__summary{
+  color:inherit;
 }
 
 .paragraph-form-item--has-subform .paragraph-type-info{

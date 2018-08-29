@@ -68,6 +68,10 @@
     border-left: 5px solid $primary-color-intense;
     top: 1rem;
   }
+
+  .seven-details {
+    background-color: transparent;
+  }
 }
 
 .entity-meta--advanced {
@@ -78,7 +82,7 @@
   margin: $base-space 0 $base-space $base-space-2x;
 
   .entity-meta__header,
-  details {
+  .seven-details {
     background: transparent;
     border-top: 0;
     border-bottom: 0;
@@ -89,17 +93,21 @@
     text-shadow: none;
   }
 
-  details {
+  .seven-details {
     border-top: 2px solid $primary-color-dark;
     border-bottom: 2px solid $primary-color-dark;
 
-    & + details {
+    & + .seven-details {
       border-top: 0;
     }
 
     &[open] {
       background-image: none;
       border-top-width: 2px;
+
+      & > .seven-details__summary {
+        color: $gray-lighter;
+      }
     }
 
     & > summary {

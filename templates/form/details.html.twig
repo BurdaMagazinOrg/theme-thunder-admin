@@ -14,10 +14,11 @@
  * @see template_preprocess_details()
  */
 #}
-<details{{ attributes }} data-form-description-container>
+<details{{ attributes.addClass('seven-details') }} data-form-description-container>
   {%- if title -%}
     {%
       set summary_classes = [
+        'seven-details__summary',
         required ? 'js-form-required',
         required ? 'form-required',
       ]
@@ -29,14 +30,14 @@
       {%- endif -%}
     </summary>
   {%- endif -%}
-  <div class="details-wrapper">
+  <div class="seven-details__wrapper details-wrapper">
     {% if errors %}
       <div class="form-item--error-message">
         <strong>{{ errors }}</strong>
       </div>
     {% endif %}
     {%- if description -%}
-      <div class="js-details-description details-description">{{ description }}</div>
+      <div class="seven-details__description js-details-description details-description">{{ description }}</div>
     {%- endif -%}
     {%- if children -%}
       {{ children }}
