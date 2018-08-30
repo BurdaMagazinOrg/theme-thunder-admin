@@ -158,6 +158,16 @@ function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_
   if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
     _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
     $form['#theme'] = ['node_edit_form'];
+
+    if (isset($form['moderation_state']) && !isset($form['moderation_state']['widget'][0]['current'])) {
+      $form['actions']['submit']['#value'] = t('Save as');
+
+      unset($form['moderation_state']['#group']);
+      $form['moderation_state']['#weight'] = 10;
+
+      $form['actions']['moderation_state'] = $form['moderation_state'];
+      unset($form['moderation_state']);
+    }
   }
 }
 

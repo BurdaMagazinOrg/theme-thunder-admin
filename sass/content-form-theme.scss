@@ -39,11 +39,42 @@
   z-index: 101;
 
   .button--danger {
-    margin: 0;
+    margin: 12px;
     text-transform: none;
     color: $gray-light;
     font-size: 14px;
     font-weight: bold;
+  }
+
+  .field--widget-thunder-moderation-state-default {
+    display: inline;
+    .form-item-moderation-state-0 {
+      margin: 0;
+      display: inline;
+
+      select {
+        min-height: 30px;
+      }
+    }
+  }
+
+  .status {
+    display: inline;
+    float: right;
+    padding: 8px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: $gray-lightest;
+  }
+  .status.draft {
+    background-color: $primary-color-light;
+  }
+  .status.published {
+    background-color: $primary-color-dark;
+  }
+  .status.unpublished {
+    background-color: $gray-medium;
   }
 }
 
