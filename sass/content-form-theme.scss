@@ -55,6 +55,12 @@
       select {
         min-height: 30px;
       }
+
+      @media screen and (-moz-device-pixel-ratio) {
+        select {
+          padding-top: 4px;
+        }
+      }
     }
   }
 

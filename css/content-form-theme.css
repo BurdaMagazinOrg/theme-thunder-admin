@@ -50,6 +50,12 @@
   min-height:30px;
 }
 
+@media screen and (-moz-device-pixel-ratio){
+  .content-form__actions .field--widget-thunder-moderation-state-default .form-item-moderation-state-0 select{
+    padding-top:4px;
+  }
+}
+
 .content-form__actions .status{
   display:inline;
   float:right;
