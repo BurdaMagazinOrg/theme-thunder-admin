@@ -1,10 +1,12 @@
-// [TJW - refactor] todo: taken from thunder_media module?
+/**
+ * @file
+ * Replaces media_entity_browser.view.css from thunder_media/entity_browser_view.
+ */
 
 /**
  * @media-entity media_entity_browser.view.css
  */
-
-@import "variables";
+@import 'variables';
 
 .view-media-entity-browser {
   margin-bottom: 10px;

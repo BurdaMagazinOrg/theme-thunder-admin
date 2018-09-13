@@ -1,5 +1,9 @@
 /**
- * Form elements.
+ * @file
+ * Styling form elements.
+ *
+ * Import and override form.css provided by classy/base and seven/global-styling.
+ *
  * @todo: This needs to be divided into clear partials or sections, atm this is
  *        a mess copied together from Classy and Seven
  */
@@ -11,9 +15,9 @@
  * Removed font-size inherit from label (classy) [Refactor]
  */
 /* stylelint-disable string-no-newline */
-@import "@theme-classy/css/components/form.css remove {
+@import '@theme-classy/css/components/form.css remove {
   .form-composite>legend, .label { font-size }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 // Fixed relative urls in classy by copying images here.
@@ -26,12 +30,12 @@
 
 /* ------------------------ copied from Seven form.css ---------------------- */
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/components/form.css remove {
+@import '@theme-seven/css/components/form.css remove {
   fieldset:not(.fieldgroup) {}
   @-moz-document url-prefix() { fieldset:not(.fieldgroup) {} }
   fieldset:not(.fieldgroup)>legend {}
   input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, input.form-date, input.form-time, textarea.form-textarea { box-sizing }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 // This was added
@@ -44,6 +48,7 @@ fieldset {
 // background-color removed
 .content-form__main > details,
 fieldset:not(.fieldgroup) {
+  background-color: $primary-color-lightest;
   border-radius: 2px;
   margin: 1em 0;
   padding: 30px 18px 18px;

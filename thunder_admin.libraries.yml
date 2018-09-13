@@ -3,6 +3,7 @@ global-styling:
   css:
     base:
       css/base/elements.css: {}
+      css/base/typography.css: {}
       css/base/print.css: {}
     component:
       css/components/admin-list.css: {}
@@ -11,47 +12,41 @@ global-styling:
       css/components/container-inline.module.css: {}
       css/components/breadcrumb.css: {}
       css/components/buttons.css: {}
-      css/components/colors.css: {}
+      css/components/details.css: {}
       css/components/messages.css: {}
-      css/components/dropbutton.css: {}
+      css/components/dropbutton.component.css: {}
       css/components/entity-meta.css: {}
       css/components/field-ui.css: {}
       css/components/form.css: {}
-      css/components/form-element.css: {}
+      css/components/form-element.css: {} # Added.
       css/components/help.css: {}
-      css/components/media-form.css: {}
+      css/components/media-form.css: {} # Added.
       css/components/menus-and-lists.css: {}
       css/components/modules-page.css: {}
       css/components/node.css: {}
       css/components/page-title.css: {}
       css/components/pager.css: {}
       css/components/panel.css: {}
-      css/components/search-admin-settings.css: {}
       css/components/skip-link.css: {}
-      css/components/system-status-report.css: {}
-      css/components/tabledrag.css: {}
       css/components/tables.css: {}
+      css/components/search-admin-settings.css: {}
+      css/components/tabledrag.css: {} # Added.
       css/components/tablesort-indicator.css: {}
-      css/components/tabs.css: {}
       css/components/system-status-report-general-info.css: {}
       css/components/system-status-report.css: {}
       css/components/system-status-report-counters.css: {}
       css/components/system-status-counter.css: {}
-      css/components/user.css: {}
+      css/components/tabs.css: {}
+      css/components/user.css: {} # Added.
       css/components/views-ui.css: {}
     theme:
+      css/theme/colors.css: {}
       css/backend.css: {}
       css/color-scheme-inverted.css: {}
     layout:
       css/layout/layout.css: {}
   dependencies:
     - system/admin
-
-# Copied from seven.
-ckeditor-dialog:
-  css:
-    theme:
-      css/ckeditor-dialog.css: {}
 
 # Seven has a node-form lib.
 # theming for node and taxonomy forms attached via the template
@@ -60,41 +55,16 @@ content-form:
     theme:
       css/content-form-theme.css: {}
 
-# Copied from seven.drupal.dialog
-drupal.dialog:
-  css:
-    theme:
-      css/components/dialog.css: {}
-
-# Copied from seven.
-drupal.nav-tabs:
-  js:
-    js/navigation.js: {}
-    js/nav-tabs.js: {}
-  dependencies:
-    - core/matchmedia
-    - core/jquery
-    - core/drupal
-    - core/jquery.once
-    - core/drupal.debounce
-
-# Copied from seven.
-drupal.responsive-detail:
-  version: VERSION
-  js:
-    js/responsive-details.js: {}
-  dependencies:
-    - core/matchmedia
-    - core/matchmedia.addListener
-    - core/jquery
-    - core/jquery.once
-    - core/collapse
-
 # Additional entity_browser themeing.
 entity_browser.tabs:
   css:
     component:
       css/components/entity_browser.tabs.css: {}
+
+# Additional javascript handling for nav tabs, extends seven/drupal.nav-tabs.
+drupal.nav-tabs:
+  js:
+    js/navigation.js: {}
 
 # layout and functionality for content forms with advanced sidebar (replaces what is done in node.module.css)
 form-advanced-sidebar-tray:
@@ -104,6 +74,7 @@ form-advanced-sidebar-tray:
     layout:
       css/content-form-layout.css: {}
 
+# Adds visibility toggling of form descriptions.
 form-toggle-description:
   js:
     js/form-toggle-description.js: {}
@@ -111,42 +82,7 @@ form-toggle-description:
     - core/jquery
     - core/jquery.once
 
-# Copied from seven.
-install-page:
-  js:
-    js/mobile.install.js: {}
-  css:
-    theme:
-      css/install-page.css: {}
-  dependencies:
-    - thunder_admin/maintenance-page
-
-# Copied from seven.jquery.ui
-jquery.ui:
-  css:
-    component:
-      css/components/jquery.ui.css: { weight: -1 }
-
-# Copied from seven.
-maintenance-page:
-  js:
-    js/mobile.install.js: {}
-  css:
-    theme:
-      css/maintenance-page.css: {}
-  dependencies:
-    - system/maintenance
-    - thunder_admin/global-styling
-
-# Copied from seven
-media-form:
-  version: VERSION
-  css:
-    layout:
-      css/components/media.css: {}
-  dependencies:
-    - media/form
-
+# Adds ux functionality to paragraphs widgets.
 paragraphs.adjustments:
   js:
     js/paragraphs.js: {}
@@ -155,6 +91,7 @@ paragraphs.bottom.add:
   js:
     js/paragraphs.bottom.add.js: {}
 
+# Additional styles for to paragraphs widget.
 paragraphs.widget:
   css:
     theme:
@@ -169,36 +106,29 @@ paragraphs.widget:
     - core/jquery.once
     - core/drupal.tabledrag
 
+# Additional "click to edit" functionality for the Paragraph widget.
 tabledrag.tabindex:
   js:
     js/tabledrag.tabindex.js: {}
 
-# Copied from seven.
-tour-styling:
-  css:
-    theme:
-      css/components/tour.theme.css: {}
-
-# Copied from seven.
-vertical-tabs:
-  css:
-    component:
-      css/components/vertical-tabs.css: {}
-
+# Adds flexbox.
 dropzonejs.widget:
   css:
     component:
       css/components/dropzonejs.widget.css: {}
 
+# Adds improved handling of sorting ui for entity browser.
 ui.sortable.with.fractionl.pixels:
   js:
     js/ui-sortable-with-fractional-pixels.js: {}
 
+# Additional styles for the toolbar/toolbar library.
 toolbar:
   css:
     component:
       css/components/toolbar.module.css: {}
 
+# Additional styles for the toolbar/toolbar library.
 toolbar.menu:
   css:
     state:

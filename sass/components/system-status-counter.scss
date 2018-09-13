@@ -1,4 +1,8 @@
-@import "@theme-seven/css/components/system-status-counter.css";
+/**
+ * @file
+ * Import and override system-status-counter.css from seven originally provided by system/base.
+ */
+@import '@theme-seven/css/components/system-status-counter.css';
 
 .system-status-counter__status-icon--error:before {
   background-image: url(../../images/stable/images/core/icons/e32700/error.svg);

@@ -1,5 +1,7 @@
-// [TJW - refactor] TODO
-
+/**
+ * @file
+ * Additional styles for paragraphs/drupal.paragraphs.widget, added using libraries-extend.
+ */
 @import 'variables';
 
 /* stylelint-disable plugin/no-browser-hacks */
@@ -13,13 +15,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 /* stylelint-enable plugin/no-browser-hacks */
 
 /* stylelint-disable string-no-newline */
-@import "@module-paragraphs/css/paragraphs.widget.css remove {
+@import '@module-paragraphs/css/paragraphs.widget.css remove {
   @media (max-width: 768px) { .button.paragraphs-icon-button {} }
   .js .field--widget-paragraphs td { padding }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
-/*
+/**
  * Media screen size defined by paragraphs module to adjust style for tablets and phones.
  */
 @mixin for-paragraphs-tablet-and-phone {
@@ -143,7 +145,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  */
 .paragraphs-actions {
 
-  /*
+  /**
    * 1. make some space between information text and collapse and drop-down buttons.
    */
   margin-left: $base-space; /* 1 */
@@ -194,7 +196,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
      * Override and add icon styles provided by paragraphs module (with defined colors for default, hover and disabled).
      */
     &.paragraph-form-item__action--edit {
-      @include inline-svg-button('<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M2 17.2V21h3.8l11-11.1L13 6.1 2 17.2zM19.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.4-.4-1-.4-1.4 0l-1.8 1.8L18 8.9 19.7 7zM11 19l-2 2h13v-2H11z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium))
+      @include inline-svg-button('<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#787878" d="M2 17.2V21h3.8l11-11.1L13 6.1 2 17.2zM19.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.4-.4-1-.4-1.4 0l-1.8 1.8L18 8.9 19.7 7zM11 19l-2 2h13v-2H11z"/></svg>', ('#787878': $primary-color), ('#787878': $primary-color-dark), ('#787878': $gray-medium));
     }
 
     &.paragraph-form-item__action--remove {
@@ -217,7 +219,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     flex: 1 1 100%;
   }
 
-  /*
+  /**
    * Max height is defined for wrapping paragraphs element in preview,
    * because it breaks layout on smaller screen sizes.
    */
@@ -241,7 +243,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       width: 160px;
     }
 
-    /*
+    /**
      * 1. Max width blocks div element with paragraphs type + icon and also information icon (fe. warning icon),
      *    to take too much space, because then not enough space for summary will break paragraphs in two lines.
      */
@@ -315,7 +317,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    /*
+    /**
      * Tweak for drop-down toggle button provided by paragraphs.
      */
     .paragraphs-dropdown-toggle {
@@ -329,7 +331,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       }
     }
 
-    /*
+    /**
      * Tweak for position of drop-down menu for drop-down toggle button provided by paragraphs.
      */
     .paragraphs-dropdown-actions {
@@ -337,7 +339,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  /*
+  /**
    * 1. align information icon (fe. warning icon after editing) to left from paragraph type icon + text.
    *    The element with icon is a 2nd element in flex and to position it as the first negative order is used.
    */
@@ -359,6 +361,13 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   padding: 20px 20px 20px 0;
   color: $gray-medium;
 
+  // Remove additional spacing inside paragraph subforms.
+  tr.odd & .form-item,
+  tr.even & .form-item {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   // Different colors, for better contrast
   a, .link {
     color: $primary-color;
@@ -372,7 +381,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     order: 10;
     margin-right: 24px;
 
-    /*
+    /**
      * 1. When paragraph type has long label, then UI get broken and
      *    it's not possible to access action buttons. Also Layout is broken.
      * @todo Needs to be discussed, hide for now.
@@ -463,7 +472,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
   }
 
-  .paragraphs-subform >.field--widget-entity-browser-entity-reference {
+  .field--name-field-video,
+  .field--name-field-image {
+
     details {
       margin: 0;
       border: 0;
@@ -532,15 +543,22 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     }
 
   }
+
   fieldset:not(.fieldgroup) {
+    background-color: transparent;
     padding: 30px 0 0;
     border: 0;
     legend {
       margin: 0.3em;
     }
   }
+  .seven-details__summary:hover,
+  .seven-details__summary:focus,
+  .seven-details[open] > .seven-details__summary {
+    color: inherit; // $gray-medium
+  }
 
-  /*
+  /**
    * 1. align information text to left from collapse and drop-down buttons.
    */
   .paragraph-type-info {
@@ -751,4 +769,4 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  ul.paragraphs-add-dialog-list input.field-add-more-submit {
     background-image: none;
  }
- 
+

@@ -1,11 +1,10 @@
-@import "@theme-seven/css/components/messages.css";
-
 /**
- * Messages.
+ * @file
+ * Import and override messages.css provided by seven/global-styling.
  */
+@import '@theme-seven/css/components/messages.css';
 
-// [TJW - refactor] NEW from here to bottom
-
+/* Additional styles for drupal messages. */
 .messages {
   background: no-repeat 10px 10px;  /* LTR */
   border: 1px solid;

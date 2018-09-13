@@ -1,6 +1,9 @@
-@import "variables";
-
-@import "@theme-seven/css/components/jquery.ui/theme.css";
+/**
+ * @file
+ * Import and override jquery.ui/theme.css provided by seven/global-styling.
+ */
+@import 'variables';
+@import '@theme-seven/css/components/jquery.ui/theme.css';
 
 .ui-icon {
   background-image: url(../../images/ui-icons-222222-256x240.png);

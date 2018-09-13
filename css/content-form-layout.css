@@ -49,6 +49,10 @@
   padding-bottom:50px;
 }
 
+.js body.advanced-sidebar-tray .content-form__advanced .entity-meta__header{
+  padding-right:40px;
+}
+
 .js body.advanced-sidebar-tray .content-form__advanced details > .details-wrapper{
   padding-right:40px;
   display:inline-block;

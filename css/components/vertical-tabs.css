@@ -136,3 +136,29 @@
 .vertical-tabs__pane > summary{
   display:none;
 }
+.vertical-tabs{
+  box-sizing:content-box;
+}
+
+.vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item-summary{
+  line-height:normal;
+}
+
+.vertical-tabs__menu-item.is-selected{
+  border-right:1px solid #eaf6fe;
+}
+
+[dir="rtl"] .vertical-tabs__menu-item.is-selected{
+  border-left:1px solid #eaf6fe;
+}
+
+.vertical-tabs__menu-item.is-selected a,
+.vertical-tabs__menu-item a:hover,
+.vertical-tabs__menu-item a:focus{
+  background:#eaf6fe;
+}
+
+[data-vertical-tabs-panes]{
+  background-color:#eaf6fe;
+}

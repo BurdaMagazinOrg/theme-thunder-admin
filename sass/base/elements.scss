@@ -1,6 +1,12 @@
+/**
+ * @file
+ * Generic html elements.
+ *
+ * Import and override elements.css provided by seven/global-styling.
+ */
 @import 'variables';
 
-// [TJW - refactor] New up until the seven import
+// Added up until the seven import.
 * {
   box-sizing: inherit;
 
@@ -15,10 +21,10 @@ html {
 }
 
 /* stylelint-disable string-no-newline */
-@import "@theme-seven/css/base/elements.css remove {
+@import '@theme-seven/css/base/elements.css remove {
   body {}
   details { line-height }
-}";
+}';
 /* stylelint-enable string-no-newline */
 
 /* Generic elements. */
@@ -31,25 +37,6 @@ body {
   line-height: $line-height-base; // added
   -webkit-font-smoothing: antialiased; // added
 }
-
-/* Remove after #2873390 has landed */
-@-moz-document url-prefix() {
-
-  details summary::before {
-    content: '\25B6';
-    display: inline-block;
-    font-size: 0.8em;
-    padding-right: 0.5em;
-    position: relative;
-    text-decoration: none;
-    top: -2px;
-  }
-
-  details[open] > summary::before {
-    content: '\25BC';
-  }
-}
-/* /#2873390 */
 
 // video selector added
 img,
