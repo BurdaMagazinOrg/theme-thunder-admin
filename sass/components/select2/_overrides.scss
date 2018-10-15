@@ -1,0 +1,96 @@
+/**
+ * Copied and aligned select2.seven-overrides.css from select2 module.
+ *
+ * Removed wrapping .select2-container--seven class, since import is below, see select2.scss..
+ */
+
+/* Copied from seven/form.css */
+// Removed background, box-sizing
+.select2-selection--single,
+.select2-selection--multiple {
+  min-height: 35px; // Added.
+  background: #fff; // Changed.
+  border: 1px solid $gray-lighter; // Changed.
+  border-radius: $base-border-radius;
+  max-width: 100%;
+  box-shadow: none; // reset box-shadow (seven)
+  font-size: 1em;
+  color: $text-color;
+  transition: border linear 0.2s;
+}
+
+&.select2-container--focus .select2-selection--multiple {
+  border: solid $primary-color-intense 1px; // Changed color.
+}
+
+.select2-selection--single .select2-selection__placeholder {
+  color: #757575;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  color: #595959;
+  padding-left: 6px;
+  line-height: 31px;
+}
+
+.select2-search--inline .select2-search__field {
+  padding-top: 6px;
+}
+
+// Removed font-size
+ul li.select2-results__message {
+  color: #595959;
+}
+
+// See .ui-menu-item-wrapper
+ul li.select2-results__option {
+  padding: 3px 1em 3px .4em;
+}
+.select2-search--dropdown .select2-search__field {
+  border: 1px solid $gray-lighter; // Changed
+}
+.select2-results__option[aria-selected=true] {
+  background-color: $gray-lightest; // Changed.
+}
+.select2-results__option--highlighted[aria-selected] {
+  background-color: $primary-color-dark; // Changed color.
+}
+/* New */
+
+.select2-dropdown {
+  border-color: $gray-lighter; // Changed
+  border-radius: 4px;
+}
+.select2-dropdown--above {
+  border-bottom: 1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.select2-dropdown--below {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.select2-selection--multiple:focus,
+.select2-selection--single:focus,
+.select2-search--dropdown .select2-search__field:focus {
+  border-color: $primary-color-intense; // Changed color.
+  outline: 0;
+//  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 8px $primary-color-intense;// Changed color.
+  background-color: #fff;
+}
+
+.select2-selection--multiple .select2-selection__choice {
+  background-color: $gray-lightest; // Added.
+  background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%); // Added.
+  border: 1px solid $primary-color-intense; // Added.
+  color: $primary-color; // Added.
+  padding: 3px 7px; // See
+  white-space: normal;
+}
+
+.select2-selection--multiple .select2-selection__choice__remove {
+  color: $primary-color; // Added.
+  &:hover {
+    color: $primary-color-dark; // Added.
+  }
+}

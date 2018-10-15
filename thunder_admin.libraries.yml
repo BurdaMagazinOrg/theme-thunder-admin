@@ -122,6 +122,12 @@ ui.sortable.with.fractionl.pixels:
   js:
     js/ui-sortable-with-fractional-pixels.js: {}
 
+# Select2 theme.
+select2.theme:
+  css:
+    component:
+      css/components/select2/layout.css: {}
+
 # Additional styles for the toolbar/toolbar library.
 toolbar:
   css:
