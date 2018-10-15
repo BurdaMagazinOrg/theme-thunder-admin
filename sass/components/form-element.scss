@@ -92,7 +92,9 @@ body:not(.entity-add-or-edit-form) {
   }
 }
 
-.form-type-vertical-tabs {
+.form-type-vertical-tabs,
+.form-type-table,
+#edit-filters-status {
   > .form-item__field-wrapper {
     display: block;
   }

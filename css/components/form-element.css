@@ -80,7 +80,9 @@ body:not(.entity-add-or-edit-form) .form-item__toggle-description{
   transition:all 0.3s;
 }
 
-.form-type-vertical-tabs > .form-item__field-wrapper{
+.form-type-vertical-tabs > .form-item__field-wrapper,
+.form-type-table > .form-item__field-wrapper,
+#edit-filters-status > .form-item__field-wrapper{
   display:block;
 }
 
