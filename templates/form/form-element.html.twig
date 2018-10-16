@@ -78,7 +78,7 @@
     </div>
   {% endif %}
 
-  <div class="form-item__field-wrapper">
+  <div class="form-item__field-wrapper{% if description.content %} form-item__field-wrapper--has-description{% endif %}">
     {% if prefix is not empty %}
       <span class="field-prefix">{{ prefix }}</span>
     {% endif %}
