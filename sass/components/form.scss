@@ -83,18 +83,9 @@ fieldset:not(.fieldgroup) > legend {
 }
 // Different margin & text-transform added
 label {
-  margin: 0 0 0 0.3em;
+  //margin: 0 0 0 0.3em;
   text-transform: uppercase;
 }
-// New
-.form-type-radio,
-.form-type-checkbox {
-  label {
-    font-size: $font-size-small;
-  }
-}
-
-
 
 /* @todo [Refactor] Remove the whole block and fix /admin/modules */
 /* START styles for descriptions */

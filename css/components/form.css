@@ -397,13 +397,7 @@ fieldset:not(.fieldgroup) > legend{
 }
 
 label{
-  margin:0 0 0 0.3em;
   text-transform:uppercase;
-}
-
-.form-type-radio label,
-.form-type-checkbox label{
-  font-size:0.6875rem;
 }
 .tips,
 .description,
