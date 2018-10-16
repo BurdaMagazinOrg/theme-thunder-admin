@@ -119,6 +119,32 @@ label {
   margin-left: 0;
   margin-right: 1.5em;
 }
+
+/**
+ * Fix labels for checkbox and radio by using flex-box for all checkboxes.
+ * @see .form-item__field-wrapper--has-description
+ */
+.form-type-checkbox,
+.form-type-radio {
+  > .form-item__field-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 22px; // Same height as description toggle.
+  }
+
+  label {
+    margin-left: 0.5em;
+  }
+
+  .form-item__description {
+    margin-top: 0;
+  }
+
+  &.is-description-visible .form-item__description {
+    margin-top: 0.2em;
+  }
+}
+
 /* END styles for descriptions */
 
 // Border radius & font-size removed (todo) / overriden with next style (only when combined with input)

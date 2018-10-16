@@ -425,6 +425,27 @@ label{
   margin-left:0;
   margin-right:1.5em;
 }
+.form-type-checkbox > .form-item__field-wrapper,
+.form-type-radio > .form-item__field-wrapper{
+  display:flex;
+  align-items:center;
+  min-height:22px;
+}
+
+.form-type-checkbox label,
+.form-type-radio label{
+  margin-left:0.5em;
+}
+
+.form-type-checkbox .form-item__description,
+.form-type-radio .form-item__description{
+  margin-top:0;
+}
+
+.form-type-checkbox.is-description-visible .form-item__description,
+.form-type-radio.is-description-visible .form-item__description{
+  margin-top:0.2em;
+}
 .form-text,
 .form-textarea{
   line-height:normal;
