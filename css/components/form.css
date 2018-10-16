@@ -397,6 +397,7 @@ fieldset:not(.fieldgroup) > legend{
 }
 
 label{
+  margin:0 0 0 0.3em;
   text-transform:uppercase;
 }
 .tips,
