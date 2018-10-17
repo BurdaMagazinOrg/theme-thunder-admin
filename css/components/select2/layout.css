@@ -260,13 +260,11 @@
 
 .select2-container--thunder_admin .select2-selection--single .select2-selection__placeholder{
   color:#757575;
-  margin-top:5px;
 }
 
 .select2-container--thunder_admin .select2-selection--single .select2-selection__rendered{
-  line-height:1.846em;
-  padding-top:0.3em;
-  padding-left:0.5em;
+  padding:0.3em 0.4em 0.3em 0.5em;
+  line-height:1.9384em;
 }
 
 .select2-container--thunder_admin .select2-selection--single .select2-selection__arrow{
