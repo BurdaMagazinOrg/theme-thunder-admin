@@ -4,7 +4,7 @@
  */
 @import 'variables';
 
-.form-item__field-wrapper {
+.form-item__field-wrapper--has-description {
   display: flex;
   align-items: center;
 
@@ -89,12 +89,6 @@ body:not(.entity-add-or-edit-form) {
     max-height: 5000px;
     opacity: 1;
     transition: all 0.3s;
-  }
-}
-
-.form-type-vertical-tabs {
-  > .form-item__field-wrapper {
-    display: block;
   }
 }
 

@@ -1,14 +1,14 @@
-.form-item__field-wrapper{
+.form-item__field-wrapper--has-description{
   display:flex;
   align-items:center;
 }
 
-.form-item__field-wrapper .field-suffix{
+.form-item__field-wrapper--has-description .field-suffix{
   padding-left:5px;
 }
 
-.form-item__field-wrapper .form-textarea-wrapper,
-.form-item__field-wrapper .image-style-preview{
+.form-item__field-wrapper--has-description .form-textarea-wrapper,
+.form-item__field-wrapper--has-description .image-style-preview{
   flex:1 1 auto;
 }
 .details__toggle-description,
@@ -78,10 +78,6 @@ body:not(.entity-add-or-edit-form) .form-item__toggle-description{
   max-height:5000px;
   opacity:1;
   transition:all 0.3s;
-}
-
-.form-type-vertical-tabs > .form-item__field-wrapper{
-  display:block;
 }
 
 #edit-title-wrapper,

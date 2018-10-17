@@ -24,7 +24,7 @@
   {% if title %}
     <label{{ title_attributes.addClass(title_classes) }}>{{ title }}</label>
   {% endif %}
-  <div class="form-item__field-wrapper">
+  <div class="form-item__field-wrapper{% if description %} form-item__field-wrapper--has-description{% endif %}">
     {{ content }}
     {% if description %}
       {% include '@thunder_admin/button-description-toggle.html.twig' with {'class': 'form-item__toggle-description'} %}
