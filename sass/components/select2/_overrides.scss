@@ -26,6 +26,10 @@
 
 .select2-search--inline .select2-search__field {
   padding-top: 0.23em; // 3/13
+
+  &::placeholder {
+    color: $text-color;
+  }
 }
 
 &.select2-container--focus .select2-selection--multiple {
@@ -35,7 +39,7 @@
 // Single widget.
 .select2-selection--single {
   .select2-selection__placeholder {
-    color: #757575;
+    color: $text-color;
   }
 
   // Align layout, see seven form.css (input.form-text).
@@ -46,13 +50,25 @@
 
   .select2-selection__arrow {
     top: 4px;
+
+    b {
+      border-color: $text-color transparent transparent transparent;
+      border-style: solid;
+      border-width: 6px 5px 0 4px;
+      margin-left: -5px;
+    }
   }
+}
+
+&.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent $text-color transparent;
+  border-width: 0 5px 6px 4px;
 }
 
 
 // Removed font-size
 ul li.select2-results__message {
-  color: #595959;
+  color: $text-color;
 }
 
 // See .ui-menu-item-wrapper

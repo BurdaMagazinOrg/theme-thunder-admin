@@ -254,12 +254,28 @@
   padding-top:0.23em;
 }
 
+.select2-container--thunder_admin .select2-search--inline .select2-search__field::-webkit-input-placeholder{
+  color:#07364a;
+}
+
+.select2-container--thunder_admin .select2-search--inline .select2-search__field:-ms-input-placeholder{
+  color:#07364a;
+}
+
+.select2-container--thunder_admin .select2-search--inline .select2-search__field::-ms-input-placeholder{
+  color:#07364a;
+}
+
+.select2-container--thunder_admin .select2-search--inline .select2-search__field::placeholder{
+  color:#07364a;
+}
+
 .select2-container--thunder_admin.select2-container--focus .select2-selection--multiple{
   border:solid #009fe3 1px;
 }
 
 .select2-container--thunder_admin .select2-selection--single .select2-selection__placeholder{
-  color:#757575;
+  color:#07364a;
 }
 
 .select2-container--thunder_admin .select2-selection--single .select2-selection__rendered{
@@ -271,8 +287,20 @@
   top:4px;
 }
 
+.select2-container--thunder_admin .select2-selection--single .select2-selection__arrow b{
+  border-color:#07364a transparent transparent transparent;
+  border-style:solid;
+  border-width:6px 5px 0 4px;
+  margin-left:-5px;
+}
+
+.select2-container--thunder_admin.select2-container--open .select2-selection--single .select2-selection__arrow b{
+  border-color:transparent transparent #07364a transparent;
+  border-width:0 5px 6px 4px;
+}
+
 .select2-container--thunder_admin ul li.select2-results__message{
-  color:#595959;
+  color:#07364a;
 }
 
 .select2-container--thunder_admin ul li.select2-results__option{
