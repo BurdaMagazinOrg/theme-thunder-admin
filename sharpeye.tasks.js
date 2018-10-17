@@ -149,6 +149,14 @@ module.exports = [
   { name: 'Check details element in frontend', path: '/node/7/edit', actions: [
     { $: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 1000 }
   ]},
+  { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
+      { $: 'input.select2-search__field', fill: "abc" },
+    ]},
+  { name: 'Select2 selection', path: '/node/7/edit', actions: [
+      { $: 'input.select2-search__field', fill: "abc" },
+      { $: 'li.select2-search--inline', offset: -150 },
+      { $: 'li.select2-search--inline', offset: -150 },
+    ]},
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
