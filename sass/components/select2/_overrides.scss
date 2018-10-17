@@ -38,9 +38,9 @@
     color: #757575;
   }
 
-  // Aalign layout, see seven form.css (input.form-text).
+  // Align layout, see seven form.css (input.form-text).
   .select2-selection__rendered {
-    padding: 0.3em 0.4em 0.3em 0.5em;
+    padding: 0.3em 1.5384em 0.3em 0.5em; // Padding right fitting arrow.
     line-height: 1.9384em; // 25.2/13
   }
 
