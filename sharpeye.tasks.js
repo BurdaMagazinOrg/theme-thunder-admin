@@ -175,5 +175,10 @@ module.exports = [
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' }
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
+  { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
+    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
+  ]}
 ];
