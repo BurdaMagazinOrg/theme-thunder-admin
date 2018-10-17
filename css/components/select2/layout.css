@@ -260,6 +260,10 @@
   line-height:31px;
 }
 
+.select2-container--thunder_admin .select2-search--inline .select2-search__field{
+  padding-top:3px;
+}
+
 .select2-container--thunder_admin ul li.select2-results__message{
   color:#595959;
 }

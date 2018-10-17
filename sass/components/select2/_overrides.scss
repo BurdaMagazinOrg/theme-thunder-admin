@@ -34,7 +34,7 @@
 }
 
 .select2-search--inline .select2-search__field {
-  //padding-top: 3px;
+  padding-top: 3px;
 }
 
 // Removed font-size
@@ -80,7 +80,6 @@ ul li.select2-results__option {
 .select2-search--dropdown .select2-search__field:focus {
   border-color: $primary-color-intense; // Changed color.
   outline: 0;
-//  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 8px $primary-color-intense;// Changed color.
   background-color: #fff;
 }
 
@@ -89,8 +88,6 @@ ul li.select2-results__option {
   background-image: linear-gradient(180deg, $primary-color-lightest 0%, $gray-lightest 100%); // Added.
   border: 1px solid $primary-color-intense; // Added.
   color: $primary-color; // Added.
-  //margin-top: 3px; // Added.
-  //padding: 2px 5px; // Added.
   white-space: normal;
 }
 
