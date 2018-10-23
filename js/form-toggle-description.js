@@ -17,6 +17,11 @@
     }
 
     $toggle.on('click.toggle-description', toggleDescription);
+
+    // Open description on form error
+    if ($toggle.parents('.form-item--error').length) {
+      $target.toggleClass('is-description-visible');
+    }
   }
 
   /**

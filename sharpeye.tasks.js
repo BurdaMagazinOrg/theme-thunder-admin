@@ -188,5 +188,11 @@ module.exports = [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
     { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
+  ]},
+  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', fill: "abc", waitBefore: 1000 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
+    { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]}
 ];
