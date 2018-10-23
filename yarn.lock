@@ -6240,9 +6240,10 @@ setprototypeof@1.1.0:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
   integrity sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
 
-"sharpeye@https://github.com/BurdaMagazinOrg/sharpeye.git#fix/remove-browser-version":
+sharpeye@^3.5.0:
   version "3.5.0"
-  resolved "https://github.com/BurdaMagazinOrg/sharpeye.git#f5ddcec6621481fd832741f9cd3b7aa49e8618b6"
+  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.5.0.tgz#5569c4de593cb0962eb342d50b88d0466b75f876"
+  integrity sha512-J+kVa0i1fyGz81yS60vmrRHqVSxsJBiSANOCPWFlwB4LcFSDw0ZrQeIbDwK8YhPGoXqWx2oe85VLuOeG0nRwwg==
   dependencies:
     commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
