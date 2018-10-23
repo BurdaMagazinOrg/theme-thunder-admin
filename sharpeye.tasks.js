@@ -78,7 +78,7 @@ module.exports = [
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
+    { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]', wait: '#entity-browser-image-browser-form' },
     { switchToFrame: null }
@@ -175,7 +175,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]'}
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
