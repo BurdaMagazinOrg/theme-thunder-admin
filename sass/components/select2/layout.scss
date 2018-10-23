@@ -5,8 +5,8 @@
 
 // Align class for thunder_admin theme
 .select2-container--thunder_admin {
-  @import "single";
-  @import "multiple";
+  @import 'single';
+  @import 'multiple';
 
   &.select2-container--open.select2-container--above {
     .select2-selection--single, .select2-selection--multiple {
@@ -101,5 +101,5 @@
     padding: 6px;
   }
   // Added import overides.
-  @import "overrides";
+  @import 'overrides';
 }
