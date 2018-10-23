@@ -6240,9 +6240,10 @@ setprototypeof@1.1.0:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
   integrity sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
 
-"sharpeye@https://github.com/BurdaMagazinOrg/sharpeye.git#fix/iframe-switching":
-  version "3.5.0"
-  resolved "https://github.com/BurdaMagazinOrg/sharpeye.git#00542f50817804b96f17e39a08e6fda488aebeac"
+sharpeye@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.6.0.tgz#4a71cf9d0047120af7252acb93e3688622b4688a"
+  integrity sha512-nUi3BsXDiIy0QX8cNF0FOrWvTkXEJjB+NzifP4A4nr/3/qzWQsGoOv9bAtGk14TDtjCDPu2hY663KEuts2qJ+A==
   dependencies:
     commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
