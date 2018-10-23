@@ -20,7 +20,7 @@
     required ? 'form-required',
   ]
 %}
-<div class="form-item datetime-wrapper" data-form-description-container>
+<div class="form-item datetime-wrapper{% if errors %} form-item--error{% endif %}" data-form-description-container>
   {% if title %}
     <label{{ title_attributes.addClass(title_classes) }}>{{ title }}</label>
   {% endif %}
