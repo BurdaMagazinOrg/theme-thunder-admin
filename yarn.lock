@@ -6240,10 +6240,10 @@ setprototypeof@1.1.0:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
   integrity sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
 
-sharpeye@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.5.1.tgz#654c799d52a7255723c12a21f1e5134049e9a7fa"
-  integrity sha512-njddUp+3IW6s62bva5AmJxsragIziifLnL/figOnbPozIaV2OoL7D8wdC72EvyeZwAITO/PS4veBLZMwqYBy8A==
+sharpeye@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/sharpeye/-/sharpeye-3.6.0.tgz#4a71cf9d0047120af7252acb93e3688622b4688a"
+  integrity sha512-nUi3BsXDiIy0QX8cNF0FOrWvTkXEJjB+NzifP4A4nr/3/qzWQsGoOv9bAtGk14TDtjCDPu2hY663KEuts2qJ+A==
   dependencies:
     commander "^2.11.0"
     wdio-dot-reporter "0.0.8"
