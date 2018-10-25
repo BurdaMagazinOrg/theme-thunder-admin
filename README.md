@@ -80,13 +80,13 @@ Install a fresh thunder:
 Then you can run selenium in docker:
 
 - if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
-- for Chrome testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome:3.4.0-einsteinium`
-- for Firefox testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome:3.14.0-iron`
+- for Firefox testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox:3.12.0-cobalt`
 
 To debug a browser you can use following commands:
 
-- for Chrome testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome-debug:3.4.0-einsteinium`
-- for Firefox testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox-debug:3.4.0-einsteinium`
+- for Chrome testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome-debug:3.14.0-iron`
+- for Firefox testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox-debug:3.12.0-cobalt`
 
 and connect with you vnc client (on mac you can use finder: go to -> connect to server [⌘K]). The password is: `secret`
 
