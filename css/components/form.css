@@ -109,11 +109,11 @@ form{
   padding:0;
 }
 
-@-moz-document url-prefix(){}.fieldgroup{
+.fieldgroup{
   min-width:0;
 }
 
-@-moz-document url-prefix(){
+@media (min--moz-device-pixel-ratio: 0){
   .fieldgroup{
     display:table-cell;
   }
@@ -379,7 +379,7 @@ fieldset:not(.fieldgroup){
   min-width:0;
   position:relative;
 }
-@-moz-document url-prefix(){
+@media (min--moz-device-pixel-ratio: 0){
   .content-form__main > details,
   fieldset:not(.fieldgroup){
     display:table-cell;
