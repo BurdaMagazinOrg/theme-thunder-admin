@@ -236,7 +236,6 @@
   outline: none;
 }
 
-
 /**
  * Handle.
  */
@@ -261,6 +260,7 @@
 [dir="rtl"] .toolbar .toolbar-icon-escape-admin:before {
   background-image: url(../../images/icons/chevron-disc-right--gray-light.svg);
 }
+
 /**
  * Orientation toggle.
  */
@@ -287,8 +287,7 @@
   background-image: url(../../images/icons/push-left--white.svg); /* LTR */
 }
 .toolbar .toolbar-toggle-orientation [value="vertical"]:hover:before,
-.toolbar .toolbar-toggle-orientation [value="vertical"]:focus:before
- {
+.toolbar .toolbar-toggle-orientation [value="vertical"]:focus:before {
   background-image: url(../../images/icons/push-left--white.svg); /* LTR */
 }
 [dir="rtl"] .toolbar .toolbar-toggle-orientation [value="vertical"]:before {

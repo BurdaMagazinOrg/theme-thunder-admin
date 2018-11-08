@@ -182,7 +182,7 @@
 }
 .no-touchevents .button--small{
   font-size:0.75rem;
-  min-height:0px;
+  min-height:0;
 }
 
 .button--danger{

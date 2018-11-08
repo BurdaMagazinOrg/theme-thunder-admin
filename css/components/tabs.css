@@ -445,7 +445,7 @@ li.tabs__tab a{
 }
 
 .tabs.secondary a{
-  padding:2px 0px;
+  padding:2px 0;
   font-size:12px;
   color:#07364a;
   text-transform:uppercase;

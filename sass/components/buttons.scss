@@ -93,8 +93,8 @@ $button-border-radius: $base-border-radius;
     text-shadow: none;
   }
 
-// .button:focus removed
-// .button:active removed \
+  // .button:focus removed
+  // .button:active removed
 }
 
 //text-shadow removed
@@ -137,7 +137,7 @@ $button-border-radius: $base-border-radius;
  */
 .no-touchevents .button--small {
   font-size: 0.75rem;
-  min-height: 0px; // added
+  min-height: 0; // added
 }
 
 // Re-added button-danger to make tests happy, seven styles get overriden by above .button styling.
