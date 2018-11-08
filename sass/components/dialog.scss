@@ -8,7 +8,7 @@
 
 @mixin browser-border($is-top: true) {
   border: 4px solid $primary-color-lightest;
-  @if($is-top) {
+  @if ($is-top) {
     border-bottom: none;
   }
   @else {

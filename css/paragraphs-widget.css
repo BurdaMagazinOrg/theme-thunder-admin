@@ -586,7 +586,8 @@ tr.even .paragraph-form-item--has-subform .form-item{
   margin-bottom:0;
 }
 
-.paragraph-form-item--has-subform a, .paragraph-form-item--has-subform .link{
+.paragraph-form-item--has-subform a,
+.paragraph-form-item--has-subform .link{
   color:#1293c9;
 }
 

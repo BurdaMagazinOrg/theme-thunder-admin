@@ -10,7 +10,7 @@
     border-bottom: none;
 
     li {
-      padding: .75em; // added
+      padding: 0.75em; // added
 
       a {
         padding: 0 0 2px 0;
@@ -26,8 +26,8 @@
       }
 
       &.active a { // added
-          color: $primary-color-intense;
-          border-bottom: 3px solid $primary-color-intense;
+        color: $primary-color-intense;
+        border-bottom: 3px solid $primary-color-intense;
       }
     }
   }

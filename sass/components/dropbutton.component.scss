@@ -14,7 +14,6 @@
   [dir="rtl"] & {
     border-radius: $left $top $right $bottom;
   }
-
 }
 /* stylelint-disable no-descending-specificity */
 
@@ -173,7 +172,6 @@
   }
 
   .dropbutton-toggle button {
-
     border-color: $primary-color-intense;
     background-image: linear-gradient(180deg, $primary-color-intense 0%, $primary-color 100%);
 
