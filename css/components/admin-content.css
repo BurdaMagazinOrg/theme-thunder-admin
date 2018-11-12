@@ -1,0 +1,12 @@
+.view-content-search-api .view-header > .form--inline{
+  display:flex;
+}
+
+.view-content-search-api .views-exposed-form .form--inline{
+  display:flex;
+  align-items:flex-end;
+}
+
+.view-content-search-api .views-exposed-form .form--inline > .form-item{
+  margin-top:0;
+}
