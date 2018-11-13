@@ -1,0 +1,12 @@
+.thunder-search-api .view-header > .form--inline{
+  display:flex;
+}
+
+.thunder-search-api .views-exposed-form .form--inline{
+  display:flex;
+  align-items:flex-end;
+}
+
+.thunder-search-api .views-exposed-form .form--inline > .form-item{
+  margin-top:0;
+}
