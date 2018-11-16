@@ -118,12 +118,36 @@ ul li.select2-results__option {
   border: 1px solid $primary-color-intense; // Added.
   color: $primary-color; // Added.
   white-space: normal;
-}
 
-.select2-selection--multiple .select2-selection__choice__remove {
-  color: $primary-color; // Added.
-  &:hover {
-    color: $primary-color-dark; // Added.
+  &.unpublished {
+    background-image: linear-gradient(0deg, adjust_hue($primary-color-lightest, 180) 0%, $gray-lightest 100%); // Added.
+    border: 1px solid adjust_hue($primary-color-intense, 180); // Added.
+    color: adjust_hue($primary-color, 180); // Added.
   }
 }
 
+.select2-selection--multiple {
+
+  .select2-selection__choice__remove {
+    color: $primary-color; // Added.
+    &:hover {
+      color: $primary-color-dark; // Added.
+    }
+  }
+  .unpublished .select2-selection__choice__remove {
+    color: adjust_hue($primary-color, 180); // Added.
+    &:hover {
+      color: adjust_hue($primary-color-dark, 180); // Added.
+    }
+  }
+}
+
+.select2-selection--single .select2-selection__rendered,
+.select2-results__option,
+.select2-selection__choice {
+  &.unpublished {
+    color: adjust_hue($primary-color, 180); // Added.
+
+  }
+
+}
