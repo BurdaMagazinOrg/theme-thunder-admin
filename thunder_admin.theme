@@ -161,7 +161,8 @@ function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_
     /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $form_object->getEntity();
 
-    $gutenberg_enabled = \Drupal::service('config.factory')->getEditable('gutenberg.settings')->get($entity->getType() . '_enable_full');
+    // Support for guttenberg module, until better solution is found.
+    $gutenberg_enabled = \Drupal::configFactory()->get('gutenberg.settings')->get($entity->bundle() . '_enable_full');
     if ($gutenberg_enabled) {
       return;
     }
