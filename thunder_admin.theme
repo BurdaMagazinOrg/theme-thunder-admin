@@ -158,7 +158,7 @@ function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_
   if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
     /** @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
     $form_object = $form_state->getFormObject();
-    /** @var \Drupal\node\NodeInterface $entity */
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $form_object->getEntity();
 
     $gutenberg_enabled = \Drupal::service('config.factory')->getEditable('gutenberg.settings')->get($entity->getType() . '_enable_full');
