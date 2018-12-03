@@ -26,6 +26,22 @@
     border-color: $primary-color-darker;
   }
 
+  .seven-details > summary {
+    color: $gray-lighter;
+
+    &:hover {
+      text-decoration: none; // Added.
+    }
+
+    .details-title {
+      color: $gray-lighter; // Added.
+
+      &:hover {
+        text-decoration: none; // Added.
+      }
+    }
+  }
+
   label {
     color: $gray-lighter;
   }

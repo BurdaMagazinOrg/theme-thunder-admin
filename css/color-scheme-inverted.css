@@ -25,6 +25,22 @@
   border-color:#07364a;
 }
 
+.color-scheme-inverted .seven-details > summary{
+  color:#dae0e3;
+}
+
+.color-scheme-inverted .seven-details > summary:hover{
+  text-decoration:none;
+}
+
+.color-scheme-inverted .seven-details > summary .details-title{
+  color:#dae0e3;
+}
+
+.color-scheme-inverted .seven-details > summary .details-title:hover{
+  text-decoration:none;
+}
+
 .color-scheme-inverted label{
   color:#dae0e3;
 }

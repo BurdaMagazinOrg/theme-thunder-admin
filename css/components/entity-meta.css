@@ -73,19 +73,3 @@
   text-shadow:0 1px 0 #fff;
   margin:0.25em 0;
 }
-
-.entity-meta .seven-details > summary{
-  color:#dae0e3;
-}
-
-.entity-meta .seven-details > summary:hover{
-  text-decoration:none;
-}
-
-.entity-meta .seven-details > summary .details-title{
-  color:#dae0e3;
-}
-
-.entity-meta .seven-details > summary .details-title:hover{
-  text-decoration:none;
-}

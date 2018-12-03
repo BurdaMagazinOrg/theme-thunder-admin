@@ -114,6 +114,7 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150, offsety: null },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
+  '/taxonomy/term/1/edit',
   '/admin/structure/types/manage/article',
   '/admin/structure/types/manage/article/fields',
   '/admin/structure/types/manage/article/form-display',

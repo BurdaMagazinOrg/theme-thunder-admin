@@ -158,14 +158,21 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
  */
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
+    /** @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
+    $form_object = $form_state->getFormObject();
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    $entity = $form_object->getEntity();
+
+    // Support for guttenberg module, until better solution is found.
+    $gutenberg_enabled = \Drupal::configFactory()->get('gutenberg.settings')->get($entity->bundle() . '_enable_full');
+    if ($gutenberg_enabled) {
+      return;
+    }
+
     _thunder_admin_attach_advanced_vertical_tabs($form, $form_state);
     $form['#theme'] = ['node_edit_form'];
 
     if (\Drupal::hasService('content_moderation.moderation_information')) {
-      /** @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
-      $form_object = $form_state->getFormObject();
-      /** @var \Drupal\node\NodeInterface $entity */
-      $entity = $form_object->getEntity();
 
       /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
       $moderation_info = \Drupal::service('content_moderation.moderation_information');
