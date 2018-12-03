@@ -148,7 +148,9 @@ function thunder_admin_theme_suggestions_input_alter(&$suggestions, $variables) 
  * Provide additional suggestions for form element.
  */
 function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $variables) {
-  $suggestions[] = 'form_element__' . $variables['element']['#type'];
+  if (!empty($variables['element']['#type'])) {
+    $suggestions[] = 'form_element__' . $variables['element']['#type'];
+  }
 }
 
 /**
