@@ -580,7 +580,14 @@ tr:hover .paragraphs-collapsed-description::after{
   color:#979797;
 }
 
-.paragraph-form-item--has-subform a, .paragraph-form-item--has-subform .link{
+tr.odd .paragraph-form-item--has-subform .form-item,
+tr.even .paragraph-form-item--has-subform .form-item{
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.paragraph-form-item--has-subform a,
+.paragraph-form-item--has-subform .link{
   color:#1293c9;
 }
 
@@ -615,6 +622,20 @@ tr:hover .paragraphs-collapsed-description::after{
 
 .paragraph-form-item--has-subform .paragraph-form-item__actions .paragraph-form-item__links .remove{
   display:none;
+}
+
+.paragraph-form-item--has-subform .form-item__field-wrapper{
+  display:flex;
+  align-items:center;
+}
+
+.paragraph-form-item--has-subform .form-item__field-wrapper .field-suffix{
+  padding-left:5px;
+}
+
+.paragraph-form-item--has-subform .form-item__field-wrapper .form-textarea-wrapper,
+.paragraph-form-item--has-subform .form-item__field-wrapper .image-style-preview{
+  flex:1 1 auto;
 }
 
 .paragraph-form-item--has-subform .form-item__toggle-description-placeholder{
@@ -730,12 +751,19 @@ tr:hover .paragraphs-collapsed-description::after{
 }
 
 .paragraph-form-item--has-subform fieldset:not(.fieldgroup){
+  background-color:transparent;
   padding:30px 0 0;
   border:0;
 }
 
 .paragraph-form-item--has-subform fieldset:not(.fieldgroup) legend{
   margin:0.3em;
+}
+
+.paragraph-form-item--has-subform .seven-details__summary:hover,
+.paragraph-form-item--has-subform .seven-details__summary:focus,
+.paragraph-form-item--has-subform .seven-details[open] > .seven-details__summary{
+  color:inherit;
 }
 
 .paragraph-form-item--has-subform .paragraph-type-info{

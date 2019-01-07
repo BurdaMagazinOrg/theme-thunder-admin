@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Styles for admin content and media search api view.
+ */
+
+.thunder-search-api {
+  .view-header > .form--inline {
+    display: flex;
+  }
+  .views-exposed-form .form--inline {
+    display: flex;
+    align-items: flex-end;
+
+    > .form-item {
+      margin-top: 0;
+    }
+  }
+}

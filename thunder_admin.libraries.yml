@@ -7,11 +7,13 @@ global-styling:
       css/base/print.css: {}
     component:
       css/components/admin-list.css: {}
+      css/components/admin-search-api.css: {} # Added.
       css/components/content-header.css: {}
       css/components/container-inline.css: {}
       css/components/container-inline.module.css: {}
       css/components/breadcrumb.css: {}
       css/components/buttons.css: {}
+      css/components/details.css: {}
       css/components/messages.css: {}
       css/components/dropbutton.component.css: {}
       css/components/entity-meta.css: {}
@@ -120,6 +122,12 @@ dropzonejs.widget:
 ui.sortable.with.fractionl.pixels:
   js:
     js/ui-sortable-with-fractional-pixels.js: {}
+
+# Select2 theme.
+select2.theme:
+  css:
+    component:
+      css/components/select2/layout.css: {}
 
 # Additional styles for the toolbar/toolbar library.
 toolbar:

@@ -32,7 +32,7 @@
 /* stylelint-disable string-no-newline */
 @import '@theme-seven/css/components/form.css remove {
   fieldset:not(.fieldgroup) {}
-  @-moz-document url-prefix() { fieldset:not(.fieldgroup) {} }
+  @media (min--moz-device-pixel-ratio: 0){ fieldset:not(.fieldgroup) {} }
   fieldset:not(.fieldgroup)>legend {}
   input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, input.form-date, input.form-time, textarea.form-textarea { box-sizing }
 }';
@@ -48,6 +48,7 @@ fieldset {
 // background-color removed
 .content-form__main > details,
 fieldset:not(.fieldgroup) {
+  background-color: $primary-color-lightest;
   border-radius: 2px;
   margin: 1em 0;
   padding: 30px 18px 18px;
@@ -63,7 +64,7 @@ fieldset:not(.fieldgroup) {
  */
 // Originally added for fieldset:not(.fieldgroup) in seven, css-sniper does not handle AtRule selectors.
 // Selector .content-form__main > details was added to this for #2899606
-@-moz-document url-prefix() {
+@media (min--moz-device-pixel-ratio: 0) {
   .content-form__main > details,
   fieldset:not(.fieldgroup) {
     display: table-cell;
@@ -85,15 +86,6 @@ label {
   margin: 0 0 0 0.3em;
   text-transform: uppercase;
 }
-// New
-.form-type-radio,
-.form-type-checkbox {
-  label {
-    font-size: $font-size-small;
-  }
-}
-
-
 
 /* @todo [Refactor] Remove the whole block and fix /admin/modules */
 /* START styles for descriptions */
@@ -127,6 +119,32 @@ label {
   margin-left: 0;
   margin-right: 1.5em;
 }
+
+/**
+ * Fix labels for checkbox and radio by using flex-box for all checkboxes.
+ * @see .form-item__field-wrapper--has-description
+ */
+.form-type-checkbox,
+.form-type-radio {
+  > .form-item__field-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 22px; // Same height as description toggle.
+  }
+
+  label {
+    margin-left: 0.5em;
+  }
+
+  .form-item__description {
+    margin-top: 0;
+  }
+
+  &.is-description-visible .form-item__description {
+    margin-top: 0.2em;
+  }
+}
+
 /* END styles for descriptions */
 
 // Border radius & font-size removed (todo) / overriden with next style (only when combined with input)
@@ -186,8 +204,7 @@ textarea.form-textarea {
     padding: 1px 1.571em 1px 0.5em;
     border: 1px solid $gray-lighter;
     border-radius: $base-border-radius;
-    background:
-            url(../../images/icons/caret-down.svg) no-repeat 99% 50% #FFFFFF; /* LTR */
+    background: url(../../images/icons/caret-down.svg) no-repeat 99% 50% #fff; /* LTR */
     color: $text-color;
     font-size: 0.875rem;
   }
@@ -201,7 +218,6 @@ textarea.form-textarea {
   select:focus,
   select:hover {
     background-image: url(../../images/icons/caret-down.svg);
-
   }
 }
 
