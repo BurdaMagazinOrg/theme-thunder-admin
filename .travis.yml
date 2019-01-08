@@ -1,6 +1,7 @@
 language: php
-sudo: false
-php: 7.1
+
+php: 
+  - 7.2
 
 env:
   global:
@@ -8,6 +9,9 @@ env:
   matrix:
     - SHARPEYE_BROWSER=chrome THUNDER=8.x-2.x
     - SHARPEYE_BROWSER=firefox THUNDER=8.x-2.x
+
+dist:
+  - xenial
 
 branches:
   only:
@@ -21,7 +25,7 @@ cache:
     - "$HOME/.cache/yarn"
 
 services:
-  - docker
+  - mysql
 
 addons:
   artifacts:
