@@ -97,7 +97,7 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[3]', replace: 'x.x.x-xx.x-log\n\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', replace: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
     { $: 'h3#checked ~ details div', replace: ' ' }
-  },
+  ]},
   '/admin/structure/block',
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
