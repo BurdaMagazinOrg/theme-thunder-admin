@@ -100,10 +100,6 @@
   background:transparent;
 }
 
-.joyride-tip-guide{
-  z-index:1300;
-}
-
 .joyride-tip-guide a{
   border-bottom:1px dotted;
 }
