@@ -14,9 +14,6 @@ module.exports = [
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
     { $: '#view-filename-table-column a', offset: -150 }
   ]},
-  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
-    { $: '#view-name-table-column a', offset: -150 }
-  ]},
   '/node/add',
   '/node/add/article',
   // Meta tags token browser
@@ -84,7 +81,15 @@ module.exports = [
     { switchToFrame: null }
   ]},
   '/node/add/page',
+  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
+      { $: '#view-name-table-column a', offset: -150 }
+    ]},
   '/media/add',
+  { name: 'Media type gallery edit form', path:'/media/18/edit' },
+  { name: 'Media type image edit form', path: '/media/1/edit' },
+  { name: 'Media type twitter edit form', path:'/media/3/edit' },
+  { name: 'Media type instagram edit form', path:'/media/23/edit' },
+  { name: 'Media type video edit form', path:'/media/2/edit' },
   { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', replace: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
