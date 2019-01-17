@@ -163,6 +163,18 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
+  { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
+    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
+  ]},
+  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', fill: "abc", waitBefore: 1000 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
+    { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
+  ]},
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
@@ -181,17 +193,5 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
-  ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
-  { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
-    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
-  ]},
-  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', fill: "abc", waitBefore: 1000 },
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
-    { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]}
 ];
