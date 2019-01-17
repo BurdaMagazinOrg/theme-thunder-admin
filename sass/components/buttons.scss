@@ -18,7 +18,7 @@ $button-border-radius: $base-border-radius;
  * Buttons.
  *
  * 1. Enable z-index on buttons.
- * 2. Normalize 'line-height'.
+ * 2. Normalize 'line-height'; can’t be changed from 'normal' in Firefox 4+.
  * 3. Allows full range of styling in Webkit and Gecko.
  * 4. Use px units to ensure button text is centered vertically.
  * 5. Use rems to avoid the font size cascade of ems, with a px fallback for
@@ -37,7 +37,7 @@ $button-border-radius: $base-border-radius;
   display: inline-block;
   position: relative;  /* 1 */
   text-align: center;
-  line-height: 1.2;  /* 2 */
+  line-height: normal;  /* 2 */
   cursor: pointer;
   -webkit-appearance: none;  /* 3 */
   -moz-appearance: none;  /* 3 */

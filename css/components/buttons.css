@@ -1,9 +1,10 @@
+@charset "UTF-8";
 .button{
   box-sizing:border-box;
   display:inline-block;
   position:relative;
   text-align:center;
-  line-height:1.2;
+  line-height:normal;
   cursor:pointer;
   -webkit-appearance:none;
   -moz-appearance:none;
