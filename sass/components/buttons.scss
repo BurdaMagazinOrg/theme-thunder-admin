@@ -14,22 +14,6 @@
 $button-border-radius: $base-border-radius;
 /* stylelint-enable plugin/no-browser-hacks */
 
-/* stylelint-disable string-no-newline */
-@import '@theme-seven/css/components/buttons.css remove {
-  .button { text-shadow; font-size }
-  .button:hover, .button:focus { color; outline }
-  .button:hover { box-shadow }
-  .button:focus {}
-  .button:active {}
-  .button--primary { text-shadow }
-  .button--primary:focus {}
-  .button--primary:hover {}
-  .button--primary:active {}
-  .button-action:before { font-size }
-  .no-touchevents .button--small { font-size }
-}';
-/* stylelint-enable string-no-newline */
-
 /**
  * Buttons.
  *
@@ -63,7 +47,10 @@ $button-border-radius: $base-border-radius;
   background-color: $gray-lightest;
   background-image: linear-gradient(0deg, $primary-color-lightest 0%, $gray-lightest 100%);
   color: $primary-color;
+  text-decoration: none;
   font-size: 0.75rem;  /* 5 */
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;  /* 6 */
   text-transform: uppercase; // added
   min-height: 30px; // added
 
@@ -96,6 +83,22 @@ $button-border-radius: $base-border-radius;
   // .button:focus removed
   // .button:active removed
 }
+
+/* stylelint-disable string-no-newline */
+@import '@theme-seven/css/components/buttons.css remove {
+  .button {}
+  .button:hover, .button:focus {}
+  .button:hover {}
+  .button:focus {}
+  .button:active {}
+  .button--primary { text-shadow }
+  .button--primary:focus {}
+  .button--primary:hover {}
+  .button--primary:active {}
+  .button-action:before { font-size }
+  .no-touchevents .button--small { font-size }
+}';
+/* stylelint-enable string-no-newline */
 
 //text-shadow removed
 .button--primary {
@@ -138,47 +141,6 @@ $button-border-radius: $base-border-radius;
 .no-touchevents .button--small {
   font-size: 0.75rem;
   min-height: 0; // added
-}
-
-// Re-added button-danger to make tests happy, seven styles get overriden by above .button styling.
-// @todo [Refactor] Remove since this is a exact copy from seven
-.button--danger {
-  display: inline;
-  cursor: pointer;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: #c72100;
-  font-weight: 400;
-  text-decoration: underline;
-}
-
-.button--danger:hover,
-.button--danger:focus,
-.button--danger:active {
-  color: #ff2a00;
-  text-decoration: underline;
-  text-shadow: none;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  background: none;
-}
-
-.button--danger:disabled,
-.button--danger.is-disabled {
-  color: #737373;
-  cursor: default;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  background: none;
 }
 
 // NEW

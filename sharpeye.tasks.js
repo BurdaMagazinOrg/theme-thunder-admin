@@ -14,9 +14,6 @@ module.exports = [
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
     { $: '#view-filename-table-column a', offset: -150 }
   ]},
-  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
-    { $: '#view-name-table-column a', offset: -150 }
-  ]},
   '/node/add',
   '/node/add/article',
   // Meta tags token browser
@@ -92,7 +89,15 @@ module.exports = [
     { switchToFrame: null }
   ]},
   '/node/add/page',
+  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
+      { $: '#view-name-table-column a', offset: -150 }
+    ]},
   '/media/add',
+  { name: 'Media type gallery edit form', path:'/media/18/edit' },
+  { name: 'Media type image edit form', path: '/media/1/edit' },
+  { name: 'Media type twitter edit form', path:'/media/3/edit' },
+  { name: 'Media type instagram edit form', path:'/media/23/edit' },
+  { name: 'Media type video edit form', path:'/media/2/edit' },
   { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', replace: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
@@ -166,6 +171,18 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
+  { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
+    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
+  ]},
+  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', fill: "abc", waitBefore: 1000 },
+    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
+    { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
+  ]},
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
@@ -184,17 +201,5 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
-  ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
-  { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
-    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
-  ]},
-  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', fill: "abc", waitBefore: 1000 },
-    { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
-    { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]}
 ];
