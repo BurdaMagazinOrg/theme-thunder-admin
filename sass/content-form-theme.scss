@@ -39,19 +39,20 @@
  * 1. Vertically align these elements due to different font sizes
  *    breaking baseline alignment for .button. Same font size should
  *    be used when items are to be vertically aligned.
+ * 2. Fix element height in firefox.
  */
 .content-form__actions {
   z-index: 101;
 
   .button--danger {
     display: inline-block;
-    vertical-align: bottom;/* 1 */
+    vertical-align: bottom; /* 1 */
     padding: 7px 0;
     text-transform: none;
     color: $gray-light;
     font-size: 0.875rem;
     font-weight: bold;
-    line-height: 1.14;
+    line-height: 1.14; /* 2 */
   }
 
   .field--widget-thunder-moderation-state-default {
