@@ -82,8 +82,8 @@ module.exports = [
   ]},
   '/node/add/page',
   { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
-      { $: '#view-name-table-column a', offset: -150 }
-    ]},
+    { $: '#view-name-table-column a', offset: -150 }
+  ]},
   '/media/add',
   { name: 'Media type gallery edit form', path:'/media/18/edit' },
   { name: 'Media type image edit form', path: '/media/1/edit' },
@@ -103,7 +103,9 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', replace: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
     { $: 'h3#checked ~ details div', replace: ' ' }
   ]},
-  '/admin/structure/block',
+  { name: 'Admin structure block', path: '/admin/structure/block', actions: [
+    { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
+  ]},
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table', offset: -150}
   ]},
@@ -120,7 +122,9 @@ module.exports = [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ]},
-  '/admin/structure',
+  { name: 'Admin structure', path: '/admin/structure', actions: [
+    { $: 'div#block-thunder-admin-page-title h1' }
+  ]},
   '/admin/appearance',
   '/admin/modules',
   '/admin/config',
