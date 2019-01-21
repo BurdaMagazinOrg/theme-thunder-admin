@@ -16,7 +16,6 @@ module.exports = [
   ]},
   '/node/add',
   '/node/add/article',
-
   // Meta tags token browser
   { name: 'Meta tags token browser', path: '/node/add/article', actions: [
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
@@ -128,7 +127,13 @@ module.exports = [
   { name: 'Admin structure', path: '/admin/structure', actions: [
     { $: 'div#block-thunder-admin-page-title h1' }
   ]},
-  '/admin/appearance',
+  { name: 'Appearance', path: '/admin/appearance', actions: [
+    { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', replace: 'Bartik 8.x.x' },
+    { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', replace: 'Seven 8.x.x' },
+    { $: '//*[@id="system-themes-page"]/div[2]/div[1]/div/h3', replace: 'AMP Base 8.x-x.x' },
+    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', replace: 'ExAMPle Subtheme 8.x-x.x' },
+    { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', replace: 'Stark 8.x.x' }
+  ]},
   '/admin/modules',
   '/admin/config',
   '/admin/config/development/performance',
