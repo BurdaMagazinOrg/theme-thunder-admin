@@ -166,7 +166,8 @@ module.exports = [
   { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
   { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150 },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-argument-present"]' },
+    { $: '.form-item-options-validate-fail label' },
     { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
   ]},
   { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
