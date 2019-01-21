@@ -19,12 +19,10 @@ module.exports = [
   
   // Meta tags token browser
   { name: 'Meta tags token browser', path: '/node/add/article', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
   { name: 'Add paragraphs modal', path: '/node/add/article', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '#field-paragraphs-values > tbody > tr > td > div > input', wait: '#field-paragraphs-text-add-more' },
   ]},
   // Paragraphs
