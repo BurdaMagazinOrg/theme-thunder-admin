@@ -65,7 +65,6 @@ module.exports = [
     { switchToFrame: null }
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//*[@id="field-paragraphs-link-add-more"]'},
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', fill: 'http://example.com/1', waitBefore: 2000 },
@@ -145,6 +144,16 @@ module.exports = [
     { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/div[1]/ul/li[4]/a', offset: -150 },
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
+  { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
+    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
+    { $: 'input.select2-search__field', fill: "abc" },
+  ]},
+  { name: 'Select2 selection', path: '/node/7/edit', actions: [
+    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
+    { $: 'input.select2-search__field', fill: "abc" },
+    { $: 'li.select2-search--inline', offset: -150 },
+    { $: 'li.select2-search--inline', offset: -150, waitBefore: 200 },
+  ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
@@ -162,16 +171,6 @@ module.exports = [
     { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 1000 }
   ]},
-  { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
-    { $: 'input.select2-search__field', fill: "abc" },
-    ]},
-  { name: 'Select2 selection', path: '/node/7/edit', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
-    { $: 'input.select2-search__field', fill: "abc" },
-    { $: 'li.select2-search--inline', offset: -150 },
-    { $: 'li.select2-search--inline', offset: -150 },
-  ]},
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
@@ -183,8 +182,7 @@ module.exports = [
   { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-argument-present"]' },
-    { $: '.form-item-options-validate-fail label' },
-    { $: '.form-item-options-validate-fail label', waitBefore: 1000 }
+    { $: '[data-drupal-selector="edit-options-form-description"] ', waitBefore: 1000 }
   ]},
   { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
