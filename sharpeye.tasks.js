@@ -65,6 +65,7 @@ module.exports = [
     { switchToFrame: null }
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', actions: [
+    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//*[@id="field-paragraphs-link-add-more"]'},
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', fill: 'http://example.com/1', waitBefore: 2000 },
