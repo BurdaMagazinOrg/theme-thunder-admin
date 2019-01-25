@@ -150,11 +150,10 @@ module.exports = [
     { $: 'input.select2-search__field', fill: "abc" },
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
-    { $: 'input.select2-search__field', fill: "abc" },
-    { $: 'li.select2-search--inline', offset: -150 },
-    { $: 'li.select2-search--inline', offset: -150, waitBefore: 200 },
-  ]},
+      { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
+      { $: 'input.select2-search__field', fill: "abc" },
+      { $: 'li.select2-search--inline', offset: -150, waitBefore: 200 },
+    ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
