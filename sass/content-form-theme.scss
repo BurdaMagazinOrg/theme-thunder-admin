@@ -52,7 +52,10 @@
     color: $gray-light;
     font-size: 0.875rem;
     font-weight: bold;
-    line-height: 1.14; /* 2 */
+
+    @media screen and (-moz-device-pixel-ratio) {
+      line-height: 1.14; /* 2 */
+    }
   }
 
   .field--widget-thunder-moderation-state-default {
