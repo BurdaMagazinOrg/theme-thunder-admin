@@ -6,18 +6,18 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', fill: options.pass },
       { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Content1', path: '/admin/content', actions: [
+  { name: 'Content', path: '/admin/content', actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 },
     { $: 'td.views-field.views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
   '/admin/content/scheduled',
-  { name: 'Files2', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
+  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
     { $: '#view-filename-table-column a', offset: -150 }
   ]},
   '/node/add',
   '/node/add/article',
   // Meta tags token browser
-  { name: 'Meta tags token browser3', path: '/node/add/article', actions: [
+  { name: 'Meta tags token browser', path: '/node/add/article', actions: [
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
