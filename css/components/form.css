@@ -309,10 +309,6 @@ select{
   }
 }
 
-#edit-cancel{
-  margin-left:10px;
-}
-
 [dir="rtl"] #edit-cancel{
   margin-left:0;
   margin-right:10px;
@@ -353,10 +349,6 @@ select{
   #dblog-filter-form .form-actions{
     float:none;
     padding:0;
-  }
-  #edit-cancel{
-    display:block;
-    margin:10px 0 0 0;
   }
   select{
     width:100%;
@@ -516,4 +508,12 @@ textarea.form-textarea{
 .filter-options select,
 #diff-inline-form select{
   padding:0;
+}
+.form-actions .button{
+  margin-left:0;
+  margin-right:1em;
+}
+
+.form-actions .button:last-child{
+  margin-right:0;
 }
