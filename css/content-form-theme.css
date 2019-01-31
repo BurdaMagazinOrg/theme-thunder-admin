@@ -60,7 +60,7 @@
 }
 
 .content-form__actions .field--widget-thunder-moderation-state-default .form-item-moderation-state-0 select{
-  min-height:31px;
+  min-height:30px;
 }
 
 @media screen and (-moz-device-pixel-ratio){
@@ -141,6 +141,11 @@
 
 .entity-meta--advanced .entity-meta__title{
   text-shadow:none;
+}
+
+.entity-meta--advanced .entity-meta__last-saved label,
+.entity-meta--advanced .entity-meta__author label{
+  margin-right:0.316em;
 }
 
 .entity-meta--advanced .seven-details{

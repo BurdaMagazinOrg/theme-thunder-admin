@@ -25,6 +25,10 @@
   background-image: url(../../images/icons/required.svg);
 }
 .form-item--error-message:before {
+  height: 15px;
+  width: 15px;
+  vertical-align: text-top;
+  margin-right: 0.316em;
   background: url(../../images/icons/error.svg) no-repeat;
 }
 
@@ -256,4 +260,13 @@ textarea.form-textarea {
       margin-right: 0;
     }
   }
+}
+
+/* Fix spacing after removing spaces in container.html.twig. */
+.container-inline .form-type-date:last-child {
+  margin-left: 0.632em; // 2 whitespaces
+}
+
+.form-item .file-size {
+  margin-left: 0.316em;
 }
