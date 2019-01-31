@@ -12,7 +12,8 @@ module.exports = [
   ]},
   '/admin/content/scheduled',
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
-    { $: '#view-filename-table-column a', offset: -150 }
+    { $: '#view-filename-table-column a', offset: -150 },
+    { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
   ]},
   '/node/add',
   '/node/add/article',
