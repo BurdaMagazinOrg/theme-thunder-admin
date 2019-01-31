@@ -105,7 +105,7 @@ abbr.tabledrag-changed, abbr.ajax-changed{
   height:15px;
   width:15px;
   vertical-align:text-top;
-  margin-right:0.316em;
+  margin-right:0.333em;
   background:url(../../images/icons/error.svg) no-repeat;
 }
 form{
@@ -522,7 +522,7 @@ textarea.form-textarea{
   margin-right:0;
 }
 .container-inline .form-type-date:last-child{
-  margin-left:0.632em;
+  margin-left:0.666em;
 }
 
 .form-item .file-size{
