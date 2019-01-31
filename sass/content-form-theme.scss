@@ -43,7 +43,6 @@
  * 3. Fix spacing, see form.scss
  * 4. Fix spacing: remove description toggle.
  * 5. Fix spacing: different font-size.
- * 6. Align to button height.
  *
  */
 .content-form__actions {
@@ -77,7 +76,7 @@
       margin: 0;
 
       select {
-        min-height: 30px; /* 6 */
+        min-height: 30px;
       }
 
       @media screen and (-moz-device-pixel-ratio) {
@@ -157,6 +156,7 @@
     text-shadow: none;
   }
 
+  /* Fix spacing after removing spaces in container.html.twig. */
   .entity-meta__last-saved,
   .entity-meta__author {
     label {

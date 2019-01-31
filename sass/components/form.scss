@@ -264,9 +264,9 @@ textarea.form-textarea {
 
 /* Fix spacing after removing spaces in container.html.twig. */
 .container-inline .form-type-date:last-child {
-  margin-left: 0.632em; // 2 whitespaces
+  margin-left: 0.632em; // Emulate 2 whitespaces
 }
 
 .form-item .file-size {
-  margin-left: 0.316em;
+  margin-left: 0.316em; // Emulate whitespace
 }
