@@ -181,7 +181,7 @@ module.exports = [
   ]},
   { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
   { name: 'Views UI', path: '/admin/structure/views/view/frontpage', actions: [
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
     { $: 'div#block-thunder-admin-page-title h1', offset: -150 },
   ]},
   { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
