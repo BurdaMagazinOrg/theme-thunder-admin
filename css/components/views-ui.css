@@ -1,6 +1,7 @@
 details.fieldset-no-legend{
   padding-top:0;
 }
+
 #views-ui-add-form details details .seven-details__wrapper{
   padding-left:0;
   padding-right:0;
@@ -10,71 +11,49 @@ details.fieldset-no-legend{
   padding:0;
 }
 
-.views-admin input.form-submit,
-.views-ui-dialog input.form-submit,
-.views-admin a.button,
-.views-ui-dialog a.button{
+.views-admin input.form-submit, .views-ui-dialog input.form-submit, .views-admin a.button, .views-ui-dialog a.button{
   margin-bottom:0;
-  margin-right:0;
   margin-top:0;
 }
 
-[dir="rtl"] .views-admin input.form-submit,
-[dir="rtl"] .views-ui-dialog input.form-submit,
-[dir="rtl"] .views-admin a.button,
-[dir="rtl"] .views-ui-dialog a.button{
+[dir="rtl"] .views-admin input.form-submit, [dir="rtl"] .views-ui-dialog input.form-submit, [dir="rtl"] .views-admin a.button, [dir="rtl"] .views-ui-dialog a.button{
   margin-left:0;
   margin-right:1em;
 }
 
-[dir="rtl"] .views-admin input.form-submit:first-child,
-[dir="rtl"] .views-ui-dialog input.form-submit:first-child,
-[dir="rtl"] .views-admin a.button:first-child,
-[dir="rtl"] .views-ui-dialog a.button:first-child{
+[dir="rtl"] .views-admin input.form-submit:first-child, [dir="rtl"] .views-ui-dialog input.form-submit:first-child, [dir="rtl"] .views-admin a.button:first-child, [dir="rtl"] .views-ui-dialog a.button:first-child{
   margin-right:0;
 }
 
 .form-radios > .form-item{
   margin-top:3px;
 }
-.form-item-options-expose-required,
-.form-item-options-expose-label,
-.form-item-options-expose-description{
+
+.form-item-options-expose-required, .form-item-options-expose-label, .form-item-options-expose-description{
   margin-left:1.5em;
 }
 
-[dir="rtl"] .form-item-options-expose-required,
-[dir="rtl"] .form-item-options-expose-label,
-[dir="rtl"] .form-item-options-expose-description{
+[dir="rtl"] .form-item-options-expose-required, [dir="rtl"] .form-item-options-expose-label, [dir="rtl"] .form-item-options-expose-description{
   margin-left:0;
   margin-right:1.5em;
 }
 
-.views-admin-dependent .form-item .form-item,
-.views-admin-dependent .form-type-checkboxes,
-.views-admin-dependent .form-type-radios,
-.views-admin-dependent .form-item .form-item,
-.form-item-options-expose-required,
-.form-item-options-expose-label,
-.form-item-options-expose-description{
+.views-admin-dependent .form-item .form-item, .views-admin-dependent .form-type-checkboxes, .views-admin-dependent .form-type-radios, .views-admin-dependent .form-item .form-item, .form-item-options-expose-required, .form-item-options-expose-label, .form-item-options-expose-description{
   margin-bottom:6px;
   margin-top:6px;
 }
 
-.views-admin-dependent .form-type-radio,
-.views-admin-dependent .form-radios .form-item{
+.views-admin-dependent .form-type-radio, .views-admin-dependent .form-radios .form-item{
   margin-bottom:2px;
   margin-top:2px;
 }
-.views-admin ul.secondary,
-.views-admin .item-list ul{
+
+.views-admin ul.secondary, .views-admin .item-list ul{
   margin:0;
   padding:0;
 }
 
-.views-displays ul.secondary li a,
-.views-displays ul.secondary li.is-active a,
-.views-displays ul.secondary li.is-active a.is-active{
+.views-displays ul.secondary li a, .views-displays ul.secondary li.is-active a, .views-displays ul.secondary li.is-active a.is-active{
   padding:2px 7px 3px;
 }
 
@@ -82,8 +61,7 @@ details.fieldset-no-legend{
   color:#0074bd;
 }
 
-.views-displays ul.secondary li.is-active a,
-.views-displays ul.secondary li.is-active a.is-active{
+.views-displays ul.secondary li.is-active a, .views-displays ul.secondary li.is-active a.is-active{
   border:1px solid transparent;
 }
 
@@ -116,13 +94,15 @@ details.fieldset-no-legend{
   float:none;
   margin:0;
 }
-.views-ui-rearrange-filter-form table td,
-.views-ui-rearrange-filter-form table th{
+
+.views-ui-rearrange-filter-form table td, .views-ui-rearrange-filter-form table th{
   vertical-align:top;
 }
+
 #edit-display-settings-title{
   color:#008bcb;
 }
+
 .views-displays .secondary{
   text-align:left;
 }
@@ -143,8 +123,7 @@ details.fieldset-no-legend{
   border-radius:7px 7px 0 0;
 }
 
-.views-displays .secondary .open > a:hover,
-.views-displays .secondary .open > a:focus{
+.views-displays .secondary .open > a:hover, .views-displays .secondary .open > a:focus{
   background-color:#f1f1f1;
   color:#008bcb;
 }
@@ -164,6 +143,7 @@ details.fieldset-no-legend{
 .views-displays .secondary .action-list input.form-submit{
   color:#008bcb;
 }
+
 .views-ui-display-tab-bucket h3{
   text-transform:uppercase;
 }
@@ -180,6 +160,7 @@ details.fieldset-no-legend{
   margin-left:0;
   margin-right:3px;
 }
+
 .views-ui-rearrange-filter-form .action-links{
   float:left;
   margin:0 0 1em;
@@ -220,10 +201,12 @@ details.fieldset-no-legend{
 .views-ui-rearrange-filter-form tr.drag-previous td{
   background-color:#ffb !important;
 }
+
 .views-query-info pre{
   margin-bottom:0;
   margin-top:0;
 }
+
 .views-query-info table{
   border-radius:7px;
   -webkit-border-horizontal-spacing:1px;
@@ -238,10 +221,11 @@ details.fieldset-no-legend{
   border-left:0 none;
   border-right:initial;
 }
-.form-item-page-create,
-.form-item-block-create{
+
+.form-item-page-create, .form-item-block-create{
   margin-top:13px;
 }
+
 .filterable-option .form-item.form-type-checkbox{
   padding-bottom:4px;
   padding-left:4px;
