@@ -12,7 +12,8 @@ module.exports = [
   ]},
   '/admin/content/scheduled',
   { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
-    { $: '#view-filename-table-column a', offset: -150 }
+    { $: '#view-filename-table-column a', offset: -150 },
+    { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
   ]},
   '/node/add',
   '/node/add/article',
@@ -179,6 +180,10 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
   { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
+  { name: 'Views UI', path: '/admin/structure/views/view/frontpage', actions: [
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
+    { $: 'div#block-thunder-admin-page-title h1', offset: -150 },
+  ]},
   { name: 'Views argument options', path: '/admin/structure/views/view/taxonomy_term', actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-argument-present"]' },
