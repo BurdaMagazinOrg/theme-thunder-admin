@@ -24,26 +24,39 @@
 .content-form__advanced-toggle:hover svg path{
   fill:#009fe3;
 }
-
 .content-form__actions{
   z-index:101;
 }
 
 .content-form__actions .button--danger{
-  margin:12px;
+  display:inline-block;
+  vertical-align:bottom;
+  padding:7px 0;
   text-transform:none;
   color:#bfbfbf;
-  font-size:14px;
+  font-size:0.875rem;
   font-weight:bold;
+  margin-right:0.75rem;
+}
+
+.content-form__actions .button--danger:last-child{
+  margin-right:0;
+}
+
+@media screen and (-moz-device-pixel-ratio){
+  .content-form__actions .button--danger{
+    line-height:1.14;
+  }
 }
 
 .content-form__actions .field--widget-thunder-moderation-state-default{
-  display:inline;
+  display:inline-block;
+  vertical-align:bottom;
+  margin-right:1em;
 }
 
 .content-form__actions .field--widget-thunder-moderation-state-default .form-item-moderation-state-0{
   margin:0;
-  display:inline;
 }
 
 .content-form__actions .field--widget-thunder-moderation-state-default .form-item-moderation-state-0 select{
@@ -52,16 +65,19 @@
 
 @media screen and (-moz-device-pixel-ratio){
   .content-form__actions .field--widget-thunder-moderation-state-default .form-item-moderation-state-0 select{
-    padding-top:4px;
+    padding-top:3px;
   }
 }
 
+.content-form__actions .field--widget-thunder-moderation-state-default .form-item__toggle-description-placeholder{
+  display:none;
+}
+
 .content-form__actions .status{
-  display:inline;
   float:right;
   padding:8px;
   margin:0;
-  font-size:14px;
+  font-size:0.875rem;
   font-weight:bold;
   color:#fafafa;
 }
@@ -125,6 +141,11 @@
 
 .entity-meta--advanced .entity-meta__title{
   text-shadow:none;
+}
+
+.entity-meta--advanced .entity-meta__last-saved label,
+.entity-meta--advanced .entity-meta__author label{
+  margin-right:0.333em;
 }
 
 .entity-meta--advanced .seven-details{

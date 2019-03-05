@@ -488,11 +488,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .field--name-field-video,
   .field--name-field-image {
 
-    details {
+    > details {
       margin: 0;
       border: 0;
 
-      summary {
+      > summary {
         display: none;
       }
 
