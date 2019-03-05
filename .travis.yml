@@ -9,8 +9,6 @@ env:
   matrix:
     - SHARPEYE_BROWSER=chrome THUNDER=8.x-2.x
     - SHARPEYE_BROWSER=firefox THUNDER=8.x-2.x
-    - SHARPEYE_BROWSER=chrome THUNDER=fix/3037374-div-tag-not-allowed-in-translation
-    - SHARPEYE_BROWSER=firefox THUNDER=fix/3037374-div-tag-not-allowed-in-translation
 
 dist:
   - xenial
