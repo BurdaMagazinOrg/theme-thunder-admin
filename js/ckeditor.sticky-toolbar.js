@@ -26,7 +26,7 @@
         var toolBar = $('.cke_top', context);
         toolBar.once('ckeditorStickyToolbarPosition').attr('style', toolBar.attr('style') + 'position: sticky; position: -webkit-sticky;');
         toolBar.css('top', $('body').css('padding-top'));
-      };
+      }
     }
   };
 })(jQuery, CKEDITOR);
