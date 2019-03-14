@@ -148,6 +148,7 @@
 /* Media info */
 .media-info {
   box-sizing: border-box;
+  display: block;
   position: absolute;
   z-index: 1;
   width: calc(100% - 4px);
@@ -172,14 +173,20 @@
   }
 }
 
+/* @deprecated Thunder 8.2.35 Class name with uppercase bundle name. */
+.media-info--video,
 .media-info--Video {
   background: transparent url("../../images/video.svg") no-repeat;
 }
 
+/* @deprecated Thunder 8.2.35 Class name with uppercase bundle name. */
+.media-info--image,
 .media-info--Image {
   background: transparent url("../../images/image.svg") no-repeat;
 }
 
+/* @deprecated Thunder 8.2.35 Class name with uppercase bundle name. */
+.media-info--twitter,
 .media-info--Twitter {
   background: transparent url("../../images/twitter.svg") no-repeat;
 }
