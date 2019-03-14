@@ -154,6 +154,7 @@
 }
 .media-info{
   box-sizing:border-box;
+  display:block;
   position:absolute;
   z-index:1;
   width:calc(100% - 4px);
@@ -177,15 +178,15 @@
   background-size:16px 16px;
   margin-right:4px;
 }
-
+.media-info--video,
 .media-info--Video{
   background:transparent url("../../images/video.svg") no-repeat;
 }
-
+.media-info--image,
 .media-info--Image{
   background:transparent url("../../images/image.svg") no-repeat;
 }
-
+.media-info--twitter,
 .media-info--Twitter{
   background:transparent url("../../images/twitter.svg") no-repeat;
 }
