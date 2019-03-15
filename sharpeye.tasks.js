@@ -82,6 +82,7 @@ module.exports = [
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]', wait: '#entity-browser-image-browser-form' },
+    { $: '#entity-browser-image-browser-form .view-content > div:nth-child(1)' },
     { switchToFrame: null }
   ]},
   '/node/add/page',
