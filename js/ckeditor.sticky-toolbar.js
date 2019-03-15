@@ -11,22 +11,21 @@
    */
   Drupal.behaviors.ckeditorStickyToolbar = {
     attach: function (context) {
-      // Listen on toolbar changes.
-      $(context).once('ckeditorStickyToolbar').on('drupalToolbarOrientationChange drupalToolbarTabChange drupalToolbarTrayChange', setPosition());
-      // Listen on ckeditor instance creation.
-      CKEDITOR.once('instanceReady', setPosition());
+      // Apply on ckeditor init.
+      CKEDITOR.once('instanceReady', function (event) {
+        // Set initially.
+        setPosition();
+        // Add handler for maximize event.
+        event.editor.on('maximize', setPosition);
+        // Add handler for toolbar events.
+        $(context).once('ckeditorStickyToolbar').on('drupalToolbarOrientationChange drupalToolbarTabChange drupalToolbarTrayChange', setPosition);
+      });
 
       // Fix ckeditor sticky toolbar position.
       function setPosition() {
-        return function (event) {
-          var toolBar = $('.cke_top', context);
-          // Set sticky position.
-          if (event.name === 'instanceReady') {
-            toolBar.once('ckeditorStickyToolbarPosition').attr('style', toolBar.attr('style') + 'position: sticky; position: -webkit-sticky;');
-          }
-          // Align position.
-          toolBar.css('top', $('body').css('padding-top'));
-        };
+        var toolBar = $('.cke_top', context);
+        toolBar.once('ckeditorStickyToolbarPosition').attr('style', toolBar.attr('style') + 'position: sticky; position: -webkit-sticky;');
+        toolBar.css('top', $('body').css('padding-top'));
       }
     }
   };
