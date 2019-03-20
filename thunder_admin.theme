@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -97,6 +98,17 @@ function thunder_admin_preprocess_media(&$variables) {
 function thunder_admin_preprocess_paragraph(&$variables) {
   if ($variables['view_mode'] == 'preview') {
     $variables['attributes']['class'][] = 'paragraph-form-item__preview';
+  }
+}
+
+/**
+ * Implements template_preprocess_status_report().
+ */
+function thunder_admin_preprocess_status_report_general_info(&$variables) {
+  if (($thunder = \Drupal::service('extension.list.module')->get('thunder')) && !empty($thunder->info['version'])) {
+    $variables['thunder']['title'] = new TranslatableMarkup('Thunder Version');
+    $variables['thunder']['value'] = substr($thunder->info['version'], 4);
+    $variables['thunder']['icon_class'] = 'thunder';
   }
 }
 
