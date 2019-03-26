@@ -629,10 +629,6 @@ tr.even .paragraph-form-item--has-subform .form-item{
   align-items:center;
 }
 
-.paragraph-form-item--has-subform .form-item__field-wrapper .field-suffix{
-  padding-left:5px;
-}
-
 .paragraph-form-item--has-subform .form-item__field-wrapper .form-textarea-wrapper,
 .paragraph-form-item--has-subform .form-item__field-wrapper .image-style-preview{
   flex:1 1 auto;
