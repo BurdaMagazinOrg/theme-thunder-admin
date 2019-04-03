@@ -1,7 +1,12 @@
 /**
  * @file
  * Import views-ui.css provided by seven/global-styling.
+ * 1. Remove margin to fix spacing after removing spaces in container.html.twig.
  *
- * @todo [IMPORT_ONLY]
  */
-@import '@theme-seven/css/components/views-ui.css';
+/* stylelint-disable string-no-newline */
+@import '@theme-seven/css/components/views-ui.css remove {
+  .views-admin input.form-submit, .views-ui-dialog input.form-submit, .views-admin a.button, .views-ui-dialog a.button { margin-right } /* 1 */
+}';
+/* stylelint-enable string-no-newline */
+

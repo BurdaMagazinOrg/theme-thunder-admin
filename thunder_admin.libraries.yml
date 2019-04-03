@@ -75,6 +75,14 @@ form-advanced-sidebar-tray:
     layout:
       css/content-form-layout.css: {}
 
+# Add ckeditor sticky toolbar position.
+ckeditor.sticky-toolbar:
+  js:
+    js/ckeditor.sticky-toolbar.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
 # Adds visibility toggling of form descriptions.
 form-toggle-description:
   js:

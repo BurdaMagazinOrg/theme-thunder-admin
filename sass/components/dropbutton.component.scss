@@ -192,3 +192,8 @@
 .form-actions .dropbutton .secondary-action {
   border-color: $primary-color-intense;
 }
+
+// Fix spacing after removing spaces in container.html.twig.
+.form-actions .dropbutton-wrapper {
+  margin-right: 0.875rem;
+}

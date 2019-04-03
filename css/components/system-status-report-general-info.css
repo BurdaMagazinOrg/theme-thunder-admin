@@ -159,3 +159,7 @@
     margin-top:25px;
   }
 }
+
+.system-status-general-info__item-icon--thunder:before{
+  background-image:url(../../images/icons/thunder-infinity.svg);
+}

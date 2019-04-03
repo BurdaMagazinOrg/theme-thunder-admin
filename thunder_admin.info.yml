@@ -88,6 +88,8 @@ libraries-override:
         css/media_entity_browser.view.css: css/components/media_entity_browser.view.css
 
 libraries-extend:
+  core/ckeditor:
+    - thunder_admin/ckeditor.sticky-toolbar
   core/drupal.tabledrag:
     - thunder_admin/tabledrag.tabindex
   # DEPRECATED: support for classic paragraphs widget with add in between buttons.
@@ -119,6 +121,7 @@ regions:
   header: 'Header'
   pre_content: 'Pre-content'
   highlighted: Highlighted
+  help: Help
   content: Content
   page_top: 'Page top'
   page_bottom: 'Page bottom'
