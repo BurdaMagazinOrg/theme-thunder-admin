@@ -77,7 +77,7 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a', offset: -150 }
   ]},
   // Modals in paragraphs
-  { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-widget-content', actions: [
+  { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-dialog', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
