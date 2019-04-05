@@ -76,13 +76,13 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input', offset: -150 },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a', offset: -150 }
   ]},
- { name: 'Test device preview phone', path: '/node/7/edit', actions: [
+  { name: 'Test device preview phone', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150 }
+    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150, wait: 'iframe[id="responsive-preview-frame"]' }
   ]},
-  { name: 'Test device preview tablet', path: '/node/7/edit', actions: [
+  { name: 'Test device preview tablet', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', offset: -150 }
+    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', wait: 'iframe[id="responsive-preview-frame"]' }
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-dialog', actions: [
