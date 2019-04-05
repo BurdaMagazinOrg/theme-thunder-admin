@@ -69,7 +69,7 @@ label.option{
 }
 
 .form-required:after{
-  content:'';
+  content:"";
   vertical-align:super;
   display:inline-block;
   background-image:url(../../../../misc/icons/ee0000/required.svg);
@@ -89,7 +89,7 @@ abbr.tabledrag-changed, abbr.ajax-changed{
 }
 
 .form-item--error-message:before{
-  content:'';
+  content:"";
   display:inline-block;
   height:14px;
   width:14px;
