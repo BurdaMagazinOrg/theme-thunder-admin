@@ -222,7 +222,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
-  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 800}], hide: [
+  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 1841}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
