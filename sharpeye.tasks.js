@@ -81,7 +81,7 @@ module.exports = [
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
     { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150 },
     { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
-    { wait: '.field--name-field-media img.media__image' },
+    { wait: '.field--name-field-media img.media__image.b-loaded' },
     { switchToFrame: null }
   ]},
   { name: 'Test device preview tablet', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
@@ -89,7 +89,7 @@ module.exports = [
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
     { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', offset: -150 },
     { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
-    { wait: '.field--name-field-media img.media__image' },
+    { wait: '.field--name-field-media img.media__image.b-loaded' },
     { switchToFrame: null }
   ]},
   // Modals in paragraphs
