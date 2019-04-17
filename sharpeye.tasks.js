@@ -77,12 +77,20 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a', offset: -150 }
   ]},
   { name: 'Test device preview phone', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
+    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150, wait: 'iframe[id="responsive-preview-frame"]' }
+    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150 },
+    { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
+    { wait: '.field--name-field-media img.media__image' },
+    { switchToFrame: null }
   ]},
   { name: 'Test device preview tablet', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
+    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', wait: 'iframe[id="responsive-preview-frame"]' }
+    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', offset: -150 },
+    { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
+    { wait: '.field--name-field-media img.media__image' },
+    { switchToFrame: null }
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-dialog', actions: [
@@ -201,7 +209,8 @@ module.exports = [
   { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' }
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' },
+    { $: '.preview-section tbody .views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
   { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]', offset: -150 },
