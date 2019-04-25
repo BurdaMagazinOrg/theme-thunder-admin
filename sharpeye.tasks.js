@@ -57,7 +57,7 @@ module.exports = [
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
-  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [ // viewports: , viewportChangePause: 3000, actions: [
+  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', offset: -150 },
@@ -75,22 +75,6 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button', offset: -150 },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input', offset: -150 },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a', offset: -150 }
-  ]},
-  { name: 'Test device preview phone', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[1]/button', offset: -150 },
-    { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
-    { wait: '.field--name-field-media img.media__image.b-loaded' },
-    { switchToFrame: null }
-  ]},
-  { name: 'Test device preview tablet', path: '/node/7/edit', viewports: [{width: 1280, height: 800}], actions: [
-    { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/button[contains(@class, "responsive-preview-trigger")]', offset: -150 },
-    { $: '//div[@id="responsive-preview-toolbar-tab"]/div[contains(@class, "responsive-preview-item-list")]/ul/li[5]/button', offset: -150 },
-    { switchToFrame: 'iframe[id="responsive-preview-frame"]' },
-    { wait: '.field--name-field-media img.media__image.b-loaded' },
-    { switchToFrame: null }
   ]},
   // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-dialog', actions: [
