@@ -22,15 +22,15 @@
 /* Some grid mixin.
  *
  * Usage:
- * @include some-grid-item(number of columns)
+ * @include some-grid-item(number of columns, margin size percentage)
  *
  * 1. Calculate width:
  *    Full width - margins (# columns * 2 - 2 (first/last of row)) / number of columns.
  * 2. Remove left margin for first element in row.
  * 3. Remove right margin for last element in row.
  */
-@mixin its-a-grid-item($n-columns) {
-  width: (100% - ($n-columns * 2 - 2) * 0.5) / $n-columns; /* 1 */
+@mixin its-a-grid-item($n-columns, $margin-size) {
+  width: (100% - ($n-columns * 2 - 2) * $margin-size) / $n-columns; /* 1 */
 
   &:first-child,
   &:nth-child(#{$n-columns}n+1) {

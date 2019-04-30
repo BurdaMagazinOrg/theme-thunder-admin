@@ -98,11 +98,11 @@
   float: left;
 
   @media screen and (min-width: 37.5em) and (max-width: 49.99em) { /* 600px */
-    @include its-a-grid-item(3);
+    @include its-a-grid-item(3, 0.5);
   }
 
   @media screen and (min-width: 50em) { /* 800px */
-    @include its-a-grid-item(6);
+    @include its-a-grid-item(6, 0.5);
   }
 }
 
@@ -112,7 +112,7 @@
  */
 .entity-browser-form .entities-list .item-container {
   @media screen and (max-width: 37.49em) {
-    @include its-a-grid-item(2);
+    @include its-a-grid-item(2, 0.5);
   }
 }
 
