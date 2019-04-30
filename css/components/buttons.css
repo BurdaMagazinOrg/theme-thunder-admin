@@ -39,19 +39,19 @@
   text-shadow:none;
 }
 .button--primary{
+  color:#fff;
   border-color:#1e5c90;
   background-color:#0071b8;
   background-image:linear-gradient(to bottom, #007bc6, #0071b8);
-  color:#fff;
   font-weight:700;
   -webkit-font-smoothing:antialiased;
 }
 
 .button--primary:hover, .button--primary:focus{
+  color:#fff;
+  border-color:#1e5c90;
   background-color:#2369a6;
   background-image:linear-gradient(to bottom, #0c97ed, #1f86c7);
-  border-color:#1e5c90;
-  color:#fff;
 }
 
 .button-action:before{
@@ -73,66 +73,66 @@
 }
 
 .button:disabled, .button:disabled:active, .button.is-disabled, .button.is-disabled:active{
+  cursor:default;
+  color:#5c5c5c;
   border-color:#d4d4d4;
   background:#ededed;
   box-shadow:none;
-  color:#5c5c5c;
-  font-weight:normal;
-  cursor:default;
   text-shadow:0 1px rgba(255, 255, 255, 0.6);
+  font-weight:normal;
 }
 
 .link{
   display:inline;
-  cursor:pointer;
   padding:0;
+  cursor:pointer;
+  text-decoration:none;
+  color:#0074bd;
   border:0;
   background:none;
   -webkit-appearance:none;
   -moz-appearance:none;
-  color:#0074bd;
-  text-decoration:none;
 }
 
 .link:hover, .link:focus{
-  color:#008ee6;
   text-decoration:underline;
+  color:#008ee6;
 }
 
 .button--danger{
   display:inline;
-  cursor:pointer;
   padding:0;
+  cursor:pointer;
+  text-decoration:underline;
+  color:#c72100;
   border:0;
   border-radius:0;
-  box-shadow:none;
   background:none;
+  box-shadow:none;
+  font-weight:400;
   -webkit-appearance:none;
   -moz-appearance:none;
-  color:#c72100;
-  font-weight:400;
-  text-decoration:underline;
 }
 
 .button--danger:hover, .button--danger:focus, .button--danger:active{
-  color:#ff2a00;
-  text-decoration:underline;
-  text-shadow:none;
   padding:0;
+  text-decoration:underline;
+  color:#ff2a00;
   border:0;
-  box-shadow:none;
   background:none;
+  box-shadow:none;
+  text-shadow:none;
 }
 
 .button--danger:disabled, .button--danger.is-disabled{
-  color:#737373;
+  padding:0;
   cursor:default;
   text-decoration:none;
-  -webkit-font-smoothing:antialiased;
-  padding:0;
+  color:#737373;
   border:0;
-  box-shadow:none;
   background:none;
+  box-shadow:none;
+  -webkit-font-smoothing:antialiased;
 }
 .button--primary{
   border-color:#009fe3;
