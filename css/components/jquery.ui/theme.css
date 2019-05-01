@@ -961,10 +961,6 @@
   background-image:url(../../../images/ui-icons-ffffff-256x240.png);
 }
 
-.ui-widget-overlay{
-  z-index:1300;
-}
-
 .ui-progressbar .ui-progressbar-value{
   background:#0072b9 url(../../../../../misc/progress.gif);
 }

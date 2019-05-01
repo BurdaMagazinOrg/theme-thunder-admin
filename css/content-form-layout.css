@@ -31,7 +31,6 @@
 
 .js body.advanced-sidebar-tray .toolbar-bar{
   position:fixed;
-  z-index:1300;
 }
 
 .js body.advanced-sidebar-tray .content-form__advanced{
