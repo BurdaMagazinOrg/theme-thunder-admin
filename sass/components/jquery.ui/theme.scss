@@ -33,10 +33,6 @@
   background-image: url(../../../images/ui-icons-ffffff-256x240.png);
 }
 
-.ui-widget-overlay {
-  z-index: 1300; // added
-}
-
 .ui-progressbar .ui-progressbar-value {
   // seven still uses this
   background: #0072b9 url(../../../../../misc/progress.gif); /* @todo: this file does not exist in core (any more?), seven still references it, needs replacement */
