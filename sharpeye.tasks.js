@@ -196,11 +196,10 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
-  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', hide: ['#views-live-preview'], actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
-    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' },
-    { $: '.preview-section tbody .views-field-changed', replace: '01/01/2018 - 00:00' }
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' }
   ]},
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
