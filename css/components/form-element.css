@@ -69,6 +69,17 @@
 .form-item__toggle-description-placeholder{
   display:none;
 }
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-autocomplete,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-text,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-tel,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-email,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-url,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-search,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-number,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-color,
+body:not(.entity-add-or-edit-form) .form-item__field-wrapper--has-description input.form-file{
+  max-width:100%;
+}
 
 body:not(.entity-add-or-edit-form) .details__toggle-description,
 body:not(.entity-add-or-edit-form) .form-item__toggle-description{

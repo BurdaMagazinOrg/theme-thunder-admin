@@ -80,10 +80,30 @@
   display: none;
 }
 
+/*
+ * Hide toggle when form is not in entity context.
+ *
+ * 1. Reset max-width to original value.
+ * 2. Hide toggle button.
+ */
 body:not(.entity-add-or-edit-form) {
+  .form-item__field-wrapper--has-description {
+    input.form-autocomplete,
+    input.form-text,
+    input.form-tel,
+    input.form-email,
+    input.form-url,
+    input.form-search,
+    input.form-number,
+    input.form-color,
+    input.form-file {
+      max-width: 100%; /* 1 */
+    }
+  }
+
   .details__toggle-description,
   .form-item__toggle-description {
-    display: none;
+    display: none; /* 2 */
   }
 }
 
