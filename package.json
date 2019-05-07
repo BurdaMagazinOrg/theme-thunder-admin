@@ -42,7 +42,7 @@
     "onchange": "^3.3.0",
     "postcss-cli": "^5.0.0",
     "postcss-discard-comments": "^2.0.4",
-    "sharpeye": "^3.6.0",
+    "sharpeye": "^3.6.1",
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-browser-hacks": "^1.1.0",

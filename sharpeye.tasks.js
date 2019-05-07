@@ -57,7 +57,7 @@ module.exports = [
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 }
   ]},
-  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [ // viewports: , viewportChangePause: 3000, actions: [
+  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '#edit-meta-changed > div', replace: '01/01/2018 - 00:00' },
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', offset: -150 },
@@ -196,6 +196,12 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]', offset: -150 },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
+    { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
+    { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' },
+    { $: '.preview-section tbody .views-field-changed', replace: '01/01/2018 - 00:00' }
+  ]},
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
@@ -209,7 +215,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
-  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 800}], hide: [
+  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 1841}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [

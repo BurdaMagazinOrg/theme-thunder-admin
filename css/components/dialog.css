@@ -1,9 +1,9 @@
 .ui-dialog{
-  background:transparent;
-  border:0;
   position:absolute;
   z-index:1260;
   padding:0;
+  border:0;
+  background:transparent;
 }
 
 @media all and (max-width: 48em){
@@ -14,22 +14,22 @@
 }
 
 .ui-dialog .ui-dialog-titlebar{
-  background:#6b6b6b;
+  padding:15px 49px 15px 15px;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
-  padding:15px 49px 15px 15px;
+  background:#6b6b6b;
 }
 
 [dir="rtl"] .ui-dialog .ui-dialog-titlebar{
-  padding-left:49px;
   padding-right:15px;
+  padding-left:49px;
 }
 
 .ui-dialog .ui-dialog-title{
-  font-size:1.231em;
-  font-weight:600;
   margin:0;
   color:#fff;
+  font-size:1.231em;
+  font-weight:600;
   -webkit-font-smoothing:antialiased;
 }
 
@@ -43,14 +43,14 @@
 }
 
 .ui-dialog .ui-icon.ui-icon-closethick{
-  background:url(../../../../misc/icons/ffffff/ex.svg) 0 0 no-repeat;
   margin-top:-8px;
+  background:url(../../../../misc/icons/ffffff/ex.svg) 0 0 no-repeat;
 }
 
 .ui-dialog .ui-widget-content.ui-dialog-content{
-  background:#fff;
   overflow:auto;
   padding:1em;
+  background:#fff;
 }
 
 .views-ui-dialog .ui-widget-content.ui-dialog-content{
@@ -58,17 +58,17 @@
 }
 
 .ui-dialog .ui-widget-content.ui-dialog-buttonpane{
-  background:#f5f5f2;
   margin:0;
   padding:15px 20px;
-  border-bottom-left-radius:5px;
   border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  background:#f5f5f2;
 }
 
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+  float:none;
   margin:0;
   padding:0;
-  float:none;
 }
 
 .ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text{
@@ -80,29 +80,29 @@
 }
 
 .ui-dialog .ui-dialog-content .form-actions{
-  padding:0;
   margin:0;
+  padding:0;
 }
 
 .ui-dialog .ajax-progress-throbber{
-  left:49%;
   position:fixed;
-  top:48.5%;
   z-index:1000;
+  top:48.5%;
+  left:49%;
+  width:24px;
+  height:24px;
+  padding:4px;
+  opacity:0.9;
+  border-radius:7px;
   background-color:#232323;
   background-image:url(../../../../misc/loading-small.gif);
-  background-position:center center;
   background-repeat:no-repeat;
-  border-radius:7px;
-  height:24px;
-  opacity:0.9;
-  padding:4px;
-  width:24px;
+  background-position:center center;
 }
 
 [dir="rtl"] .ui-dialog .ajax-progress-throbber{
-  left:auto;
   right:49%;
+  left:auto;
 }
 
 .ui-dialog .ajax-progress-throbber .throbber, .ui-dialog .ajax-progress-throbber .message{
