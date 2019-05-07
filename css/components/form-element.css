@@ -3,6 +3,18 @@
   align-items:center;
 }
 
+.form-item__field-wrapper--has-description input.form-autocomplete,
+.form-item__field-wrapper--has-description input.form-text,
+.form-item__field-wrapper--has-description input.form-tel,
+.form-item__field-wrapper--has-description input.form-email,
+.form-item__field-wrapper--has-description input.form-url,
+.form-item__field-wrapper--has-description input.form-search,
+.form-item__field-wrapper--has-description input.form-number,
+.form-item__field-wrapper--has-description input.form-color,
+.form-item__field-wrapper--has-description input.form-file{
+  max-width:calc(100% - 22px);
+}
+
 .form-item__field-wrapper--has-description .field-suffix{
   padding-left:5px;
 }
@@ -79,24 +91,17 @@ body:not(.entity-add-or-edit-form) .form-item__toggle-description{
   opacity:1;
   transition:all 0.3s;
 }
-
-#edit-title-wrapper,
-#edit-field-seo-title-wrapper,
-#edit-field-tags-wrapper,
-#edit-field-teaser-text-wrapper{
+.field--name-title,
+.field--name-field-seo-title,
+.field--name-field-tags{
   max-width:700px;
 }
 
-#edit-title-wrapper input,
-#edit-field-seo-title-wrapper input,
-#edit-field-tags-wrapper input,
-#edit-field-teaser-text-wrapper input{
-  width:100%;
-}
-
-#edit-title-wrapper .form-item__toggle-description,
-#edit-field-seo-title-wrapper .form-item__toggle-description,
-#edit-field-tags-wrapper .form-item__toggle-description,
-#edit-field-teaser-text-wrapper .form-item__toggle-description{
-  margin-right:-22px;
+.field--name-title input,
+.field--name-title .length-indicator,
+.field--name-field-seo-title input,
+.field--name-field-seo-title .length-indicator,
+.field--name-field-tags input,
+.field--name-field-tags .length-indicator{
+  width:calc(100% - 22px);
 }

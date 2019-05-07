@@ -7,6 +7,20 @@
 .form-item__field-wrapper--has-description {
   display: flex;
   align-items: center;
+  /* Subtract description toggle width from input fields,
+   * form-date, form-time & textarea keep 100% though.
+   */
+  input.form-autocomplete,
+  input.form-text,
+  input.form-tel,
+  input.form-email,
+  input.form-url,
+  input.form-search,
+  input.form-number,
+  input.form-color,
+  input.form-file {
+    max-width: calc(100% - 22px);
+  }
 
   .field-suffix {
     padding-left: 5px;
@@ -90,18 +104,16 @@ body:not(.entity-add-or-edit-form) {
     transition: all 0.3s;
   }
 }
-
-#edit-title-wrapper,
-#edit-field-seo-title-wrapper,
-#edit-field-tags-wrapper,
-#edit-field-teaser-text-wrapper {
+/*
+ * Uniform widths for title, seo-title & tags
+ */
+.field--name-title,
+.field--name-field-seo-title,
+.field--name-field-tags {
   max-width: 700px;
 
-  input {
-    width: 100%;
-  }
-
-  .form-item__toggle-description {
-    margin-right: -22px;
+  input,
+  .length-indicator {
+    width: calc(100% - 22px); // Subtract description toggle width.
   }
 }
