@@ -6,6 +6,7 @@
 /**
  * @media-entity media_entity_browser.view.css
  */
+@import 'mixins';
 @import 'variables';
 
 .view-media-entity-browser {
@@ -74,23 +75,6 @@
   }
 }
 
-.view-media-entity-browser .view-content,
-.entity-browser-form .entities-list {
-  margin-left: -0.5%;
-  margin-right: 0;
-
-  @media screen and (min-width: 37.5em) {
-    margin-right: -1.5%;
-  }
-  @media screen and (min-width: 50em) {
-    margin-right: -0.9%;
-  }
-}
-
-.entity-browser-form {
-  overflow: hidden;
-}
-
 .view-media-entity-browser:after,
 .entity-browser-form .entities-list:after {
   content: "";
@@ -98,33 +82,37 @@
   clear: both;
 }
 
+/**
+ * Build grid for media items.
+ *
+ * 1. Full width without margins (small devices)
+ * 2. Margins for all sizes.
+ */
 .entity-browser-form .entities-list .item-container,
 .view-media-entity-browser .views-row {
   position: relative;
-  width: 99.5%;
+  width: 99%; /* 1 */
   display: block;
   text-align: center;
-  margin: 0.5%;
+  margin: 0.5%; /* 2 */
   float: left;
 
-  @media screen and (min-width: 37.5em) { /* 600px */
-    width: 32%;
+  @media screen and (min-width: 37.5em) and (max-width: 49.99em) { /* 600px */
+    @include its-a-grid-item(3, 0.5);
   }
 
   @media screen and (min-width: 50em) { /* 800px */
-    width: 15.6%;
+    @include its-a-grid-item(6, 0.5);
   }
 }
 
+/**
+ * Selection in media browser should display 2 items per row
+ * for being better distinguishable from selection.
+ */
 .entity-browser-form .entities-list .item-container {
-  width: 151px;
-
-  @media screen and (min-width: 37.5em) { /* 600px */
-    width: 32%;
-  }
-
-  @media screen and (min-width: 50em) { /* 800px */
-    width: 15.6%;
+  @media screen and (max-width: 37.49em) {
+    @include its-a-grid-item(2, 0.5);
   }
 }
 
@@ -145,7 +133,11 @@
   border-top: 2px solid #b8b8b8;
 }
 
-/* Media info */
+/**
+ * Media info
+ *
+ * 1. Prevent overflowing grid tile.
+ */
 .media-info {
   box-sizing: border-box;
   display: block;
@@ -159,6 +151,7 @@
   text-align: left;
   margin-bottom: 2px;
   margin-left: 2px;
+  word-wrap: break-word; /* 1 */
 
   span {
     text-indent: 100%;

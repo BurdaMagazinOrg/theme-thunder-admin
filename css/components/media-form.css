@@ -82,4 +82,5 @@
 }
 .entities-list .item-container > input.media-form__item-widget__action{
   margin:0.5em;
+  width:24px;
 }
