@@ -105,9 +105,9 @@ function thunder_admin_preprocess_paragraph(&$variables) {
  * Implements template_preprocess_status_report().
  */
 function thunder_admin_preprocess_status_report_general_info(&$variables) {
-  if (($thunder = \Drupal::service('extension.list.module')->get('thunder')) && !empty($thunder->info['version'])) {
+  if (\Drupal::moduleHandler()->moduleExists('thunder') && !empty($thunder_version = \Drupal::service('extension.list.module')->get('thunder')->info['version'])) {
     $variables['thunder']['title'] = new TranslatableMarkup('Thunder Version');
-    $variables['thunder']['value'] = substr($thunder->info['version'], 4);
+    $variables['thunder']['value'] = substr($thunder_version, 4);
     $variables['thunder']['icon_class'] = 'thunder';
   }
 }
