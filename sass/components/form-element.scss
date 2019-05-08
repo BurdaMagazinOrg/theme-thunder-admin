@@ -4,90 +4,35 @@
  */
 @import 'variables';
 
-.form-item__field-wrapper--has-description {
-  display: flex;
-  align-items: center;
-  /* Subtract description toggle width from input fields,
-   * form-date, form-time & textarea keep 100% though.
-   */
-  input.form-autocomplete,
-  input.form-text,
-  input.form-tel,
-  input.form-email,
-  input.form-url,
-  input.form-search,
-  input.form-number,
-  input.form-color,
-  input.form-file {
-    max-width: calc(100% - 22px);
-  }
-
-  .field-suffix {
-    padding-left: 5px;
-  }
-
-  .form-textarea-wrapper,
-  .image-style-preview {
-    flex: 1 1 auto;
-  }
-}
-
-/* form item description toggle functionality */
+/* Hide par default */
 .details__toggle-description,
 .form-item__toggle-description {
-  padding: 0.5em;
-  flex: 0 0 auto;
-  align-self: flex-end;
-
-  .no-touchevents & {
-    position: relative;
-    top: -2px;
-    left: 2px;
-    margin: 0;
-    padding: 0 0.15em;
-    width: 22px;
-    height: 22px;
-    svg {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-
-  .button__icon {
-    display: block;
-    height: 100%;
-    width: 100%;
-    svg {
-      path {
-        fill: $primary-color-light;
-      }
-    }
-  }
+  display: none;
 }
 
-/* stylelint-disable no-descending-specificity */
 .details__toggle-description {
   float: right;
-  display: none;
 
   [open] > summary > & {
     display: block;
   }
 }
-/* stylelint-enable no-descending-specificity */
 
 .form-item__toggle-description-placeholder {
   display: none;
 }
 
-/*
- * Hide toggle when form is not in entity context.
+/**
+ * Add ability to hide/show the description of form fields.
  *
- * 1. Reset max-width to original value.
- * 2. Hide toggle button.
+ * 1. Subtract description toggle width from input fields,
+ *     form-date, form-time & textarea keep 100% though.
  */
-body:not(.entity-add-or-edit-form) {
+body.entity-add-or-edit-form {
   .form-item__field-wrapper--has-description {
+    display: flex;
+    align-items: center;
+
     input.form-autocomplete,
     input.form-text,
     input.form-tel,
@@ -97,13 +42,49 @@ body:not(.entity-add-or-edit-form) {
     input.form-number,
     input.form-color,
     input.form-file {
-      max-width: 100%; /* 1 */
+      max-width: calc(100% - 22px); /* 1 */
     }
-  }
 
-  .details__toggle-description,
-  .form-item__toggle-description {
-    display: none; /* 2 */
+    .field-suffix {
+      padding-left: 5px;
+    }
+
+    .form-textarea-wrapper,
+    .image-style-preview {
+      flex: 1 1 auto;
+    }
+
+    .details__toggle-description,
+    .form-item__toggle-description {
+      padding: 0.5em;
+      flex: 0 0 auto;
+      align-self: flex-end;
+
+      .no-touchevents & {
+        position: relative;
+        top: -2px;
+        left: 2px;
+        margin: 0;
+        padding: 0 0.15em;
+        width: 22px;
+        height: 22px;
+        svg {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .button__icon {
+        display: block;
+        height: 100%;
+        width: 100%;
+        svg {
+          path {
+            fill: $primary-color-light;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -124,8 +105,9 @@ body:not(.entity-add-or-edit-form) {
     transition: all 0.3s;
   }
 }
+
 /*
- * Uniform widths for title, seo-title & tags
+ * Uniform widths for title, seo-title & tags.
  */
 .field--name-title,
 .field--name-field-seo-title,
