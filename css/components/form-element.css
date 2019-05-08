@@ -3,52 +3,45 @@
   display:none;
 }
 
-.details__toggle-description{
-  float:right;
-}
-
-[open] > summary > .details__toggle-description{
-  display:block;
-}
-
 .form-item__toggle-description-placeholder{
   display:none;
 }
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description{
+.entity-add-or-edit-form .form-item__field-wrapper--has-description{
   display:flex;
   align-items:center;
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-autocomplete,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-text,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-tel,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-email,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-url,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-search,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-number,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-color,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-file{
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-autocomplete,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-text,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-tel,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-email,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-url,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-search,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-number,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-color,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-file{
   max-width:calc(100% - 22px);
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .field-suffix{
+.entity-add-or-edit-form .form-item__field-wrapper--has-description .field-suffix{
   padding-left:5px;
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-textarea-wrapper,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .image-style-preview{
+.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-textarea-wrapper,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description .image-style-preview{
   flex:1 1 auto;
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .details__toggle-description,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-item__toggle-description{
+.entity-add-or-edit-form .details__toggle-description,
+.entity-add-or-edit-form .form-item__toggle-description{
+  display:inline-block;
   padding:0.5em;
   flex:0 0 auto;
   align-self:flex-end;
 }
 
-.no-touchevents body.entity-add-or-edit-form .form-item__field-wrapper--has-description .details__toggle-description, .no-touchevents
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-item__toggle-description{
+.no-touchevents .entity-add-or-edit-form .details__toggle-description, .no-touchevents
+.entity-add-or-edit-form .form-item__toggle-description{
   position:relative;
   top:-2px;
   left:2px;
@@ -58,22 +51,31 @@ body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-it
   height:22px;
 }
 
-.no-touchevents body.entity-add-or-edit-form .form-item__field-wrapper--has-description .details__toggle-description svg, .no-touchevents
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-item__toggle-description svg{
+.no-touchevents .entity-add-or-edit-form .details__toggle-description svg, .no-touchevents
+.entity-add-or-edit-form .form-item__toggle-description svg{
   max-width:100%;
   max-height:100%;
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .details__toggle-description .button__icon,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-item__toggle-description .button__icon{
+.entity-add-or-edit-form .details__toggle-description .button__icon,
+.entity-add-or-edit-form .form-item__toggle-description .button__icon{
   display:block;
   height:100%;
   width:100%;
 }
 
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .details__toggle-description .button__icon svg path,
-body.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-item__toggle-description .button__icon svg path{
+.entity-add-or-edit-form .details__toggle-description .button__icon svg path,
+.entity-add-or-edit-form .form-item__toggle-description .button__icon svg path{
   fill:#75caee;
+}
+
+.entity-add-or-edit-form .details__toggle-description{
+  float:right;
+  display:inline-block;
+}
+
+[open] > summary > .entity-add-or-edit-form .details__toggle-description{
+  display:block;
 }
 
 .js body.entity-add-or-edit-form .js-details-description,
