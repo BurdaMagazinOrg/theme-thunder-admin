@@ -1,6 +1,10 @@
 .field-suffix{
   padding-left:5px;
 }
+
+.form-item__field-wrapper--has-description{
+  min-height:22px;
+}
 .details__toggle-description,
 .form-item__toggle-description{
   display:none;

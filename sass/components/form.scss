@@ -127,12 +127,17 @@ label {
 }
 
 /**
- * Fix labels for checkbox and radio by using flex-box for all checkboxes.
+ * Fix labels for checkbox and radio.
  * @see .form-item__field-wrapper--has-description
  */
 .form-type-checkbox,
 .form-type-radio {
   min-height: 22px; // Same height as description toggle.
+
+  input,
+  label {
+    vertical-align: middle;
+  }
 
   label {
     margin-left: 0.5em;

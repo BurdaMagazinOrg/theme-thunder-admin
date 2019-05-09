@@ -156,14 +156,6 @@
     text-shadow: none;
   }
 
-  /* Fix spacing after removing spaces in container.html.twig. */
-  .entity-meta__last-saved,
-  .entity-meta__author {
-    label {
-      margin-right: 0.333em; // Emulate whitespace.
-    }
-  }
-
   .seven-details {
     border-top: 2px solid $primary-color-dark;
     border-bottom: 2px solid $primary-color-dark;

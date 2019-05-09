@@ -427,6 +427,13 @@ label{
   min-height:22px;
 }
 
+.form-type-checkbox input,
+.form-type-checkbox label,
+.form-type-radio input,
+.form-type-radio label{
+  vertical-align:middle;
+}
+
 .form-type-checkbox label,
 .form-type-radio label{
   margin-left:0.5em;
