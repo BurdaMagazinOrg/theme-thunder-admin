@@ -1,3 +1,6 @@
+.field-suffix{
+  padding-left:5px;
+}
 .details__toggle-description,
 .form-item__toggle-description{
   display:none;
@@ -21,10 +24,6 @@
 .entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-color,
 .entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-file{
   max-width:calc(100% - 22px);
-}
-
-.entity-add-or-edit-form .form-item__field-wrapper--has-description .field-suffix{
-  padding-left:5px;
 }
 
 .entity-add-or-edit-form .form-item__field-wrapper--has-description .form-textarea-wrapper,
@@ -97,7 +96,7 @@
 .field--name-title,
 .field--name-field-seo-title,
 .field--name-field-tags{
-  max-width:700px;
+  max-width:722px;
 }
 
 .field--name-title input,
@@ -107,4 +106,8 @@
 .field--name-field-tags input,
 .field--name-field-tags .length-indicator{
   width:calc(100% - 22px);
+}
+
+.entity-add-or-edit-form .field--name-field-teaser-text .form-item__toggle-description{
+  margin-right:-22px;
 }

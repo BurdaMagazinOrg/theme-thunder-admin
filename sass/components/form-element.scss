@@ -4,6 +4,10 @@
  */
 @import 'variables';
 
+.field-suffix {
+  padding-left: 5px;
+}
+
 /* Hide par default */
 .details__toggle-description,
 .form-item__toggle-description {
@@ -36,10 +40,6 @@
     input.form-color,
     input.form-file {
       max-width: calc(100% - 22px); /* 1 */
-    }
-
-    .field-suffix {
-      padding-left: 5px;
     }
 
     .form-textarea-wrapper,
@@ -114,10 +114,14 @@
 .field--name-title,
 .field--name-field-seo-title,
 .field--name-field-tags {
-  max-width: 700px;
+  max-width: 722px; // Add toggle width
 
   input,
   .length-indicator {
     width: calc(100% - 22px); // Subtract description toggle width.
   }
+}
+
+.entity-add-or-edit-form .field--name-field-teaser-text .form-item__toggle-description {
+  margin-right: -22px; // @todo REMOVE (just for tests)
 }

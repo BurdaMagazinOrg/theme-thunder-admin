@@ -132,11 +132,7 @@ label {
  */
 .form-type-checkbox,
 .form-type-radio {
-  > .form-item__field-wrapper {
-    display: flex;
-    align-items: center;
-    min-height: 22px; // Same height as description toggle.
-  }
+  min-height: 22px; // Same height as description toggle.
 
   label {
     margin-left: 0.5em;
