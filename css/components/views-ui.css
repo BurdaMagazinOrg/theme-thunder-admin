@@ -236,3 +236,6 @@ details.fieldset-no-legend{
   padding-right:4px;
   padding-left:8px;
 }
+.view-preview-form .form-item-view-args .form-item__field-wrapper--has-description{
+  display:inline-block;
+}

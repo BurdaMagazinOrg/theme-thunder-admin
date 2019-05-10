@@ -533,3 +533,7 @@ textarea.form-textarea{
 .form-item .file-size{
   margin-left:0.316em;
 }
+
+.filter-wrapper .form-item label + *{
+  margin-left:0.316em;
+}
