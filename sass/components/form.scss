@@ -263,15 +263,8 @@ textarea.form-textarea {
   }
 }
 
-/* Fix spacing after removing spaces in container.html.twig. */
-.container-inline .form-type-date:last-child {
-  margin-left: 0.666em; // Emulate 2 whitespaces
-}
-
-.form-item .file-size {
-  margin-left: 0.316em; // Emulate whitespace
-}
-
+.form-item .file-size,
+.container-inline .form-item + .form-item,
 .filter-wrapper .form-item label + * {
   margin-left: 0.316em; // Emulate whitespace
 }

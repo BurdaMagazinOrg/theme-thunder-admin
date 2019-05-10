@@ -111,7 +111,3 @@
 .field--name-field-tags .length-indicator{
   width:calc(100% - 22px);
 }
-
-.entity-add-or-edit-form .field--name-field-teaser-text .form-item__toggle-description{
-  margin-right:-22px;
-}

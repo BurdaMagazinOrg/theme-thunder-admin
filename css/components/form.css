@@ -526,14 +526,9 @@ textarea.form-textarea{
 .form-actions .button:last-child{
   margin-right:0;
 }
-.container-inline .form-type-date:last-child{
-  margin-left:0.666em;
-}
 
-.form-item .file-size{
-  margin-left:0.316em;
-}
-
+.form-item .file-size,
+.container-inline .form-item + .form-item,
 .filter-wrapper .form-item label + *{
   margin-left:0.316em;
 }
