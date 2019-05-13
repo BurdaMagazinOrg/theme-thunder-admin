@@ -67,7 +67,8 @@
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
-<div{{ attributes.addClass(classes) }} data-form-description-container>
+{% spaceless %}
+<div{{ attributes.addClass(classes) }} {% if description.content %}data-form-description-container{% endif %}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
@@ -77,8 +78,9 @@
       {{ description.content }}
     </div>
   {% endif %}
-
-  <div class="form-item__field-wrapper{% if description.content %} form-item__field-wrapper--has-description{% endif %}">
+  {% if description.content %}
+  <div class="form-item__field-wrapper--has-description">
+  {% endif %}
     {% if prefix is not empty %}
       <span class="field-prefix">{{ prefix }}</span>
     {% endif %}
@@ -89,12 +91,11 @@
     {% if label_display == 'after' %}
       {{ label }}
     {% endif %}
-    {% if description.content %}
+  {% if description.content %}
       {% include '@thunder_admin/button-description-toggle.html.twig' with {'class': 'form-item__toggle-description'} %}
-    {% else %}
-      <div class="form-item__toggle-description-placeholder">&nbsp;</div>
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
+
 
   {% if errors %}
     <div class="form-item--error-message">
@@ -107,3 +108,4 @@
     </div>
   {% endif %}
 </div>
+{% endspaceless %}

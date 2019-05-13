@@ -422,11 +422,16 @@ label{
   margin-left:0;
   margin-right:1.5em;
 }
-.form-type-checkbox > .form-item__field-wrapper,
-.form-type-radio > .form-item__field-wrapper{
-  display:flex;
-  align-items:center;
+.form-type-checkbox,
+.form-type-radio{
   min-height:22px;
+}
+
+.form-type-checkbox input,
+.form-type-checkbox label,
+.form-type-radio input,
+.form-type-radio label{
+  vertical-align:middle;
 }
 
 .form-type-checkbox label,
@@ -521,10 +526,9 @@ textarea.form-textarea{
 .form-actions .button:last-child{
   margin-right:0;
 }
-.container-inline .form-type-date:last-child{
-  margin-left:0.666em;
-}
 
-.form-item .file-size{
+.form-item .file-size,
+.container-inline .form-item + .form-item,
+.filter-wrapper .form-item label + *{
   margin-left:0.316em;
 }

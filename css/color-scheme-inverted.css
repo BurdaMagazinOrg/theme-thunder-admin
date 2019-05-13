@@ -65,7 +65,8 @@
   color:#fafafa;
 }
 
-.color-scheme-inverted .button__icon svg path{
+.color-scheme-inverted .details__toggle-description .button__icon svg path,
+.color-scheme-inverted .form-item__toggle-description .button__icon svg path{
   fill:white;
 }
 

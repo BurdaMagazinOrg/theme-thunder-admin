@@ -10,3 +10,7 @@
 }';
 /* stylelint-enable string-no-newline */
 
+/* Fix layout for additional wrapper see form-element */
+.view-preview-form .form-item-view-args .form-item__field-wrapper--has-description {
+  display: inline-block;
+}
