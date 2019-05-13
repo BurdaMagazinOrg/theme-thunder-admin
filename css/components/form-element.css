@@ -1,25 +1,50 @@
 .field-suffix{
-  padding-left:0.316em;
+  padding-left:5px;
 }
 
 .form-item__field-wrapper--has-description{
+  min-height:22px;
+}
+.details__toggle-description,
+.form-item__toggle-description{
+  display:none;
+}
+
+.form-item__toggle-description-placeholder{
+  display:none;
+}
+.entity-add-or-edit-form .form-item__field-wrapper--has-description{
   display:flex;
   align-items:center;
 }
 
-.form-item__field-wrapper--has-description .form-textarea-wrapper,
-.form-item__field-wrapper--has-description .image-style-preview{
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-autocomplete,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-text,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-tel,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-email,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-url,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-search,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-number,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-color,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description input.form-file{
+  max-width:calc(100% - 22px);
+}
+
+.entity-add-or-edit-form .form-item__field-wrapper--has-description .form-textarea-wrapper,
+.entity-add-or-edit-form .form-item__field-wrapper--has-description .image-style-preview{
   flex:1 1 auto;
 }
-.details__toggle-description,
-.form-item__toggle-description{
+
+.entity-add-or-edit-form .details__toggle-description,
+.entity-add-or-edit-form .form-item__toggle-description{
+  display:inline-block;
   padding:0.5em;
   flex:0 0 auto;
   align-self:flex-end;
 }
 
-.no-touchevents .details__toggle-description, .no-touchevents
-.form-item__toggle-description{
+.no-touchevents .entity-add-or-edit-form .details__toggle-description, .no-touchevents
+.entity-add-or-edit-form .form-item__toggle-description{
   position:relative;
   top:-2px;
   left:2px;
@@ -29,38 +54,31 @@
   height:22px;
 }
 
-.no-touchevents .details__toggle-description svg, .no-touchevents
-.form-item__toggle-description svg{
+.no-touchevents .entity-add-or-edit-form .details__toggle-description svg, .no-touchevents
+.entity-add-or-edit-form .form-item__toggle-description svg{
   max-width:100%;
   max-height:100%;
 }
 
-.details__toggle-description .button__icon,
-.form-item__toggle-description .button__icon{
+.entity-add-or-edit-form .details__toggle-description .button__icon,
+.entity-add-or-edit-form .form-item__toggle-description .button__icon{
   display:block;
   height:100%;
   width:100%;
 }
 
-.details__toggle-description .button__icon svg path,
-.form-item__toggle-description .button__icon svg path{
+.entity-add-or-edit-form .details__toggle-description .button__icon svg path,
+.entity-add-or-edit-form .form-item__toggle-description .button__icon svg path{
   fill:#75caee;
 }
-.details__toggle-description{
+
+.entity-add-or-edit-form .details__toggle-description{
   float:right;
-  display:none;
+  display:inline-block;
 }
 
-[open] > summary > .details__toggle-description{
+[open] > summary > .entity-add-or-edit-form .details__toggle-description{
   display:block;
-}
-.form-item__toggle-description-placeholder{
-  display:none;
-}
-
-body:not(.entity-add-or-edit-form) .details__toggle-description,
-body:not(.entity-add-or-edit-form) .form-item__toggle-description{
-  display:none;
 }
 
 .js body.entity-add-or-edit-form .js-details-description,
@@ -79,24 +97,17 @@ body:not(.entity-add-or-edit-form) .form-item__toggle-description{
   opacity:1;
   transition:all 0.3s;
 }
-
-#edit-title-wrapper,
-#edit-field-seo-title-wrapper,
-#edit-field-tags-wrapper,
-#edit-field-teaser-text-wrapper{
-  max-width:700px;
+.field--name-title,
+.field--name-field-seo-title,
+.field--name-field-tags{
+  max-width:722px;
 }
 
-#edit-title-wrapper input,
-#edit-field-seo-title-wrapper input,
-#edit-field-tags-wrapper input,
-#edit-field-teaser-text-wrapper input{
-  width:100%;
-}
-
-#edit-title-wrapper .form-item__toggle-description,
-#edit-field-seo-title-wrapper .form-item__toggle-description,
-#edit-field-tags-wrapper .form-item__toggle-description,
-#edit-field-teaser-text-wrapper .form-item__toggle-description{
-  margin-right:-22px;
+.field--name-title input,
+.field--name-title .length-indicator,
+.field--name-field-seo-title input,
+.field--name-field-seo-title .length-indicator,
+.field--name-field-tags input,
+.field--name-field-tags .length-indicator{
+  width:calc(100% - 22px);
 }
