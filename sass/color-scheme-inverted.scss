@@ -68,10 +68,12 @@
     }
   }
 
-  .button__icon svg path {
-    fill: white;
+  .details__toggle-description,
+  .form-item__toggle-description {
+    .button__icon svg path {
+      fill: white;
+    }
   }
-
   /* Tables */
   thead th {
     color: $gray-lighter;

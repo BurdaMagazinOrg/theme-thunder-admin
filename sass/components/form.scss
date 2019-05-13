@@ -127,15 +127,16 @@ label {
 }
 
 /**
- * Fix labels for checkbox and radio by using flex-box for all checkboxes.
+ * Fix labels for checkbox and radio.
  * @see .form-item__field-wrapper--has-description
  */
 .form-type-checkbox,
 .form-type-radio {
-  > .form-item__field-wrapper {
-    display: flex;
-    align-items: center;
-    min-height: 22px; // Same height as description toggle.
+  min-height: 22px; // Same height as description toggle.
+
+  input,
+  label {
+    vertical-align: middle;
   }
 
   label {
@@ -262,11 +263,8 @@ textarea.form-textarea {
   }
 }
 
-/* Fix spacing after removing spaces in container.html.twig. */
-.container-inline .form-type-date:last-child {
-  margin-left: 0.666em; // Emulate 2 whitespaces
-}
-
-.form-item .file-size {
+.form-item .file-size,
+.container-inline .form-item + .form-item,
+.filter-wrapper .form-item label + * {
   margin-left: 0.316em; // Emulate whitespace
 }
