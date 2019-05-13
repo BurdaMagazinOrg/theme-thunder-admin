@@ -417,6 +417,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     display: flex;
     align-items: center;
 
+    .field-suffix {
+      padding-left: 5px;
+    }
+
     .form-textarea-wrapper,
     .image-style-preview {
       flex: 1 1 auto;
