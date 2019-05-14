@@ -77,8 +77,10 @@
 }
 
 /**
- * entity_browser.entity_list.css is very specific.
+ * 1. We really want that margin despite seven/form.css and entity_browser.entity_list.css.
+ * 2. Override full width form-actions input for narrow devices (form.css in seven).
  */
 .entities-list .item-container > input.media-form__item-widget__action {
-  margin: 0.5em;
+  margin: 0.5em; /* 1 */
+  width: 24px; /* 2 */
 }

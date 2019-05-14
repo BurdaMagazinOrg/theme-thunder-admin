@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -105,9 +106,9 @@ function thunder_admin_preprocess_paragraph(&$variables) {
  * Implements template_preprocess_status_report().
  */
 function thunder_admin_preprocess_status_report_general_info(&$variables) {
-  if (($thunder = \Drupal::service('extension.list.module')->get('thunder')) && !empty($thunder->info['version'])) {
+  if (\Drupal::moduleHandler()->moduleExists('thunder') && !empty($thunder_version = \Drupal::service('extension.list.module')->get('thunder')->info['version'])) {
     $variables['thunder']['title'] = new TranslatableMarkup('Thunder Version');
-    $variables['thunder']['value'] = substr($thunder->info['version'], 4);
+    $variables['thunder']['value'] = substr($thunder_version, 4);
     $variables['thunder']['icon_class'] = 'thunder';
   }
 }
@@ -372,16 +373,25 @@ function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInt
  */
 function _thunder_admin_apply_advanced_vertical_tabs() {
 
+  /* @var $route \Drupal\Core\Routing\CurrentRouteMatch */
   $route = Drupal::service('current_route_match');
   switch ($route->getRouteName()) {
     case 'entity.taxonomy_term.add_form':
     case 'node.add':
     case 'entity.node.content_translation_add':
+
       return TRUE;
   }
 
+  // There is an entity form and object is a content entity.
   if ($route->getRouteObject()->getDefault("_entity_form")) {
-    return TRUE;
+    $params = $route->getParameters();
+    foreach ($params->keys() as $key) {
+      if ($params->get($key) instanceof ContentEntityBase) {
+
+        return TRUE;
+      }
+    }
   }
 
   return FALSE;
