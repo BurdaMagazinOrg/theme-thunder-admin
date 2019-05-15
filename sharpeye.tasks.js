@@ -148,8 +148,9 @@ module.exports = [
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
   { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', actions: [
     { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' },
-    { $: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary', replace: 'Uploads enabled, max size: XXX MB' },
-    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/ul/li[3]/a', offset: -150 }
+    { $: 'a[href="#edit-editor-settings-plugins-drupalimage"]', offset: -150 },
+    { $: '#editor-settings-wrapper li.vertical-tabs__menu-item.is-selected span.vertical-tabs__menu-item-summary', replace: 'Uploads enabled, max size: XXX MB' },
+    { $: 'a[href="#edit-editor-settings-plugins-drupallink"]', offset: -150 }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
   { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
