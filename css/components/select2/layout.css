@@ -258,7 +258,7 @@
   color:#07364a;
 }
 
-.select2-container--thunder_admin .select2-search--inline .select2-search__field:-ms-input-placeholder{
+.select2-container--thunder_admin .select2-search--inline .select2-search__field::-moz-placeholder{
   color:#07364a;
 }
 
