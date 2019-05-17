@@ -47,7 +47,7 @@ module.exports = [
   { name: 'Linkit dialog', path: '/node/add/article', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
-    { $: './/*[contains(@class, "cke_button__linkit")]/span[1]' }
+    { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' }
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
@@ -148,8 +148,9 @@ module.exports = [
   { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .form-item__field-wrapper'] },
   { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', actions: [
     { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' },
-    { $: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary', replace: 'Uploads enabled, max size: XXX MB' },
-    { $: '//*[@id="editor-settings-wrapper"]/div[2]/div/ul/li[4]/a', offset: -150 },
+    { $: 'a[href="#edit-editor-settings-plugins-drupalimage"]', offset: -150 },
+    { $: '#editor-settings-wrapper li.vertical-tabs__menu-item.is-selected span.vertical-tabs__menu-item-summary', replace: 'Uploads enabled, max size: XXX MB' },
+    { $: 'a[href="#edit-editor-settings-plugins-drupallink"]', offset: -150 }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
   { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
