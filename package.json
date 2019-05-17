@@ -16,7 +16,7 @@
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
     "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css",
     "js": "eslint js",
-    "images": "imagemin images-originals/* -o images && imagemin images-originals/icons/* -o images/icons",
+    "images": "imagemin images-originals/* --out-dir images && imagemin images-originals/icons/* --out-dir images/icons",
     "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",
     "serve": "browser-sync start --proxy \"thunder.dev\" --files \"css/**/*.css, js/*.js\"",
     "build": "npm run styles-lint && npm run styles && npm run js && npm run images",
@@ -36,7 +36,7 @@
     "browser-sync": "^2.23.6",
     "css-sniper": "^0.5.4",
     "eslint": "^4.14.0",
-    "imagemin-cli": "^3.0.0",
+    "imagemin-cli": "^4.0.0",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "onchange": "^3.3.0",
@@ -47,8 +47,7 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-browser-hacks": "^1.1.0",
     "stylelint-scss": "^2.4.0",
-    "svg-sprite-generator": "^0.0.7",
-    "svgo": "^1.0.5"
+    "svg-sprite-generator": "^0.0.7"
   },
   "engines": {
     "node": ">=6.0.0"
