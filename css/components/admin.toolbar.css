@@ -182,3 +182,6 @@
   background-image:url("../../images/icons/chevron-disc-right--white.svg");
   background-repeat:no-repeat;
 }
+.toolbar-icon-admin-toolbar-tools-help:before{
+  box-sizing:border-box;
+}
