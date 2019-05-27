@@ -77,6 +77,13 @@
   display:block;
 }
 
+.toolbar-menu .menu-item > span{
+  padding:1em 1.3333em;
+  display:block;
+  color:#434343;
+  cursor:pointer;
+}
+
 [dir="rtl"] .toolbar-tray-horizontal .toolbar-menu:not(:first-child) li.menu-item--expanded > a:focus{
   background-position:center right;
   background-image:url("../misc/icons/0074bd/chevron-right.svg");
