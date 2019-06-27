@@ -40,3 +40,8 @@
     background-repeat: no-repeat;
   }
 }
+
+/* 1. Set box-sizing explicitly to what we had before, see https://drupal.org/i/3026302. */
+.toolbar-icon-admin-toolbar-tools-help:before {
+  box-sizing: border-box; /* 1 */
+}
