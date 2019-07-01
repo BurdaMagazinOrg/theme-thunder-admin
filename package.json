@@ -17,7 +17,6 @@
     "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css",
     "js": "eslint js",
     "images": "imagemin images-originals/*.* --out-dir=\"images\" && imagemin images-originals/icons/*.* --out-dir=\"images/icons\"",
-    "postimages": "svg-sprite-generate -d images/icons -o images/icon-sprite.svg",
     "serve": "browser-sync start --proxy \"thunder.dev\" --files \"css/**/*.css, js/*.js\"",
     "build": "npm run styles-lint && npm run styles && npm run js && npm run images",
     "watch:styles": "onchange \"sass\" \"sass-includes\" -- npm run styles",
@@ -45,8 +44,7 @@
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-no-browser-hacks": "^1.1.0",
-    "stylelint-scss": "^2.4.0",
-    "svg-sprite-generator": "^0.0.7"
+    "stylelint-scss": "^2.4.0"
   },
   "engines": {
     "node": "=8"
