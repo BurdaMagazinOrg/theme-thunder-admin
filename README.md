@@ -47,14 +47,14 @@ Build script will try to resolve paths to `core` themes with globally available 
 If that does not work, then correct fallback path to `core` themes should be changed in `css-sniper.conf.js` property `fallbackThemesPath`, so that build script can find required `core` files.
 
 Node.js version 8 is required at the moment, you can use [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
-run ``nvm use 8`` to switch to node version 8.
-then run ``npm install``.
+Run `nvm use 8` to switch to node version 8.
+Then run `npm install`.
 
 build scripts and watch scripts are run with npm, for development run 
-``npm run dev``
+`npm run dev`.
 
 or only watch changes in sass files
-``npm run watch:styles``
+`npm run watch:styles`.
 
 #### The build tasks that will be executed are:
 * live-reloading dev server with browser-sync 
