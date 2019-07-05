@@ -52,6 +52,10 @@ libraries-override:
         /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
         /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
         /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        /core/themes/stable/css/core/vertical-tabs.css: false
   node/drupal.node:
     css:
       layout:
