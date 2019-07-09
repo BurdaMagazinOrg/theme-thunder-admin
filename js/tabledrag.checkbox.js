@@ -236,7 +236,7 @@
   Drupal.behaviors.tableDragCheckbox = {
     attach: function (context, settings) {
       for (var base in settings.tableDrag) {
-        if (settings.tableDrag.hasOwnProperty(base)) {
+        if (Object.prototype.hasOwnProperty.call(settings.tableDrag, 'base')) {
           var $table = $(context).find('#' + base).once('tabledrag-checkbox');
           if ($table.length) {
             Drupal.tableDrag[base].initCkbx();
