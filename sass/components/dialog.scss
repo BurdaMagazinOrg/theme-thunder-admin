@@ -60,11 +60,15 @@
     margin-top: -12px;
   }
 
+  // 1. Fix for scrolling dialog content on ios devices, can be
+  //  removed after https://drupal.org/i/2908476 has landed.
+  //
   .ui-widget-content.ui-dialog-content {
     background: $gray-lightest;
     padding: 0.4em 1.2em 1.2em;
     border-bottom-left-radius: 5px; // Added.
     border-bottom-right-radius: 5px; // Added.
+    -webkit-overflow-scrolling: touch; /* 1 */
     @include browser-border(false); // Added.
   }
 
