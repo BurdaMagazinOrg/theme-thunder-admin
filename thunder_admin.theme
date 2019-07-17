@@ -306,7 +306,7 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
     && !isset($paragraph['top']['actions']['dropdown_actions'])
     && count($paragraph['top']['actions']['actions']) > 1) {
 
-    foreach ($paragraph['top']['actions']['actions'] as $key => $action) {
+    foreach (Element::children($paragraph['top']['actions']['actions']) as $key) {
       $paragraph['top']['actions']['actions'][$key]['#prefix'] = '<li class="paragraph-form-item__link">';
       $paragraph['top']['actions']['actions'][$key]['#suffix'] = '</li>';
     }
