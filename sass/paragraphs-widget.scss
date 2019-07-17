@@ -85,17 +85,16 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
                   .paragraphs-subform{
                   background-color: $primary-color-lighter;
                   padding: 0px 10px 5px 10px;
+                  }
                 }
+              } 
             }
+          }
         }
-      }
-        }
-      }
-    }
+      } 
     }
   }
 
-  // bla bka
     &.draggable {
       &:hover {
         background: $primary-color-lighter;
@@ -407,7 +406,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   color: $gray-medium;
     // Remove additional spacing inside paragraph subforms.
 
-
+ tr.odd & .form-item,
+ tr.even & .form-item {
+   margin-top: 0;
+   margin-bottom: 0;
+ }
 
   // Different colors, for better contrast
   a,
