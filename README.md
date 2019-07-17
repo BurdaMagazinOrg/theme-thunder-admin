@@ -48,7 +48,7 @@ If that does not work, then correct fallback path to `core` themes should be cha
 
 Node.js version 8 is required at the moment, you can use [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
 Run `nvm use 8` to switch to node version 8.
-Then run `npm install`.
+Then run `npm prune` and `npm install`.
 
 build scripts and watch scripts are run with npm, for development run 
 `npm run dev`.
