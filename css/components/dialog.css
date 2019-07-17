@@ -157,6 +157,7 @@
   padding:0.4em 1.2em 1.2em;
   border-bottom-left-radius:5px;
   border-bottom-right-radius:5px;
+  -webkit-overflow-scrolling:touch;
   border:4px solid #eaf6fe;
   border-top:none;
 }
