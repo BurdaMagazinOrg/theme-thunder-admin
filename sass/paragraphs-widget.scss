@@ -50,6 +50,51 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     background: $primary-color-lighter;
     border-bottom: 1px solid $primary-color;
 
+    .paragraphs-subform{
+      background-color: #dff2fd;
+      padding: 0px 10px 5px 10px;
+
+      .paragraphs-subform{ 
+        background-color: $primary-color-lightest;
+        padding: 0px 10px 5px 10px;
+
+        .paragraphs-subform{
+          background-color: $primary-color-lighter;
+          padding: 0px 10px 5px 10px;
+          
+          .paragraphs-subform{
+            background-color: #dff2fd;
+            padding: 0px 10px 5px 10px;
+
+            .paragraphs-subform{
+              background-color: $primary-color-lightest;
+              padding: 0px 10px 5px 10px;
+       
+              .paragraphs-subform{
+              background-color: $primary-color-lighter;
+              padding: 0px 10px 5px 10px;
+
+              .paragraphs-subform{
+                background-color: #dff2fd;
+                padding: 0px 10px 5px 10px;
+    
+                .paragraphs-subform{
+                  background-color: $primary-color-lightest;
+                  padding: 0px 10px 5px 10px;
+           
+                  .paragraphs-subform{
+                  background-color: $primary-color-lighter;
+                  padding: 0px 10px 5px 10px;
+                }
+            }
+        }
+      }
+        }
+      }
+    }
+    }
+  }
+
     &.draggable {
       &:hover {
         background: $primary-color-lighter;
@@ -138,6 +183,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .paragraph-form-item {
   position: relative;
 }
+
 
 /**
  * Paragraphs actions style.
@@ -358,13 +404,9 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-left: 0;
   padding: 20px 20px 20px 0;
   color: $gray-medium;
+    // Remove additional spacing inside paragraph subforms.
 
-  // Remove additional spacing inside paragraph subforms.
-  tr.odd & .form-item,
-  tr.even & .form-item {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+
 
   // Different colors, for better contrast
   a,
@@ -435,7 +477,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
   > .form-wrapper:first-child {
     margin-top: $base-space-80pct;
-  }
+  } 
 
   .filter-wrapper {
     border: 0;
@@ -708,7 +750,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     .paragraphs-bottom-add-button,
     .first-button.paragraph-type-add-modal,
     .add-in-between-row .paragraph-type-add-modal,
-    .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper {
+    .paragraphs-features__add-in-between__row 
+    .paragraphs-features__add-in-between__wrapper {
       padding: 5px 0;
       height: 30px;
       margin: 0;
@@ -778,3 +821,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 ul.paragraphs-add-dialog-list input.field-add-more-submit {
   background-image: none;
 }
+
+
+/**
+* Hide show weights buttons
+*/
+.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper {
+  display: none;
+  visibility: hidden; 
+} 
