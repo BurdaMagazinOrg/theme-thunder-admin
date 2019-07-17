@@ -327,6 +327,51 @@ tr:hover .paragraphs-collapsed-description::after{
   border-bottom:1px solid #1293c9;
 }
 
+.field-multiple-table > tbody > tr .paragraphs-subform{
+  background-color:#dff2fd;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform{
+  background-color:#eaf6fe;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#d4edfc;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#dff2fd;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#eaf6fe;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#d4edfc;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#dff2fd;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#eaf6fe;
+  padding:0px 10px 5px 10px;
+}
+
+.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
+  background-color:#d4edfc;
+  padding:0px 10px 5px 10px;
+}
+
 .field-multiple-table > tbody > tr.draggable:hover{
   background:#d4edfc;
 }
@@ -578,12 +623,6 @@ tr:hover .paragraphs-collapsed-description::after{
   margin-left:0;
   padding:20px 20px 20px 0;
   color:#979797;
-}
-
-tr.odd .paragraph-form-item--has-subform .form-item,
-tr.even .paragraph-form-item--has-subform .form-item{
-  margin-top:0;
-  margin-bottom:0;
 }
 
 .paragraph-form-item--has-subform a,
@@ -892,11 +931,13 @@ tr.even .paragraph-form-item--has-subform .form-item{
 .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button,
 .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal,
 .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal,
-.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper,
+.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper,
 .js .field--widget-paragraphs .paragraphs-bottom-add-button,
 .js .field--widget-paragraphs .first-button.paragraph-type-add-modal,
 .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal,
-.js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper{
+.js .field--widget-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper{
   padding:5px 0;
   height:30px;
   margin:0;
@@ -906,11 +947,13 @@ tr.even .paragraph-form-item--has-subform .form-item{
   .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button,
   .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal,
   .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal,
-  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper,
+  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper,
   .js .field--widget-paragraphs .paragraphs-bottom-add-button,
   .js .field--widget-paragraphs .first-button.paragraph-type-add-modal,
   .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal,
-  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper{
+  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper{
     height:39px;
   }
 }
@@ -918,11 +961,13 @@ tr.even .paragraph-form-item--has-subform .form-item{
 .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
 .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
 .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
+.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-.js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
+.js .field--widget-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
   top:0;
 }
 
@@ -930,11 +975,13 @@ tr.even .paragraph-form-item--has-subform .form-item{
   .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
   .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
   .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
+  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
+  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row
+.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
     width:auto;
     padding-top:6px;
     padding-bottom:6px;
@@ -966,4 +1013,8 @@ tr.even .paragraph-form-item--has-subform .form-item{
 }
 ul.paragraphs-add-dialog-list input.field-add-more-submit{
   background-image:none;
+}
+.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper{
+  display:none;
+  visibility:hidden;
 }
