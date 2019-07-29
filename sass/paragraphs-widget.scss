@@ -45,60 +45,14 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       padding-left: 0;
     }
   }
-
   & > tbody > tr {
     background: $primary-color-lighter;
     border-bottom: 1px solid $primary-color;
 
-    .paragraphs-subform{
-      background-color: #dff2fd;
-      padding: 0px 10px 5px 10px;
-
-      .paragraphs-subform{ 
-        background-color: $primary-color-lightest;
-        padding: 0px 10px 5px 10px;
-
-        .paragraphs-subform{
-          background-color: $primary-color-lighter;
-          padding: 0px 10px 5px 10px;
-          
-          .paragraphs-subform{
-            background-color: #dff2fd;
-            padding: 0px 10px 5px 10px;
-
-            .paragraphs-subform{
-              background-color: $primary-color-lightest;
-              padding: 0px 10px 5px 10px;
-       
-              .paragraphs-subform{
-              background-color: $primary-color-lighter;
-              padding: 0px 10px 5px 10px;
-
-              .paragraphs-subform{
-                background-color: #dff2fd;
-                padding: 0px 10px 5px 10px;
-    
-                .paragraphs-subform{
-                  background-color: $primary-color-lightest;
-                  padding: 0px 10px 5px 10px;
-           
-                  .paragraphs-subform{
-                  background-color: $primary-color-lighter;
-                  padding: 0px 10px 5px 10px;
-                  }
-                }
-              } 
-            }
-          }
-        }
-      } 
-    }
-  }
-
     &.draggable {
-      &:hover {
+      /*  &:hover {
         background: $primary-color-lighter;
-      }
+      } */
 
       > .field-multiple-drag {
         position: relative;
@@ -183,7 +137,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 .paragraph-form-item {
   position: relative;
 }
-
 
 /**
  * Paragraphs actions style.
@@ -404,13 +357,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-left: 0;
   padding: 20px 20px 20px 0;
   color: $gray-medium;
-    // Remove additional spacing inside paragraph subforms.
-
- tr.odd & .form-item,
- tr.even & .form-item {
-   margin-top: 0;
-   margin-bottom: 0;
- }
+  // Remove additional spacing inside paragraph subforms.
+  tr.odd & .form-item,
+  tr.even & .form-item {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   // Different colors, for better contrast
   a,
@@ -481,7 +433,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 
   > .form-wrapper:first-child {
     margin-top: $base-space-80pct;
-  } 
+  }
 
   .filter-wrapper {
     border: 0;
@@ -623,6 +575,19 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     margin-right: auto; /* 1 */
   }
 }
+/**
+* iterate background colours for nested paragraphs
+*/
+.field-multiple-table {
+  $listofcolors: $primary-color-lightest, #dff2fd, $primary-color-lighter;
+  $sel: 'tr.draggable';
+  @for $color from 1 to 10 {
+    #{$sel} {
+      background-color: nth($listofcolors, $color % 3 + 1);
+    }
+    $sel: selector-nest($sel, 'tr.draggable');
+  }
+}
 
 /* ----------------------- Paragraph preview -------------------------------- */
 
@@ -754,8 +719,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     .paragraphs-bottom-add-button,
     .first-button.paragraph-type-add-modal,
     .add-in-between-row .paragraph-type-add-modal,
-    .paragraphs-features__add-in-between__row 
-    .paragraphs-features__add-in-between__wrapper {
+    .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper {
       padding: 5px 0;
       height: 30px;
       margin: 0;
@@ -789,6 +753,12 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   .paragraph-type-label {
     color: $primary-color-darker;
     vertical-align: middle;
+  }
+  /**
+  * hide gradient field
+  */
+  .paragraphs-collapsed-description::after {
+    display: none;
   }
 }
 /**
@@ -826,11 +796,9 @@ ul.paragraphs-add-dialog-list input.field-add-more-submit {
   background-image: none;
 }
 
-
 /**
 * Hide show weights buttons
 */
 .paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper {
   display: none;
-  visibility: hidden; 
-} 
+}
