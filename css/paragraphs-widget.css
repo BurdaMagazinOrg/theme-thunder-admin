@@ -427,6 +427,7 @@ tr:hover .paragraphs-collapsed-description::after{
 }
 
 .paragraph-form-item__actions .button--icon-only, .paragraph-form-item__actions .button--icon-only:active, .paragraph-form-item__actions .button--icon-only:hover, .paragraph-form-item__actions .button--icon-only:focus{
+  background-color:transparent;
   background-position:center;
   background-repeat:no-repeat;
 }
