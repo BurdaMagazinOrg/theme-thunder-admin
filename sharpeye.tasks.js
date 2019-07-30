@@ -227,5 +227,14 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
-  ]}
+  ]},
+  /* Content lock disabled form test, order is important. */
+  { name: 'Trigger content lock', noScreenshot: true, path: '/node/7/edit' },
+  { name: 'Logout', noScreenshot: true, path: '/user/logout' },
+  { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
+      { $: 'form#user-login-form [name="name"]', fill:  options.editorUser },
+      { $: 'form#user-login-form [name="pass"]', fill: options.editorPass},
+      { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+    ]},
+  { name: 'Content lock disabled form elements', path: '/node/7/edit' }
 ];

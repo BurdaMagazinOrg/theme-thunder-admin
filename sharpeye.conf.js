@@ -6,6 +6,8 @@ exports.options = {
   user: 'admin',
   // Password of admin user.
   pass: 'admin',
+  editorUser: 'test-editor',
+  editorPass: 'test-editor',
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0
 };
