@@ -9,6 +9,7 @@
 }
 
 .color-scheme-inverted .button:disabled, .color-scheme-inverted .button:disabled:active, .color-scheme-inverted .button:disabled:hover, .color-scheme-inverted .button.is-disabled, .color-scheme-inverted .button.is-disabled:active, .color-scheme-inverted .button.is-disabled:hover{
+  background-color:transparent;
   border-color:#d4d4d4;
   color:#d4d4d4;
 }
