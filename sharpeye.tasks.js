@@ -221,6 +221,12 @@ module.exports = [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' }
   ]},
+  { name: 'Logout', noScreenshot: true, path: '/user/logout' },
+  { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
+    { $: 'form#user-login-form [name="name"]', fill:  options.user },
+    { $: 'form#user-login-form [name="pass"]', fill: options.pass },
+    { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+  ]},
   /* Small screen tests need to be last. */
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
