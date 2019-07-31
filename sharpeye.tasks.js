@@ -236,5 +236,5 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', fill: options.editorPass},
       { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
     ]},
-  { name: 'Content lock disabled form elements', path: '/node/7/edit' }
+  { name: 'Content lock disabled form elements', path: '/node/7/edit', viewports: [{width: 1280, height: 800}] }
 ];

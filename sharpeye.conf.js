@@ -2,10 +2,10 @@
 exports.options = {
   // The base URL of the website.
   baseUrl: 'http://localhost:8080',
-  // Username of admin user.
+  // Username and password for the admin user.
   user: 'admin',
-  // Password of admin user.
   pass: 'admin',
+  // Username and password for an editor user.
   editorUser: 'test-editor',
   editorPass: 'test-editor',
   // Specify the mismatch tolerance of the comparison.
