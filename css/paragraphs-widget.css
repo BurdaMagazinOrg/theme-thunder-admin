@@ -327,55 +327,6 @@ tr:hover .paragraphs-collapsed-description::after{
   border-bottom:1px solid #1293c9;
 }
 
-.field-multiple-table > tbody > tr .paragraphs-subform{
-  background-color:#dff2fd;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform{
-  background-color:#eaf6fe;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#d4edfc;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#dff2fd;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#eaf6fe;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#d4edfc;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#dff2fd;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#eaf6fe;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform .paragraphs-subform{
-  background-color:#d4edfc;
-  padding:0px 10px 5px 10px;
-}
-
-.field-multiple-table > tbody > tr.draggable:hover{
-  background:#d4edfc;
-}
-
 .field-multiple-table > tbody > tr.draggable > .field-multiple-drag{
   position:relative;
   width:58px;
@@ -625,6 +576,12 @@ tr:hover .paragraphs-collapsed-description::after{
   color:#979797;
 }
 
+tr.odd .paragraph-form-item--has-subform .form-item,
+tr.even .paragraph-form-item--has-subform .form-item{
+  margin-top:0;
+  margin-bottom:0;
+}
+
 .paragraph-form-item--has-subform a,
 .paragraph-form-item--has-subform .link{
   color:#1293c9;
@@ -808,6 +765,44 @@ tr:hover .paragraphs-collapsed-description::after{
 .paragraph-form-item--has-subform .paragraph-type-info{
   margin-right:auto;
 }
+.field-multiple-table{
+}
+
+.field-multiple-table tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
 .paragraph-form-item__preview{
   max-height:150px;
   text-overflow:ellipsis;
@@ -931,13 +926,11 @@ tr:hover .paragraphs-collapsed-description::after{
 .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button,
 .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal,
 .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal,
-.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper,
+.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper,
 .js .field--widget-paragraphs .paragraphs-bottom-add-button,
 .js .field--widget-paragraphs .first-button.paragraph-type-add-modal,
 .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal,
-.js .field--widget-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper{
+.js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper{
   padding:5px 0;
   height:30px;
   margin:0;
@@ -947,13 +940,11 @@ tr:hover .paragraphs-collapsed-description::after{
   .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button,
   .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal,
   .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal,
-  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper,
+  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper,
   .js .field--widget-paragraphs .paragraphs-bottom-add-button,
   .js .field--widget-paragraphs .first-button.paragraph-type-add-modal,
   .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal,
-  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper{
+  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper{
     height:39px;
   }
 }
@@ -961,13 +952,11 @@ tr:hover .paragraphs-collapsed-description::after{
 .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
 .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
 .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
+.js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
 .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-.js .field--widget-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
+.js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
   top:0;
 }
 
@@ -975,13 +964,11 @@ tr:hover .paragraphs-collapsed-description::after{
   .js .field--widget-entity-reference-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
   .js .field--widget-entity-reference-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
   .js .field--widget-entity-reference-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
+  .js .field--widget-entity-reference-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .paragraphs-bottom-add-button .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .first-button.paragraph-type-add-modal .paragraph-type-add-modal-button,
   .js .field--widget-paragraphs .add-in-between-row .paragraph-type-add-modal .paragraph-type-add-modal-button,
-  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row
-.paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
+  .js .field--widget-paragraphs .paragraphs-features__add-in-between__row .paragraphs-features__add-in-between__wrapper .paragraph-type-add-modal-button{
     width:auto;
     padding-top:6px;
     padding-bottom:6px;
@@ -997,6 +984,15 @@ tr:hover .paragraphs-collapsed-description::after{
 .js .paragraph-type-label{
   color:#07364a;
   vertical-align:middle;
+}
+
+.js .paragraphs-collapsed-description::after{
+  background:transparent;
+}
+
+.draggable:hover .paragraphs-collapsed-description::after{
+  background-image:none;
+  background-color:transparent;
 }
 .paragraphs-icon-changed{
   margin-left:5px;
@@ -1016,5 +1012,4 @@ ul.paragraphs-add-dialog-list input.field-add-more-submit{
 }
 .paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper{
   display:none;
-  visibility:hidden;
 }
