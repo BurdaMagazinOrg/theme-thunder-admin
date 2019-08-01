@@ -80,3 +80,12 @@
 .color-scheme-inverted tbody tr:focus{
   background-color:transparent;
 }
+
+.color-scheme-inverted .form-disabled input,
+.color-scheme-inverted .form-disabled select,
+.color-scheme-inverted .form-disabled textarea,
+.color-scheme-inverted .form-disabled .select2-selection--single,
+.color-scheme-inverted .form-disabled .select2-selection--multiple{
+  color:#d4d4d4;
+  background-color:inherit;
+}
