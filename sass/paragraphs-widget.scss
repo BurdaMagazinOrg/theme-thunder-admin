@@ -188,6 +188,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     &:active,
     &:hover,
     &:focus {
+      background-color: transparent;
       background-position: center;
       background-repeat: no-repeat;
     }
