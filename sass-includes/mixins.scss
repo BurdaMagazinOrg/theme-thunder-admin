@@ -13,6 +13,7 @@
     &.is-disabled,
     &.is-disabled:active,
     &.is-disabled:hover {
+      background-color: transparent;
       border-color: #d4d4d4;
       color: #d4d4d4;
     }
