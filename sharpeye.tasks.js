@@ -206,6 +206,28 @@ module.exports = [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]', offset: -150 },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', offset: -150, wait: '[data-drupal-selector="edit-options-required"]' }
   ]},
+  /* Content lock disabled form test, order is important. */
+  { name: 'Trigger content lock', noScreenshot: true, path: '/node/7/edit' },
+  { name: 'Logout', noScreenshot: true, path: '/user/logout' },
+  { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
+    { $: 'form#user-login-form [name="name"]', fill:  options.editorUser },
+    { $: 'form#user-login-form [name="pass"]', fill: options.editorPass},
+    { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+  ]},
+  { name: 'Content lock disabled form elements', path: '/node/7/edit', actions: [
+    { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
+    { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
+    { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
+    { $: '#edit-author > summary', offset: -150},
+    { $: '#edit-scheduler-settings > summary', offset: -150}
+  ]},
+  { name: 'Logout', noScreenshot: true, path: '/user/logout' },
+  { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
+    { $: 'form#user-login-form [name="name"]', fill:  options.user },
+    { $: 'form#user-login-form [name="pass"]', fill: options.pass },
+    { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+  ]},
+  /* Small screen tests need to be last. */
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'

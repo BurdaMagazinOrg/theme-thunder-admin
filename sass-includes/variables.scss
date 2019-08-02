@@ -91,7 +91,12 @@ $base-border-radius: 4px;
     background-image: svg-url(str-replace-multiple($svg, $replace_hover_colors));
   }
 
-  &:disabled {
+  &:disabled,
+  &:disabled:active,
+  &:disabled:hover,
+  &.is-disabled,
+  &.is-disabled:active,
+  &.is-disabled:hover {
     background-image: svg-url(str-replace-multiple($svg, $replace_disabled_colors));
   }
 }
