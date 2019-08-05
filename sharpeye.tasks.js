@@ -224,7 +224,6 @@ module.exports = [
   { name: 'Content lock disabled form elements', path: '/node/7/edit', actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
-    { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: '#edit-author > summary', offset: -150},
     { $: '#edit-scheduler-settings > summary', offset: -150}
   ]},
