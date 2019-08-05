@@ -44,6 +44,7 @@
 
   // Align layout, see seven form.css (input.form-text).
   .select2-selection__rendered {
+    color: inherit;
     padding: 0.3em 1.5384em 0.3em 0.5em; // Padding right fitting arrow.
     line-height: 1.9384em; // 25.2/13
   }
@@ -149,5 +150,21 @@ ul li.select2-results__option {
     color: adjust_hue($primary-color, 180); // Added.
 
   }
+}
 
+/*
+ * 1. Disabled color as used by seven.
+ */
+&.select2-container--disabled {
+  .select2-selection--multiple,
+  .select2-selection--single {
+    background-color: hsla(0, 0%, 0%, 0.08); /* 1 */
+  }
+
+  &.select2-container--focus {
+    .select2-selection--multiple,
+    .select2-selection--single {
+      border-color: $gray-lighter;
+    }
+  }
 }

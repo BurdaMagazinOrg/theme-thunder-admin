@@ -99,6 +99,7 @@
     background:#07364a;
   }
   .content-form__actions .button:disabled, .content-form__actions .button:disabled:active, .content-form__actions .button:disabled:hover, .content-form__actions .button.is-disabled, .content-form__actions .button.is-disabled:active, .content-form__actions .button.is-disabled:hover{
+    background-color:transparent;
     border-color:#d4d4d4;
     color:#d4d4d4;
   }

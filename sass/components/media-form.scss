@@ -59,7 +59,12 @@
   &,
   &:active,
   &:hover,
-  &:focus {
+  &:focus,
+  &:disabled,
+  &:disabled:active,
+  &:disabled:hover,
+  &.is-disabled:active,
+  &.is-disabled:hover {
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;

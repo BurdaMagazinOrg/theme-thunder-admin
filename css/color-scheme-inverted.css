@@ -9,6 +9,7 @@
 }
 
 .color-scheme-inverted .button:disabled, .color-scheme-inverted .button:disabled:active, .color-scheme-inverted .button:disabled:hover, .color-scheme-inverted .button.is-disabled, .color-scheme-inverted .button.is-disabled:active, .color-scheme-inverted .button.is-disabled:hover{
+  background-color:transparent;
   border-color:#d4d4d4;
   color:#d4d4d4;
 }
@@ -78,4 +79,13 @@
 .color-scheme-inverted tbody tr:hover,
 .color-scheme-inverted tbody tr:focus{
   background-color:transparent;
+}
+
+.color-scheme-inverted .form-disabled input,
+.color-scheme-inverted .form-disabled select,
+.color-scheme-inverted .form-disabled textarea,
+.color-scheme-inverted .form-disabled .select2-selection--single,
+.color-scheme-inverted .form-disabled .select2-selection--multiple{
+  color:#d4d4d4;
+  background-color:inherit;
 }
