@@ -18,7 +18,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 function thunder_admin_preprocess_html(&$variables) {
   // If on a node or term add or edit page, add a class for enabling advanced
   // tray functionality.
-  if (_thunder_admin_apply_advanced_vertical_tabs()) {
+  if (_thunder_admin_enable_sidebar_tray()) {
     $variables['attributes']['class'][] = 'advanced-sidebar-tray';
     $variables['attributes']['class'][] = 'entity-add-or-edit-form';
   }
@@ -170,7 +170,7 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
  * Implements hook_form_alter() for thunder_admin theme.
  */
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
+  if (!empty($form['advanced']) && (_thunder_admin_enable_sidebar_tray())) {
     /** @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
     $form_object = $form_state->getFormObject();
     /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
@@ -371,7 +371,8 @@ function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInt
  * @return bool
  *   Should apply or not.
  */
-function _thunder_admin_apply_advanced_vertical_tabs() {
+function _thunder_admin_enable_sidebar_tray() {
+  $result = FALSE;
 
   /* @var $route \Drupal\Core\Routing\CurrentRouteMatch */
   $route = Drupal::service('current_route_match');
@@ -379,8 +380,7 @@ function _thunder_admin_apply_advanced_vertical_tabs() {
     case 'entity.taxonomy_term.add_form':
     case 'node.add':
     case 'entity.node.content_translation_add':
-
-      return TRUE;
+      $result = TRUE;
   }
 
   // There is an entity form and object is a content entity.
@@ -388,13 +388,22 @@ function _thunder_admin_apply_advanced_vertical_tabs() {
     $params = $route->getParameters();
     foreach ($params->keys() as $key) {
       if ($params->get($key) instanceof ContentEntityBase) {
-
-        return TRUE;
+        $result = TRUE;
+        break;
       }
     }
   }
 
-  return FALSE;
+  /*
+   *  Give modules a way to enable/disable the sidebar tray.
+   *
+   * function hook_thunder_admin_enable_sidebar_tray_alter(&$result, $route) {
+   *   $result = ($route->getRouteName() === '<some route>');
+   * }
+   */
+  \Drupal::moduleHandler()->alter('thunder_admin_enable_sidebar_tray', $result, $route);
+
+  return $result;
 }
 
 /**
