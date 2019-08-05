@@ -37,7 +37,7 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b test/nested-pargraphs-branch ${HOME}/build/thunder/thunder-admin-tests
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
   - source get-env-from-commit.sh
   - before-install.sh
 
