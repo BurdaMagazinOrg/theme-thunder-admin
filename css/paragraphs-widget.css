@@ -327,10 +327,6 @@ tr:hover .paragraphs-collapsed-description::after{
   border-bottom:1px solid #1293c9;
 }
 
-.field-multiple-table > tbody > tr.draggable:hover{
-  background:#d4edfc;
-}
-
 .field-multiple-table > tbody > tr.draggable > .field-multiple-drag{
   position:relative;
   width:58px;
@@ -770,6 +766,44 @@ tr.even .paragraph-form-item--has-subform .form-item{
 .paragraph-form-item--has-subform .paragraph-type-info{
   margin-right:auto;
 }
+.field-multiple-table{
+}
+
+.field-multiple-table tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#dff2fd;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#d4edfc;
+}
+
+.field-multiple-table tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable tr.draggable{
+  background-color:#eaf6fe;
+}
 .paragraph-form-item__preview{
   max-height:150px;
   text-overflow:ellipsis;
@@ -952,6 +986,15 @@ tr.even .paragraph-form-item--has-subform .form-item{
   color:#07364a;
   vertical-align:middle;
 }
+
+.js .paragraphs-collapsed-description::after{
+  background:transparent;
+}
+
+.draggable:hover .paragraphs-collapsed-description::after{
+  background-image:none;
+  background-color:transparent;
+}
 .paragraphs-icon-changed{
   margin-left:5px;
   background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20fill='%23000000'%20height='24'%20viewBox='0%200%2024%2024'%20width='24'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20class='bg'%20d='M0%200h24v24H0z'%20fill='none'/%3E%3Cpath%20class='icon'%20d='M1%2021h22L12%202%201%2021zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'%20fill='%23e29700'/%3E%3C/svg%3E");
@@ -967,4 +1010,7 @@ tr.even .paragraph-form-item--has-subform .form-item{
 }
 ul.paragraphs-add-dialog-list input.field-add-more-submit{
   background-image:none;
+}
+.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper{
+  display:none;
 }
