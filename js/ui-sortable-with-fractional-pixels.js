@@ -10,7 +10,7 @@
   Drupal.behaviors.sortableFractionalPixels = {
     attach: function (context) {
       $(context)
-        .find('.field--widget-entity-browser-entity-reference .entities-list, [data-drupal-selector="edit-selected"].entities-list')
+        .find('.field--widget-entity-browser-entity-reference .entities-list.sortable, [data-drupal-selector="edit-selected"].entities-list.sortable')
         .once('ui-sortable-with-fractional-pixels')
         .sortable({
           start: function (e, ui) {
