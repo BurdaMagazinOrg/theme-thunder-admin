@@ -120,6 +120,11 @@
   top:1rem;
 }
 
+.content-form__form-section table:not(.field-multiple-table) thead th{
+  background-color:#d4edfc;
+  border-color:#dae0e3;
+}
+
 .content-form__form-section .seven-details{
   background-color:transparent;
 }
