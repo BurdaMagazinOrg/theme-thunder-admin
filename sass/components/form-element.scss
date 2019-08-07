@@ -123,7 +123,7 @@
 .field--name-field-tags {
   max-width: 722px; // Add toggle width
 
-  input,
+  input:not(.form-checkbox),
   .length-indicator {
     width: calc(100% - 22px); // Subtract description toggle width.
   }
