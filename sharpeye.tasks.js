@@ -211,6 +211,15 @@ module.exports = [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: 'input#field-paragraphs-0-edit--2', offset: -150, wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
+  { name: 'Open sidebar elements', path: '/node/7/edit', actions: [
+      { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
+      { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
+      { $: '#edit-options > summary', offset: -150},
+      { $: '#edit-author > summary', offset: -150 },
+      { $: '#edit-url-redirects > summary', offset: -150 },
+      { $: '#edit-scheduler-settings > summary', offset: -150 },
+      { $: '#edit-simple-sitemap > summary', offset: -150 }
+    ]},
   /* Content lock disabled form test, order is important. */
   { name: 'Trigger content lock', noScreenshot: true, path: '/node/7/edit' },
   { name: 'Logout', noScreenshot: true, path: '/user/logout' },
