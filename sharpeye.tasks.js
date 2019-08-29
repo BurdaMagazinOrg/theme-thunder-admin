@@ -157,10 +157,10 @@ module.exports = [
     { $: 'input.select2-search__field', fill: "abc" },
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', actions: [
-      { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
-      { $: 'input.select2-search__field', fill: "abc" },
-      { $: 'li.select2-search--inline', offset: -150, waitBefore: 200 },
-    ]},
+    { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
+    { $: 'input.select2-search__field', fill: "abc" },
+    { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 200 },
+  ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
@@ -168,10 +168,8 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-format-settings-classes"]', fill: 'content-form__form-section' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -1050  },
-    { $: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offset: -1050 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -80 },
-    { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -1350 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -100, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
   { name: 'Check details element in frontend', path: '/node/7/edit', actions: [
@@ -181,7 +179,7 @@ module.exports = [
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 80 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: 100 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offset: -150 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
@@ -210,6 +208,15 @@ module.exports = [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: 'input#field-paragraphs-0-edit--2', offset: -150, wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
+  { name: 'Open sidebar elements', path: '/node/7/edit', actions: [
+      { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
+      { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
+      { $: '#edit-options > summary', offset: -150},
+      { $: '#edit-author > summary', offset: -150 },
+      { $: '#edit-url-redirects > summary', offset: -150 },
+      { $: '#edit-scheduler-settings > summary', offset: -150 },
+      { $: '#edit-simple-sitemap > summary', offset: -150 }
+    ]},
   /* Content lock disabled form test, order is important. */
   { name: 'Trigger content lock', noScreenshot: true, path: '/node/7/edit' },
   { name: 'Logout', noScreenshot: true, path: '/user/logout' },
