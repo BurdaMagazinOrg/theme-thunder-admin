@@ -37,7 +37,7 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 2.x ${HOME}/build/thunder/thunder-admin-tests
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b fix/mink-selenium-2-driver-dependency-2.x ${HOME}/build/thunder/thunder-admin-tests
   - source get-env-from-commit.sh
   - before-install.sh
 
