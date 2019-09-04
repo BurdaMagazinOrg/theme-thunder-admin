@@ -260,5 +260,10 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
+  ]},
+  { name: 'Entity browser responsive', path: '/node/6/edit', viewports: [{width: 576, height: 1500}, {width: 768, height: 1600}, {width: 1350, height: 1350}],  actions: [
+    { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
+    { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150  },
+    { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-replace-button"]', wait: 'iframe[name="entity_browser_iframe_image_browser"]', offset: -150 },
   ]}
 ];
