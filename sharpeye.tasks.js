@@ -2,9 +2,13 @@ const options = require('./sharpeye.conf').options
 
 module.exports = [
   { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
-      { $: 'form#user-login-form [name="name"]', fill:  options.user },
-      { $: 'form#user-login-form [name="pass"]', fill: options.pass },
-      { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+    { $: 'form#user-login-form [name="name"]', fill:  options.user },
+    { $: 'form#user-login-form [name="pass"]', fill: options.pass },
+    { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+  ]},
+  { name: 'Disable autosaving', path: '/admin/config/content/autosave_form', noScreenshot: true, actions: [
+    { $: '[data-drupal-selector="edit-active-on-content-entity-forms"]'},
+    { $: '[data-drupal-selector="edit-submit"]'}
   ]},
   { name: 'Content', path: '/admin/content', actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 },
