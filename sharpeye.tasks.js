@@ -97,11 +97,11 @@ module.exports = [
     { $: '#view-name-table-column a', offset: -150 }
   ]},
   '/media/add',
-  { name: 'Media type gallery edit form', path:'/media/18/edit' },
-  { name: 'Media type image edit form', path: '/media/1/edit' },
-  { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type instagram edit form', path:'/media/23/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit' },
+  { name: 'Media type gallery edit form', path:'/media/18/edit', hide: ['#autosave-notification'] },
+  { name: 'Media type image edit form', path: '/media/1/edit', hide: ['#autosave-notification'] },
+  { name: 'Media type twitter edit form', path:'/media/3/edit', hide: ['#autosave-notification'] },
+  { name: 'Media type instagram edit form', path:'/media/23/edit', hide: ['#autosave-notification'] },
+  { name: 'Media type video edit form', path:'/media/2/edit', hide: ['#autosave-notification'] },
   { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], actions: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', replace: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', replace: 'X Warnings' },
@@ -126,7 +126,7 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150, offsety: null },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
-  '/taxonomy/term/1/edit',
+  { name: 'Taxonomy term edit', path: '/taxonomy/term/1/edit', hide: ['#autosave-notification'] },
   '/admin/structure/types/manage/article',
   '/admin/structure/types/manage/article/fields',
   '/admin/structure/types/manage/article/form-display',
@@ -155,11 +155,11 @@ module.exports = [
     { $: 'a[href="#edit-editor-settings-plugins-drupallink"]', offset: -150 }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
-  { name: 'Select2 dropdown', path: '/node/7/edit', actions: [
+  { name: 'Select2 dropdown', path: '/node/7/edit', hide: ['#autosave-notification'], actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: 'input.select2-search__field', fill: "abc" },
   ]},
-  { name: 'Select2 selection', path: '/node/7/edit', actions: [
+  { name: 'Select2 selection', path: '/node/7/edit', hide: ['#autosave-notification'], actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: 'input.select2-search__field', fill: "abc" },
     { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 200 },
@@ -175,7 +175,7 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsetx: null, offsety: -100, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Check details element in frontend', path: '/node/7/edit', actions: [
+  { name: 'Check details element in frontend', path: '/node/7/edit', hide: ['#autosave-notification'], actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: '.field-group-details.content-form__form-section > summary', offset: -150, waitBefore: 1000 }
   ]},
@@ -212,7 +212,7 @@ module.exports = [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button', offset: -150  },
     { $: 'input#field-paragraphs-0-edit--2', offset: -150, wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
-  { name: 'Open sidebar elements', path: '/node/7/edit', actions: [
+  { name: 'Open sidebar elements', path: '/node/7/edit', hide: ['#autosave-notification'], actions: [
       { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
       { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', replace: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
       { $: '#edit-options > summary', offset: -150},
