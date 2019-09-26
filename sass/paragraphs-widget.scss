@@ -481,17 +481,19 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       line-height: 17px;
     }
   }
+  .field--name-field-video,
+  .field--name-field-image,
+    .field--name-field-media-images {
+    > details[open] > summary {
+      display: none;
+    }
+  }
 
   .field--name-field-video,
   .field--name-field-image {
-
     > details {
       margin: 0;
       border: 0;
-
-      > summary {
-        display: none;
-      }
 
       .details-wrapper {
         padding: 0;
