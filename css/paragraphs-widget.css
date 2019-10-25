@@ -719,15 +719,16 @@ tr.even .paragraph-form-item--has-subform .form-item{
   line-height:17px;
 }
 
+.paragraph-form-item--has-subform .field--name-field-video > details[open] > summary,
+.paragraph-form-item--has-subform .field--name-field-image > details[open] > summary,
+.paragraph-form-item--has-subform .field--name-field-media-images > details[open] > summary{
+  display:none;
+}
+
 .paragraph-form-item--has-subform .field--name-field-video > details,
 .paragraph-form-item--has-subform .field--name-field-image > details{
   margin:0;
   border:0;
-}
-
-.paragraph-form-item--has-subform .field--name-field-video > details > summary,
-.paragraph-form-item--has-subform .field--name-field-image > details > summary{
-  display:none;
 }
 
 .paragraph-form-item--has-subform .field--name-field-video > details .details-wrapper,
