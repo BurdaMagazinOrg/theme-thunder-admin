@@ -13,7 +13,8 @@ module.exports = [
   '/admin/content/scheduled',
   { name: 'Files', path: '/admin/content/files', actions: [
     { $: '#view-filename-table-column a', offset: -150 },
-    { $: 'td.views-field.views-field-changed, td.views-field.views-field-created', replace: 'Mon, 01/01/2018 - 11:11'},
+    { $: '.views-field-filesize', replace: '99.9 KB' },
+    { $: '.views-field-created, .views-field-changed', replace: 'Mon, 07/08/2019 - 08:27' },
     { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
   ]},
   '/node/add',
