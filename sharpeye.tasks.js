@@ -11,8 +11,9 @@ module.exports = [
     { $: 'td.views-field.views-field-changed', replace: '01/01/2018 - 00:00' }
   ]},
   '/admin/content/scheduled',
-  { name: 'Files', path: '/admin/content/files', hide: ['td.views-field.views-field-changed', 'td.views-field.views-field-created'], actions: [
+  { name: 'Files', path: '/admin/content/files', actions: [
     { $: '#view-filename-table-column a', offset: -150 },
+    { $: 'td.views-field.views-field-changed, td.views-field.views-field-created', replace: 'Mon, 01/01/2018 - 11:11'},
     { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
   ]},
   '/node/add',
