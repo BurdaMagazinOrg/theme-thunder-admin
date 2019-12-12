@@ -163,7 +163,7 @@ module.exports = [
   { name: 'Select2 selection', path: '/node/7/edit', actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: 'input.select2-search__field', fill: "abc" },
-    { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 200 },
+    { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 300 },
   ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },
@@ -262,7 +262,7 @@ module.exports = [
   ], actions: [
     { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]},
-  { name: 'Entity browser responsive', path: '/node/6/edit', viewports: [{width: 576, height: 1500}, {width: 768, height: 1600}, {width: 1350, height: 1350}],  actions: [
+  { name: 'Entity browser responsive', path: '/node/6/edit', viewports: [{width: 576, height: 1500}, {width: 576, height: 1500}, {width: 768, height: 1600}, {width: 1350, height: 1350}],  actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150  },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', offset: -150 },
