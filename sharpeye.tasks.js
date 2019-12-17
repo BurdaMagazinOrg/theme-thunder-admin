@@ -132,7 +132,7 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ]},
   { name: 'Admin structure', path: '/admin/structure', actions: [
-    { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
+    { moveToObject: 'body', offsetx: 0, offsety: 0 }
   ]},
   { name: 'Appearance', path: '/admin/appearance', actions: [
     { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', replace: 'Bartik 8.x.x' },
