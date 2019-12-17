@@ -74,7 +74,7 @@ module.exports = [
     { $: '#edit-name--description' },
     { switchToFrame: null }
   ]},
-  { name: 'Entity browser remove', path: '/node/6/edit', remove : [ '.ui-dialog-content .ajax-progress-throbber' ], actions: [
+  { name: 'Entity browser remove', path: '/node/6/edit', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150  },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', offset: -150 },
