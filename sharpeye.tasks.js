@@ -132,7 +132,7 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type'
   ]},
   { name: 'Admin structure', path: '/admin/structure', actions: [
-    { $: 'div#block-thunder-admin-page-title h1', offset: -150 }
+    { moveToObject: '#block-thunder-admin-page-title', offsetx: 0, offsety: 0 }
   ]},
   { name: 'Appearance', path: '/admin/appearance', actions: [
     { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', replace: 'Bartik 8.x.x' },
@@ -158,7 +158,7 @@ module.exports = [
   { name: 'Select2 selection', path: '/node/7/edit', actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
     { $: 'input.select2-search__field', fill: "abc" },
-    { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 200 },
+    { $: 'label[for=edit-field-tags]', offset: -150, waitBefore: 300 },
   ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]', offset: -150 },

@@ -33,6 +33,7 @@ exports.config = {
   // https://sites.google.com/a/chromium.org/chromedriver/capabilities
   // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
+  deprecationWarnings: false,
   capabilities: [
     {
       browserName: 'chrome'
