@@ -4,7 +4,7 @@ php:
   - 7.2
 
 nodejs:
-  - lts/*
+  - 12
 
 env:
   global:
