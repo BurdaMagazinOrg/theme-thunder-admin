@@ -31,23 +31,22 @@
     "url": "git+https://github.com/BurdaMagazinOrg/theme-thunder-admin.git"
   },
   "devDependencies": {
-    "autoprefixer": "^8.1",
+    "autoprefixer": "^9.7",
     "browser-sync": "^2.26.7",
     "css-sniper": "^0.5.5",
-    "eslint": "^6.0.0",
-    "imagemin-cli": "4",
-    "npm-run-all": "^4.1.2",
+    "eslint": "^6.8.0",
+    "imagemin-cli": "5",
+    "npm-run-all": "^4.1.5",
     "onchange": "6",
     "postcss-cli": "6",
-    "postcss-discard-comments": "^2.0.4",
-    "sharpeye": "^3.6.2",
-    "stylelint": "^9.1.1",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-no-browser-hacks": "^1.1.0",
-    "stylelint-scss": "^2.4.0"
+    "postcss-discard-comments": "^4.0.2",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-no-browser-hacks": "^1.2.1",
+    "stylelint-scss": "^3.13.0"
   },
   "engines": {
-    "node": "=8"
+    "node": "=12"
   },
   "keywords": [],
   "author": "",
