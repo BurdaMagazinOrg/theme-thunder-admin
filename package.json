@@ -45,9 +45,6 @@
     "stylelint-no-browser-hacks": "^1.2.1",
     "stylelint-scss": "^3.13.0"
   },
-  "engines": {
-    "node": "=12"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
