@@ -3,9 +3,6 @@ language: php
 php:
   - 7.2
 
-nodejs:
-  - 12
-
 env:
   global:
     - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
@@ -40,6 +37,7 @@ addons:
       - graphicsmagick
 
 before_install:
+  - nvm use 12
   - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
   - source get-env-from-commit.sh
   - before-install.sh
