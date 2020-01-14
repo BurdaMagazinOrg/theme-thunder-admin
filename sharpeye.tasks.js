@@ -137,8 +137,8 @@ module.exports = [
   { name: 'Admin structure block', path: '/admin/structure/block', actions: [
     { $: 'div#block-thunder-admin-page-title h1' }
   ]},
-  { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-widget-content', actions: [
-    { $: 'a#edit-blocks-region-header-title', wait: '.block-add-table'}
+  { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-dialog', actions: [
+    { $: 'a#edit-blocks-region-header-title', wait: '.ui-dialog' }
   ]},
   '/admin/structure/block/manage/thunder_base_branding',
   { name: 'Taxonomy term ordering', path: '/admin/structure/taxonomy/manage/channel/overview', actions: [
