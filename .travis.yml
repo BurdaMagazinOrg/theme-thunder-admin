@@ -6,6 +6,7 @@ php:
 env:
   global:
     - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
+    - TRAVIS_NODE_VERSION="lts/*"
   matrix:
     - SHARPEYE_BROWSER=chrome THUNDER=8.x-3.x
     - SHARPEYE_BROWSER=firefox THUNDER=8.x-3.x
