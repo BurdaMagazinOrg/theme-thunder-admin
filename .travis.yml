@@ -1,7 +1,10 @@
 language: php
 
 php:
-  - 7.2
+  - 7.3
+
+nodejs:
+  - 12
 
 env:
   global:
