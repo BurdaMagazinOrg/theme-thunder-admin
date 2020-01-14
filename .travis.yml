@@ -46,6 +46,7 @@ install:
 
 before_script:
   - before-script.sh
+  - nvm install lts
 
 script:
   - build.sh
