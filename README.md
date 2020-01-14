@@ -46,8 +46,8 @@ Theme should be installed in correct Drupal environment (expected to be in: `[do
 Build script will try to resolve paths to `core` themes with globally available `drush` command. If that is not possible then it will try default fallback path.
 If that does not work, then correct fallback path to `core` themes should be changed in `css-sniper.conf.js` property `fallbackThemesPath`, so that build script can find required `core` files.
 
-Node.js version 8 is required at the moment, you can use [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
-Run `nvm use 8` to switch to node version 8.
+This project uses Node.js LTS version, you can use [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
+Run `nvm install --lts` to switch to install and use node lts version.
 Then run `npm prune` and `npm install`.
 
 build scripts and watch scripts are run with npm, for development run 
