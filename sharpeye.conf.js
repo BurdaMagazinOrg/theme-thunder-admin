@@ -15,9 +15,7 @@ exports.options = {
 var jobID = process.env.TRAVIS_JOB_ID;
 if (jobID !== undefined) {
   // Specify directories, in which screenshots should be saved.
-  // They will get a postfix of '/screen', '/reference' and '/diff', respectively.
-  exports.options.screenBaseDirectory = '/tmp/sharpeye/' + jobID;
-  exports.options.diffBaseDirectory = '/tmp/sharpeye/' + jobID;
+  exports.options.screenshotPath = '/tmp/sharpeye/' + jobID;
 }
 
 // Webdriver.io config overwrites.
