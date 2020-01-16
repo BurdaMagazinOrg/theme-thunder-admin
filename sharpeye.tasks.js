@@ -99,7 +99,7 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   // Modals in paragraphs
-  { name: 'Modals in paragraphs', path: '/node/add/article', element: '.ui-dialog', actions: [
+  { name: 'Modals in paragraphs', path: '/node/add/article', element: '.entity-browser-modal.ui-widget-content', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
@@ -275,25 +275,25 @@ module.exports = [
       { $: 'form#user-login-form [name="pass"]', value: options.pass }
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
-  ]},
-  /* Small screen tests need to be last. */
-  { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
-    '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
-  ], actions: [
-    { $: '//details[@data-drupal-selector="edit-modes"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
-  ]},
-  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 1841}], hide: [
-    '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
-  ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
   ]}
+  /* Small screen tests need to be last. */
+  // { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 800}], hide: [
+  //   '.form-item-fields-field-channel-type',
+  //   '.form-item-fields-field-teaser-media-type'
+  // ], actions: [
+  //   { $: '//details[@data-drupal-selector="edit-modes"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
+  //   { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
+  //   { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
+  // ]},
+  // { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399, height: 1841}], hide: [
+  //   '.form-item-fields-field-channel-type',
+  //   '.form-item-fields-field-teaser-media-type'
+  // ], actions: [
+  //   { $: '//button[contains(@class, "tabs__trigger")]', waitBefore: 1000 }
+  // ]}
 ];
