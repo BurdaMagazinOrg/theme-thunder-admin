@@ -112,7 +112,9 @@ module.exports = [
     { $: '#view-name-table-column a' }
   ]},
   '/media/add',
-  { name: 'Media type gallery edit form', path:'/media/18/edit' },
+  { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
+    { moveto: {$: '#block-thunder-admin-page-title'}}
+  ]},
   { name: 'Media type image edit form', path: '/media/1/edit' },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
   { name: 'Media type video edit form', path:'/media/2/edit' },
