@@ -69,7 +69,8 @@ module.exports = [
     { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform' },
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']' },
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
-    { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', wait: '.cke_dialog' }
+    { $: '//*[contains(@class,"cke_button_off") and @title="Table"]' },
+    { $: '//input[contains(@class,"cke_dialog_ui_input_text")]' }
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
