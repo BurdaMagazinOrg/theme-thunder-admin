@@ -60,7 +60,7 @@ module.exports = [
     { $: '[name="field_paragraphs_1_collapse"]', waitBefore: 500, wait: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' },
     { $: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' }
   ]},
-  { name: 'CKEditor dialog', path: '/node/7/edit', element: 'table.cke_dialog', actions: [
+  { name: 'CKEditor dialog', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']', offset: -150 },
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
