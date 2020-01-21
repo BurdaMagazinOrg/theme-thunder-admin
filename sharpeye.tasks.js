@@ -77,14 +77,14 @@ module.exports = [
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
   ]},
   { name: 'Entity browser remove', path: '/node/6/edit', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], replace: [
-    { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' }
+    { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform'  },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_image_browser"]' }
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', replace: [
-    { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' }
+    { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//*[@id="field-paragraphs-link-add-more"]'},
