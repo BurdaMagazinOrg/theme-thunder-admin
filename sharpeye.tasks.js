@@ -61,11 +61,11 @@ module.exports = [
     { $: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' }
   ]},
   { name: 'CKEditor dialog', path: '/node/7/edit', actions: [
-      { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
-      { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']', offset: -150 },
-      { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
-      { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 },
-      { $: '//input[contains(@class,"cke_dialog_ui_input_text")]', offset: -150 }
+    { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform', offset: -150 },
+    { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']', offset: -150 },
+    { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
+    { $: '//*[contains(@class,"cke_button_off") and @title="Table"]', offset: -150 },
+    { $: '//input[contains(@class,"cke_dialog_ui_input_text")]', offset: -150 }
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '//*[@id="edit-meta-changed"]/text()', replace: ' 01/01/2018 - 00:00' },
