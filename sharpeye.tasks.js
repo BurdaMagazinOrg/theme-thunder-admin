@@ -184,7 +184,7 @@ module.exports = [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { fill: [
-      { $: 'input.select2-search__field', fill: "abc" }
+      { $: 'input.select2-search__field', value: "abc" }
     ]},
     { $: 'label[for=edit-field-tags]', waitBefore: 300 },
   ]},
@@ -259,7 +259,7 @@ module.exports = [
   { name: 'Logout', noScreenshot: true, path: '/user/logout' },
   { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
     { fill: [
-      { $: 'form#user-login-form [name="name"]', value:  options.editorUser },
+      { $: 'form#user-login-form [name="name"]', value: options.editorUser },
       { $: 'form#user-login-form [name="pass"]', value: options.editorPass }
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
@@ -274,7 +274,7 @@ module.exports = [
   { name: 'Logout', noScreenshot: true, path: '/user/logout' },
   { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
     { fill: [
-      { $: 'form#user-login-form [name="name"]', value:  options.user },
+      { $: 'form#user-login-form [name="name"]', value: options.user },
       { $: 'form#user-login-form [name="pass"]', value: options.pass }
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
