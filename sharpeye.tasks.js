@@ -12,31 +12,29 @@ module.exports = [
     { $: '[data-drupal-selector="edit-active-on-content-entity-forms"]'},
     { $: '[data-drupal-selector="edit-submit"]'}
   ]},
-  { name: 'Content', path: '/admin/content', replace: [
+  { name: 'Content', path: '/admin/content', fullPage: true, replace: [
     { $: 'td.views-field.views-field-changed', value: '01/01/2018 - 00:00' }
   ], actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 }
   ]},
-  '/admin/content/scheduled',
-  { name: 'Files', path: '/admin/content/files', replace: [
+  { path: '/admin/content/scheduled' },
+  { name: 'Files', path: '/admin/content/files', fullPage: true, replace: [
     { $: '.views-field-filesize', value: '99.9 KB' },
     { $: '.views-field-created, .views-field-changed', value: 'Mon, 07/08/2019 - 08:27' }
   ], actions: [
     { $: '#view-filename-table-column a' },
     { $: 'div#block-thunder-admin-page-title h1' }
   ]},
-  '/node/add',
-  '/node/add/article',
-  // Meta tags token browser
+  { path: '/node/add' },
+  { path: '/node/add/article', fullPage: true },
   { name: 'Meta tags token browser', path: '/node/add/article', actions: [
     { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
-  { name: 'Add paragraphs modal', path: '/node/add/article', actions: [
+  { name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, actions: [
     { $: '#field-paragraphs-values > tbody > tr > td > div > input' }
   ]},
-  // Paragraphs
-  { name: 'Paragraphs', path: '/node/add/article', actions: [
+  { name: 'Paragraphs', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
@@ -52,12 +50,12 @@ module.exports = [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'}
   ]},
-  { name: 'Linkit dialog', path: '/node/add/article', actions: [
+  { name: 'Linkit dialog', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' }
   ]},
-  { name: 'Paragraphs modified content message', path: '/node/7/edit', replace: [
+  { name: 'Paragraphs modified content message', path: '/node/7/edit', fullPage: true, replace: [
       { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
     ], actions: [
     { $: '#field-paragraphs-1-edit--2', wait: '.cke_button__bulletedlist' },
@@ -99,7 +97,6 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
-  // Modals in paragraphs
   { name: 'Modals in paragraphs', path: '/node/add/article', element: '.entity-browser-modal.ui-widget-content', actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
@@ -108,18 +105,18 @@ module.exports = [
     { $: '#entity-browser-image-browser-form .view-content > div:nth-child(1)' },
     { switchToFrame: null }
   ]},
-  '/node/add/page',
-  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], actions: [
+  { path: '/node/add/page' },
+  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], fullPage: true, actions: [
     { $: '#view-name-table-column a' }
   ]},
-  '/media/add',
+  { path: '/media/add' },
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit' },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit' },
-  { name: 'Status page', path: '/admin/reports/status', remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
+  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
+  { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', value: 'X Checked' },
@@ -132,7 +129,7 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', value: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
     { $: 'h3#checked ~ details div', value: ' ' }
   ]},
-  { name: 'Admin structure block', path: '/admin/structure/block', actions: [
+  { name: 'Admin structure block',  path: '/admin/structure/block', fullPage: true, actions: [
     { $: 'div#block-thunder-admin-page-title h1' }
   ]},
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-dialog', actions: [
@@ -143,29 +140,29 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150 },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
-  '/taxonomy/term/1/edit',
-  '/admin/structure/types/manage/article',
-  '/admin/structure/types/manage/article/fields',
-  '/admin/structure/types/manage/article/form-display',
-  { name: 'Article display', path: '/admin/structure/types/manage/article/display', hide: [
+  { path: '/taxonomy/term/1/edit' },
+  { path: '/admin/structure/types/manage/article' },
+  { path: '/admin/structure/types/manage/article/fields' },
+  { path: '/admin/structure/types/manage/article/form-display', fullPage: true },
+  { name: 'Article display', path: '/admin/structure/types/manage/article/display', fullPage: true, hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ]},
   { name: 'Admin structure', path: '/admin/structure', actions: [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Appearance', path: '/admin/appearance', replace: [
+  { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
     { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', value: 'Bartik 8.x.x' },
     { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', value: 'Seven 8.x.x' },
     { $: '//*[@id="system-themes-page"]/div[2]/div[1]/div/h3', value: 'AMP Base 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value: 'ExAMPle Subtheme 8.x-x.x' },
+    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value:  'ExAMPle Subtheme 8.x-x.x' },
     { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' }
   ]},
-  '/admin/modules',
-  '/admin/config',
-  '/admin/config/development/performance',
-  { name: 'System Information', path: '/admin/config/system/site-information', hide: ['#edit-front-page .field-prefix'] },
-  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', replace: [
+  { path: '/admin/modules', fullPage: true },
+  { path: '/admin/config', fullPage: true },
+  { path: '/admin/config/development/performance' },
+  { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
+  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', fullPage: true, replace: [
     { $: 'a[href="#edit-editor-settings-plugins-drupalimage"] span.vertical-tabs__menu-item-summary', value: 'Uploads enabled, max size: XXX MB' }
   ], actions: [
     { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' },
@@ -173,14 +170,14 @@ module.exports = [
     { $: 'a[href="#edit-editor-settings-plugins-drupallink"]' }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
-  { name: 'Select2 dropdown', path: '/node/7/edit', replace: [
+  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { fill: [
       { $: 'input.select2-search__field', value: "abc" }
     ]},
   ]},
-  { name: 'Select2 selection', path: '/node/7/edit', replace: [
+  { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { fill: [
@@ -188,7 +185,7 @@ module.exports = [
     ]},
     { $: 'label[for=edit-field-tags]', waitBefore: 300 },
   ]},
-  { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
+  { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]' },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
     { fill: [
@@ -203,12 +200,12 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: -100, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Check details element in frontend', path: '/node/7/edit',  replace: [
+  { name: 'Check details element in frontend', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '.field-group-details.content-form__form-section > summary', waitBefore: 1000 }
   ]},
-  { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', actions: [
+  { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 50 },
@@ -216,7 +213,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
   { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
-  { name: 'Views UI', path: '/admin/structure/views/view/frontpage', actions: [
+  { name: 'Views UI', path: '/admin/structure/views/view/frontpage', fullPage: true, actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: 'div#block-thunder-admin-page-title h1' },
   ]},
@@ -225,7 +222,7 @@ module.exports = [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-arguments"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-argument-present"]' },
     { $: '[data-drupal-selector="edit-options-form-description"]' }
   ]},
-  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', actions: [
+  { name: 'Show description on form error', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit"]' },
     { fill: [
       { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-settings-width"]', value: "abc", waitBefore: 1000 }
@@ -244,7 +241,7 @@ module.exports = [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
     { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
-  { name: 'Open sidebar elements', path: '/node/7/edit', replace: [
+  { name: 'Open sidebar elements', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' }
   ], actions: [
@@ -264,7 +261,7 @@ module.exports = [
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Content lock disabled form elements', path: '/node/7/edit', replace: [
+  { name: 'Content lock disabled form elements', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
   ], actions: [
