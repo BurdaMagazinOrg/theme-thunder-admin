@@ -81,7 +81,7 @@ module.exports = [
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_image_browser"]' }
   ]},
-  { name: 'Nested table sort', path: '/node/7/edit', replace: [
+  { name: 'Nested table sort', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
@@ -135,20 +135,20 @@ module.exports = [
   { name: 'Place block modal', path: '/admin/structure/block', element: '.ui-dialog', actions: [
     { $: 'a#edit-blocks-region-header-title', wait: '.ui-dialog' }
   ]},
-  '/admin/structure/block/manage/thunder_base_branding',
+  { path: '/admin/structure/block/manage/thunder_base_branding' },
   { name: 'Taxonomy term ordering', path: '/admin/structure/taxonomy/manage/channel/overview', actions: [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150 },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
   { path: '/taxonomy/term/1/edit' },
-  { path: '/admin/structure/types/manage/article' },
+  { path: '/admin/structure/types/manage/article', fullPage: true },
   { path: '/admin/structure/types/manage/article/fields' },
   { path: '/admin/structure/types/manage/article/form-display', fullPage: true },
   { name: 'Article display', path: '/admin/structure/types/manage/article/display', fullPage: true, hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ]},
-  { name: 'Admin structure', path: '/admin/structure', actions: [
+  { name: 'Admin structure', path: '/admin/structure', fullPage: true, actions: [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
   { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
@@ -212,7 +212,7 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide' },
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', fullPage: true },
   { name: 'Views UI', path: '/admin/structure/views/view/frontpage', fullPage: true, actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: 'div#block-thunder-admin-page-title h1' },
@@ -235,7 +235,7 @@ module.exports = [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
   ]},
-  { name: 'Nested paragraphs', path: '/node/10/edit',  replace: [
+  { name: 'Nested paragraphs', path: '/node/10/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
