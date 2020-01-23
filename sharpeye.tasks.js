@@ -278,7 +278,7 @@ module.exports = [
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400}], hide: [
+  { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 2095}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ], actions: [
