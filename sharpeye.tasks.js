@@ -73,6 +73,8 @@ module.exports = [
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
+    { switchToFrame: 'iframe[name="entity_browser_iframe_multiple_image_browser"]', wait: '#entity-browser-multiple-image-browser-form' },
+    { switchToFrame: null }
   ]},
   { name: 'Entity browser remove', path: '/node/6/edit', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
@@ -99,7 +101,7 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
-  { name: 'Modals in paragraphs', path: '/node/add/article', element: '.entity-browser-modal.ui-widget-content', actions: [
+  { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
     { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
@@ -108,8 +110,8 @@ module.exports = [
     { switchToFrame: null }
   ]},
   { path: '/node/add/page' },
-  { name: 'Media', path: '/admin/content/media', hide: ['td.views-field.views-field-changed'], fullPage: true, actions: [
-    { $: '#view-name-table-column a' }
+  { name: 'Media', path: '/admin/content/media', fullPage: true, replace: [ { $: '//td[contains(@class, "views-field-changed")]/text()', value: ''} ], actions: [
+    { $: '#view-name-table-column a' },
   ]},
   { path: '/media/add' },
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
@@ -243,7 +245,7 @@ module.exports = [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
     { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
-  { name: 'Open sidebar elements', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Open sidebar elements', path: '/node/7/edit', viewports: [ { width: 1280, height: 1803 } ],  replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' }
   ], actions: [
