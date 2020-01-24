@@ -1,7 +1,7 @@
 language: php
 
 php:
-  - 7.2
+  - 7.3
 
 env:
   global:
@@ -37,7 +37,7 @@ addons:
       - graphicsmagick
 
 before_install:
-  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b webdriver-update ${HOME}/build/thunder/thunder-admin-tests
   - source get-env-from-commit.sh
   - before-install.sh
 
@@ -46,6 +46,7 @@ install:
 
 before_script:
   - before-script.sh
+  - nvm install --lts
 
 script:
   - build.sh
