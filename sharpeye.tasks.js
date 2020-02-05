@@ -68,7 +68,8 @@ module.exports = [
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']' },
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]' },
-    { $: '//input[contains(@class,"cke_dialog_ui_input_text")]' }
+    { $: '//input[contains(@class,"cke_dialog_ui_input_text")]' },
+    { waitBefore: 1000 }
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
@@ -235,7 +236,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]' },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
-  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', hide: ['#views-live-preview'], actions: [
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }

@@ -33,15 +33,21 @@ exports.config = {
   //
   deprecationWarnings: false,
   logLevel: 'silent',
-  capabilities: [
-    {
-      browserName: 'chrome',
-      'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu'],
-      },
-      'moz:firefoxOptions': {
-        args: ['-headless']
-      }
+  capabilities: [] // Will be overriden when using --single-browser option
+};
+
+// Additional capabilities for certain browsers when using --single-browser option.
+exports.capabilities = {
+  firefox: {
+    browserName: 'firefox',
+    'moz:firefoxOptions': {
+      args: ['-headless']
     }
-  ]
+  },
+  chrome: {
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      w3c: true
+    }
+  }
 };
