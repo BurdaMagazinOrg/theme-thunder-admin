@@ -74,17 +74,17 @@ module.exports = [
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
-    { switchToFrame: 'iframe[name="entity_browser_iframe_multiple_image_browser"]', wait: '#entity-browser-multiple-image-browser-form' },
-    { switchToFrame: null }
+    { switchToFrame: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
+    { switchToFrame: null, waitBefore: 1000 }
   ]},
   { name: 'Entity browser remove', path: '/node/6/edit', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform'  },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]' },
-    { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_image_browser"]' },
+    { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]' },
-    { switchToFrame: null }
+    { switchToFrame: null, waitBefore: 1000 }
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
@@ -108,8 +108,8 @@ module.exports = [
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]', wait: '#entity-browser-image-browser-form' },
     { $: '#entity-browser-image-browser-form .view-content > div:nth-child(1)' },
-    { switchToFrame: null }
-  ]},
+    { switchToFrame: null, waitBefore: 1000 }
+    ]},
   { path: '/node/add/page', actions: [
     { wait: '.cke_wysiwyg_frame'}
   ]},
