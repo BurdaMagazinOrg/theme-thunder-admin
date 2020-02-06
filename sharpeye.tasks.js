@@ -83,7 +83,7 @@ module.exports = [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform'  },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-current-items-0-remove-button"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-image-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_image_browser"]' },
-    { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]', wait: '#entity-browser-image-browser-form' },
+    { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]' },
     { switchToFrame: null }
   ]},
   { name: 'Nested table sort', path: '/node/7/edit', fullPage: true, replace: [
@@ -110,7 +110,9 @@ module.exports = [
     { $: '#entity-browser-image-browser-form .view-content > div:nth-child(1)' },
     { switchToFrame: null }
   ]},
-  { path: '/node/add/page' },
+  { path: '/node/add/page', actions: [
+    { wait: '.cke_wysiwyg_frame'}
+  ]},
   { name: 'Media', path: '/admin/content/media', fullPage: true, replace: [ { $: '//td[contains(@class, "views-field-changed")]/text()', value: ''} ], actions: [
     { $: '#view-name-table-column a' },
   ]},
