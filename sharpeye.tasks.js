@@ -180,7 +180,9 @@ module.exports = [
     { $: 'a[href="#edit-editor-settings-plugins-drupallink"]' }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
-  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, hide: [
+    '.select2-search__field'
+  ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { fill: [
@@ -188,14 +190,14 @@ module.exports = [
     ]},
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
-      { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
+    { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
     ], actions: [
-      { fill: [
-          { $: 'input.select2-search__field', value: "abc" }
-        ]},
-      { $: 'label[for=edit-field-tags]', waitBefore: 300 },
-      { $: '#edit-group-basis .fieldset-legend' }
-    ]},
+    { fill: [
+        { $: 'input.select2-search__field', value: "abc" }
+      ]},
+    { $: 'label[for=edit-field-tags]', waitBefore: 300 },
+    { $: '#edit-group-basis .fieldset-legend' }
+  ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]' },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
