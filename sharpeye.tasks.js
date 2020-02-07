@@ -115,6 +115,7 @@ module.exports = [
   ]},
   { name: 'Media', path: '/admin/content/media', fullPage: true, replace: [ { $: '//td[contains(@class, "views-field-changed")]/text()', value: ''} ], actions: [
     { $: '#view-name-table-column a' },
+    { waitBefore: 500 }
   ]},
   { path: '/media/add' },
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
@@ -186,13 +187,14 @@ module.exports = [
     ]},
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
-    { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
-  ], actions: [
-    { fill: [
-      { $: 'input.select2-search__field', value: "abc" }
+      { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
+    ], actions: [
+      { fill: [
+          { $: 'input.select2-search__field', value: "abc" }
+        ]},
+      { $: 'label[for=edit-field-tags]', waitBefore: 300 },
+      { $: '#edit-group-basis .fieldset-legend' }
     ]},
-    { $: 'label[for=edit-field-tags]', waitBefore: 300 },
-  ]},
   { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]' },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
