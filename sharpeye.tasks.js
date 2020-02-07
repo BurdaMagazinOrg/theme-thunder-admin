@@ -51,10 +51,11 @@ module.exports = [
     { $: '[name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'}
   ]},
   { name: 'Linkit dialog', path: '/node/add/article', fullPage: true, actions: [
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
-    { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' }
-  ]},
+      { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
+      { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
+      { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' },
+      { $: '.ui-dialog-buttonpane' }
+    ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', fullPage: true, replace: [
       { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
     ], actions: [
@@ -68,8 +69,8 @@ module.exports = [
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']' },
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     { $: '//*[contains(@class,"cke_button_off") and @title="Table"]' },
-    { $: '//input[contains(@class,"cke_dialog_ui_input_text")]' },
-    { waitBefore: 1000 }
+    { $: '//select[contains(@class, "cke_dialog_ui_input_select")]' },
+    { $: '//select[contains(@class, "cke_dialog_ui_input_select")]', waitBefore: 500 },
   ]},
   { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
@@ -121,9 +122,9 @@ module.exports = [
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
+  { name: 'Media type image edit form', path: '/media/1/edit', pause: 1000, fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
+  { name: 'Media type video edit form', path:'/media/2/edit', pause: 1000, fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
@@ -240,7 +241,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]' },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
-  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', pause: 1000, actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
