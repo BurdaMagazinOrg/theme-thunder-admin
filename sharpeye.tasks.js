@@ -191,10 +191,10 @@ module.exports = [
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
-    ], actions: [
+  ], actions: [
     { fill: [
-        { $: 'input.select2-search__field', value: "abc" }
-      ]},
+      { $: 'input.select2-search__field', value: "abc" }
+    ]},
     { $: 'label[for=edit-field-tags]', waitBefore: 300 },
     { $: '#edit-group-basis .fieldset-legend' }
   ]},
