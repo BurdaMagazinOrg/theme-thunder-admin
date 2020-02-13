@@ -60,7 +60,7 @@ jobs:
       run: install.sh
 
     - name: Before script
-      run: before-script.sh
+      run: $HOME/build/thunder/thunder-admin-tests/scripts/before-script.sh
 
     - name: Build
       run: build.sh
