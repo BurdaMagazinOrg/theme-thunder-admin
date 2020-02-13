@@ -1,0 +1,77 @@
+name: Run thunder_admin visual regression tests
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+  schedule:
+    - cron:  '0 6 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        SHARPEYE_BROWSER: ['chrome', 'firefox']
+        THUNDER: ['8.x-4.x']
+#        DRUPAL_CORE: ['8.8.x']
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - uses: shivammathur/setup-php@master
+      with:
+        coverage: none
+        php-version: '7.3'
+
+    - name: Cache composer dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.composer/cache
+        key: ${{ runner.os }}-composer-cache-${{ hashFiles('**/composer.json') }}
+        restore-keys: ${{ runner.os }}-composer-cache-
+
+    - name: Cache NPM dependencies
+      id: npm-cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-npm-cache
+        restore-keys: ${{ runner.os }}-npm-cache
+
+    - name: Setup environment variables
+      run: |
+        echo "::add-path::$HOME/.composer/vendor/bin:$HOME/build/thunder/thunder-admin-tests/scripts:$HOME/build/test-dir/bin"
+
+    - name: Get build environment
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b update-browsers ${HOME}/build/thunder/thunder-admin-tests
+
+    - name: Setup the environment
+      run: source get-env-from-commit.sh
+
+    - name: Before install
+      run: before-install.sh
+
+    - name: Install
+      run: install.sh
+
+    - name: Before script
+      run: before-script.sh
+
+    - name: Build
+      run: build.sh
+
+    - name: Visual
+      run: visual.sh
+      env:
+        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+
+    - name: Update screenshots
+      run: update-screenshots.sh
