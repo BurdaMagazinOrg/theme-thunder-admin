@@ -56,11 +56,11 @@ jobs:
     - name: Setup the environment
       run: source get-env-from-commit.sh
 
-    - name: Install
-      run: install.sh
-
     - name: whut
       run: ls -alh; pwd
+
+    - name: Install
+      run: install.sh
 
     - name: Before script
       run: $HOME/build/thunder/thunder-admin-tests/scripts/before-script.sh
