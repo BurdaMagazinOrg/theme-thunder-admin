@@ -114,7 +114,9 @@ module.exports = [
   { path: '/node/add/page', actions: [
     { wait: '.cke_wysiwyg_frame'}
   ]},
-  { name: 'Media', path: '/admin/content/media', fullPage: true, replace: [ { $: '//td[contains(@class, "views-field-changed")]/text()', value: ''} ], actions: [
+  { name: 'Media', path: '/admin/content/media', pause: 1000, fullPage: true, replace: [
+    { $: '//td[contains(@class, "views-field-changed")]/text()', value: ''}
+  ], actions: [
     { $: '#view-name-table-column a' },
     { waitBefore: 500 }
   ]},
@@ -152,14 +154,12 @@ module.exports = [
   { path: '/taxonomy/term/1/edit' },
   { path: '/admin/structure/types/manage/article', fullPage: true },
   { path: '/admin/structure/types/manage/article/fields' },
-  { path: '/admin/structure/types/manage/article/form-display', fullPage: true },
+  { path: '/admin/structure/types/manage/article/form-display', pause: 1000, fullPage: true },
   { name: 'Article display', path: '/admin/structure/types/manage/article/display', fullPage: true, hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type'
   ]},
-  { name: 'Admin structure', path: '/admin/structure', fullPage: true, actions: [
-    { moveto: { $:'#block-thunder-admin-page-title' } }
-  ]},
+  { name: 'Admin structure', path: '/admin/structure', pause: 1000, fullPage: true },
   { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
     { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', value: 'Bartik 8.x.x' },
     { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', value: 'Seven 8.x.x' },
