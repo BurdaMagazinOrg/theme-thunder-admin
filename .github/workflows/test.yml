@@ -59,6 +59,9 @@ jobs:
     - name: Install
       run: install.sh
 
+    - name: whut
+      run: ls -alh; pwd
+
     - name: Before script
       run: $HOME/build/thunder/thunder-admin-tests/scripts/before-script.sh
 
