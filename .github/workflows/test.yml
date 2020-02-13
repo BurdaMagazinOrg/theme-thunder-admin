@@ -51,7 +51,7 @@ jobs:
         echo "::add-path::$HOME/.composer/vendor/bin:$HOME/build/thunder/thunder-admin-tests/scripts:$HOME/build/test-dir/bin"
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b update-browsers ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Setup the environment
       run: source get-env-from-commit.sh
