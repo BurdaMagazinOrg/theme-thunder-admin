@@ -56,9 +56,6 @@ jobs:
     - name: Setup the environment
       run: source get-env-from-commit.sh
 
-    - name: whut
-      run: ls -alh; pwd
-
     - name: Install
       run: install.sh
 
