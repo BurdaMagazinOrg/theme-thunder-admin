@@ -71,10 +71,9 @@ jobs:
 
     - name: Upload build
       uses: actions/upload-artifact@v1
-      working-directory: ~
       with:
         name: build
-        path: build/test-dir
+        path: ../../../build/test-dir
 
   ### Visual regression testing job
   visual:
