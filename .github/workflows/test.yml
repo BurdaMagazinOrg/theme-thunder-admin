@@ -72,7 +72,7 @@ jobs:
     - name: Visual
       run: visual.sh
       env:
-        JOB_ID: ${{ GITHUB_RUN_ID }}
+        JOB_ID: ${{ env.GITHUB_RUN_ID }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
     - name: Update screenshots
