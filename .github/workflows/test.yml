@@ -31,8 +31,8 @@ jobs:
         coverage: none
         php-version: '7.3'
 
-    - name: Install sqlite3 and graphicsmagick packages
-      run: sudo apt-get install sqlite3 graphicsmagick
+    - name: Install sqlite3 packages
+      run: sudo apt-get install sqlite3
 
     - name: Get build environment
       run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
