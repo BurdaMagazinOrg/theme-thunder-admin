@@ -31,6 +31,9 @@ jobs:
         coverage: none
         php-version: '7.3'
 
+    - name: Install sqlite3 package
+      run: sudo apt-get install sqlite3
+
     - name: Cache composer dependencies
       uses: actions/cache@v1
       with:
@@ -60,8 +63,8 @@ jobs:
       run: install.sh
 
     # Start a debug session.
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v1
+#    - name: Setup tmate session
+#      uses: mxschmitt/action-tmate@v1
 
     - name: Before script
       run: before-script.sh
