@@ -9,13 +9,13 @@ on:
     - cron:  '0 6 * * *'
 
 jobs:
+  ### Build job
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        SHARPEYE_BROWSER: ['chrome'] #, 'firefox']
+#        SHARPEYE_BROWSER: ['chrome'] #, 'firefox']
         THUNDER: ['8.x-4.x']
 #        DRUPAL_CORE: ['8.8.x']
 
@@ -31,8 +31,11 @@ jobs:
         coverage: none
         php-version: '7.3'
 
-    - name: Install sqlite3 package
-      run: sudo apt-get install sqlite3
+    - name: Install sqlite3 and graphicsmagick packages
+      run: sudo apt-get install sqlite3 graphicsmagick
+
+    - name: Get build environment
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
@@ -51,66 +54,74 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin:$HOME/build/thunder/thunder-admin-tests/scripts:$HOME/build/test-dir/bin"
+        echo "::add-path::$HOME/.composer/vendor/bin"
+        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
+        echo "::add-path::$HOME/build/test-dir/bin"
 
-    - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
 
-    - name: Setup the environment
-      run: source get-env-from-commit.sh
-
-    - name: Install
-      run: install.sh
-
-    # Start a debug session.
-#    - name: Setup tmate session
-#      uses: mxschmitt/action-tmate@v1
-
-    - name: Before script
-      run: before-script.sh
+    - name: Build composer project
+      run: build-codebase.sh
       env:
-        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+        THUNDER: ${{ matrix.THUNDER }}
 
-    - name: Build
-      run: build.sh
+    - name: Build theme
+      run: build-theme.sh
+
+    - name: Install application
+      run: install-application.sh
 
     - name: Upload build
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: build/test-dir
+        path: ${{ env.HOME }}/build/test-dir
 
-  install:
+  ### Visual regression testing job
+  visual:
+    needs: install
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        SHARPEYE_BROWSER: ['chrome', 'firefox']
+
     steps:
-    - uses: actions/checkout@v1
+      - uses: shivammathur/setup-php@master
+        with:
+          coverage: none
+          php-version: '7.3'
 
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
+      - name: Install sqlite3 and graphicsmagick packages
+        run: sudo apt-get install sqlite3 graphicsmagick
 
-    - uses: shivammathur/setup-php@master
-      with:
-        coverage: none
-        php-version: '7.3'
+      - name: Setup environment variables
+        run: |
+          echo "::add-path::$HOME/.composer/vendor/bin"
+          echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
+          echo "::add-path::$HOME/build/test-dir/bin"
+          source get-env-from-commit.sh
 
-    - name: Install sqlite3 package
-      run: sudo apt-get install sqlite3
+      - name: Get build environment
+        run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
 
-    - name: Download build
-      uses: actions/download-artifact@v1
-      with:
-        name: build
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: build
 
-    - name: Install
-      run: install.sh
+      - name: Before script
+        run: setup-visual.sh
+        env:
+          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
-    - name: Visual
-      run: visual.sh
-      env:
-        JOB_ID: ${{ env.GITHUB_RUN_ID }}
-        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+      - name: Visual
+        run: visual.sh
+        env:
+          JOB_ID: ${{ env.GITHUB_RUN_ID }}
+          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
-    - name: Update screenshots
-      run: update-screenshots.sh
+      - name: Update screenshots
+        run: update-screenshots.sh
+
+
+
