@@ -63,11 +63,11 @@ jobs:
       env:
         THUNDER: ${{ matrix.THUNDER }}
 
-    - name: Build theme
-      run: build-theme.sh
-
     - name: Install application
       run: install-application.sh
+
+    - name: Build theme
+      run: build-theme.sh
 
     - name: Upload build
       uses: actions/upload-artifact@v1
