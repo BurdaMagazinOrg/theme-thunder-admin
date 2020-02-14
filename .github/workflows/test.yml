@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        SHARPEYE_BROWSER: ['chrome', 'firefox']
+        SHARPEYE_BROWSER: ['chrome'] #, 'firefox']
         THUNDER: ['8.x-4.x']
 #        DRUPAL_CORE: ['8.8.x']
 
@@ -59,8 +59,9 @@ jobs:
     - name: Install
       run: install.sh
 
-    - name: Whut
-      run: echo "${GITHUB_REPOSITORY}, ${GITHUB_EVENT_NAME}, ${GITHUB_RUN_ID}"
+    # Start a debug session.
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v1
 
     - name: Before script
       run: before-script.sh
@@ -71,6 +72,7 @@ jobs:
     - name: Visual
       run: visual.sh
       env:
+        JOB_ID: ${{ GITHUB_RUN_ID }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
     - name: Update screenshots

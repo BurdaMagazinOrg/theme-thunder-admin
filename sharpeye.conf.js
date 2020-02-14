@@ -12,7 +12,7 @@ exports.options = {
   misMatchTolerance: 0
 };
 
-var jobID = process.env.TRAVIS_JOB_ID;
+var jobID = process.env.JOB_ID;
 if (jobID !== undefined) {
   // Specify directories, in which screenshots should be saved.
   exports.options.screenshotPath = '/tmp/sharpeye/' + jobID;
