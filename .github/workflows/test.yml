@@ -76,7 +76,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: ../../../
+        path: build.tgz
 
   ### Visual regression testing job
   visual:
@@ -127,6 +127,13 @@ jobs:
         env:
           JOB_ID: ${{ env.GITHUB_RUN_ID }}
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+
+      - name: Upload images
+        if: failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: images
+          path: /tmp/sharpeye
 
       - name: Update screenshots
         run: update-screenshots.sh
