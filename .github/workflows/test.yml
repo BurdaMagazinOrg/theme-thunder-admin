@@ -116,7 +116,7 @@ jobs:
           name: build
 
       - name: Unzip build artifact
-        run: tar xfz build.tgz ${HOME}/build
+        run: tar xfz build/build.tgz ${HOME}/build
 
 
       - name: Setup visual regression testing
