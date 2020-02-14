@@ -60,7 +60,7 @@ jobs:
       run: install.sh
 
     - name: Whut
-      run: ls -alh /home/runner/build/test-dir/docroot/sites/default/files/
+      run: echo "${GITHUB_REPOSITORY}, ${GITHUB_EVENT_NAME}, ${GITHUB_RUN_ID}"
 
     - name: Before script
       run: before-script.sh
