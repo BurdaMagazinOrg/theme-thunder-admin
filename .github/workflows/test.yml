@@ -88,6 +88,8 @@ jobs:
         SHARPEYE_BROWSER: ['chrome', 'firefox']
 
     steps:
+      - uses: actions/checkout@v1
+
       - uses: shivammathur/setup-php@master
         with:
           coverage: none
