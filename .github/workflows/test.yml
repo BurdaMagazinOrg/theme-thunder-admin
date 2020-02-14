@@ -78,7 +78,7 @@ jobs:
 
   ### Visual regression testing job
   visual:
-    needs: install
+    needs: build
     runs-on: ubuntu-latest
 
     strategy:
