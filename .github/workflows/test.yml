@@ -59,8 +59,11 @@ jobs:
     - name: Install
       run: install.sh
 
+    - name: Whut
+      run: ls -alh /home/runner/build/test-dir/docroot/sites/default/files/
+
     - name: Before script
-      run: $HOME/build/thunder/thunder-admin-tests/scripts/before-script.sh
+      run: before-script.sh
 
     - name: Build
       run: build.sh
