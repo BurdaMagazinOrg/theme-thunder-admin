@@ -69,11 +69,14 @@ jobs:
     - name: Build theme
       run: build-theme.sh
 
+    - name: Zip build
+      run: tar cfz build.tgz ${HOME}/build/test-dir
+
     - name: Upload build
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: ../../../build/test-dir
+        path: ../../../
 
   ### Visual regression testing job
   visual:
@@ -107,6 +110,10 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: build
+
+      - name: Unzip build artifact
+        run: tar xfz build.tgz ${HOME}/build
+
 
       - name: Before script
         run: setup-visual.sh
