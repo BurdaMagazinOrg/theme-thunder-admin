@@ -104,7 +104,7 @@ jobs:
         name: build
 
     - name: Install
-    run: install.sh
+      run: install.sh
 
     - name: Visual
       run: visual.sh
