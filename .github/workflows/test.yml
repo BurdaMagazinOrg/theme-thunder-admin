@@ -68,6 +68,8 @@ jobs:
 
     - name: Before script
       run: before-script.sh
+      env:
+        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
     - name: Build
       run: build.sh
