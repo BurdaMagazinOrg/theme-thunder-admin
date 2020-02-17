@@ -123,17 +123,17 @@ jobs:
       - name: Build theme
         run: build-theme.sh
 
-      - name: Setup visual regression testing
-        run: setup-visual.sh
-        env:
-          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+#      - name: Setup visual regression testing
+#        run: setup-visual.sh
+#        env:
+#          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
       - name: Visual regression testing
         run: |
           echo "JOB_ID: ${JOB_ID}"
           visual.sh
         env:
-          JOB_ID: ${{ env.GITHUB_RUN_ID }}
+          JOB_ID: ${{ GITHUB_RUN_ID }}
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
       - name: Upload images
