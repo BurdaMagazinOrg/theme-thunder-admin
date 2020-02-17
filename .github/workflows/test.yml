@@ -87,7 +87,7 @@ jobs:
 
     strategy:
       matrix:
-        SHARPEYE_BROWSER: ['chrome', 'firefox']
+        SHARPEYE_BROWSER: ['chrome'] #, 'firefox']
 
     steps:
       - uses: actions/checkout@v1
