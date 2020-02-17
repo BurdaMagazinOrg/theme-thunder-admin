@@ -75,7 +75,7 @@ jobs:
       run: build-theme.sh
 
     - name: Zip build
-      run: tar cCfz ${HOME} build.tgz build/test-dir
+      run: tar cCfhz ${HOME} build.tgz build/test-dir
 
     - name: Upload build
       uses: actions/upload-artifact@v1
