@@ -33,6 +33,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7",
     "browser-sync": "^2.26.7",
+    "chromedriver": "^80.0.1",
     "css-sniper": "^0.5.5",
     "eslint": "^6.8.0",
     "imagemin-cli": "5",
@@ -53,5 +54,7 @@
     "url": "https://github.com/BurdaMagazinOrg/theme-thunder-admin/issues"
   },
   "homepage": "https://github.com/BurdaMagazinOrg/theme-thunder-admin#readme",
-  "dependencies": {}
+  "dependencies": {
+    "geckodriver": "^1.19.1"
+  }
 }

@@ -31,6 +31,7 @@ exports.config = {
   // https://sites.google.com/a/chromium.org/chromedriver/capabilities
   // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
+  path: '/',
   deprecationWarnings: false,
   logLevel: 'silent',
   capabilities: [] // Will be overriden when using --single-browser option
