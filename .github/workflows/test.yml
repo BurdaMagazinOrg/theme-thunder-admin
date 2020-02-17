@@ -75,7 +75,7 @@ jobs:
       run: build-theme.sh
 
     - name: Zip build
-      run: cd ${HOME}; tar cfz build.tgz build/test-dir; mv build.tgz ${GITHUB_WORKSPACE}
+      run: tar cCfz ${HOME} build.tgz build/test-dir
 
     - name: Upload build
       uses: actions/upload-artifact@v1
@@ -121,7 +121,7 @@ jobs:
           name: build
 
       - name: Unzip build artifact
-        run: cd ${HOME}; tar xfz build.tgz build/test-dir
+        run: tar xCfz ${HOME} build.tgz build/test-dir
 
       - name: Setup visual regression testing
         run: setup-visual.sh
