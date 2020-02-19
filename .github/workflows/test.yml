@@ -31,23 +31,7 @@ jobs:
         coverage: none
         php-version: '7.3'
 
-    - id: message
-      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
-
-    - name: fail
-      run: exit 1
-      env:
-        FOO: ${{ github.event_name }}
-        BAR: ${{ steps.message.outputs.message }}
-
-    - name: Update screenshots
-      if: failure() && github.event_name == 'pull_request' && contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS')
-      run: echo 'yes'
-      env:
-        FOO: github.event
-        BAR: github.event.head_commit.message
-
-      # Create-project with absolute path is broken in 1.10-RC;
+    # Create-project with absolute path is broken in 1.10-RC;
     # setup-php action does not support passing composer version.
     - name: Downgrade composer
       run: sudo rm /usr/local/bin/composer; composer self-update 1.9.3
@@ -162,8 +146,11 @@ jobs:
           name: images
           path: /tmp/sharpeye
 
+      - id: message
+        run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
+
       - name: Update screenshots
-        if: failure()
+        if: failure() && github.event_name == 'pull_request' && contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS')
         run: update-screenshots.sh
         env:
           JOB_ID: ${{ github.run_id }}
