@@ -124,10 +124,13 @@ jobs:
       - name: Build theme
         run: build-theme.sh
 
-#      - name: Setup visual regression testing
-#        run: setup-visual.sh
-#        env:
-#          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+      - name: Setup browser
+        run: setup-browser.sh
+        env:
+          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v1
 
       - name: Visual regression testing
         run: visual.sh
