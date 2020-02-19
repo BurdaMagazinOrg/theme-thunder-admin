@@ -31,7 +31,13 @@ jobs:
         coverage: none
         php-version: '7.3'
 
-    # Create-project with absolute path is broken in 1.10-RC;
+    - name: fail
+      run: exit 1
+    - name: Update screenshots
+      if: failure() && github.event === "pull_request" && "contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS]')"
+      run: echo 'yes'
+
+      # Create-project with absolute path is broken in 1.10-RC;
     # setup-php action does not support passing composer version.
     - name: Downgrade composer
       run: sudo rm /usr/local/bin/composer; composer self-update 1.9.3
@@ -111,8 +117,8 @@ jobs:
           echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
           echo "::add-path::$HOME/build/test-dir/bin"
 
-      - name: Get commit trigger variables
-        run: source get-env-from-commit.sh
+#      - name: Get commit trigger variables
+#        run: source get-env-from-commit.sh
 
       - name: Download build
         uses: actions/download-artifact@v1
@@ -147,11 +153,11 @@ jobs:
           path: /tmp/sharpeye
 
       - name: Update screenshots
-        if: failure()
+        if: failure() && github.event === "pull_request" && "!contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS]')"
         run: update-screenshots.sh
         env:
           JOB_ID: ${{ github.run_id }}
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
-          BRANCH: ${{ github.base_ref }}
+          BRANCH: ${{ github.head_ref }}
           REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.githubToken }}
