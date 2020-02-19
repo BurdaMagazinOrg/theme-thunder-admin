@@ -147,6 +147,8 @@ jobs:
           path: /tmp/sharpeye
 
       - id: message
+        name: Get commit message
+        if: failure()
         run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
       - name: Update screenshots
