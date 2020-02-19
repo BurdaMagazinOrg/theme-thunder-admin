@@ -34,7 +34,7 @@ jobs:
     - name: fail
       run: exit 1
       env:
-        FOO: ${{ github.event }}
+        FOO: ${{ github.event_name }}
         BAR: ${{ github.event.head_commit.message }}
 
     - name: Update screenshots
