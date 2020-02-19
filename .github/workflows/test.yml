@@ -129,8 +129,8 @@ jobs:
         env:
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v1
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v1
 
       - name: Visual regression testing
         run: visual.sh
