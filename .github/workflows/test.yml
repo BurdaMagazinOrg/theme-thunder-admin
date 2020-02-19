@@ -36,6 +36,9 @@ jobs:
     - name: Update screenshots
       if: failure() && github.event == 'pull_request' && contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS')
       run: echo 'yes'
+      env:
+        FOO: github.event
+        BAR: github.event.head_commit.message
 
       # Create-project with absolute path is broken in 1.10-RC;
     # setup-php action does not support passing composer version.
