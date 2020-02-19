@@ -153,7 +153,7 @@ jobs:
           path: /tmp/sharpeye
 
       - name: Update screenshots
-        if: failure() && github.event === "pull_request" && "!contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS]')"
+        if: failure()
         run: update-screenshots.sh
         env:
           JOB_ID: ${{ github.run_id }}
