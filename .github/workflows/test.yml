@@ -86,6 +86,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         SHARPEYE_BROWSER: ['chrome', 'firefox']
 #        SHARPEYE_BROWSER: ['firefox']
@@ -146,7 +147,11 @@ jobs:
           path: /tmp/sharpeye
 
       - name: Update screenshots
+        if: failure()
         run: update-screenshots.sh
-
-
-
+        env:
+          JOB_ID: ${{ github.run_id }}
+          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+          BRANCH: ${{ github.ref }}
+          REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
