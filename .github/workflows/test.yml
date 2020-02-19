@@ -34,7 +34,7 @@ jobs:
     - name: fail
       run: exit 1
     - name: Update screenshots
-      if: failure() && github.event == 'pull_request' && contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS')
+      if: failure() && "github.event == 'pull_request'" && "contains(github.event.head_commit.message, '[UPDATE_SCREENSHOTS')"
       run: echo 'yes'
       env:
         FOO: github.event
