@@ -53,6 +53,9 @@ exports.capabilities = {
   chrome: {
     browserName: 'chrome',
     'goog:chromeOptions': {
+      args: [
+        '--disable-gpu'
+      ],
       w3c: true
     }
   }
