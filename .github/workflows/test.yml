@@ -135,6 +135,12 @@ jobs:
           JOB_ID: ${{ github.run_id }}
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v1
+        env:
+          JOB_ID: ${{ github.run_id }}
+          SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+
       - name: Upload images
         if: failure()
         uses: actions/upload-artifact@v1
