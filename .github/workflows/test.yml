@@ -120,7 +120,7 @@ jobs:
           name: build
 
       - name: Unzip build artifact
-        run: tar xCfz ${HOME} build/build.tgz build/test-dir
+        run: tar xCfz ${HOME} build/build.tgz build/test-dir; rm -rf build
 
       - name: Build theme
         run: build-theme.sh
