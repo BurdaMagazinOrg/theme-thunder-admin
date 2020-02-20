@@ -143,7 +143,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v1
         with:
-          name: images
+          name: images-${{ matrix.SHARPEYE_BROWSER }}
           path: /tmp/sharpeye
 
       - id: message
@@ -159,4 +159,4 @@ jobs:
           SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
           BRANCH: ${{ github.head_ref }}
           REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.githubToken }}
+          GITHUB_TOKEN: ${{ secrets.TechAccountToken }}
