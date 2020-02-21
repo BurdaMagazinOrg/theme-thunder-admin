@@ -48,7 +48,8 @@ exports.capabilities = {
       prefs: {
         'dom.ipc.processCount': 8
       }
-    }
+    },
+    'moz:useNonSpecCompliantPointerOrigin': true
   },
   chrome: {
     browserName: 'chrome',
