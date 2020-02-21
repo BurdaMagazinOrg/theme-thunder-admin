@@ -42,9 +42,9 @@ exports.capabilities = {
   firefox: {
     browserName: 'firefox',
     'moz:firefoxOptions': {
-      args: [
-        '--sync'
-      ],
+      // args: [
+      //   '--sync'
+      // ],
       prefs: {
         'dom.ipc.processCount': 8
       }
