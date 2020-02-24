@@ -82,22 +82,6 @@ jobs:
 
   ### Visual regression testing job
   visual:
-    services:
-      hub:
-        image: selenium/hub:3.141.59-gold
-      firefox:
-        # Use firefox 68 (nearest to Firefox Quantum 68 ESR).
-        image: selenium/node-firefox:3.141.59-titanium
-        env:
-          HUB_HOST: hub
-          HUB_PORT: 4444
-      chrome:
-        # Use firefox 68 (nearest to Firefox Quantum 68 ESR).
-        image: selenium/node-chrome:3.141.59-zinc
-        env:
-          HUB_HOST: hub
-          HUB_PORT: 4444
-
     needs: build
     runs-on: ubuntu-latest
 
