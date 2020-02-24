@@ -121,8 +121,8 @@ jobs:
       - name: Build theme
         run: build-theme.sh
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v1
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v1
 
       - name: Visual regression testing
         run: visual.sh
