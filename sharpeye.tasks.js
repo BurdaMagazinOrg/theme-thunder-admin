@@ -281,31 +281,31 @@ module.exports = [
     { $: '#edit-author > summary'},
     { $: '#edit-scheduler-settings > summary'}
   ]},
-  { name: 'Logout', noScreenshot: true, path: '/user/logout' },
-  { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
-    { fill: [
-      { $: 'form#user-login-form [name="name"]', value: options.user },
-      { $: 'form#user-login-form [name="pass"]', value: options.pass }
-    ]},
-    { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
-  ]},
-  { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 2095}], hide: [
-    '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
-  ], actions: [
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
-    { $: '//details[@data-drupal-selector="edit-modes"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: '//input[@data-drupal-selector="edit-submit"]' }
-  ]},
-  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
-    '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
-  ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]' }
-  ]}
+  // { name: 'Logout', noScreenshot: true, path: '/user/logout' },
+  // { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
+  //   { fill: [
+  //     { $: 'form#user-login-form [name="name"]', value: options.user },
+  //     { $: 'form#user-login-form [name="pass"]', value: options.pass }
+  //   ]},
+  //   { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
+  // ]},
+  // { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 2095}], hide: [
+  //   '.form-item-fields-field-channel-type',
+  //   '.form-item-fields-field-teaser-media-type'
+  // ], actions: [
+  //   { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+  //   { $: '//details[@data-drupal-selector="edit-modes"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
+  //   { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
+  //   { $: '//input[@data-drupal-selector="edit-submit"]' }
+  // ]},
+  // { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
+  //   '.form-item-fields-field-channel-type',
+  //   '.form-item-fields-field-teaser-media-type'
+  // ], actions: [
+  //   { $: '//button[contains(@class, "tabs__trigger")]' }
+  // ]}
 ];
