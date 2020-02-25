@@ -15,7 +15,6 @@ jobs:
 
     strategy:
       matrix:
-#        SHARPEYE_BROWSER: ['chrome'] #, 'firefox']
         THUNDER: ['8.x-4.x']
 #        DRUPAL_CORE: ['8.8.x']
 
@@ -120,9 +119,6 @@ jobs:
 
     - name: Build theme
       run: build-theme.sh
-
-#    - name: Setup tmate session
-#      uses: mxschmitt/action-tmate@v1
 
     - name: Visual regression testing
       run: visual.sh
