@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      THUNDER: ['8.x-4.x']
-      DRUPAL_CORE: ['8.8.x']
+      THUNDER: '8.x-4.x'
+      DRUPAL_CORE: '8.8.x'
 
     steps:
     - uses: actions/checkout@v1
