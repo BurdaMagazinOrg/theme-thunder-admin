@@ -13,10 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        THUNDER: ['8.x-4.x']
-        DRUPAL_CORE: ['', '8.7.x', '8.8.x']
+    env:
+      THUNDER: ['8.x-4.x']
+      DRUPAL_CORE: ['8.8.x']
 
     steps:
     - uses: actions/checkout@v1
@@ -65,7 +64,8 @@ jobs:
     - name: Build composer project
       run: build-codebase.sh
       env:
-        THUNDER: ${{ matrix.THUNDER }}
+        THUNDER: ${{ env.THUNDER }}
+        DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
 
     - name: Install application
       run: install-application.sh
