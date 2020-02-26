@@ -15,7 +15,7 @@ jobs:
 
     env:
       THUNDER: '8.x-4.x'
-      DRUPAL_CORE: '8.8.x'
+      DRUPAL_CORE: '8.7.x'
 
     steps:
     - uses: actions/checkout@v1
