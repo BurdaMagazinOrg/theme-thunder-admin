@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      THUNDER: '8.x-4.x'
+      THUNDER: '8.x-3.x'
       DRUPAL_CORE: '8.7.x'
 
     steps:
