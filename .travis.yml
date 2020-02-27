@@ -7,8 +7,8 @@ env:
   global:
     - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
   matrix:
-    - SHARPEYE_BROWSER=chrome THUNDER=8.x-4.x
-    - SHARPEYE_BROWSER=firefox THUNDER=8.x-4.x
+    - SHARPEYE_BROWSER=chrome THUNDER=feature/paragraphs-features-update
+    - SHARPEYE_BROWSER=firefox THUNDER=feature/paragraphs-features-update
 
 dist:
   - xenial
