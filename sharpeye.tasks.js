@@ -304,7 +304,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-submit"]' },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
-{ name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
+  { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
