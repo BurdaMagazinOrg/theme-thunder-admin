@@ -9,7 +9,6 @@ exports.options = {
   editorUser: 'test-editor',
   editorPass: 'test-editor',
   // Specify the mismatch tolerance of the comparison.
-  numRetries: 1,
   misMatchTolerance: 0
 };
 
