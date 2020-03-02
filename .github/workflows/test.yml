@@ -45,15 +45,8 @@ jobs:
       with:
         path: ~/.composer/cache
         key: ${{ runner.os }}-composer-cache-${{ hashFiles('**/composer.json') }}
-        restore-keys: ${{ runner.os }}-composer-cache-
-
-    - name: Cache NPM dependencies
-      id: npm-cache
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-npm-cache
-        restore-keys: ${{ runner.os }}-npm-cache
+        restore-keys: |
+          ${{ runner.os }}-composer-
 
     - name: Setup environment variables
       run: |
@@ -102,6 +95,15 @@ jobs:
 
     - name: Get build environment
       run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b task/github-actions ${HOME}/build/thunder/thunder-admin-tests
+
+    - name: Cache NPM dependencies
+      id: npm-cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
     - name: Setup environment variables
       run: |
