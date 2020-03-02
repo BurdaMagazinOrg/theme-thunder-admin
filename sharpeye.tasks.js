@@ -35,24 +35,24 @@ module.exports = [
     { $: '#field-paragraphs-values > tbody > tr > td > div > input' }
   ]},
   { name: 'Paragraphs', path: '/node/add/article', fullPage: true, actions: [
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_quote_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_link_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_twitter_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_gallery_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'}
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_quote_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-1-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_link_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-2-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_twitter_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-3-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_gallery_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-4-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-5-subform"]'},
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_video_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-6-subform"]'}
   ]},
   { name: 'Linkit dialog', path: '/node/add/article', fullPage: true, actions: [
-      { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-      { $: '[name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
+      { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+      { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
       { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' },
       { $: '.ui-dialog-buttonpane' }
     ]},
@@ -91,9 +91,9 @@ module.exports = [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
-    { $: '//*[@id="field-paragraphs-link-add-more"]'},
+    { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
-       { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-0-uri"]', value: 'http://example.com/1' },
+      { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-0-uri"]', value: 'http://example.com/1' }
     ]},
     { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-add-more"]'},
     { fill: [
@@ -104,8 +104,8 @@ module.exports = [
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
-    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog' },
-    { $: '[name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
+    { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_image_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
     { $: '[name="field_paragraphs_0_subform_field_image_entity_browser_entity_browser"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]', wait: '#entity-browser-image-browser-form' },
     { $: '#entity-browser-image-browser-form .view-content > div:nth-child(1)' },
@@ -291,7 +291,8 @@ module.exports = [
   ]},
   { name: 'Resize tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 400, height: 2095}], hide: [
     '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
+    '.form-item-fields-field-teaser-media-type',
+    '#toolbar-item-administration-tray'
   ], actions: [
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
     { $: '//details[@data-drupal-selector="edit-modes"]' },
@@ -300,12 +301,16 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
     { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: '//input[@data-drupal-selector="edit-submit"]' }
+    { $: '//input[@data-drupal-selector="edit-submit"]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
     '.form-item-fields-field-channel-type',
-    '.form-item-fields-field-teaser-media-type'
+    '.form-item-fields-field-teaser-media-type',
+    '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//button[contains(@class, "tabs__trigger")]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]}
 ];
