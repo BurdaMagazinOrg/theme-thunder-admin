@@ -1,0 +1,55 @@
+language: php
+
+php:
+  - 7.3
+
+env:
+  global:
+    - PATH="${HOME}/build/thunder/thunder-admin-tests/scripts:${HOME}/build/test-dir/bin:$PATH"
+  matrix:
+    - SHARPEYE_BROWSER=chrome THUNDER=8.x-4.x
+    - SHARPEYE_BROWSER=firefox THUNDER=8.x-4.x
+
+dist:
+  - xenial
+
+branches:
+  only:
+    - /8\.x-[0-9]+\.x/
+
+cache:
+  apt: true
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+    - "$HOME/.cache/yarn"
+
+services:
+  - mysql
+
+addons:
+  artifacts:
+    region: eu-west-1
+    paths:
+      - /tmp/sharpeye
+  apt:
+    packages:
+      - graphicsmagick
+
+before_install:
+  - git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b travis-legacy ${HOME}/build/thunder/thunder-admin-tests
+  - source get-env-from-commit.sh
+  - before-install.sh
+
+install:
+  - install.sh
+
+before_script:
+  - before-script.sh
+  - nvm install --lts
+
+script:
+  - build.sh
+  - visual.sh
+  - update-screenshots.sh
+
