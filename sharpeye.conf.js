@@ -41,9 +41,6 @@ exports.capabilities = {
   firefox: {
     browserName: 'firefox',
     'moz:firefoxOptions': {
-      // args: [
-      //   '--sync'
-      // ],
       prefs: {
         'dom.ipc.processCount': 8
       }
@@ -53,10 +50,6 @@ exports.capabilities = {
   chrome: {
     browserName: 'chrome',
     'goog:chromeOptions': {
-      args: [
-        '--disable-gpu',
-        '--headless'
-      ],
       w3c: true
     }
   }
