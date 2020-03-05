@@ -12,12 +12,10 @@ exports.options = {
   misMatchTolerance: 0
 };
 
-var jobID = process.env.TRAVIS_JOB_ID;
+var jobID = process.env.JOB_ID;
 if (jobID !== undefined) {
   // Specify directories, in which screenshots should be saved.
-  // They will get a postfix of '/screen', '/reference' and '/diff', respectively.
-  exports.options.screenBaseDirectory = '/tmp/sharpeye/' + jobID;
-  exports.options.diffBaseDirectory = '/tmp/sharpeye/' + jobID;
+  exports.options.screenshotPath = '/tmp/sharpeye/' + jobID;
 }
 
 // Webdriver.io config overwrites.
@@ -34,9 +32,25 @@ exports.config = {
   // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
   deprecationWarnings: false,
-  capabilities: [
-    {
-      browserName: 'chrome'
+  logLevel: 'silent',
+  capabilities: [] // Will be overriden when using --single-browser option
+};
+
+// Additional capabilities for certain browsers when using --single-browser option.
+exports.capabilities = {
+  firefox: {
+    browserName: 'firefox',
+    'moz:firefoxOptions': {
+      prefs: {
+        'dom.ipc.processCount': 8
+      }
+    },
+    'moz:useNonSpecCompliantPointerOrigin': true
+  },
+  chrome: {
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      w3c: true
     }
-  ]
+  }
 };
