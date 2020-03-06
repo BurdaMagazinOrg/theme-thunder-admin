@@ -16,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      THUNDER: '8.x-2.x'
-      THUNDER_PROJECT: '2.x'
+      PROFILE: 'BurdaMagazinOrg/thunder-distribution'
+      PROFILE_BRANCH: '8.x-2.x'
+      PROJECT: 'BurdaMagazinOrg/thunder-project'
+      PROJECT_BRANCH: '2.x'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
@@ -60,8 +62,10 @@ jobs:
     - name: Build composer project
       run: build-codebase.sh
       env:
-        THUNDER: ${{ env.THUNDER }}
-        THUNDER_PROJECT: ${{ env.THUNDER_PROJECT }}
+        PROFILE: ${{ env.PROFILE }}
+        PROFILE_BRANCH:  ${{ env.PROFILE_BRANCH }}
+        PROJECT: ${{ env.PROJECT }}
+        PROJECT_BRANCH: ${{ env.PROJECT_BRANCH  }}
         DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
 
     - name: Install application
