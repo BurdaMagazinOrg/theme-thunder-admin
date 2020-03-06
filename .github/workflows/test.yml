@@ -17,6 +17,7 @@ jobs:
 
     env:
       THUNDER: '8.x-4.x'
+      THUNDER_PROJECT: '3.x'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
@@ -40,7 +41,7 @@ jobs:
       run: sudo apt-get install sqlite3
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b feature/support-all-theme-versions ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
@@ -96,7 +97,7 @@ jobs:
       run: sudo apt-get install sqlite3 graphicsmagick
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b feature/support-all-theme-versions ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache NPM dependencies
       id: npm-cache
