@@ -67,7 +67,7 @@ jobs:
         PROFILE_BRANCH:  ${{ env.PROFILE_BRANCH }}
         PROJECT: ${{ env.PROJECT }}
         PROJECT_BRANCH: ${{ env.PROJECT_BRANCH }}
-	THUNDER_TESTING_DEMO_BRANCH: ${{ env.THUNDER_TESTING_DEMO_BRANCH }}
+        THUNDER_TESTING_DEMO_BRANCH: ${{ env.THUNDER_TESTING_DEMO_BRANCH }}
         DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
 
     - name: Install application
