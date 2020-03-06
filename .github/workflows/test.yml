@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROFILE: 'BurdaMagazinOrg/thunder-distribution'
+      PROFILE: 'BurdaMagazinOrg/thunder'
       PROFILE_BRANCH: '8.x-2.x'
       PROJECT: 'BurdaMagazinOrg/thunder-project'
       PROJECT_BRANCH: '2.x'
