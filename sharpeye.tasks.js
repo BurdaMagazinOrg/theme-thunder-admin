@@ -172,12 +172,8 @@ module.exports = [
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
   { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
-  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', fullPage: true, replace: [
-    { $: 'a[href="#edit-editor-settings-plugins-drupalimage"] span.vertical-tabs__menu-item-summary', value: 'Uploads enabled, max size: XXX MB' }
-  ], actions: [
-    { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' },
-    { $: 'a[href="#edit-editor-settings-plugins-drupalimage"]' },
-    { $: 'a[href="#edit-editor-settings-plugins-drupallink"]' }
+  { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', fullPage: true, actions: [
+    { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
   { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, hide: [
