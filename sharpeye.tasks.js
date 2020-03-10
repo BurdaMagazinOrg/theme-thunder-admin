@@ -281,12 +281,7 @@ module.exports = [
   ], actions: [
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
     { $: '//details[@data-drupal-selector="edit-modes"]', waitBefore: 200 },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
-    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: '//input[@data-drupal-selector="edit-submit"]' },
+    { $: '#edit-display-modes-custom input:checkbox:not(:checked)" },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
     ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
