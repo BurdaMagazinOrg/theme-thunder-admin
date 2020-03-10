@@ -294,6 +294,8 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//button[contains(@class, "tabs__trigger")]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]}
 ];
