@@ -229,14 +229,14 @@ module.exports = [
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
   { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', pause: 1000, actions: [
-    { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
+    { $: 'button.toolbar-icon.toolbar-icon-toggle-vertical'  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
   ]},
   { name: 'Nested paragraphs', path: '/node/10/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
-    { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
+    { $: 'button.toolbar-icon.toolbar-icon-toggle-horizontal' },
     { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
   { name: 'Open sidebar elements', path: '/node/7/edit', viewports: [ { width: 1280, height: 1803 } ],  replace: [
