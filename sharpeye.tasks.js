@@ -281,7 +281,7 @@ module.exports = [
   ], actions: [
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
     { $: '//details[@data-drupal-selector="edit-modes"]', waitBefore: 200 },
-    { $: '#edit-display-modes-custom input:checkbox:not(:checked)" },
+    { $: '#edit-display-modes-custom input:checkbox:not(:checked)"' },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
     ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
