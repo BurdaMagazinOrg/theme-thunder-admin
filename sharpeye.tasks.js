@@ -279,17 +279,20 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
-    { $: '#edit-display-modes-custom input:checkbox:not(:checked)"' },
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
-    ]},
+    { $: '#edit-modes > summary' },
+    { $: 'input[data-drupal-selector="edit-display-modes-custom-full"]' },
+    { $: 'input[data-drupal-selector="edit-display-modes-custom-diff"]' },
+    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-index"]' },
+    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-result"]' },
+    { $: 'input[data-drupal-selector="edit-display-modes-custom-token"]' },
+    { $: 'input[data-drupal-selector="edit-submit"]' },
+    { wait: '.messages.messages--status' }
+  ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
-    { $: '//button[contains(@class, "tabs__trigger")]' },
-    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
+    { $: '//button[contains(@class, "tabs__trigger")]' }
   ]}
 ];
