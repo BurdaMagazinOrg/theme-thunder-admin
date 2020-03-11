@@ -1,6 +1,6 @@
 node_modules
 /.idea/
-screenshots/screen/
+screenshots/actual/
 screenshots/diff/
 errorShots
 /.gitattributes

@@ -18,7 +18,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 function thunder_admin_preprocess_html(&$variables) {
   // If on a node or term add or edit page, add a class for enabling advanced
   // tray functionality.
-  if (_thunder_admin_apply_advanced_vertical_tabs()) {
+  if (_thunder_admin_enable_sidebar_tray()) {
     $variables['attributes']['class'][] = 'advanced-sidebar-tray';
     $variables['attributes']['class'][] = 'entity-add-or-edit-form';
   }
@@ -170,7 +170,7 @@ function thunder_admin_theme_suggestions_form_element_alter(&$suggestions, $vari
  * Implements hook_form_alter() for thunder_admin theme.
  */
 function thunder_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (!empty($form['advanced']) && (_thunder_admin_apply_advanced_vertical_tabs())) {
+  if (!empty($form['advanced']) && (_thunder_admin_enable_sidebar_tray())) {
     /** @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
     $form_object = $form_state->getFormObject();
     /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
@@ -256,9 +256,11 @@ function _thunder_admin_content_form_alter_helper(array &$form, FormStateInterfa
           // Set classes to the paragraphs items to be able to style them.
           $form[$field_name]['#attached']['library'][] = 'thunder_admin/paragraphs.adjustments';
 
-          foreach (Element::children($form[$field_name]['widget']) as $i) {
-            if (is_numeric($i)) {
-              _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
+          if (isset($form[$field_name]['widget']) && is_array(($form[$field_name]['widget']))) {
+            foreach (Element::children($form[$field_name]['widget']) as $i) {
+              if (is_numeric($i)) {
+                _thunder_admin_prepare_single_paragraph($form[$field_name]['widget'][$i]);
+              }
             }
           }
         }
@@ -306,7 +308,7 @@ function _thunder_admin_prepare_single_paragraph(array &$paragraph) {
     && !isset($paragraph['top']['actions']['dropdown_actions'])
     && count($paragraph['top']['actions']['actions']) > 1) {
 
-    foreach ($paragraph['top']['actions']['actions'] as $key => $action) {
+    foreach (Element::children($paragraph['top']['actions']['actions']) as $key) {
       $paragraph['top']['actions']['actions'][$key]['#prefix'] = '<li class="paragraph-form-item__link">';
       $paragraph['top']['actions']['actions'][$key]['#suffix'] = '</li>';
     }
@@ -371,7 +373,8 @@ function _thunder_admin_attach_advanced_vertical_tabs(array &$form, FormStateInt
  * @return bool
  *   Should apply or not.
  */
-function _thunder_admin_apply_advanced_vertical_tabs() {
+function _thunder_admin_enable_sidebar_tray() {
+  $result = FALSE;
 
   /* @var $route \Drupal\Core\Routing\CurrentRouteMatch */
   $route = Drupal::service('current_route_match');
@@ -379,8 +382,7 @@ function _thunder_admin_apply_advanced_vertical_tabs() {
     case 'entity.taxonomy_term.add_form':
     case 'node.add':
     case 'entity.node.content_translation_add':
-
-      return TRUE;
+      $result = TRUE;
   }
 
   // There is an entity form and object is a content entity.
@@ -388,23 +390,32 @@ function _thunder_admin_apply_advanced_vertical_tabs() {
     $params = $route->getParameters();
     foreach ($params->keys() as $key) {
       if ($params->get($key) instanceof ContentEntityBase) {
-
-        return TRUE;
+        $result = TRUE;
+        break;
       }
     }
   }
 
-  return FALSE;
+  /*
+   *  Give modules a way to enable/disable the sidebar tray.
+   *
+   * function hook_thunder_admin_enable_sidebar_tray_alter(&$result, $route) {
+   *   $result = ($route->getRouteName() === '<some route>');
+   * }
+   */
+  \Drupal::moduleHandler()->alter('thunder_admin_enable_sidebar_tray', $result, $route);
+
+  return $result;
 }
 
 /**
- * Removes contextual links from given variables.
+ * Removes contextual links from given variables, except for layout builder blocks.
  *
  * @param array $variables
  *   An associative array.
  */
 function _thunder_admin_remove_contextual_links(array &$variables) {
-  if (isset($variables['title_suffix']['contextual_links'])) {
+  if (isset($variables['title_suffix']['contextual_links']) && !isset($variables['elements']['#contextual_links']['layout_builder_block'])) {
     unset($variables['title_suffix']['contextual_links']);
     unset($variables['elements']['#contextual_links']);
     $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);

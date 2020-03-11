@@ -99,6 +99,7 @@
     background:#07364a;
   }
   .content-form__actions .button:disabled, .content-form__actions .button:disabled:active, .content-form__actions .button:disabled:hover, .content-form__actions .button.is-disabled, .content-form__actions .button.is-disabled:active, .content-form__actions .button.is-disabled:hover{
+    background-color:transparent;
     border-color:#d4d4d4;
     color:#d4d4d4;
   }
@@ -117,6 +118,11 @@
   font-size:1rem;
   border-left:5px solid #009fe3;
   top:1rem;
+}
+
+.content-form__form-section table:not(.field-multiple-table) thead th{
+  background-color:#d4edfc;
+  border-color:#dae0e3;
 }
 
 .content-form__form-section .seven-details{

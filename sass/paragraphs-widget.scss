@@ -18,6 +18,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 @import '@module-paragraphs/css/paragraphs.widget.css remove {
   @media (max-width: 768px) { .button.paragraphs-icon-button {} }
   .js .field--widget-paragraphs td { padding }
+  .js .field--widget-paragraphs .draggable .tabledrag-handle{ min-width }
 }';
 /* stylelint-enable string-no-newline */
 
@@ -45,15 +46,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       padding-left: 0;
     }
   }
-
   & > tbody > tr {
     background: $primary-color-lighter;
     border-bottom: 1px solid $primary-color;
 
     &.draggable {
-      &:hover {
-        background: $primary-color-lighter;
-      }
 
       > .field-multiple-drag {
         position: relative;
@@ -188,9 +185,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     &:active,
     &:hover,
     &:focus {
+      background-color: transparent;
       background-position: center;
       background-repeat: no-repeat;
     }
+
     /**
      * Override and add icon styles provided by paragraphs module (with defined colors for default, hover and disabled).
      */
@@ -358,7 +357,6 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
   margin-left: 0;
   padding: 20px 20px 20px 0;
   color: $gray-medium;
-
   // Remove additional spacing inside paragraph subforms.
   tr.odd & .form-item,
   tr.even & .form-item {
@@ -484,17 +482,19 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
       line-height: 17px;
     }
   }
+  .field--name-field-video,
+  .field--name-field-image,
+  .field--name-field-media-images {
+    > details[open] > summary {
+      display: none;
+    }
+  }
 
   .field--name-field-video,
   .field--name-field-image {
-
     > details {
       margin: 0;
       border: 0;
-
-      > summary {
-        display: none;
-      }
 
       .details-wrapper {
         padding: 0;
@@ -575,6 +575,23 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
    */
   .paragraph-type-info {
     margin-right: auto; /* 1 */
+  }
+}
+/**
+* iterate background colours for nested paragraphs
+*/
+.field-multiple-table {
+  /* stylelint-disable plugin/no-browser-hacks */
+  $listofcolors: $primary-color-lightest, #dff2fd, $primary-color-lighter;
+  $sel: 'tr.draggable';
+  /* stylelint-enable plugin/no-browser-hacks */
+  @for $color from 1 to 10 {
+    #{$sel} {
+      background-color: nth($listofcolors, $color % 3 + 1);
+    }
+    /* stylelint-disable plugin/no-browser-hacks */
+    $sel: selector-nest($sel, 'tr.draggable');
+    /* stylelint-enable plugin/no-browser-hacks */
   }
 }
 
@@ -743,11 +760,24 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     color: $primary-color-darker;
     vertical-align: middle;
   }
+  /**
+  * hide gradient field
+  */
+  .paragraphs-collapsed-description::after {
+    background: transparent;
+  }
 }
+
+.draggable:hover .paragraphs-collapsed-description::after {
+  background-image: none;
+  background-color: transparent;
+}
+
 /**
  * 1. Copy icon svg because sniping results in incorrect relative path.
  * @todo add the other icons from paragraphs module
  */
+
 .paragraphs-icon-changed {
   margin-left: 5px;
   background-image: svg-url('<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="bg" d="M0 0h24v24H0z" fill="none"/><path class="icon" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#e29700"/></svg>');
@@ -777,4 +807,11 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
  */
 ul.paragraphs-add-dialog-list input.field-add-more-submit {
   background-image: none;
+}
+
+/**
+* Hide show weights buttons
+*/
+.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper {
+  display: none;
 }
