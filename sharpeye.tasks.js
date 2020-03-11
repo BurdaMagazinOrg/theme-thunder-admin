@@ -280,7 +280,6 @@ module.exports = [
     '#toolbar-item-administration-tray'
   ], actions: [
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
-    { $: '//details[@data-drupal-selector="edit-modes"]', waitBefore: 1000 },
     { $: '#edit-display-modes-custom input:checkbox:not(:checked)"' },
     { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
     ]},
