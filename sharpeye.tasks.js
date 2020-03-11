@@ -236,8 +236,7 @@ module.exports = [
   { name: 'Nested paragraphs', path: '/node/10/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
-    { $: 'button.toolbar-icon.toolbar-icon-toggle-horizontal' },
-    { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
+    { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' }
   ]},
   { name: 'Open sidebar elements', path: '/node/7/edit', viewports: [ { width: 1280, height: 1803 } ],  replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
