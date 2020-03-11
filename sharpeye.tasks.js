@@ -279,6 +279,7 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
+    { $: '[data-toolbar-tray="toolbar-item-administration-tray"].is-active' },
     { $: '#edit-modes > summary' },
     { $: 'input[data-drupal-selector="edit-display-modes-custom-full"]' },
     { $: 'input[data-drupal-selector="edit-display-modes-custom-diff"]' },
