@@ -801,17 +801,27 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     text-align: left;
   }
 }
-
-/**
- * Fix button background for add dialog
- */
-ul.paragraphs-add-dialog-list input.field-add-more-submit {
-  background-image: none;
-}
-
 /**
 * Hide show weights buttons
 */
 .paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper {
   display: none;
+}
+
+/**
+ * Add aragraph type icons.
+ */
+ul.paragraphs-add-dialog-list {
+  // Fix button background for add dialog first
+  input.field-add-more-submit {
+    background-image: none;
+  }
+  /* stylelint-disable plugin/no-browser-hacks */
+  $paragraph-type-icons: gallery, image, instagram, link, pinterest, qoute, text, twitter, video;
+  /* stylelint-enable plugin/no-browser-hacks */
+  @each $icon in $paragraph-type-icons {
+    input[name=field_paragraphs_#{$icon}_add_more] {
+      background-image: url('../images/paragraphs_type_icon/#{$icon}-default-icon.png');
+    }
+  }
 }
