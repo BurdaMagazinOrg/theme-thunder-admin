@@ -14,13 +14,12 @@ $paragraph-preview-thumbnail-mobile-height: 75px;
 $paragraph-preview-thumbnail-mobile-width: 125px;
 /* stylelint-enable plugin/no-browser-hacks */
 
-/* stylelint-disable string-no-newline */
+/* stylelint-disable-next-line string-no-newline */
 @import '@module-paragraphs/css/paragraphs.widget.css remove {
   @media (max-width: 768px) { .button.paragraphs-icon-button {} }
   .js .field--widget-paragraphs td { padding }
   .js .field--widget-paragraphs .draggable .tabledrag-handle{ min-width }
 }';
-/* stylelint-enable string-no-newline */
 
 /**
  * Media screen size defined by paragraphs module to adjust style for tablets and phones.
@@ -589,9 +588,8 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
     #{$sel} {
       background-color: nth($listofcolors, $color % 3 + 1);
     }
-    /* stylelint-disable plugin/no-browser-hacks */
+    /* stylelint-disable-next-line plugin/no-browser-hacks */
     $sel: selector-nest($sel, 'tr.draggable');
-    /* stylelint-enable plugin/no-browser-hacks */
   }
 }
 
@@ -816,9 +814,8 @@ ul.paragraphs-add-dialog-list {
   input.field-add-more-submit {
     background-image: none;
   }
-  /* stylelint-disable plugin/no-browser-hacks */
+  /* stylelint-disable-next-line plugin/no-browser-hacks */
   $paragraph-type-icons: gallery, image, instagram, link, pinterest, qoute, text, twitter, video;
-  /* stylelint-enable plugin/no-browser-hacks */
   @each $icon in $paragraph-type-icons {
     input[name=field_paragraphs_#{$icon}_add_more] {
       background-image: url('../images/paragraphs_type_icon/#{$icon}-default-icon.png');
