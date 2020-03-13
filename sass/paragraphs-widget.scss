@@ -815,7 +815,7 @@ ul.paragraphs-add-dialog-list {
     background-image: none;
   }
   /* stylelint-disable-next-line plugin/no-browser-hacks */
-  $paragraph-type-icons: gallery, image, instagram, link, pinterest, qoute, text, twitter, video;
+  $paragraph-type-icons: gallery, image, instagram, link, pinterest, quote, text, twitter, video;
   @each $icon in $paragraph-type-icons {
     input[name=field_paragraphs_#{$icon}_add_more] {
       background-image: url('../images/paragraphs_type_icon/#{$icon}-default-icon.png');
