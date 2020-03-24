@@ -16,7 +16,7 @@
     "styles:uncompressed": "css-sniper --output-style uncompressed --include-path sass-includes -o css sass",
     "poststyles": "postcss --no-map --remove-all -u autoprefixer postcss-discard-comments -r css",
     "js": "eslint js",
-    "images": "imagemin images-originals/*.* --out-dir=\"images\" && imagemin images-originals/icons/*.* --out-dir=\"images/icons\"",
+    "images": "imagemin images-originals/*.* --out-dir=\"images\" && imagemin images-originals/icons/*.* --out-dir=\"images/icons\" && imagemin images-originals/paragraphs_type_icon/*.* --out-dir=\"images/paragraphs_type_icon\" ",
     "serve": "browser-sync start --proxy \"thunder.dev\" --files \"css/**/*.css, js/*.js\"",
     "build": "npm run styles-lint && npm run styles && npm run js && npm run images",
     "watch:styles": "onchange \"sass\" \"sass-includes\" -- npm run styles",
