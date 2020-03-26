@@ -23,12 +23,12 @@
   background: rgba(0, 0, 0, 0.1);
   min-height: 70px;
 
-  .entities-list &:hover {
+  .entities-list.ui-sortable &:hover {
     opacity: 1;
     background: rgba(0, 0, 0, 0.4);
   }
-  .entities-list--single-item &:hover {
-    cursor: default;
+  .entities-list--single-item & {
+    background: $primary-color-lighter;
   }
   .color-scheme-inverted .entities-list & {
     background: rgba(255, 255, 255, 0.2);
