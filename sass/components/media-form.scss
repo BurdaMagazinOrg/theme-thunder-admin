@@ -27,9 +27,6 @@
     opacity: 1;
     background: rgba(0, 0, 0, 0.4);
   }
-  .entities-list--single-item & {
-    background: $primary-color-lighter;
-  }
   .color-scheme-inverted .entities-list & {
     background: rgba(255, 255, 255, 0.2);
 
