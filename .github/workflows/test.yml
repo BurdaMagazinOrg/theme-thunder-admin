@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      THUNDER: '8.x-4.x'
+      THUNDER: 'feature/entity-browser-update'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
