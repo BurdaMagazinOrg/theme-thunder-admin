@@ -184,6 +184,7 @@ module.exports = [
     { fill: [
       { $: 'input.select2-search__field', value: "abc" }
     ]},
+    { wait: 'li.select2-results__option' }
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
