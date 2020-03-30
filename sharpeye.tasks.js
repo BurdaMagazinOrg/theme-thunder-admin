@@ -222,7 +222,7 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', fullPage: true },
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', pause: 1000, fullPage: true },
   { name: 'Views UI', path: '/admin/structure/views/view/frontpage', fullPage: true, actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: 'div#block-thunder-admin-page-title h1' },
