@@ -214,7 +214,7 @@ module.exports = [
   ], actions: [
     { $: '.field-group-details.content-form__form-section > summary', waitBefore: 1000 }
   ]},
-  { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
+  { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', noScreenshot: true, actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 50 },
