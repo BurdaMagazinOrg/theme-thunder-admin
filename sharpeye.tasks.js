@@ -194,7 +194,7 @@ module.exports = [
     { $: 'label[for=edit-field-tags]', waitBefore: 300 },
     { $: '#edit-group-basis .fieldset-legend' }
   ]},
-  { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
+  { name: 'Configure details element as field group', path: '/admin/structure/types/manage/article/form-display', noScreenshot: true, actions: [
     { $: '//a[@data-drupal-link-system-path="admin/structure/types/manage/article/form-display/add-group"]' },
     { $: '//select[@data-drupal-selector="edit-group-formatter"]/option[@value="details"]' },
     { fill: [
