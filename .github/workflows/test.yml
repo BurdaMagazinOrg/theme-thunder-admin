@@ -114,6 +114,11 @@ jobs:
         echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
         echo "::add-path::$HOME/build/test-dir/bin"
 
+    - id: message
+      name: Get commit message
+      if: failure()
+      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
+
     - name: Download build
       uses: actions/download-artifact@v1
       with:
@@ -138,11 +143,6 @@ jobs:
       with:
         name: images-${{ matrix.SHARPEYE_BROWSER }}
         path: /tmp/sharpeye
-
-    - id: message
-      name: Get commit message
-      if: failure()
-      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
     - name: Update screenshots
       if: failure() && github.event_name == 'pull_request' && contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS')
