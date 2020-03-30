@@ -164,7 +164,7 @@ module.exports = [
     { $: 'a[href="#edit-editor-settings-plugins-linkit"]' }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
-  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, hide: [
+  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, remove: ['#autosave-notification'], hide: [
     '.select2-search__field'
   ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
