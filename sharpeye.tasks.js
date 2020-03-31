@@ -168,7 +168,7 @@ module.exports = [
     { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' },
     { $: '//*[@id="system-themes-page"]/div[2]/div[4]/div/h3', value: 'Stark 8.x.x' }
   ]},
-  { path: '/admin/modules', fullPage: true },
+  { path: '/admin/modules', pause: 1000, fullPage: true },
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
   { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
