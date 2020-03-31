@@ -152,7 +152,7 @@ module.exports = [
     { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value: 'ExAMPle Subtheme 8.x-x.x' },
     { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' }
   ]},
-  { path: '/admin/modules', fullPage: true },
+  { path: '/admin/modules', pause: 1000, fullPage: true },
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
   { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
@@ -209,7 +209,7 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', fullPage: true },
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', pause: 1000, fullPage: true },
   { name: 'Views UI', path: '/admin/structure/views/view/frontpage', fullPage: true, actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: 'div#block-thunder-admin-page-title h1' },
