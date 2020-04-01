@@ -11,7 +11,7 @@ exports.options = {
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0,
   pauseBeforeScreenshot: 1000,
-  numRetries: 0
+  numRetries: 5
 };
 
 var jobID = process.env.JOB_ID;
