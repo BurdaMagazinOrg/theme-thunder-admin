@@ -10,6 +10,7 @@ exports.options = {
   editorPass: 'test-editor',
   // Specify the mismatch tolerance of the comparison.
   misMatchTolerance: 0,
+  pauseBeforeScreenshot: 1000,
   numRetries: 5
 };
 
