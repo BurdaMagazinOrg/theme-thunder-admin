@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROFILE: 'feature/entity-browser-update'
-      PROFILE_BRANCH: '8.x-4.x'
+      PROFILE: 'thunder/thunder-distribution'
+      PROFILE_BRANCH: 'feature/entity-browser-update'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '3.x'
