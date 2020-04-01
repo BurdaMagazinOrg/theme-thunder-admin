@@ -49,7 +49,7 @@ module.exports = [
   { name: 'Linkit dialog', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
     { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
-    { $: '//*[contains(@class, "cke_button__drupallink")]/span[1]' },
+    { $: '//*[contains(@class, "cke_button__linkit")]/span[1]' },
     { $: '.ui-dialog-buttonpane' }
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', fullPage: true, replace: [
