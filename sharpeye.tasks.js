@@ -122,9 +122,9 @@ module.exports = [
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', pause: 1000, fullPage: true },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit', pause: 1000, fullPage: true },
+  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
@@ -168,7 +168,7 @@ module.exports = [
     { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' },
     { $: '//*[@id="system-themes-page"]/div[2]/div[4]/div/h3', value: 'Stark 8.x.x' }
   ]},
-  { path: '/admin/modules', pause: 1000, fullPage: true },
+  { path: '/admin/modules', fullPage: true },
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
   { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
@@ -222,7 +222,7 @@ module.exports = [
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', pause: 1000, fullPage: true },
+  { name: 'Thunder styleguide', path: '/admin/thunder-styleguide', fullPage: true },
   { name: 'Views UI', path: '/admin/structure/views/view/frontpage', fullPage: true, actions: [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: 'div#block-thunder-admin-page-title h1' },
@@ -240,7 +240,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]' },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
-  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', pause: 1000, actions: [
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
     { $: '#toolbar-item-administration-tray > nav > div.toolbar-toggle-orientation > div > button'  },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
