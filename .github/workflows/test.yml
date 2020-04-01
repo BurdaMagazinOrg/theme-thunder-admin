@@ -14,7 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      THUNDER: 'feature/entity-browser-update'
+      PROFILE: 'feature/entity-browser-update'
+      PROFILE_BRANCH: '8.x-4.x'
+      PROJECT: 'thunder/thunder-project'
+      PROJECT_BRANCH: '3.x'
+      THUNDER_TESTING_DEMO_BRANCH: '3.x'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
@@ -33,7 +37,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y sqlite3
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
@@ -52,7 +56,11 @@ jobs:
     - name: Build composer project
       run: build-codebase.sh
       env:
-        THUNDER: ${{ env.THUNDER }}
+        PROFILE: ${{ env.PROFILE }}
+        PROFILE_BRANCH:  ${{ env.PROFILE_BRANCH }}
+        PROJECT: ${{ env.PROJECT }}
+        PROJECT_BRANCH: ${{ env.PROJECT_BRANCH }}
+        THUNDER_TESTING_DEMO_BRANCH: ${{ env.THUNDER_TESTING_DEMO_BRANCH }}
         DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
 
     - name: Install application
@@ -89,7 +97,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y sqlite3 graphicsmagick
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b 3.x ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache NPM dependencies
       id: npm-cache
@@ -105,6 +113,10 @@ jobs:
         echo "::add-path::$HOME/.composer/vendor/bin"
         echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
         echo "::add-path::$HOME/build/test-dir/bin"
+
+    - id: message
+      name: Get commit message
+      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
     - name: Download build
       uses: actions/download-artifact@v1
@@ -122,6 +134,7 @@ jobs:
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+        UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
       if: failure()
@@ -129,11 +142,6 @@ jobs:
       with:
         name: images-${{ matrix.SHARPEYE_BROWSER }}
         path: /tmp/sharpeye
-
-    - id: message
-      name: Get commit message
-      if: failure()
-      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
     - name: Update screenshots
       if: failure() && github.event_name == 'pull_request' && contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS')
