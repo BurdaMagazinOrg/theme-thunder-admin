@@ -9,7 +9,9 @@ exports.options = {
   editorUser: 'test-editor',
   editorPass: 'test-editor',
   // Specify the mismatch tolerance of the comparison.
-  misMatchTolerance: 0
+  misMatchTolerance: 0,
+  pauseBeforeScreenshot: 1000,
+  numRetries: 5
 };
 
 var jobID = process.env.TRAVIS_JOB_ID || process.env.JOB_ID;

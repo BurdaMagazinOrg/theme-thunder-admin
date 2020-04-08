@@ -5,8 +5,6 @@ on:
     branches:
       - '8.x-2.x'
   pull_request:
-    paths-ignore:
-      - '**.md'
   schedule:
     - cron:  '0 6 * * *'
 
@@ -116,6 +114,10 @@ jobs:
         echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
         echo "::add-path::$HOME/build/test-dir/bin"
 
+    - id: message
+      name: Get commit message
+      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
+
     - name: Download build
       uses: actions/download-artifact@v1
       with:
@@ -132,6 +134,7 @@ jobs:
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+        UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
       if: failure()
@@ -139,11 +142,6 @@ jobs:
       with:
         name: images-${{ matrix.SHARPEYE_BROWSER }}
         path: /tmp/sharpeye
-
-    - id: message
-      name: Get commit message
-      if: failure()
-      run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
     - name: Update screenshots
       if: failure() && github.event_name == 'pull_request' && contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS')

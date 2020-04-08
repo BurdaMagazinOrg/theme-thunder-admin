@@ -49,7 +49,8 @@ module.exports = [
   { name: 'Linkit dialog', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
     { $: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_text_add_more"]', wait: '[data-drupal-selector="edit-field-paragraphs-0-subform"]' },
-    { $: './/*[contains(@class, "cke_button__linkit")]/span[1]' }
+    { $: '//*[contains(@class, "cke_button__linkit")]/span[1]' },
+    { $: '.ui-dialog-buttonpane' }
   ]},
   { name: 'Paragraphs modified content message', path: '/node/7/edit', fullPage: true, replace: [
       { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
@@ -107,9 +108,9 @@ module.exports = [
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', pause: 1000, fullPage: true },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit', pause: 1000, fullPage: true },
+  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
@@ -172,6 +173,7 @@ module.exports = [
     { fill: [
       { $: 'input.select2-search__field', value: "abc" }
     ]},
+    { waitBefore: 1000 }
   ]},
   { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
@@ -227,7 +229,7 @@ module.exports = [
     { $: '//input[@data-drupal-selector="edit-fields-field-tags-settings-edit-form-actions-save-settings"]' },
     { $: '//div[@data-drupal-selector="edit-fields-field-tags-settings-edit-form"]', waitBefore: 1000 },
   ]},
-  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', pause: 1000, actions: [
+  { name: 'Views overlay and toolbar', path: '/admin/structure/views/view/content', actions: [
     { $: 'button.toolbar-icon.toolbar-icon-toggle-vertical' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third"]' },
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
@@ -278,21 +280,23 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '[data-toolbar-tray="toolbar-item-administration-tray"].is-active' },
-    { $: '#edit-modes > summary' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-full"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-diff"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-index"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-result"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: 'input[data-drupal-selector="edit-submit"]' },
-    { wait: '.messages.messages--status' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//details[@data-drupal-selector="edit-modes"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
+    { $: '//input[@data-drupal-selector="edit-submit"]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//button[contains(@class, "tabs__trigger")]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]}
 ];
