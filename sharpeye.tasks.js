@@ -280,21 +280,23 @@ module.exports = [
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '[data-toolbar-tray="toolbar-item-administration-tray"].is-active' },
-    { $: '#edit-modes > summary' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-full"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-diff"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-index"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-search-result"]' },
-    { $: 'input[data-drupal-selector="edit-display-modes-custom-token"]' },
-    { $: 'input[data-drupal-selector="edit-submit"]' },
-    { wait: '.messages.messages--status' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//details[@data-drupal-selector="edit-modes"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-diff"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-full"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-index"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-search-result"]' },
+    { $: '//input[@data-drupal-selector="edit-display-modes-custom-token"]' },
+    { $: '//input[@data-drupal-selector="edit-submit"]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]},
   { name: 'Open tabs', path: '/admin/structure/types/manage/article/display', viewports: [{width: 399}], hide: [
     '.form-item-fields-field-channel-type',
     '.form-item-fields-field-teaser-media-type',
     '#toolbar-item-administration-tray'
   ], actions: [
-    { $: '//button[contains(@class, "tabs__trigger")]' }
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' },
+    { $: '//button[contains(@class, "tabs__trigger")]' },
+    { $: '//a[@data-toolbar-tray="toolbar-item-administration-tray"]' }
   ]}
 ];
