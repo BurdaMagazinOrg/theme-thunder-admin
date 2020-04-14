@@ -23,6 +23,10 @@
   background:rgba(0, 0, 0, 0.4);
 }
 
+.entities-list--single-item .media-form__item-widget:hover{
+  cursor:default;
+}
+
 .color-scheme-inverted .entities-list .media-form__item-widget{
   background:rgba(255, 255, 255, 0.2);
 }
