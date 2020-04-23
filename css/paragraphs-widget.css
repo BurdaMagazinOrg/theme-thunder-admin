@@ -1081,9 +1081,52 @@ tr.even .paragraph-form-item--has-subform .form-item{
 .paragraphs-tabs-wrapper.is-horizontal{
   text-align:left;
 }
+.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper{
+  display:none;
+}
+ul.paragraphs-add-dialog-list{
+}
+
 ul.paragraphs-add-dialog-list input.field-add-more-submit{
   background-image:none;
 }
-.paragraph-form-item--has-subform .tabledrag-toggle-weight-wrapper{
-  display:none;
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_gallery_add_more]{
+  background-image:url("../images/paragraphs_type_icon/gallery-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_image_add_more]{
+  background-image:url("../images/paragraphs_type_icon/image-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_instagram_add_more]{
+  background-image:url("../images/paragraphs_type_icon/instagram-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_link_add_more]{
+  background-image:url("../images/paragraphs_type_icon/link-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_pinterest_add_more]{
+  background-image:url("../images/paragraphs_type_icon/pinterest-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_riddle_add_more]{
+  background-image:url("../images/paragraphs_type_icon/riddle-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_quote_add_more]{
+  background-image:url("../images/paragraphs_type_icon/quote-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_text_add_more]{
+  background-image:url("../images/paragraphs_type_icon/text-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_twitter_add_more]{
+  background-image:url("../images/paragraphs_type_icon/twitter-default-icon.png");
+}
+
+ul.paragraphs-add-dialog-list input[name=field_paragraphs_video_add_more]{
+  background-image:url("../images/paragraphs_type_icon/video-default-icon.png");
 }

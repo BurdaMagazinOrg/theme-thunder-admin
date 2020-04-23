@@ -18,7 +18,7 @@
   min-height:70px;
 }
 
-.entities-list .media-form__item-widget:hover{
+.entities-list.ui-sortable .media-form__item-widget:hover{
   opacity:1;
   background:rgba(0, 0, 0, 0.4);
 }

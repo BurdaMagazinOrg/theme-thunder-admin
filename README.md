@@ -68,7 +68,9 @@ or only watch changes in sass files
 Travis will check the theme for changes with a visual regression test.
 If you changed some styling, please provide new reference images.
 
-For creating screenshots you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
+You can use the continous integration infrastructure to update the visual regression reference images by adding [UPDATE_SCREENSHOTS] to your commit message
+
+For creating screenshots locally you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
 (on mac simply use `brew install graphicsmagick`) otherwise travis tests may fail.
 
 Install a fresh thunder:
