@@ -13,8 +13,5 @@
             "email": "andreas.sahle@wunder.io"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {
-        "drupal/core": "^8.7"
-    }
+    "minimum-stability": "dev"
 }
