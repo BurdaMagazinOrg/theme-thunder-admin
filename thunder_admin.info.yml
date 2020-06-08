@@ -70,13 +70,6 @@ libraries-override:
         /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
         /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
 ### END ###
-  # core base theme (classy) overrides
-  classy/base:
-    css:
-      component:
-  # @todo Use css overrides instead of complete removal.
-        css/components/form.css: false
-        css/components/tabledrag.css: false
   # contrib module overrides
   admin_toolbar/toolbar.tree:
     css:

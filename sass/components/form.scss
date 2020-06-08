@@ -15,7 +15,7 @@
  * Removed font-size inherit from label (classy) [Refactor]
  */
 /* stylelint-disable string-no-newline */
-@import '@theme-classy/css/components/form.css remove {
+@import '@theme-seven/css/classy/components/form.css remove {
   .form-composite>legend, .label { font-size }
 }';
 /* stylelint-enable string-no-newline */
