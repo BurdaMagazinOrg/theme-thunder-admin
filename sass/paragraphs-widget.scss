@@ -173,12 +173,10 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
    * Reset button small class added by paragraphs
    * in https://drupal.org/i/3111075.
    *
-   * 1. Reset font-size.
-   * 2. Use button padding, see buttons.scss.
+   * 1. Use button padding, see buttons.scss.
    */
   > .button--small {
-    font-size: inherit; /* 1 */
-    padding: 7px 18px;  /* 2 */
+    padding: 7px 18px;  /* 1 */
   }
 }
 
