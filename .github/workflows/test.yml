@@ -17,7 +17,7 @@ jobs:
       PROFILE: 'thunder/thunder-distribution'
       PROFILE_BRANCH: 'drupal9'
       PROJECT: 'thunder/thunder-project'
-      PROJECT_BRANCH: '3.x'
+      PROJECT_BRANCH: 'drupal9-project'
       THUNDER_TESTING_DEMO_BRANCH: '3.x'
       #DRUPAL_CORE: '8.7.x'
 
