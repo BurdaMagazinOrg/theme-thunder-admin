@@ -11,7 +11,7 @@ on:
 jobs:
   ### Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     env:
       PROFILE: 'thunder/thunder-distribution'
@@ -78,7 +78,7 @@ jobs:
   ### Visual regression testing job
   visual:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       fail-fast: false
