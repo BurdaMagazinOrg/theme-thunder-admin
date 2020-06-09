@@ -380,6 +380,7 @@ function _thunder_admin_enable_sidebar_tray() {
   $route = Drupal::service('current_route_match');
   switch ($route->getRouteName()) {
     case 'entity.taxonomy_term.add_form':
+    case 'entity.taxonomy_term.content_translation_add':
     case 'node.add':
     case 'entity.node.content_translation_add':
       $result = TRUE;
