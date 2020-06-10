@@ -43,32 +43,30 @@ libraries-override:
       component:
         css/components/vertical-tabs.css: css/components/vertical-tabs.css
 ### END ###
-### START Absolute path overrides for libraries already overridden in stable. ###
-### Revisit after https://drupal.org/i/2642122 has landed. ####
-  # Seven override does not take since stable changed key to absolute path.
+### START Former stable theme overrides for libraries. ###
   system/base:
     css:
       component:
-        /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
-        /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
-        /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
+        css/components/system-status-counter.css: css/components/system-status-counter.css
+        css/components/system-status-report-counters.css: css/components/system-status-report-counters.css
+        css/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
   core/drupal.vertical-tabs:
     css:
       component:
-        /core/themes/stable/css/core/vertical-tabs.css: false
+        misc/vertical-tabs.css: false
   node/drupal.node:
     css:
       layout:
-        /core/themes/stable/css/node/node.module.css: false
+        css/node.module.css: false
   node/form:
     css:
       layout:
-        /core/themes/stable/css/node/node.module.css: false
+        css/node.module.css: false
   toolbar/toolbar:
     css:
       theme:
-        /core/themes/stable/css/toolbar/toolbar.theme.css: css/components/toolbar.theme.css
-        /core/themes/stable/css/toolbar/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
+        css/toolbar.theme.css: css/components/toolbar.theme.css
+        css/toolbar.icons.theme.css: css/components/toolbar.icons.theme.css
 ### END ###
   # contrib module overrides
   admin_toolbar/toolbar.tree:
