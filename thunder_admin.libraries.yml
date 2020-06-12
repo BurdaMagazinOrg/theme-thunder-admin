@@ -148,11 +148,6 @@ dropzonejs.widget:
     component:
       css/components/dropzonejs.widget.css: {}
 
-# Adds improved handling of sorting ui for entity browser.
-ui.sortable.with.fractionl.pixels:
-  js:
-    js/ui-sortable-with-fractional-pixels.js: {}
-
 # Select2 theme.
 select2.theme:
   css:

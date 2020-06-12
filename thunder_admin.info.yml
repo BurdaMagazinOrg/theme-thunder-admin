@@ -97,10 +97,6 @@ libraries-extend:
     - thunder_admin/dropzonejs.widget
   entity_browser/tabs:
     - thunder_admin/entity_browser.tabs
-  entity_browser/multi_step_display:
-    - thunder_admin/ui.sortable.with.fractionl.pixels
-  entity_browser/entity_reference:
-    - thunder_admin/ui.sortable.with.fractionl.pixels
   seven/drupal.nav-tabs:
     - thunder_admin/drupal.nav-tabs
   toolbar/toolbar:
