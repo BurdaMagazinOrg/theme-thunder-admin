@@ -67,7 +67,7 @@
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
-{% spaceless %}
+{% apply spaceless %}
 <div{{ attributes.addClass(classes) }} {% if description.content %}data-form-description-container{% endif %}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -108,4 +108,4 @@
     </div>
   {% endif %}
 </div>
-{% endspaceless %}
+{% endapply %}
