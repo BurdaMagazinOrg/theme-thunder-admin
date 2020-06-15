@@ -41,6 +41,9 @@
   input.form-autocomplete, input.form-text, input.form-tel, input.form-email, input.form-url, input.form-search, input.form-number, input.form-color, input.form-file, input.form-date, input.form-time, textarea.form-textarea { box-sizing }
   #edit-cancel {}
   @media screen and (max-width: 600px){ #edit-cancel {} }
+  button:not(.button), input:not([type="file"],.form-text, .form-textarea) { line-height }
+  select{ font-size, line-height }
+  details select { line-height }
 }';
 /* stylelint-enable string-no-newline */
 
