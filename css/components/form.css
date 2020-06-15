@@ -540,3 +540,12 @@ textarea.form-textarea{
 .filter-wrapper .form-item label + *{
   margin-left:0.316em;
 }
+button:not(.button),
+input:not([type="file"], .form-text, .form-textarea){
+  line-height:normal;
+}
+
+select,
+details select{
+  line-height:1.539;
+}

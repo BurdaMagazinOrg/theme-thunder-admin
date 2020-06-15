@@ -271,3 +271,14 @@ textarea.form-textarea {
 .filter-wrapper .form-item label + * {
   margin-left: 0.316em; // Emulate whitespace
 }
+
+/* Override line-height settings in normalize lib. */
+button:not(.button),
+input:not([type="file"], .form-text,.form-textarea) {
+  line-height: normal;
+}
+
+select,
+details select {
+  line-height: $line-height-base;
+}
