@@ -541,7 +541,7 @@ textarea.form-textarea{
   margin-left:0.316em;
 }
 button:not(.button),
-input:not([type="file"], .form-text, .form-textarea){
+input:not([type="file"]){
   line-height:normal;
 }
 

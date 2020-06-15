@@ -274,7 +274,7 @@ textarea.form-textarea {
 
 /* Override line-height settings in normalize lib. */
 button:not(.button),
-input:not([type="file"], .form-text,.form-textarea) {
+input:not([type="file"]) {
   line-height: normal;
 }
 
