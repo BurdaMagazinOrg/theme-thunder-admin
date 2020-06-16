@@ -11,7 +11,7 @@ on:
 jobs:
   ### Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     env:
       PROFILE: 'thunder/thunder-distribution'
@@ -28,10 +28,11 @@ jobs:
       with:
         node-version: '12.x'
 
-    - uses: shivammathur/setup-php@master
+    - uses: shivammathur/setup-php@v2
       with:
         coverage: none
         php-version: '7.3'
+        extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 packages
       run: sudo apt-get update && sudo apt-get install -y sqlite3
@@ -51,7 +52,7 @@ jobs:
       run: |
         echo "::add-path::$HOME/.composer/vendor/bin"
         echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/bin"
+        echo "::add-path::$HOME/build/test-dir/vendor/bin"
 
     - name: Build composer project
       run: build-codebase.sh
@@ -78,7 +79,7 @@ jobs:
   ### Visual regression testing job
   visual:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       fail-fast: false
@@ -88,10 +89,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - uses: shivammathur/setup-php@master
+    - uses: shivammathur/setup-php@v2
       with:
         coverage: none
         php-version: '7.3'
+        extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 and graphicsmagick packages
       run: sudo apt-get update && sudo apt-get install -y sqlite3 graphicsmagick
@@ -112,7 +114,7 @@ jobs:
       run: |
         echo "::add-path::$HOME/.composer/vendor/bin"
         echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/bin"
+        echo "::add-path::$HOME/build/test-dir/vendor/bin"
 
     - id: message
       name: Get commit message
