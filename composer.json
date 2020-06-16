@@ -13,5 +13,6 @@
             "email": "andreas.sahle@wunder.io"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": { }
 }
