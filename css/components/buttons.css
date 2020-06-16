@@ -204,3 +204,6 @@
   overflow:hidden;
   text-indent:-999em;
 }
+.link{
+  line-height:inherit;
+}

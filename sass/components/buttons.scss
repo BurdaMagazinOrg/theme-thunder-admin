@@ -208,3 +208,8 @@ $button-border-radius: $base-border-radius;
     text-indent: -999em;
   }
 }
+
+/* Reset normalize.css line-height. */
+.link {
+  line-height: inherit;
+}

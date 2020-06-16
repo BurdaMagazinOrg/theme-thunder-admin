@@ -175,6 +175,10 @@ details summary:focus{
   outline:none;
 }
 
+details summary:focus span{
+  text-decoration:underline;
+}
+
 img{
   max-width:100%;
   height:auto;

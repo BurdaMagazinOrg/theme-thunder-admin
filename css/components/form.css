@@ -75,7 +75,7 @@ label.option{
   margin:0 0.3em;
   content:"";
   vertical-align:super;
-  background-image:url(../../../../misc/icons/ee0000/required.svg);
+  background-image:url(../../../../../misc/icons/ee0000/required.svg);
   background-repeat:no-repeat;
   background-size:6px 6px;
 }
@@ -94,7 +94,7 @@ abbr.tabledrag-changed, abbr.ajax-changed{
   height:14px;
   content:"";
   vertical-align:sub;
-  background:url(../../../../misc/icons/e32700/error.svg) no-repeat;
+  background:url(../../../../../misc/icons/e32700/error.svg) no-repeat;
   background-size:contain;
 }
 .form-required:after{
@@ -113,14 +113,18 @@ form{
   padding:0;
 }
 
-.fieldgroup{
-  min-width:0;
+textarea, input[type="search"], input[type="number"], input[type="email"]{
+  line-height:normal;
 }
 
-@media (min--moz-device-pixel-ratio: 0){
-  .fieldgroup{
-    display:table-cell;
-  }
+fieldset{
+  margin:0 2px;
+  padding:0.35em 0.625em 0.75em;
+  border:1px solid #c0c0c0;
+}
+
+.fieldgroup{
+  min-width:0;
 }
 
 .form-item{
@@ -362,6 +366,10 @@ select{
 #diff-inline-form select, div.filter-options select{
   padding:0;
 }
+
+::-webkit-file-upload-button{
+  -webkit-appearance:push-button;
+}
 fieldset{
   border:1px solid #dae0e3;
 }
@@ -531,4 +539,13 @@ textarea.form-textarea{
 .container-inline .form-item + .form-item,
 .filter-wrapper .form-item label + *{
   margin-left:0.316em;
+}
+button:not(.button),
+input:not([type="file"]){
+  line-height:normal;
+}
+
+select,
+details select{
+  line-height:1.539;
 }
