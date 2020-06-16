@@ -14,7 +14,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "drupal/core": "^8.7.0"
-    }
+    "require": { }
 }
