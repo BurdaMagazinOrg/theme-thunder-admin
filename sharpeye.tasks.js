@@ -249,6 +249,7 @@ module.exports = [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '#toolbar-item-administration' },
+    { $: '#toolbar-item-administration' },
     { $: '#toolbar-item-administration-tray button.toolbar-icon-toggle-horizontal' },
     { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
