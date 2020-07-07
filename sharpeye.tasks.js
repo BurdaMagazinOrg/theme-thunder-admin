@@ -246,6 +246,7 @@ module.exports = [
     { $: '[data-drupal-selector="edit-displays-settings-settings-content-tab-content-details-columns-third-relationships"] .views-ui-display-tab-setting a.views-ajax-link', wait: '[data-drupal-selector="edit-options-required"]' }
   ]},
   { name: 'Nested paragraphs', path: '/node/10/edit', fullPage: true, replace: [
+    { $: '#toolbar-item-administration' },
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '#toolbar-item-administration-tray button.toolbar-icon-toggle-horizontal' },
