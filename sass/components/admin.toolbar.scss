@@ -41,7 +41,11 @@
   }
 }
 
-/* 1. Set box-sizing explicitly to what we had before, see https://drupal.org/i/3026302. */
+/**
+ * 1. Set box-sizing explicitly to what we had before, see https://drupal.org/i/3026302.
+ * 2. Remove margin introdurced by admin toolbar tools in 2.3.
+*/
 .toolbar-icon-admin-toolbar-tools-help:before {
   box-sizing: border-box; /* 1 */
+  margin-left: inherit; /* 2 */
 }

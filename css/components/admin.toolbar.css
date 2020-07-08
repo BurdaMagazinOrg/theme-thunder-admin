@@ -184,4 +184,5 @@
 }
 .toolbar-icon-admin-toolbar-tools-help:before{
   box-sizing:border-box;
+  margin-left:inherit;
 }
