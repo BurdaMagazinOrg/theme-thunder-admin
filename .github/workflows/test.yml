@@ -15,7 +15,7 @@ jobs:
 
     env:
       PROFILE: 'thunder/thunder-distribution'
-      PROFILE_BRANCH: '8.x-4.x'
+      PROFILE_BRANCH: '8.x-5.x'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '3.x'
