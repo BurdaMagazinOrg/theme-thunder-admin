@@ -117,12 +117,6 @@ form{
   min-width:0;
 }
 
-@media (min--moz-device-pixel-ratio: 0){
-  .fieldgroup{
-    display:table-cell;
-  }
-}
-
 .form-item{
   margin:0.75em 0;
 }
