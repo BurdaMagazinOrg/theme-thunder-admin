@@ -34,12 +34,10 @@
     "number-leading-zero": "always",
     "plugin/no-browser-hacks": [true, {
       "browsers": [
-        "ie >= 9",
-        "edge >= 13",
-        "firefox >= 5",
-        "opera >= 12",
-        "safari >= 5",
-        "chrome >= 56"
+        "> 1%",
+        "Firefox ESR",
+        "last 2 versions",
+        "not dead"
       ]
     }],
     "property-no-unknown": null,
