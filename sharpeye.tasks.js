@@ -206,7 +206,7 @@ module.exports = [
       { $: '//input[@data-drupal-selector="edit-format-settings-classes"]', value: 'content-form__form-section' }
     ]},
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsety: -1350 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsety: -1400 },
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: -100, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
@@ -218,7 +218,7 @@ module.exports = [
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 50 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 100 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
