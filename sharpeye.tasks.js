@@ -122,20 +122,20 @@ module.exports = [
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
+    { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
   { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', value: 'X Checked' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()[2]', value: '8.x.x' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[2]/div/text()[2]', value: 'Last run 00 hours 00 minutes ago' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()[1]', value: '8.x.x' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[2]/div/text()[1]', value: 'Last run 00 hours 00 minutes ago' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[3]/div/text()[2]', value: 'Apache/x.x.xx (Unix) OpenSSL/x.x.x mod_fcgid/x.x.x\n' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[3]', value: '7.x.xx (' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[5]', value: 'xxxM' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[3]', value: 'x.x.x-xx.x-log\n\n' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[4]', value: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[1]', value: '7.x.xx (' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[3]', value: 'xxxM' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[1]', value: 'x.x.x-xx.x-log\n\n' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[5]/div/text()[2]', value: 'MySQL, MariaDB, Percona Server, or equivalent\n\n' },
     { $: 'h3#checked ~ details div', value: ' ' }
   ]},
   { name: 'Admin structure block',  path: '/admin/structure/block', fullPage: true, actions: [
