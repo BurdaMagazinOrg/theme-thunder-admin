@@ -12,6 +12,10 @@
 
   li { //added
     color: $gray-light;
+
+    &:before {
+      margin-right: 0.316em; // Emulate whitespace, blocks.html.twig is now spaceless.
+    }
   }
 
   a { // added
