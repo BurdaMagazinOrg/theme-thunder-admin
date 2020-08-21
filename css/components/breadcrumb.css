@@ -7,6 +7,10 @@
   color:#bfbfbf;
 }
 
+.breadcrumb li:before{
+  margin-right:0.316em;
+}
+
 .breadcrumb a{
   color:inherit;
   font-size:10px;
