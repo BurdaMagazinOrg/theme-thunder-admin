@@ -129,7 +129,7 @@ module.exports = [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[3]/span/span[2]/span[1]', value: 'X Checked' },
-    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()[1]', value: '8.x.x' },
+    { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[1]/div/text()[1]', value: '9.x.x' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[2]/div/text()[1]', value: 'Last run 00 hours 00 minutes ago' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[3]/div/text()[1]', value: 'Apache/x.x.xx (Unix) OpenSSL/x.x.x mod_fcgid/x.x.x\n' },
     { $: '//*[@id="block-thunder-admin-content"]/div[2]/div/div[4]/div/text()[1]', value: '7.x.xx (' },
@@ -161,14 +161,11 @@ module.exports = [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
   { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
-    { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', value: 'Bartik 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', value: 'Seven 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[1]/div/h3', value: 'AMP Base 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value:  'ExAMPle Subtheme 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[4]/div/h3', value: 'Stark 8.x.x' }
+    { $: 'h3.theme-info__header', value: 'Theme name' }
   ]},
-  { path: '/admin/modules', fullPage: true },
+  { path: '/admin/modules', fullPage: true, replace: [
+    { $: '//*[@id="edit-modules-stress-test-enable-description"]/summary/span/text()', value: 'This version is not compatible with Drupal 9.x and should be replaced.' }
+  ]},
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
   { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
