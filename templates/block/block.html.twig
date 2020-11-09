@@ -32,7 +32,7 @@
   'block-' ~ plugin_id|clean_class,
 ]
 %}
-{% spaceless %}
+{% apply spaceless %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
@@ -43,4 +43,4 @@
     {{ content }}
   {% endblock %}
 </div>
-{% endspaceless %}
+{% endapply %}
