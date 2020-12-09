@@ -50,9 +50,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
 
     - name: Build composer project
       run: build-codebase.sh
