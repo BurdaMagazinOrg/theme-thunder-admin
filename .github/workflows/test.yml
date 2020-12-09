@@ -112,9 +112,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PAT
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PAT
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PAT
 
     - id: message
       name: Get commit message
