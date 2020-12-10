@@ -93,15 +93,15 @@ module.exports = [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
-      { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-0-uri"]', value: 'http://example.com/1' }
+      { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-0-uri"]', value: 'http://example.com/1' },
     ]},
-    { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-add-more"]'},
+    { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-add-more"]'},
     { fill: [
-      { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-1-uri"]', value: 'http://example.com/2' }
+      { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-1-uri"]', value: 'http://example.com/2' }
     ]},
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
