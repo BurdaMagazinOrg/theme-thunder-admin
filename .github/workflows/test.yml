@@ -15,7 +15,7 @@ jobs:
 
     env:
       PROFILE: 'thunder/thunder-distribution'
-      PROFILE_BRANCH: '6.0.x'
+      PROFILE_BRANCH: '6.1.x'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '3.x'
@@ -88,6 +88,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
 
     - uses: shivammathur/setup-php@v2
       with:
