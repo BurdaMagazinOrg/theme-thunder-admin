@@ -124,7 +124,7 @@ module.exports = [
   ]},
   { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
+  { name: 'Media type video add form', path:'/media/add/video', fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
