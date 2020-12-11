@@ -6,8 +6,7 @@
   box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-.entity-meta__header,
-.entity-meta .seven-details{
+.entity-meta__header, .entity-meta .seven-details{
   border-top:1px solid #bfbfbf;
   border-bottom:1px solid #bfbfbf;
   background-color:#fcfcfa;
@@ -69,7 +68,6 @@
 
 .seven-details__summary > .summary{
   text-transform:none;
-  color:#595959;
   font-size:0.95em;
   font-weight:normal;
 }
