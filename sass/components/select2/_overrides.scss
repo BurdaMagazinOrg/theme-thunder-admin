@@ -168,3 +168,10 @@ ul li.select2-results__option {
     }
   }
 }
+
+/*
+ * See https://www.drupal.org/i/3114589.
+ */
+.ui-widget-overlay + & {
+  z-index: 1260;
+}
