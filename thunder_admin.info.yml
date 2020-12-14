@@ -73,6 +73,10 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
+  admin_toolbar_tools/toolbar.icon:
+    css:
+      theme:
+        css/tools.css: css/components/tools.css
   paragraphs/drupal.paragraphs.widget:
     css:
       theme:

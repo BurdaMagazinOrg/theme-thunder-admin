@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Import and override tools.css provided by admin_toolbar_tools/toolbar.icon.
+ */
+@import '@module-admin_toolbar_tools/css/tools.css';
+
+.toolbar-icon-admin-toolbar-tools-help {
+  text-indent: -9999px;
+}
+
+.toolbar-icon-thunder {
+  &.toolbar-icon-9,
+  &.toolbar-icon-8 {
+    .toolbar-icon-admin-toolbar-tools-help {
+      &:before,
+      :active:before,
+      .active:before {
+        background-image: url(../../images/thunder-shortlogo-white.svg);
+      }
+    }
+  }
+}

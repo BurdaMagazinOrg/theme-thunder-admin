@@ -15,7 +15,7 @@ jobs:
 
     env:
       PROFILE: 'thunder/thunder-distribution'
-      PROFILE_BRANCH: '6.0.x'
+      PROFILE_BRANCH: '6.1.x'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '3.x'
@@ -50,9 +50,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
 
     - name: Build composer project
       run: build-codebase.sh
@@ -89,6 +89,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
@@ -112,9 +116,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
 
     - id: message
       name: Get commit message
