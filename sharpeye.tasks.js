@@ -137,7 +137,7 @@ module.exports = [
   { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true, replace: [
     { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
-  { name: 'Media type twitter edit form', path:'/media/3/edit' replace: [
+  { name: 'Media type twitter edit form', path:'/media/3/edit', replace: [
     { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
   { name: 'Media type video add form', path:'/media/add/video', fullPage: true, replace: [
