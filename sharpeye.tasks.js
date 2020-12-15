@@ -93,15 +93,15 @@ module.exports = [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
     { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
-      { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-0-uri"]', value: 'http://example.com/1' }
+      { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-0-uri"]', value: 'http://example.com/1' },
     ]},
-    { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-add-more"]'},
+    { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-add-more"]'},
     { fill: [
-      { $: '//input[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-1-uri"]', value: 'http://example.com/2' }
+      { $: '//input[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-1-uri"]', value: 'http://example.com/2' }
     ]},
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-4-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-3-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
     { $: '.field-multiple-table--paragraphs > tbody > tr:last-of-type .paragraphs-features__add-in-between__button', wait: '.paragraphs-add-dialog.ui-dialog-content '},
@@ -122,9 +122,9 @@ module.exports = [
   { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
     { moveto: { $: '#block-thunder-admin-page-title' } }
   ]},
-    { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
   { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video edit form', path:'/media/2/edit', fullPage: true },
+  { name: 'Media type video add form', path:'/media/add/video', fullPage: true },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
