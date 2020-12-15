@@ -33,6 +33,7 @@ jobs:
         coverage: none
         php-version: '7.3'
         extensions: gd,pdo_sqlite
+        tools: composer:v1
 
     - name: Install sqlite3 packages
       run: sudo apt-get update && sudo apt-get install -y sqlite3
@@ -50,9 +51,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
 
     - name: Build composer project
       run: build-codebase.sh
@@ -89,6 +90,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
@@ -112,9 +117,9 @@ jobs:
 
     - name: Setup environment variables
       run: |
-        echo "::add-path::$HOME/.composer/vendor/bin"
-        echo "::add-path::$HOME/build/thunder/thunder-admin-tests/scripts"
-        echo "::add-path::$HOME/build/test-dir/vendor/bin"
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
 
     - id: message
       name: Get commit message
