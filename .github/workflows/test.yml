@@ -33,7 +33,7 @@ jobs:
         coverage: none
         php-version: '7.3'
         extensions: gd,pdo_sqlite
-        tools: composer:v1.7.2
+        tools: composer:v1
 
     - name: Install sqlite3 packages
       run: sudo apt-get update && sudo apt-get install -y sqlite3
