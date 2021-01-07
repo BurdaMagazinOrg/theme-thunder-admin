@@ -179,7 +179,7 @@ module.exports = [
   { name: 'Admin structure', path: '/admin/structure', fullPage: true, actions: [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
+  { name: 'Appearance', path: '/admin/appearance', fullPage: true, remove: [ '.system-themes-list-uninstalled > .theme-selector:not(:first-of-type)'], replace: [
     { $: 'h3.theme-info__header', value: 'Theme name' }
   ]},
   { path: '/admin/modules', fullPage: true, replace: [
