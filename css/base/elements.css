@@ -171,11 +171,8 @@ details summary{
 }
 
 details summary:focus{
-  outline:none;
-}
-
-details summary:not(.seven-details__summary):focus{
   text-decoration:underline;
+  outline:none;
 }
 
 details summary:focus span{

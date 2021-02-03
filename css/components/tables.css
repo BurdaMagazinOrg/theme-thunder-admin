@@ -151,7 +151,3 @@ th.select-all{
     display:none;
   }
 }
-td > .form-item > .form-text,
-td > .ajax-new-content > .form-item > .form-text{
-  width:100%;
-}
