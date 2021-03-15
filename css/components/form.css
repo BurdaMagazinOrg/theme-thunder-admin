@@ -383,12 +383,6 @@ fieldset:not(.fieldgroup){
   min-width:0;
   position:relative;
 }
-@media (min--moz-device-pixel-ratio: 0){
-  .content-form__main > details,
-  fieldset:not(.fieldgroup){
-    display:table-cell;
-  }
-}
 
 .content-form__main > details > summary,
 fieldset:not(.fieldgroup) > legend{
