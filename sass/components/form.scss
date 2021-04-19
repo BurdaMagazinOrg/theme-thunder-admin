@@ -42,7 +42,7 @@
   #edit-cancel {}
   @media screen and (max-width: 600px){ #edit-cancel {} }
   button:not(.button), input:not([type="file"],.form-text, .form-textarea) { line-height }
-  select{ font-size, line-height }
+  select{ font-size; line-height }
   details select { line-height }
 }';
 /* stylelint-enable string-no-newline */
