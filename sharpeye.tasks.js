@@ -28,7 +28,8 @@ module.exports = [
   { path: '/node/add' },
   { path: '/node/add/article', fullPage: true, replace: [ { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' } ] },
   { name: 'Meta tags token browser', path: '/node/add/article', actions: [
-    { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
+    { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-metatag-async-widget-customize-meta-tags' },
+    { $: '#edit-field-meta-tags-0-metatag-async-widget-customize-meta-tags', wait: '[data-drupal-selector="edit-field-meta-tags-0-basic"]' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
   { name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, replace: [
