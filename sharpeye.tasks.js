@@ -120,12 +120,22 @@ module.exports = [
     { waitBefore: 500 }
   ]},
   { path: '/media/add' },
-  { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
-    { moveto: { $: '#block-thunder-admin-page-title' } }
+  { name: 'Media type gallery edit form', path:'/media/18/edit', replace: [
+      { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
+    ], actions: [
+      { moveto: { $: '#block-thunder-admin-page-title' } }
+    ]
+  },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true, replace: [
+    { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
-  { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video add form', path:'/media/add/video', fullPage: true },
+  { name: 'Media type twitter edit form', path:'/media/3/edit', replace: [
+    { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
+  ]},
+  { name: 'Media type video add form', path:'/media/add/video', fullPage: true, replace: [
+      { $: '//*[@id="media-video-add-form"]/div[2]/div/ul/li[2]/a/span', value: 'Authored on xxxx-xx-xx'}
+    ]
+  },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
