@@ -1,8 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-no-browser-hacks/lib"
-  ],
+  "plugins": [],
   "rules": {
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": [true, {
@@ -32,19 +30,11 @@
       ]
     }],
     "number-leading-zero": "always",
-    "plugin/no-browser-hacks": [true, {
-      "browsers": [
-        "> 1%",
-        "Firefox ESR",
-        "last 2 versions",
-        "not dead"
-      ]
-    }],
     "property-no-unknown": null,
     "rule-empty-line-before": null,
     "selector-pseudo-element-colon-notation": null,
     "shorthand-property-no-redundant-values": null,
-    "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"]
+    "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"]
   },
   "ignoreFiles": [
     "assets/vendor/**/*.css",

@@ -28,7 +28,8 @@ module.exports = [
   { path: '/node/add' },
   { path: '/node/add/article', fullPage: true },
   { name: 'Meta tags token browser', path: '/node/add/article', actions: [
-    { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-basic' },
+    { $: '#edit-field-meta-tags-0 [role=button]', wait: '#edit-field-meta-tags-0-metatag-async-widget-customize-meta-tags' },
+    { $: '#edit-field-meta-tags-0-metatag-async-widget-customize-meta-tags', wait: '[data-drupal-selector="edit-field-meta-tags-0-basic"]' },
     { $: '.token-dialog', wait: '.token-tree' }
   ]},
   { name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, actions: [
@@ -119,12 +120,22 @@ module.exports = [
     { waitBefore: 500 }
   ]},
   { path: '/media/add' },
-  { name: 'Media type gallery edit form', path:'/media/18/edit', actions: [
-    { moveto: { $: '#block-thunder-admin-page-title' } }
+  { name: 'Media type gallery edit form', path:'/media/18/edit', replace: [
+      { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
+    ], actions: [
+      { moveto: { $: '#block-thunder-admin-page-title' } }
+    ]
+  },
+  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true, replace: [
+    { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
-  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true },
-  { name: 'Media type twitter edit form', path:'/media/3/edit' },
-  { name: 'Media type video add form', path:'/media/add/video', fullPage: true },
+  { name: 'Media type twitter edit form', path:'/media/3/edit', replace: [
+    { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
+  ]},
+  { name: 'Media type video add form', path:'/media/add/video', fullPage: true, replace: [
+      { $: '//*[@id="media-video-add-form"]/div[2]/div/ul/li[2]/a/span', value: 'Authored on xxxx-xx-xx'}
+    ]
+  },
   { name: 'Status page', path: '/admin/reports/status', fullPage: true, remove: ['#block-thunder-admin-content > div.system-status-report > div:nth-child(2) > details:nth-of-type(1):not(:only-of-type)'], replace: [
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[1]/span/span[2]/span[1]', value: 'X Errors' },
     { $: '//*[@id="block-thunder-admin-content"]/div[1]/div[2]/span/span[2]/span[1]', value: 'X Warnings' },
@@ -160,13 +171,8 @@ module.exports = [
   { name: 'Admin structure', path: '/admin/structure', fullPage: true, actions: [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
-    { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', value: 'Bartik 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', value: 'Seven 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[1]/div/h3', value: 'AMP Base 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value:  'ExAMPle Subtheme 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[4]/div/h3', value: 'Stark 8.x.x' }
+  { name: 'Appearance', path: '/admin/appearance', fullPage: true, remove: [ '.system-themes-list-uninstalled > .theme-selector:not(:first-of-type)'], replace: [
+    { $: 'h3.theme-info__header', value: 'Theme name' }
   ]},
   { path: '/admin/modules', fullPage: true },
   { path: '/admin/config', fullPage: true },
