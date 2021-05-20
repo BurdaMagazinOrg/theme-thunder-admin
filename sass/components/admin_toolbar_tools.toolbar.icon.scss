@@ -1,9 +1,7 @@
 /**
  * @file
- * Import and override tools.css provided by admin_toolbar_tools/toolbar.icon.
+ * Additional styles for the admin_toolbar_tools/toolbar.icon library added using libraries-extend.
  */
-//@import '@module-admin_toolbar_tools/css/tools.css';
-
 .toolbar-icon-admin-toolbar-tools-help {
   text-indent: -9999px;
 }
