@@ -2,10 +2,9 @@
   text-indent:-9999px;
 }
 
-.toolbar-icon-thunder.toolbar-icon-9 .toolbar-icon-admin-toolbar-tools-help:before,
-.toolbar-icon-thunder.toolbar-icon-9 .toolbar-icon-admin-toolbar-tools-help :active:before,
-.toolbar-icon-thunder.toolbar-icon-9 .toolbar-icon-admin-toolbar-tools-help .active:before, .toolbar-icon-thunder.toolbar-icon-8 .toolbar-icon-admin-toolbar-tools-help:before,
-.toolbar-icon-thunder.toolbar-icon-8 .toolbar-icon-admin-toolbar-tools-help :active:before,
-.toolbar-icon-thunder.toolbar-icon-8 .toolbar-icon-admin-toolbar-tools-help .active:before{
+.toolbar-icon-thunder .toolbar-icon-admin-toolbar-tools-help:before,
+.toolbar-icon-thunder .toolbar-icon-admin-toolbar-tools-help :active:before,
+.toolbar-icon-thunder .toolbar-icon-admin-toolbar-tools-help .active:before{
+  width:24px;
   background-image:url(../../images/thunder-shortlogo-white.svg);
 }

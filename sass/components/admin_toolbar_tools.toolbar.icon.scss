@@ -7,14 +7,12 @@
 }
 
 .toolbar-icon-thunder {
-  &.toolbar-icon-9,
-  &.toolbar-icon-8 {
-    .toolbar-icon-admin-toolbar-tools-help {
-      &:before,
-      :active:before,
-      .active:before {
-        background-image: url(../../images/thunder-shortlogo-white.svg);
-      }
+  .toolbar-icon-admin-toolbar-tools-help {
+    &:before,
+    :active:before,
+    .active:before {
+      width: 24px;
+      background-image: url(../../images/thunder-shortlogo-white.svg);
     }
   }
 }
