@@ -171,13 +171,8 @@ module.exports = [
   { name: 'Admin structure', path: '/admin/structure', fullPage: true, actions: [
     { moveto: { $:'#block-thunder-admin-page-title' } }
   ]},
-  { name: 'Appearance', path: '/admin/appearance', fullPage: true, replace: [
-    { $: '//*[@id="system-themes-page"]/div[1]/div[2]/div/h3', value: 'Bartik 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[1]/div[3]/div/h3', value: 'Seven 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[1]/div/h3', value: 'AMP Base 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[2]/div/h3', value:  'ExAMPle Subtheme 8.x-x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[3]/div/h3', value: 'Stark 8.x.x' },
-    { $: '//*[@id="system-themes-page"]/div[2]/div[4]/div/h3', value: 'Stark 8.x.x' }
+  { name: 'Appearance', path: '/admin/appearance', fullPage: true, remove: [ '.system-themes-list-uninstalled > .theme-selector:not(:first-of-type)'], replace: [
+    { $: 'h3.theme-info__header', value: 'Theme name' }
   ]},
   { path: '/admin/modules', fullPage: true },
   { path: '/admin/config', fullPage: true },
