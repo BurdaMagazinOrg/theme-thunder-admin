@@ -62,21 +62,6 @@ fieldset:not(.fieldgroup) {
   position: relative;
 }
 
-/**
- * We've temporarily added this Firefox specific rule here to fix fieldset
- * widths.
- * @todo remove once this Mozilla bug is fixed.
- * See https://bugzilla.mozilla.org/show_bug.cgi?id=504622
- */
-// Originally added for fieldset:not(.fieldgroup) in seven, css-sniper does not handle AtRule selectors.
-// Selector .content-form__main > details was added to this for #2899606
-@media (min--moz-device-pixel-ratio: 0) {
-  .content-form__main > details,
-  fieldset:not(.fieldgroup) {
-    display: table-cell;
-  }
-}
-
 // Removed fieldset > legend in @import since .content-form__main > details was added to this for #2899606
 .content-form__main > details > summary,
 fieldset:not(.fieldgroup) > legend {
