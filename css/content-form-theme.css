@@ -24,10 +24,6 @@
 .content-form__advanced-toggle:hover svg path{
   fill:#009fe3;
 }
-.content-form__actions{
-  z-index:101;
-}
-
 .content-form__actions .button--danger{
   display:inline-block;
   vertical-align:bottom;
