@@ -82,10 +82,6 @@ libraries-override:
     css:
       theme:
         css/admin.toolbar.css: css/components/admin.toolbar.css
-  admin_toolbar_tools/toolbar.icon:
-    css:
-      theme:
-        css/tools.css: css/components/tools.css
   paragraphs/drupal.paragraphs.widget:
     css:
       theme:
@@ -116,6 +112,8 @@ libraries-extend:
     - thunder_admin/toolbar
   toolbar/toolbar.menu:
     - thunder_admin/toolbar.menu
+  admin_toolbar_tools/toolbar.icon:
+    - thunder_admin/admin_toolbar_tools.toolbar.icon
 
 # seven also overrides this.
 quickedit_stylesheets:

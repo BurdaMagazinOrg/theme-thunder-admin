@@ -143,3 +143,8 @@ toolbar.menu:
   css:
     state:
       css/components/toolbar.menu.css: {}
+
+admin_toolbar_tools.toolbar.icon:
+  css:
+    component:
+      css/components/admin_toolbar_tools.toolbar.icon.css: {}
