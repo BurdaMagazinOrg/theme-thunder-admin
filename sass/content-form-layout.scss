@@ -32,6 +32,7 @@ $action-bar-height: 50px;
   position: relative;
   background: white;
   padding-right: 36px;
+  z-index: 101;
 }
 
 /* Form styles for the advanced sidebar */
@@ -141,6 +142,18 @@ $action-bar-height: 50px;
     .content-form__advanced {
       transform: translate3d(-100%, 0, 0);
     }
+  }
+}
+
+/**
+ * Set z-index for advanced sidebar above actions.
+ */
+@include for-phone-only {
+  .content-form__advanced {
+    z-index: 102;
+  }
+  .content-form__advanced-toggle {
+    z-index: 103;
   }
 }
 
