@@ -15,10 +15,10 @@ jobs:
 
     env:
       PROFILE: 'thunder/thunder-distribution'
-      PROFILE_BRANCH: '6.1.x'
+      PROFILE_BRANCH: '6.2.x'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
-      THUNDER_TESTING_DEMO_BRANCH: '3.x'
+      THUNDER_TESTING_DEMO_BRANCH: '4.x'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
@@ -31,7 +31,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
-        php-version: '7.3'
+        php-version: '7.4'
         extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 packages
