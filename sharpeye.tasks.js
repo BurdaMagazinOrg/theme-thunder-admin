@@ -169,7 +169,7 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150 },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
-  { path: '/taxonomy/term/1/edit' },
+  { path: '/edit/term/bfc251bc-de35-467d-af44-1f7a7012b845' },
   { path: '/admin/structure/types/manage/article', fullPage: true },
   { path: '/admin/structure/types/manage/article/fields' },
   { path: '/admin/structure/types/manage/article/form-display', fullPage: true },
