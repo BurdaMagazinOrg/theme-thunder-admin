@@ -18,7 +18,7 @@ jobs:
       PROFILE_BRANCH: '6.1.x'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
-      THUNDER_TESTING_DEMO_BRANCH: 'fix/rename-media'
+      THUNDER_TESTING_DEMO_BRANCH: 'handle-uuid-edit-url'
       #DRUPAL_CORE: '8.7.x'
 
     steps:
