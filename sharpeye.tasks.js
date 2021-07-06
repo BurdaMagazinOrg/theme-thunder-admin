@@ -66,7 +66,7 @@ module.exports = [
       { $: '.ui-dialog-buttonpane' }
     ]
   },
-  { name: 'Paragraphs modified content message', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Paragraphs modified content message', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
       { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
     ], actions: [
     { $: '#field-paragraphs-1-edit--2', wait: '.cke_button__bulletedlist' },
@@ -74,7 +74,7 @@ module.exports = [
     { $: '[name="field_paragraphs_1_collapse"]', waitBefore: 500, wait: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' },
     { $: '[data-drupal-selector="edit-field-paragraphs-1-top-icons"] .paragraphs-icon-changed' }
   ]},
-  { name: 'CKEditor dialog', path: '/node/7/edit', element: '.cke_dialog', actions: [
+  { name: 'CKEditor dialog', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', element: '.cke_dialog', actions: [
     { $: '[data-drupal-selector="field-paragraphs-1-edit-2"]', wait: '.paragraph-form-item--has-subform' },
     { $: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']' },
     { $: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
@@ -82,13 +82,13 @@ module.exports = [
     { $: '//select[contains(@class, "cke_dialog_ui_input_select")]' },
     { $: '//select[contains(@class, "cke_dialog_ui_input_select")]', waitBefore: 500 },
   ]},
-  { name: 'Entity browser gallery', path: '/node/7/edit', actions: [
+  { name: 'Entity browser gallery', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform' },
     { $: '[data-drupal-selector="edit-field-paragraphs-0-subform-field-media-0-inline-entity-form-field-media-images-entity-browser-entity-browser-open-modal"]', wait: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
     { switchToFrame: 'iframe[name="entity_browser_iframe_multiple_image_browser"]' },
     { switchToFrame: null, waitBefore: 1000 }
   ]},
-  { name: 'Entity browser remove', path: '/node/6/edit', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], replace: [
+  { name: 'Entity browser remove', path: '/edit/node/0bd5c257-2231-450f-b4c2-ab156af7b78d', remove: [ '.ui-dialog-content .ajax-progress-throbber' ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '[data-drupal-selector="field-paragraphs-0-edit-2"]', wait: '.paragraph-form-item--has-subform'  },
@@ -97,7 +97,7 @@ module.exports = [
     { switchToFrame: 'iframe[name="entity_browser_iframe_image_browser"]' },
     { switchToFrame: null, waitBefore: 1000 }
   ]},
-  { name: 'Nested table sort', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Nested table sort', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
@@ -129,16 +129,16 @@ module.exports = [
     { waitBefore: 500 }
   ]},
   { path: '/media/add' },
-  { name: 'Media type gallery edit form', path:'/media/18/edit', replace: [
+  { name: 'Media type gallery edit form', path:'/edit/media/d65746ed-6b92-498d-9100-8603be730c71', replace: [
       { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
     ], actions: [
       { moveto: { $: '#block-thunder-admin-page-title' } }
     ]
   },
-  { name: 'Media type image edit form', path: '/media/1/edit', fullPage: true, replace: [
+  { name: 'Media type image edit form', path: '/edit/media/17965877-27b2-428f-8b8c-7dccba9786e5', fullPage: true, replace: [
     { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
-  { name: 'Media type twitter edit form', path:'/media/3/edit', replace: [
+  { name: 'Media type twitter edit form', path:'/edit/media/929b164b-8718-494a-9769-853a6f758a81', replace: [
     { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
   ]},
   { name: 'Media type video add form', path:'/media/add/video', fullPage: true, replace: [
@@ -193,7 +193,7 @@ module.exports = [
     { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' }
   ]},
   { name: 'Install page', path: '/core/install.php', hide: ['.site-version'] },
-  { name: 'Select2 dropdown', path: '/node/7/edit', fullPage: true, hide: [
+  { name: 'Select2 dropdown', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, hide: [
     '.select2-search__field'
   ], replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
@@ -203,7 +203,7 @@ module.exports = [
     ]},
     { waitBefore: 1000 }
   ]},
-  { name: 'Select2 selection', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Select2 selection', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { fill: [
@@ -227,7 +227,7 @@ module.exports = [
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: -100, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
-  { name: 'Check details element in frontend', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Check details element in frontend', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
     { $: '.field-group-details.content-form__form-section > summary', waitBefore: 1000 }
@@ -270,7 +270,7 @@ module.exports = [
     { $: '#toolbar-item-administration-tray button.toolbar-icon-toggle-horizontal' },
     { $: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper' },
   ]},
-  { name: 'Open sidebar elements', path: '/node/7/edit', viewports: [ { width: 1280, height: 1803 } ],  replace: [
+  { name: 'Open sidebar elements', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', viewports: [ { width: 1280, height: 1803 } ],  replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' }
   ], actions: [
@@ -281,7 +281,7 @@ module.exports = [
     { $: '#edit-simple-sitemap > summary' }
   ]},
   /* Content lock disabled form test, order is important. */
-  { name: 'Trigger content lock', noScreenshot: true, path: '/node/7/edit' },
+  { name: 'Trigger content lock', noScreenshot: true, path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07' },
   { name: 'Logout', noScreenshot: true, path: '/user/logout' },
   { name: 'Login', path: '/user/login', noScreenshot: true, actions: [
     { fill: [
@@ -290,7 +290,7 @@ module.exports = [
     ]},
     { $: 'form#user-login-form input[name="op"]', wait: '#toolbar-administration' }
   ]},
-  { name: 'Content lock disabled form elements', path: '/node/7/edit', fullPage: true, replace: [
+  { name: 'Content lock disabled form elements', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' },
     { $: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.' },
   ], actions: [
