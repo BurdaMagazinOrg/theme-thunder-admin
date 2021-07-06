@@ -188,7 +188,10 @@ module.exports = [
   ]},
   { path: '/admin/config', fullPage: true },
   { path: '/admin/config/development/performance' },
-  { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'] },
+  { name: 'System Information', path: '/admin/config/system/site-information', fullPage: true, hide: ['#edit-front-page .field-prefix'], replace: [
+    { $: '//*[@id="edit-site-403"]/@value', value: 'node/403' },
+    { $: '//*[@id="edit-site-404"]/@value', value: 'node/404' }
+  ]},
   { name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', fullPage: true, actions: [
     { wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary' }
   ]},
