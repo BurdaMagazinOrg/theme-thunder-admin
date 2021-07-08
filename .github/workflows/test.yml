@@ -96,7 +96,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
-        php-version: '7.3'
+        php-version: '7.4'
         extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 and graphicsmagick packages
