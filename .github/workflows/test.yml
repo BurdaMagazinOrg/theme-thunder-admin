@@ -135,8 +135,6 @@ jobs:
     - name: Build theme
       run: build-theme.sh
 
-    - uses: mxschmitt/action-tmate@v3
-
     - name: Visual regression testing
       run: visual.sh
       env:
