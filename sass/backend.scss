@@ -30,11 +30,24 @@
     }
     > .details-wrapper,
     > .fieldset-wrapper {
-      display: flex;
+      display: grid;
+      grid-template-areas:
+        "title title preview"
+        "image description preview"
+        "bottom bottom bottom";
 
       .field--name-field-teaser-media {
         width: 225px;
         min-width: 225px;
+        grid-area: image;
+      }
+
+      .field--name-field-seo-title {
+        grid-area: title;
+        input:not(.form-checkbox),
+        .length-indicator {
+          width: calc(100% - 50px); // Subtract description toggle width.
+        }
       }
 
       .field--name-field-teaser-media details.form-wrapper {
@@ -43,10 +56,20 @@
 
       .field--name-field-teaser-text {
         margin: 0 14px;
+        grid-area: description;
       }
 
       .field--name-field-teaser-text .form-item-field-teaser-text-0-value {
         margin-top: 4px;
+      }
+
+      #edit-article-teaser-preview {
+        grid-area: preview;
+        margin-left: auto;
+      }
+
+      > div {
+        grid-area: bottom;
       }
     }
   }
@@ -57,5 +80,21 @@
   box-sizing: content-box;
   li a {
     line-height: 1.384; // 18px/13px
+  }
+}
+
+article.teaser-preview {
+  width: 214px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  background-color: #fafafa;
+
+  h1 {
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
   }
 }
