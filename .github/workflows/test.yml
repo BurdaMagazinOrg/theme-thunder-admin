@@ -38,7 +38,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y sqlite3
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b update/browsers ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
@@ -103,7 +103,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y sqlite3 graphicsmagick
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b update/browsers ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b master ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache NPM dependencies
       id: npm-cache
