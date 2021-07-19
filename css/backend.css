@@ -20,12 +20,24 @@
   }
   .article-teaser > .details-wrapper,
   .article-teaser > .fieldset-wrapper{
-    display:flex;
+    display:grid;
+    grid-template-areas:"title title preview" "image description preview" "bottom bottom bottom";
   }
   .article-teaser > .details-wrapper .field--name-field-teaser-media,
   .article-teaser > .fieldset-wrapper .field--name-field-teaser-media{
     width:225px;
     min-width:225px;
+    grid-area:image;
+  }
+  .article-teaser > .details-wrapper .field--name-field-seo-title,
+  .article-teaser > .fieldset-wrapper .field--name-field-seo-title{
+    grid-area:title;
+  }
+  .article-teaser > .details-wrapper .field--name-field-seo-title input:not(.form-checkbox),
+  .article-teaser > .details-wrapper .field--name-field-seo-title .length-indicator,
+  .article-teaser > .fieldset-wrapper .field--name-field-seo-title input:not(.form-checkbox),
+  .article-teaser > .fieldset-wrapper .field--name-field-seo-title .length-indicator{
+    width:calc(100% - 50px);
   }
   .article-teaser > .details-wrapper .field--name-field-teaser-media details.form-wrapper,
   .article-teaser > .fieldset-wrapper .field--name-field-teaser-media details.form-wrapper{
@@ -34,10 +46,20 @@
   .article-teaser > .details-wrapper .field--name-field-teaser-text,
   .article-teaser > .fieldset-wrapper .field--name-field-teaser-text{
     margin:0 14px;
+    grid-area:description;
   }
   .article-teaser > .details-wrapper .field--name-field-teaser-text .form-item-field-teaser-text-0-value,
   .article-teaser > .fieldset-wrapper .field--name-field-teaser-text .form-item-field-teaser-text-0-value{
     margin-top:4px;
+  }
+  .article-teaser > .details-wrapper #edit-article-teaser-preview,
+  .article-teaser > .fieldset-wrapper #edit-article-teaser-preview{
+    grid-area:preview;
+    margin-left:auto;
+  }
+  .article-teaser > .details-wrapper > div,
+  .article-teaser > .fieldset-wrapper > div{
+    grid-area:bottom;
   }
 }
 
@@ -47,4 +69,20 @@
 
 .ckeditor-buttons li a{
   line-height:1.384;
+}
+
+article.teaser-preview{
+  width:214px;
+  box-shadow:0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding:16px;
+  background-color:#fafafa;
+}
+
+article.teaser-preview h1{
+  font-size:1em;
+  line-height:1.3em;
+}
+
+article.teaser-preview p:last-of-type{
+  margin-bottom:0;
 }
