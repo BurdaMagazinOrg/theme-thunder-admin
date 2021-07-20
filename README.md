@@ -1,6 +1,6 @@
 # Thunder Admin Theme
 
-An administration theme for the Thunder drupal distribution that extends and 
+An administration theme for the Thunder drupal distribution that extends and
 modifies the styles of the core theme seven for authoring UX and an integrated
 look and feel of the contributed modules used in the distribution.
 
@@ -32,7 +32,7 @@ After that initialization of LFS has to be done once: ``git lfs install``
 
 ### Set LFS filter for local development repository
 
-After repository is cloned, it's preferred to setup LFS filter for screenshots folder. It can be done once with following line: 
+After repository is cloned, it's preferred to setup LFS filter for screenshots folder. It can be done once with following line:
 ```echo "screenshots/reference/** filter=lfs diff=lfs merge=lfs -text" > .gitattributes```
 
 After that following line should be executed to get all existing screenshots from repository:
@@ -50,14 +50,14 @@ This project uses Node.js LTS version, you can use [nvm](https://github.com/nvm-
 Run `nvm install --lts` to switch to install and use node lts version.
 Then run `npm prune` and `npm install`.
 
-build scripts and watch scripts are run with npm, for development run 
+build scripts and watch scripts are run with npm, for development run
 `npm run dev`.
 
 or only watch changes in sass files
 `npm run watch:styles`.
 
 #### The build tasks that will be executed are:
-* live-reloading dev server with browser-sync 
+* live-reloading dev server with browser-sync
   ([link_css](http://drupal.org/project/link_css) Drupal module required)
 * SCSS processing and autoprefixing (folder: sass to css)
 * image minification (folder: images-originals to images)
@@ -70,36 +70,35 @@ If you changed some styling, please provide new reference images.
 
 You can use the continous integration infrastructure to update the visual regression reference images by adding [UPDATE_SCREENSHOTS] to your commit message
 
-For creating screenshots locally you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html) 
+For creating screenshots locally you should install [GraphicsMagick](http://www.graphicsmagick.org/INSTALL-unix.html)
 (on mac simply use `brew install graphicsmagick`) otherwise travis tests may fail.
 
 Install a fresh thunder:
 
 - `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
 - `cd ../fresh-thunder && composer install`
-- replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link 
+- replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link
 - configure database settings
 - `drush si thunder --account-pass=admin install_configure_form.enable_update_status_module=NULL -y`
 - if no images are visible: `drush cr -l <yourdomain:port>`
 
 Then you can run selenium in docker:
 
-- if on mac, you need to alias localhost: `sudo ifconfig lo0 alias 172.16.123.1`
-- for Chrome testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome:3.14.0-curium`
-- for Firefox testing start `docker run -d -P -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox:3.12.0-cobalt`
+- for Chrome testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-chrome:3.141.59-20210713`
+- for Firefox testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-firefox:3.141.59-20200719`
 
 To debug a browser you can use following commands:
 
-- for Chrome testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-chrome-debug:3.14.0-curium`
-- for Firefox testing start `docker run -d -P -p 5900:5900 -p 4444:4444 --shm-size 256m --add-host="fresh-thunder.dd:172.16.123.1" selenium/standalone-firefox-debug:3.12.0-cobalt`
+- for Chrome testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-chrome-debug:3.141.59-20210713`
+- for Firefox testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-firefox-debug:3.141.59-20200719`
 
 and connect with you vnc client (on mac you can use finder: go to -> connect to server [⌘K]). The password is: `secret`
 
-Before starting, set the correct URL in `sharpeye.conf.js`.  
+Before starting, set the correct URL in `sharpeye.conf.js`.
 To start the process, enter following command from within the theme directory:
-`/node_modules/.bin/sharpeye --single-browser chrome` for Chrome testing or `/node_modules/.bin/sharpeye --single-browser firefox` for Firefox.
+`npx sharpeye -b chrome --num-retries 0 -t sharpeye.tasks.js -u http://theme.test` for Chrome testing or `npx sharpeye -b firefox --num-retries 0 -t sharpeye.tasks.js -u http://theme.test` for Firefox.
 
-It will make screenshots of the pages, described in `sharpeye.tasks.js` and compare them to the reference images. 
+It will make screenshots of the pages, described in `sharpeye.tasks.js` and compare them to the reference images.
 If it detects a change, it will output a diff screenshot in `screenshots/diff`.
 If you accept this change, move the corresponsing screenshot out of `screenshots/screen` into `screenshots/reference`.
 
