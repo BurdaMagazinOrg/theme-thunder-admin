@@ -85,7 +85,7 @@ Install a fresh thunder:
 Then you can run selenium in docker:
 
 - for Chrome testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-chrome:3.141.59-20210713`
-- for Firefox testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-firefox:3.141.59-20210713`
+- for Firefox testing start `docker run -d -P -p 6000:5900 -p 4444:4444 --shm-size 2g --add-host=theme.test:host-gateway selenium/standalone-firefox:3.141.59-20200719`
 
 To debug a browser you can use following commands:
 
