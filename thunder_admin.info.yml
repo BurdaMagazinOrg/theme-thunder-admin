@@ -1,6 +1,6 @@
 name: Thunder Admin
 type: theme
-core_version_requirement: ^9
+core_version_requirement: ^9.2
 base theme: seven
 description: 'Administration theme for the Thunder Distribution that extends and modifies Sevens styles for authoring UX and integrated look and feel of the contributed modules used in the distribution.'
 
