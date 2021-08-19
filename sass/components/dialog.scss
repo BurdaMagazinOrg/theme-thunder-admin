@@ -15,13 +15,14 @@
     border-top: none;
   }
 }
-/* stylelint-disable string-no-newline */
+
+/* stylelint-disable string-no-newline, no-invalid-position-at-import-rule */
 @import '@theme-seven/css/components/dialog.css remove {
   .ui-dialog .ui-dialog-titlebar-close {}
   .ui-dialog .ui-dialog-titlebar-close:hover {}
   .ui-dialog .ui-dialog-titlebar-close:focus {}
 }';
-/* stylelint-enable string-no-newline */
+/* stylelint-enable string-no-newline, no-invalid-position-at-import-rule */
 
 .ui-dialog {
 

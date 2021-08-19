@@ -20,12 +20,12 @@ html {
   font-size: $font-size-root;
 }
 
-/* stylelint-disable string-no-newline */
+/* stylelint-disable string-no-newline, no-invalid-position-at-import-rule */
 @import '@theme-seven/css/base/elements.css remove {
   body {}
   details { line-height }
 }';
-/* stylelint-enable string-no-newline */
+/* stylelint-enable string-no-newline, no-invalid-position-at-import-rule */
 
 /* Generic elements. */
 body {

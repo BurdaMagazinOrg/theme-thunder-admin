@@ -33,7 +33,7 @@
 }
 
 /* ------------------------ copied from Seven form.css ---------------------- */
-/* stylelint-disable string-no-newline */
+/* stylelint-disable string-no-newline, no-invalid-position-at-import-rule */
 @import '@theme-seven/css/components/form.css remove {
   fieldset:not(.fieldgroup) {}
   @media (min--moz-device-pixel-ratio: 0){ fieldset:not(.fieldgroup) {} }
@@ -45,7 +45,7 @@
   select{ font-size; line-height }
   details select { line-height }
 }';
-/* stylelint-enable string-no-newline */
+/* stylelint-enable string-no-newline, no-invalid-position-at-import-rule */
 
 // This was added
 fieldset {
