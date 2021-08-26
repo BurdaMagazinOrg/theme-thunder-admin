@@ -15,7 +15,7 @@ jobs:
 
     env:
       PROFILE: 'thunder/thunder-distribution'
-      PROFILE_BRANCH: 'dev-task/allow-admin_toolbar_v3'
+      PROFILE_BRANCH: '6.2.x-dev'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '4.x'
