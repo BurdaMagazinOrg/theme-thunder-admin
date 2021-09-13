@@ -166,7 +166,7 @@ module.exports = [
   ]},
   { path: '/admin/structure/block/manage/thunder_base_branding' },
   { name: 'Taxonomy term ordering', path: '/admin/structure/taxonomy/manage/channel/overview', actions: [
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-terms-tid20"]/td/a[@class="tabledrag-handle"]', offsetx: 150 },
+    { dragAndDrop: '//tr[contains(@class, "draggable")][2]/td/a[@class="tabledrag-handle"]', offsetx: 150 },
     { $: '//div[contains(@class, "tabledrag-changed-warning messages")]', waitBefore: 1000}
   ]},
   { path: '/edit/taxonomy_term/bfc251bc-de35-467d-af44-1f7a7012b845' },
