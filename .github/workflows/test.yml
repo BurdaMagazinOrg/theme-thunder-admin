@@ -18,6 +18,7 @@ jobs:
       PROFILE_BRANCH: '6.2.x-dev'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
+      THUNDER_ADMIN_TESTS_BRANCH: 'fix/diverging-branches'
       THUNDER_TESTING_DEMO_BRANCH: '4.x'
       #DRUPAL_CORE: '8.7.x'
 
@@ -38,7 +39,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y sqlite3
 
     - name: Get build environment
-      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b fix/diverging-branches-2 ${HOME}/build/thunder/thunder-admin-tests
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b ${THUNDER_ADMIN_TESTS_BRANCH} ${HOME}/build/thunder/thunder-admin-tests
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
