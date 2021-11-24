@@ -8,6 +8,9 @@ on:
   schedule:
     - cron:  '0 6 * * *'
 
+env:
+  THUNDER_ADMIN_TESTS_BRANCH: 'fix/diverging-branches'
+
 jobs:
   ### Build job
   build:
@@ -18,7 +21,6 @@ jobs:
       PROFILE_BRANCH: '6.2.x-dev'
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
-      THUNDER_ADMIN_TESTS_BRANCH: 'fix/diverging-branches'
       THUNDER_TESTING_DEMO_BRANCH: '4.x'
       #DRUPAL_CORE: '8.7.x'
 
