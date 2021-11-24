@@ -40,8 +40,6 @@ jobs:
 
     - name: Get build environment
       run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b ${THUNDER_ADMIN_TESTS_BRANCH} ${HOME}/build/thunder/thunder-admin-tests
-      env:
-        THUNDER_ADMIN_TESTS_BRANCH: ${{ env.THUNDER_ADMIN_TESTS_BRANCH }}
 
     - name: Cache composer dependencies
       uses: actions/cache@v1
