@@ -227,7 +227,7 @@ module.exports = [
     ]},
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
     { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-group-basis-details"]/td/a[@class="tabledrag-handle"]', offsety: -1400 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: -100, waitBefore: 1000 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: -50, waitBefore: 1000 },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
   { name: 'Check details element in frontend', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
@@ -238,7 +238,7 @@ module.exports = [
   { name: 'Cleanup details element as field group', path: '/admin/structure/types/manage/article/form-display', fullPage: true, actions: [
     { $: '//a[@href="/admin/structure/types/manage/article/form-display/group_basis_details/delete"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 },
-    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 100 },
+    { dragAndDrop: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]', offsety: 50 },
     { $: '//tr[@data-drupal-selector="edit-fields-field-channel"]/td/a[@class="tabledrag-handle"]' },
     { $: '//input[@data-drupal-selector="edit-submit"]', waitBefore: 1000 }
   ]},
