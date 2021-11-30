@@ -151,7 +151,7 @@
         }
 
         this.removeSortTargets();
-        this.sort(row, swapAfter);
+        this.sort(row[0], swapAfter);
         this.addSortTargets();
 
       }, this))
