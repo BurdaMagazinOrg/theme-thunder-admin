@@ -136,6 +136,7 @@ paragraphs.widget:
     - core/jquery
     - core/jquery.once
     - core/drupal.tabledrag
+    - core/once
 
 # Additional "click to edit" functionality for the Paragraph widget.
 tabledrag.tabindex:
