@@ -47,7 +47,7 @@ Build script will try to resolve paths to `core` themes with globally available 
 If that does not work, then correct fallback path to `core` themes should be changed in `css-sniper.conf.js` property `fallbackThemesPath`, so that build script can find required `core` files.
 
 This project uses Node.js LTS version, you can use [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
-Run `nvm install --lts` to switch to install and use node lts version.
+Run `nvm install 12` to switch to install and use node 12 version.
 Then run `npm prune` and `npm install`.
 
 build scripts and watch scripts are run with npm, for development run
@@ -75,8 +75,9 @@ For creating screenshots locally you should install [GraphicsMagick](http://www.
 
 Install a fresh thunder:
 
-- `composer create-project burdamagazinorg/thunder-project:2.x ../fresh-thunder --stability dev --no-interaction --no-install`
-- `cd ../fresh-thunder && composer install`
+- `composer create-project burdamagazinorg/thunder-project:3.x ../fresh-thunder --stability dev --no-interaction --no-install`
+- `cd ../fresh-thunder`
+- `composer require thunder/thunder_testing_demo:4.x thunder/thunder_stylequide`
 - replace installed thunder_admin theme with the one including your changes by copying or making a symbolic link
 - configure database settings
 - `drush si thunder --account-pass=admin install_configure_form.enable_update_status_module=NULL -y`
