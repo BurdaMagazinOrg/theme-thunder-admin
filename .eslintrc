@@ -14,6 +14,7 @@
     "matchMedia": true,
     "Backbone": true,
     "Modernizr": true,
+    "once": true,
     "CKEDITOR": true
   },
   "rules": {

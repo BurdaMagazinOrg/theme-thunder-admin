@@ -1,4 +1,4 @@
-(function ($, Drupal, once) {
+(($, Drupal, once) => {
 
   'use strict';
 
