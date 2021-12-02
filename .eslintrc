@@ -2,7 +2,8 @@
   "extends": "eslint:recommended",
   "root": true,
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "globals": {
     "Drupal": true,
