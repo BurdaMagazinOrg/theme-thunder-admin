@@ -1,4 +1,4 @@
-(function ($, Drupal) {
+(($, Drupal, once) => {
 
   'use strict';
 
@@ -13,20 +13,11 @@
         });
 
         $table.on('tabledrag-checkbox-end', function (e) {
-
-          // Support for classic paragraphs widget with patch (deprecated).
-          if (typeof Drupal.behaviors.paragraphsFeaturesAddInBetweenInit === 'undefined') {
-            // We have to remove the once flag right before reattaching the behaviours,
-            // because otherwise they would be automatically attached in the swapping process.
-            $table.data('jquery-once-init-in-between-buttons', false);
-            Drupal.behaviors.initInBetweenButtons.attach();
-          }
-          else {
-            $table.data('jquery-once-paragraphs-features-add-in-between-init', false);
-            Drupal.behaviors.paragraphsFeaturesAddInBetweenInit.attach();
-          }
+          $table.data('jquery-once-paragraphs-features-add-in-between-init', false);
+          once.remove('paragraphs-features-add-in-between-init', $table[0]);
+          Drupal.behaviors.paragraphsFeaturesAddInBetweenInit.attach(context, settings);
         });
       }
     }
   };
-}(jQuery, Drupal));
+})(jQuery, Drupal, once);
