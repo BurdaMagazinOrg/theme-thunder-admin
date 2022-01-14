@@ -100,7 +100,7 @@ module.exports = [
   { name: 'Nested table sort', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
-    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
+    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/button' },
     { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
         { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', value: 'http://example.com/1' },
