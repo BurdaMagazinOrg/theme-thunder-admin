@@ -110,7 +110,7 @@ module.exports = [
         { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-1-uri"]', value: 'http://example.com/2' }
       ]},
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/button' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
