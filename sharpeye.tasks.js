@@ -35,7 +35,7 @@ module.exports = [
   { name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, replace: [
       { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
     ], actions: [
-      { $: '#field-paragraphs-values > tbody > tr > td > div > input' }
+      { $: '#field-paragraphs-values > tbody > tr > td > div > ul > li > button' }
     ]
   },
   { name: 'Paragraphs', path: '/node/add/article', fullPage: true, replace: [
@@ -100,7 +100,7 @@ module.exports = [
   { name: 'Nested table sort', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
-    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/button' },
+    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/ul/li/button' },
     { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
         { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', value: 'http://example.com/1' },
@@ -110,7 +110,7 @@ module.exports = [
         { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-1-uri"]', value: 'http://example.com/2' }
       ]},
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/thead/tr[2]/th/button' },
-    { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/input' },
+    { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[4]/td[1]/button' },
     { $: '//*[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-wrapper"]/div/div/table/tbody/tr[1]/td/a' }
   ]},
   { name: 'Modals in paragraphs', path: '/node/add/article', fullPage: true, actions: [
