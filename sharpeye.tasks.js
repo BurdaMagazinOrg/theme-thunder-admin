@@ -17,7 +17,7 @@ module.exports = [
   ], actions: [
     { $: '#view-title-table-column a', waitBefore: 1000 }
   ]},
-  { path: '/admin/content/scheduled' },
+  { path: '/admin/content/scheduled', fullPage: true },
   { name: 'Files', path: '/admin/content/files', fullPage: true, replace: [
     { $: '.views-field-filesize', value: '99.9 KB' },
     { $: '.views-field-created, .views-field-changed', value: 'Mon, 07/08/2019 - 08:27' }
@@ -35,7 +35,7 @@ module.exports = [
   { name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, replace: [
       { $: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)' }
     ], actions: [
-      { $: '#field-paragraphs-values > tbody > tr > td > div > input' }
+      { $: '#field-paragraphs-values > tbody > tr > td > div > ul > li > button' }
     ]
   },
   { name: 'Paragraphs', path: '/node/add/article', fullPage: true, replace: [
@@ -100,7 +100,7 @@ module.exports = [
   { name: 'Nested table sort', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     { $: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00' }
   ], actions: [
-    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/input' },
+    { $: '//*[@id="field-paragraphs-values"]/tbody/tr[7]/td/div/ul/li/button' },
     { $: '//div[contains(@class, "paragraphs-add-dialog") and contains(@class, "ui-dialog-content")]/ul/li/input[@name="field_paragraphs_link_add_more"]' },
     { fill: [
         { $: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', value: 'http://example.com/1' },
