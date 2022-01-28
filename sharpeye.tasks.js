@@ -183,7 +183,8 @@ module.exports = [
     {$: '//*[@id="edit-site-404"]/@value', value: 'node/404'}
   ]},
   {name: 'Input format Basic HTML', path: '/admin/config/content/formats/manage/basic_html', fullPage: true, actions: [
-    {wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary'}
+    {wait: '#editor-settings-wrapper li.vertical-tabs__menu-item.first span.vertical-tabs__menu-item-summary'},
+    {$: 'h1.page-title'}
   ]},
   {name: 'Install page', path: '/core/install.php', hide: ['.site-version']},
   {name: 'Select2 dropdown', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, hide: [
