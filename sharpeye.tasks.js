@@ -17,7 +17,9 @@ module.exports = [
   ], actions: [
     {$: '#view-title-table-column a', waitBefore: 1000}
   ]},
-  {path: '/admin/content/scheduled', fullPage: true},
+  {path: '/admin/content/scheduled', fullPage: true, actions: [
+    {$: 'h1.page-title'},
+  ]},
   {name: 'Files', path: '/admin/content/files', fullPage: true, replace: [
     {$: '.views-field-filesize', value: '99.9 KB'},
     {$: '.views-field-created, .views-field-changed', value: 'Mon, 07/08/2019 - 08:27'}
