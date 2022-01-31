@@ -37,7 +37,7 @@ module.exports = [
   {name: 'Add paragraphs modal', path: '/node/add/article', fullPage: true, replace: [
     {$: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)'}
   ], actions: [
-    {$: '#field-paragraphs-values > tbody > tr > td > div > ul > li > button'}
+    {$: '//*[@data-drupal-selector="edit-field-paragraphs"]//tbody/tr[last()]//button[text()="..."]', wait: '.paragraphs-add-dialog.ui-dialog-content '},
   ]},
   {name: 'Paragraphs', path: '/node/add/article', fullPage: true, replace: [
     {$: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)'}
