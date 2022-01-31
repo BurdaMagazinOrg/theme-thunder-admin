@@ -95,7 +95,7 @@ module.exports = [
   {name: 'Nested table sort', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     {$: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00'}
   ], actions: [
-    {$: '//*[@data-drupal-selector="edit-field-paragraphs"]//tbody/tr[last()]//button[text()="..."]', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    {$: '//*[@data-drupal-selector="edit-field-paragraphs"]//tbody/tr[7]//button[text()="..."]', wait: '.paragraphs-add-dialog.ui-dialog-content '},
     {$: '.paragraphs-add-dialog.ui-dialog-content [name="field_paragraphs_link_add_more"]' },
     {fill: [
       {$: '//input[@data-drupal-selector="edit-field-paragraphs-5-subform-field-link-0-uri"]', value: 'http://example.com/1'}
