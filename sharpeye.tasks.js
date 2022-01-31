@@ -38,6 +38,7 @@ module.exports = [
     {$: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)'}
   ], actions: [
     {$: '//*[@data-drupal-selector="edit-field-paragraphs"]//tbody/tr[last()]//button[text()="..."]', wait: '.paragraphs-add-dialog.ui-dialog-content '},
+    {$: '.ui-dialog .ui-dialog-titlebar'}
   ]},
   {name: 'Paragraphs', path: '/node/add/article', fullPage: true, replace: [
     {$: '//*[@id="edit-author"]/summary/span/text()', value: ' (Authored on xxxx-xx-xx)'}
