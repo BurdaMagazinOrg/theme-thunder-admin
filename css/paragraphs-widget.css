@@ -194,8 +194,6 @@
 }
 
 .js .field--widget-paragraphs .draggable .tabledrag-handle{
-  margin-left:0;
-  margin-top:3px;
   padding-right:.25em;
   width:23px;
 }
