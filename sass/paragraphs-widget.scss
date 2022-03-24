@@ -18,7 +18,7 @@ $paragraph-preview-thumbnail-mobile-width: 125px;
 @import '@module-paragraphs/css/paragraphs.widget.css remove {
   @media (max-width: 768px) { .button.paragraphs-icon-button {} }
   .js .field--widget-paragraphs td { padding }
-  .js .field--widget-paragraphs .draggable .tabledrag-handle { margin-top; min-width }
+  .js .field--widget-paragraphs .draggable .tabledrag-handle { margin-top; min-width; width }
 }';
 
 /**

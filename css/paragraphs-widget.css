@@ -196,7 +196,6 @@
 .js .field--widget-paragraphs .draggable .tabledrag-handle{
   margin-left:0;
   padding-right:.25em;
-  width:23px;
 }
 
 .js .field--widget-paragraphs .draggable .tabledrag-handle:focus::before{
