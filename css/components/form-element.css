@@ -98,15 +98,12 @@
   transition:all 0.3s;
 }
 .field--name-title,
-.field--name-field-seo-title,
 .field--name-field-tags{
   max-width:722px;
 }
 
 .field--name-title input:not(.form-checkbox),
 .field--name-title .length-indicator,
-.field--name-field-seo-title input:not(.form-checkbox),
-.field--name-field-seo-title .length-indicator,
 .field--name-field-tags input:not(.form-checkbox),
 .field--name-field-tags .length-indicator{
   width:calc(100% - 22px);
