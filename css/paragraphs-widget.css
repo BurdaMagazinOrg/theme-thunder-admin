@@ -1153,3 +1153,6 @@ ul.paragraphs-add-dialog-list input[name=field_paragraphs_twitter_add_more]{
 ul.paragraphs-add-dialog-list input[name=field_paragraphs_video_add_more]{
   background-image:url("../images/paragraphs_type_icon/video-default-icon.png");
 }
+.paragraphs-tabs-wrapper .tabs.primary.paragraphs-tabs-hide{
+  display:none;
+}
