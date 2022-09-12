@@ -22,6 +22,7 @@ jobs:
       PROJECT: 'thunder/thunder-project'
       PROJECT_BRANCH: '3.x'
       THUNDER_TESTING_DEMO_BRANCH: '4.x'
+      PHP_CLI_SERVER_WORKERS: 10
       #DRUPAL_CORE: '8.7.x'
 
     steps:
