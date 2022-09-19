@@ -11,7 +11,7 @@ on:
 env:
   THUNDER_ADMIN_TESTS_BRANCH: 'master'
 
-#jobs:
+jobs:
 #  ### Build job
 #  build:
 #    runs-on: ubuntu-20.04
