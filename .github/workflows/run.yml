@@ -89,6 +89,10 @@ jobs:
       matrix:
         SHARPEYE_BROWSER: ['chrome', 'firefox']
 
+    services:
+      selenium:
+        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
+
     steps:
     - uses: actions/checkout@v1
 
