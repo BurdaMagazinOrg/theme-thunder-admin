@@ -12,76 +12,76 @@ env:
   THUNDER_ADMIN_TESTS_BRANCH: 'master'
 
 jobs:
-#  ### Build job
-#  build:
-#    runs-on: ubuntu-20.04
-#
-#    env:
-#      PROFILE: 'thunder/thunder-distribution'
-#      PROFILE_BRANCH: '6.4.x-dev'
-#      PROJECT: 'thunder/thunder-project'
-#      PROJECT_BRANCH: '3.x'
-#      THUNDER_TESTING_DEMO_BRANCH: '4.x'
-#      #DRUPAL_CORE: '8.7.x'
-#
-#    steps:
-#    - uses: actions/checkout@v2
-#
-#    - uses: actions/setup-node@v2
-#      with:
-#        node-version: '12'
-#
-#    - uses: shivammathur/setup-php@v2
-#      with:
-#        coverage: none
-#        php-version: '8'
-#        extensions: gd,pdo_sqlite
-#
-#    - name: Install sqlite3 packages
-#      run: sudo apt-get update && sudo apt-get install -y sqlite3
-#
-#    - name: Get build environment
-#      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b ${THUNDER_ADMIN_TESTS_BRANCH} ${HOME}/build/thunder/thunder-admin-tests
-#
-#    - name: Cache composer dependencies
-#      uses: actions/cache@v1
-#      with:
-#        path: ~/.composer/cache
-#        key: ${{ runner.os }}-composer-cache-${{ hashFiles('**/composer.json') }}
-#        restore-keys: |
-#          ${{ runner.os }}-composer-
-#
-#    - name: Setup environment variables
-#      run: |
-#        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
-#        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
-#        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
-#
-#    - name: Build composer project
-#      run: build-codebase.sh
-#      env:
-#        PROFILE: ${{ env.PROFILE }}
-#        PROFILE_BRANCH:  ${{ env.PROFILE_BRANCH }}
-#        PROJECT: ${{ env.PROJECT }}
-#        PROJECT_BRANCH: ${{ env.PROJECT_BRANCH }}
-#        THUNDER_TESTING_DEMO_BRANCH: ${{ env.THUNDER_TESTING_DEMO_BRANCH }}
-#        DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
-#
-#    - name: Install application
-#      run: install-application.sh
-#
-#    - name: Zip build
-#      run: cd ${HOME}; tar cfz build.tgz build/test-dir; mv build.tgz ${GITHUB_WORKSPACE}
-#
-#    - name: Upload build
-#      uses: actions/upload-artifact@v1
-#      with:
-#        name: build
-#        path: build.tgz
+  ### Build job
+  build:
+    runs-on: ubuntu-20.04
+
+    env:
+      PROFILE: 'thunder/thunder-distribution'
+      PROFILE_BRANCH: '6.4.x-dev'
+      PROJECT: 'thunder/thunder-project'
+      PROJECT_BRANCH: '3.x'
+      THUNDER_TESTING_DEMO_BRANCH: '4.x'
+      #DRUPAL_CORE: '8.7.x'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+
+    - uses: shivammathur/setup-php@v2
+      with:
+        coverage: none
+        php-version: '8'
+        extensions: gd,pdo_sqlite
+
+    - name: Install sqlite3 packages
+      run: sudo apt-get update && sudo apt-get install -y sqlite3
+
+    - name: Get build environment
+      run: git clone --depth 1 https://github.com/thunder/thunder-admin-tests.git -b ${THUNDER_ADMIN_TESTS_BRANCH} ${HOME}/build/thunder/thunder-admin-tests
+
+    - name: Cache composer dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.composer/cache
+        key: ${{ runner.os }}-composer-cache-${{ hashFiles('**/composer.json') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+
+    - name: Setup environment variables
+      run: |
+        echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+        echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
+        echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
+
+    - name: Build composer project
+      run: build-codebase.sh
+      env:
+        PROFILE: ${{ env.PROFILE }}
+        PROFILE_BRANCH:  ${{ env.PROFILE_BRANCH }}
+        PROJECT: ${{ env.PROJECT }}
+        PROJECT_BRANCH: ${{ env.PROJECT_BRANCH }}
+        THUNDER_TESTING_DEMO_BRANCH: ${{ env.THUNDER_TESTING_DEMO_BRANCH }}
+        DRUPAL_CORE: ${{ env.DRUPAL_CORE }}
+
+    - name: Install application
+      run: install-application.sh
+
+    - name: Zip build
+      run: cd ${HOME}; tar cfz build.tgz build/test-dir; mv build.tgz ${GITHUB_WORKSPACE}
+
+    - name: Upload build
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build.tgz
 
   ### Visual regression testing job
   visual:
-#    needs: build
+    needs: build
     runs-on: ubuntu-20.04
 
     strategy:
@@ -91,8 +91,10 @@ jobs:
 
     services:
       selenium:
-        image: selenium/standalone-chrome
-#        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
+        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
+#        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
 
     steps:
     - uses: actions/checkout@v1
