@@ -91,7 +91,8 @@ jobs:
 
     services:
       selenium:
-        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
+        image: selenium/standalone-chrome
+#        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
 
     steps:
     - uses: actions/checkout@v1
