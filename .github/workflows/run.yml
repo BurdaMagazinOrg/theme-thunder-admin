@@ -131,6 +131,9 @@ jobs:
         echo $(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}') >> $RUNNER_IP
         echo $RUNNER_IP
         echo "http://$RUNNER_IP:8080" >> $BASE_URL
+      env:
+        BASE_URL: ''
+        RUNNER_IP: ''
 
     - id: message
       name: Get commit message
