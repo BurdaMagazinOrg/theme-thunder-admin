@@ -151,7 +151,6 @@ jobs:
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
-        BASE_URL: ${{ BASE_URL }}
         UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
