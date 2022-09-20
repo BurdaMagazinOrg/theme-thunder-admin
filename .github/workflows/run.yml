@@ -91,7 +91,7 @@ jobs:
 
     services:
       selenium:
-        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}
+        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}:3.141.59-20200719
         ports:
           - 4444:4444
 
