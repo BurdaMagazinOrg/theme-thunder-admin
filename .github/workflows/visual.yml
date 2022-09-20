@@ -9,7 +9,7 @@ on:
     - cron:  '0 6 * * *'
 
 env:
-  THUNDER_ADMIN_TESTS_BRANCH: 'master'
+  THUNDER_ADMIN_TESTS_BRANCH: 'foo'
 
 jobs:
   ### Build job
