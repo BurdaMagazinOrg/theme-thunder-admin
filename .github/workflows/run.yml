@@ -138,6 +138,8 @@ jobs:
       name: Get commit message
       run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
 
+    - run: echo $BASE_URL
+
     - name: Download build
       uses: actions/download-artifact@v1
       with:
@@ -150,9 +152,7 @@ jobs:
       run: build-theme.sh
 
     - name: Visual regression testing
-      run: |
-        echo $BASE_URL
-        visual.sh
+      run: visual.sh
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
