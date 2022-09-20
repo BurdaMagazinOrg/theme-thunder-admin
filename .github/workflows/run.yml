@@ -128,14 +128,12 @@ jobs:
         echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
         echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
         echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
+        echo "::set-env name=RUNNER_IP::$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}')"
+        echo "http://$RUNNER_IP:8080" >> $BASE_URL
 
     - id: message
       name: Get commit message
       run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
-
-    - name: Set runner ip
-      run: |
-        echo "::set-env name=RUNNER_IP::$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}')"
 
     - name: Download build
       uses: actions/download-artifact@v1
@@ -149,11 +147,11 @@ jobs:
       run: build-theme.sh
 
     - name: Visual regression testing
-      run: echo $RUNNER_IP; visual.sh
+      run: visual.sh
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
-        BASE_URL: "http://${{ RUNNER_IP }}:8080"
+        BASE_URL: ${{ BASE_URL }}
         UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
