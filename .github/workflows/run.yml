@@ -128,9 +128,8 @@ jobs:
         echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
         echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
         echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
-        echo "RUNNER_IP=$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}')" >> $GITHUB_ENV
-        echo $RUNNER_IP
-        echo "http://$RUNNER_IP:8080" >> $BASE_URL
+        echo "RUNNER_IP=$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}')" >>
+        echo "BASE_URL=http://$RUNNER_IP:8080" >> $GITHUB_ENV
       env:
         BASE_URL: ''
         RUNNER_IP: ''
@@ -151,7 +150,9 @@ jobs:
       run: build-theme.sh
 
     - name: Visual regression testing
-      run: visual.sh
+      run: |
+        echo $BASE_URL
+        visual.sh
       env:
         JOB_ID: ${{ github.run_id }}
         SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
