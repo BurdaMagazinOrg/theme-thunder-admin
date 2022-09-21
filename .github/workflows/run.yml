@@ -87,13 +87,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        SHARPEYE_BROWSER: ['chrome', 'firefox']
+#        SHARPEYE_BROWSER: ['chrome', 'firefox']
+        SHARPEYE_BROWSER: ['chrome']
 
     services:
       selenium:
         # firefoxESR 91 3.141.59-20210830
         # Before: Chrome 3.141.59-20210713, Firefox 3.141.59-20200719
-        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}:3.141.59-20210830
+        image: seleniutm/standalone-${{ matrix.SHARPEYE_BROWSER }}:4.1.2-20220217
+#        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}:3.141.59-20210830
         ports:
           - 4444:4444
 
