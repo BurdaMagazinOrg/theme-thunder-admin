@@ -87,8 +87,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-#        SHARPEYE_BROWSER: ['chrome', 'firefox']
-        SHARPEYE_BROWSER: ['chrome']
+        SHARPEYE_BROWSER: ['chrome', 'firefox']
 
     services:
       selenium:
