@@ -57,6 +57,7 @@ exports.capabilities = {
       args: [
         "--headless",
         "--disable-gpu",
+        "--log-level=1",
         "--ignore-certificate-errors"
       ]
     }
