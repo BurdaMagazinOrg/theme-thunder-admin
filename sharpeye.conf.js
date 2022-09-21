@@ -42,6 +42,7 @@ exports.config = {
 exports.capabilities = {
   firefox: {
     browserName: 'firefox',
+    "acceptInsecureCerts": true,
     'moz:firefoxOptions': {
       prefs: {
         'dom.ipc.processCount': 8
