@@ -52,7 +52,10 @@ exports.capabilities = {
   chrome: {
     browserName: 'chrome',
     'goog:chromeOptions': {
-      w3c: true
+      w3c: true,
+      args: [
+        "--ignore-certificate-errors"
+      ]
     }
   }
 };
