@@ -55,6 +55,8 @@ exports.capabilities = {
     'goog:chromeOptions': {
       w3c: true,
       args: [
+        "--headless",
+        "--disable-gpu",
         "--ignore-certificate-errors"
       ]
     }
