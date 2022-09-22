@@ -87,15 +87,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-#        SHARPEYE_BROWSER: ['chrome', 'firefox']
-        SHARPEYE_BROWSER: ['chrome']
+#        browser: ['chrome', 'firefox']
+#        selenium_version:  ['4.4.0-20220831', '3.141.59-20210830']
+#        exclude:
+#          - browser: 'chrome'
+#            selenium_version: '3.141.59-20210830'
+#          - browser: 'firefox'
+#            selenium_version: '4.4.0-20220831'
+          include:
+            # chrome latest
+            - browser: 'chrome'
+              selenium_version: '4.4.0-20220831'
+            # firefox 91 (similar to ESR)
+            - browser: 'firefox'
+              selenium_version: '3.141.59-20210830'
 
     services:
       selenium:
         # firefoxESR 91 3.141.59-20210830
         # Before: Chrome 3.141.59-20210713, Firefox 3.141.59-20200719
-        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}:4.4.0-20220831
-#        image: selenium/standalone-${{ matrix.SHARPEYE_BROWSER }}:3.141.59-20210830
+        image: selenium/standalone-${{ matrix.browser }}:${{ matrix.selenium_version }}
         ports:
           - 4444:4444
         options: --shm-size 2g
@@ -154,14 +165,14 @@ jobs:
       run: visual.sh
       env:
         JOB_ID: ${{ github.run_id }}
-        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+        browser: ${{ matrix.browser }}
         UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
       if: failure()
       uses: actions/upload-artifact@v1
       with:
-        name: images-${{ matrix.SHARPEYE_BROWSER }}
+        name: images-${{ matrix.browser }}
         path: /tmp/sharpeye
 
     - name: Update screenshots
@@ -169,7 +180,7 @@ jobs:
       run: update-screenshots.sh
       env:
         JOB_ID: ${{ github.run_id }}
-        SHARPEYE_BROWSER: ${{ matrix.SHARPEYE_BROWSER }}
+        browser: ${{ matrix.browser }}
         BRANCH: ${{ github.head_ref }}
         REPOSITORY: ${{ github.repository }}
         GITHUB_TOKEN: ${{ secrets.TechAccountToken }}
