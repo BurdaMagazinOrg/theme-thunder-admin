@@ -55,10 +55,10 @@ exports.capabilities = {
     'goog:chromeOptions': {
       w3c: true,
       args: [
-        "--headless",
-        "--disable-gpu",
-        "--disable-dev-shm-usage",
-        "--log-level=1",
+        // "--headless",
+        // "--disable-gpu",
+        // "--disable-dev-shm-usage",
+        // "--log-level=1",
         "--ignore-certificate-errors"
       ]
     }
