@@ -87,15 +87,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-#        browser: ['chrome', 'firefox']
-#        selenium_version:  ['4.4.0-20220831', '3.141.59-20210830']
-#        exclude:
-#          - browser: 'chrome'
-#            selenium_version: '3.141.59-20210830'
-#          - browser: 'firefox'
-#            selenium_version: '4.4.0-20220831'
           include:
-            # chrome latest
+            # chrome 105 (latest)
             - browser: 'chrome'
               selenium_version: '4.4.0-20220831'
             # firefox 91 (similar to ESR)
@@ -104,8 +97,6 @@ jobs:
 
     services:
       selenium:
-        # firefoxESR 91 3.141.59-20210830
-        # Before: Chrome 3.141.59-20210713, Firefox 3.141.59-20200719
         image: selenium/standalone-${{ matrix.browser }}:${{ matrix.selenium_version }}
         ports:
           - 4444:4444
@@ -165,7 +156,7 @@ jobs:
       run: visual.sh
       env:
         JOB_ID: ${{ github.run_id }}
-        browser: ${{ matrix.browser }}
+        SHARPEYE_BROWSER: ${{ matrix.browser }}
         UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
     - name: Upload images
@@ -180,7 +171,7 @@ jobs:
       run: update-screenshots.sh
       env:
         JOB_ID: ${{ github.run_id }}
-        browser: ${{ matrix.browser }}
+        SHARPEYE_BROWSER: ${{ matrix.browser }}
         BRANCH: ${{ github.head_ref }}
         REPOSITORY: ${{ github.repository }}
         GITHUB_TOKEN: ${{ secrets.TechAccountToken }}
