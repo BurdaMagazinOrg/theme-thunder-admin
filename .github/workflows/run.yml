@@ -90,10 +90,10 @@ jobs:
           include:
             # chrome latest at this time
             - browser: 'chrome'
-              version: '106'
+              version: '106.0'
             # firefox nearest esr
             - browser: 'firefox'
-              version: '102'
+              version: '102.0'
 
     services:
       selenium:
