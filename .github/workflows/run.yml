@@ -100,7 +100,7 @@ jobs:
         image: selenium/standalone-${{ matrix.browser }}:${{ matrix.selenium_version }}
         ports:
           - 4444:4444
-        options: --shm-size 2g
+        options: --shm-size 2g --add-host=thunder-testing:host-gateway
 
     steps:
     - uses: actions/checkout@v1
@@ -148,6 +148,13 @@ jobs:
 
     - name: Unzip build artifact
       run: tar xCfz ${HOME} build/build.tgz build/test-dir; rm -rf build
+
+    - name: Setup Apache
+      uses: thunder/apache-shiva-php-action@v1
+      with:
+        php-version: '8'
+        site-directory: "${HOME}/build/test-dir/docroot"
+        http-port: '8080'
 
     - name: Build theme
       run: build-theme.sh
