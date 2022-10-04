@@ -34,7 +34,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
-        php-version: '8'
+        php-version: '8.1'
         extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 packages
@@ -100,7 +100,8 @@ jobs:
         image: selenium/standalone-${{ matrix.browser }}:${{ matrix.selenium_version }}
         ports:
           - 4444:4444
-        options: --shm-size 2g --add-host=thunder-testing:host-gateway
+#        options: --shm-size 2g --add-host=thunder-testing:host-gateway
+        options: --shm-size 2g
 
     steps:
     - uses: actions/checkout@v1
@@ -112,7 +113,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         coverage: none
-        php-version: '8'
+        php-version: '8.1'
         extensions: gd,pdo_sqlite
 
     - name: Install sqlite3 and graphicsmagick packages
@@ -136,6 +137,7 @@ jobs:
         echo "$HOME/build/thunder/thunder-admin-tests/scripts" >> $GITHUB_PATH
         echo "$HOME/build/test-dir/vendor/bin" >> $GITHUB_PATH
         echo "BASE_URL=http://$(docker network inspect bridge --format='{{( index .IPAM.Config 0).Gateway}}'):8080" >> $GITHUB_ENV
+#        echo "127.0.0.1 thunder-testing" | sudo tee -a /etc/hosts
 
     - id: message
       name: Get commit message
@@ -152,7 +154,7 @@ jobs:
     - name: Setup Apache
       uses: thunder/apache-shiva-php-action@v1
       with:
-        php-version: '8'
+        php-version: '8.1'
         site-directory: "${HOME}/build/test-dir/docroot"
         http-port: '8080'
 
