@@ -267,7 +267,7 @@ module.exports = [
     {$: '#toolbar-item-administration-tray button.toolbar-icon-toggle-horizontal'},
     {$: 'input#field-paragraphs-0-edit--2', wait: '#field-paragraphs-0-subform-field-paragraph-add-more-wrapper'}
   ]},
-  {name: 'Open sidebar elements', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', replace: [
+  {name: 'Open sidebar elements', path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07', fullPage: true, replace: [
     {$: '//*[@id="edit-meta-changed"]/text()', value: ' 01/01/2018 - 00:00'},
     {$: '//div[@data-drupal-messages=""]/div/ul/li[1]', value: 'This content is being edited by the user admin and is therefore locked to prevent other users changes. This lock is in place since X sec.'}
   ], actions: [
@@ -277,7 +277,6 @@ module.exports = [
     {$: '#edit-scheduler-settings > summary'},
     {$: '#edit-simple-sitemap > summary'}
   ]},
-
   /* Content lock disabled form test, order is important. */
   {name: 'Trigger content lock', noScreenshot: true, path: '/edit/node/36b2e2b2-3df0-43eb-a282-d792b0999c07'},
   {name: 'Logout', noScreenshot: true, path: '/user/logout'},
