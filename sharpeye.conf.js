@@ -34,7 +34,7 @@ exports.config = {
   // https://github.com/mozilla/geckodriver/blob/master/README.md#webdriver-capabilities
   //
   deprecationWarnings: false,
-  logLevel: 'silent',
+  logLevel: 'debug',
   capabilities: [] // Will be overriden when using --single-browser option
 };
 
