@@ -18,7 +18,6 @@ module.exports = [
     {$: '//select[@data-drupal-selector="edit-field-paragraphs-1-subform-field-text-0-format"]/option[@value=\'full_html\']'},
     {$: '//div[contains(@class,"editor-change-text-format-modal")]/div[3]/div/button[1]', wait: 'div[id^=cke_edit-field-paragraphs-1-subform-field-text-0-value]'},
     {$: '//*[contains(@class,"cke_button_off") and @title="Table"]'},
-    {$: '//select[contains(@class, "cke_dialog_ui_input_select")]', wait: '.cke_dialog'},
-    {waitBefore: 500}
+    {$: '//select[contains(@class, "cke_dialog_ui_input_select")]', waitBefore: 1000},
   ]}
 ];

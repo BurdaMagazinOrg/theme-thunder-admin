@@ -55,7 +55,8 @@ exports.capabilities = {
     'goog:chromeOptions': {
       w3c: true,
       args: [
-        '--ignore-certificate-errors'
+        '--ignore-certificate-errors',
+        '--verbose'
       ]
     }
   }
