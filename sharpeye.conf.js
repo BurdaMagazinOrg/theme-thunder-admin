@@ -41,8 +41,8 @@ exports.config = {
 // Additional capabilities for certain browsers when using --single-browser option.
 exports.capabilities = {
   firefox: {
-    browserName: 'firefox',
-    "acceptInsecureCerts": true,
+    'browserName': 'firefox',
+    'acceptInsecureCerts': true,
     'moz:firefoxOptions': {
       prefs: {
         'dom.ipc.processCount': 8
@@ -51,11 +51,11 @@ exports.capabilities = {
     'moz:useNonSpecCompliantPointerOrigin': true
   },
   chrome: {
-    browserName: 'chrome',
+    'browserName': 'chrome',
     'goog:chromeOptions': {
       w3c: true,
       args: [
-        "--ignore-certificate-errors"
+        '--ignore-certificate-errors'
       ]
     }
   }
