@@ -166,10 +166,6 @@ jobs:
         SHARPEYE_BROWSER: ${{ matrix.browser }}
         UPDATE_SCREENSHOTS: ${{ contains(steps.message.outputs.message, '[UPDATE_SCREENSHOTS') }}
 
-    - name: Browser logs
-      if: failure()
-      run: docker logs "${{ job.services.selenium.id }}"
-
     - name: Upload images
       if: failure()
       uses: actions/upload-artifact@v1
