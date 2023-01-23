@@ -7,14 +7,8 @@
         {
             "name": "Christian Fritsch",
             "email": "christian.fritsch@burda.com"
-        },
-        {
-            "name": "Andreas Sahle",
-            "email": "andreas.sahle@wunder.io"
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "drupal/seven": "^1.0"
-    }
+    "require": { }
 }
