@@ -1,6 +1,6 @@
 name: Thunder Admin
 type: theme
-core_version_requirement: ^10
+core_version_requirement: ^9 || ^10
 base theme: false
 description: 'Empty theme for upgrade to Drupal 10.'
 lifecycle: obsolete
