@@ -7,6 +7,10 @@
         {
             "name": "Christian Fritsch",
             "email": "christian.fritsch@burda.com"
+        },
+        {
+            "name": "Andreas Sahle",
+            "email": "andreas.sahle@wunder.io"
         }
     ],
     "minimum-stability": "dev",
