@@ -439,7 +439,7 @@ tr:hover .paragraphs-description::after{
 }
 
 .js .field-multiple-table > tbody > tr.draggable > .field-multiple-drag .tabledrag-handle .handle{
-  background:#979797;
+  background:#bfbfbf;
   margin:0;
   -webkit-mask:url(../images/icons/move.svg) no-repeat center center;
           mask:url(../images/icons/move.svg) no-repeat center center;
